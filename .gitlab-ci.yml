@@ -8,6 +8,7 @@ stages:
   - image
   - build
   - deploy
+  - test
   - update
 
 .ops2deb_build: &ops2deb_build
@@ -62,6 +63,27 @@ build:
     paths:
       - build/*.deb
     expire_in: 2 days
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+test_package:
+  stage: test
+  image: ${DISTRO}:${VERSION}
+  before_script:
+    - export PACKAGE_PATH=$(find ./build -name "*.deb")
+    - dpkg -i $PACKAGE_PATH || true
+    - apt-get update -yq && apt-get install -fy
+  script:
+    - for p in $PACKAGE_PATH; do n=$(dpkg --info $p | sed -n "s/ Package. \(.*\)/\1/p"); dpkg -s $n || exit 77; done
+  parallel:
+    matrix:
+      - DISTRO: ubuntu
+        VERSION: ["16.04", "18.04", "20.04", "21.04"]
+      - DISTRO: debian
+        VERSION:
+          ["bookworm-slim", "bullseye-slim", "buster-slim", "stretch-slim"]
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
