@@ -1,0 +1,76 @@
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+stages:
+  - image
+  - build
+  - deploy
+  - update
+
+.ops2deb_build: &ops2deb_build
+  - ops2deb generate
+  - ops2deb build
+
+.ops2deb_update: &ops2deb_update
+  - ops2deb update
+
+buildah:
+  image: quay.io/buildah/stable:v1.23.0
+  stage: image
+  before_script:
+    - CURRENT_IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+    - CURRENT_IMAGE="${DOCKER_IMAGE}:${CURRENT_IMAGE_TAG}"
+    - LATEST_IMAGE="${DOCKER_IMAGE}:latest"
+  script:
+    - buildah bud -f Dockerfile -t ${LATEST_IMAGE} -t ${CURRENT_IMAGE} .
+    - buildah login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - buildah push --authfile /run/containers/0/auth.json ${CURRENT_IMAGE}
+    - >
+      if [ "${CI_COMMIT_BRANCH}" == "${CI_DEFAULT_BRANCH}" ]; then
+        buildah push --authfile /run/containers/0/auth.json ${LATEST_IMAGE}
+      fi
+  variables:
+    DOCKER_IMAGE: $CI_REGISTRY_IMAGE
+    BUILD_BUILDAH: "False"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      changes:
+        - Dockerfile
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_BUILDAH == "True"'
+
+.builder:
+  image: $CI_REGISTRY_IMAGE:latest
+  stage: build
+  variables:
+    OPS2DEB_WORK_DIR: build
+  script:
+    - *ops2deb_build
+
+test_build:
+  extends: .builder
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
+
+build:
+  extends: .builder
+  artifacts:
+    paths:
+      - build/*.deb
+    expire_in: 2 days
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+update:
+  image: $CI_REGISTRY/$CI_PROJECT_NAME:latest
+  stage: update
+  script:
+    - *ops2deb_update
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
