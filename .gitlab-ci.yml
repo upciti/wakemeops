@@ -119,7 +119,6 @@ update:
   image: $CI_REGISTRY_IMAGE:latest
   stage: update
   before_script:
-    - apt-get update && apt-get install openssh-client
     - *enable_ssh
     - *git_configure
   script:

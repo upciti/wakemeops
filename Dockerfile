@@ -8,6 +8,7 @@ RUN apt-get update \
       fakeroot \
       debhelper \
       git \
+      openssh-client \
  && rm -rf /var/lib/apt/lists/* \
  && pip install pipx \
  && pipx install ops2deb \
