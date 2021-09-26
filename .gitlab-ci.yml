@@ -119,6 +119,7 @@ test_package:
 update:
   image: $CI_REGISTRY_IMAGE:latest
   stage: update
+  tags: ["wakemeops"]
   before_script:
     - *enable_ssh
     - *git_configure
