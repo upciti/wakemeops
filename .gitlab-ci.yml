@@ -10,6 +10,7 @@ stages:
   - deploy
   - test
   - update
+  - publish
 
 .ops2deb_build: &ops2deb_build
   - ops2deb generate
@@ -32,11 +33,6 @@ stages:
   - git config push.default simple
 
 .git_commit_push: &git_commit_push
-  - git update-index -q --really-refresh
-  - if git diff-index HEAD --quiet; then exit 0; fi # exit if no changes
-  - git config --replace-all user.name ${GITLAB_USER_NAME}
-  - git config --replace-all user.email ${GITLAB_USER_EMAIL}
-  - git config push.default simple
   - git remote set-url --push origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
   - branch="feature/update-packages-$(date '+%Y%m%d%H%M%S')"
   - git checkout -b ${branch}
@@ -86,6 +82,7 @@ test_build:
 
 build:
   extends: .builder
+  tags: ["wakemeops"]
   artifacts:
     paths:
       - build/*.deb
@@ -125,6 +122,8 @@ update:
     - *git_configure
   script:
     - *ops2deb_update
+    - git update-index -q --really-refresh
+    - if git diff-index HEAD --quiet; then exit 0; fi # exit if no changes
     - *git_commit_push
   variables:
     GIT_STRATEGY: clone
