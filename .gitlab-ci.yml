@@ -47,6 +47,7 @@ stages:
 buildah:
   image: quay.io/buildah/stable:v1.23.0
   stage: image
+  tags: ["docker"]
   before_script:
     - CURRENT_IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
     - CURRENT_IMAGE="${DOCKER_IMAGE}:${CURRENT_IMAGE_TAG}"
