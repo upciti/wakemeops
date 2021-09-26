@@ -90,7 +90,7 @@ test_package:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 update:
-  image: $CI_REGISTRY/$CI_PROJECT_NAME:latest
+  image: $CI_REGISTRY_IMAGE:latest
   stage: update
   script:
     - *ops2deb_update
