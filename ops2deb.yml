@@ -7,12 +7,12 @@
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
     sha256: aeca0018958c1cae0bf2f36f566315e52f87bdab38b440df349cd091e9f13f36
   script:
-    - mv kubectl {{src}}/usr/bin/
+  - mv kubectl {{src}}/usr/bin/
 
 - name: kustomize
   version: 3.8.10
   depends:
-    - kubectl
+  - kubectl
   summary: Kubernetes native configuration management
   description: |
     kustomize lets you customize raw, template-free YAML files for multiple purposes,
@@ -24,12 +24,12 @@
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
     sha256: 10281b6cd16a50fcbb4a762652bf5ab333633d37035fc7f76ee7b941b50b511d
   script:
-    - mv kustomize {{src}}/usr/bin/
+  - mv kustomize {{src}}/usr/bin/
 
 - name: helm
   version: 3.7.0
   depends:
-    - kubectl
+  - kubectl
   summary: The Kubernetes package manager
   description: |
     Tool for managing Kubernetes charts.
@@ -38,38 +38,39 @@
     url: https://get.helm.sh/helm-v{{version}}-linux-amd64.tar.gz
     sha256: 096e30f54c3ccdabe30a8093f8e128dba76bb67af697b85db6ed0453a2701bf9
   script:
-    - mv linux-amd64/helm {{src}}/usr/bin/
+  - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: istioctl
   version: 1.11.3
   depends:
-    - kubectl
+  - kubectl
   summary: Istio service mesh CLI
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
     sha256: 8403bb13bc0a9fb8a1fa1da70d5c38e4537c541fddf935f429affc576558cb81
   script:
-    - install -d {{src}}/opt/istio
-    - mv * {{src}}/opt/istio/
-    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+  - install -d {{src}}/opt/istio
+  - mv * {{src}}/opt/istio/
+  - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: kubeseal
   version: 0.16.0
   summary: Secret management solution for k8s
-  description: Encrypt your Secret into a SealedSecret, which is safe to store - even to a public repository.
+  description: Encrypt your Secret into a SealedSecret, which is safe to store - even
+    to a public repository.
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-linux-amd64
     sha256: 0899c583053a7c242359985545d9c5c76899fb965dd9d1c46cbcc8b4dd2071ed
   script:
-    - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
+  - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
 
 - name: helmfile
   version: 0.140.1
   depends:
-    - kubectl
-    - helm
-    - kustomize
+  - kubectl
+  - helm
+  - kustomize
   summary: Deploy Kubernetes Helm Charts
   description: |
     Helmfile is a declarative spec for deploying helm charts. It lets you...
@@ -80,7 +81,7 @@
     url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
     sha256: 8a705454cbbeea6d4c53949c59c7ce011fd737aa578ef208f57608fa573125b1
   script:
-    - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+  - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
 - name: minikube
   version: 1.23.2
@@ -98,7 +99,7 @@
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
     sha256: 752d91414793b6a88b309c806b65841ffa62a3bf07383146bd54afbf15de80b4
   script:
-    - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
+  - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
 
 - name: docker-compose
   version: 1.29.2
@@ -111,7 +112,7 @@
     url: https://github.com/docker/compose/releases/download/{{version}}/docker-compose-Linux-x86_64
     sha256: f3f10cf3dbb8107e9ba2ea5f23c1d2159ff7321d16f0a23051d68d8e2547b323
   script:
-    - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
+  - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: vault
   version: 1.8.2
@@ -125,7 +126,7 @@
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
     sha256: d74724d6cc22bf1e1c7c519009b0176809acf6f1c20ee56107de0cab54cd8463
   script:
-    - install -m 755 vault {{src}}/usr/bin/vault
+  - install -m 755 vault {{src}}/usr/bin/vault
 
 - name: terraform
   version: 1.0.7
@@ -138,19 +139,19 @@
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
     sha256: bc79e47649e2529049a356f9e60e06b47462bf6743534a10a4c16594f443be7b
   script:
-    - install -m 755 terraform {{src}}/usr/bin/terraform
+  - install -m 755 terraform {{src}}/usr/bin/terraform
 
 - name: minio-client
-  version: 2021-09-23T05-44-03Z 
+  version: 2021-09-23T05-44-03Z
   summary: MinIO Client
   description: |
     MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
     filesystems and object storage.
   fetch:
     url: https://dl.min.io/client/mc/release/linux-amd64/mc.RELEASE.{{version}}
-    sha256: fad44ed91e97c31c17352b0865edea0000efd2d725af0e0f6c6176be3b8060e7 
+    sha256: fad44ed91e97c31c17352b0865edea0000efd2d725af0e0f6c6176be3b8060e7
   script:
-    - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
+  - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
 
 - name: k9s
   version: 0.24.15
@@ -163,7 +164,7 @@
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
     sha256: 0590c32c20cd22416f2a06fad9155257c156e32c60e8757bf96d5a28cb1720dd
   script:
-    - install -m 755 k9s {{src}}/usr/bin/k9s
+  - install -m 755 k9s {{src}}/usr/bin/k9s
 
 - name: trivy
   version: 0.19.2
@@ -175,16 +176,17 @@
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
     sha256: 4863d015071936e8f5d4610c99eb8149b368a24453b464fff41133d4609b88a8
   script:
-    - install -m 755 trivy {{src}}/usr/bin/trivy
+  - install -m 755 trivy {{src}}/usr/bin/trivy
 
 - name: kube-score
   version: 1.12.0
-  summary: Kubernetes object analysis with recommendations for improved reliability and security.
+  summary: Kubernetes object analysis with recommendations for improved reliability
+    and security.
   description: |
     kube-score is a tool that performs static code analysis of your Kubernetes object definitions.
   fetch:
     url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
     sha256: 177d2b4e9f7ce3d82411560ac8289719684f1f73001c60be4b60c5b197120a09
   script:
-    - install -m 755 kube-score {{src}}/usr/bin/kube-score
-    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+  - install -m 755 kube-score {{src}}/usr/bin/kube-score
+  - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
