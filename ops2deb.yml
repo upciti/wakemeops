@@ -115,7 +115,7 @@
   - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: vault
-  version: 1.8.2
+  version: 1.8.3
   summary: Vault is a tool for securely accessing secrets
   description: |
     Vault is a tool for securely accessing secrets. A secret is anything that
@@ -124,12 +124,12 @@
     while providing tight access control and recording a detailed audit log.
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
-    sha256: d74724d6cc22bf1e1c7c519009b0176809acf6f1c20ee56107de0cab54cd8463
+    sha256: c756477a64726e57cc8261b6cf1dc09d99a19f643de76bf79f38b71c4be5984f
   script:
   - install -m 755 vault {{src}}/usr/bin/vault
 
 - name: terraform
-  version: 1.0.7
+  version: 1.0.8
   summary: Terraform is a tool for building, changing, and versioning infrastructure.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely
@@ -137,7 +137,7 @@
     well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: bc79e47649e2529049a356f9e60e06b47462bf6743534a10a4c16594f443be7b
+    sha256: a73459d406067ce40a46f026dce610740d368c3b4a3d96591b10c7a577984c2e
   script:
   - install -m 755 terraform {{src}}/usr/bin/terraform
 
