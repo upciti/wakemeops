@@ -9,6 +9,9 @@ RUN apt-get update \
       debhelper \
       git \
       openssh-client \
+      aptly \
+      expect \
+      gnupg \
  && rm -rf /var/lib/apt/lists/* \
  && pip install pipx \
  && pipx install ops2deb \

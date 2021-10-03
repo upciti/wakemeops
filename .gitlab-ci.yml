@@ -5,6 +5,7 @@ workflow:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 stages:
+  - debug
   - image
   - build
   - deploy
@@ -26,6 +27,13 @@ stages:
   - chmod 700 ~/.ssh
   - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
+
+.enable_gpg: &enable_gpg
+  - apt-get update && apt-get install -y expect
+  - echo "${GPG_KEY_B64}" | base64 -d > /tmp/gpg.key
+  - chmod 700 /tmp/gpg.key
+  - echo ${GPG_PASSPHRASE} | gpg --batch --yes --passphrase-fd 0 --import /tmp/gpg.key
+  - expect -c "spawn gpg --edit-key ${GPG_KEY_ID} trust quit; send \"5\ry\r\"; expect eof"
 
 .git_configure: &git_configure
   - git config --replace-all user.name $GITLAB_USER_NAME
@@ -129,5 +137,17 @@ update:
     GIT_STRATEGY: clone
     GITLAB_USER_NAME: "wakemebot"
     GITLAB_USER_EMAIL: "wakemebot@upciti.com"
+    GPG_KEY_ID: "60848C6093580B4580B47E2071DCEF2C39E8D9AD"
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+
+publish:
+  image: $CI_REGISTRY_IMAGE:latest
+  stage: debug
+  tags: ["wakemeops"]
+  before_script:
+    - *enable_gpg
+  script:
+    - ls -R /host/data/
+  variables:
+    GPG_KEY_ID: "60848C6093580B4580B47E2071DCEF2C39E8D9AD"
