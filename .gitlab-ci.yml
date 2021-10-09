@@ -4,21 +4,25 @@ workflow:
     - if: $CI_COMMIT_TAG
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
+variables:
+  WAKEMEBOT_IMAGE: "upciti/wakemebot:main"
+
 stages:
-  - debug
-  - image
   - build
-  - deploy
   - test
   - update
   - publish
+  - pages
 
 .ops2deb_build: &ops2deb_build
-  - ops2deb generate
+  - mkdir -p ${OPS2DEB_WORK_DIR}
+  - (curl -L ${CI_PAGES_URL}/repo-state-${repo}.json | jq || echo "[]") > repo-state-${repo}.json
+  - wakemebot generate ops2deb-${repo}.yml repo-state-${repo}.json
+  - if [ -z "$(ls -A $OPS2DEB_WORK_DIR)" ]; then exit 0; fi # if no changes
   - ops2deb build
 
 .ops2deb_update: &ops2deb_update
-  - ops2deb update
+  - for repo in $(ls ops2deb-* | cut -f2 -d "-" | cut -f1 -d "."); do OPS2DEB_CONFIG="ops2deb-${repo}.yml" ops2deb update; done
 
 .enable_ssh: &enable_ssh
   - eval $(ssh-agent -s)
@@ -27,13 +31,6 @@ stages:
   - chmod 700 ~/.ssh
   - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
-
-.enable_gpg: &enable_gpg
-  - apt-get update && apt-get install -y expect
-  - echo "${GPG_KEY_B64}" | base64 -d > /tmp/gpg.key
-  - chmod 700 /tmp/gpg.key
-  - echo ${GPG_PASSPHRASE} | gpg --batch --yes --passphrase-fd 0 --import /tmp/gpg.key
-  - expect -c "spawn gpg --edit-key ${GPG_KEY_ID} trust quit; send \"5\ry\r\"; expect eof"
 
 .git_configure: &git_configure
   - git config --replace-all user.name $GITLAB_USER_NAME
@@ -45,41 +42,22 @@ stages:
   - branch="feature/update-packages-$(date '+%Y%m%d%H%M%S')"
   - git checkout -b ${branch}
   - git add ./ops2deb.yml
-  - git commit -m "feature(bot) update packages"
+  - >
+    git commit -m "feature(bot): update packages"
   - git push -o merge_request.create -o merge_request.target=${CI_DEFAULT_BRANCH} -o merge_request.merge_when_pipeline_succeeds --set-upstream origin ${branch}
 
-buildah:
-  image: quay.io/buildah/stable:v1.23.0
-  stage: image
-  tags: ["docker"]
-  before_script:
-    - CURRENT_IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
-    - CURRENT_IMAGE="${DOCKER_IMAGE}:${CURRENT_IMAGE_TAG}"
-    - LATEST_IMAGE="${DOCKER_IMAGE}:latest"
-  script:
-    - buildah bud -f Dockerfile -t ${LATEST_IMAGE} -t ${CURRENT_IMAGE} .
-    - buildah login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
-    - buildah push --authfile /run/containers/0/auth.json ${CURRENT_IMAGE}
-    - >
-      if [ "${CI_COMMIT_BRANCH}" == "${CI_DEFAULT_BRANCH}" ]; then
-        buildah push --authfile /run/containers/0/auth.json ${LATEST_IMAGE}
-      fi
-  variables:
-    DOCKER_IMAGE: $CI_REGISTRY_IMAGE
-    BUILD_BUILDAH: "False"
-  rules:
-    - if: '$CI_PIPELINE_SOURCE != "schedule"'
-      changes:
-        - Dockerfile
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_BUILDAH == "True"'
-
 .builder:
-  image: $CI_REGISTRY_IMAGE:latest
+  image: $WAKEMEBOT_IMAGE
   stage: build
-  variables:
-    OPS2DEB_WORK_DIR: build
   script:
     - *ops2deb_build
+  variables:
+    OPS2DEB_WORK_DIR: "build/${repo}"
+    OPS2DEB_CONFIG: "ops2deb-${repo}.yml"
+  parallel:
+    matrix:
+      - repo: devops
+      - repo: secops
 
 test_build:
   extends: .builder
@@ -93,7 +71,7 @@ build:
   tags: ["wakemeops"]
   artifacts:
     paths:
-      - build/*.deb
+      - build/**/*deb
     expire_in: 2 days
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
@@ -122,7 +100,7 @@ test_package:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 update:
-  image: $CI_REGISTRY_IMAGE:latest
+  image: $WAKEMEBOT_IMAGE
   stage: update
   tags: ["wakemeops"]
   before_script:
@@ -137,17 +115,37 @@ update:
     GIT_STRATEGY: clone
     GITLAB_USER_NAME: "wakemebot"
     GITLAB_USER_EMAIL: "wakemebot@upciti.com"
-    GPG_KEY_ID: "60848C6093580B4580B47E2071DCEF2C39E8D9AD"
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
 
 publish:
-  image: $CI_REGISTRY_IMAGE:latest
-  stage: debug
+  image: $WAKEMEBOT_IMAGE
+  stage: publish
+  tags: ["wakemeops"]
+  script:
+    - if [ -z "$(ls -A build/${repo}/)" ]; then exit 0; fi # if no build
+    - wakemebot aptly push wakemeops-${repo} build/${repo}/*.deb --server /host/data/aptly/aptly.sock
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  parallel:
+    matrix:
+      - repo: devops
+      - repo: secops
+
+pages:
+  image: $WAKEMEBOT_IMAGE
+  stage: pages
   tags: ["wakemeops"]
   before_script:
-    - *enable_gpg
+    - mkdir public
   script:
-    - ls -R /host/data/
-  variables:
-    GPG_KEY_ID: "60848C6093580B4580B47E2071DCEF2C39E8D9AD"
+    - for repo in $(ls ops2deb-* | cut -f2 -d "-" | cut -f1 -d "."); do wakemebot aptly export wakemeops-${repo} --server /host/data/aptly/aptly.sock > ./public/repo-state-${repo}.json; done
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

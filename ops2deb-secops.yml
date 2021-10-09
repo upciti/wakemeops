@@ -1,0 +1,25 @@
+- name: vault
+  version: 1.8.3
+  summary: Vault is a tool for securely accessing secrets
+  description: |
+    Vault is a tool for securely accessing secrets. A secret is anything that
+    you want to tightly control access to, such as API keys, passwords, or
+    certificates. Vault provides a unified interface to any secret,
+    while providing tight access control and recording a detailed audit log.
+  fetch:
+    url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
+    sha256: c756477a64726e57cc8261b6cf1dc09d99a19f643de76bf79f38b71c4be5984f
+  script:
+    - install -m 755 vault {{src}}/usr/bin/vault
+
+- name: trivy
+  version: 0.19.2
+  summary: Scanner for vulnerabilities
+  description: |
+    Scanner for vulnerabilities in container images,
+    file systems, and Git repositories, as well as for configuration issues
+  fetch:
+    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
+    sha256: 4863d015071936e8f5d4610c99eb8149b368a24453b464fff41133d4609b88a8
+  script:
+    - install -m 755 trivy {{src}}/usr/bin/trivy
