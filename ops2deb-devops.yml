@@ -7,12 +7,12 @@
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
     sha256: aeca0018958c1cae0bf2f36f566315e52f87bdab38b440df349cd091e9f13f36
   script:
-  - mv kubectl {{src}}/usr/bin/
+    - mv kubectl {{src}}/usr/bin/
 
 - name: kustomize
   version: 3.8.10
   depends:
-  - kubectl
+    - kubectl
   summary: Kubernetes native configuration management
   description: |
     kustomize lets you customize raw, template-free YAML files for multiple purposes,
@@ -24,12 +24,12 @@
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
     sha256: 10281b6cd16a50fcbb4a762652bf5ab333633d37035fc7f76ee7b941b50b511d
   script:
-  - mv kustomize {{src}}/usr/bin/
+    - mv kustomize {{src}}/usr/bin/
 
 - name: helm
   version: 3.7.0
   depends:
-  - kubectl
+    - kubectl
   summary: The Kubernetes package manager
   description: |
     Tool for managing Kubernetes charts.
@@ -38,39 +38,40 @@
     url: https://get.helm.sh/helm-v{{version}}-linux-amd64.tar.gz
     sha256: 096e30f54c3ccdabe30a8093f8e128dba76bb67af697b85db6ed0453a2701bf9
   script:
-  - mv linux-amd64/helm {{src}}/usr/bin/
+    - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: istioctl
   version: 1.11.3
   depends:
-  - kubectl
+    - kubectl
   summary: Istio service mesh CLI
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
     sha256: 8403bb13bc0a9fb8a1fa1da70d5c38e4537c541fddf935f429affc576558cb81
   script:
-  - install -d {{src}}/opt/istio
-  - mv * {{src}}/opt/istio/
-  - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+    - install -d {{src}}/opt/istio
+    - mv * {{src}}/opt/istio/
+    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: kubeseal
   version: 0.16.0
   summary: Secret management solution for k8s
-  description: Encrypt your Secret into a SealedSecret, which is safe to store - even
+  description:
+    Encrypt your Secret into a SealedSecret, which is safe to store - even
     to a public repository.
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-linux-amd64
     sha256: 0899c583053a7c242359985545d9c5c76899fb965dd9d1c46cbcc8b4dd2071ed
   script:
-  - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
+    - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
 
 - name: helmfile
   version: 0.141.0
   depends:
-  - kubectl
-  - helm
-  - kustomize
+    - kubectl
+    - helm
+    - kustomize
   summary: Deploy Kubernetes Helm Charts
   description: |
     Helmfile is a declarative spec for deploying helm charts. It lets you...
@@ -81,7 +82,7 @@
     url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
     sha256: 19f5ee251f440e50388709898b8abc725974f98b1aa66331b9916f89074fad38
   script:
-  - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+    - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
 - name: minikube
   version: 1.23.2
@@ -99,7 +100,7 @@
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
     sha256: 752d91414793b6a88b309c806b65841ffa62a3bf07383146bd54afbf15de80b4
   script:
-  - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
+    - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
 
 - name: docker-compose
   version: 1.29.2
@@ -112,7 +113,7 @@
     url: https://github.com/docker/compose/releases/download/{{version}}/docker-compose-Linux-x86_64
     sha256: f3f10cf3dbb8107e9ba2ea5f23c1d2159ff7321d16f0a23051d68d8e2547b323
   script:
-  - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
+    - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: terraform
   version: 1.0.8
@@ -125,7 +126,7 @@
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
     sha256: a73459d406067ce40a46f026dce610740d368c3b4a3d96591b10c7a577984c2e
   script:
-  - install -m 755 terraform {{src}}/usr/bin/terraform
+    - install -m 755 terraform {{src}}/usr/bin/terraform
 
 - name: minio-client
   version: 2021-09-23T05-44-03Z
@@ -137,7 +138,20 @@
     url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
     sha256: fad44ed91e97c31c17352b0865edea0000efd2d725af0e0f6c6176be3b8060e7
   script:
-  - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
+    - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
+
+- name: minio-server
+  version: 2021-10-08T23-58-24Z
+  summary: High Performance, Kubernetes Native Object Storage
+  description: |
+    Standalone MinIO servers are best suited for early development and evaluation.
+    Certain features such as versioning, object locking,
+    and bucket replication require distributed deploying MinIO with Erasure Coding.
+  fetch:
+    url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
+    sha256: 6036a2c121c4727b7db89b7419fcb069b00b853c240029b9caf8ddb140c91d76
+  script:
+    - install -m 755 minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
 - name: k9s
   version: 0.24.15
@@ -150,17 +164,103 @@
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
     sha256: 0590c32c20cd22416f2a06fad9155257c156e32c60e8757bf96d5a28cb1720dd
   script:
-  - install -m 755 k9s {{src}}/usr/bin/k9s
+    - install -m 755 k9s {{src}}/usr/bin/k9s
 
 - name: kube-score
   version: 1.12.0
-  summary: Kubernetes object analysis with recommendations for improved reliability
+  summary:
+    Kubernetes object analysis with recommendations for improved reliability
     and security.
   description: |
-    kube-score is a tool that performs static code analysis of your Kubernetes object definitions.
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
   fetch:
     url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
     sha256: 177d2b4e9f7ce3d82411560ac8289719684f1f73001c60be4b60c5b197120a09
   script:
-  - install -m 755 kube-score {{src}}/usr/bin/kube-score
-  - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+    - install -m 755 kube-score {{src}}/usr/bin/kube-score
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: scw
+  version: 2.3.1
+  summary: Command Line Interface for Scaleway
+  description: |
+    Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
+    directly from your terminal.
+  fetch:
+    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
+    sha256: 906fb4405ead81b38cba258f15da36a37f11d847c1504b588b867b6b359591ae
+  script:
+    - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
+
+- name: linkerd
+  version: 21.10.1
+  summary: Ultralight, security-first service mesh for Kubernetes.
+  description: |
+    Linkerd is an ultralight, security-first service mesh for Kubernetes.
+    Linkerd adds critical security, observability, and reliability features
+    to your Kubernetes stack with no code change required.
+  fetch:
+    url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
+    sha256: 9e7d419c0a0224e97e50693b3a1475459bb042baa754254e03974f1b3f8df54b
+  script:
+    - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
+
+- name: argocd
+  version: 2.1.3
+  summary: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+  description: |
+    Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+  fetch:
+    url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
+    sha256: 480ff90d918ddd16b36492c003ba8cfd6842be32e14ed0a24809ffecdbd8922a
+  script:
+    - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
+
+- name: flux
+  version: 0.18.0
+  summary: Open and extensible continuous delivery solution for Kubernetes.
+  description: |
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch:
+    url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
+    sha256: 8ac80a2f6d0e80248190365217bf3fcf09a81debaa85850fbf2cd4bb5ddaf54d
+  script:
+    - install -m 755 flux {{src}}/usr/bin/flux
+
+- name: k3d
+  version: 5.0.0
+  summary: Little helper to run Rancher Lab's k3s in Docker
+  description: |
+    Little helper to run Rancher Lab's k3s in Docker
+  fetch:
+    url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
+    sha256: 6744bfd5cea611dc3f2a24da7b25a28fd0dd4b78c486193c238d55619d7b7c43
+  script:
+    - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
+
+- name: rancher
+  version: 2.4.13
+  summary: Rancher Command Line Interface
+  description: |
+    The Rancher Command Line Interface (CLI) is a unified tool for interacting with your Rancher Server.
+  fetch:
+    url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
+    sha256: d515fd0014f316e219801707a7c28ce42fdc9608e8580072afd4c806b4cb20b9
+  script:
+    - install -m 755 rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
+
+- name: kind
+  version: 0.11.1
+  summary: Kubernetes IN Docker - local clusters for testing Kubernetes
+  description: |
+    kind is a tool for running local Kubernetes clusters using Docker container "nodes".
+    kind was primarily designed for testing Kubernetes itself,
+    but may be used for local development or CI.
+  fetch:
+    url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-amd64
+    sha256: 949f81b3c30ca03a3d4effdecda04f100fa3edc07a28b19400f72ede7c5f0491
+  script:
+    - install -m 755 kind-linux-amd64 {{src}}/usr/bin/kind
