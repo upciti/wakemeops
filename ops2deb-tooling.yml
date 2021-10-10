@@ -1,0 +1,130 @@
+- name: bat
+  version: 0.18.3
+  summary: A cat(1) clone with wings
+  description: |
+    A cat(1) clone with wings.
+  fetch:
+    url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: 44735f2a98fdf8342f343516b6a0f6e783ee1acb918e850be2096bdb805519c1
+  script:
+    - install -m 755 bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
+
+- name: exa
+  version: 0.10.1
+  summary: A modern replacement for ls
+  description: |
+    exa is a modern replacement for ls.
+  fetch:
+    url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
+    sha256: a65a87bd545e969979ae9388f6333167f041a1f09fa9d60b32fd3072348ff6ce
+  script:
+    - install -m 755 bin/exa {{src}}/usr/bin/exa
+
+- name: fd
+  version: 8.2.1
+  summary: A simple, fast and user-friendly alternative to 'find'
+  description: |
+    fd is a program to find entries in your filesystem.
+    It is a simple, fast and user-friendly alternative to find.
+    While it does not aim to support all of find's powerful functionality,
+    it provides sensible (opinionated) defaults for a majority of use cases.
+  fetch:
+    url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: c4ff6094d787f63a04b745398924469c8558d3a8b2b0ffee77f168436e1244f3
+  script:
+    - install -m 755 fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
+
+- name: dust
+  version: 0.7.5
+  summary: A more intuitive version of du in rust
+  description: |
+    du + rust = dust. Like du but more intuitive.
+  fetch:
+    url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: 1e74434d3af518e0a8bc909fe63f037372c93f1e513fe45a23e47f3a24e945d9
+  script:
+    - install -m 755 dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
+
+- name: ripgrep
+  version: 13.0.0
+  summary: ripgrep (rg) recursively searches directories for a regex pattern while respecting your gitignore
+  description: |
+    ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
+    By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files.
+    ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release.
+    ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
+  fetch:
+    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
+  script:
+    - install -m 755 ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
+
+- name: choose
+  version: 1.3.3
+  summary: A human-friendly and fast alternative to cut and (sometimes) awk
+  description: |
+    This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
+  fetch:
+    url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
+    sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
+  script:
+    - install -m 755 choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
+
+- name: gping
+  version: 1.2.5
+  summary: Ping, but with a graph
+  description: |
+    Ping, but with a graph.
+  fetch:
+    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
+    sha256: b4ac0ad5b88db69a16839def96d330925e28910923bbecc4d71de822ad80883f
+  script:
+    - install -m 755 gping {{src}}/usr/bin/gping
+
+- name: procs
+  version: 0.11.9
+  summary: procs is a replacement for ps written in Rust
+  description: |
+    A modern replacement for ps written in Rust
+  fetch:
+    url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
+    sha256: 781990e9cd33948973cc9271ddeac842a4249a9531895a8eaca63603d3b88a38
+  script:
+    - install -m 755 procs {{src}}/usr/bin/procs
+
+- name: curlie
+  version: 1.6.0
+  summary: The power of curl, the ease of use of httpie.
+  description: |
+    If you like the interface of HTTPie but miss the features of curl, curlie is what you are searching for.
+    Curlie is a frontend to curl that adds the ease of use of httpie,
+    without compromising on features and performance.
+    All curl options are exposed with syntax sugar and output formatting inspired from httpie.
+  fetch:
+    url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
+    sha256: 335e01a904b0bc6268e29559646028a3bebc4217e588e339433d96a008f284c7
+  script:
+    - install -m 755 curlie {{src}}/usr/bin/curlie
+
+- name: xh
+  version: 0.13.0
+  summary: Friendly and fast tool for sending HTTP requests
+  description: |
+    xh is a friendly and fast tool for sending HTTP requests.
+    It reimplements as much as possible of HTTPie's excellent design, with a focus on improved performance.
+  fetch:
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: c39818f413d09babcebdb28af35113aa22364fb143830e2bde51a00fd7ae53c5
+  script:
+    - install -m 755 xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
+
+- name: dog
+  version: 0.1.0
+  summary: A command-line DNS client.
+  description: |
+    A user-friendly command-line DNS client. dig on steroids
+  fetch:
+    url: https://github.com/ogham/dog/releases/download/v{{version}}/dog-v{{version}}-x86_64-unknown-linux-gnu.zip
+    sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
+  script:
+    - install -m 755 bin/dog {{src}}/usr/bin/dog

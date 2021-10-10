@@ -58,6 +58,7 @@ stages:
     matrix:
       - repo: devops
       - repo: secops
+      - repo: tooling
 
 test_build:
   extends: .builder
@@ -114,6 +115,7 @@ publish:
     matrix:
       - repo: devops
       - repo: secops
+      - repo: tooling
 
 pages:
   image: $WAKEMEBOT_IMAGE
