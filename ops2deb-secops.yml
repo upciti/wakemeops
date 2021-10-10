@@ -10,7 +10,7 @@
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
     sha256: ceb0919c849c21627ca1cae060f361b6fb97dcf04b17d1d7d1dc9953fcd8e329
   script:
-    - install -m 755 vault {{src}}/usr/bin/vault
+  - install -m 755 vault {{src}}/usr/bin/vault
 
 - name: trivy
   version: 0.20.0
@@ -22,4 +22,4 @@
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
     sha256: d57b9fb316cc7e3f3187042d18d8754d8abe97b8fb3b9f7e2830b38475ab66c7
   script:
-    - install -m 755 trivy {{src}}/usr/bin/trivy
+  - install -m 755 trivy {{src}}/usr/bin/trivy

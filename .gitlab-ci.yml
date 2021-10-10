@@ -8,9 +8,9 @@ variables:
   WAKEMEBOT_IMAGE: "upciti/wakemebot:main"
 
 stages:
+  - update
   - build
   - test
-  - update
   - publish
   - pages
 
@@ -28,7 +28,7 @@ stages:
   - eval $(ssh-agent -s)
   - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
   - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
+  - chmod 700 ~/.ssh || echo
   - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
 
@@ -41,7 +41,7 @@ stages:
   - git remote set-url --push origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
   - branch="feature/update-packages-$(date '+%Y%m%d%H%M%S')"
   - git checkout -b ${branch}
-  - git add ./ops2deb.yml
+  - git add ops2deb-*.yml
   - >
     git commit -m "feature(bot): update packages"
   - git push -o merge_request.create -o merge_request.target=${CI_DEFAULT_BRANCH} -o merge_request.merge_when_pipeline_succeeds --set-upstream origin ${branch}
@@ -99,25 +99,6 @@ test_package:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-update:
-  image: $WAKEMEBOT_IMAGE
-  stage: update
-  tags: ["wakemeops"]
-  before_script:
-    - *enable_ssh
-    - *git_configure
-  script:
-    - *ops2deb_update
-    - git update-index -q --really-refresh
-    - if git diff-index HEAD --quiet; then exit 0; fi # exit if no changes
-    - *git_commit_push
-  variables:
-    GIT_STRATEGY: clone
-    GITLAB_USER_NAME: "wakemebot"
-    GITLAB_USER_EMAIL: "wakemebot@upciti.com"
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-
 publish:
   image: $WAKEMEBOT_IMAGE
   stage: publish
@@ -149,3 +130,22 @@ pages:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+update:
+  image: $WAKEMEBOT_IMAGE
+  stage: update
+  tags: ["wakemeops"]
+  before_script:
+    - *enable_ssh
+    - *git_configure
+  script:
+    - *ops2deb_update
+    - git update-index -q --really-refresh
+    - if git diff-index HEAD --quiet; then exit 0; fi # exit if no changes
+    - *git_commit_push
+  variables:
+    GIT_STRATEGY: clone
+    GITLAB_USER_NAME: "wakemebot"
+    GITLAB_USER_EMAIL: "wakemebot@upciti.com"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
