@@ -15,11 +15,13 @@ using [ops2deb](https://github.com/upciti/ops2deb).
 
 ### Configuration
 
-TODO
+```shell
+curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | sudo bash -s devops secops terminal
+```
 
 ### Install package
 
 ```console
-apt-get update
-apt-get install bat
+sudo apt-get update
+sudo apt-get install bat
 ```

@@ -1,7 +1,6 @@
 workflow:
   rules:
     - if: $CI_MERGE_REQUEST_IID
-    - if: $CI_COMMIT_TAG
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 variables:
@@ -11,6 +10,7 @@ stages:
   - update
   - build
   - test
+  - push
   - publish
   - pages
 
@@ -46,9 +46,10 @@ stages:
     git commit -m "feature(bot): update packages"
   - git push -o merge_request.create -o merge_request.target=${CI_DEFAULT_BRANCH} -o merge_request.merge_when_pipeline_succeeds --set-upstream origin ${branch}
 
-.builder:
+build:
   image: $WAKEMEBOT_IMAGE
   stage: build
+  tags: ["wakemebot"]
   script:
     - *ops2deb_build
   variables:
@@ -59,17 +60,6 @@ stages:
       - repo: devops
       - repo: secops
       - repo: terminal
-
-test_build:
-  extends: .builder
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: never
-    - if: "$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH"
-
-build:
-  extends: .builder
-  tags: ["wakemebot"]
   artifacts:
     paths:
       - build/**/*deb
@@ -77,12 +67,14 @@ build:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - when: on_success
 
 test_package:
   stage: test
   image: ${DISTRO}:${VERSION}
   before_script:
+    - apt-get update && apt-get install -yq --no-install-recommends curl gnupg2 ca-certificates
+    - curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | bash
     - export PACKAGE_PATH=$(find ./build -name "*.deb")
     - dpkg -i $PACKAGE_PATH || true
     - apt-get update -yq && apt-get install -fy
@@ -98,12 +90,11 @@ test_package:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: never
+    - when: on_success
 
-publish:
+push:
   image: $WAKEMEBOT_IMAGE
-  stage: publish
+  stage: push
   tags: ["wakemebot"]
   script:
     - if [ -z "$(ls -A build/${repo}/)" ]; then exit 0; fi # if no build
@@ -117,6 +108,18 @@ publish:
       - repo: devops
       - repo: secops
       - repo: terminal
+
+publish:
+  image: $WAKEMEBOT_IMAGE
+  stage: publish
+  tags: ["wakemebot"]
+  script:
+    - >
+      curl -v -f -s -XPUT --unix-socket aptly.sock -H 'Content-Type: application/json' --data "{\"ForceOverwrite\":true, \"Signing\":{\"GpgKey\":\"wakemebot-dev@upciti.com\", \"Batch\":true}}" "http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 pages:
   image: $WAKEMEBOT_IMAGE
