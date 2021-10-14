@@ -27,7 +27,7 @@
   - mv kustomize {{src}}/usr/bin/
 
 - name: helm
-  version: 3.7.0
+  version: 3.7.1
   depends:
   - kubectl
   summary: The Kubernetes package manager
@@ -36,7 +36,7 @@
     Charts are packages of pre-configured Kubernetes resources.
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-amd64.tar.gz
-    sha256: 096e30f54c3ccdabe30a8093f8e128dba76bb67af697b85db6ed0453a2701bf9
+    sha256: 6cd6cad4b97e10c33c978ff3ac97bb42b68f79766f1d2284cfd62ec04cd177f4
   script:
   - mv linux-amd64/helm {{src}}/usr/bin/
 
@@ -115,7 +115,7 @@
   - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: terraform
-  version: 1.0.8
+  version: 1.0.9
   summary: Terraform is a tool for building, changing, and versioning infrastructure.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely
@@ -123,7 +123,7 @@
     well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: a73459d406067ce40a46f026dce610740d368c3b4a3d96591b10c7a577984c2e
+    sha256: f06ac64c6a14ed6a923d255788e4a5daefa2b50e35f32d7a3b5a2f9a5a91e255
   script:
   - install -m 755 terraform {{src}}/usr/bin/terraform
 
@@ -229,13 +229,13 @@
   - install -m 755 flux {{src}}/usr/bin/flux
 
 - name: k3d
-  version: 5.0.0
+  version: 5.0.1
   summary: Little helper to run Rancher Lab's k3s in Docker
   description: |
     Little helper to run Rancher Lab's k3s in Docker
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
-    sha256: 6744bfd5cea611dc3f2a24da7b25a28fd0dd4b78c486193c238d55619d7b7c43
+    sha256: 84a45821b16df2fb60ab9144bad3d0e67805a2bfee17bee51b09bc1e75c0fc10
   script:
   - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
 
