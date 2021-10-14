@@ -58,7 +58,7 @@ stages:
     matrix:
       - repo: devops
       - repo: secops
-      - repo: tooling
+      - repo: terminal
 
 test_build:
   extends: .builder
@@ -69,7 +69,7 @@ test_build:
 
 build:
   extends: .builder
-  tags: ["wakemeops"]
+  tags: ["wakemebot"]
   artifacts:
     paths:
       - build/**/*deb
@@ -99,11 +99,12 @@ test_package:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: never
 
 publish:
   image: $WAKEMEBOT_IMAGE
   stage: publish
-  tags: ["wakemeops"]
+  tags: ["wakemebot"]
   script:
     - if [ -z "$(ls -A build/${repo}/)" ]; then exit 0; fi # if no build
     - wakemebot aptly push wakemeops-${repo} build/${repo}/*.deb --server /host/data/aptly/aptly.sock
@@ -115,12 +116,12 @@ publish:
     matrix:
       - repo: devops
       - repo: secops
-      - repo: tooling
+      - repo: terminal
 
 pages:
   image: $WAKEMEBOT_IMAGE
   stage: pages
-  tags: ["wakemeops"]
+  tags: ["wakemebot"]
   before_script:
     - mkdir public
   script:
@@ -136,7 +137,7 @@ pages:
 update:
   image: $WAKEMEBOT_IMAGE
   stage: update
-  tags: ["wakemeops"]
+  tags: ["wakemebot"]
   before_script:
     - *enable_ssh
     - *git_configure
