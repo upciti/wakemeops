@@ -41,14 +41,14 @@
   - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: istioctl
-  version: 1.11.3
+  version: 1.11.4
   depends:
   - kubectl
   summary: Istio service mesh CLI
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: 8403bb13bc0a9fb8a1fa1da70d5c38e4537c541fddf935f429affc576558cb81
+    sha256: 32707044bff538b8e827eae21dd3694dac78d429d9aeeb9ee606882e3b938499
   script:
   - install -d {{src}}/opt/istio
   - mv * {{src}}/opt/istio/
@@ -192,7 +192,7 @@
   - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
 
 - name: linkerd
-  version: 21.10.1
+  version: 21.10.2
   summary: Ultralight, security-first service mesh for Kubernetes.
   description: |
     Linkerd is an ultralight, security-first service mesh for Kubernetes.
@@ -200,7 +200,7 @@
     to your Kubernetes stack with no code change required.
   fetch:
     url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
-    sha256: 9e7d419c0a0224e97e50693b3a1475459bb042baa754254e03974f1b3f8df54b
+    sha256: ad3fe692306711ba31f35baebfe6de34cd38338fd42ef8d705eef7cce846df05
   script:
   - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
