@@ -72,13 +72,13 @@
   - install -m 755 choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
 
 - name: gping
-  version: 1.2.5
+  version: 1.2.6
   summary: Ping, but with a graph
   description: |
     Ping, but with a graph.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
-    sha256: b4ac0ad5b88db69a16839def96d330925e28910923bbecc4d71de822ad80883f
+    sha256: 01b461e71c80090c78529849e391e6552ad2d56bcbd704e02a4c4d5d225b9b34
   script:
   - install -m 755 gping {{src}}/usr/bin/gping
 
