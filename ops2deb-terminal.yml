@@ -83,13 +83,13 @@
   - install -m 755 gping {{src}}/usr/bin/gping
 
 - name: procs
-  version: 0.11.9
+  version: 0.11.10
   summary: procs is a replacement for ps written in Rust
   description: |
     A modern replacement for ps written in Rust
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
-    sha256: 781990e9cd33948973cc9271ddeac842a4249a9531895a8eaca63603d3b88a38
+    sha256: 6f4464407aa987c57456f7a6320bae3efb5c46b49578ee5ec0018f83a9ff1fb6
   script:
   - install -m 755 procs {{src}}/usr/bin/procs
 
