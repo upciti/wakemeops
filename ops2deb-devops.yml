@@ -205,13 +205,13 @@
   - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
 - name: argocd
-  version: 2.1.4
+  version: 2.1.5
   summary: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   description: |
     Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: ac69f32d9cccdb67eea85d2a235d95fefe7ed5d42173ff053690cc90bd633302
+    sha256: 0cbb8786c3bb2fc7206aa00f1dd99746ed1003ba187eacecf79fee885d37ff3b
   script:
   - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
