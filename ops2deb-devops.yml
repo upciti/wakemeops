@@ -192,7 +192,7 @@
   - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
 
 - name: linkerd
-  version: 21.10.2
+  version: 21.10.3
   summary: Ultralight, security-first service mesh for Kubernetes.
   description: |
     Linkerd is an ultralight, security-first service mesh for Kubernetes.
@@ -200,7 +200,7 @@
     to your Kubernetes stack with no code change required.
   fetch:
     url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
-    sha256: ad3fe692306711ba31f35baebfe6de34cd38338fd42ef8d705eef7cce846df05
+    sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
   script:
   - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
