@@ -1,11 +1,11 @@
 - name: kubectl
-  version: 1.22.2
+  version: 1.22.3
   summary: Command line client for controlling a Kubernetes cluster
   description: |
     kubectl is a command line client for running commands against Kubernetes clusters.
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
-    sha256: aeca0018958c1cae0bf2f36f566315e52f87bdab38b440df349cd091e9f13f36
+    sha256: 0751808ca8d7daba56bf76b08848ef5df6b887e9d7e8a9030dd3711080e37b54
   script:
   - mv kubectl {{src}}/usr/bin/
 
@@ -229,13 +229,13 @@
   - install -m 755 flux {{src}}/usr/bin/flux
 
 - name: k3d
-  version: 5.0.1
+  version: 5.0.2
   summary: Little helper to run Rancher Lab's k3s in Docker
   description: |
     Little helper to run Rancher Lab's k3s in Docker
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
-    sha256: 84a45821b16df2fb60ab9144bad3d0e67805a2bfee17bee51b09bc1e75c0fc10
+    sha256: 128b25bb040714b2e7437e009c2d636f93c521a43a54dbb45c43a7a8729ab3e9
   script:
   - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
 
