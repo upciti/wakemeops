@@ -273,3 +273,14 @@
     sha256: af0d748ac29da9f7d43d5e7675996ab331112024fa06d65e82996925f5882658
   script:
   - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
+
+- name: devspace
+  version: 5.16.2
+  summary: DevSpace - The Fastest Developer Tool for Kubernetes
+  description: |
+    Automate your deployment workflow with DevSpace and develop software directly inside Kubernetes.
+  fetch:
+    url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
+    sha256: 1fe53f7146cf635cc8765911716e878a053b02fc66344ab43342a8df99d23ffb
+  script:
+  - install -m 755 devspace-linux-amd64 {{src}}/usr/bin/devspace
