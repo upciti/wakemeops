@@ -22,7 +22,7 @@ stages:
   - ops2deb build
 
 .ops2deb_update: &ops2deb_update
-  - for repo in $(ls ops2deb-* | cut -f2 -d "-" | cut -f1 -d "."); do OPS2DEB_CONFIG="ops2deb-${repo}.yml" ops2deb update; done
+  - for repo in $(ls ops2deb-* | cut -f2 -d "-" | cut -f1 -d "."); do OPS2DEB_OUTPUT_FILE=ops2deb-${repo}.log OPS2DEB_CONFIG="ops2deb-${repo}.yml" ops2deb update; done
 
 .enable_ssh: &enable_ssh
   - eval $(ssh-agent -s)
@@ -43,7 +43,9 @@ stages:
   - git checkout -b ${branch}
   - git add ops2deb-*.yml
   - >
-    git commit -m "feature(bot): update packages"
+    echo "feature(bot): update packages\n" > message.log
+  - cat ops2deb-*.log >> message.log || true
+  - git commit -m "$(cat message.log)"
   - git push -o merge_request.create -o merge_request.target=${CI_DEFAULT_BRANCH} -o merge_request.merge_when_pipeline_succeeds --set-upstream origin ${branch}
 
 build:
