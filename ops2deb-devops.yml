@@ -115,7 +115,7 @@
   - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: terraform
-  version: 1.0.9
+  version: 1.0.10
   summary: Terraform is a tool for building, changing, and versioning infrastructure.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely
@@ -123,7 +123,7 @@
     well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: f06ac64c6a14ed6a923d255788e4a5daefa2b50e35f32d7a3b5a2f9a5a91e255
+    sha256: a221682fcc9cbd7fde22f305ead99b3ad49d8303f152e118edda086a2807716d
   script:
   - install -m 755 terraform {{src}}/usr/bin/terraform
 
@@ -166,7 +166,7 @@
   - install -m 755 k9s {{src}}/usr/bin/k9s
 
 - name: kube-score
-  version: 1.12.0
+  version: 1.13.0
   summary: Kubernetes object analysis with recommendations for improved reliability
     and security.
   description: |
@@ -174,20 +174,20 @@
     your Kubernetes object definitions.
   fetch:
     url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
-    sha256: 177d2b4e9f7ce3d82411560ac8289719684f1f73001c60be4b60c5b197120a09
+    sha256: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
   script:
   - install -m 755 kube-score {{src}}/usr/bin/kube-score
   - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: scw
-  version: 2.3.1
+  version: 2.4.0
   summary: Command Line Interface for Scaleway
   description: |
     Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
     directly from your terminal.
   fetch:
     url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
-    sha256: 906fb4405ead81b38cba258f15da36a37f11d847c1504b588b867b6b359591ae
+    sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
   script:
   - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
 
@@ -205,18 +205,18 @@
   - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
 - name: argocd
-  version: 2.1.5
+  version: 2.1.6
   summary: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   description: |
     Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: 0cbb8786c3bb2fc7206aa00f1dd99746ed1003ba187eacecf79fee885d37ff3b
+    sha256: b608fc6a7c1fe970dda3543ca50a1f67caf125fffc4ea38ab6896c30a1498cb4
   script:
   - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
 - name: flux
-  version: 0.19.1
+  version: 0.20.0
   summary: Open and extensible continuous delivery solution for Kubernetes.
   description: |
     Flux is a tool for keeping Kubernetes clusters in sync with sources
@@ -224,7 +224,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 91b65b1c510368a934c427dab0066db240bafa303c7ce2ce18ed4e347ea3e854
+    sha256: e2b19ea4b313179dd22a2309ea56f1b89fff21dc654d041d04092dcfed17940f
   script:
   - install -m 755 flux {{src}}/usr/bin/flux
 
