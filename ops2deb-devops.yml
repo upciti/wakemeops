@@ -165,20 +165,6 @@
   script:
   - install -m 755 k9s {{src}}/usr/bin/k9s
 
-- name: kube-score
-  version: 1.13.0
-  summary: Kubernetes object analysis with recommendations for improved reliability
-    and security.
-  description: |
-    kube-score is a tool that performs static code analysis of
-    your Kubernetes object definitions.
-  fetch:
-    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
-    sha256: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
-  script:
-  - install -m 755 kube-score {{src}}/usr/bin/kube-score
-  - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
-
 - name: scw
   version: 2.4.0
   summary: Command Line Interface for Scaleway
@@ -284,3 +270,29 @@
     sha256: 1fe53f7146cf635cc8765911716e878a053b02fc66344ab43342a8df99d23ffb
   script:
   - install -m 755 devspace-linux-amd64 {{src}}/usr/bin/devspace
+
+- name: kube-score
+  version: 1.13.0
+  summary: Kubernetes object analysis with recommendations for improved reliability
+    and security.
+  description: |
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  fetch:
+    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
+    sha256: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
+  script:
+  - install -m 755 kube-score {{src}}/usr/bin/kube-score
+  - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: krew
+  version: 0.4.2
+  summary: Find and install kubectl plugins 
+  description: |
+    Krew is the package manager for kubectl plugins.
+  fetch:
+    url: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_amd64.tar.gz
+    sha256: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
+  script:
+  - install -m 755 krew-linux_amd64 {{src}}/usr/bin/krew
+  - ln -s /usr/bin/krew {{src}}/usr/bin/kubectl-krew
