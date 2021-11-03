@@ -273,6 +273,8 @@
 
 - name: kube-score
   version: 1.13.0
+  depends:
+  - kubectl
   summary: Kubernetes object analysis with recommendations for improved reliability
     and security.
   description: |
@@ -287,7 +289,9 @@
 
 - name: krew
   version: 0.4.2
-  summary: Find and install kubectl plugins 
+  depends:
+  - kubectl
+  summary: Find and install kubectl plugins
   description: |
     Krew is the package manager for kubectl plugins.
   fetch:
@@ -296,3 +300,45 @@
   script:
   - install -m 755 krew-linux_amd64 {{src}}/usr/bin/krew
   - ln -s /usr/bin/krew {{src}}/usr/bin/kubectl-krew
+  - kubectl-krew update
+
+- name: kubectl-neat
+  version: 2.0.3
+  depends:
+  - kubectl
+  summary:  Clean up Kubernetes yaml and json output to make it readable 
+  description: |
+    Remove clutter from Kubernetes manifests to make them more readable.
+  fetch:
+    url: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_amd64.tar.gz
+    sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
+  script:
+  - install -m 755 kubectl-neat {{src}}/usr/bin/kubectl-neat
+
+- name: kubectx
+  version: 0.9.4
+  depends:
+  - kubectl
+  summary: kubectx helps you switch between clusters
+  description: |
+    Faster way to switch between clusters in kubectl.
+  fetch:
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_x86_64.tar.gz
+    sha256: db5a48e85ff4d8c6fa947e3021e11ba4376f9588dd5fa779a80ed5c18287db22
+  script:
+  - install -m 755 kubectx {{src}}/usr/bin/kubectx
+  - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
+
+- name: kubens
+  version: 0.9.4
+  depends:
+  - kubectl
+  summary: kubens helps you switch between namespaces
+  description: |
+    Faster way to switch between namespaces in kubectl.
+  fetch:
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubens_v{{version}}_linux_x86_64.tar.gz
+    sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
+  script:
+  - install -m 755 kubens {{src}}/usr/bin/kubens
+  - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
