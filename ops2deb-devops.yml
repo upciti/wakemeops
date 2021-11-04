@@ -66,7 +66,7 @@
   - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
 
 - name: helmfile
-  version: 0.141.0
+  version: 0.142.0
   depends:
   - kubectl
   - helm
@@ -79,7 +79,7 @@
     - Periodically sync to avoid skew in environments.
   fetch:
     url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
-    sha256: 19f5ee251f440e50388709898b8abc725974f98b1aa66331b9916f89074fad38
+    sha256: ec01b884cbb9d072f4a6784b33a29f3311248e85e714ebacabba85a79a3ba3db
   script:
   - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
@@ -306,7 +306,7 @@
   version: 2.0.3
   depends:
   - kubectl
-  summary:  Clean up Kubernetes yaml and json output to make it readable 
+  summary: Clean up Kubernetes yaml and json output to make it readable
   description: |
     Remove clutter from Kubernetes manifests to make them more readable.
   fetch:
