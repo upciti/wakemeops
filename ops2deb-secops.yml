@@ -1,5 +1,5 @@
 - name: vault
-  version: 1.8.4
+  version: 1.8.5
   summary: Vault is a tool for securely accessing secrets
   description: |
     Vault is a tool for securely accessing secrets. A secret is anything that
@@ -8,7 +8,7 @@
     while providing tight access control and recording a detailed audit log.
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
-    sha256: ceb0919c849c21627ca1cae060f361b6fb97dcf04b17d1d7d1dc9953fcd8e329
+    sha256: 97d7ac9145ffdf256ab91045a4857a640ecaa7c56bbd66b61fb70990620f3d33
   script:
   - install -m 755 vault {{src}}/usr/bin/vault
 

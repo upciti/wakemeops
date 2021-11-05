@@ -202,7 +202,7 @@
   - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
 - name: flux
-  version: 0.21.0
+  version: 0.21.1
   summary: Open and extensible continuous delivery solution for Kubernetes.
   description: |
     Flux is a tool for keeping Kubernetes clusters in sync with sources
@@ -210,7 +210,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 3fd32882f08e009f58d44a594941752f0a7e1c56adff023b393facb315c0565a
+    sha256: b54cb7b65df89f9c0255bf75552a144667267a6928f9557c39178238cf13c243
   script:
   - install -m 755 flux {{src}}/usr/bin/flux
 
