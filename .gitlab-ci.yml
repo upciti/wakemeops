@@ -43,7 +43,7 @@ stages:
   - git checkout -b ${branch}
   - git add ops2deb-*.yml
   - >
-    echo "feature(bot): update packages\n" > message.log
+    echo -e "feature(bot): update packages\n" > message.log
   - cat ops2deb-*.log >> message.log || true
   - git commit -m "$(cat message.log)"
   - git push -o merge_request.create -o merge_request.target=${CI_DEFAULT_BRANCH} -o merge_request.merge_when_pipeline_succeeds --set-upstream origin ${branch}
