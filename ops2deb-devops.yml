@@ -84,7 +84,7 @@
   - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
 - name: minikube
-  version: 1.23.2
+  version: 1.24.0
   summary: Quickly set up a local Kubernetes cluster
   description: |
     Focus on helping application developers and new Kubernetes users.
@@ -97,7 +97,7 @@
     Addons for easily installed Kubernetes applications
   fetch:
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
-    sha256: 752d91414793b6a88b309c806b65841ffa62a3bf07383146bd54afbf15de80b4
+    sha256: 3bc218476cf205acf11b078d45210a4882e136d24a3cbb7d8d645408e423b8fe
   script:
   - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
 
@@ -250,13 +250,13 @@
   - install -m 755 kind-linux-amd64 {{src}}/usr/bin/kind
 
 - name: logcli
-  version: 2.3.0
+  version: 2.4.0
   summary: LogCLI is the command-line interface to Loki
   description: |
     It facilitates running LogQL queries against a Loki instance.
   fetch:
     url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-    sha256: af0d748ac29da9f7d43d5e7675996ab331112024fa06d65e82996925f5882658
+    sha256: 8970b2f9968be6bea81e4e9a9ba9bc46cfbabf0d4b1b70ea038b4f2d26bc2e5e
   script:
   - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
 
