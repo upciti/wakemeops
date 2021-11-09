@@ -250,13 +250,13 @@
   - install -m 755 kind-linux-amd64 {{src}}/usr/bin/kind
 
 - name: logcli
-  version: 2.4.0
+  version: 2.4.1
   summary: LogCLI is the command-line interface to Loki
   description: |
     It facilitates running LogQL queries against a Loki instance.
   fetch:
     url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-    sha256: 8970b2f9968be6bea81e4e9a9ba9bc46cfbabf0d4b1b70ea038b4f2d26bc2e5e
+    sha256: 021d7cc5922fc43e480ac727538c9b1c64a2aa4f7ba3541b0b15a8adbd18a7c6
   script:
   - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
 
