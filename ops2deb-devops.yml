@@ -115,7 +115,7 @@
   - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: terraform
-  version: 1.0.10
+  version: 1.0.11
   summary: Terraform is a tool for building, changing, and versioning infrastructure.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely
@@ -123,7 +123,7 @@
     well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: a221682fcc9cbd7fde22f305ead99b3ad49d8303f152e118edda086a2807716d
+    sha256: eeb46091a42dc303c3a3c300640c7774ab25cbee5083dafa5fd83b54c8aca664
   script:
   - install -m 755 terraform {{src}}/usr/bin/terraform
 
@@ -202,7 +202,7 @@
   - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
 - name: flux
-  version: 0.21.1
+  version: 0.22.0
   summary: Open and extensible continuous delivery solution for Kubernetes.
   description: |
     Flux is a tool for keeping Kubernetes clusters in sync with sources
@@ -210,7 +210,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: b54cb7b65df89f9c0255bf75552a144667267a6928f9557c39178238cf13c243
+    sha256: ab666f7bc993299495d03a9196600b3ef810db6616e054b6e596620adbf9fa4a
   script:
   - install -m 755 flux {{src}}/usr/bin/flux
 
