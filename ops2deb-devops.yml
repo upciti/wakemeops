@@ -202,7 +202,7 @@
   - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
 - name: flux
-  version: 0.22.0
+  version: 0.22.1
   summary: Open and extensible continuous delivery solution for Kubernetes.
   description: |
     Flux is a tool for keeping Kubernetes clusters in sync with sources
@@ -210,7 +210,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: ab666f7bc993299495d03a9196600b3ef810db6616e054b6e596620adbf9fa4a
+    sha256: be16214755423551c31e4b8ed26093349bb8f80f112e7ced660364108c62232a
   script:
   - install -m 755 flux {{src}}/usr/bin/flux
 
@@ -261,13 +261,13 @@
   - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
 
 - name: devspace
-  version: 5.16.2
+  version: 5.17.0
   summary: DevSpace - The Fastest Developer Tool for Kubernetes
   description: |
     Automate your deployment workflow with DevSpace and develop software directly inside Kubernetes.
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
-    sha256: 1fe53f7146cf635cc8765911716e878a053b02fc66344ab43342a8df99d23ffb
+    sha256: 5683b3217d54351a2fd033c27c61129aff54f474a6b2775b0f476c82fb908bf3
   script:
   - install -m 755 devspace-linux-amd64 {{src}}/usr/bin/devspace
 
