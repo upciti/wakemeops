@@ -14,7 +14,6 @@ stages:
   - publish
   - pages
 
-
 # Templates
 .default:
   image: $WAKEMEBOT_IMAGE
@@ -49,7 +48,6 @@ stages:
       - DISTRO: debian
         VERSION:
           ["bookworm-slim", "bullseye-slim", "buster-slim", "stretch-slim"]
-
 
 # Anchors
 .enable_ssh: &enable_ssh
