@@ -12,7 +12,6 @@ stages:
   - test
   - push
   - publish
-  - pages
 
 # Templates
 .default:
@@ -85,8 +84,7 @@ stages:
 
 .ops2deb_build: &ops2deb_build
   - mkdir -p ${OPS2DEB_WORK_DIR}
-  - (curl -L ${CI_PAGES_URL}/repo-state-${repo}.json | jq || echo "[]") > repo-state-${repo}.json
-  - wakemebot generate ops2deb-${repo}.yml repo-state-${repo}.json
+  - ops2deb generate
   - if [ -z "$(ls -A $OPS2DEB_WORK_DIR)" ]; then exit 0; fi # if no changes
   - ops2deb build
 
@@ -132,6 +130,7 @@ generate_debs:
   variables:
     OPS2DEB_WORK_DIR: "build/${repo}"
     OPS2DEB_CONFIG: "ops2deb-${repo}.yml"
+    OPS2DEB_REPOSITORY: "http://deb.wakemeops.com/ stable"
   artifacts:
     paths:
       - build/**/*deb
@@ -175,17 +174,3 @@ publish_s3:
             {\"GpgKey\":\"wakemebot-dev@upciti.com\", \"Batch\":true}}" \
         "http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
 
-update_pages:
-  stage: pages
-  extends: .no_schedule
-  before_script:
-    - mkdir public
-  script:
-    - >
-      for repo in $(ls ops2deb-* | cut -f2 -d "-" | cut -f1 -d "."); do \
-        wakemebot aptly export wakemeops-${repo} --server /host/data/aptly/aptly.sock \
-        > ./public/repo-state-${repo}.json;\
-      done
-  artifacts:
-    paths:
-      - public
