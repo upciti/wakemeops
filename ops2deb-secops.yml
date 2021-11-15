@@ -13,13 +13,13 @@
   - install -m 755 vault {{src}}/usr/bin/vault
 
 - name: trivy
-  version: 0.20.2
+  version: 0.21.0
   summary: Scanner for vulnerabilities
   description: |
     Scanner for vulnerabilities in container images,
     file systems, and Git repositories, as well as for configuration issues
   fetch:
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
-    sha256: 38a6de48e21a34e0fa0d2cf63439c0afcbbae0e78fb3feada7a84a9cf6e7f60c
+    sha256: 5503390316751a1a932e334ef14ec057f4976addec32ff0145273c7c06a160bc
   script:
   - install -m 755 trivy {{src}}/usr/bin/trivy
