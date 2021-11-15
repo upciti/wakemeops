@@ -30,6 +30,13 @@ stages:
       when: never
     - when: on_success
 
+.prod_no_schedule:
+  extends: .default
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
 .parallel_repo:
   extends: .default
   parallel:
@@ -47,6 +54,7 @@ stages:
       - DISTRO: debian
         VERSION:
           ["bookworm-slim", "bullseye-slim", "buster-slim", "stretch-slim"]
+
 
 # Anchors
 .enable_ssh: &enable_ssh
@@ -157,7 +165,7 @@ test_packages:
 push_packages:
   stage: push
   extends:
-    - .no_schedule
+    - .prod_no_schedule
     - .parallel_repo
   script:
     - if [ -z "$(ls -A build/${repo}/)" ]; then exit 0; fi # if no build
@@ -165,7 +173,7 @@ push_packages:
 
 publish_s3:
   stage: publish
-  extends: .no_schedule
+  extends: .prod_no_schedule
   script:
     - >
       curl -v -f -s -XPUT --unix-socket /host/data/aptly/aptly.sock \
@@ -173,4 +181,3 @@ publish_s3:
            "{\"ForceOverwrite\":true, \"Signing\" : \
             {\"GpgKey\":\"wakemebot-dev@upciti.com\", \"Batch\":true}}" \
         "http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
-
