@@ -153,7 +153,7 @@
   - install -m 755 minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
 - name: k9s
-  version: 0.25.1
+  version: 0.25.2
   summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
   description: |
     K9s provides a terminal UI to interact with your Kubernetes clusters.
@@ -161,7 +161,7 @@
     observe and manage your applications in the wild.
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-    sha256: 6a56a9cb436acfb8858f91bb740458ff2f09a3bab9364c882e278c8912c512b7
+    sha256: 5647426cebeef95d4d698de450bf2a8831d17515e925263ba4dcfc4d574bc033
   script:
   - install -m 755 k9s {{src}}/usr/bin/k9s
 
