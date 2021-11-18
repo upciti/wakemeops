@@ -54,6 +54,7 @@ sudo apt-get install bat
 | Package        | Components  | Arch  |
 | -------------- | ----------- | ----- |
 | argocd         | devops      | amd64 |
+| datree         | devops      | amd64 |
 | devspace       | devops      | amd64 |
 | docker-compose | devops      | amd64 |
 | flux           | devops      | amd64 |

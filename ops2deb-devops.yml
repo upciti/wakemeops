@@ -355,3 +355,17 @@
     sha256: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
   script:
     - install -m 755 nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
+
+- name: datree
+  version: 0.14.49
+  summary: Prevent Kubernetes misconfigurations from reaching production.
+  description: |
+    Datree is a CLI tool that supports Kubernetes admins in their roles by preventing
+    developers from making errors in Kubernetes configurations that can cause clusters
+    to fail in production. Our CLI tool is open source, enabling it to be supported by
+    the Kubernetes community.
+  fetch:
+    url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_x86_64.zip
+    sha256: ea1c62f44b2dbbfa9fc66dd6577851717bc95561e9b2c5795a36245278bcd04b
+  script:
+    - install -m 755 datree {{src}}/usr/bin/datree
