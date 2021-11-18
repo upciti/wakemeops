@@ -129,3 +129,17 @@
     sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
   script:
   - install -m 755 bin/dog {{src}}/usr/bin/dog
+
+- name: yq
+  version: 4.14.2
+  summary:  yq is a portable command-line YAML processor.
+  description: |
+    A lightweight and portable command-line YAML processor. yq uses jq like
+    syntax but works with yaml files as well as json.
+    It doesn't yet support everything jq  does - but it does support the most
+    common operations and functions, and more is being added continuously.
+  fetch:
+    url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_amd64
+    sha256: dd2f8e4e711b434606495c16d3ffb6c33f47c5c02c72afb63b55b3741d9ef8c8
+  script:
+  - install -m 755 yq_linux_amd64 {{src}}/usr/bin/yq

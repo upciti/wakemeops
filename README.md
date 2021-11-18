@@ -92,3 +92,4 @@ sudo apt-get install bat
 | procs          | terminal    | amd64 |
 | ripgrep        | terminal    | amd64 |
 | xh             | terminal    | amd64 |
+| yq             | terminal    | amd64 |
