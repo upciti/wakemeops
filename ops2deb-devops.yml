@@ -342,3 +342,16 @@
   script:
   - install -m 755 kubens {{src}}/usr/bin/kubens
   - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
+
+- name: natscli
+  version: 0.0.26
+  summary: The NATS Command Line Interface
+  description: |
+    A command line utility to interact with and manage NATS.
+    This utility replaces various past tools that were named in the form nats-sub and
+    nats-pub, adds several new capabilities and support full JetStream management.
+  fetch:
+    url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-amd64.zip
+    sha256: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
+  script:
+    - install -m 755 nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats

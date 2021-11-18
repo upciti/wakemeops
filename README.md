@@ -76,6 +76,7 @@ sudo apt-get install bat
 | minikube       | devops      | amd64 |
 | minio-client   | devops      | amd64 |
 | minio-server   | devops      | amd64 |
+| natscli        | devops      | amd64 |
 | rancher        | devops      | amd64 |
 | scw            | devops      | amd64 |
 | terraform      | devops      | amd64 |
