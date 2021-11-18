@@ -83,6 +83,7 @@ sudo apt-get install bat
 | terraform      | devops      | amd64 |
 | trivy          | secops      | amd64 |
 | vault          | secops      | amd64 |
+| velero         | secops      | amd64 |
 | bat            | terminal    | amd64 |
 | choose         | terminal    | amd64 |
 | curlie         | terminal    | amd64 |
