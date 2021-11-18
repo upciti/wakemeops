@@ -1,11 +1,11 @@
 - name: kubectl
-  version: 1.22.3
+  version: 1.22.4
   summary: Command line client for controlling a Kubernetes cluster
   description: |
     kubectl is a command line client for running commands against Kubernetes clusters.
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
-    sha256: 0751808ca8d7daba56bf76b08848ef5df6b887e9d7e8a9030dd3711080e37b54
+    sha256: 21f24aa723002353eba1cc2668d0be22651f9063f444fd01626dce2b6e1c568c
   script:
   - mv kubectl {{src}}/usr/bin/
 
@@ -191,13 +191,13 @@
   - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
 - name: argocd
-  version: 2.1.6
+  version: 2.1.7
   summary: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   description: |
     Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: b608fc6a7c1fe970dda3543ca50a1f67caf125fffc4ea38ab6896c30a1498cb4
+    sha256: 6f45564de1b83bcddeac3902cb6f84f117135fa7baf8d364e4afd48ecc739271
   script:
   - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
