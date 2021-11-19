@@ -81,9 +81,9 @@ sudo apt-get install bat
 | rancher        | devops      | amd64 |
 | scw            | devops      | amd64 |
 | terraform      | devops      | amd64 |
+| velero         | devops      | amd64 |
 | trivy          | secops      | amd64 |
 | vault          | secops      | amd64 |
-| velero         | secops      | amd64 |
 | bat            | terminal    | amd64 |
 | choose         | terminal    | amd64 |
 | curlie         | terminal    | amd64 |
