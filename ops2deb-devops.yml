@@ -41,14 +41,14 @@
   - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: istioctl
-  version: 1.11.4
+  version: 1.12.0
   depends:
   - kubectl
   summary: Istio service mesh CLI
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: 32707044bff538b8e827eae21dd3694dac78d429d9aeeb9ee606882e3b938499
+    sha256: 7b219d9d0f48bd92901ef4cacb048c10c9f812dd4af120b0e3b353c006b3226e
   script:
   - install -d {{src}}/opt/istio
   - mv * {{src}}/opt/istio/
@@ -354,7 +354,7 @@
     url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-amd64.zip
     sha256: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
   script:
-    - install -m 755 nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
+  - install -m 755 nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
 
 - name: datree
   version: 0.14.49
@@ -368,7 +368,7 @@
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_x86_64.zip
     sha256: ea1c62f44b2dbbfa9fc66dd6577851717bc95561e9b2c5795a36245278bcd04b
   script:
-    - install -m 755 datree {{src}}/usr/bin/datree
+  - install -m 755 datree {{src}}/usr/bin/datree
 
 - name: velero
   version: 1.7.0
@@ -380,4 +380,4 @@
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-amd64.tar.gz
     sha256: cc41773836f89b04ae75e88e18bd9b8d60bfd60b91be4307dd40d34aebe8b1d9
   script:
-    - install -m 755 velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
+  - install -m 755 velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
