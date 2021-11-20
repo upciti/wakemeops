@@ -17,6 +17,7 @@ stages:
 .default:
   image: $WAKEMEBOT_IMAGE
   tags: ["wakemebot"]
+  retry: 2
 
 .schedule:
   extends: .default
@@ -47,6 +48,7 @@ stages:
 
 .parallel_distro:
   extends: .default
+  retry: 1
   parallel:
     matrix:
       - DISTRO: ubuntu
