@@ -12,6 +12,7 @@ stages:
   - test
   - push
   - publish
+  - pages
 
 # Templates
 .default:
@@ -183,3 +184,18 @@ publish_s3:
            "{\"ForceOverwrite\":true, \"Signing\" : \
             {\"GpgKey\":\"wakemebot-dev@upciti.com\", \"Batch\":true}}" \
         "http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
+
+pages:
+  stage: pages
+  image: $WAKEMEBOT_IMAGE
+  script:
+    - mkdocs build -d public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - docs/*
+        - mkdocs.yml
+  needs: []

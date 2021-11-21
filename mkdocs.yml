@@ -1,0 +1,56 @@
+site_name: wakemeops
+site_url: http://docs.wakeops.com
+site_description: wakemeops documentation
+
+repo_url: https://gitlab.com/upciti/wakemeops
+
+nav:
+  - Home: "index.md"
+  - Getting started: "getting-started.md"
+  - Packages:
+    - Devops: "components/devops.md"
+    - Secops: "components/secops.md"
+    - Terminal: "components/terminal.md"
+
+theme:
+  custom_dir: docs/theme_override_home/
+  name: "material"
+  icon:
+    repo: fontawesome/brands/gitlab
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: grey
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra_css:
+  - https://unpkg.com/mermaid@8.13.3/dist/mermaid.css
+  - css/extra.css
+extra_javascript:
+  - https://unpkg.com/mermaid@8.13.3/dist/mermaid.min.js
