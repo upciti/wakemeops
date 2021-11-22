@@ -73,9 +73,6 @@ stages:
   - git config --replace-all user.email $GITLAB_USER_EMAIL
   - git config push.default simple
 
-.ops2deb_update: &ops2deb_update
-  - for repo in $(ls ops2deb-* | cut -f2 -d "-" | cut -f1 -d "."); do OPS2DEB_OUTPUT_FILE=ops2deb-${repo}.log OPS2DEB_CONFIG="ops2deb-${repo}.yml" ops2deb update; done
-
 .git_commit_push: &git_commit_push
   - git remote set-url --push origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
   - branch="feature/update-packages-$(date '+%Y%m%d%H%M%S')"
@@ -93,26 +90,9 @@ stages:
       --set-upstream origin \
       ${branch}
 
-.ops2deb_build: &ops2deb_build
-  - mkdir -p ${OPS2DEB_WORK_DIR}
-  - ops2deb generate
-  - if [ -z "$(ls -A $OPS2DEB_WORK_DIR)" ]; then exit 0; fi # if no changes
-  - ops2deb build
-
 .install_dependencies: &install_dependencies
-  - apt update
-  - apt-get install -y ${DEPENDENCIES}
-
-.install_packages: &install_packages
-  - curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | bash
-  - export PACKAGE_PATH=$(find ./build -name "*.deb")
-  - dpkg -i $PACKAGE_PATH || true
-  - apt-get update -yq && apt-get install -fy
-
-.aptly_push: &aptly_push
-  - >
-    wakemebot aptly push wakemeops-${repo} build/${repo}/*.deb \
-      --server /host/data/aptly/aptly.sock
+  - apt-get update
+  - apt-get install -y ${APT_DEPENDENCIES}
 
 # Stages
 update_packages:
@@ -122,7 +102,7 @@ update_packages:
     - *enable_ssh
     - *git_configure
   script:
-    - *ops2deb_update
+    - make update
     - git update-index -q --really-refresh
     - if git diff-index HEAD --quiet; then exit 0; fi # exit if no changes
     - *git_commit_push
@@ -137,11 +117,9 @@ generate_debs:
     - .no_schedule
     - .parallel_repo
   script:
-    - *ops2deb_build
-  variables:
-    OPS2DEB_WORK_DIR: "build/${repo}"
-    OPS2DEB_CONFIG: "ops2deb-${repo}.yml"
-    OPS2DEB_REPOSITORY: "http://deb.wakemeops.com/ stable"
+    - make generate COMPONENTS=${repo}
+    - if [ -z "$(ls -A ./build/${repo})" ]; then exit 0; fi # if no changes
+    - make build COMPONENTS=${repo}
   artifacts:
     paths:
       - build/**/*deb
@@ -155,15 +133,11 @@ test_packages:
     - .parallel_distro
   before_script:
     - *install_dependencies
-    - *install_packages
+    - make install-packages
   script:
-    - >
-      for package in $PACKAGE_PATH; do \
-        n=$(dpkg --info $package | sed -n "s/ Package. \(.*\)/\1/p"); \
-        dpkg -s $n || exit 77; \
-      done
+    - make check-packages
   variables:
-    DEPENDENCIES: "curl gnupg2 ca-certificates"
+    APT_DEPENDENCIES: "curl gnupg2 ca-certificates make"
 
 push_packages:
   stage: push
@@ -172,24 +146,19 @@ push_packages:
     - .parallel_repo
   script:
     - if [ -z "$(ls -A build/${repo}/)" ]; then exit 0; fi # if no build
-    - *aptly_push
+    - make aptly-push
 
 publish_s3:
   stage: publish
   extends: .prod_no_schedule
   script:
-    - >
-      curl -v -f -s -XPUT --unix-socket /host/data/aptly/aptly.sock \
-        -H 'Content-Type: application/json' --data \
-           "{\"ForceOverwrite\":true, \"Signing\" : \
-            {\"GpgKey\":\"wakemebot-dev@upciti.com\", \"Batch\":true}}" \
-        "http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
+    - make aptly-publish
 
 pages:
   stage: pages
   image: $WAKEMEBOT_IMAGE
   script:
-    - mkdocs build -d public
+    - make docs
   artifacts:
     paths:
       - public
