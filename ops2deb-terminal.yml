@@ -108,14 +108,14 @@
   - install -m 755 curlie {{src}}/usr/bin/curlie
 
 - name: xh
-  version: 0.14.0
+  version: 0.14.1
   summary: Friendly and fast tool for sending HTTP requests
   description: |
     xh is a friendly and fast tool for sending HTTP requests.
     It reimplements as much as possible of HTTPie's excellent design, with a focus on improved performance.
   fetch:
     url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: 79653004e6ee0d6b46d16b5f72a31f4e617afb158d4b523d3e22ba125f3145f1
+    sha256: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
   script:
   - install -m 755 xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
 
