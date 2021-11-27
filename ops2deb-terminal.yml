@@ -21,7 +21,7 @@
   - install -m 755 bin/exa {{src}}/usr/bin/exa
 
 - name: fd
-  version: 8.2.1
+  version: 8.3.0
   summary: A simple, fast and user-friendly alternative to 'find'
   description: |
     fd is a program to find entries in your filesystem.
@@ -30,7 +30,7 @@
     it provides sensible (opinionated) defaults for a majority of use cases.
   fetch:
     url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: c4ff6094d787f63a04b745398924469c8558d3a8b2b0ffee77f168436e1244f3
+    sha256: 8f318b94330c9afb42177e84f6c1f524bbf09743c4fddec8cff7fcb10df7b39f
   script:
   - install -m 755 fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
 
