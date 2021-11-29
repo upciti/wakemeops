@@ -128,19 +128,19 @@
   - install -m 755 terraform {{src}}/usr/bin/terraform
 
 - name: minio-client
-  version: 2021-09-23T05-44-03Z
+  version: 2021-11-16T20-37-36Z
   summary: MinIO Client
   description: |
     MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
     filesystems and object storage.
   fetch:
     url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
-    sha256: fad44ed91e97c31c17352b0865edea0000efd2d725af0e0f6c6176be3b8060e7
+    sha256: 002871b96bfb0da15d6fb91d7f92c5fb18f9c9854c649c353ddcc63f3e0c0613
   script:
   - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
 
 - name: minio-server
-  version: 2021-10-08T23-58-24Z
+  version: 2021-11-24T23-19-33Z
   summary: High Performance, Kubernetes Native Object Storage
   description: |
     Standalone MinIO servers are best suited for early development and evaluation.
@@ -148,7 +148,7 @@
     and bucket replication require distributed deploying MinIO with Erasure Coding.
   fetch:
     url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
-    sha256: 6036a2c121c4727b7db89b7419fcb069b00b853c240029b9caf8ddb140c91d76
+    sha256: dc00c6b32cfe756dd91e891e77187315736b24d6f12671b98a9ce27bd8fef195
   script:
   - install -m 755 minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
