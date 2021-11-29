@@ -23,7 +23,7 @@ stages:
 .schedule:
   extends: .default
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_DOCKER == "0"'
 
 .no_schedule:
   extends: .default
@@ -62,7 +62,6 @@ stages:
       - DISTRO: debian
         VERSION:
           ["bookworm-slim", "bullseye-slim", "buster-slim", "stretch-slim"]
-
 
 # Anchors
 .enable_ssh: &enable_ssh
@@ -172,3 +171,4 @@ pages:
         - docs/**/*
         - mkdocs.yml
   needs: []
+
