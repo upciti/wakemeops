@@ -3,96 +3,32 @@
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/upciti/wakemeops)
 [![GitLab](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/upciti/wakemeops)
 
-Generate Debian packages for common binary tools such as bat, fd, exa, kubectl, terraform, ...
-using [ops2deb](https://github.com/upciti/ops2deb).
 
-- [WakeMeOps](#wakemeops)
-  - [Projects](#projects)
-  - [Configuration](#configuration)
-    - [Install wakemeops repository](#install-wakemeops-repository)
-    - [Reduce the priority of the wakemeops repository](#reduce-the-priority-of-the-wakemeops-repository)
-  - [Install package](#install-package)
-  - [Available packages](#available-packages)
+## What is it?
 
-## Projects
+WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions. It currently mostly contains devops tools such as kubectl, kustomize, helm, k9s, [...](https://docs.wakemeops.com/components/devops/).
 
-This project uses two other open-source projects:
 
-- [ops2deb](https://github.com/upciti/ops2deb)
-- [wakemebot](https://github.com/upciti/wakemebot)
+## Why do I need it?
 
-## Configuration
+When you work with many different devops tools, you may find that it gets cumbersome to follow what the latest version of each and every one of them is because they all get released on their own website or github project.
+WakeMeOps aims to centralize all those tools and more in one place to make your life a little bit easier.
 
-### Install wakemeops repository
+Of course WakeMeOps doesn't have to be limited to devops, we are open to incorporate all kinds of reputable tools.
 
-```shell
-curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | sudo bash -s devops secops terminal
-```
 
-### Reduce the priority of the wakemeops repository
+## How does it work?
 
-If you want to keep the default deposits as priority,
-use the command below:
+Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) blueprints versioned the `ops2deb-*.yml` configuration files. Those configuration files are automatically updated when new application releases are available.
 
-```shell
-cat << EOF | sudo tee /etc/apt/preferences.d/01wakemeops
-Package: *
-Pin: origin deb.wakemeops.com
-Pin-Priority: 100
-EOF
-```
 
-## Install package
+## Documentation
 
-```shell
-sudo apt-get update
-sudo apt-get install bat
-```
+:notebook_with_decorative_cover: Please refer to our documentation at https://docs.wakemeops.com for more information.
 
-## Available packages
 
-| Package        | Components  | Arch  |
-| -------------- | ----------- | ----- |
-| argocd         | devops      | amd64 |
-| datree         | devops      | amd64 |
-| devspace       | devops      | amd64 |
-| docker-compose | devops      | amd64 |
-| flux           | devops      | amd64 |
-| helm           | devops      | amd64 |
-| helmfile       | devops      | amd64 |
-| istioctl       | devops      | amd64 |
-| k3d            | devops      | amd64 |
-| k9s            | devops      | amd64 |
-| kind           | devops      | amd64 |
-| krew           | devops      | amd64 |
-| kubectl        | devops      | amd64 |
-| kubectl-neat   | devops      | amd64 |
-| kubectx        | devops      | amd64 |
-| kubens         | devops      | amd64 |
-| kube-score     | devops      | amd64 |
-| kubeseal       | devops      | amd64 |
-| kustomize      | devops      | amd64 |
-| linkerd        | devops      | amd64 |
-| logcli         | devops      | amd64 |
-| minikube       | devops      | amd64 |
-| minio-client   | devops      | amd64 |
-| minio-server   | devops      | amd64 |
-| natscli        | devops      | amd64 |
-| rancher        | devops      | amd64 |
-| scw            | devops      | amd64 |
-| terraform      | devops      | amd64 |
-| velero         | devops      | amd64 |
-| trivy          | secops      | amd64 |
-| vault          | secops      | amd64 |
-| bat            | terminal    | amd64 |
-| choose         | terminal    | amd64 |
-| curlie         | terminal    | amd64 |
-| dog            | terminal    | amd64 |
-| dust           | terminal    | amd64 |
-| exa            | terminal    | amd64 |
-| fd             | terminal    | amd64 |
-| gping          | terminal    | amd64 |
-| procs          | terminal    | amd64 |
-| ripgrep        | terminal    | amd64 |
-| xh             | terminal    | amd64 |
-| yq             | terminal    | amd64 |
+## Roadmap
+
+* [ ] Dockerfiles with WakeMeOps configured for CI pipelines
+* [ ] `armhf` support
+* [ ] Add license information to packages
