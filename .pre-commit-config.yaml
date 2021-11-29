@@ -5,6 +5,7 @@ repos:
     hooks:
       - id: check-yaml
         args: [--allow-multiple-documents]
+        exclude: ^mkdocs.yml
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: detect-private-key

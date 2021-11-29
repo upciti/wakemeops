@@ -23,7 +23,7 @@ stages:
 .schedule:
   extends: .default
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_DOCKER == "0"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "0"'
 
 .no_schedule:
   extends: .default
@@ -59,10 +59,11 @@ stages:
   parallel:
     matrix:
       - DISTRO: ubuntu
-        VERSION: ["16.04", "18.04", "20.04", "21.04", "21.10"]
+        VERSION: ["latest", "rolling", "21.04", "18.04"]
       - DISTRO: debian
         VERSION:
-          ["bookworm-slim", "bullseye-slim", "buster-slim", "stretch-slim"]
+          ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
+
 
 # Anchors
 .enable_ssh: &enable_ssh
@@ -172,3 +173,34 @@ pages:
         - docs/**/*
         - mkdocs.yml
   needs: []
+
+buildah:
+  image: quay.io/buildah/stable:v1.23.1
+  extends: .parallel_distro
+  stage: publish
+  tags: ["docker"]
+  retry: 1
+  before_script:
+    - IMAGE_NAME="wakemeops/${DISTRO}:${VERSION}"
+    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
+  script:
+    - >
+      buildah bud \
+        -f ./Dockerfile \
+        -t ${IMAGE_NAME} \
+        --build-arg IMAGE=${DISTRO} \
+        --build-arg TAG=${VERSION} \
+        --label org.wakemeops.maintainers="WakeMeOps <wakemeops.com>" \
+        --label org.wakemeops.base_image="docker.io/${DISTRO}:${VERSION}" \
+        --label org.wakemeops.commit="${CI_COMMIT_SHA}" \
+        .
+    - buildah push --authfile /run/containers/0/auth.json ${IMAGE_NAME}
+  needs: []
+  variables:
+    REGISTRY_USER: "wakemeops"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"'
+      changes:
+        - Dockerfile
+        - .gitlab-ci.yml
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "1"'

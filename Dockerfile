@@ -2,10 +2,10 @@ ARG REGISTRY="docker.io"
 ARG IMAGE="debian"
 ARG TAG="buster"
 
-FROM ${REGISTRY}/${IMAGE}:${TAG} as dev
+FROM ${REGISTRY}/${IMAGE}:${TAG} as runner
 
 ARG FINAL_USER=0
-ARG COMPONENTS="devops secops terminal"
+ARG COMPONENTS="devops secops terminal dev"
 ARG PACKAGES=""
 
 USER 0
