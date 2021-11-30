@@ -30,7 +30,9 @@ stages:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
-    - when: on_success
+    - changes:
+        - ops2deb-*.yml
+      when: on_success
 
 .prod_no_schedule:
   extends: .default
@@ -38,6 +40,9 @@ stages:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - ops2deb-*.yml
+      when: on_success
 
 .parallel_component:
   extends: .default
