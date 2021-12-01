@@ -371,13 +371,13 @@
   - install -m 755 datree {{src}}/usr/bin/datree
 
 - name: velero
-  version: 1.7.0
+  version: 1.7.1
   summary: Backup and migrate Kubernetes applications and their persistent volumes
   description: |
     Velero (formerly Heptio Ark) gives you tools to back up and restore your Kubernetes
     cluster resources and persistent volumes.
   fetch:
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-amd64.tar.gz
-    sha256: cc41773836f89b04ae75e88e18bd9b8d60bfd60b91be4307dd40d34aebe8b1d9
+    sha256: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
   script:
   - install -m 755 velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
