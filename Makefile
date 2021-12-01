@@ -83,4 +83,4 @@ docs:
 docs-dev:
 	@docker run --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
 
-.PHONY: install-wakemeops install-packages generate build update ops2deb-generate ops2deb-build check-packages aptly-push aptly-publish pages pages-dev
+.PHONY: install-wakemeops install-packages generate build update ops2deb-generate ops2deb-build check-packages aptly-push aptly-publish docs docs-dev
