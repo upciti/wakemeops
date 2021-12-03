@@ -215,13 +215,13 @@
   - install -m 755 flux {{src}}/usr/bin/flux
 
 - name: k3d
-  version: 5.1.0
+  version: 5.2.0
   summary: Little helper to run Rancher Lab's k3s in Docker
   description: |
     Little helper to run Rancher Lab's k3s in Docker
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
-    sha256: e04cfb3cc04de17c9d4272d0b5506ee5ca1070e36e07519fbe6c00153b993195
+    sha256: 223bcbf2a6c407e72910727d47dcaae5d4ed1c90d356d9bee968b385d645e806
   script:
   - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
 
