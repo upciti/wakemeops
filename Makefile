@@ -64,7 +64,7 @@ check-packages:
 	done
 
 aptly-push:
-	for component in $(COMPONENT); do \
+	for component in $(COMPONENTS); do \
 		wakemebot aptly push wakemeops-$${component} \
 		$(OUTPUT_BASE_PATH)/$${component}/*.deb \
 		--server /host/data/aptly/aptly.sock; \
