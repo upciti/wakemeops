@@ -39,13 +39,13 @@ stages:
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
-.parallel_repo:
+.parallel_component:
   extends: .default
   parallel:
     matrix:
-      - repo: devops
-      - repo: secops
-      - repo: terminal
+      - component: devops
+      - component: secops
+      - component: terminal
 
 .parallel_distro:
   extends: .default
@@ -94,8 +94,7 @@ stages:
   - apt-get update
   - apt-get install -y ${APT_DEPENDENCIES}
 
-# Stages
-update_packages:
+update_blueprints:
   stage: update
   extends: .schedule
   before_script:
@@ -111,15 +110,14 @@ update_packages:
     GITLAB_USER_NAME: "wakemebot"
     GITLAB_USER_EMAIL: "wakemebot@upciti.com"
 
-generate_debs:
+generate_packages:
   stage: build
   extends:
     - .no_schedule
-    - .parallel_repo
+    - .parallel_component
   script:
-    - make generate COMPONENTS=${repo}
-    - if [ -z "$(ls -A ./build/${repo})" ]; then exit 0; fi # if no changes
-    - make build COMPONENTS=${repo}
+    - make generate-${component}
+    - make build-${component}
   artifacts:
     paths:
       - build/**/*deb
@@ -143,16 +141,15 @@ push_packages:
   stage: push
   extends:
     - .prod_no_schedule
-    - .parallel_repo
+    - .parallel_component
   script:
-    - if [ -z "$(ls -A build/${repo}/)" ]; then exit 0; fi # if no build
-    - make aptly-push
+    - make push-${component}
 
 publish_s3:
   stage: publish
   extends: .prod_no_schedule
   script:
-    - make aptly-publish
+    - make publish
 
 pages:
   stage: pages
