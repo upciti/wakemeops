@@ -13,6 +13,8 @@
 
 - name: kustomize
   version: 3.8.10
+  revision: 2
+  homepage: https://kustomize.io
   depends:
   - kubectl
   summary: Kubernetes native configuration management
@@ -30,6 +32,8 @@
 
 - name: helm
   version: 3.7.1
+  revision: 2
+  homepage: https://helm.sh
   depends:
   - kubectl
   summary: The Kubernetes package manager
@@ -44,6 +48,8 @@
 
 - name: istioctl
   version: 1.12.0
+  revision: 2
+  homepage: https://istio.io
   depends:
   - kubectl
   summary: Istio service mesh CLI
@@ -58,6 +64,8 @@
 
 - name: kubeseal
   version: 0.16.0
+  revision: 2
+  homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: Secret management solution for k8s
   description: Encrypt your Secret into a SealedSecret, which is safe to store - even
     to a public repository.
@@ -69,6 +77,8 @@
 
 - name: helmfile
   version: 0.142.0
+  revision: 2
+  homepage: https://github.com/roboll/helmfile
   depends:
   - kubectl
   - helm
@@ -87,6 +97,8 @@
 
 - name: minikube
   version: 1.24.0
+  revision: 2
+  homepage: https://minikube.sigs.k8s.io
   summary: Quickly set up a local Kubernetes cluster
   description: |
     Focus on helping application developers and new Kubernetes users.
@@ -105,6 +117,8 @@
 
 - name: docker-compose
   version: 1.29.2
+  revision: 2
+  homepage: https://docs.docker.com/compose
   summary: Punctual, lightweight development environments using Docker
   description: |
     docker-compose is a service management software built on top of docker. Define
@@ -118,6 +132,8 @@
 
 - name: terraform
   version: 1.0.11
+  revision: 2
+  homepage: https://www.terraform.io
   summary: Terraform is a tool for building, changing, and versioning infrastructure.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely
@@ -131,6 +147,8 @@
 
 - name: minio-client
   version: 2021-11-16T20-37-36Z
+  revision: 2
+  homepage: https://min.io
   summary: MinIO Client
   description: |
     MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
@@ -143,6 +161,8 @@
 
 - name: minio-server
   version: 2021-11-24T23-19-33Z
+  revision: 2
+  homepage: https://min.io
   summary: High Performance, Kubernetes Native Object Storage
   description: |
     Standalone MinIO servers are best suited for early development and evaluation.
@@ -156,6 +176,8 @@
 
 - name: k9s
   version: 0.25.8
+  revision: 2
+  homepage: https://k9scli.io
   summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
   description: |
     K9s provides a terminal UI to interact with your Kubernetes clusters.
@@ -169,6 +191,8 @@
 
 - name: scw
   version: 2.4.0
+  revision: 2
+  homepage: https://github.com/scaleway/scaleway-cli
   summary: Command Line Interface for Scaleway
   description: |
     Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
@@ -181,6 +205,8 @@
 
 - name: linkerd
   version: 21.10.3
+  revision: 2
+  homepage: https://linkerd.io
   summary: Ultralight, security-first service mesh for Kubernetes.
   description: |
     Linkerd is an ultralight, security-first service mesh for Kubernetes.
@@ -194,6 +220,8 @@
 
 - name: argocd
   version: 2.1.7
+  revision: 2
+  homepage: https://github.com/argoproj/argo-cd
   summary: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   description: |
     Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
@@ -205,6 +233,8 @@
 
 - name: flux
   version: 0.24.0
+  revision: 2
+  homepage: https://fluxcd.io
   summary: Open and extensible continuous delivery solution for Kubernetes.
   description: |
     Flux is a tool for keeping Kubernetes clusters in sync with sources
@@ -218,6 +248,8 @@
 
 - name: k3d
   version: 5.2.0
+  revision: 2
+  homepage: https://k3d.io
   summary: Little helper to run Rancher Lab's k3s in Docker
   description: |
     Little helper to run Rancher Lab's k3s in Docker
@@ -229,6 +261,8 @@
 
 - name: rancher
   version: 2.4.13
+  revision: 2
+  homepage: https://github.com/rancher/cli
   summary: Rancher Command Line Interface
   description: |
     The Rancher Command Line Interface (CLI) is a unified tool for interacting with your Rancher Server.
@@ -240,6 +274,8 @@
 
 - name: kind
   version: 0.11.1
+  revision: 2
+  homepage: https://kind.sigs.k8s.io
   summary: Kubernetes IN Docker - local clusters for testing Kubernetes
   description: |
     kind is a tool for running local Kubernetes clusters using Docker container "nodes".
@@ -253,6 +289,8 @@
 
 - name: logcli
   version: 2.4.1
+  revision: 2
+  homepage: https://github.com/grafana/loki
   summary: LogCLI is the command-line interface to Loki
   description: |
     It facilitates running LogQL queries against a Loki instance.
@@ -264,6 +302,8 @@
 
 - name: devspace
   version: 5.17.0
+  revision: 2
+  homepage: https://devspace.sh
   summary: DevSpace - The Fastest Developer Tool for Kubernetes
   description: |
     Automate your deployment workflow with DevSpace and develop software directly inside Kubernetes.
@@ -275,6 +315,8 @@
 
 - name: kube-score
   version: 1.13.0
+  revision: 2
+  homepage: https://github.com/zegl/kube-score
   depends:
   - kubectl
   summary: Kubernetes object analysis with recommendations for improved reliability
@@ -291,6 +333,8 @@
 
 - name: krew
   version: 0.4.2
+  revision: 2
+  homepage: https://krew.sigs.k8s.io
   depends:
   - kubectl
   summary: Find and install kubectl plugins
@@ -306,6 +350,8 @@
 
 - name: kubectl-neat
   version: 2.0.3
+  revision: 2
+  homepage: https://github.com/itaysk/kubectl-neat
   depends:
   - kubectl
   summary: Clean up Kubernetes yaml and json output to make it readable
@@ -319,6 +365,8 @@
 
 - name: kubectx
   version: 0.9.4
+  revision: 2
+  homepage: https://github.com/ahmetb/kubectx
   depends:
   - kubectl
   summary: kubectx helps you switch between clusters
@@ -333,6 +381,8 @@
 
 - name: kubens
   version: 0.9.4
+  revision: 2
+  homepage: https://github.com/ahmetb/kubectx
   depends:
   - kubectl
   summary: kubens helps you switch between namespaces
@@ -347,6 +397,8 @@
 
 - name: natscli
   version: 0.0.26
+  revision: 2
+  homepage: https://github.com/nats-io/natscli
   summary: The NATS Command Line Interface
   description: |
     A command line utility to interact with and manage NATS.
@@ -360,6 +412,8 @@
 
 - name: datree
   version: 0.14.49
+  revision: 2
+  homepage: https://github.com/datreeio/datree
   summary: Prevent Kubernetes misconfigurations from reaching production.
   description: |
     Datree is a CLI tool that supports Kubernetes admins in their roles by preventing
@@ -374,6 +428,8 @@
 
 - name: velero
   version: 1.7.1
+  revision: 2
+  homepage: https://velero.io
   summary: Backup and migrate Kubernetes applications and their persistent volumes
   description: |
     Velero (formerly Heptio Ark) gives you tools to back up and restore your Kubernetes
