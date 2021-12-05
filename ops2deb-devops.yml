@@ -1,5 +1,7 @@
 - name: kubectl
   version: 1.22.4
+  revision: 2
+  homepage: https://github.com/kubernetes/kubectl
   summary: Command line client for controlling a Kubernetes cluster
   description: |
     kubectl is a command line client for running commands against Kubernetes clusters.
