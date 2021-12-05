@@ -346,7 +346,6 @@
   script:
   - install -m 755 krew-linux_amd64 {{src}}/usr/bin/krew
   - ln -s /usr/bin/krew {{src}}/usr/bin/kubectl-krew
-  - kubectl-krew update
 
 - name: kubectl-neat
   version: 2.0.3
