@@ -164,6 +164,6 @@ pages:
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
-        - docs/*
+        - docs/**/*
         - mkdocs.yml
   needs: []

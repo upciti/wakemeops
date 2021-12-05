@@ -1,5 +1,7 @@
 SHELL := bash
 
+COMPONENTS := $(shell ls ops2deb-*yml | cut -f2 -d "-" | cut -f1 -d ".")
+
 OUTPUT_BASE_PATH := build
 
 export OPS2DEB_REPOSITORY := http://deb.wakemeops.com/ stable
@@ -11,7 +13,7 @@ default:
 	@echo -e '\nops2deb                                                        '
 	@echo '* generate-{component}        generate deb from yaml                '
 	@echo '* build-{component}           build generated sources               '
-	@echo '* update-{component}          check binaries updates                '
+	@echo '* update                      check binaries updates                '
 	@echo -e '\nchecks                                                         '
 	@echo '* install-packages            install generated packages            '
 	@echo '* check-packages              check generated packages              '
@@ -32,8 +34,12 @@ generate-%:
 build-%:
 	ops2deb build -w $(OUTPUT_BASE_PATH)/$*
 
-update-%:
-	ops2deb update -c ops2deb-$*.yml --output-file ops2deb-$*.log
+update:
+	for component in $(COMPONENTS); do \
+		ops2deb update \
+		-c ops2deb-$${component}.yml \
+		--output-file ops2deb-$${component}.log; \
+	done
 
 install-packages: install-wakemeops
 	PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*.deb"); \
