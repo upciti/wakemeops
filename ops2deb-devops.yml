@@ -345,7 +345,6 @@
     sha256: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
   script:
   - install -m 755 krew-linux_amd64 {{src}}/usr/bin/krew
-  - ln -s /usr/bin/krew {{src}}/usr/bin/kubectl-krew
 
 - name: kubectl-neat
   version: 2.0.3
