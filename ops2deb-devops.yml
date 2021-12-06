@@ -333,10 +333,11 @@
 
 - name: krew
   version: 0.4.2
-  revision: 2
+  revision: 3
   homepage: https://krew.sigs.k8s.io
   depends:
   - kubectl
+  - git
   summary: Find and install kubectl plugins
   description: |
     Krew is the package manager for kubectl plugins.
