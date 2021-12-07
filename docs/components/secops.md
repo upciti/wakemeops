@@ -3,10 +3,10 @@
 
 ## trivy
 
-  Scanner for vulnerabilities in container images,
-  file systems, and Git repositories, as well as for configuration issues
+ Scanner for vulnerabilities in container images,
+ file systems, and Git repositories, as well as for configuration issues
 
-<span class="badge arch">amd64</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
 
 ## vault
 

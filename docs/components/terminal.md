@@ -1,4 +1,4 @@
-<!-- terminal.start --># Terminal - 14 packages
+<!-- terminal.start --># Terminal - 13 packages
 
 
 ## bat
@@ -10,12 +10,6 @@
 ## choose
 
   This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
-
-<span class="badge arch">amd64</span> <span class="badge version">1.3.3</span>
-
-## choose-dbgsym
-
-
 
 <span class="badge arch">amd64</span> <span class="badge version">1.3.3</span>
 
@@ -67,12 +61,6 @@
 
 <span class="badge arch">amd64</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
 
-## procs-dbgsym
-
-
-
-<span class="badge arch">amd64</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
-
 ## ripgrep
 
   ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
@@ -88,6 +76,13 @@
   It reimplements as much as possible of HTTPie's excellent design, with a focus on improved performance.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.14.0</span> <span class="badge version">0.13.0</span>
+
+## [xsv](https://github.com/BurntSushi/xsv)
+
+ xsv is a command line program for indexing, slicing, analyzing,
+ splitting and joining CSV files.
+
+<span class="badge arch">amd64</span> <span class="badge version">0.13.0</span>
 
 ## yq
 
