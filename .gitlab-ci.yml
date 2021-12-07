@@ -48,6 +48,7 @@ stages:
   extends: .default
   parallel:
     matrix:
+      - component: dev
       - component: devops
       - component: secops
       - component: terminal
@@ -171,4 +172,3 @@ pages:
         - docs/**/*
         - mkdocs.yml
   needs: []
-

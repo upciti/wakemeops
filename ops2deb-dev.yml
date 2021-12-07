@@ -1,0 +1,13 @@
+- name: pyoxidizer
+  version: 0.18.0
+  summary: PyOxidizer is a utility for producing binaries that embed Python
+  description: |
+    The over-arching goal of PyOxidizer is to make complex packaging
+    and distribution problems simple so application maintainers can
+    focus on building applications instead of toiling with build
+    systems and packaging tools.
+  fetch:
+    url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
+    sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
+  script:
+  - install -m 755 pyoxidizer {{src}}/usr/bin/pyoxidizer
