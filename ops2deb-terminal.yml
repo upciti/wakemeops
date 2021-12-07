@@ -1,5 +1,7 @@
 - name: bat
   version: 0.18.3
+  homepage: https://github.com/sharkdp/bat
+  revision: 2
   summary: A cat(1) clone with wings
   description: |
     A cat(1) clone with wings.
@@ -11,6 +13,8 @@
 
 - name: exa
   version: 0.10.1
+  homepage: https://github.com/ogham/exa
+  revision: 2
   summary: A modern replacement for ls
   description: |
     exa is a modern replacement for ls.
@@ -22,6 +26,8 @@
 
 - name: fd
   version: 8.3.0
+  homepage: https://github.com/sharkdp/fd
+  revision: 2
   summary: A simple, fast and user-friendly alternative to 'find'
   description: |
     fd is a program to find entries in your filesystem.
@@ -36,6 +42,8 @@
 
 - name: dust
   version: 0.7.5
+  homepage: https://github.com/bootandy/dust
+  revision: 2
   summary: A more intuitive version of du in rust
   description: |
     du + rust = dust. Like du but more intuitive.
@@ -47,6 +55,8 @@
 
 - name: ripgrep
   version: 13.0.0
+  homepage: https://github.com/BurntSushi/ripgrep
+  revision: 2
   summary: ripgrep (rg) recursively searches directories for a regex pattern while
     respecting your gitignore
   description: |
@@ -62,6 +72,8 @@
 
 - name: choose
   version: 1.3.3
+  homepage: https://github.com/theryangeary/choose
+  revision: 2
   summary: A human-friendly and fast alternative to cut and (sometimes) awk
   description: |
     This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
@@ -73,6 +85,8 @@
 
 - name: gping
   version: 1.2.6
+  homepage: https://github.com/orf/gping
+  revision: 2
   summary: Ping, but with a graph
   description: |
     Ping, but with a graph.
@@ -84,6 +98,8 @@
 
 - name: procs
   version: 0.11.10
+  homepage: https://github.com/dalance/procs
+  revision: 2
   summary: procs is a replacement for ps written in Rust
   description: |
     A modern replacement for ps written in Rust
@@ -95,6 +111,8 @@
 
 - name: curlie
   version: 1.6.0
+  homepage: https://github.com/rs/curlie
+  revision: 2
   summary: The power of curl, the ease of use of httpie.
   description: |
     If you like the interface of HTTPie but miss the features of curl, curlie is what you are searching for.
@@ -109,6 +127,8 @@
 
 - name: xh
   version: 0.14.1
+  homepage: https://github.com/ducaale/xh
+  revision: 2
   summary: Friendly and fast tool for sending HTTP requests
   description: |
     xh is a friendly and fast tool for sending HTTP requests.
@@ -121,6 +141,8 @@
 
 - name: dog
   version: 0.1.0
+  homepage: https://github.com/ogham/dog
+  revision: 2
   summary: A command-line DNS client.
   description: |
     A user-friendly command-line DNS client. dig on steroids
@@ -145,6 +167,8 @@
 
 - name: yq
   version: 4.14.2
+  homepage: https://github.com/mikefarah/yq
+  revision: 2
   summary: yq is a portable command-line YAML processor.
   description: |
     A lightweight and portable command-line YAML processor. yq uses jq like
