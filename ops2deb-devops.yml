@@ -31,8 +31,8 @@
   - mv kustomize {{src}}/usr/bin/
 
 - name: helm
-  version: 3.7.1
-  revision: 2
+  version: 3.7.2
+  revision: 1
   homepage: https://helm.sh
   depends:
   - kubectl
@@ -42,13 +42,13 @@
     Charts are packages of pre-configured Kubernetes resources.
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-amd64.tar.gz
-    sha256: 6cd6cad4b97e10c33c978ff3ac97bb42b68f79766f1d2284cfd62ec04cd177f4
+    sha256: 4ae30e48966aba5f807a4e140dad6736ee1a392940101e4d79ffb4ee86200a9e
   script:
   - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: istioctl
-  version: 1.12.0
-  revision: 2
+  version: 1.12.1
+  revision: 1
   homepage: https://istio.io
   depends:
   - kubectl
@@ -56,7 +56,7 @@
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: 7b219d9d0f48bd92901ef4cacb048c10c9f812dd4af120b0e3b353c006b3226e
+    sha256: 7b1279810a77590bd7af60d6d26074a89c32e6aff7512fdc37f38b093e34e382
   script:
   - install -d {{src}}/opt/istio
   - mv * {{src}}/opt/istio/
