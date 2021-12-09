@@ -27,3 +27,24 @@
     sha256: 563d937db4febeafe6a318ee242eb7da940ff858650eec3864365b4745caab58
   script:
   - install -m 755 trivy {{src}}/usr/bin/trivy
+
+- name: feroxbuster
+  version: 2.4.0
+  homepage: https://github.com/epi052/feroxbuster
+  summary: A fast, simple, recursive content discovery tool
+  description: |
+    feroxbuster is a tool designed to perform Forced Browsing.
+    Forced browsing is an attack where the aim is to enumerate and access
+    resources that are not referenced by the web application, but are still
+    accessible by an attacker.
+    feroxbuster uses brute force combined with a wordlist to search for
+    unlinked content in target directories. These resources may store
+    sensitive information about web applications and operational systems,
+    such as source code, credentials, internal network addressing, etc...
+    This attack is also known as Predictable Resource Location,
+    File Enumeration, Directory Enumeration, and Resource Enumeration.
+  fetch:
+    url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/x86_64-linux-feroxbuster.tar.gz
+    sha256: a1882d669a0b05150d37358837a5d1b4ed70e0cffed280f2cd6e115af5e9a678
+  script:
+  - install -m 755 feroxbuster {{src}}/usr/bin/

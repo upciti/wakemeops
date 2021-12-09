@@ -180,3 +180,93 @@
     sha256: dd2f8e4e711b434606495c16d3ffb6c33f47c5c02c72afb63b55b3741d9ef8c8
   script:
   - install -m 755 yq_linux_amd64 {{src}}/usr/bin/yq
+
+- name: bottom
+  version: 0.6.4
+  homepage: https://github.com/ClementTsang/bottom
+  summary: Yet another cross-platform graphical process/system monitor
+  description: |
+    A cross-platform graphical process/system monitor with a customizable interface
+    and a multitude of features. Supports Linux, macOS, and Windows.
+    Inspired by gtop, gotop, and htop.
+  fetch:
+    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_x86_64-unknown-linux-gnu.tar.gz
+    sha256: ed10ce5df22b6260d5bf27db2edec2bf5fa4ed13617a61e8c6d5716ccdacee69
+  script:
+  - install -m 755 btm {{src}}/usr/bin/
+
+- name: tokei
+  version: 12.1.2
+  homepage: https://github.com/XAMPPRocky/tokei
+  summary: Count your code, quickly.
+  description: |
+    Tokei is a program that displays statistics about your code.
+    Tokei will show the number of files, total lines within those files and
+    code, comments, and blanks grouped by language.
+  fetch:
+    url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-x86_64-unknown-linux-gnu.tar.gz
+    sha256: c8c5c4ab9e1ff47e745de70f4af3214078657399fa7a0da0b5f209d780e49978
+  script:
+  - install -m 755 tokei {{src}}/usr/bin/
+
+- name: grex
+  version: 1.3.0
+  homepage: https://github.com/pemistahl/grex
+  summary: A command-line tool and library for generating regular expressions from user-provided test cases
+  description: |
+    grex is a library as well as a command-line utility that is meant to
+    simplify the often complicated and tedious task of creating regular
+    expressions.
+    It does so by automatically generating a single regular expression
+    from user-provided test cases. The resulting expression is guaranteed
+    to match the test cases which it was generated from.
+  fetch:
+    url: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: df47f82add291905af60d20a3499f6845c65bfe452fa9d30f8c7a900f45578e8
+  script:
+  - install -m 755 grex {{src}}/usr/bin/
+
+- name: clog-cli
+  version: 0.9.3
+  homepage: https://github.com/clog-tool/clog-cli
+  summary: Generate beautiful changelogs from your Git commit history
+  description: |
+    clog creates a changelog automatically from your local git metadata.
+    The way this works, is every time you make a commit, you ensure your commit subject
+    line follows the conventional format. Then when you wish to update your changelog,
+    you simply run clog inside your local repository with any options you'd like to specify.
+  fetch:
+    url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
+  script:
+  - install -m 755 clog {{src}}/usr/bin/
+
+- name: diskonaut
+  version: 0.11.0
+  homepage: https://github.com/imsnif/diskonaut
+  summary: Terminal disk space navigator
+  description: |
+    Given a path on your hard-drive (which could also be the root path, eg. /).
+    diskonaut scans it and indexes its metadata to memory so that you could explore
+    its contents (even while still scanning!).
+    Once completed, you can navigate through subfolders, getting a visual treemap
+    representation of what's taking up your disk space. You can even delete files or
+    folders and diskonaut will track how much space you've freed up in this session.
+  fetch:
+    url: https://github.com/imsnif/diskonaut/releases/download/{{version}}/diskonaut-{{version}}-unknown-linux-musl.tar.gz
+    sha256: ec4f0103b5e507e15752bb1958644bc168d6ad277c59dd12a771fb28178bf725
+  script:
+  - install -m 755 diskonaut {{src}}/usr/bin/
+
+- name: skim
+  version: 0.9.4
+  homepage: https://github.com/lotabout/skim
+  summary: Fuzzy Finder in rust!
+  description: |
+    Half of our life is spent on navigation: files, lines, commands...
+    You need skim! It is a general fuzzy finder that saves you time.
+  fetch:
+    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
+  script:
+  - install -m 755 sk {{src}}/usr/bin/
