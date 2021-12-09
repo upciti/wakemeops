@@ -131,8 +131,8 @@
   - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: terraform
-  version: 1.0.11
-  revision: 2
+  version: 1.1.0
+  revision: 1
   homepage: https://www.terraform.io
   summary: Terraform is a tool for building, changing, and versioning infrastructure.
   description: |
@@ -141,7 +141,7 @@
     well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: eeb46091a42dc303c3a3c300640c7774ab25cbee5083dafa5fd83b54c8aca664
+    sha256: 763378aa75500ce5ba67d0cba8aa605670cd28bf8bafc709333a30908441acb5
   script:
   - install -m 755 terraform {{src}}/usr/bin/terraform
 
