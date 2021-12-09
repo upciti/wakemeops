@@ -41,7 +41,7 @@ update:
 		--output-file ops2deb-$${component}.log; \
 	done
 
-install-packages: install-wakemeops
+install-packages:
 	PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*.deb"); \
 		dpkg -i $$PACKAGE_PATH || true
 	apt-get update -yq

@@ -131,7 +131,7 @@ generate_packages:
 
 test_packages:
   stage: test
-  image: ${DISTRO}:${VERSION}
+  image: wakemeops/${DISTRO}:${VERSION}
   extends:
     - .no_schedule
     - .parallel_distro
@@ -141,7 +141,7 @@ test_packages:
   script:
     - make check-packages
   variables:
-    APT_DEPENDENCIES: "curl gnupg2 ca-certificates make"
+    APT_DEPENDENCIES: "make"
 
 push_packages:
   stage: push
