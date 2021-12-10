@@ -1,9 +1,9 @@
 ## Add wakemeops repository
 
-Our repository is currently split into three components, __devops__, __secops__, and __terminal__.
+Our repository is currently split into four components, __devops__, __dev__, __secops__, and __terminal__.
 
 
-* To add all three components, run:
+* To add all four components, run:
 
 ```shell
 curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | sudo bash
@@ -22,11 +22,13 @@ Dependending on your use case, you may want to lower the priority of the wakemeo
 to give packages from your distribution precedence over the ones from wakemeops:
 
 ```shell
-cat << EOF | sudo tee /etc/apt/preferences.d/01wakemeops
-Package: *
-Pin: origin deb.wakemeops.com
-Pin-Priority: 100
-EOF
+curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2219988/raw/main/preferences.sh | sudo bash -s 100
+```
+
+* If, on the other hand, you wish to increase wakemeops repository priority:
+
+```shell
+curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2219988/raw/main/preferences.sh | sudo bash -s 900
 ```
 
 !!! Info
