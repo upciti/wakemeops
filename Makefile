@@ -23,6 +23,7 @@ default:
 	@echo -e '\ndocumentation                                                  '
 	@echo '* docs                        run mkdocs build                      '
 	@echo '* docs-dev                    run mkdocs serve from wakemebot image '
+	@echo '* docs-generate               generate documentation with wakemebot '
 
 install-wakemeops:
 	curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | bash -s $(COMPONENTS)
@@ -72,6 +73,9 @@ docs:
 	@mkdocs build -d public
 
 docs-dev:
-	@docker run --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
+	@docker run --pull=always --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
 
-.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev
+docs-update:
+	@docker run --pull=always --rm -it -w /docs -v $$(pwd):/docs upciti/wakemebot:main wakemebot docs
+
+.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update
