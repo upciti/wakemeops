@@ -40,14 +40,14 @@
  of configuration (like Git repositories), and automating updates to
  configuration when there is new code to deploy.
 
-<span class="badge arch">amd64</span> <span class="badge version">0.24.0</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span> <span class="badge version">0.19.1</span> <span class="badge version">0.19.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.24.1</span> <span class="badge version">0.24.0</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span> <span class="badge version">0.19.1</span> <span class="badge version">0.19.0</span>
 
 ## [helm](https://helm.sh)
 
  Tool for managing Kubernetes charts.
  Charts are packages of pre-configured Kubernetes resources.
 
-<span class="badge arch">amd64</span> <span class="badge version">3.7.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">3.7.2</span> <span class="badge version">3.7.1</span>
 
 ## [helmfile](https://github.com/roboll/helmfile)
 
@@ -63,13 +63,13 @@
 
  Istio is an open platform to connect, manage, and secure microservices.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.12.0</span> <span class="badge version">1.11.4</span> <span class="badge version">1.11.3</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.12.1</span> <span class="badge version">1.12.0</span> <span class="badge version">1.11.4</span> <span class="badge version">1.11.3</span>
 
 ## [k3d](https://k3d.io)
 
  Little helper to run Rancher Lab's k3s in Docker
 
-<span class="badge arch">amd64</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">5.2.1</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span>
 
 ## [k9s](https://k9scli.io)
 
@@ -103,10 +103,9 @@
 
 ## [kubectl](https://github.com/kubernetes/kubectl)
 
- kubectl is a command line client for running commands against Kubernetes
- clusters.
+ kubectl is a command line client for running commands against Kubernetes clusters.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.23.0</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span>
 
 ## [kubectl-neat](https://github.com/itaysk/kubectl-neat)
 
@@ -212,12 +211,11 @@
 
 ## [terraform](https://www.terraform.io)
 
- Terraform is a tool for building, changing, and versioning infrastructure
- safely
+ Terraform is a tool for building, changing, and versioning infrastructure safely
  and efficiently. Terraform can manage existing and popular service providers as
  well as custom in-house solutions.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
 
 ## [velero](https://velero.io)
 
