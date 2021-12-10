@@ -66,7 +66,7 @@ publish:
 	curl -v -f -s -XPUT --unix-socket /host/data/aptly/aptly.sock \
 	-H 'Content-Type: application/json' --data \
 	"{\"ForceOverwrite\":true, \"Signing\" : \
-	{\"GpgKey\":\"wakemebot-dev@upciti.com\", \"Batch\":true}}" \
+	{\"GpgKey\":\"wakemebot@protonmail.com\", \"Batch\":true}}" \
 	"http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
 
 docs:
