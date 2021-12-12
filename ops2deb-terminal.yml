@@ -1,191 +1,23 @@
 - name: bat
   version: 0.18.3
   homepage: https://github.com/sharkdp/bat
-  revision: 2
-  summary: A cat(1) clone with wings
-  description: |
-    A cat(1) clone with wings.
+  revision: 3
+  summary: Cat clone with wings
+  description: |-
+    Supports syntax highlighting for a large number of programming and markup
+    languages and communicates with git to show modifications with respect to the
+    index.
   fetch:
     url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
     sha256: 44735f2a98fdf8342f343516b6a0f6e783ee1acb918e850be2096bdb805519c1
   script:
-  - install -m 755 bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
-
-- name: exa
-  version: 0.10.1
-  homepage: https://github.com/ogham/exa
-  revision: 2
-  summary: A modern replacement for ls
-  description: |
-    exa is a modern replacement for ls.
-  fetch:
-    url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
-    sha256: a65a87bd545e969979ae9388f6333167f041a1f09fa9d60b32fd3072348ff6ce
-  script:
-  - install -m 755 bin/exa {{src}}/usr/bin/exa
-
-- name: fd
-  version: 8.3.0
-  homepage: https://github.com/sharkdp/fd
-  revision: 2
-  summary: A simple, fast and user-friendly alternative to 'find'
-  description: |
-    fd is a program to find entries in your filesystem.
-    It is a simple, fast and user-friendly alternative to find.
-    While it does not aim to support all of find's powerful functionality,
-    it provides sensible (opinionated) defaults for a majority of use cases.
-  fetch:
-    url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 8f318b94330c9afb42177e84f6c1f524bbf09743c4fddec8cff7fcb10df7b39f
-  script:
-  - install -m 755 fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
-
-- name: dust
-  version: 0.7.5
-  homepage: https://github.com/bootandy/dust
-  revision: 2
-  summary: A more intuitive version of du in rust
-  description: |
-    du + rust = dust. Like du but more intuitive.
-  fetch:
-    url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 1e74434d3af518e0a8bc909fe63f037372c93f1e513fe45a23e47f3a24e945d9
-  script:
-  - install -m 755 dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
-
-- name: ripgrep
-  version: 13.0.0
-  homepage: https://github.com/BurntSushi/ripgrep
-  revision: 2
-  summary: ripgrep (rg) recursively searches directories for a regex pattern while
-    respecting your gitignore
-  description: |
-    ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
-    By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files.
-    ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release.
-    ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
-  fetch:
-    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
-  script:
-  - install -m 755 ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
-
-- name: choose
-  version: 1.3.3
-  homepage: https://github.com/theryangeary/choose
-  revision: 2
-  summary: A human-friendly and fast alternative to cut and (sometimes) awk
-  description: |
-    This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
-  fetch:
-    url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
-    sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
-  script:
-  - install -m 755 choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
-
-- name: gping
-  version: 1.2.6
-  homepage: https://github.com/orf/gping
-  revision: 2
-  summary: Ping, but with a graph
-  description: |
-    Ping, but with a graph.
-  fetch:
-    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
-    sha256: 01b461e71c80090c78529849e391e6552ad2d56bcbd704e02a4c4d5d225b9b34
-  script:
-  - install -m 755 gping {{src}}/usr/bin/gping
-
-- name: procs
-  version: 0.11.10
-  homepage: https://github.com/dalance/procs
-  revision: 2
-  summary: procs is a replacement for ps written in Rust
-  description: |
-    A modern replacement for ps written in Rust
-  fetch:
-    url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
-    sha256: 6f4464407aa987c57456f7a6320bae3efb5c46b49578ee5ec0018f83a9ff1fb6
-  script:
-  - install -m 755 procs {{src}}/usr/bin/procs
-
-- name: curlie
-  version: 1.6.0
-  homepage: https://github.com/rs/curlie
-  revision: 2
-  summary: The power of curl, the ease of use of httpie.
-  description: |
-    If you like the interface of HTTPie but miss the features of curl, curlie is what you are searching for.
-    Curlie is a frontend to curl that adds the ease of use of httpie,
-    without compromising on features and performance.
-    All curl options are exposed with syntax sugar and output formatting inspired from httpie.
-  fetch:
-    url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
-    sha256: 335e01a904b0bc6268e29559646028a3bebc4217e588e339433d96a008f284c7
-  script:
-  - install -m 755 curlie {{src}}/usr/bin/curlie
-
-- name: xh
-  version: 0.14.1
-  homepage: https://github.com/ducaale/xh
-  revision: 2
-  summary: Friendly and fast tool for sending HTTP requests
-  description: |
-    xh is a friendly and fast tool for sending HTTP requests.
-    It reimplements as much as possible of HTTPie's excellent design, with a focus on improved performance.
-  fetch:
-    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
-  script:
-  - install -m 755 xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
-
-- name: dog
-  version: 0.1.0
-  homepage: https://github.com/ogham/dog
-  revision: 2
-  summary: A command-line DNS client.
-  description: |
-    A user-friendly command-line DNS client. dig on steroids
-  fetch:
-    url: https://github.com/ogham/dog/releases/download/v{{version}}/dog-v{{version}}-x86_64-unknown-linux-gnu.zip
-    sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
-  script:
-  - install -m 755 bin/dog {{src}}/usr/bin/dog
-
-- name: xsv
-  version: 0.13.0
-  homepage: https://github.com/BurntSushi/xsv
-  summary: A fast CSV command line toolkit
-  description: |
-    xsv is a command line program for indexing, slicing, analyzing,
-    splitting and joining CSV files.
-  fetch:
-    url: https://github.com/BurntSushi/xsv/releases/download/{{version}}/xsv-{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: d36b1be0f008d6597c2437e764fbe720eb7557f8980e0b03ca709e1020b5c52b
-  script:
-  - install -m 755 xsv {{src}}/usr/bin/xsv
-
-- name: yq
-  version: 4.14.2
-  homepage: https://github.com/mikefarah/yq
-  revision: 2
-  summary: yq is a portable command-line YAML processor.
-  description: |
-    A lightweight and portable command-line YAML processor. yq uses jq like
-    syntax but works with yaml files as well as json.
-    It doesn't yet support everything jq  does - but it does support the most
-    common operations and functions, and more is being added continuously.
-  fetch:
-    url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_amd64
-    sha256: dd2f8e4e711b434606495c16d3ffb6c33f47c5c02c72afb63b55b3741d9ef8c8
-  script:
-  - install -m 755 yq_linux_amd64 {{src}}/usr/bin/yq
+    - install -m 755 bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
 
 - name: bottom
   version: 0.6.4
   homepage: https://github.com/ClementTsang/bottom
   summary: Yet another cross-platform graphical process/system monitor
-  description: |
+  description: |-
     A cross-platform graphical process/system monitor with a customizable interface
     and a multitude of features. Supports Linux, macOS, and Windows.
     Inspired by gtop, gotop, and htop.
@@ -193,13 +25,199 @@
     url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_x86_64-unknown-linux-gnu.tar.gz
     sha256: ed10ce5df22b6260d5bf27db2edec2bf5fa4ed13617a61e8c6d5716ccdacee69
   script:
-  - install -m 755 btm {{src}}/usr/bin/
+    - install -m 755 btm {{src}}/usr/bin/
+
+- name: choose
+  version: 1.3.3
+  homepage: https://github.com/theryangeary/choose
+  revision: 2
+  summary: A human-friendly and fast alternative to cut and (sometimes) awk
+  description: |-
+    This is choose, a human-friendly and fast alternative to cut and (sometimes)
+    awk
+  fetch:
+    url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
+    sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
+  script:
+    - install -m 755 choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
+
+- name: clog-cli
+  version: 0.9.3
+  homepage: https://github.com/clog-tool/clog-cli
+  summary: Generate beautiful changelogs from your Git commit history
+  description: |-
+    clog creates a changelog automatically from your local git metadata. The way
+    this works, is every time you make a commit, you ensure your commit subject
+    line follows the conventional format. Then when you wish to update your
+    changelog, you simply run clog inside your local repository with any options
+    you'd like to specify.
+  fetch:
+    url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
+  script:
+    - install -m 755 clog {{src}}/usr/bin/
+
+- name: curlie
+  version: 1.6.0
+  homepage: https://github.com/rs/curlie
+  revision: 2
+  summary: The power of curl, the ease of use of httpie
+  description: |-
+    If you like the interface of HTTPie but miss the features of curl, curlie is
+    what you are searching for. It is a frontend to curl that adds the ease of use
+    of httpie, without compromising on features and performance. All curl options
+    are exposed with syntax sugar and output formatting inspired from httpie.
+  fetch:
+    url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
+    sha256: 335e01a904b0bc6268e29559646028a3bebc4217e588e339433d96a008f284c7
+  script:
+    - install -m 755 curlie {{src}}/usr/bin/curlie
+
+- name: diskonaut
+  version: 0.11.0
+  homepage: https://github.com/imsnif/diskonaut
+  summary: Terminal disk space navigator
+  description: |-
+    Given a path on your hard-drive (which could also be the root path, eg. /)
+    diskonaut scans it and indexes its metadata to memory so that you could explore
+    its contents (even while still scanning!). Once completed, you can navigate
+    through subfolders, getting a visual treemap representation of what's taking up
+    your disk space. You can even delete files or folders and diskonaut will track
+    how much space you've freed up in this session.
+  fetch:
+    url: https://github.com/imsnif/diskonaut/releases/download/{{version}}/diskonaut-{{version}}-unknown-linux-musl.tar.gz
+    sha256: ec4f0103b5e507e15752bb1958644bc168d6ad277c59dd12a771fb28178bf725
+  script:
+    - install -m 755 diskonaut {{src}}/usr/bin/
+
+- name: dog
+  version: 0.1.0
+  homepage: https://github.com/ogham/dog
+  revision: 2
+  summary: Command-line DNS client
+  description: A user-friendly command-line DNS client. dig on steroids
+  fetch:
+    url: https://github.com/ogham/dog/releases/download/v{{version}}/dog-v{{version}}-x86_64-unknown-linux-gnu.zip
+    sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
+  script:
+    - install -m 755 bin/dog {{src}}/usr/bin/dog
+
+- name: dust
+  version: 0.7.5
+  homepage: https://github.com/bootandy/dust
+  revision: 2
+  summary: More intuitive version of du in rust
+  description: du + rust = dust. Like du but more intuitive.
+  fetch:
+    url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: 1e74434d3af518e0a8bc909fe63f037372c93f1e513fe45a23e47f3a24e945d9
+  script:
+    - install -m 755 dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
+
+- name: exa
+  version: 0.10.1
+  homepage: https://github.com/ogham/exa
+  revision: 2
+  summary: Modern replacement for ls
+  description: exa is a modern replacement for ls.
+  fetch:
+    url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
+    sha256: a65a87bd545e969979ae9388f6333167f041a1f09fa9d60b32fd3072348ff6ce
+  script:
+    - install -m 755 bin/exa {{src}}/usr/bin/exa
+
+- name: fd
+  version: 8.3.0
+  homepage: https://github.com/sharkdp/fd
+  revision: 2
+  summary: Simple, fast and user-friendly alternative to 'find'
+  description: |-
+    fd is a program to find entries in your filesystem. It is a simple, fast and
+    user-friendly alternative to find. While it does not aim to support all of
+    find's powerful functionality, it provides sensible (opinionated) defaults for
+    a majority of use cases.
+  fetch:
+    url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: 8f318b94330c9afb42177e84f6c1f524bbf09743c4fddec8cff7fcb10df7b39f
+  script:
+    - install -m 755 fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
+
+- name: gping
+  version: 1.2.6
+  homepage: https://github.com/orf/gping
+  revision: 2
+  summary: Ping, but with a graph
+  description: Ping, but with a graph.
+  fetch:
+    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
+    sha256: 01b461e71c80090c78529849e391e6552ad2d56bcbd704e02a4c4d5d225b9b34
+  script:
+    - install -m 755 gping {{src}}/usr/bin/gping
+
+- name: grex
+  version: 1.3.0
+  homepage: https://github.com/pemistahl/grex
+  summary: Command-line tool and library for generating regular expressions
+  description: |-
+    grex is a library as well as a command-line utility that is meant to simplify
+    the often complicated and tedious task of creating regular expressions. It does
+    so by automatically generating a single regular expression from user-provided
+    test cases. The resulting expression is guaranteed to match the test cases
+    which it was generated from.
+  fetch:
+    url: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: df47f82add291905af60d20a3499f6845c65bfe452fa9d30f8c7a900f45578e8
+  script:
+    - install -m 755 grex {{src}}/usr/bin/
+
+- name: procs
+  version: 0.11.10
+  homepage: https://github.com/dalance/procs
+  revision: 2
+  summary: procs is a replacement for ps written in Rust
+  description: A modern replacement for ps written in Rust
+  fetch:
+    url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
+    sha256: 6f4464407aa987c57456f7a6320bae3efb5c46b49578ee5ec0018f83a9ff1fb6
+  script:
+    - install -m 755 procs {{src}}/usr/bin/procs
+
+- name: ripgrep
+  version: 13.0.0
+  homepage: https://github.com/BurntSushi/ripgrep
+  revision: 2
+  summary: Recursively searches directories for a regex pattern
+  description: |-
+    ripgrep is a line-oriented search tool that recursively searches the current
+    directory for a regex pattern. By default, ripgrep will respect gitignore rules
+    and automatically skip hidden files/directories and binary files. ripgrep has
+    first class support on Windows, macOS and Linux, with binary downloads
+    available for every release. ripgrep is similar to other popular search tools
+    like The Silver Searcher, ack and grep.
+  fetch:
+    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
+  script:
+    - install -m 755 ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
+
+- name: skim
+  version: 0.9.4
+  homepage: https://github.com/lotabout/skim
+  summary: Fuzzy Finder in rust
+  description: |-
+    Half of our life is spent on navigation: files, lines, commands...
+    You need skim! It is a general fuzzy finder that saves you time.
+  fetch:
+    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
+  script:
+    - install -m 755 sk {{src}}/usr/bin/
 
 - name: tokei
   version: 12.1.2
   homepage: https://github.com/XAMPPRocky/tokei
-  summary: Count your code, quickly.
-  description: |
+  summary: Count your code, quickly
+  description: |-
     Tokei is a program that displays statistics about your code.
     Tokei will show the number of files, total lines within those files and
     code, comments, and blanks grouped by language.
@@ -207,66 +225,48 @@
     url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-x86_64-unknown-linux-gnu.tar.gz
     sha256: c8c5c4ab9e1ff47e745de70f4af3214078657399fa7a0da0b5f209d780e49978
   script:
-  - install -m 755 tokei {{src}}/usr/bin/
+    - install -m 755 tokei {{src}}/usr/bin/
 
-- name: grex
-  version: 1.3.0
-  homepage: https://github.com/pemistahl/grex
-  summary: A command-line tool and library for generating regular expressions from user-provided test cases
-  description: |
-    grex is a library as well as a command-line utility that is meant to
-    simplify the often complicated and tedious task of creating regular
-    expressions.
-    It does so by automatically generating a single regular expression
-    from user-provided test cases. The resulting expression is guaranteed
-    to match the test cases which it was generated from.
+- name: xh
+  version: 0.14.1
+  homepage: https://github.com/ducaale/xh
+  revision: 2
+  summary: Friendly and fast tool for sending HTTP requests
+  description: |-
+    xh is a friendly and fast tool for sending HTTP requests.
+    It reimplements as much as possible of HTTPie's excellent design, with a focus
+    on improved performance.
   fetch:
-    url: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: df47f82add291905af60d20a3499f6845c65bfe452fa9d30f8c7a900f45578e8
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
   script:
-  - install -m 755 grex {{src}}/usr/bin/
+    - install -m 755 xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
 
-- name: clog-cli
-  version: 0.9.3
-  homepage: https://github.com/clog-tool/clog-cli
-  summary: Generate beautiful changelogs from your Git commit history
-  description: |
-    clog creates a changelog automatically from your local git metadata.
-    The way this works, is every time you make a commit, you ensure your commit subject
-    line follows the conventional format. Then when you wish to update your changelog,
-    you simply run clog inside your local repository with any options you'd like to specify.
+- name: xsv
+  version: 0.13.0
+  homepage: https://github.com/BurntSushi/xsv
+  summary: A fast CSV command line toolkit
+  description: |-
+    xsv is a command line program for indexing, slicing, analyzing, splitting and
+    joining CSV files.
   fetch:
-    url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
+    url: https://github.com/BurntSushi/xsv/releases/download/{{version}}/xsv-{{version}}-x86_64-unknown-linux-musl.tar.gz
+    sha256: d36b1be0f008d6597c2437e764fbe720eb7557f8980e0b03ca709e1020b5c52b
   script:
-  - install -m 755 clog {{src}}/usr/bin/
+    - install -m 755 xsv {{src}}/usr/bin/xsv
 
-- name: diskonaut
-  version: 0.11.0
-  homepage: https://github.com/imsnif/diskonaut
-  summary: Terminal disk space navigator
-  description: |
-    Given a path on your hard-drive (which could also be the root path, eg. /).
-    diskonaut scans it and indexes its metadata to memory so that you could explore
-    its contents (even while still scanning!).
-    Once completed, you can navigate through subfolders, getting a visual treemap
-    representation of what's taking up your disk space. You can even delete files or
-    folders and diskonaut will track how much space you've freed up in this session.
+- name: yq
+  version: 4.14.2
+  homepage: https://github.com/mikefarah/yq
+  revision: 2
+  summary: Portable command-line YAML processor
+  description: |-
+    Lightweight and portable command-line YAML processor. yq uses jq like syntax
+    but works with yaml files as well as json. It doesn't yet support everything jq
+    does - but it does support the most common operations and functions, and more
+    is being added continuously.
   fetch:
-    url: https://github.com/imsnif/diskonaut/releases/download/{{version}}/diskonaut-{{version}}-unknown-linux-musl.tar.gz
-    sha256: ec4f0103b5e507e15752bb1958644bc168d6ad277c59dd12a771fb28178bf725
+    url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_amd64
+    sha256: dd2f8e4e711b434606495c16d3ffb6c33f47c5c02c72afb63b55b3741d9ef8c8
   script:
-  - install -m 755 diskonaut {{src}}/usr/bin/
-
-- name: skim
-  version: 0.9.4
-  homepage: https://github.com/lotabout/skim
-  summary: Fuzzy Finder in rust!
-  description: |
-    Half of our life is spent on navigation: files, lines, commands...
-    You need skim! It is a general fuzzy finder that saves you time.
-  fetch:
-    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
-  script:
-  - install -m 755 sk {{src}}/usr/bin/
+    - install -m 755 yq_linux_amd64 {{src}}/usr/bin/yq

@@ -1,42 +1,40 @@
-- name: pyoxidizer
-  version: 0.18.0
-  summary: PyOxidizer is a utility for producing binaries that embed Python
-  description: |
-    The over-arching goal of PyOxidizer is to make complex packaging
-    and distribution problems simple so application maintainers can
-    focus on building applications instead of toiling with build
-    systems and packaging tools.
-  fetch:
-    url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
-    sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
-  script:
-  - install -m 755 pyoxidizer {{src}}/usr/bin/pyoxidizer
-
 - name: datanymizer
   version: 0.5.1
   homepage: https://github.com/datanymizer/datanymizer
   summary: Powerful postgres database anonymizer with flexible rules
-  description: |
+  description: |-
+    Datanymizer generates database-native dump. You can import or process your dump
+    with supported database without 3rd-party importers.
     Datanymizer is created & supported by Evrone.
-    Database -> Dumper (+Faker) -> Dump.sql
-    You can import or process your dump with supported database without 3rd-party importers.
-    Datanymizer generates database-native dump.
   fetch:
     url: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
     sha256: cc5fdb12f0bf2cb64e01c28f61aac24db7836cf03898b79d9cf3712874419c9a
   script:
-  - install -m 755 pg_datanymizer {{src}}/usr/bin/
+    - install -m 755 pg_datanymizer {{src}}/usr/bin/
 
 - name: mask
   version: 0.11.0
   homepage: https://github.com/jakedeichert/mask
   summary: A CLI task runner defined by a simple markdown file
-  description: |
-    mask is a CLI task runner which is defined by a simple markdown file.
-    It searches for a maskfile.md in the current directory which it
-    then parses for commands and arguments.
+  description: |-
+    mask is a CLI task runner which is defined by a simple markdown file. It
+    searches for a maskfile.md in the current directory which it then parses for
+    commands and arguments.
   fetch:
     url: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
     sha256: 1247a00b9ecca1818d39672ca412c8a9df9e99940152f3a8fdb51b253d2ddb19
   script:
-  - install -m 755 mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
+    - install -m 755 mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
+
+- name: pyoxidizer
+  version: 0.18.0
+  summary: PyOxidizer is a utility for producing binaries that embed Python
+  description: |-
+    The over-arching goal of PyOxidizer is to make complex packaging and
+    distribution problems simple so application maintainers can focus on building
+    applications instead of toiling with build systems and packaging tools.
+  fetch:
+    url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
+    sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
+  script:
+    - install -m 755 pyoxidizer {{src}}/usr/bin/pyoxidizer

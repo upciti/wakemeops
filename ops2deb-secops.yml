@@ -1,38 +1,8 @@
-- name: vault
-  version: 1.9.1
-  homepage: https://www.hashicorp.com/products/vault
-  revision: 1
-  summary: Vault is a tool for securely accessing secrets
-  description: |
-    Vault is a tool for securely accessing secrets. A secret is anything that
-    you want to tightly control access to, such as API keys, passwords, or
-    certificates. Vault provides a unified interface to any secret,
-    while providing tight access control and recording a detailed audit log.
-  fetch:
-    url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
-    sha256: 90fd702db924b55093668a55693d21fd62aa006dcf77d83ba9eaee9383085893
-  script:
-  - install -m 755 vault {{src}}/usr/bin/vault
-
-- name: trivy
-  version: 0.21.2
-  homepage: https://www.aquasec.com/products/trivy/
-  revision: 2
-  summary: Scanner for vulnerabilities
-  description: |
-    Scanner for vulnerabilities in container images,
-    file systems, and Git repositories, as well as for configuration issues
-  fetch:
-    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
-    sha256: 563d937db4febeafe6a318ee242eb7da940ff858650eec3864365b4745caab58
-  script:
-  - install -m 755 trivy {{src}}/usr/bin/trivy
-
 - name: feroxbuster
   version: 2.4.0
   homepage: https://github.com/epi052/feroxbuster
-  summary: A fast, simple, recursive content discovery tool
-  description: |
+  summary: Fast, simple, recursive content discovery tool
+  description: |-
     feroxbuster is a tool designed to perform Forced Browsing.
     Forced browsing is an attack where the aim is to enumerate and access
     resources that are not referenced by the web application, but are still
@@ -47,4 +17,33 @@
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/x86_64-linux-feroxbuster.tar.gz
     sha256: a1882d669a0b05150d37358837a5d1b4ed70e0cffed280f2cd6e115af5e9a678
   script:
-  - install -m 755 feroxbuster {{src}}/usr/bin/
+    - install -m 755 feroxbuster {{src}}/usr/bin/
+
+- name: trivy
+  version: 0.21.2
+  homepage: https://www.aquasec.com/products/trivy/
+  revision: 2
+  summary: Scanner for vulnerabilities
+  description: |-
+    Scanner for vulnerabilities in container images, file systems, and Git
+    repositories, as well as for configuration issues
+  fetch:
+    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
+    sha256: 563d937db4febeafe6a318ee242eb7da940ff858650eec3864365b4745caab58
+  script:
+    - install -m 755 trivy {{src}}/usr/bin/trivy
+
+- name: vault
+  version: 1.9.1
+  homepage: https://www.hashicorp.com/products/vault
+  summary: Tool for securely accessing secrets
+  description: |-
+    A secret is anything that you want to tightly control access to, such as API
+    keys, passwords, or certificates. Vault provides a unified interface to any
+    secret, while providing tight access control and recording a detailed audit
+    log.
+  fetch:
+    url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
+    sha256: 90fd702db924b55093668a55693d21fd62aa006dcf77d83ba9eaee9383085893
+  script:
+    - install -m 755 vault {{src}}/usr/bin/vault
