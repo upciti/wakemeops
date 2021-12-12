@@ -30,10 +30,10 @@ install-wakemeops:
 
 generate-%:
 	mkdir -p $(OUTPUT_BASE_PATH)/$*
-	ops2deb generate -c ./ops2deb-$*.yml -w $(OUTPUT_BASE_PATH)/$*
+	ops2deb generate -c ./ops2deb-$*.yml -o $(OUTPUT_BASE_PATH)/$*
 
 build-%:
-	ops2deb build -w $(OUTPUT_BASE_PATH)/$*
+	ops2deb build -o $(OUTPUT_BASE_PATH)/$*
 
 update:
 	for component in $(COMPONENTS); do \
