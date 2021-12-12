@@ -11,9 +11,10 @@ default:
 	@echo -e '\nprerequisite                                                   '
 	@echo '* install-wakemeops           add wakemeops repository              '
 	@echo -e '\nops2deb                                                        '
-	@echo '* generate-{component}        generate deb from yaml                '
-	@echo '* build-{component}           build generated sources               '
+	@echo '* generate-{component}        generate source packages from yaml    '
+	@echo '* build-{component}           build generated sources packages      '
 	@echo '* update                      check binaries updates                '
+	@echo '* format                      format all configuration files        '
 	@echo -e '\nchecks                                                         '
 	@echo '* install-packages            install generated packages            '
 	@echo '* check-packages              check generated packages              '
@@ -40,6 +41,13 @@ update:
 		ops2deb update \
 		-c ops2deb-$${component}.yml \
 		--output-file ops2deb-$${component}.log; \
+	done
+
+
+format:
+	for component in $(COMPONENTS); do \
+		ops2deb format \
+		-c ops2deb-$${component}.yml; \
 	done
 
 install-packages:
