@@ -203,4 +203,5 @@ buildah:
       changes:
         - Dockerfile
         - .gitlab-ci.yml
+        - assets/**/*
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "1"'
