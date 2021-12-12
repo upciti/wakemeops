@@ -1,106 +1,326 @@
-- name: kubectl
-  version: 1.23.0
-  revision: 1
-  homepage: https://github.com/kubernetes/kubectl
-  summary: Command line client for controlling a Kubernetes cluster
-  description: |
-    kubectl is a command line client for running commands against Kubernetes clusters.
-  fetch:
-    url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
-    sha256: 2d0f5ba6faa787878b642c151ccb2c3390ce4c1e6c8e2b59568b3869ba407c4f
-  script:
-  - mv kubectl {{src}}/usr/bin/
-
-- name: kustomize
-  version: 3.8.10
+- name: argocd
+  version: 2.1.7
+  homepage: https://github.com/argoproj/argo-cd
   revision: 2
-  homepage: https://kustomize.io
-  depends:
-  - kubectl
-  summary: Kubernetes native configuration management
-  description: |
-    kustomize lets you customize raw, template-free YAML files for multiple purposes,
-    leaving the original YAML untouched and usable as is.
-    kustomize targets kubernetes; it understands and can patch kubernetes style API objects.
-    It's like make, in that what it does is declared in a file,
-    and it's like sed, in that it emits edited text.
+  summary: Continuous delivery tool for Kubernetes
+  description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
-    url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
-    sha256: 10281b6cd16a50fcbb4a762652bf5ab333633d37035fc7f76ee7b941b50b511d
+    url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
+    sha256: 6f45564de1b83bcddeac3902cb6f84f117135fa7baf8d364e4afd48ecc739271
   script:
-  - mv kustomize {{src}}/usr/bin/
+    - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
+
+- name: datree
+  version: 0.14.49
+  homepage: https://github.com/datreeio/datree
+  revision: 2
+  summary: Prevent Kubernetes misconfigurations from reaching production
+  description: |-
+    Datree is a CLI tool that supports Kubernetes admins in their roles by
+    preventing developers from making errors in Kubernetes configurations that can
+    cause clusters to fail in production. Our CLI tool is open source, enabling it
+    to be supported by the Kubernetes community.
+  fetch:
+    url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_x86_64.zip
+    sha256: ea1c62f44b2dbbfa9fc66dd6577851717bc95561e9b2c5795a36245278bcd04b
+  script:
+    - install -m 755 datree {{src}}/usr/bin/datree
+
+- name: devspace
+  version: 5.17.0
+  homepage: https://devspace.sh
+  revision: 2
+  summary: The Fastest Developer Tool for Kubernetes
+  description: |-
+    Automate your deployment workflow with DevSpace and develop software directly
+    inside Kubernetes.
+  fetch:
+    url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
+    sha256: 5683b3217d54351a2fd033c27c61129aff54f474a6b2775b0f476c82fb908bf3
+  script:
+    - install -m 755 devspace-linux-amd64 {{src}}/usr/bin/devspace
+
+- name: docker-compose
+  version: 1.29.2
+  homepage: https://docs.docker.com/compose
+  revision: 2
+  summary: Lightweight development environments using Docker
+  description: |-
+    docker-compose is a service management software built on top of docker. Define
+    your services and their relationships in a simple YAML file, and let compose
+    handle the rest.
+  fetch:
+    url: https://github.com/docker/compose/releases/download/{{version}}/docker-compose-Linux-x86_64
+    sha256: f3f10cf3dbb8107e9ba2ea5f23c1d2159ff7321d16f0a23051d68d8e2547b323
+  script:
+    - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
+
+- name: flux
+  version: 0.24.1
+  homepage: https://fluxcd.io
+  summary: Open and extensible continuous delivery solution for Kubernetes
+  description: |-
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch:
+    url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
+    sha256: 3373a272ff888772e40647e90ba41dfa232e7482df62b10735cdd86a25e42178
+  script:
+    - install -m 755 flux {{src}}/usr/bin/flux
 
 - name: helm
   version: 3.7.2
-  revision: 1
   homepage: https://helm.sh
-  depends:
-  - kubectl
   summary: The Kubernetes package manager
-  description: |
+  description: |-
     Tool for managing Kubernetes charts.
     Charts are packages of pre-configured Kubernetes resources.
+  depends:
+    - kubectl
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-amd64.tar.gz
     sha256: 4ae30e48966aba5f807a4e140dad6736ee1a392940101e4d79ffb4ee86200a9e
   script:
-  - mv linux-amd64/helm {{src}}/usr/bin/
-
-- name: istioctl
-  version: 1.12.1
-  revision: 1
-  homepage: https://istio.io
-  depends:
-  - kubectl
-  summary: Istio service mesh CLI
-  description: Istio is an open platform to connect, manage, and secure microservices.
-  fetch:
-    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: 7b1279810a77590bd7af60d6d26074a89c32e6aff7512fdc37f38b093e34e382
-  script:
-  - install -d {{src}}/opt/istio
-  - mv * {{src}}/opt/istio/
-  - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
-
-- name: kubeseal
-  version: 0.16.0
-  revision: 2
-  homepage: https://github.com/bitnami-labs/sealed-secrets
-  summary: Secret management solution for k8s
-  description: Encrypt your Secret into a SealedSecret, which is safe to store - even
-    to a public repository.
-  fetch:
-    url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-linux-amd64
-    sha256: 0899c583053a7c242359985545d9c5c76899fb965dd9d1c46cbcc8b4dd2071ed
-  script:
-  - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
+    - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: helmfile
   version: 0.142.0
-  revision: 2
   homepage: https://github.com/roboll/helmfile
-  depends:
-  - kubectl
-  - helm
-  - kustomize
+  revision: 3
   summary: Deploy Kubernetes Helm Charts
-  description: |
+  description: |-
     Helmfile is a declarative spec for deploying helm charts. It lets you...
-    - Keep a directory of chart value files and maintain changes in version control.
+
+    - Keep a directory of chart value files and maintain changes in version
+    control.
     - Apply CI/CD to configuration changes.
     - Periodically sync to avoid skew in environments.
+  depends:
+    - kubectl
+    - helm
+    - kustomize
   fetch:
     url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
     sha256: ec01b884cbb9d072f4a6784b33a29f3311248e85e714ebacabba85a79a3ba3db
   script:
-  - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+    - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+
+- name: istioctl
+  version: 1.12.1
+  homepage: https://istio.io
+  summary: Istio service mesh CLI
+  description: Istio is an open platform to connect, manage, and secure microservices.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
+    sha256: 7b1279810a77590bd7af60d6d26074a89c32e6aff7512fdc37f38b093e34e382
+  script:
+    - install -d {{src}}/opt/istio
+    - mv * {{src}}/opt/istio/
+    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+
+- name: k3d
+  version: 5.2.1
+  homepage: https://k3d.io
+  summary: Little helper to run Rancher Lab's k3s in Docker
+  description: |-
+    k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+    distribution) in docker. k3d makes it very easy to create single- and multi-
+    node k3s clusters in docker, e.g. for local development on Kubernetes.
+  fetch:
+    url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
+    sha256: 70141637bbe7531d17cf313688520287572e78711361e7162237648a59a6e91d
+  script:
+    - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
+
+- name: k9s
+  version: 0.25.8
+  homepage: https://k9scli.io
+  revision: 2
+  summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
+  description: |-
+    K9s provides a terminal UI to interact with your Kubernetes clusters.
+    The aim of this project is to make it easier to navigate,
+    observe and manage your applications in the wild.
+  fetch:
+    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
+    sha256: 30980b4471c3169905c4575964b58ca0cd91c0b1d78e766273bffec4b50942b3
+  script:
+    - install -m 755 k9s {{src}}/usr/bin/k9s
+
+- name: kind
+  version: 0.11.1
+  homepage: https://kind.sigs.k8s.io
+  revision: 2
+  summary: Kubernetes IN Docker
+  description: |-
+    kind is a tool for running local Kubernetes clusters using Docker container
+    "nodes". kind was primarily designed for testing Kubernetes itself, but may be
+    used for local development or CI.
+  fetch:
+    url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-amd64
+    sha256: 949f81b3c30ca03a3d4effdecda04f100fa3edc07a28b19400f72ede7c5f0491
+  script:
+    - install -m 755 kind-linux-amd64 {{src}}/usr/bin/kind
+
+- name: krew
+  version: 0.4.2
+  homepage: https://krew.sigs.k8s.io
+  revision: 3
+  summary: Find and install kubectl plugins
+  description: Krew is the package manager for kubectl plugins.
+  depends:
+    - kubectl
+    - git
+  fetch:
+    url: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_amd64.tar.gz
+    sha256: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
+  script:
+    - install -m 755 krew-linux_amd64 {{src}}/usr/bin/krew
+
+- name: kube-score
+  version: 1.13.0
+  homepage: https://github.com/zegl/kube-score
+  revision: 2
+  summary: Kubernetes object analysis with recommendations for improved reliability
+    and security.
+  description: |-
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
+    sha256: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
+  script:
+    - install -m 755 kube-score {{src}}/usr/bin/kube-score
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: kubectl
+  version: 1.23.0
+  homepage: https://github.com/kubernetes/kubectl
+  summary: Command line client for controlling a Kubernetes cluster
+  description: |-
+    kubectl is a command line client for running commands against Kubernetes
+    clusters.
+  fetch:
+    url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
+    sha256: 2d0f5ba6faa787878b642c151ccb2c3390ce4c1e6c8e2b59568b3869ba407c4f
+  script:
+    - mv kubectl {{src}}/usr/bin/
+
+- name: kubectl-neat
+  version: 2.0.3
+  homepage: https://github.com/itaysk/kubectl-neat
+  revision: 2
+  summary: Clean up Kubernetes yaml and json output to make it readable
+  description: Remove clutter from Kubernetes manifests to make them more readable.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_amd64.tar.gz
+    sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
+  script:
+    - install -m 755 kubectl-neat {{src}}/usr/bin/kubectl-neat
+
+- name: kubectx
+  version: 0.9.4
+  homepage: https://github.com/ahmetb/kubectx
+  revision: 2
+  summary: kubectl plugin that helps you switch between clusters
+  description: Faster way to switch between clusters in kubectl.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_x86_64.tar.gz
+    sha256: db5a48e85ff4d8c6fa947e3021e11ba4376f9588dd5fa779a80ed5c18287db22
+  script:
+    - install -m 755 kubectx {{src}}/usr/bin/kubectx
+    - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
+
+- name: kubens
+  version: 0.9.4
+  homepage: https://github.com/ahmetb/kubectx
+  revision: 2
+  summary: kubectl plugin that helps you switch between namespaces
+  description: Faster way to switch between namespaces in kubectl.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubens_v{{version}}_linux_x86_64.tar.gz
+    sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
+  script:
+    - install -m 755 kubens {{src}}/usr/bin/kubens
+    - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
+
+- name: kubeseal
+  version: 0.16.0
+  homepage: https://github.com/bitnami-labs/sealed-secrets
+  revision: 2
+  summary: Secret management solution for k8s
+  description: |-
+    Encrypt your Secret into a SealedSecret, which is safe to store - even to a
+    public repository.
+  fetch:
+    url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-linux-amd64
+    sha256: 0899c583053a7c242359985545d9c5c76899fb965dd9d1c46cbcc8b4dd2071ed
+  script:
+    - install -m 755 kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
+
+- name: kustomize
+  version: 3.8.10
+  homepage: https://kustomize.io
+  revision: 2
+  summary: Kubernetes native configuration management
+  description: |-
+    kustomize lets you customize raw, template-free YAML files for multiple
+    purposes, leaving the original YAML untouched and usable as is. kustomize
+    targets kubernetes; it understands and can patch kubernetes style API objects.
+    It's like make, in that what it does is declared in a file, and it's like sed,
+    in that it emits edited text.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
+    sha256: 10281b6cd16a50fcbb4a762652bf5ab333633d37035fc7f76ee7b941b50b511d
+  script:
+    - mv kustomize {{src}}/usr/bin/
+
+- name: linkerd
+  version: 21.10.3
+  homepage: https://linkerd.io
+  revision: 2
+  summary: Ultralight service mesh for Kubernetes
+  description: |-
+    Linkerd is an ultralight, security-first service mesh for Kubernetes.
+    Linkerd adds critical security, observability, and reliability features
+    to your Kubernetes stack with no code change required.
+  fetch:
+    url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
+    sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
+  script:
+    - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
+
+- name: logcli
+  version: 2.4.1
+  homepage: https://github.com/grafana/loki
+  revision: 2
+  summary: LogCLI is the command-line interface to Loki
+  description: It facilitates running LogQL queries against a Loki instance.
+  fetch:
+    url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
+    sha256: 021d7cc5922fc43e480ac727538c9b1c64a2aa4f7ba3541b0b15a8adbd18a7c6
+  script:
+    - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
 
 - name: minikube
   version: 1.24.0
-  revision: 2
   homepage: https://minikube.sigs.k8s.io
+  revision: 2
   summary: Quickly set up a local Kubernetes cluster
-  description: |
+  description: |-
     Focus on helping application developers and new Kubernetes users.
     Supports the latest Kubernetes release (+6 previous minor versions)
     Cross-platform (Linux, macOS, Windows)
@@ -113,328 +333,105 @@
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
     sha256: 3bc218476cf205acf11b078d45210a4882e136d24a3cbb7d8d645408e423b8fe
   script:
-  - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
-
-- name: docker-compose
-  version: 1.29.2
-  revision: 2
-  homepage: https://docs.docker.com/compose
-  summary: Punctual, lightweight development environments using Docker
-  description: |
-    docker-compose is a service management software built on top of docker. Define
-    your services and their relationships in a simple YAML file, and let compose
-    handle the rest.
-  fetch:
-    url: https://github.com/docker/compose/releases/download/{{version}}/docker-compose-Linux-x86_64
-    sha256: f3f10cf3dbb8107e9ba2ea5f23c1d2159ff7321d16f0a23051d68d8e2547b323
-  script:
-  - install -m 755 docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
-
-- name: terraform
-  version: 1.1.0
-  revision: 1
-  homepage: https://www.terraform.io
-  summary: Terraform is a tool for building, changing, and versioning infrastructure.
-  description: |
-    Terraform is a tool for building, changing, and versioning infrastructure safely
-    and efficiently. Terraform can manage existing and popular service providers as
-    well as custom in-house solutions.
-  fetch:
-    url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: 763378aa75500ce5ba67d0cba8aa605670cd28bf8bafc709333a30908441acb5
-  script:
-  - install -m 755 terraform {{src}}/usr/bin/terraform
+    - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
 
 - name: minio-client
   version: 2021-11-16T20-37-36Z
-  revision: 2
   homepage: https://min.io
+  revision: 2
   summary: MinIO Client
-  description: |
+  description: |-
     MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
     filesystems and object storage.
   fetch:
     url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
     sha256: 002871b96bfb0da15d6fb91d7f92c5fb18f9c9854c649c353ddcc63f3e0c0613
   script:
-  - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
+    - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
 
 - name: minio-server
   version: 2021-11-24T23-19-33Z
-  revision: 2
   homepage: https://min.io
+  revision: 2
   summary: High Performance, Kubernetes Native Object Storage
-  description: |
+  description: |-
     Standalone MinIO servers are best suited for early development and evaluation.
-    Certain features such as versioning, object locking,
-    and bucket replication require distributed deploying MinIO with Erasure Coding.
+    Certain features such as versioning, object locking, and bucket replication
+    require distributed deploying MinIO with Erasure Coding.
   fetch:
     url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
     sha256: dc00c6b32cfe756dd91e891e77187315736b24d6f12671b98a9ce27bd8fef195
   script:
-  - install -m 755 minio.RELEASE.{{version}} {{src}}/usr/bin/minio
+    - install -m 755 minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
-- name: k9s
-  version: 0.25.8
+- name: natscli
+  version: 0.0.26
+  homepage: https://github.com/nats-io/natscli
   revision: 2
-  homepage: https://k9scli.io
-  summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
-  description: |
-    K9s provides a terminal UI to interact with your Kubernetes clusters.
-    The aim of this project is to make it easier to navigate,
-    observe and manage your applications in the wild.
+  summary: The NATS Command Line Interface
+  description: |-
+    A command line utility to interact with and manage NATS. This utility replaces
+    various past tools that were named in the form nats-sub and nats-pub, adds
+    several new capabilities and support full JetStream management.
   fetch:
-    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-    sha256: 30980b4471c3169905c4575964b58ca0cd91c0b1d78e766273bffec4b50942b3
+    url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-amd64.zip
+    sha256: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
   script:
-  - install -m 755 k9s {{src}}/usr/bin/k9s
+    - install -m 755 nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
+
+- name: rancher
+  version: 2.4.13
+  homepage: https://github.com/rancher/cli
+  revision: 2
+  summary: Rancher Command Line Interface
+  description: |-
+    The Rancher Command Line Interface (CLI) is a unified tool for interacting with
+    your Rancher Server.
+  fetch:
+    url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
+    sha256: d515fd0014f316e219801707a7c28ce42fdc9608e8580072afd4c806b4cb20b9
+  script:
+    - install -m 755 rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
 
 - name: scw
   version: 2.4.0
-  revision: 2
   homepage: https://github.com/scaleway/scaleway-cli
+  revision: 2
   summary: Command Line Interface for Scaleway
-  description: |
+  description: |-
     Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
     directly from your terminal.
   fetch:
     url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
     sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
   script:
-  - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
+    - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
 
-- name: linkerd
-  version: 21.10.3
-  revision: 2
-  homepage: https://linkerd.io
-  summary: Ultralight, security-first service mesh for Kubernetes.
-  description: |
-    Linkerd is an ultralight, security-first service mesh for Kubernetes.
-    Linkerd adds critical security, observability, and reliability features
-    to your Kubernetes stack with no code change required.
+- name: terraform
+  version: 1.1.0
+  homepage: https://www.terraform.io
+  summary: Tool for building, changing, and versioning infrastructure safely
+  description: |-
+    Terraform is an open-source infrastructure as code software tool that provides
+    a consistent CLI workflow to manage hundreds of cloud services. Terraform
+    codifies cloud APIs into declarative configuration files. Terraform can manage
+    existing and popular service providers as well as custom in-house solutions.
   fetch:
-    url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
-    sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
+    url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
+    sha256: 763378aa75500ce5ba67d0cba8aa605670cd28bf8bafc709333a30908441acb5
   script:
-  - install -m 755 linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
-
-- name: argocd
-  version: 2.1.7
-  revision: 2
-  homepage: https://github.com/argoproj/argo-cd
-  summary: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
-  description: |
-    Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
-  fetch:
-    url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: 6f45564de1b83bcddeac3902cb6f84f117135fa7baf8d364e4afd48ecc739271
-  script:
-  - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
-
-- name: flux
-  version: 0.24.1
-  revision: 1
-  homepage: https://fluxcd.io
-  summary: Open and extensible continuous delivery solution for Kubernetes.
-  description: |
-    Flux is a tool for keeping Kubernetes clusters in sync with sources
-    of configuration (like Git repositories), and automating updates to
-    configuration when there is new code to deploy.
-  fetch:
-    url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 3373a272ff888772e40647e90ba41dfa232e7482df62b10735cdd86a25e42178
-  script:
-  - install -m 755 flux {{src}}/usr/bin/flux
-
-- name: k3d
-  version: 5.2.1
-  revision: 1
-  homepage: https://k3d.io
-  summary: Little helper to run Rancher Lab's k3s in Docker
-  description: |
-    Little helper to run Rancher Lab's k3s in Docker
-  fetch:
-    url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
-    sha256: 70141637bbe7531d17cf313688520287572e78711361e7162237648a59a6e91d
-  script:
-  - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
-
-- name: rancher
-  version: 2.4.13
-  revision: 2
-  homepage: https://github.com/rancher/cli
-  summary: Rancher Command Line Interface
-  description: |
-    The Rancher Command Line Interface (CLI) is a unified tool for interacting with your Rancher Server.
-  fetch:
-    url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
-    sha256: d515fd0014f316e219801707a7c28ce42fdc9608e8580072afd4c806b4cb20b9
-  script:
-  - install -m 755 rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
-
-- name: kind
-  version: 0.11.1
-  revision: 2
-  homepage: https://kind.sigs.k8s.io
-  summary: Kubernetes IN Docker - local clusters for testing Kubernetes
-  description: |
-    kind is a tool for running local Kubernetes clusters using Docker container "nodes".
-    kind was primarily designed for testing Kubernetes itself,
-    but may be used for local development or CI.
-  fetch:
-    url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-amd64
-    sha256: 949f81b3c30ca03a3d4effdecda04f100fa3edc07a28b19400f72ede7c5f0491
-  script:
-  - install -m 755 kind-linux-amd64 {{src}}/usr/bin/kind
-
-- name: logcli
-  version: 2.4.1
-  revision: 2
-  homepage: https://github.com/grafana/loki
-  summary: LogCLI is the command-line interface to Loki
-  description: |
-    It facilitates running LogQL queries against a Loki instance.
-  fetch:
-    url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-    sha256: 021d7cc5922fc43e480ac727538c9b1c64a2aa4f7ba3541b0b15a8adbd18a7c6
-  script:
-  - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
-
-- name: devspace
-  version: 5.17.0
-  revision: 2
-  homepage: https://devspace.sh
-  summary: DevSpace - The Fastest Developer Tool for Kubernetes
-  description: |
-    Automate your deployment workflow with DevSpace and develop software directly inside Kubernetes.
-  fetch:
-    url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
-    sha256: 5683b3217d54351a2fd033c27c61129aff54f474a6b2775b0f476c82fb908bf3
-  script:
-  - install -m 755 devspace-linux-amd64 {{src}}/usr/bin/devspace
-
-- name: kube-score
-  version: 1.13.0
-  revision: 2
-  homepage: https://github.com/zegl/kube-score
-  depends:
-  - kubectl
-  summary: Kubernetes object analysis with recommendations for improved reliability
-    and security.
-  description: |
-    kube-score is a tool that performs static code analysis of
-    your Kubernetes object definitions.
-  fetch:
-    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
-    sha256: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
-  script:
-  - install -m 755 kube-score {{src}}/usr/bin/kube-score
-  - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
-
-- name: krew
-  version: 0.4.2
-  revision: 3
-  homepage: https://krew.sigs.k8s.io
-  depends:
-  - kubectl
-  - git
-  summary: Find and install kubectl plugins
-  description: |
-    Krew is the package manager for kubectl plugins.
-  fetch:
-    url: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_amd64.tar.gz
-    sha256: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
-  script:
-  - install -m 755 krew-linux_amd64 {{src}}/usr/bin/krew
-
-- name: kubectl-neat
-  version: 2.0.3
-  revision: 2
-  homepage: https://github.com/itaysk/kubectl-neat
-  depends:
-  - kubectl
-  summary: Clean up Kubernetes yaml and json output to make it readable
-  description: |
-    Remove clutter from Kubernetes manifests to make them more readable.
-  fetch:
-    url: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_amd64.tar.gz
-    sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
-  script:
-  - install -m 755 kubectl-neat {{src}}/usr/bin/kubectl-neat
-
-- name: kubectx
-  version: 0.9.4
-  revision: 2
-  homepage: https://github.com/ahmetb/kubectx
-  depends:
-  - kubectl
-  summary: kubectx helps you switch between clusters
-  description: |
-    Faster way to switch between clusters in kubectl.
-  fetch:
-    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_x86_64.tar.gz
-    sha256: db5a48e85ff4d8c6fa947e3021e11ba4376f9588dd5fa779a80ed5c18287db22
-  script:
-  - install -m 755 kubectx {{src}}/usr/bin/kubectx
-  - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
-
-- name: kubens
-  version: 0.9.4
-  revision: 2
-  homepage: https://github.com/ahmetb/kubectx
-  depends:
-  - kubectl
-  summary: kubens helps you switch between namespaces
-  description: |
-    Faster way to switch between namespaces in kubectl.
-  fetch:
-    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubens_v{{version}}_linux_x86_64.tar.gz
-    sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
-  script:
-  - install -m 755 kubens {{src}}/usr/bin/kubens
-  - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
-
-- name: natscli
-  version: 0.0.26
-  revision: 2
-  homepage: https://github.com/nats-io/natscli
-  summary: The NATS Command Line Interface
-  description: |
-    A command line utility to interact with and manage NATS.
-    This utility replaces various past tools that were named in the form nats-sub and
-    nats-pub, adds several new capabilities and support full JetStream management.
-  fetch:
-    url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-amd64.zip
-    sha256: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
-  script:
-  - install -m 755 nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
-
-- name: datree
-  version: 0.14.49
-  revision: 2
-  homepage: https://github.com/datreeio/datree
-  summary: Prevent Kubernetes misconfigurations from reaching production.
-  description: |
-    Datree is a CLI tool that supports Kubernetes admins in their roles by preventing
-    developers from making errors in Kubernetes configurations that can cause clusters
-    to fail in production. Our CLI tool is open source, enabling it to be supported by
-    the Kubernetes community.
-  fetch:
-    url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_x86_64.zip
-    sha256: ea1c62f44b2dbbfa9fc66dd6577851717bc95561e9b2c5795a36245278bcd04b
-  script:
-  - install -m 755 datree {{src}}/usr/bin/datree
+    - install -m 755 terraform {{src}}/usr/bin/terraform
 
 - name: velero
   version: 1.7.1
-  revision: 2
   homepage: https://velero.io
+  revision: 2
   summary: Backup and migrate Kubernetes applications and their persistent volumes
-  description: |
-    Velero (formerly Heptio Ark) gives you tools to back up and restore your Kubernetes
-    cluster resources and persistent volumes.
+  description: |-
+    Velero (formerly Heptio Ark) gives you tools to back up and restore your
+    Kubernetes cluster resources and persistent volumes.
   fetch:
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-amd64.tar.gz
     sha256: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
   script:
-  - install -m 755 velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
+    - install -m 755 velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
