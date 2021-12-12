@@ -6,13 +6,13 @@ Our repository is currently split into four components, __devops__, __dev__, __s
 * To add all four components, run:
 
 ```shell
-curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | sudo bash
+curl -sSL https://gitlab.com/upciti/wakemeops/-/raw/main/assets/install_repository | sudo bash
 ```
 
 * If you are only interested by terminal goodies, just add the __terminal__ component:
 
 ```shell
-curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | sudo bash -s terminal
+curl -sSL https://gitlab.com/upciti/wakemeops/-/raw/main/assets/install_repository | sudo bash -s terminal
 ```
 
 
