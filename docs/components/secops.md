@@ -1,7 +1,26 @@
-<!-- secops.start --># Secops - 2 packages
+<!-- secops.start --># Secops - 3 packages
 
+
+## [feroxbuster](https://github.com/epi052/feroxbuster)
+
+__A fast, simple, recursive content discovery tool__
+
+ feroxbuster is a tool designed to perform Forced Browsing.
+ Forced browsing is an attack where the aim is to enumerate and access
+ resources that are not referenced by the web application, but are still
+ accessible by an attacker.
+ feroxbuster uses brute force combined with a wordlist to search for
+ unlinked content in target directories. These resources may store
+ sensitive information about web applications and operational systems,
+ such as source code, credentials, internal network addressing, etc...
+ This attack is also known as Predictable Resource Location,
+ File Enumeration, Directory Enumeration, and Resource Enumeration.
+
+<span class="badge arch">amd64</span> <span class="badge version">2.4.0</span>
 
 ## [trivy](https://www.aquasec.com/products/trivy/)
+
+__Scanner for vulnerabilities__
 
  Scanner for vulnerabilities in container images,
  file systems, and Git repositories, as well as for configuration issues
@@ -9,6 +28,8 @@
 <span class="badge arch">amd64</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
 
 ## [vault](https://www.hashicorp.com/products/vault)
+
+__Vault is a tool for securely accessing secrets__
 
  Vault is a tool for securely accessing secrets. A secret is anything that
  you want to tightly control access to, such as API keys, passwords, or
