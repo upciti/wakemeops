@@ -135,9 +135,9 @@
     - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
 
 - name: k9s
-  version: 0.25.8
+  version: 0.25.9
   homepage: https://k9scli.io
-  revision: 2
+  revision: 1
   summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
   description: |-
     K9s provides a terminal UI to interact with your Kubernetes clusters.
@@ -145,7 +145,7 @@
     observe and manage your applications in the wild.
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-    sha256: 30980b4471c3169905c4575964b58ca0cd91c0b1d78e766273bffec4b50942b3
+    sha256: 2a2a7889dcb87b0ae3b7d53def97c5c46b54a8a76ecf75039793852e20e6009a
   script:
     - install -m 755 k9s {{src}}/usr/bin/k9s
 
