@@ -1,7 +1,7 @@
 - name: bat
   version: 0.18.3
   homepage: https://github.com/sharkdp/bat
-  revision: 3
+  revision: 4
   summary: Cat clone with wings
   description: |-
     Supports syntax highlighting for a large number of programming and markup
@@ -11,7 +11,7 @@
     url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
     sha256: 44735f2a98fdf8342f343516b6a0f6e783ee1acb918e850be2096bdb805519c1
   script:
-    - install -m 755 bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
+    - mv bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
 
 - name: bottom
   version: 0.6.4
@@ -25,12 +25,12 @@
     url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_x86_64-unknown-linux-gnu.tar.gz
     sha256: ed10ce5df22b6260d5bf27db2edec2bf5fa4ed13617a61e8c6d5716ccdacee69
   script:
-    - install -m 755 btm {{src}}/usr/bin/
+    - mv btm {{src}}/usr/bin/
 
 - name: choose
   version: 1.3.3
   homepage: https://github.com/theryangeary/choose
-  revision: 2
+  revision: 3
   summary: A human-friendly and fast alternative to cut and (sometimes) awk
   description: |-
     This is choose, a human-friendly and fast alternative to cut and (sometimes)
@@ -39,12 +39,12 @@
     url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
     sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
   script:
-    - install -m 755 choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
+    - mv choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
 
 - name: curlie
   version: 1.6.0
   homepage: https://github.com/rs/curlie
-  revision: 2
+  revision: 3
   summary: The power of curl, the ease of use of httpie
   description: |-
     If you like the interface of HTTPie but miss the features of curl, curlie is
@@ -55,11 +55,12 @@
     url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
     sha256: 335e01a904b0bc6268e29559646028a3bebc4217e588e339433d96a008f284c7
   script:
-    - install -m 755 curlie {{src}}/usr/bin/curlie
+    - mv curlie {{src}}/usr/bin/curlie
 
 - name: diskonaut
   version: 0.11.0
   homepage: https://github.com/imsnif/diskonaut
+  revision: 2
   summary: Terminal disk space navigator
   description: |-
     Given a path on your hard-drive (which could also be the root path, eg. /)
@@ -72,48 +73,48 @@
     url: https://github.com/imsnif/diskonaut/releases/download/{{version}}/diskonaut-{{version}}-unknown-linux-musl.tar.gz
     sha256: ec4f0103b5e507e15752bb1958644bc168d6ad277c59dd12a771fb28178bf725
   script:
-    - install -m 755 diskonaut {{src}}/usr/bin/
+    - mv diskonaut {{src}}/usr/bin/
 
 - name: dog
   version: 0.1.0
   homepage: https://github.com/ogham/dog
-  revision: 2
+  revision: 3
   summary: Command-line DNS client
   description: A user-friendly command-line DNS client. dig on steroids
   fetch:
     url: https://github.com/ogham/dog/releases/download/v{{version}}/dog-v{{version}}-x86_64-unknown-linux-gnu.zip
     sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
   script:
-    - install -m 755 bin/dog {{src}}/usr/bin/dog
+    - mv bin/dog {{src}}/usr/bin/dog
 
 - name: dust
   version: 0.7.5
   homepage: https://github.com/bootandy/dust
-  revision: 2
+  revision: 3
   summary: More intuitive version of du in rust
   description: du + rust = dust. Like du but more intuitive.
   fetch:
     url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
     sha256: 1e74434d3af518e0a8bc909fe63f037372c93f1e513fe45a23e47f3a24e945d9
   script:
-    - install -m 755 dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
+    - mv dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
 
 - name: exa
   version: 0.10.1
   homepage: https://github.com/ogham/exa
-  revision: 2
+  revision: 3
   summary: Modern replacement for ls
   description: exa is a modern replacement for ls.
   fetch:
     url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
     sha256: a65a87bd545e969979ae9388f6333167f041a1f09fa9d60b32fd3072348ff6ce
   script:
-    - install -m 755 bin/exa {{src}}/usr/bin/exa
+    - mv bin/exa {{src}}/usr/bin/exa
 
 - name: fd
   version: 8.3.0
   homepage: https://github.com/sharkdp/fd
-  revision: 2
+  revision: 3
   summary: Simple, fast and user-friendly alternative to 'find'
   description: |-
     fd is a program to find entries in your filesystem. It is a simple, fast and
@@ -124,23 +125,24 @@
     url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
     sha256: 8f318b94330c9afb42177e84f6c1f524bbf09743c4fddec8cff7fcb10df7b39f
   script:
-    - install -m 755 fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
+    - mv fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
 
 - name: gping
   version: 1.2.6
   homepage: https://github.com/orf/gping
-  revision: 2
+  revision: 3
   summary: Ping, but with a graph
   description: Ping, but with a graph.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
     sha256: 01b461e71c80090c78529849e391e6552ad2d56bcbd704e02a4c4d5d225b9b34
   script:
-    - install -m 755 gping {{src}}/usr/bin/gping
+    - mv gping {{src}}/usr/bin/gping
 
 - name: grex
   version: 1.3.0
   homepage: https://github.com/pemistahl/grex
+  revision: 2
   summary: Command-line tool and library for generating regular expressions
   description: |-
     grex is a library as well as a command-line utility that is meant to simplify
@@ -152,23 +154,27 @@
     url: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: df47f82add291905af60d20a3499f6845c65bfe452fa9d30f8c7a900f45578e8
   script:
-    - install -m 755 grex {{src}}/usr/bin/
+    - mv grex {{src}}/usr/bin/
 
 - name: procs
   version: 0.11.12
   homepage: https://github.com/dalance/procs
-  summary: procs is a replacement for ps written in Rust
-  description: A modern replacement for ps written in Rust
+  revision: 2
+  summary: Replacement for ps written in Rust
+  description: |-
+    Procs has a colored and human-readable output, multi-column keyword search,
+    additional information which are not supported by ps, a tree view, a watch mode
+    and more...
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
     sha256: 9ffd7e2536ccf4046af10842e60cf1cd5859a444c88952c2be27660720a4cab0
   script:
-    - install -m 755 procs {{src}}/usr/bin/procs
+    - mv procs {{src}}/usr/bin/procs
 
 - name: ripgrep
   version: 13.0.0
   homepage: https://github.com/BurntSushi/ripgrep
-  revision: 2
+  revision: 3
   summary: Recursively searches directories for a regex pattern
   description: |-
     ripgrep is a line-oriented search tool that recursively searches the current
@@ -181,11 +187,12 @@
     url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
   script:
-    - install -m 755 ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
+    - mv ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
 
 - name: skim
   version: 0.9.4
   homepage: https://github.com/lotabout/skim
+  revision: 2
   summary: Fuzzy Finder in rust
   description: |-
     Half of our life is spent on navigation: files, lines, commands...
@@ -194,11 +201,12 @@
     url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
   script:
-    - install -m 755 sk {{src}}/usr/bin/
+    - mv sk {{src}}/usr/bin/
 
 - name: tokei
   version: 12.1.2
   homepage: https://github.com/XAMPPRocky/tokei
+  revision: 2
   summary: Count your code, quickly
   description: |-
     Tokei is a program that displays statistics about your code.
@@ -208,26 +216,26 @@
     url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-x86_64-unknown-linux-gnu.tar.gz
     sha256: c8c5c4ab9e1ff47e745de70f4af3214078657399fa7a0da0b5f209d780e49978
   script:
-    - install -m 755 tokei {{src}}/usr/bin/
+    - mv tokei {{src}}/usr/bin/
 
 - name: xh
   version: 0.14.1
   homepage: https://github.com/ducaale/xh
-  revision: 2
+  revision: 3
   summary: Friendly and fast tool for sending HTTP requests
   description: |-
-    xh is a friendly and fast tool for sending HTTP requests.
-    It reimplements as much as possible of HTTPie's excellent design, with a focus
+    xh reimplements as much as possible of HTTPie's excellent design, with a focus
     on improved performance.
   fetch:
     url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
   script:
-    - install -m 755 xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
+    - mv xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
 
 - name: xsv
   version: 0.13.0
   homepage: https://github.com/BurntSushi/xsv
+  revision: 2
   summary: A fast CSV command line toolkit
   description: |-
     xsv is a command line program for indexing, slicing, analyzing, splitting and
@@ -236,11 +244,12 @@
     url: https://github.com/BurntSushi/xsv/releases/download/{{version}}/xsv-{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: d36b1be0f008d6597c2437e764fbe720eb7557f8980e0b03ca709e1020b5c52b
   script:
-    - install -m 755 xsv {{src}}/usr/bin/xsv
+    - mv xsv {{src}}/usr/bin/xsv
 
 - name: yq
   version: 4.16.1
   homepage: https://github.com/mikefarah/yq
+  revision: 2
   summary: Portable command-line YAML processor
   description: |-
     Lightweight and portable command-line YAML processor. yq uses jq like syntax
@@ -251,4 +260,4 @@
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_amd64
     sha256: e8281f41adad697db8b7dcbc2989056bf0af049e9e4f3451500eae56db61569e
   script:
-    - install -m 755 yq_linux_amd64 {{src}}/usr/bin/yq
+    - mv yq_linux_amd64 {{src}}/usr/bin/yq
