@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.1.8
+  version: 2.2.0
   homepage: https://github.com/argoproj/argo-cd
   summary: Continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: dc3a43970248c68d5065455978083250cf9ef2d9b4bd6d95ffded9987c29dc58
+    sha256: 12f51bd1a5d2cc6d80ff542f2eae044bba783f3517b63f1c245a19fd60b710a9
   script:
     - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
@@ -54,16 +54,16 @@
     - install -m 755 datree {{src}}/usr/bin/datree
 
 - name: devspace
-  version: 5.17.0
+  version: 5.18.0
   homepage: https://devspace.sh
-  revision: 2
+  revision: 1
   summary: The Fastest Developer Tool for Kubernetes
   description: |-
     Automate your deployment workflow with DevSpace and develop software directly
     inside Kubernetes.
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
-    sha256: 5683b3217d54351a2fd033c27c61129aff54f474a6b2775b0f476c82fb908bf3
+    sha256: a0d0cb8a3eea4cd67c2440a4e1a1ac2a6787c379356acec41bf4da2284d2d27f
   script:
     - install -m 755 devspace-linux-amd64 {{src}}/usr/bin/devspace
 
