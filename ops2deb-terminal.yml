@@ -171,14 +171,14 @@
     - install -m 755 grex {{src}}/usr/bin/
 
 - name: procs
-  version: 0.11.10
+  version: 0.11.11
   homepage: https://github.com/dalance/procs
-  revision: 2
+  revision: 1
   summary: procs is a replacement for ps written in Rust
   description: A modern replacement for ps written in Rust
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
-    sha256: 6f4464407aa987c57456f7a6320bae3efb5c46b49578ee5ec0018f83a9ff1fb6
+    sha256: c5fd65ea92cadd94b47cf71ef0029b49d4ec8066861e1623e8099047afd612e3
   script:
     - install -m 755 procs {{src}}/usr/bin/procs
 
