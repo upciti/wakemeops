@@ -1,12 +1,12 @@
 - name: argocd
-  version: 2.1.7
+  version: 2.1.8
   homepage: https://github.com/argoproj/argo-cd
-  revision: 2
+  revision: 1
   summary: Continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: 6f45564de1b83bcddeac3902cb6f84f117135fa7baf8d364e4afd48ecc739271
+    sha256: dc3a43970248c68d5065455978083250cf9ef2d9b4bd6d95ffded9987c29dc58
   script:
     - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
 
@@ -135,7 +135,7 @@
     - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
 
 - name: k9s
-  version: 0.25.9
+  version: 0.25.10
   homepage: https://k9scli.io
   revision: 1
   summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
@@ -145,7 +145,7 @@
     observe and manage your applications in the wild.
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-    sha256: 2a2a7889dcb87b0ae3b7d53def97c5c46b54a8a76ecf75039793852e20e6009a
+    sha256: 0fb9072cf590962d8cd3fc4d7318120daf75616876f8911c1eb67e66b1240625
   script:
     - install -m 755 k9s {{src}}/usr/bin/k9s
 
