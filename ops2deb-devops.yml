@@ -1,7 +1,6 @@
 - name: argocd
   version: 2.1.8
   homepage: https://github.com/argoproj/argo-cd
-  revision: 1
   summary: Continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
@@ -9,6 +8,34 @@
     sha256: dc3a43970248c68d5065455978083250cf9ef2d9b4bd6d95ffded9987c29dc58
   script:
     - install -m 755 argocd-linux-amd64 {{src}}/usr/bin/argocd
+
+- name: container-diff
+  version: 0.17.0
+  homepage: https://github.com/GoogleContainerTools/container-diff
+  summary: Diff your Docker containers
+  description: |-
+    Tool for analyzing and comparing container images.
+    Container-diff can examine images along several different
+    criteria, including: history, file system, size, packages...
+  fetch:
+    url: https://github.com/GoogleContainerTools/container-diff/releases/download/v{{version}}/container-diff-linux-amd64
+    sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
+  script:
+    - install -m 755 container-diff-linux-amd64 {{src}}/usr/bin/container-diff
+
+- name: container-structure-test
+  version: 1.11.0
+  summary: Validate the structure of your container images
+  description: |-
+    The Container Structure Tests provide a powerful framework to validate the
+    structure of a container image. These tests can be used to check the output of
+    commands in an image, as well as verify metadata and contents of the
+    filesystem.
+  fetch:
+    url: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-amd64
+    sha256: 1524da5fd5a0fc88c4c9257a3de05a45f135df07e6a684380dd5f659b9ce189b
+  script:
+    - install -m 755 container-structure-test-linux-amd64 {{src}}/usr/bin/container-structure-test
 
 - name: datree
   version: 0.14.49
@@ -137,7 +164,6 @@
 - name: k9s
   version: 0.25.10
   homepage: https://k9scli.io
-  revision: 1
   summary: K9s - Kubernetes CLI To Manage Your Clusters In Style
   description: |-
     K9s provides a terminal UI to interact with your Kubernetes clusters.
@@ -405,6 +431,23 @@
     sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
   script:
     - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
+
+- name: skaffold
+  version: 1.35.1
+  homepage: https://skaffold.dev/
+  summary: Easy and Repeatable Kubernetes Development
+  description: |-
+    Command line tool that facilitates continuous development for Kubernetes
+    applications.
+    You can iterate on your application source code locally then deploy to local or
+    remote Kubernetes clusters. Skaffold handles the workflow for building,
+    pushing and deploying your application. It also provides building blocks
+    and describe customizations for a CI/CD pipeline.
+  fetch:
+    url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-amd64
+    sha256: bae964dbd1b97263e1994f98b7a0ecbcc4ed0d1b556dc098421b26d1d8f5c746
+  script:
+    - install -m 755 skaffold-linux-amd64 {{src}}/usr/bin/skaffold
 
 - name: terraform
   version: 1.1.0
