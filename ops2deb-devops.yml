@@ -56,7 +56,6 @@
 - name: devspace
   version: 5.18.0
   homepage: https://devspace.sh
-  revision: 1
   summary: The Fastest Developer Tool for Kubernetes
   description: |-
     Automate your deployment workflow with DevSpace and develop software directly
@@ -95,6 +94,20 @@
     sha256: 3373a272ff888772e40647e90ba41dfa232e7482df62b10735cdd86a25e42178
   script:
     - install -m 755 flux {{src}}/usr/bin/flux
+
+- name: gitlab-release-cli
+  version: 0.10.0
+  homepage: https://gitlab.com/gitlab-org/release-cli/
+  summary: GitLab Release command-line tool
+  description: |-
+    Consumes instructions in the :release node of the .gitlab-ci.yml to create a
+    Release object in GitLab Rails. GitLab Release is a CLI application written in
+    Golang.
+  fetch:
+    url: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-amd64
+    sha256: a219a95e5133bb7054b16d79b872b59fc42c31f05b2fa36a26350da6eea97685
+  script:
+    - mv release-cli-linux-amd64 {{src}}/usr/bin/release-cli
 
 - name: helm
   version: 3.7.2

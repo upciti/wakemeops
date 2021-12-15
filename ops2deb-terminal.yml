@@ -41,22 +41,6 @@
   script:
     - install -m 755 choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
 
-- name: clog-cli
-  version: 0.9.3
-  homepage: https://github.com/clog-tool/clog-cli
-  summary: Generate beautiful changelogs from your Git commit history
-  description: |-
-    clog creates a changelog automatically from your local git metadata. The way
-    this works, is every time you make a commit, you ensure your commit subject
-    line follows the conventional format. Then when you wish to update your
-    changelog, you simply run clog inside your local repository with any options
-    you'd like to specify.
-  fetch:
-    url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
-  script:
-    - install -m 755 clog {{src}}/usr/bin/
-
 - name: curlie
   version: 1.6.0
   homepage: https://github.com/rs/curlie
@@ -173,7 +157,6 @@
 - name: procs
   version: 0.11.12
   homepage: https://github.com/dalance/procs
-  revision: 1
   summary: procs is a replacement for ps written in Rust
   description: A modern replacement for ps written in Rust
   fetch:
