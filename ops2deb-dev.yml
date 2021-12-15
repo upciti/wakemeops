@@ -44,6 +44,61 @@
   script:
     - mv mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
 
+- name: poetry
+  version: 1.1.12
+  homepage: https://python-poetry.org
+  summary: Tool for dependency management and packaging in Python
+  description: |-
+    Poetry helps you declare, manage and install dependencies of Python projects,
+    ensuring you have the right stack everywhere.
+  depends:
+    - libc6
+    - python3
+    - python3-distutils
+  fetch:
+    url: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
+    sha256: 000f332f7f98c0dc5d317e0bd4e25d44e13293767d199fd964aae7c01284bcbe
+  script:
+    - rm -r poetry/_vendor/py2.7 poetry/_vendor/py3.5 poetry/_vendor/py3.6 poetry/_vendor/.gitignore
+    - mv poetry {{src}}/usr/lib/
+    - |-
+      cat << EOF >> {{src}}/usr/bin/poetry
+      #!/usr/bin/env python3
+      # -*- coding: utf-8 -*-
+      import glob
+      import sys
+      import os
+
+      lib = os.path.normpath(os.path.join(os.path.realpath(__file__), "../..", "lib"))
+      vendors = os.path.join(lib, "poetry", "_vendor")
+      current_vendors = os.path.join(
+          vendors, "py{}".format(".".join(str(v) for v in sys.version_info[:2]))
+      )
+
+      sys.path.insert(0, lib)
+      sys.path.insert(0, current_vendors)
+
+      if __name__ == "__main__":
+          from poetry.console import main
+
+          main()
+      EOF
+    - |-
+      cat << EOF >> {{src}}/../debian/postinst
+      #!/bin/sh
+      set -e
+      if which py3compile >/dev/null 2>&1; then
+        py3compile -p poetry
+      fi
+      EOF
+    - |-
+      cat << EOF >> {{src}}/../debian/prerm
+      #!/bin/sh
+      set -e
+      if which py3clean >/dev/null 2>&1; then
+        py3clean -p poetry
+      fi
+
 - name: pyoxidizer
   version: 0.18.0
   summary: PyOxidizer is a utility for producing binaries that embed Python
