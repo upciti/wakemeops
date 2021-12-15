@@ -1,40 +1,58 @@
-<!-- devops.start --># Devops - 29 packages
+<!-- devops.start --># Devops - 33 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
 
-__Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.__
+__Continuous delivery tool for Kubernetes__
 
  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
-<span class="badge arch">amd64</span> <span class="badge version">2.1.7</span> <span class="badge version">2.1.6</span> <span class="badge version">2.1.5</span> <span class="badge version">2.1.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">2.2.0</span> <span class="badge version">2.1.8</span> <span class="badge version">2.1.7</span> <span class="badge version">2.1.6</span> <span class="badge version">2.1.5</span> <span class="badge version">2.1.4</span>
+
+## [container-diff](https://github.com/GoogleContainerTools/container-diff)
+
+__Diff your Docker containers__
+
+ Tool for analyzing and comparing container images.
+ Container-diff can examine images along several different
+ criteria, including: history, file system, size, packages...
+
+<span class="badge arch">amd64</span> <span class="badge version">0.17.0</span>
+
+## container-structure-test
+
+__Validate the structure of your container images__
+
+ The Container Structure Tests provide a powerful framework to validate the
+ structure of a container image. These tests can be used to check the output of
+ commands in an image, as well as verify metadata and contents of the
+ filesystem.
+
+<span class="badge arch">amd64</span> <span class="badge version">1.11.0</span>
 
 ## [datree](https://github.com/datreeio/datree)
 
-__Prevent Kubernetes misconfigurations from reaching production.__
+__Prevent Kubernetes misconfigurations from reaching production__
 
  Datree is a CLI tool that supports Kubernetes admins in their roles by
- preventing
- developers from making errors in Kubernetes configurations that can cause
- clusters
- to fail in production. Our CLI tool is open source, enabling it to be supported
- by
- the Kubernetes community.
+ preventing developers from making errors in Kubernetes configurations that can
+ cause clusters to fail in production. Our CLI tool is open source, enabling it
+ to be supported by the Kubernetes community.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.14.49</span>
 
 ## [devspace](https://devspace.sh)
 
-__DevSpace - The Fastest Developer Tool for Kubernetes__
+__The Fastest Developer Tool for Kubernetes__
 
  Automate your deployment workflow with DevSpace and develop software directly
  inside Kubernetes.
 
-<span class="badge arch">amd64</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span>
+<span class="badge arch">amd64</span> <span class="badge version">5.18.0</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span>
 
 ## [docker-compose](https://docs.docker.com/compose)
 
-__Punctual, lightweight development environments using Docker__
+__Lightweight development environments using Docker__
 
  docker-compose is a service management software built on top of docker. Define
  your services and their relationships in a simple YAML file, and let compose
@@ -44,13 +62,23 @@ __Punctual, lightweight development environments using Docker__
 
 ## [flux](https://fluxcd.io)
 
-__Open and extensible continuous delivery solution for Kubernetes.__
+__Open and extensible continuous delivery solution for Kubernetes__
 
  Flux is a tool for keeping Kubernetes clusters in sync with sources
  of configuration (like Git repositories), and automating updates to
  configuration when there is new code to deploy.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.24.1</span> <span class="badge version">0.24.0</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span> <span class="badge version">0.19.1</span> <span class="badge version">0.19.0</span>
+
+## [gitlab-release-cli](https://gitlab.com/gitlab-org/release-cli/)
+
+__GitLab Release command-line tool__
+
+ Consumes instructions in the :release node of the .gitlab-ci.yml to create a
+ Release object in GitLab Rails. GitLab Release is a CLI application written in
+ Golang.
+
+<span class="badge arch">amd64</span> <span class="badge version">0.10.0</span>
 
 ## [helm](https://helm.sh)
 
@@ -85,7 +113,9 @@ __Istio service mesh CLI__
 
 __Little helper to run Rancher Lab's k3s in Docker__
 
- Little helper to run Rancher Lab's k3s in Docker
+ k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+ distribution) in docker. k3d makes it very easy to create single- and multi-
+ node k3s clusters in docker, e.g. for local development on Kubernetes.
 
 <span class="badge arch">amd64</span> <span class="badge version">5.2.1</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span>
 
@@ -97,16 +127,15 @@ __K9s - Kubernetes CLI To Manage Your Clusters In Style__
  The aim of this project is to make it easier to navigate,
  observe and manage your applications in the wild.
 
-<span class="badge arch">amd64</span> <span class="badge version">0.25.8</span> <span class="badge version">0.25.7</span> <span class="badge version">0.25.6</span> <span class="badge version">0.25.5</span> <span class="badge version">0.25.4</span> <span class="badge version">0.25.3</span> <span class="badge version">0.25.2</span> <span class="badge version">0.25.1</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.15</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.25.10</span> <span class="badge version">0.25.9</span> <span class="badge version">0.25.8</span> <span class="badge version">0.25.7</span> <span class="badge version">0.25.6</span> <span class="badge version">0.25.5</span> <span class="badge version">0.25.4</span> <span class="badge version">0.25.3</span> <span class="badge version">0.25.2</span> <span class="badge version">0.25.1</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.15</span>
 
 ## [kind](https://kind.sigs.k8s.io)
 
-__Kubernetes IN Docker - local clusters for testing Kubernetes__
+__Kubernetes IN Docker__
 
  kind is a tool for running local Kubernetes clusters using Docker container
- "nodes".
- kind was primarily designed for testing Kubernetes itself,
- but may be used for local development or CI.
+ "nodes". kind was primarily designed for testing Kubernetes itself, but may be
+ used for local development or CI.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.11.1</span>
 
@@ -145,7 +174,7 @@ __Clean up Kubernetes yaml and json output to make it readable__
 
 ## [kubectx](https://github.com/ahmetb/kubectx)
 
-__kubectx helps you switch between clusters__
+__kubectl plugin that helps you switch between clusters__
 
  Faster way to switch between clusters in kubectl.
 
@@ -153,7 +182,7 @@ __kubectx helps you switch between clusters__
 
 ## [kubens](https://github.com/ahmetb/kubectx)
 
-__kubens helps you switch between namespaces__
+__kubectl plugin that helps you switch between namespaces__
 
  Faster way to switch between namespaces in kubectl.
 
@@ -173,18 +202,16 @@ __Secret management solution for k8s__
 __Kubernetes native configuration management__
 
  kustomize lets you customize raw, template-free YAML files for multiple
- purposes,
- leaving the original YAML untouched and usable as is.
- kustomize targets kubernetes; it understands and can patch kubernetes style API
- objects.
- It's like make, in that what it does is declared in a file,
- and it's like sed, in that it emits edited text.
+ purposes, leaving the original YAML untouched and usable as is. kustomize
+ targets kubernetes; it understands and can patch kubernetes style API objects.
+ It's like make, in that what it does is declared in a file, and it's like sed,
+ in that it emits edited text.
 
 <span class="badge arch">amd64</span> <span class="badge version">3.8.10</span>
 
 ## [linkerd](https://linkerd.io)
 
-__Ultralight, security-first service mesh for Kubernetes.__
+__Ultralight service mesh for Kubernetes__
 
  Linkerd is an ultralight, security-first service mesh for Kubernetes.
  Linkerd adds critical security, observability, and reliability features
@@ -229,8 +256,8 @@ __MinIO Client__
 __High Performance, Kubernetes Native Object Storage__
 
  Standalone MinIO servers are best suited for early development and evaluation.
- Certain features such as versioning, object locking,
- and bucket replication require distributed deploying MinIO with Erasure Coding.
+ Certain features such as versioning, object locking, and bucket replication
+ require distributed deploying MinIO with Erasure Coding.
 
 <span class="badge arch">amd64</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span>
 
@@ -238,10 +265,9 @@ __High Performance, Kubernetes Native Object Storage__
 
 __The NATS Command Line Interface__
 
- A command line utility to interact with and manage NATS.
- This utility replaces various past tools that were named in the form nats-sub
- and
- nats-pub, adds several new capabilities and support full JetStream management.
+ A command line utility to interact with and manage NATS. This utility replaces
+ various past tools that were named in the form nats-sub and nats-pub, adds
+ several new capabilities and support full JetStream management.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.0.26</span>
 
@@ -263,13 +289,27 @@ __Command Line Interface for Scaleway__
 
 <span class="badge arch">amd64</span> <span class="badge version">2.4.0</span> <span class="badge version">2.3.1</span>
 
+## [skaffold](https://skaffold.dev/)
+
+__Easy and Repeatable Kubernetes Development__
+
+ Command line tool that facilitates continuous development for Kubernetes
+ applications.
+ You can iterate on your application source code locally then deploy to local or
+ remote Kubernetes clusters. Skaffold handles the workflow for building,
+ pushing and deploying your application. It also provides building blocks
+ and describe customizations for a CI/CD pipeline.
+
+<span class="badge arch">amd64</span> <span class="badge version">1.35.1</span>
+
 ## [terraform](https://www.terraform.io)
 
-__Terraform is a tool for building, changing, and versioning infrastructure.__
+__Tool for building, changing, and versioning infrastructure safely__
 
- Terraform is a tool for building, changing, and versioning infrastructure safely
- and efficiently. Terraform can manage existing and popular service providers as
- well as custom in-house solutions.
+ Terraform is an open-source infrastructure as code software tool that provides
+ a consistent CLI workflow to manage hundreds of cloud services. Terraform
+ codifies cloud APIs into declarative configuration files. Terraform can manage
+ existing and popular service providers as well as custom in-house solutions.
 
 <span class="badge arch">amd64</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
 
@@ -278,8 +318,7 @@ __Terraform is a tool for building, changing, and versioning infrastructure.__
 __Backup and migrate Kubernetes applications and their persistent volumes__
 
  Velero (formerly Heptio Ark) gives you tools to back up and restore your
- Kubernetes
- cluster resources and persistent volumes.
+ Kubernetes cluster resources and persistent volumes.
 
 <span class="badge arch">amd64</span> <span class="badge version">1.7.1</span> <span class="badge version">1.7.0</span>
 <!-- devops.end -->

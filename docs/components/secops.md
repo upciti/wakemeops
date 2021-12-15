@@ -3,7 +3,7 @@
 
 ## [feroxbuster](https://github.com/epi052/feroxbuster)
 
-__A fast, simple, recursive content discovery tool__
+__Fast, simple, recursive content discovery tool__
 
  feroxbuster is a tool designed to perform Forced Browsing.
  Forced browsing is an attack where the aim is to enumerate and access
@@ -22,19 +22,19 @@ __A fast, simple, recursive content discovery tool__
 
 __Scanner for vulnerabilities__
 
- Scanner for vulnerabilities in container images,
- file systems, and Git repositories, as well as for configuration issues
+ Scanner for vulnerabilities in container images, file systems, and Git
+ repositories, as well as for configuration issues
 
 <span class="badge arch">amd64</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
 
 ## [vault](https://www.hashicorp.com/products/vault)
 
-__Vault is a tool for securely accessing secrets__
+__Tool for securely accessing secrets__
 
- Vault is a tool for securely accessing secrets. A secret is anything that
- you want to tightly control access to, such as API keys, passwords, or
- certificates. Vault provides a unified interface to any secret,
- while providing tight access control and recording a detailed audit log.
+ A secret is anything that you want to tightly control access to, such as API
+ keys, passwords, or certificates. Vault provides a unified interface to any
+ secret, while providing tight access control and recording a detailed audit
+ log.
 
 <span class="badge arch">amd64</span> <span class="badge version">1.9.1</span> <span class="badge version">1.9.0</span> <span class="badge version">1.8.5</span> <span class="badge version">1.8.4</span>
 <!-- secops.end -->

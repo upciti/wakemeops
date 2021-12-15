@@ -1,4 +1,4 @@
-<!-- terminal.start --># Terminal - 19 packages
+<!-- terminal.start --># Terminal - 18 packages
 
 
 ## [bat](https://github.com/sharkdp/bat)
@@ -25,29 +25,19 @@ __Yet another cross-platform graphical process/system monitor__
 
 __A human-friendly and fast alternative to cut and (sometimes) awk__
 
- This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
+ This is choose, a human-friendly and fast alternative to cut and (sometimes)
+ awk
 
 <span class="badge arch">amd64</span> <span class="badge version">1.3.3</span>
 
-## [clog-cli](https://github.com/clog-tool/clog-cli)
-
-__Generate beautiful changelogs from your Git commit history__
-
- clog creates a changelog automatically from your local git metadata.
- The way this works, is every time you make a commit, you ensure your commit subject
- line follows the conventional format. Then when you wish to update your changelog,
- you simply run clog inside your local repository with any options you'd like to specify.
-
-<span class="badge arch">amd64</span> <span class="badge version">0.9.3</span>
-
 ## [curlie](https://github.com/rs/curlie)
 
-__The power of curl, the ease of use of httpie.__
+__The power of curl, the ease of use of httpie__
 
- If you like the interface of HTTPie but miss the features of curl, curlie is what you are searching for.
- Curlie is a frontend to curl that adds the ease of use of httpie,
- without compromising on features and performance.
- All curl options are exposed with syntax sugar and output formatting inspired from httpie.
+ If you like the interface of HTTPie but miss the features of curl, curlie is
+ what you are searching for. It is a frontend to curl that adds the ease of use
+ of httpie, without compromising on features and performance. All curl options
+ are exposed with syntax sugar and output formatting inspired from httpie.
 
 <span class="badge arch">amd64</span> <span class="badge version">1.6.0</span>
 
@@ -55,18 +45,18 @@ __The power of curl, the ease of use of httpie.__
 
 __Terminal disk space navigator__
 
- Given a path on your hard-drive (which could also be the root path, eg. /).
+ Given a path on your hard-drive (which could also be the root path, eg. /)
  diskonaut scans it and indexes its metadata to memory so that you could explore
- its contents (even while still scanning!).
- Once completed, you can navigate through subfolders, getting a visual treemap
- representation of what's taking up your disk space. You can even delete files or
- folders and diskonaut will track how much space you've freed up in this session.
+ its contents (even while still scanning!). Once completed, you can navigate
+ through subfolders, getting a visual treemap representation of what's taking up
+ your disk space. You can even delete files or folders and diskonaut will track
+ how much space you've freed up in this session.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.11.0</span>
 
 ## [dog](https://github.com/ogham/dog)
 
-__A command-line DNS client.__
+__Command-line DNS client__
 
  A user-friendly command-line DNS client. dig on steroids
 
@@ -74,7 +64,7 @@ __A command-line DNS client.__
 
 ## [dust](https://github.com/bootandy/dust)
 
-__A more intuitive version of du in rust__
+__More intuitive version of du in rust__
 
  du + rust = dust. Like du but more intuitive.
 
@@ -82,7 +72,7 @@ __A more intuitive version of du in rust__
 
 ## [exa](https://github.com/ogham/exa)
 
-__A modern replacement for ls__
+__Modern replacement for ls__
 
  exa is a modern replacement for ls.
 
@@ -90,12 +80,12 @@ __A modern replacement for ls__
 
 ## [fd](https://github.com/sharkdp/fd)
 
-__A simple, fast and user-friendly alternative to 'find'__
+__Simple, fast and user-friendly alternative to 'find'__
 
- fd is a program to find entries in your filesystem.
- It is a simple, fast and user-friendly alternative to find.
- While it does not aim to support all of find's powerful functionality,
- it provides sensible (opinionated) defaults for a majority of use cases.
+ fd is a program to find entries in your filesystem. It is a simple, fast and
+ user-friendly alternative to find. While it does not aim to support all of
+ find's powerful functionality, it provides sensible (opinionated) defaults for
+ a majority of use cases.
 
 <span class="badge arch">amd64</span> <span class="badge version">8.3.0</span> <span class="badge version">8.2.1</span>
 
@@ -109,39 +99,42 @@ __Ping, but with a graph__
 
 ## [grex](https://github.com/pemistahl/grex)
 
-__A command-line tool and library for generating regular expressions from user-provided test cases__
+__Command-line tool and library for generating regular expressions__
 
- grex is a library as well as a command-line utility that is meant to
- simplify the often complicated and tedious task of creating regular
- expressions.
- It does so by automatically generating a single regular expression
- from user-provided test cases. The resulting expression is guaranteed
- to match the test cases which it was generated from.
+ grex is a library as well as a command-line utility that is meant to simplify
+ the often complicated and tedious task of creating regular expressions. It does
+ so by automatically generating a single regular expression from user-provided
+ test cases. The resulting expression is guaranteed to match the test cases
+ which it was generated from.
 
 <span class="badge arch">amd64</span> <span class="badge version">1.3.0</span>
 
 ## [procs](https://github.com/dalance/procs)
 
-__procs is a replacement for ps written in Rust__
+__Replacement for ps written in Rust__
 
- A modern replacement for ps written in Rust
+ Procs has a colored and human-readable output, multi-column keyword search,
+ additional information which are not supported by ps, a tree view, a watch mode
+ and more...
 
-<span class="badge arch">amd64</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)
 
-__ripgrep (rg) recursively searches directories for a regex pattern while respecting your gitignore__
+__Recursively searches directories for a regex pattern__
 
- ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
- By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files.
- ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release.
- ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
+ ripgrep is a line-oriented search tool that recursively searches the current
+ directory for a regex pattern. By default, ripgrep will respect gitignore rules
+ and automatically skip hidden files/directories and binary files. ripgrep has
+ first class support on Windows, macOS and Linux, with binary downloads
+ available for every release. ripgrep is similar to other popular search tools
+ like The Silver Searcher, ack and grep.
 
 <span class="badge arch">amd64</span> <span class="badge version">13.0.0</span>
 
 ## [skim](https://github.com/lotabout/skim)
 
-__Fuzzy Finder in rust!__
+__Fuzzy Finder in rust__
 
  Half of our life is spent on navigation: files, lines, commands...
  You need skim! It is a general fuzzy finder that saves you time.
@@ -150,7 +143,7 @@ __Fuzzy Finder in rust!__
 
 ## [tokei](https://github.com/XAMPPRocky/tokei)
 
-__Count your code, quickly.__
+__Count your code, quickly__
 
  Tokei is a program that displays statistics about your code.
  Tokei will show the number of files, total lines within those files and
@@ -162,8 +155,8 @@ __Count your code, quickly.__
 
 __Friendly and fast tool for sending HTTP requests__
 
- xh is a friendly and fast tool for sending HTTP requests.
- It reimplements as much as possible of HTTPie's excellent design, with a focus on improved performance.
+ xh reimplements as much as possible of HTTPie's excellent design, with a focus
+ on improved performance.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.14.0</span> <span class="badge version">0.13.0</span>
 
@@ -171,8 +164,8 @@ __Friendly and fast tool for sending HTTP requests__
 
 __A fast CSV command line toolkit__
 
- xsv is a command line program for indexing, slicing, analyzing,
- splitting and joining CSV files.
+ xsv is a command line program for indexing, slicing, analyzing, splitting and
+ joining CSV files.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.13.0</span>
 
