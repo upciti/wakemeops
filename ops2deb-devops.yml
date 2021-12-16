@@ -378,7 +378,7 @@
     - mv minikube-linux-amd64 {{src}}/usr/bin/minikube
 
 - name: minio-client
-  version: 2021-11-16T20-37-36Z
+  version: 2021-12-10T00-14-28Z
   homepage: https://min.io
   revision: 3
   summary: MinIO Client
@@ -387,12 +387,12 @@
     filesystems and object storage.
   fetch:
     url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
-    sha256: 002871b96bfb0da15d6fb91d7f92c5fb18f9c9854c649c353ddcc63f3e0c0613
+    sha256: 01ec33b51ad208634deb8d701d52ac8f6be088e72563a92475ba6e6470653b73
   script:
     - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
 
 - name: minio-server
-  version: 2021-11-24T23-19-33Z
+  version: 2021-12-10T23-03-39Z
   homepage: https://min.io
   revision: 3
   summary: High Performance, Kubernetes Native Object Storage
@@ -402,7 +402,7 @@
     require distributed deploying MinIO with Erasure Coding.
   fetch:
     url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
-    sha256: dc00c6b32cfe756dd91e891e77187315736b24d6f12671b98a9ce27bd8fef195
+    sha256: 20efabe6cc76e487dc5cd367d744bf344eb28075d0772046b00a1a5e220ccf55
   script:
     - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
