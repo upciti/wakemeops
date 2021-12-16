@@ -99,6 +99,42 @@
         py3clean -p poetry
       fi
 
+- name: pyenv
+  version: 2.2.2
+  arch: all
+  summary: Simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  depends:
+    - make
+    - build-essential
+    - libssl-dev
+    - zlib1g-dev
+    - libbz2-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - wget
+    - curl
+    - llvm
+    - libncursesw5-dev
+    - xz-utils
+    - tk-dev
+    - libxml2-dev
+    - libxmlsec1-dev
+    - libffi-dev
+    - liblzma-dev
+  fetch:
+    url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+    sha256: 37e2a008136f1833a7177e8ed123412136d198292760d1fab5ee38ee017e74a5
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
+    - install -d 755 {{src}}/etc/profile.d/
+    - echo 'if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi' > {{src}}/etc/profile.d/ops2deb-pyenv.sh
+    - chmod 755 {{src}}/etc/profile.d/ops2deb-pyenv.sh
+
 - name: pyoxidizer
   version: 0.18.0
   summary: PyOxidizer is a utility for producing binaries that embed Python
