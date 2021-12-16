@@ -81,11 +81,11 @@ stages:
 
 .git_commit_push: &git_commit_push
   - git remote set-url --push origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
-  - branch="feature/update-packages-$(date '+%Y%m%d%H%M%S')"
+  - branch="chore/update-packages-$(date '+%Y%m%d%H%M%S')"
   - git checkout -b ${branch}
   - git add ops2deb-*.yml
   - >
-    echo -e "feature(bot): update packages\n" > message.log
+    echo -e "chore(bot): update packages\n" > message.log
   - cat ops2deb-*.log >> message.log || true
   - git commit -m "$(cat message.log)"
   - >
