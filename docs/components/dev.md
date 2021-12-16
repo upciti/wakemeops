@@ -1,4 +1,4 @@
-<!-- dev.start --># Dev - 4 packages
+<!-- dev.start --># Dev - 6 packages
 
 
 ## [clog-cli](https://github.com/clog-tool/clog-cli)
@@ -33,6 +33,15 @@ __A CLI task runner defined by a simple markdown file__
 
 <span class="badge arch">amd64</span> <span class="badge version">0.11.0</span>
 
+## [poetry](https://python-poetry.org)
+
+__Tool for dependency management and packaging in Python__
+
+ Poetry helps you declare, manage and install dependencies of Python projects,
+ ensuring you have the right stack everywhere.
+
+<span class="badge arch">amd64</span> <span class="badge version">1.1.12</span>
+
 ## pyoxidizer
 
 __PyOxidizer is a utility for producing binaries that embed Python__
@@ -43,4 +52,14 @@ __PyOxidizer is a utility for producing binaries that embed Python__
  systems and packaging tools.
 
 <span class="badge arch">amd64</span> <span class="badge version">0.18.0</span>
+
+## pyenv
+
+__Simple Python version management__
+
+ Tool that lets you easily switch between multiple versions of Python. It's
+ simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+ that do one thing well.
+
+<span class="badge arch">amd64</span> <span class="badge version">2.2.2</span>
 <!-- dev.end -->

@@ -48,7 +48,7 @@ __The Fastest Developer Tool for Kubernetes__
  Automate your deployment workflow with DevSpace and develop software directly
  inside Kubernetes.
 
-<span class="badge arch">amd64</span> <span class="badge version">5.18.0</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span>
+<span class="badge arch">amd64</span> <span class="badge version">5.18.1</span> <span class="badge version">5.18.0</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span>
 
 ## [docker-compose](https://docs.docker.com/compose)
 
@@ -160,9 +160,10 @@ __Kubernetes object analysis with recommendations for improved reliability and s
 
 __Command line client for controlling a Kubernetes cluster__
 
- kubectl is a command line client for running commands against Kubernetes clusters.
+ kubectl is a command line client for running commands against Kubernetes
+ clusters.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.23.0</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.23.1</span> <span class="badge version">1.23.0</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span>
 
 ## [kubectl-neat](https://github.com/itaysk/kubectl-neat)
 
@@ -249,7 +250,7 @@ __MinIO Client__
  MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
  filesystems and object storage.
 
-<span class="badge arch">amd64</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span>
+<span class="badge arch">amd64</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span>
 
 ## [minio-server](https://min.io)
 
@@ -259,7 +260,7 @@ __High Performance, Kubernetes Native Object Storage__
  Certain features such as versioning, object locking, and bucket replication
  require distributed deploying MinIO with Erasure Coding.
 
-<span class="badge arch">amd64</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span>
+<span class="badge arch">amd64</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span>
 
 ## [natscli](https://github.com/nats-io/natscli)
 
@@ -311,7 +312,7 @@ __Tool for building, changing, and versioning infrastructure safely__
  codifies cloud APIs into declarative configuration files. Terraform can manage
  existing and popular service providers as well as custom in-house solutions.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.1.1</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
 
 ## [velero](https://velero.io)
 
