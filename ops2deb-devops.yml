@@ -467,9 +467,9 @@
     - mv skaffold-linux-amd64 {{src}}/usr/bin/skaffold
 
 - name: terraform
-  version: 1.1.0
+  version: 1.1.1
   homepage: https://www.terraform.io
-  revision: 2
+  revision: 1
   summary: Tool for building, changing, and versioning infrastructure safely
   description: |-
     Terraform is an open-source infrastructure as code software tool that provides
@@ -478,7 +478,7 @@
     existing and popular service providers as well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: 763378aa75500ce5ba67d0cba8aa605670cd28bf8bafc709333a30908441acb5
+    sha256: 07b8dc444540918597a60db9351af861335c3941f28ea8774e168db97dd74557
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
