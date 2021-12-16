@@ -6,7 +6,7 @@ if ! which gpg; then
   apt-get update -yq && apt-get install -yq --no-install-recommends gnupg2
 fi
 
-cat << EOF | apt-key adv --import
+cat << EOF | gpg --dearmor > /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGGzicYBEADnBgApTxF3fFiAkSJuzfz2qKVXXSuouxCUkOV9owKqIWJ2pYoE
