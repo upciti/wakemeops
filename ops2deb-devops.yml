@@ -241,7 +241,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.23.0
+  version: 1.23.1
   homepage: https://github.com/kubernetes/kubectl
   summary: Command line client for controlling a Kubernetes cluster
   description: |-
@@ -249,7 +249,7 @@
     clusters.
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
-    sha256: 2d0f5ba6faa787878b642c151ccb2c3390ce4c1e6c8e2b59568b3869ba407c4f
+    sha256: 156fd5e7ebbedf3c482fd274089ad75a448b04cf42bc53f370e4e4ea628f705e
   script:
     - mv kubectl {{src}}/usr/bin/
 
