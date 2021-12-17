@@ -51,10 +51,9 @@ format:
 	done
 
 install-packages:
-	PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*.deb"); \
-		dpkg -i $$PACKAGE_PATH || true
 	apt-get update -yq
-	apt-get install -fy
+	PACKAGE_PATH=$$(find ./$(OUTPUT_BASE_PATH) -name "*.deb"); \
+		[[ -z "$$PACKAGE_PATH" ]] && true || apt-get install -y $$PACKAGE_PATH
 
 check-packages:
 	export PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*.deb"); \
