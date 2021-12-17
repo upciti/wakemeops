@@ -163,9 +163,8 @@
     - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: k3d
-  version: 5.2.1
+  version: 5.2.2
   homepage: https://k3d.io
-  revision: 2
   summary: Little helper to run Rancher Lab's k3s in Docker
   description: |-
     k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
@@ -173,7 +172,7 @@
     node k3s clusters in docker, e.g. for local development on Kubernetes.
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
-    sha256: 70141637bbe7531d17cf313688520287572e78711361e7162237648a59a6e91d
+    sha256: 7ddb900e6e50120b65d61568f6af007a82331bf83918608a6a7be8910792faef
   script:
     - mv k3d-linux-amd64 {{src}}/usr/bin/k3d
 
