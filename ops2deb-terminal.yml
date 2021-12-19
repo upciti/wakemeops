@@ -14,7 +14,7 @@
     - mv bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
 
 - name: bottom
-  version: 0.6.4
+  version: 0.6.5
   homepage: https://github.com/ClementTsang/bottom
   summary: Yet another cross-platform graphical process/system monitor
   description: |-
@@ -23,7 +23,7 @@
     Inspired by gtop, gotop, and htop.
   fetch:
     url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_x86_64-unknown-linux-gnu.tar.gz
-    sha256: ed10ce5df22b6260d5bf27db2edec2bf5fa4ed13617a61e8c6d5716ccdacee69
+    sha256: f72503cf6d63a915d673df9daec9253164958b3f757ef08d9ae9153e365e07ce
   script:
     - mv btm {{src}}/usr/bin/
 
