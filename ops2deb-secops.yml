@@ -33,9 +33,8 @@
     - mv trivy {{src}}/usr/bin/trivy
 
 - name: vault
-  version: 1.9.1
+  version: 1.9.2
   homepage: https://www.hashicorp.com/products/vault
-  revision: 2
   summary: Tool for securely accessing secrets
   description: |-
     A secret is anything that you want to tightly control access to, such as API
@@ -44,6 +43,6 @@
     log.
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
-    sha256: 90fd702db924b55093668a55693d21fd62aa006dcf77d83ba9eaee9383085893
+    sha256: 1e3eb5c225ff1825a59616ebbd4ac300e9d6eaefcae26253e49209350c0a5e71
   script:
     - mv vault {{src}}/usr/bin/vault
