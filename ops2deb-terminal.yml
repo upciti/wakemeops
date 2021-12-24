@@ -157,9 +157,8 @@
     - mv grex {{src}}/usr/bin/
 
 - name: procs
-  version: 0.11.12
+  version: 0.11.13
   homepage: https://github.com/dalance/procs
-  revision: 2
   summary: Replacement for ps written in Rust
   description: |-
     Procs has a colored and human-readable output, multi-column keyword search,
@@ -167,7 +166,7 @@
     and more...
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
-    sha256: 9ffd7e2536ccf4046af10842e60cf1cd5859a444c88952c2be27660720a4cab0
+    sha256: 068a266a95cc78f62c9f0af7bc97012cd00e5268cf87584bb749562e25738002
   script:
     - mv procs {{src}}/usr/bin/procs
 
