@@ -20,7 +20,7 @@
     - mv feroxbuster {{src}}/usr/bin/
 
 - name: trivy
-  version: 0.21.3
+  version: 0.22.0
   homepage: https://www.aquasec.com/products/trivy/
   summary: Scanner for vulnerabilities
   description: |-
@@ -28,7 +28,7 @@
     repositories, as well as for configuration issues
   fetch:
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
-    sha256: 4cb8959ec58aed26fb5f22d45bf60842934745c2f347b2ce1c009cdced52a4b9
+    sha256: ce09fc69627c02d879fe03704df866b576b1fc0486f7cf0fc8b06e9dbd6f142c
   script:
     - mv trivy {{src}}/usr/bin/trivy
 
