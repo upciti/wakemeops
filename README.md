@@ -29,6 +29,6 @@ Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) 
 
 ## Roadmap
 
-* [ ] Dockerfiles with WakeMeOps configured for CI pipelines
 * [ ] `armhf` support
 * [ ] Add license information to packages
+* [ ] Add packages
