@@ -16,7 +16,7 @@ __Fast, simple, recursive content discovery tool__
  This attack is also known as Predictable Resource Location,
  File Enumeration, Directory Enumeration, and Resource Enumeration.
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span>
 
 ## [trivy](https://www.aquasec.com/products/trivy/)
 
@@ -25,7 +25,7 @@ __Scanner for vulnerabilities__
  Scanner for vulnerabilities in container images, file systems, and Git
  repositories, as well as for configuration issues
 
-<span class="badge arch">amd64</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.3</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
 
 ## [vault](https://www.hashicorp.com/products/vault)
 
@@ -36,5 +36,5 @@ __Tool for securely accessing secrets__
  secret, while providing tight access control and recording a detailed audit
  log.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.9.1</span> <span class="badge version">1.9.0</span> <span class="badge version">1.8.5</span> <span class="badge version">1.8.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.9.2</span> <span class="badge version">1.9.1</span> <span class="badge version">1.9.0</span> <span class="badge version">1.8.5</span> <span class="badge version">1.8.4</span>
 <!-- secops.end -->

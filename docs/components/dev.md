@@ -42,7 +42,17 @@ __Tool for dependency management and packaging in Python__
 
 <span class="badge arch">amd64</span> <span class="badge version">1.1.12</span>
 
-## pyoxidizer
+## [pyenv](https://github.com/pyenv/pyenv)
+
+__Simple Python version management__
+
+ Tool that lets you easily switch between multiple versions of Python. It's
+ simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+ that do one thing well.
+
+<span class="badge arch">amd64</span> <span class="badge version">2.2.3</span> <span class="badge version">2.2.2</span>
+
+## [pyoxidizer](https://pyoxidizer.readthedocs.io/en/stable/)
 
 __PyOxidizer is a utility for producing binaries that embed Python__
 
@@ -53,13 +63,4 @@ __PyOxidizer is a utility for producing binaries that embed Python__
 
 <span class="badge arch">amd64</span> <span class="badge version">0.18.0</span>
 
-## pyenv
-
-__Simple Python version management__
-
- Tool that lets you easily switch between multiple versions of Python. It's
- simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
- that do one thing well.
-
-<span class="badge arch">amd64</span> <span class="badge version">2.2.2</span>
 <!-- dev.end -->

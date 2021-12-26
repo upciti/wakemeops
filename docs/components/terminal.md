@@ -19,7 +19,7 @@ __Yet another cross-platform graphical process/system monitor__
  and a multitude of features. Supports Linux, macOS, and Windows.
  Inspired by gtop, gotop, and htop.
 
-<span class="badge arch">amd64</span> <span class="badge version">0.6.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.6.6</span> <span class="badge version">0.6.5</span> <span class="badge version">0.6.4</span>
 
 ## [choose](https://github.com/theryangeary/choose)
 
@@ -117,7 +117,7 @@ __Replacement for ps written in Rust__
  additional information which are not supported by ps, a tree view, a watch mode
  and more...
 
-<span class="badge arch">amd64</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.11.13</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)
 
@@ -178,5 +178,5 @@ __Portable command-line YAML processor__
  does - but it does support the most common operations and functions, and more
  is being added continuously.
 
-<span class="badge arch">amd64</span> <span class="badge version">4.16.1</span> <span class="badge version">4.14.2</span>
+<span class="badge arch">amd64</span> <span class="badge version">4.16.2</span> <span class="badge version">4.16.1</span> <span class="badge version">4.14.2</span>
 <!-- terminal.end -->

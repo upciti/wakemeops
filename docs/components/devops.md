@@ -7,7 +7,7 @@ __Continuous delivery tool for Kubernetes__
 
  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
-<span class="badge arch">amd64</span> <span class="badge version">2.2.0</span> <span class="badge version">2.1.8</span> <span class="badge version">2.1.7</span> <span class="badge version">2.1.6</span> <span class="badge version">2.1.5</span> <span class="badge version">2.1.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">2.2.1</span> <span class="badge version">2.2.0</span> <span class="badge version">2.1.8</span> <span class="badge version">2.1.7</span> <span class="badge version">2.1.6</span> <span class="badge version">2.1.5</span> <span class="badge version">2.1.4</span>
 
 ## [container-diff](https://github.com/GoogleContainerTools/container-diff)
 
@@ -117,7 +117,7 @@ __Little helper to run Rancher Lab's k3s in Docker__
  distribution) in docker. k3d makes it very easy to create single- and multi-
  node k3s clusters in docker, e.g. for local development on Kubernetes.
 
-<span class="badge arch">amd64</span> <span class="badge version">5.2.1</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">5.2.2</span> <span class="badge version">5.2.1</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span>
 
 ## [k9s](https://k9scli.io)
 
@@ -312,7 +312,7 @@ __Tool for building, changing, and versioning infrastructure safely__
  codifies cloud APIs into declarative configuration files. Terraform can manage
  existing and popular service providers as well as custom in-house solutions.
 
-<span class="badge arch">amd64</span> <span class="badge version">1.1.1</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.1.2</span> <span class="badge version">1.1.1</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
 
 ## [velero](https://velero.io)
 
