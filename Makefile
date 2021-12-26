@@ -80,9 +80,9 @@ docs:
 	@mkdocs build -d public
 
 docs-dev:
-	@docker run --pull=always --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
+	@docker run -u $$(id -u) --pull=always --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
 
 docs-update:
-	@docker run --pull=always --rm -it -w /docs -v $$(pwd):/docs upciti/wakemebot:main wakemebot docs
+	@docker run --pull=always -u $$(id -u) --rm -it -w /docs -v $$(pwd):/docs upciti/wakemebot:main wakemebot docs
 
 .PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update
