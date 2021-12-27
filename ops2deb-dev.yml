@@ -101,6 +101,8 @@
 
 - name: pyenv
   version: 2.2.3
+  homepage: https://github.com/pyenv/pyenv
+  revision: 2
   arch: all
   summary: Simple Python version management
   description: |-
@@ -137,6 +139,8 @@
 
 - name: pyoxidizer
   version: 0.18.0
+  homepage: https://pyoxidizer.readthedocs.io/en/latest/index.html
+  revision: 2
   summary: PyOxidizer is a utility for producing binaries that embed Python
   description: |-
     The over-arching goal of PyOxidizer is to make complex packaging and
