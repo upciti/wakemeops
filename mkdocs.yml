@@ -51,7 +51,4 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 extra_css:
-  - https://unpkg.com/mermaid@8.13.3/dist/mermaid.css
   - css/extra.css
-extra_javascript:
-  - https://unpkg.com/mermaid@8.13.3/dist/mermaid.min.js
