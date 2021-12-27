@@ -1,4 +1,4 @@
-<!-- dev.start --># Dev - 6 packages
+<!-- dev.start --># Dev - 7 packages
 
 
 ## [clog-cli](https://github.com/clog-tool/clog-cli)
@@ -25,6 +25,17 @@ __Powerful postgres database anonymizer with flexible rules__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">0.5.1</span>
+
+
+## [github-cli](https://github.com/cli/cli)
+
+__GitHub on the command line__
+
+ Brings pull requests, issues, and other GitHub concepts to the terminal next to
+ where you are already working with git and your code.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">2.4.0</span>
 
 
 ## [mask](https://github.com/jakedeichert/mask)
