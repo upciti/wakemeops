@@ -29,6 +29,20 @@
   script:
     - mv pg_datanymizer {{src}}/usr/bin/
 
+- name: github-cli
+  version: 2.4.0
+  homepage: https://github.com/cli/cli
+  summary: GitHub on the command line
+  description: |-
+    Brings pull requests, issues, and other GitHub concepts to the terminal next to
+    where you are already working with git and your code.
+  fetch:
+    url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_amd64.tar.gz
+    sha256: e3fc4ec95c95ec5e97e90c0128b9be60e8095aaaf01e1def4f0cfabc5efcecc0
+  script:
+    - mv gh_{{version}}_linux_amd64/bin {{src}}/usr/
+    - mv gh_{{version}}_linux_amd64/share {{src}}/usr/
+
 - name: mask
   version: 0.11.0
   homepage: https://github.com/jakedeichert/mask
