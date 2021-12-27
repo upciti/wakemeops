@@ -9,7 +9,9 @@ __Cat clone with wings__
  languages and communicates with git to show modifications with respect to the
  index.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.18.3</span>
+
 
 ## [bottom](https://github.com/ClementTsang/bottom)
 
@@ -19,7 +21,9 @@ __Yet another cross-platform graphical process/system monitor__
  and a multitude of features. Supports Linux, macOS, and Windows.
  Inspired by gtop, gotop, and htop.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.6.6</span> <span class="badge version">0.6.5</span> <span class="badge version">0.6.4</span>
+
 
 ## [choose](https://github.com/theryangeary/choose)
 
@@ -28,7 +32,9 @@ __A human-friendly and fast alternative to cut and (sometimes) awk__
  This is choose, a human-friendly and fast alternative to cut and (sometimes)
  awk
 
+
 <span class="badge arch">amd64</span> <span class="badge version">1.3.3</span>
+
 
 ## [curlie](https://github.com/rs/curlie)
 
@@ -39,7 +45,9 @@ __The power of curl, the ease of use of httpie__
  of httpie, without compromising on features and performance. All curl options
  are exposed with syntax sugar and output formatting inspired from httpie.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">1.6.0</span>
+
 
 ## [diskonaut](https://github.com/imsnif/diskonaut)
 
@@ -52,7 +60,9 @@ __Terminal disk space navigator__
  your disk space. You can even delete files or folders and diskonaut will track
  how much space you've freed up in this session.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.11.0</span>
+
 
 ## [dog](https://github.com/ogham/dog)
 
@@ -60,7 +70,9 @@ __Command-line DNS client__
 
  A user-friendly command-line DNS client. dig on steroids
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.1.0</span>
+
 
 ## [dust](https://github.com/bootandy/dust)
 
@@ -68,7 +80,9 @@ __More intuitive version of du in rust__
 
  du + rust = dust. Like du but more intuitive.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.7.5</span>
+
 
 ## [exa](https://github.com/ogham/exa)
 
@@ -76,7 +90,9 @@ __Modern replacement for ls__
 
  exa is a modern replacement for ls.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.10.1</span>
+
 
 ## [fd](https://github.com/sharkdp/fd)
 
@@ -87,7 +103,9 @@ __Simple, fast and user-friendly alternative to 'find'__
  find's powerful functionality, it provides sensible (opinionated) defaults for
  a majority of use cases.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">8.3.0</span> <span class="badge version">8.2.1</span>
+
 
 ## [gping](https://github.com/orf/gping)
 
@@ -95,7 +113,9 @@ __Ping, but with a graph__
 
  Ping, but with a graph.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">1.2.6</span> <span class="badge version">1.2.5</span>
+
 
 ## [grex](https://github.com/pemistahl/grex)
 
@@ -107,7 +127,9 @@ __Command-line tool and library for generating regular expressions__
  test cases. The resulting expression is guaranteed to match the test cases
  which it was generated from.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">1.3.0</span>
+
 
 ## [procs](https://github.com/dalance/procs)
 
@@ -117,7 +139,9 @@ __Replacement for ps written in Rust__
  additional information which are not supported by ps, a tree view, a watch mode
  and more...
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.11.13</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
+
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)
 
@@ -130,7 +154,9 @@ __Recursively searches directories for a regex pattern__
  available for every release. ripgrep is similar to other popular search tools
  like The Silver Searcher, ack and grep.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">13.0.0</span>
+
 
 ## [skim](https://github.com/lotabout/skim)
 
@@ -139,7 +165,9 @@ __Fuzzy Finder in rust__
  Half of our life is spent on navigation: files, lines, commands...
  You need skim! It is a general fuzzy finder that saves you time.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.9.4</span>
+
 
 ## [tokei](https://github.com/XAMPPRocky/tokei)
 
@@ -149,7 +177,9 @@ __Count your code, quickly__
  Tokei will show the number of files, total lines within those files and
  code, comments, and blanks grouped by language.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">12.1.2</span>
+
 
 ## [xh](https://github.com/ducaale/xh)
 
@@ -158,7 +188,9 @@ __Friendly and fast tool for sending HTTP requests__
  xh reimplements as much as possible of HTTPie's excellent design, with a focus
  on improved performance.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.14.0</span> <span class="badge version">0.13.0</span>
+
 
 ## [xsv](https://github.com/BurntSushi/xsv)
 
@@ -167,7 +199,9 @@ __A fast CSV command line toolkit__
  xsv is a command line program for indexing, slicing, analyzing, splitting and
  joining CSV files.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">0.13.0</span>
+
 
 ## [yq](https://github.com/mikefarah/yq)
 
@@ -178,5 +212,7 @@ __Portable command-line YAML processor__
  does - but it does support the most common operations and functions, and more
  is being added continuously.
 
+
 <span class="badge arch">amd64</span> <span class="badge version">4.16.2</span> <span class="badge version">4.16.1</span> <span class="badge version">4.14.2</span>
+
 <!-- terminal.end -->
