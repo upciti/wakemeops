@@ -1,3 +1,22 @@
+- name: boundary
+  version: 0.7.3
+  homepage: https://www.boundaryproject.io
+  summary: Provide simple and secure access to hosts and services
+  description: |-
+    Traditional approaches like SSH bastion hosts or VPNs require distributing and
+    managing credentials, configuring network controls like firewalls, and exposing
+    the private network. Boundary provides a secure way to access hosts and
+    critical systems without having to manage credentials or expose your network,
+    and is entirely open source.
+    Boundary is designed to be straightforward to understand, highly scalable, and
+    resilient. It can run in clouds, on-prem, secure enclaves and more, and does
+    not require an agent to be installed on every end host.
+  fetch:
+    url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_amd64.zip
+    sha256: 153023f558cde9c34a8ca0978433e39aeeb086eb2975c92037405eac91059558
+  script:
+    - mv boundary {{src}}/usr/bin/boundary
+
 - name: feroxbuster
   version: 2.4.1
   homepage: https://github.com/epi052/feroxbuster
