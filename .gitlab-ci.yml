@@ -3,8 +3,9 @@ workflow:
     - if: $CI_MERGE_REQUEST_IID
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-variables:
-  WAKEMEBOT_IMAGE: "upciti/wakemebot:main"
+default:
+  image: upciti/wakemebot:main
+  tags: ["wakemebot"]
 
 stages:
   - update
@@ -14,19 +15,7 @@ stages:
   - publish
   - pages
 
-# Templates
-.default:
-  image: $WAKEMEBOT_IMAGE
-  tags: ["wakemebot"]
-  retry: 2
-
-.schedule:
-  extends: .default
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "0"'
-
 .no_schedule:
-  extends: .default
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
@@ -35,7 +24,6 @@ stages:
       when: on_success
 
 .prod_no_schedule:
-  extends: .default
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
@@ -45,7 +33,6 @@ stages:
       when: on_success
 
 .parallel_component:
-  extends: .default
   parallel:
     matrix:
       - component: dev
@@ -54,8 +41,6 @@ stages:
       - component: terminal
 
 .parallel_distro:
-  extends: .default
-  retry: 1
   parallel:
     matrix:
       - DISTRO: ubuntu
@@ -80,21 +65,19 @@ stages:
   - git config push.default simple
 
 .git_commit_push: &git_commit_push
-  - git remote set-url --push origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
+  - git remote set-url origin git@github.com:upciti/wakemeops.git
   - branch="chore/update-packages-$(date '+%Y%m%d%H%M%S')"
   - git checkout -b ${branch}
   - git add ops2deb-*.yml
   - >
-    echo -e "chore(bot): update packages\n" > message.log
-  - cat ops2deb-*.log >> message.log || true
-  - git commit -m "$(cat message.log)"
-  - >
-    git push \
-      -o merge_request.create \
-      -o merge_request.target=${CI_DEFAULT_BRANCH} \
-      -o merge_request.merge_when_pipeline_succeeds \
-      --set-upstream origin \
-      ${branch}
+    echo "chore(bot): update packages" > title.log
+  - cat ops2deb-*.log >> body.log || true
+  - git commit -m "$(cat title.log)" -m "$(cat body.log)"
+  - git remote -v
+  - cat .git/config
+  - git push -u origin HEAD
+  - gh pr create --title "$(cat title.log)" --body "$(cat body.log)"
+  - gh pr merge --auto
 
 .install_dependencies: &install_dependencies
   - apt-get update
@@ -102,7 +85,6 @@ stages:
 
 update_blueprints:
   stage: update
-  extends: .schedule
   before_script:
     - *enable_ssh
     - *git_configure
@@ -115,6 +97,9 @@ update_blueprints:
     GIT_STRATEGY: clone
     GITLAB_USER_NAME: "wakemebot"
     GITLAB_USER_EMAIL: "wakemebot@upciti.com"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "0"'
+
 
 generate_packages:
   stage: build
@@ -159,7 +144,6 @@ publish_s3:
 
 pages:
   stage: pages
-  image: $WAKEMEBOT_IMAGE
   script:
     - make docs
   artifacts:
@@ -172,6 +156,7 @@ pages:
       changes:
         - docs/**/*
         - mkdocs.yml
+  tags: []
   needs: []
 
 buildah:
