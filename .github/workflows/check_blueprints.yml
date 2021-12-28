@@ -1,0 +1,62 @@
+name: 🧐 Check blueprints
+
+on:
+  push:
+    paths:
+      - 'ops2deb-*.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: upciti/wakemebot:main
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Validate configuration files
+        run: make format
+
+      - name: Generate new Debian sources packages
+        run: make generate
+
+      - name: Build new Debian source packages
+        run: make build
+
+      - name: Upload Debian packages
+        uses: actions/upload-artifact@v2
+        with:
+          path: build/**/*deb
+          retention-days: 2
+
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        distribution:
+          - debian:bookworm-slim
+          - debian:bullseye-slim
+          - debian:buster-slim
+          - ubuntu:rolling
+          - ubuntu:21.04
+          - ubuntu:18.04
+    container: wakemeops/${{ matrix.distribution }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download Debian packages
+        uses: actions/download-artifact@v2
+        with:
+          path: build
+
+      - name: Install make
+        run: install_packages make
+
+      - name: Test packages
+        run: |
+          make install-packages
+          make check-packages
+
