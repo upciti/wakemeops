@@ -440,6 +440,22 @@
   script:
     - mv ops2deb {{src}}/usr/bin/
 
+- name: packer
+  version: 1.7.8
+  homepage: https://www.packer.io
+  summary: Help to create identical machine images for multiple platforms from a single
+    source configuration
+  description: |-
+    Lightweight, runs on every major operating system, and is highly performant,
+    creating machine images for multiple platforms in parallel. Packer comes out of
+    the box with support for many platforms, the full list of which can be found at
+    https://www.packer.io/docs/builders.
+  fetch:
+    url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_amd64.zip
+    sha256: 8a94b84542d21b8785847f4cccc8a6da4c7be5e16d4b1a2d0a5f7ec5532faec0
+  script:
+    - mv packer {{src}}/usr/bin/packer
+
 - name: rancher
   version: 2.4.13
   homepage: https://github.com/rancher/cli
