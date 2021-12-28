@@ -11,8 +11,10 @@ default:
 	@echo -e '\nprerequisite                                                   '
 	@echo '* install-wakemeops           add wakemeops repository              '
 	@echo -e '\nops2deb                                                        '
-	@echo '* generate-{component}        generate source packages from yaml    '
-	@echo '* build-{component}           build generated sources packages      '
+	@echo '* generate                    generate all source packages          '
+	@echo '* generate-{component}        generate source packages for component'
+	@echo '* build                       build all sources packages            '
+	@echo '* build-{component}           build sources packages for component  '
 	@echo '* update                      check binaries updates                '
 	@echo '* format                      format all configuration files        '
 	@echo -e '\nchecks                                                         '
@@ -29,9 +31,14 @@ default:
 install-wakemeops:
 	curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | bash -s $(COMPONENTS)
 
+generate: $(foreach component,$(COMPONENTS),generate-$(component))
+
 generate-%:
 	mkdir -p $(OUTPUT_BASE_PATH)/$*
 	ops2deb generate -c ./ops2deb-$*.yml -o $(OUTPUT_BASE_PATH)/$*
+
+
+build: $(foreach component,$(COMPONENTS),build-$(component))
 
 build-%:
 	ops2deb build -o $(OUTPUT_BASE_PATH)/$*
@@ -85,4 +92,4 @@ docs-dev:
 docs-update:
 	@docker run --pull=always -u $$(id -u) --rm -it -w /docs -v $$(pwd):/docs upciti/wakemebot:main wakemebot docs
 
-.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update
+.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update generate build format update
