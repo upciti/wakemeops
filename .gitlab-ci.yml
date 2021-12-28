@@ -1,6 +1,6 @@
 workflow:
   rules:
-    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_EXTERNAL_PULL_REQUEST_IID
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 default:
@@ -49,8 +49,6 @@ stages:
         VERSION:
           ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
 
-
-# Anchors
 .enable_ssh: &enable_ssh
   - eval $(ssh-agent -s)
   - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
@@ -99,7 +97,6 @@ update_blueprints:
     GITLAB_USER_EMAIL: "wakemebot@upciti.com"
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "0"'
-
 
 generate_packages:
   stage: build
