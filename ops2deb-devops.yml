@@ -513,3 +513,17 @@
     sha256: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
   script:
     - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
+
+- name: waypoint
+  version: 0.6.3
+  homepage: https://www.waypointproject.io
+  summary: Build, deploy, and release any application on any platform
+  description: |-
+    Allows developers to define their application build, deploy, and release
+    lifecycle as code, reducing the time to deliver deployments through a
+    consistent and repeatable workflow.
+  fetch:
+    url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_amd64.zip
+    sha256: cff51372fb30c32f159fd39f5986b353db86bcd301158ffd32218cb18aad11eb
+  script:
+    - mv waypoint {{src}}/usr/bin/waypoint
