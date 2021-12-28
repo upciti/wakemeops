@@ -2,7 +2,7 @@ site_name: wakemeops
 site_url: http://docs.wakeops.com
 site_description: wakemeops documentation
 
-repo_url: https://gitlab.com/upciti/wakemeops
+repo_url: https://github.com/upciti/wakemeops
 
 nav:
   - Home: "index.md"
@@ -17,7 +17,7 @@ theme:
   custom_dir: docs/theme_override_home/
   name: "material"
   icon:
-    repo: fontawesome/brands/gitlab
+    repo: fontawesome/brands/github
   features:
     - navigation.sections
     - navigation.tabs

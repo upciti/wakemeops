@@ -1,9 +1,5 @@
 # WakeMeOps
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/upciti/wakemeops)
-[![GitLab](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/upciti/wakemeops)
-
-
 ## What is it?
 
 WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions. It currently mostly contains devops tools such as kubectl, kustomize, helm, k9s, [...](https://docs.wakemeops.com/components/devops/).
@@ -31,4 +27,4 @@ Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) 
 
 * [ ] `armhf` support
 * [ ] Add license information to packages
-* [ ] Add packages
+* [ ] More packages
