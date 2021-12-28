@@ -82,6 +82,9 @@ publish:
 	{\"GpgKey\":\"wakemebot@protonmail.com\", \"Batch\":true}}" \
 	"http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
 
+exec:
+	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops upciti/wakemebot:main bash
+
 docs:
 	@mkdocs build -d public
 
@@ -91,4 +94,4 @@ docs-dev:
 docs-update:
 	@docker run --pull=always -u $$(id -u) --rm -it -w /docs -v $$(pwd):/docs upciti/wakemebot:main wakemebot docs
 
-.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update generate build format update
+.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update generate build format update exec
