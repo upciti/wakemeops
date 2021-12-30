@@ -3,6 +3,7 @@ name: 🧐 Check blueprints
 on:
   pull_request:
     paths:
+      - '.github/workflows/check_blueprints.yml'
       - 'ops2deb-*.yml'
 
 jobs:
