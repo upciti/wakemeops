@@ -1,0 +1,13 @@
+name: 🙈 No need to check blueprints
+
+on:
+  pull_request:
+    paths-ignore:
+      - '.github/workflows/check_blueprints.yml'
+      - 'ops2deb-*.yml'
+
+jobs:
+  test_packages_success:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo Blueprints were not modified!
