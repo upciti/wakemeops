@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p /etc/apt/preferences.d/
+
+cat <<EOF > /etc/apt/preferences.d/01wakemeops
+Package: *
+Pin: origin deb.wakemeops.com
+Pin-Priority: ${@-"100"}
+EOF
+

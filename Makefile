@@ -29,7 +29,7 @@ default:
 	@echo '* docs-generate               generate documentation with wakemebot '
 
 install-wakemeops:
-	curl https://gitlab.com/upciti/wakemeops/-/snippets/2189589/raw/main/install.sh | bash -s $(COMPONENTS)
+	curl https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | bash -s $(COMPONENTS)
 
 generate: $(foreach component,$(COMPONENTS),generate-$(component))
 

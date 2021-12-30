@@ -6,13 +6,13 @@ Our repository is currently split into four components, __devops__, __dev__, __s
 * To add all four components, run:
 
 ```shell
-curl -sSL https://gitlab.com/upciti/wakemeops/-/raw/main/assets/install_repository | sudo bash
+curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash
 ```
 
 * If you are only interested by terminal goodies, just add the __terminal__ component:
 
 ```shell
-curl -sSL https://gitlab.com/upciti/wakemeops/-/raw/main/assets/install_repository | sudo bash -s terminal
+curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash -s terminal
 ```
 
 
@@ -22,13 +22,13 @@ Dependending on your use case, you may want to lower the priority of the wakemeo
 to give packages from your distribution precedence over the ones from wakemeops:
 
 ```shell
-curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2219988/raw/main/preferences.sh | sudo bash -s 100
+curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/set_repository_priority | sudo bash -s 100
 ```
 
 * If, on the other hand, you wish to increase wakemeops repository priority:
 
 ```shell
-curl -sSL https://gitlab.com/upciti/wakemeops/-/snippets/2219988/raw/main/preferences.sh | sudo bash -s 900
+curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/set_repository_priority | sudo bash -s 900
 ```
 
 !!! Info
