@@ -1,4 +1,4 @@
-<!-- devops.start --># Devops - 33 packages
+<!-- devops.start --># Devops - 34 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
@@ -326,6 +326,20 @@ __The NATS Command Line Interface__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">0.0.26</span>
+
+
+## [ops2deb](https://github.com/upciti/ops2deb)
+
+__Debian packaging tool for portable applications__
+
+ Ops2deb is primarily designed to easily generate Debian packages for portable
+ applications such as single binary applications and scripts. Packages are
+ described using a simple configuration file format. Ops2deb can track new
+ releases of upstream applications and automatically bump application versions
+ in its configuration file.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">0.15.0</span>
 
 
 ## [rancher](https://github.com/rancher/cli)

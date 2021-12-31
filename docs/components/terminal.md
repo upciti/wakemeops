@@ -1,4 +1,4 @@
-<!-- terminal.start --># Terminal - 18 packages
+<!-- terminal.start --># Terminal - 19 packages
 
 
 ## [bat](https://github.com/sharkdp/bat)
@@ -23,6 +23,22 @@ __Yet another cross-platform graphical process/system monitor__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">0.6.6</span> <span class="badge version">0.6.5</span> <span class="badge version">0.6.4</span>
+
+
+## [chezmoi](https://github.com/twpayne/chezmoi)
+
+__Manage your dotfiles across multiple diverse machines__
+
+ Lets you install and update your personal configuration files on multiple
+ machines with a single command. chezmoi is helpful if you have spent time
+ customizing the tools you use (e.g. shells, editors, and version control
+ systems) and want to keep machines running different accounts (e.g. home and
+ work) and/or different operating systems (e.g. Linux, macOS, and Windows) in
+ sync, while still being able to easily cope with differences from machine to
+ machine.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">2.9.4</span>
 
 
 ## [choose](https://github.com/theryangeary/choose)
