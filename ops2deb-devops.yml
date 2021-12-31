@@ -420,6 +420,26 @@
   script:
     - mv nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
 
+- name: ops2deb
+  version: 0.15.0
+  homepage: https://github.com/upciti/ops2deb
+  summary: Debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  depends:
+    - build-essential
+    - fakeroot
+    - debhelper
+  fetch:
+    url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64.tar.gz
+    sha256: 6ff97d7359d414106d4b8246356a4547a9731a36b6b1f514b241ec7175d8304a
+  script:
+    - mv ops2deb {{src}}/usr/bin/
+
 - name: rancher
   version: 2.4.13
   homepage: https://github.com/rancher/cli
