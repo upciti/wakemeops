@@ -2,12 +2,23 @@ name: 🧐 Check blueprints
 
 on:
   pull_request:
-    paths:
-      - '.github/workflows/check_blueprints.yml'
-      - 'ops2deb-*.yml'
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      ops2deb: ${{ steps.filter.outputs.ops2deb }}
+    steps:
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            ops2deb:
+              - 'ops2deb-*.yml'
+
   build_packages:
+    needs: [changes]
+    if: ${{ needs.changes.outputs.ops2deb == 'true' }}
     runs-on: ubuntu-latest
     container:
       image: upciti/wakemebot:main
@@ -19,11 +30,10 @@ jobs:
       - name: Validate configuration files
         run: make format
 
-      - name: Generate new Debian sources packages
-        run: make generate
-
-      - name: Build new Debian source packages
-        run: make build
+      - name: Generate new Debian packages
+        run: |
+          make generate
+          make build
 
       - name: Upload Debian packages
         uses: actions/upload-artifact@v2

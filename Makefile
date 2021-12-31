@@ -53,8 +53,7 @@ update:
 
 format:
 	for component in $(COMPONENTS); do \
-		ops2deb format \
-		-c ops2deb-$${component}.yml; \
+		ops2deb format -c ops2deb-$${component}.yml || exit 77; \
 	done
 
 install-packages:
@@ -65,7 +64,7 @@ install-packages:
 check-packages:
 	export PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*.deb"); \
 	for package in $$PACKAGE_PATH; do \
-		n=$$(dpkg --info $$package | sed -n "s/ Package. \(.*\)/\1/p"); \
+		n=$$(dpkg --info $$package | sed -n "s/ Package: \(.*\)/\1/p"); \
 		dpkg -s $$n || exit 77; \
 	done
 
