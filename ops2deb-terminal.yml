@@ -145,6 +145,21 @@
   script:
     - mv fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
 
+- name: ghorg
+  version: 1.7.5
+  homepage: https://github.com/gabrie30/ghorg
+  summary: Quickly clone an entire org/users repositories into one directory
+  description: |-
+    Ghorg can be useful in many situations such as: searching an orgs/users
+    codebase (with ack, silver searcher, grep), bash scripting, creating backups,
+    onboarding new team members (cloning all team repos), performing audits... It
+    supports GitHub, GitLab, Bitbucket, and more.
+  fetch:
+    url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_linux_amd64.tar.gz
+    sha256: fbb7d05c0f123f27c0e584e55bc8f2e81ea5bdb474465b58956b5973b6664dc7
+  script:
+    - mv ghorg {{src}}/usr/bin/ghorg
+
 - name: gping
   version: 1.2.6
   homepage: https://github.com/orf/gping
