@@ -1,4 +1,4 @@
-<!-- terminal.start --># Terminal - 19 packages
+<!-- terminal.start --># Terminal - 20 packages
 
 
 ## [bat](https://github.com/sharkdp/bat)
@@ -121,6 +121,19 @@ __Simple, fast and user-friendly alternative to 'find'__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">8.3.0</span> <span class="badge version">8.2.1</span>
+
+
+## [ghorg](https://github.com/gabrie30/ghorg)
+
+__Quickly clone an entire org/users repositories into one directory__
+
+ Ghorg can be useful in many situations such as: searching an orgs/users
+ codebase (with ack, silver searcher, grep), bash scripting, creating backups,
+ onboarding new team members (cloning all team repos), performing audits... It
+ supports GitHub, GitLab, Bitbucket, and more.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">1.7.5</span>
 
 
 ## [gping](https://github.com/orf/gping)

@@ -8,7 +8,7 @@ __Continuous delivery tool for Kubernetes__
  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.2.1</span> <span class="badge version">2.2.0</span> <span class="badge version">2.1.8</span> <span class="badge version">2.1.7</span> <span class="badge version">2.1.6</span> <span class="badge version">2.1.5</span> <span class="badge version">2.1.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">2.2.2</span> <span class="badge version">2.1.8</span>
 
 
 ## [container-diff](https://github.com/GoogleContainerTools/container-diff)
@@ -339,7 +339,7 @@ __Debian packaging tool for portable applications__
  in its configuration file.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.15.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.15.1</span>
 
 
 ## [rancher](https://github.com/rancher/cli)
