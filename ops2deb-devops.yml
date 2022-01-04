@@ -457,16 +457,15 @@
     - mv packer {{src}}/usr/bin/packer
 
 - name: rancher
-  version: 2.4.13
+  version: 2.4.14
   homepage: https://github.com/rancher/cli
-  revision: 3
   summary: Rancher Command Line Interface
   description: |-
     The Rancher Command Line Interface (CLI) is a unified tool for interacting with
     your Rancher Server.
   fetch:
     url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
-    sha256: d515fd0014f316e219801707a7c28ce42fdc9608e8580072afd4c806b4cb20b9
+    sha256: 70f4839ede2735485a8bee07da30db2854c9188483f1857b1ed12c38c39822c3
   script:
     - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
 
