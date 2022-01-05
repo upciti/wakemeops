@@ -440,17 +440,32 @@
   script:
     - mv ops2deb {{src}}/usr/bin/
 
+- name: packer
+  version: 1.7.8
+  homepage: https://www.packer.io
+  summary: Help to create identical machine images for multiple platforms from a single
+    source configuration
+  description: |-
+    Lightweight, runs on every major operating system, and is highly performant,
+    creating machine images for multiple platforms in parallel. Packer comes out of
+    the box with support for many platforms, the full list of which can be found at
+    https://www.packer.io/docs/builders.
+  fetch:
+    url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_amd64.zip
+    sha256: 8a94b84542d21b8785847f4cccc8a6da4c7be5e16d4b1a2d0a5f7ec5532faec0
+  script:
+    - mv packer {{src}}/usr/bin/packer
+
 - name: rancher
-  version: 2.4.13
+  version: 2.4.14
   homepage: https://github.com/rancher/cli
-  revision: 3
   summary: Rancher Command Line Interface
   description: |-
     The Rancher Command Line Interface (CLI) is a unified tool for interacting with
     your Rancher Server.
   fetch:
     url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
-    sha256: d515fd0014f316e219801707a7c28ce42fdc9608e8580072afd4c806b4cb20b9
+    sha256: 70f4839ede2735485a8bee07da30db2854c9188483f1857b1ed12c38c39822c3
   script:
     - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
 
@@ -500,6 +515,22 @@
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
+- name: vagrant
+  version: 2.2.19
+  homepage: https://www.vagrantup.com
+  summary: Building and distributing development environments
+  description: |-
+    Development environments managed by Vagrant can run on local virtualized
+    platforms such as VirtualBox or VMware, in the cloud via AWS or OpenStack, or
+    in containers such as with Docker or raw LXC.
+  depends:
+    - libfuse2
+  fetch:
+    url: https://releases.hashicorp.com/vagrant/{{version}}/vagrant_{{version}}_linux_amd64.zip
+    sha256: a1df4c793902e2b9647a0fd42a23d2363c6900f54b70674b736898f9e48c1200
+  script:
+    - mv vagrant {{src}}/usr/bin/vagrant
+
 - name: velero
   version: 1.7.1
   homepage: https://velero.io
@@ -513,3 +544,17 @@
     sha256: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
   script:
     - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
+
+- name: waypoint
+  version: 0.6.3
+  homepage: https://www.waypointproject.io
+  summary: Build, deploy, and release any application on any platform
+  description: |-
+    Allows developers to define their application build, deploy, and release
+    lifecycle as code, reducing the time to deliver deployments through a
+    consistent and repeatable workflow.
+  fetch:
+    url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_amd64.zip
+    sha256: cff51372fb30c32f159fd39f5986b353db86bcd301158ffd32218cb18aad11eb
+  script:
+    - mv waypoint {{src}}/usr/bin/waypoint
