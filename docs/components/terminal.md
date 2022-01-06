@@ -38,7 +38,7 @@ __Manage your dotfiles across multiple diverse machines__
  machine.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.9.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">2.9.5</span>
 
 
 ## [choose](https://github.com/theryangeary/choose)
@@ -120,7 +120,7 @@ __Simple, fast and user-friendly alternative to 'find'__
  a majority of use cases.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">8.3.0</span> <span class="badge version">8.2.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">8.3.1</span> <span class="badge version">8.2.1</span>
 
 
 ## [ghorg](https://github.com/gabrie30/ghorg)
