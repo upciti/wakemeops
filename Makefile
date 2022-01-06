@@ -26,7 +26,7 @@ default:
 	@echo -e '\ndocumentation                                                  '
 	@echo '* docs                        run mkdocs build                      '
 	@echo '* docs-dev                    run mkdocs serve from wakemebot image '
-	@echo '* docs-generate               generate documentation with wakemebot '
+	@echo '* docs-update                 generate documentation with wakemebot '
 
 install-wakemeops:
 	curl https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | bash -s $(COMPONENTS)
