@@ -500,6 +500,21 @@
   script:
     - mv skaffold-linux-amd64 {{src}}/usr/bin/skaffold
 
+- name: stern
+  version: 1.11.0
+  homepage: https://github.com/wercker/stern
+  summary: Multi pod and container log tailing for Kubernetes
+  description: |-
+    Allows you to tail multiple pods on Kubernetes and multiple containers within
+    the pod. Each result is color coded for quicker debugging.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/wercker/stern/releases/download/{{version}}/stern_linux_amd64
+    sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
+  script:
+    - mv stern_linux_amd64 {{src}}/usr/bin/stern
+
 - name: terraform
   version: 1.1.2
   homepage: https://www.terraform.io
