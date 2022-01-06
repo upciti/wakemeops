@@ -1,4 +1,4 @@
-<!-- devops.start --># Devops - 34 packages
+<!-- devops.start --># Devops - 38 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
@@ -342,6 +342,19 @@ __Debian packaging tool for portable applications__
 <span class="badge arch">amd64</span> <span class="badge version">0.15.1</span>
 
 
+## [packer](https://www.packer.io)
+
+__Help to create identical machine images for multiple platforms from a single source configuration__
+
+ Lightweight, runs on every major operating system, and is highly performant,
+ creating machine images for multiple platforms in parallel. Packer comes out of
+ the box with support for many platforms, the full list of which can be found at
+ https://www.packer.io/docs/builders.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">1.7.8</span>
+
+
 ## [rancher](https://github.com/rancher/cli)
 
 __Rancher Command Line Interface__
@@ -350,7 +363,7 @@ __Rancher Command Line Interface__
  your Rancher Server.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.13</span>
+<span class="badge arch">amd64</span> <span class="badge version">2.4.14</span>
 
 
 ## [scw](https://github.com/scaleway/scaleway-cli)
@@ -379,6 +392,17 @@ __Easy and Repeatable Kubernetes Development__
 <span class="badge arch">amd64</span> <span class="badge version">1.35.1</span>
 
 
+## [stern](https://github.com/wercker/stern)
+
+__Multi pod and container log tailing for Kubernetes__
+
+ Allows you to tail multiple pods on Kubernetes and multiple containers within
+ the pod. Each result is color coded for quicker debugging.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">1.11.0</span>
+
+
 ## [terraform](https://www.terraform.io)
 
 __Tool for building, changing, and versioning infrastructure safely__
@@ -392,6 +416,18 @@ __Tool for building, changing, and versioning infrastructure safely__
 <span class="badge arch">amd64</span> <span class="badge version">1.1.2</span> <span class="badge version">1.1.1</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
 
 
+## [vagrant](https://www.vagrantup.com)
+
+__Building and distributing development environments__
+
+ Development environments managed by Vagrant can run on local virtualized
+ platforms such as VirtualBox or VMware, in the cloud via AWS or OpenStack, or
+ in containers such as with Docker or raw LXC.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">2.2.19</span>
+
+
 ## [velero](https://velero.io)
 
 __Backup and migrate Kubernetes applications and their persistent volumes__
@@ -401,5 +437,17 @@ __Backup and migrate Kubernetes applications and their persistent volumes__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">1.7.1</span> <span class="badge version">1.7.0</span>
+
+
+## [waypoint](https://www.waypointproject.io)
+
+__Build, deploy, and release any application on any platform__
+
+ Allows developers to define their application build, deploy, and release
+ lifecycle as code, reducing the time to deliver deployments through a
+ consistent and repeatable workflow.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">0.6.3</span>
 
 <!-- devops.end -->

@@ -1,4 +1,21 @@
-<!-- secops.start --># Secops - 3 packages
+<!-- secops.start --># Secops - 4 packages
+
+
+## [boundary](https://www.boundaryproject.io)
+
+__Provide simple and secure access to hosts and services__
+
+ Traditional approaches like SSH bastion hosts or VPNs require distributing and
+ managing credentials, configuring network controls like firewalls, and exposing
+ the private network. Boundary provides a secure way to access hosts and
+ critical systems without having to manage credentials or expose your network,
+ and is entirely open source.
+ Boundary is designed to be straightforward to understand, highly scalable, and
+ resilient. It can run in clouds, on-prem, secure enclaves and more, and does
+ not require an agent to be installed on every end host.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">0.7.3</span>
 
 
 ## [feroxbuster](https://github.com/epi052/feroxbuster)
