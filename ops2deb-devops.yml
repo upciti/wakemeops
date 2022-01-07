@@ -530,22 +530,6 @@
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
-- name: vagrant
-  version: 2.2.19
-  homepage: https://www.vagrantup.com
-  summary: Building and distributing development environments
-  description: |-
-    Development environments managed by Vagrant can run on local virtualized
-    platforms such as VirtualBox or VMware, in the cloud via AWS or OpenStack, or
-    in containers such as with Docker or raw LXC.
-  depends:
-    - libfuse2
-  fetch:
-    url: https://releases.hashicorp.com/vagrant/{{version}}/vagrant_{{version}}_linux_amd64.zip
-    sha256: a1df4c793902e2b9647a0fd42a23d2363c6900f54b70674b736898f9e48c1200
-  script:
-    - mv vagrant {{src}}/usr/bin/vagrant
-
 - name: velero
   version: 1.7.1
   homepage: https://velero.io
