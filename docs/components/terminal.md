@@ -12,6 +12,8 @@ __Cat clone with wings__
 
 <span class="badge arch">amd64</span> <span class="badge version">0.18.3</span>
 
+<span class="badge arch">arm64</span> <span class="badge version">0.18.3</span>
+
 <span class="badge arch">armhf</span> <span class="badge version">0.18.3</span>
 
 
@@ -43,6 +45,8 @@ __Manage your dotfiles across multiple diverse machines__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">2.9.5</span>
+
+<span class="badge arch">arm64</span> <span class="badge version">2.9.5</span>
 
 <span class="badge arch">armhf</span> <span class="badge version">2.9.5</span>
 
@@ -129,6 +133,8 @@ __Simple, fast and user-friendly alternative to 'find'__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">8.3.1</span> <span class="badge version">8.2.1</span>
+
+<span class="badge arch">arm64</span> <span class="badge version">8.3.1</span>
 
 <span class="badge arch">armhf</span> <span class="badge version">8.3.1</span>
 
@@ -229,6 +235,8 @@ __Count your code, quickly__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">12.1.2</span>
+
+<span class="badge arch">arm64</span> <span class="badge version">12.1.2</span>
 
 <span class="badge arch">armhf</span> <span class="badge version">12.1.2</span>
 
