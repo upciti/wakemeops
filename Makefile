@@ -4,6 +4,8 @@ COMPONENTS := $(shell ls ops2deb-*yml | cut -f2 -d "-" | cut -f1 -d ".")
 
 OUTPUT_BASE_PATH := build
 
+ARCHITECTURE := amd64
+
 export OPS2DEB_REPOSITORY := http://deb.wakemeops.com/ stable
 
 default:
@@ -58,11 +60,11 @@ format:
 
 install-packages:
 	apt-get update -yq
-	PACKAGE_PATH=$$(find ./$(OUTPUT_BASE_PATH) -name "*.deb"); \
+	PACKAGE_PATH=$$(find ./$(OUTPUT_BASE_PATH) -name "*_$(ARCHITECTURE).deb"); \
 		[[ -z "$$PACKAGE_PATH" ]] && true || apt-get install -y $$PACKAGE_PATH
 
 check-packages:
-	export PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*.deb"); \
+	export PACKAGE_PATH=$$(find $(OUTPUT_BASE_PATH) -name "*_$(ARCHITECTURE).deb"); \
 	for package in $$PACKAGE_PATH; do \
 		n=$$(dpkg --info $$package | sed -n "s/ Package: \(.*\)/\1/p"); \
 		dpkg -s $$n || exit 77; \

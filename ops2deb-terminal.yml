@@ -8,10 +8,13 @@
     languages and communicates with git to show modifications with respect to the
     index.
   fetch:
-    url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 44735f2a98fdf8342f343516b6a0f6e783ee1acb918e850be2096bdb805519c1
+    url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-{{rust_target}}.tar.gz
+    sha256:
+      amd64: 44735f2a98fdf8342f343516b6a0f6e783ee1acb918e850be2096bdb805519c1
+      armhf: e55540ccad4c86572d1715cc69b85b9ad940d881fa9e37c673695797f6bcd88b
+      arm64: bca66e2e99e3ae38c34189daba03408eebf54c7366e987524bb1549a1539271c
   script:
-    - mv bat-v{{version}}-x86_64-unknown-linux-gnu/bat {{src}}/usr/bin/bat
+    - mv bat-v{{version}}-*/bat {{src}}/usr/bin/bat
 
 - name: bottom
   version: 0.6.6
@@ -23,8 +26,13 @@
     and a multitude of features. Supports Linux, macOS, and Windows.
     Inspired by gtop, gotop, and htop.
   fetch:
-    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_x86_64-unknown-linux-gnu.tar.gz
-    sha256: 37ed4570d881f52784ed4780430c1f8c0d9132167e61306071d3ba09c49c0ca0
+    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target}}.tar.gz
+    sha256:
+      amd64: 37ed4570d881f52784ed4780430c1f8c0d9132167e61306071d3ba09c49c0ca0
+      armhf: 7f3fb6d80de982b9ae3d7b4dfdfb640e838ba89ac0e7ff6d23ffffb1eae3b66c
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      armhf: armv7-unknown-linux-gnueabihf
   script:
     - mv btm {{src}}/usr/bin/
 
@@ -41,8 +49,11 @@
     sync, while still being able to easily cope with differences from machine to
     machine.
   fetch:
-    url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_amd64.tar.gz
-    sha256: ffb72ad3ce60cfebc82019c3accbbaae9e569095f5fbb71f9af0897399fe1e7f
+    url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: ffb72ad3ce60cfebc82019c3accbbaae9e569095f5fbb71f9af0897399fe1e7f
+      armhf: ddfff152d623503c45d8fb6aa2908c46792a696a5052bb3a92f222fa5ff63773
+      arm64: 1192a7123b61826ab6c5f0f0b53ee8c4040d1a118b1bfce6c4f2821f0dd2044b
   script:
     - mv chezmoi {{src}}/usr/bin/
 
@@ -113,10 +124,12 @@
   summary: More intuitive version of du in rust
   description: du + rust = dust. Like du but more intuitive.
   fetch:
-    url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 1e74434d3af518e0a8bc909fe63f037372c93f1e513fe45a23e47f3a24e945d9
+    url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+    sha256:
+      amd64: 1e74434d3af518e0a8bc909fe63f037372c93f1e513fe45a23e47f3a24e945d9
+      armhf: c3bb60609c60dff0c3f1e7fa316d74d192fe95489b75ed847a044e2645141cbd
   script:
-    - mv dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
+    - mv dust-v{{version}}-*/dust {{src}}/usr/bin/dust
 
 - name: exa
   version: 0.10.1
@@ -140,10 +153,13 @@
     find's powerful functionality, it provides sensible (opinionated) defaults for
     a majority of use cases.
   fetch:
-    url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: b785614c04d943dd6c37df431115a1ef1f849383a015d764c79687768cd3d891
+    url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
+    sha256:
+      amd64: b785614c04d943dd6c37df431115a1ef1f849383a015d764c79687768cd3d891
+      armhf: 1d00ada58defe4e820c7ce6646853b79560565256f32d4f1cb37320d59af5c49
+      arm64: bf6d2af65a1aefb261ab7b480ae80b96ec14a0e290b8b44ff25915652527f1df
   script:
-    - mv fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
+    - mv fd-v{{version}}-*/fd {{src}}/usr/bin/fd
 
 - name: ghorg
   version: 1.7.5
@@ -259,8 +275,15 @@
     Tokei will show the number of files, total lines within those files and
     code, comments, and blanks grouped by language.
   fetch:
-    url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-x86_64-unknown-linux-gnu.tar.gz
-    sha256: c8c5c4ab9e1ff47e745de70f4af3214078657399fa7a0da0b5f209d780e49978
+    url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-{{target}}.tar.gz
+    sha256:
+      amd64: c8c5c4ab9e1ff47e745de70f4af3214078657399fa7a0da0b5f209d780e49978
+      armhf: cfd9b2cf23fbe4f8693a87f1e7652126205e0ef3c79c05c38dfaff238d557e71
+      arm64: ef514fd12cfc3ee2d1725e5ecb866ee1123163004879ec285b22f3323389ebe2
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      armhf: armv7-unknown-linux-gnueabihf
+      arm64: aarch64-unknown-linux-gnu
   script:
     - mv tokei {{src}}/usr/bin/
 
@@ -273,10 +296,15 @@
     xh reimplements as much as possible of HTTPie's excellent design, with a focus
     on improved performance.
   fetch:
-    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target}}.tar.gz
+    sha256:
+      amd64: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
+      armhf: 13a0c676f98802182bd0a32b29ea23167bad9870ffa806cda50754669ff9e2db
+    targets:
+      amd64: x86_64-unknown-linux-musl
+      armhf: arm-unknown-linux-gnueabihf
   script:
-    - mv xh-v{{version}}-x86_64-unknown-linux-musl/xh {{src}}/usr/bin/xh
+    - mv xh-v{{version}}-*/xh {{src}}/usr/bin/xh
 
 - name: xsv
   version: 0.13.0
