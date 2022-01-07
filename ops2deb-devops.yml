@@ -516,7 +516,7 @@
     - mv stern_linux_amd64 {{src}}/usr/bin/stern
 
 - name: terraform
-  version: 1.1.2
+  version: 1.1.3
   homepage: https://www.terraform.io
   summary: Tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -526,7 +526,7 @@
     existing and popular service providers as well as custom in-house solutions.
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: 734efa82e2d0d3df8f239ce17f7370dabd38e535d21e64d35c73e45f35dfa95c
+    sha256: b215de2a18947fff41803716b1829a3c462c4f009b687c2cbdb52ceb51157c2f
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
