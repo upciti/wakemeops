@@ -1,4 +1,4 @@
-<!-- devops.start --># Devops - 38 packages
+<!-- devops.start --># Devops - 37 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
@@ -414,18 +414,6 @@ __Tool for building, changing, and versioning infrastructure safely__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">1.1.3</span> <span class="badge version">1.0.11</span>
-
-
-## [vagrant](https://www.vagrantup.com)
-
-__Building and distributing development environments__
-
- Development environments managed by Vagrant can run on local virtualized
- platforms such as VirtualBox or VMware, in the cloud via AWS or OpenStack, or
- in containers such as with Docker or raw LXC.
-
-
-<span class="badge arch">amd64</span> <span class="badge version">2.2.19</span>
 
 
 ## [velero](https://velero.io)
