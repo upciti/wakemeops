@@ -12,8 +12,10 @@ __Cat clone with wings__
 
 <span class="badge arch">amd64</span> <span class="badge version">0.18.3</span>
 
+<span class="badge arch">armhf</span> <span class="badge version">0.18.3</span>
 
-## [bottom](https://github.com/ClementTsang/bottom)
+
+## [bottom](https://clementtsang.github.io/bottom)
 
 __Yet another cross-platform graphical process/system monitor__
 
@@ -22,7 +24,9 @@ __Yet another cross-platform graphical process/system monitor__
  Inspired by gtop, gotop, and htop.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.6.6</span> <span class="badge version">0.6.5</span> <span class="badge version">0.6.4</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.6.6</span>
+
+<span class="badge arch">armhf</span> <span class="badge version">0.6.6</span>
 
 
 ## [chezmoi](https://github.com/twpayne/chezmoi)
@@ -39,6 +43,8 @@ __Manage your dotfiles across multiple diverse machines__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">2.9.5</span>
+
+<span class="badge arch">armhf</span> <span class="badge version">2.9.5</span>
 
 
 ## [choose](https://github.com/theryangeary/choose)
@@ -99,6 +105,8 @@ __More intuitive version of du in rust__
 
 <span class="badge arch">amd64</span> <span class="badge version">0.7.5</span>
 
+<span class="badge arch">armhf</span> <span class="badge version">0.7.5</span>
+
 
 ## [exa](https://github.com/ogham/exa)
 
@@ -121,6 +129,8 @@ __Simple, fast and user-friendly alternative to 'find'__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">8.3.1</span> <span class="badge version">8.2.1</span>
+
+<span class="badge arch">armhf</span> <span class="badge version">8.3.1</span>
 
 
 ## [ghorg](https://github.com/gabrie30/ghorg)
@@ -220,6 +230,8 @@ __Count your code, quickly__
 
 <span class="badge arch">amd64</span> <span class="badge version">12.1.2</span>
 
+<span class="badge arch">armhf</span> <span class="badge version">12.1.2</span>
+
 
 ## [xh](https://github.com/ducaale/xh)
 
@@ -229,7 +241,9 @@ __Friendly and fast tool for sending HTTP requests__
  on improved performance.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.14.0</span> <span class="badge version">0.13.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.13.0</span>
+
+<span class="badge arch">armhf</span> <span class="badge version">0.14.1</span>
 
 
 ## [xsv](https://github.com/BurntSushi/xsv)
