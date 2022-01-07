@@ -1,4 +1,4 @@
-<!-- terminal.start --># Terminal - 20 packages
+<!-- terminal.start --># Terminal - 21 packages
 
 
 ## [bat](https://github.com/sharkdp/bat)
@@ -158,6 +158,17 @@ __Command-line tool and library for generating regular expressions__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">1.3.0</span>
+
+
+## [mergestat](https://docs.mergestat.com)
+
+__Enables SQL queries for data in git repositories__
+
+ Treat your source code and development history as data. Use SQL to explore and
+ understand everything that goes into building and shipping software.
+
+
+<span class="badge arch">amd64</span> <span class="badge version">0.5.0</span>
 
 
 ## [procs](https://github.com/dalance/procs)

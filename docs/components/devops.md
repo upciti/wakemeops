@@ -413,7 +413,7 @@ __Tool for building, changing, and versioning infrastructure safely__
  existing and popular service providers as well as custom in-house solutions.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.1.2</span> <span class="badge version">1.1.1</span> <span class="badge version">1.1.0</span> <span class="badge version">1.0.11</span> <span class="badge version">1.0.10</span> <span class="badge version">1.0.9</span>
+<span class="badge arch">amd64</span> <span class="badge version">1.1.3</span> <span class="badge version">1.0.11</span>
 
 
 ## [vagrant](https://www.vagrantup.com)
