@@ -1,7 +1,7 @@
 - name: bat
   version: 0.19.0
   homepage: https://github.com/sharkdp/bat
-  summary: Cat clone with wings
+  summary: cat replacement with syntax highlighting
   description: |-
     Supports syntax highlighting for a large number of programming and markup
     languages and communicates with git to show modifications with respect to the
@@ -19,7 +19,7 @@
   version: 0.6.6
   homepage: https://clementtsang.github.io/bottom
   revision: 2
-  summary: Yet another cross-platform graphical process/system monitor
+  summary: cross-platform graphical process/system monitor
   description: |-
     A cross-platform graphical process/system monitor with a customizable interface
     and a multitude of features. Supports Linux, macOS, and Windows.
@@ -38,7 +38,7 @@
 - name: chezmoi
   version: 2.9.5
   homepage: https://github.com/twpayne/chezmoi
-  summary: Manage your dotfiles across multiple diverse machines
+  summary: manage your dotfiles across multiple diverse machines
   description: |-
     Lets you install and update your personal configuration files on multiple
     machines with a single command. chezmoi is helpful if you have spent time
@@ -60,10 +60,11 @@
   version: 1.3.3
   homepage: https://github.com/theryangeary/choose
   revision: 3
-  summary: A human-friendly and fast alternative to cut and (sometimes) awk
+  summary: human-friendly and fast alternative to cut and sometimes awk
   description: |-
-    This is choose, a human-friendly and fast alternative to cut and (sometimes)
-    awk
+    Not a complete replacement for cut and awk, but rather a simple and intuitive
+    tool to use when the basics of awk or cut are sufficient, but it is not
+    necessary to run them.
   fetch:
     url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
     sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
@@ -74,7 +75,7 @@
   version: 1.6.0
   homepage: https://github.com/rs/curlie
   revision: 3
-  summary: The power of curl, the ease of use of httpie
+  summary: the power of 'curl', the ease of use of 'httpie'
   description: |-
     If you like the interface of HTTPie but miss the features of curl, curlie is
     what you are searching for. It is a frontend to curl that adds the ease of use
@@ -90,7 +91,7 @@
   version: 0.11.0
   homepage: https://github.com/imsnif/diskonaut
   revision: 2
-  summary: Terminal disk space navigator
+  summary: terminal disk space navigator
   description: |-
     Given a path on your hard-drive (which could also be the root path, eg. /)
     diskonaut scans it and indexes its metadata to memory so that you could explore
@@ -108,8 +109,8 @@
   version: 0.1.0
   homepage: https://github.com/ogham/dog
   revision: 3
-  summary: Command-line DNS client
-  description: A user-friendly command-line DNS client. dig on steroids
+  summary: command-line DNS client
+  description: A user-friendly command-line DNS client. dig on steroids.
   fetch:
     url: https://github.com/ogham/dog/releases/download/v{{version}}/dog-v{{version}}-x86_64-unknown-linux-gnu.zip
     sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
@@ -120,7 +121,7 @@
   version: 0.7.5
   homepage: https://github.com/bootandy/dust
   revision: 3
-  summary: More intuitive version of du in rust
+  summary: human-friendly and fast alternative to 'du'
   description: du + rust = dust. Like du but more intuitive.
   fetch:
     url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
@@ -134,7 +135,7 @@
   version: 0.10.1
   homepage: https://github.com/ogham/exa
   revision: 3
-  summary: Modern replacement for ls
+  summary: modern replacement for 'ls'
   description: exa is a modern replacement for ls.
   fetch:
     url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
@@ -145,7 +146,7 @@
 - name: fd
   version: 8.3.1
   homepage: https://github.com/sharkdp/fd
-  summary: Simple, fast and user-friendly alternative to 'find'
+  summary: human-friendly and fast alternative to 'find'
   description: |-
     fd is a program to find entries in your filesystem. It is a simple, fast and
     user-friendly alternative to find. While it does not aim to support all of
@@ -163,7 +164,7 @@
 - name: ghorg
   version: 1.7.5
   homepage: https://github.com/gabrie30/ghorg
-  summary: Quickly clone an entire org/users repositories into one directory
+  summary: quickly clone an entire org/users repositories into one directory
   description: |-
     Ghorg can be useful in many situations such as: searching an orgs/users
     codebase (with ack, silver searcher, grep), bash scripting, creating backups,
@@ -179,8 +180,8 @@
   version: 1.2.6
   homepage: https://github.com/orf/gping
   revision: 3
-  summary: Ping, but with a graph
-  description: Ping, but with a graph.
+  summary: ping, but with a graph
+  description: tool to visualize ping speed over time.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
     sha256: 01b461e71c80090c78529849e391e6552ad2d56bcbd704e02a4c4d5d225b9b34
@@ -191,7 +192,7 @@
   version: 1.3.0
   homepage: https://github.com/pemistahl/grex
   revision: 2
-  summary: Command-line tool and library for generating regular expressions
+  summary: command-line tool and library for generating regular expressions
   description: |-
     grex is a library as well as a command-line utility that is meant to simplify
     the often complicated and tedious task of creating regular expressions. It does
@@ -208,7 +209,7 @@
   version: 0.5.0
   homepage: https://docs.mergestat.com
   revision: 2
-  summary: Enables SQL queries for data in git repositories
+  summary: enables SQL queries for data in git repositories
   description: |-
     Treat your source code and development history as data. Use SQL to explore and
     understand everything that goes into building and shipping software.
@@ -221,7 +222,7 @@
 - name: procs
   version: 0.11.13
   homepage: https://github.com/dalance/procs
-  summary: Replacement for ps written in Rust
+  summary: alternative in rust to 'ps'
   description: |-
     Procs has a colored and human-readable output, multi-column keyword search,
     additional information which are not supported by ps, a tree view, a watch mode
@@ -236,7 +237,7 @@
   version: 13.0.0
   homepage: https://github.com/BurntSushi/ripgrep
   revision: 3
-  summary: Recursively searches directories for a regex pattern
+  summary: recursively searches directories for a regex pattern
   description: |-
     ripgrep is a line-oriented search tool that recursively searches the current
     directory for a regex pattern. By default, ripgrep will respect gitignore rules
@@ -254,7 +255,7 @@
   version: 0.9.4
   homepage: https://github.com/lotabout/skim
   revision: 2
-  summary: Fuzzy Finder in rust
+  summary: fuzzy finder in rust
   description: |-
     Half of our life is spent on navigation: files, lines, commands...
     You need skim! It is a general fuzzy finder that saves you time.
@@ -268,7 +269,7 @@
   version: 12.1.2
   homepage: https://github.com/XAMPPRocky/tokei
   revision: 2
-  summary: Count your code, quickly
+  summary: counts the lines of source code
   description: |-
     Tokei is a program that displays statistics about your code.
     Tokei will show the number of files, total lines within those files and
@@ -290,7 +291,7 @@
   version: 0.14.1
   homepage: https://github.com/ducaale/xh
   revision: 3
-  summary: Friendly and fast tool for sending HTTP requests
+  summary: user-friendly and fast tool for sending HTTP requests
   description: |-
     xh reimplements as much as possible of HTTPie's excellent design, with a focus
     on improved performance.
@@ -309,7 +310,7 @@
   version: 0.13.0
   homepage: https://github.com/BurntSushi/xsv
   revision: 2
-  summary: A fast CSV command line toolkit
+  summary: fast CSV command-line toolkit
   description: |-
     xsv is a command line program for indexing, slicing, analyzing, splitting and
     joining CSV files.
@@ -322,7 +323,7 @@
 - name: yq
   version: 4.16.2
   homepage: https://github.com/mikefarah/yq
-  summary: Portable command-line YAML processor
+  summary: portable command-line YAML processor
   description: |-
     Lightweight and portable command-line YAML processor. yq uses jq like syntax
     but works with yaml files as well as json. It doesn't yet support everything jq

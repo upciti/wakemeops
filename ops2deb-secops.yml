@@ -1,7 +1,7 @@
 - name: boundary
   version: 0.7.3
   homepage: https://www.boundaryproject.io
-  summary: Provide simple and secure access to hosts and services
+  summary: provide simple and secure access to hosts and services
   description: |-
     Traditional approaches like SSH bastion hosts or VPNs require distributing and
     managing credentials, configuring network controls like firewalls, and exposing
@@ -20,9 +20,9 @@
 - name: feroxbuster
   version: 2.4.1
   homepage: https://github.com/epi052/feroxbuster
-  summary: Fast, simple, recursive content discovery tool
+  summary: fast, simple, recursive content discovery tool
   description: |-
-    feroxbuster is a tool designed to perform Forced Browsing.
+    Tool designed to perform Forced Browsing.
     Forced browsing is an attack where the aim is to enumerate and access
     resources that are not referenced by the web application, but are still
     accessible by an attacker.
@@ -41,7 +41,7 @@
 - name: trivy
   version: 0.22.0
   homepage: https://www.aquasec.com/products/trivy/
-  summary: Scanner for vulnerabilities
+  summary: vulnerability and misconfiguration scanner
   description: |-
     Scanner for vulnerabilities in container images, file systems, and Git
     repositories, as well as for configuration issues
@@ -54,7 +54,7 @@
 - name: vault
   version: 1.9.2
   homepage: https://www.hashicorp.com/products/vault
-  summary: Tool for securely accessing secrets
+  summary: tool to create, manage and store secrets
   description: |-
     A secret is anything that you want to tightly control access to, such as API
     keys, passwords, or certificates. Vault provides a unified interface to any

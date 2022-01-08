@@ -1,7 +1,7 @@
 - name: clog-cli
   version: 0.9.3
   homepage: https://github.com/clog-tool/clog-cli
-  summary: Generate beautiful changelogs from your Git commit history
+  summary: generate beautiful changelogs from your Git commit history
   description: |-
     clog creates a changelog automatically from your local git metadata. The way
     this works, is every time you make a commit, you ensure your commit subject
@@ -18,7 +18,7 @@
   version: 0.5.1
   homepage: https://github.com/datanymizer/datanymizer
   revision: 2
-  summary: Powerful postgres database anonymizer with flexible rules
+  summary: powerful postgres database anonymizer with flexible rules
   description: |-
     Datanymizer generates database-native dump. You can import or process your dump
     with supported database without 3rd-party importers.
@@ -47,7 +47,7 @@
   version: 0.11.0
   homepage: https://github.com/jakedeichert/mask
   revision: 2
-  summary: A CLI task runner defined by a simple markdown file
+  summary: command-line task runner defined by a simple markdown file
   description: |-
     mask is a CLI task runner which is defined by a simple markdown file. It
     searches for a maskfile.md in the current directory which it then parses for
@@ -61,7 +61,7 @@
 - name: poetry
   version: 1.1.12
   homepage: https://python-poetry.org
-  summary: Tool for dependency management and packaging in Python
+  summary: tool for dependency management and packaging in Python
   description: |-
     Poetry helps you declare, manage and install dependencies of Python projects,
     ensuring you have the right stack everywhere.
@@ -118,7 +118,7 @@
   homepage: https://github.com/pyenv/pyenv
   revision: 2
   arch: all
-  summary: Simple Python version management
+  summary: simple Python version management
   description: |-
     Tool that lets you easily switch between multiple versions of Python. It's
     simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
@@ -155,7 +155,7 @@
   version: 0.18.0
   homepage: https://pyoxidizer.readthedocs.io/en/latest/index.html
   revision: 2
-  summary: PyOxidizer is a utility for producing binaries that embed Python
+  summary: utility for producing binaries that embed Python
   description: |-
     The over-arching goal of PyOxidizer is to make complex packaging and
     distribution problems simple so application maintainers can focus on building
