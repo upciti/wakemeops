@@ -1,7 +1,6 @@
 - name: bat
-  version: 0.18.3
+  version: 0.19.0
   homepage: https://github.com/sharkdp/bat
-  revision: 4
   summary: Cat clone with wings
   description: |-
     Supports syntax highlighting for a large number of programming and markup
@@ -10,9 +9,9 @@
   fetch:
     url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 44735f2a98fdf8342f343516b6a0f6e783ee1acb918e850be2096bdb805519c1
-      armhf: e55540ccad4c86572d1715cc69b85b9ad940d881fa9e37c673695797f6bcd88b
-      arm64: bca66e2e99e3ae38c34189daba03408eebf54c7366e987524bb1549a1539271c
+      amd64: ef7b804504c9df478c59874ad947d793a8aad54e3d650b3483825d62efdcd25c
+      armhf: 1ee2a0da93f477490bfaf76391dc525c8c25c20a987b6544fe776dd449714e69
+      arm64: eb163e95bd05955db32900333ad8cb32b33152da150392875c2c9a1c12dea53b
   script:
     - mv bat-v{{version}}-*/bat {{src}}/usr/bin/bat
 
