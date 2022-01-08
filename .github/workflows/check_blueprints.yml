@@ -51,7 +51,7 @@ jobs:
           - debian:bullseye-slim
           - debian:buster-slim
           - ubuntu:rolling
-          - ubuntu:21.04
+          - ubuntu:20.04
           - ubuntu:18.04
     container: wakemeops/${{ matrix.distribution }}
     steps:
