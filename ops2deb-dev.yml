@@ -198,3 +198,28 @@
     sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
   script:
     - mv pyoxidizer {{src}}/usr/bin/pyoxidizer
+
+- name: upx
+  version: 3.96
+  homepage: https://upx.github.io/
+  summary: advanced executable file compressor
+  description: |-
+    UPX will typically reduce the file size of programs and DLLs by around 50%-70%,
+    thus reducing disk space, network load times, download times and other
+    distribution and storage costs.
+    .
+    Programs and libraries compressed by UPX are completely self-contained and run
+    exactly as before, with no runtime or memory penalty for most of the supported
+    formats.
+    .
+    UPX supports a number of different executable formats, including Windows
+    95/98/ME/NT/2000/XP/CE programs and DLLs, DOS programs, and Linux executables
+    and kernels.
+  fetch:
+    url: https://github.com/upx/upx/releases/download/v{{version}}/upx-{{version}}-{{arch}}_linux.tar.xz
+    sha256:
+      amd64: ac75f5172c1c530d1b5ce7215ca9e94586c07b675a26af3b97f8421b8b8d413d
+      arm64: a075eccc7fd84ed46dff50692e1869e42b1bd6fc25a81f651b9a13c1146476fc
+  script:
+    - mv upx-*_linux/upx {{src}}/usr/bin/upx
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
