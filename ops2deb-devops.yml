@@ -186,6 +186,8 @@
     K9s provides a terminal UI to interact with your Kubernetes clusters.
     The aim of this project is to make it easier to navigate,
     observe and manage your applications in the wild.
+  depends:
+    - kubectl
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
     sha256: 0fb9072cf590962d8cd3fc4d7318120daf75616876f8911c1eb67e66b1240625
@@ -304,6 +306,8 @@
   description: |-
     Encrypt your Secret into a SealedSecret, which is safe to store - even to a
     public repository.
+  depends:
+    - kubectl
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-linux-amd64
     sha256: 0899c583053a7c242359985545d9c5c76899fb965dd9d1c46cbcc8b4dd2071ed
@@ -338,6 +342,8 @@
     Linkerd is an ultralight, security-first service mesh for Kubernetes.
     Linkerd adds critical security, observability, and reliability features
     to your Kubernetes stack with no code change required.
+  depends:
+    - kubectl
   fetch:
     url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
     sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
@@ -491,6 +497,8 @@
     remote Kubernetes clusters. Skaffold handles the workflow for building,
     pushing and deploying your application. It also provides building blocks
     and describe customizations for a CI/CD pipeline.
+  depends:
+    - kubectl
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-amd64
     sha256: bae964dbd1b97263e1994f98b7a0ecbcc4ed0d1b556dc098421b26d1d8f5c746
@@ -535,6 +543,8 @@
   description: |-
     Velero (formerly Heptio Ark) gives you tools to back up and restore your
     Kubernetes cluster resources and persistent volumes.
+  depends:
+    - kubectl
   fetch:
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-amd64.tar.gz
     sha256: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
