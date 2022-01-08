@@ -10,11 +10,11 @@ __Cat clone with wings__
  index.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.18.3</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span>
 
-<span class="badge arch">arm64</span> <span class="badge version">0.18.3</span>
+<span class="badge arch">arm64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span>
 
-<span class="badge arch">armhf</span> <span class="badge version">0.18.3</span>
+<span class="badge arch">armhf</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span>
 
 
 ## [bottom](https://clementtsang.github.io/bottom)
