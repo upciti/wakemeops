@@ -3,11 +3,10 @@ workflow:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 default:
-  image: upciti/wakemebot:main
+  image: upciti/wakemebot:latest
   tags: ["wakemebot"]
 
 stages:
-  - update
   - build
   - test
   - push
@@ -48,54 +47,9 @@ stages:
         VERSION:
           ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
 
-.enable_ssh: &enable_ssh
-  - eval $(ssh-agent -s)
-  - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh || echo
-  - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
-
-.git_configure: &git_configure
-  - git config --replace-all user.name $GITLAB_USER_NAME
-  - git config --replace-all user.email $GITLAB_USER_EMAIL
-  - git config push.default simple
-
-.git_commit_push: &git_commit_push
-  - git remote set-url origin git@github.com:upciti/wakemeops.git
-  - branch="chore/update-packages-$(date '+%Y%m%d%H%M%S')"
-  - git checkout -b ${branch}
-  - git add ops2deb-*.yml
-  - >
-    echo "chore(bot): update packages" > title.log
-  - cat ops2deb-*.log >> body.log || true
-  - git commit -m "$(cat title.log)" -m "$(cat body.log)"
-  - git remote -v
-  - cat .git/config
-  - git push -u origin HEAD
-  - gh pr create --title "$(cat title.log)" --body "$(cat body.log)"
-  - gh pr merge --auto --rebase --delete-branch
-
 .install_dependencies: &install_dependencies
   - apt-get update
   - apt-get install -y ${APT_DEPENDENCIES}
-
-update_blueprints:
-  stage: update
-  before_script:
-    - *enable_ssh
-    - *git_configure
-  script:
-    - make update
-    - git update-index -q --really-refresh
-    - if git diff-index HEAD --quiet; then exit 0; fi # exit if no changes
-    - *git_commit_push
-  variables:
-    GIT_STRATEGY: clone
-    GITLAB_USER_NAME: "wakemebot"
-    GITLAB_USER_EMAIL: "wakemebot@upciti.com"
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "0"'
 
 generate_packages:
   stage: build

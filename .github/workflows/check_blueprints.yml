@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: upciti/wakemebot:main
-      options: --user root
+      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v2
