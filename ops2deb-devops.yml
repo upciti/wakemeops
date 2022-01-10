@@ -315,9 +315,8 @@
     - mv kubeseal-linux-amd64 {{src}}/usr/bin/kubeseal
 
 - name: kustomize
-  version: 3.8.10
+  version: 3.10.0
   homepage: https://kustomize.io
-  revision: 3
   summary: Kubernetes native configuration management
   description: |-
     kustomize lets you customize raw, template-free YAML files for multiple
@@ -329,14 +328,13 @@
     - kubectl
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
-    sha256: 10281b6cd16a50fcbb4a762652bf5ab333633d37035fc7f76ee7b941b50b511d
+    sha256: bab4ab8881718c29ba174bdf677fd89986ad25c40eb363fec9e78c1aff2ff0ea
   script:
     - mv kustomize {{src}}/usr/bin/
 
 - name: linkerd
-  version: 21.10.3
+  version: 21.12.4
   homepage: https://linkerd.io
-  revision: 3
   summary: ultralight service mesh for Kubernetes
   description: |-
     Linkerd is an ultralight, security-first service mesh for Kubernetes.
@@ -346,7 +344,7 @@
     - kubectl
   fetch:
     url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
-    sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
+    sha256: c976f8a739a6ece7535977a185daf53ce797cb854628e208d7149bb79e22988f
   script:
     - mv linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
