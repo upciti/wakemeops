@@ -1,0 +1,50 @@
+name: 🚀 Update blueprints
+
+on:
+  push:
+
+jobs:
+  bump_blueprints:
+    runs-on: ubuntu-latest
+    container:
+      image: upciti/wakemebot:latest
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Bump blueprints
+        run: |
+          make update
+          touch hello
+          echo "Updated blabla from v1 to v2" > ops2deb-devops.log
+
+      - name: Get commit body
+        id: get-pr-body
+        run: |
+          cat ops2deb-*.log >> body.log || true
+          body=$(cat body.log)
+          echo ::set-output name=body::$body
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.WAKEMEBOT_GITHUB_ACCESS_TOKEN }}
+          commit-message: |
+            chore(bot): update blueprints
+            ${{ steps.get-pr-body.outputs.body }}
+          committer: wakemebot <wakemebot@protonmail.com>
+          author: wakemebot <wakemebot@users.noreply.github.com>
+          branch: chore/update-blueprints
+          delete-branch: true
+          title: "chore(bot): update blueprints"
+          body: ${{ steps.get-pr-body.outputs.body }}
+
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v1
+        with:
+          token: ${{ secrets.WAKEMEBOT_GITHUB_ACCESS_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: rebase
