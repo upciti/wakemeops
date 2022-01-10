@@ -129,9 +129,8 @@
     - mv linux-amd64/helm {{src}}/usr/bin/
 
 - name: helmfile
-  version: 0.142.0
+  version: 0.143.0
   homepage: https://github.com/roboll/helmfile
-  revision: 3
   summary: Deploy Kubernetes Helm Charts
   description: |-
     Helmfile is a declarative spec for deploying helm charts. It lets you...
@@ -145,7 +144,7 @@
     - kustomize
   fetch:
     url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
-    sha256: ec01b884cbb9d072f4a6784b33a29f3311248e85e714ebacabba85a79a3ba3db
+    sha256: 829b2b27aa4d7111f6c5b047ca162d2a9aef76b6646bb31c895850683a86c2c1
   script:
     - mv helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
