@@ -549,6 +549,21 @@
   script:
     - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
 
+- name: wakemebot
+  version: 1.3.1
+  homepage: https://github.com/upciti/wakemebot
+  summary: bunch of tools used by our beloved wakemebot
+  description: |-
+    Don't mind this package, you probably don't need it unless you are working on
+    wakemeops itself. It contains the glue needed between aptly (APT repository
+    management), ops2deb (Debian package generation) and mkdocs (wakemeops
+    documentation).
+  fetch:
+    url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
+    sha256: 59339de1cf4ba0d6955186fc0bee7dfc42cb6b9fd69c225555d08df64d363642
+  script:
+    - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
+
 - name: waypoint
   version: 0.6.3
   homepage: https://www.waypointproject.io
