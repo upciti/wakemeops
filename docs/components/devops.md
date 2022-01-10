@@ -23,7 +23,7 @@ __Diff your Docker containers__
 <span class="badge arch">amd64</span> <span class="badge version">0.17.0</span>
 
 
-## container-structure-test
+## [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
 
 __Validate the structure of your container images__
 
@@ -118,7 +118,7 @@ __Deploy Kubernetes Helm Charts__
  - Periodically sync to avoid skew in environments.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.142.0</span> <span class="badge version">0.141.0</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.143.0</span> <span class="badge version">0.142.0</span> <span class="badge version">0.141.0</span>
 
 
 ## [istioctl](https://istio.io)
@@ -301,7 +301,7 @@ __MinIO Client__
  filesystems and object storage.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span>
+<span class="badge arch">amd64</span> <span class="badge version">2022-01-07T06-01-38Z</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span>
 
 
 ## [minio-server](https://min.io)
@@ -313,7 +313,7 @@ __High Performance, Kubernetes Native Object Storage__
  require distributed deploying MinIO with Erasure Coding.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span>
+<span class="badge arch">amd64</span> <span class="badge version">2022-01-08T03-11-54Z</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span>
 
 
 ## [natscli](https://github.com/nats-io/natscli)
