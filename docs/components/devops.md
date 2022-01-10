@@ -330,7 +330,7 @@ __The NATS Command Line Interface__
 
 ## [ops2deb](https://github.com/upciti/ops2deb)
 
-__Debian packaging tool for portable applications__
+__debian packaging tool for portable applications__
 
  Ops2deb is primarily designed to easily generate Debian packages for portable
  applications such as single binary applications and scripts. Packages are
@@ -339,7 +339,7 @@ __Debian packaging tool for portable applications__
  in its configuration file.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.17.0</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span>
 
 
 ## [packer](https://www.packer.io)
