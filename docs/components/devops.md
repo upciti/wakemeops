@@ -1,4 +1,4 @@
-<!-- devops.start --># Devops - 37 packages
+<!-- devops.start --># Devops - 38 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
@@ -246,24 +246,24 @@ __Kubernetes native configuration management__
 
  kustomize lets you customize raw, template-free YAML files for multiple
  purposes, leaving the original YAML untouched and usable as is. kustomize
- targets kubernetes; it understands and can patch kubernetes style API objects.
+ targets Kubernetes; it understands and can patch Kubernetes style API objects.
  It's like make, in that what it does is declared in a file, and it's like sed,
  in that it emits edited text.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">3.8.10</span>
+<span class="badge arch">amd64</span> <span class="badge version">4.4.1</span> <span class="badge version">4.0.0</span> <span class="badge version">3.10.0</span> <span class="badge version">3.8.10</span>
 
 
 ## [linkerd](https://linkerd.io)
 
-__Ultralight service mesh for Kubernetes__
+__ultralight service mesh for Kubernetes__
 
  Linkerd is an ultralight, security-first service mesh for Kubernetes.
  Linkerd adds critical security, observability, and reliability features
  to your Kubernetes stack with no code change required.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">21.10.3</span> <span class="badge version">21.10.2</span> <span class="badge version">21.10.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">21.12.4</span> <span class="badge version">21.10.3</span>
 
 
 ## [logcli](https://github.com/grafana/loki)
@@ -425,6 +425,19 @@ __Backup and migrate Kubernetes applications and their persistent volumes__
 
 
 <span class="badge arch">amd64</span> <span class="badge version">1.7.1</span> <span class="badge version">1.7.0</span>
+
+
+## [wakemebot](https://github.com/upciti/wakemebot)
+
+__bunch of tools used by our beloved wakemebot__
+
+ Don't mind this package, you probably don't need it unless you are working on
+ wakemeops itself. It contains the glue needed between aptly (APT repository
+ management), ops2deb (Debian package generation) and mkdocs (wakemeops
+ documentation).
+
+
+<span class="badge arch">amd64</span> <span class="badge version">1.3.1</span>
 
 
 ## [waypoint](https://www.waypointproject.io)
