@@ -2,10 +2,10 @@ name: 📖 Update documentation
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '30 */3 * * *'
 
 jobs:
-  create_pull_request:
+  update_documentation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,7 +18,7 @@ jobs:
           sudo mv wakemebot /usr/local/bin/
           wakemebot docs
 
-      - name: Create Pull Request
+      - name: Create pull request
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
@@ -33,7 +33,7 @@ jobs:
             Automated changes generated using `wakemebot docs`.
             See https://github.com/upciti/wakemebot for more information.
 
-      - name: Enable Pull Request Automerge
+      - name: Enable pull request automerge
         if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
