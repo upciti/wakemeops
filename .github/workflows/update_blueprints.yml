@@ -14,13 +14,24 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Bump blueprints
-        run: make update
-
-      - name: Get commit body
-        id: get-commit-body
         run: |
-          cat ops2deb-*.log >> body.log || true
-          body=$(cat body.log)
+          #make update
+          touch test
+          echo -n "Updated aaa from 1.0.0 to 2.0.0\n Updated asdf" > ops2deb-devops.log
+
+      - name: Build commit content
+        id: get-commit-content
+        shell: bash
+        run: |
+          changes=$(cat ops2deb-*.log || true)
+          if [[ $(echo -n "$changes" | wc -l) -gt 1 ]]; then
+            title="chore(bot): update blueprints"
+            body=$changes
+          else
+            title="chore(bot): $(echo -n $changes | tr '[:upper:]' '[:lower:]')"
+            body=
+          fi
+          echo ::set-output name=title::$title
           echo ::set-output name=body::$body
 
       - name: Create Pull Request
@@ -35,8 +46,8 @@ jobs:
           author: wakemebot <wakemebot@users.noreply.github.com>
           branch: chore/update-blueprints
           delete-branch: true
-          title: "chore(bot): update blueprints"
-          body: ${{ steps.get-commit-body.outputs.body }}
+          title: ${{ steps.get-commit-content.outputs.title }}
+          body: ${{ steps.get-commit-content.outputs.body }}
 
       - name: Enable Pull Request Automerge
         if: steps.cpr.outputs.pull-request-operation == 'created'
