@@ -25,6 +25,8 @@
 
 - name: container-structure-test
   version: 1.11.0
+  homepage: https://github.com/GoogleContainerTools/container-structure-test
+  revision: 2
   summary: Validate the structure of your container images
   description: |-
     The Container Structure Tests provide a powerful framework to validate the
