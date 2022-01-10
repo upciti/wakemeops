@@ -379,23 +379,21 @@
     - mv minikube-linux-amd64 {{src}}/usr/bin/minikube
 
 - name: minio-client
-  version: 2021-12-10T00-14-28Z
+  version: 2022-01-07T06-01-38Z
   homepage: https://min.io
-  revision: 3
   summary: MinIO Client
   description: |-
     MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
     filesystems and object storage.
   fetch:
     url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
-    sha256: 01ec33b51ad208634deb8d701d52ac8f6be088e72563a92475ba6e6470653b73
+    sha256: 65efbfa31d85aaed8cee12e502b04108bd908d207a0527942c3735fa7d74c4f9
   script:
     - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
 
 - name: minio-server
-  version: 2021-12-10T23-03-39Z
+  version: 2022-01-08T03-11-54Z
   homepage: https://min.io
-  revision: 3
   summary: High Performance, Kubernetes Native Object Storage
   description: |-
     Standalone MinIO servers are best suited for early development and evaluation.
@@ -403,7 +401,7 @@
     require distributed deploying MinIO with Erasure Coding.
   fetch:
     url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
-    sha256: 20efabe6cc76e487dc5cd367d744bf344eb28075d0772046b00a1a5e220ccf55
+    sha256: e2b9bf780974862b85dfecb416c468f15d374ace1efe230f0ffbccd9fd6c81e5
   script:
     - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
