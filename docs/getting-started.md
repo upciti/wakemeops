@@ -38,6 +38,35 @@ curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/set_rep
 sudo apt install kubectl helm
 ```
 
+**How to install a specific package version?**
+
+```shell
+sudo apt install <package name>=<version>
+```
+
+Example:
+
+If you are looking to install the latest version of kubectl 1.22:
+
+* Search for available versions
+
+```shell
+apt-cache madison kubectl
+   kubectl | 1.23.1-1~ops2deb | http://deb.wakemeops.com stable/devops amd64 Packages
+   kubectl | 1.23.0-1~ops2deb | http://deb.wakemeops.com stable/devops amd64 Packages
+   kubectl | 1.22.4-2~ops2deb | http://deb.wakemeops.com stable/devops amd64 Packages
+   kubectl | 1.22.3-1~ops2deb | http://deb.wakemeops.com stable/devops amd64 Packages
+   kubectl | 1.22.2-1~ops2deb | http://deb.wakemeops.com stable/devops amd64 Packages
+```
+
+* Install kubectl
+
+```shell
+sudo apt install 1.22.4-2~ops2deb
+# or simply run:
+sudo apt install kubectl=1.22\*
+```
+
 ## Docker images
 
 We also provide docker images with the Wakemeops repository. The Dockerfile is available [here](https://github.com/upciti/wakemeops/blob/main/Dockerfile).
