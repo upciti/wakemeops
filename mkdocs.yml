@@ -7,8 +7,8 @@ edit_uri: blob/main/docs/
 
 nav:
   - Home: "index.md"
-  - Getting started: "getting-started.md"
-  - Available packages:
+  - Usage: "usage.md"
+  - Packages:
     - Dev: "components/dev.md"
     - Devops: "components/devops.md"
     - Secops: "components/secops.md"
@@ -42,14 +42,16 @@ markdown_extensions:
   - codehilite:
       linenums: true
   - pymdownx.details
-  - pymdownx.tabbed
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
 extra_css:
   - css/extra.css
