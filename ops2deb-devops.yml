@@ -423,7 +423,7 @@
     - mv nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
 
 - name: ops2deb
-  version: 0.17.2
+  version: 0.18.0
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -439,7 +439,7 @@
     - unzip
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 7013bb13021fffccfae7b40de48326f32bbdcfd612c7b3ce68e43447aec2d45a
+    sha256: fe0211a702dfb106691f0eace7559bb6f660db63446491bec36096de8909f671
   script:
     - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
 
@@ -551,7 +551,7 @@
     - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
 
 - name: wakemebot
-  version: 1.3.2
+  version: 1.4.0
   homepage: https://github.com/upciti/wakemebot
   summary: bunch of tools used by our beloved wakemebot
   description: |-
@@ -561,7 +561,7 @@
     documentation).
   fetch:
     url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
-    sha256: 2022c41fab5f2385a367f2db7d4526cc7cba9b51517630a28c1fa7682f42a242
+    sha256: dbcc76d9b5256fc3d498a38a0d3fbb1d56c73e3e5a8fef194c8789bda7033416
   script:
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
