@@ -339,7 +339,7 @@ __debian packaging tool for portable applications__
  in its configuration file.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.17.0</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span>
+<span class="badge arch">amd64</span> <span class="badge version">0.17.1</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span>
 
 
 ## [packer](https://www.packer.io)
