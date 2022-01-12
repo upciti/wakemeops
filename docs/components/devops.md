@@ -8,7 +8,7 @@ __Continuous delivery tool for Kubernetes__
  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.2.2</span> <span class="badge version">2.1.8</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.2.2</span> <span class="badge version">2.1.8</span></div>
 
 
 ## [container-diff](https://github.com/GoogleContainerTools/container-diff)
@@ -20,7 +20,7 @@ __Diff your Docker containers__
  criteria, including: history, file system, size, packages...
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.17.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.17.0</span></div>
 
 
 ## [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test)
@@ -33,7 +33,7 @@ __Validate the structure of your container images__
  filesystem.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.11.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.11.0</span></div>
 
 
 ## [datree](https://github.com/datreeio/datree)
@@ -46,7 +46,7 @@ __Prevent Kubernetes misconfigurations from reaching production__
  to be supported by the Kubernetes community.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.14.49</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.14.49</span></div>
 
 
 ## [devspace](https://devspace.sh)
@@ -57,7 +57,7 @@ __The Fastest Developer Tool for Kubernetes__
  inside Kubernetes.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">5.18.1</span> <span class="badge version">5.18.0</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">5.18.1</span> <span class="badge version">5.18.0</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span></div>
 
 
 ## [docker-compose](https://docs.docker.com/compose)
@@ -69,7 +69,7 @@ __Lightweight development environments using Docker__
  handle the rest.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.29.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.29.2</span></div>
 
 
 ## [flux](https://fluxcd.io)
@@ -81,7 +81,7 @@ __Open and extensible continuous delivery solution for Kubernetes__
  configuration when there is new code to deploy.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.24.1</span> <span class="badge version">0.24.0</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span> <span class="badge version">0.19.1</span> <span class="badge version">0.19.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
 
 
 ## [gitlab-release-cli](https://gitlab.com/gitlab-org/release-cli/)
@@ -93,7 +93,7 @@ __GitLab Release command-line tool__
  Golang.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.10.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.10.0</span></div>
 
 
 ## [helm](https://helm.sh)
@@ -104,7 +104,7 @@ __The Kubernetes package manager__
  Charts are packages of pre-configured Kubernetes resources.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">3.7.2</span> <span class="badge version">3.7.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">3.7.2</span> <span class="badge version">3.7.1</span></div>
 
 
 ## [helmfile](https://github.com/roboll/helmfile)
@@ -118,7 +118,7 @@ __Deploy Kubernetes Helm Charts__
  - Periodically sync to avoid skew in environments.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.143.0</span> <span class="badge version">0.142.0</span> <span class="badge version">0.141.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.143.0</span> <span class="badge version">0.142.0</span> <span class="badge version">0.141.0</span></div>
 
 
 ## [istioctl](https://istio.io)
@@ -128,7 +128,7 @@ __Istio service mesh CLI__
  Istio is an open platform to connect, manage, and secure microservices.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.12.1</span> <span class="badge version">1.12.0</span> <span class="badge version">1.11.4</span> <span class="badge version">1.11.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.12.1</span> <span class="badge version">1.12.0</span> <span class="badge version">1.11.4</span> <span class="badge version">1.11.3</span></div>
 
 
 ## [k3d](https://k3d.io)
@@ -140,7 +140,7 @@ __Little helper to run Rancher Lab's k3s in Docker__
  node k3s clusters in docker, e.g. for local development on Kubernetes.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">5.2.2</span> <span class="badge version">5.2.1</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">5.2.2</span> <span class="badge version">5.2.1</span> <span class="badge version">5.2.0</span> <span class="badge version">5.1.0</span> <span class="badge version">5.0.3</span> <span class="badge version">5.0.2</span> <span class="badge version">5.0.1</span></div>
 
 
 ## [k9s](https://k9scli.io)
@@ -152,7 +152,7 @@ __K9s - Kubernetes CLI To Manage Your Clusters In Style__
  observe and manage your applications in the wild.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.25.10</span> <span class="badge version">0.25.9</span> <span class="badge version">0.25.8</span> <span class="badge version">0.25.7</span> <span class="badge version">0.25.6</span> <span class="badge version">0.25.5</span> <span class="badge version">0.25.4</span> <span class="badge version">0.25.3</span> <span class="badge version">0.25.2</span> <span class="badge version">0.25.1</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.15</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.25.10</span> <span class="badge version">0.25.9</span> <span class="badge version">0.25.8</span> <span class="badge version">0.25.7</span> <span class="badge version">0.25.6</span> <span class="badge version">0.25.5</span> <span class="badge version">0.25.4</span> <span class="badge version">0.25.3</span> <span class="badge version">0.25.2</span> <span class="badge version">0.25.1</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.15</span></div>
 
 
 ## [kind](https://kind.sigs.k8s.io)
@@ -164,7 +164,7 @@ __Kubernetes IN Docker__
  used for local development or CI.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.11.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.11.1</span></div>
 
 
 ## [krew](https://krew.sigs.k8s.io)
@@ -174,7 +174,7 @@ __Find and install kubectl plugins__
  Krew is the package manager for kubectl plugins.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.4.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.4.2</span></div>
 
 
 ## [kube-score](https://github.com/zegl/kube-score)
@@ -185,7 +185,7 @@ __Kubernetes object analysis with recommendations for improved reliability and s
  your Kubernetes object definitions.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.13.0</span> <span class="badge version">1.12.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.13.0</span> <span class="badge version">1.12.0</span></div>
 
 
 ## [kubectl](https://github.com/kubernetes/kubectl)
@@ -196,7 +196,7 @@ __Command line client for controlling a Kubernetes cluster__
  clusters.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.23.1</span> <span class="badge version">1.23.0</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.23.1</span> <span class="badge version">1.23.0</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span></div>
 
 
 ## [kubectl-neat](https://github.com/itaysk/kubectl-neat)
@@ -206,27 +206,27 @@ __Clean up Kubernetes yaml and json output to make it readable__
  Remove clutter from Kubernetes manifests to make them more readable.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.0.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.0.3</span></div>
 
 
 ## [kubectx](https://github.com/ahmetb/kubectx)
 
-__kubectl plugin that helps you switch between clusters__
+__Kubectl plugin that helps you switch between clusters__
 
  Faster way to switch between clusters in kubectl.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.9.4</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.9.4</span></div>
 
 
 ## [kubens](https://github.com/ahmetb/kubectx)
 
-__kubectl plugin that helps you switch between namespaces__
+__Kubectl plugin that helps you switch between namespaces__
 
  Faster way to switch between namespaces in kubectl.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.9.4</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.9.4</span></div>
 
 
 ## [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
@@ -237,7 +237,7 @@ __Secret management solution for k8s__
  public repository.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.16.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.16.0</span></div>
 
 
 ## [kustomize](https://kustomize.io)
@@ -251,19 +251,19 @@ __Kubernetes native configuration management__
  in that it emits edited text.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">4.4.1</span> <span class="badge version">4.0.0</span> <span class="badge version">3.10.0</span> <span class="badge version">3.8.10</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">4.4.1</span> <span class="badge version">4.0.0</span> <span class="badge version">3.10.0</span> <span class="badge version">3.8.10</span></div>
 
 
 ## [linkerd](https://linkerd.io)
 
-__ultralight service mesh for Kubernetes__
+__Ultralight service mesh for Kubernetes__
 
  Linkerd is an ultralight, security-first service mesh for Kubernetes.
  Linkerd adds critical security, observability, and reliability features
  to your Kubernetes stack with no code change required.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">21.12.4</span> <span class="badge version">21.10.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">21.12.4</span> <span class="badge version">21.10.3</span></div>
 
 
 ## [logcli](https://github.com/grafana/loki)
@@ -273,7 +273,7 @@ __LogCLI is the command-line interface to Loki__
  It facilitates running LogQL queries against a Loki instance.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span> <span class="badge version">2.3.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span> <span class="badge version">2.3.0</span></div>
 
 
 ## [minikube](https://minikube.sigs.k8s.io)
@@ -290,7 +290,7 @@ __Quickly set up a local Kubernetes cluster__
  Addons for easily installed Kubernetes applications
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.24.0</span> <span class="badge version">1.23.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.24.0</span> <span class="badge version">1.23.2</span></div>
 
 
 ## [minio-client](https://min.io)
@@ -301,7 +301,7 @@ __MinIO Client__
  filesystems and object storage.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2022-01-07T06-01-38Z</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2022-01-07T06-01-38Z</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span></div>
 
 
 ## [minio-server](https://min.io)
@@ -313,7 +313,7 @@ __High Performance, Kubernetes Native Object Storage__
  require distributed deploying MinIO with Erasure Coding.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2022-01-08T03-11-54Z</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2022-01-08T03-11-54Z</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span></div>
 
 
 ## [natscli](https://github.com/nats-io/natscli)
@@ -325,12 +325,12 @@ __The NATS Command Line Interface__
  several new capabilities and support full JetStream management.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.0.26</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.0.26</span></div>
 
 
 ## [ops2deb](https://github.com/upciti/ops2deb)
 
-__debian packaging tool for portable applications__
+__Debian packaging tool for portable applications__
 
  Ops2deb is primarily designed to easily generate Debian packages for portable
  applications such as single binary applications and scripts. Packages are
@@ -339,7 +339,7 @@ __debian packaging tool for portable applications__
  in its configuration file.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.18.0</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span></div>
 
 
 ## [packer](https://www.packer.io)
@@ -352,7 +352,7 @@ __Help to create identical machine images for multiple platforms from a single s
  https://www.packer.io/docs/builders.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.7.8</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.7.8</span></div>
 
 
 ## [rancher](https://github.com/rancher/cli)
@@ -363,7 +363,7 @@ __Rancher Command Line Interface__
  your Rancher Server.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.14</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.4.14</span></div>
 
 
 ## [scw](https://github.com/scaleway/scaleway-cli)
@@ -374,7 +374,7 @@ __Command Line Interface for Scaleway__
  directly from your terminal.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.0</span> <span class="badge version">2.3.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.4.0</span> <span class="badge version">2.3.1</span></div>
 
 
 ## [skaffold](https://skaffold.dev/)
@@ -389,7 +389,7 @@ __Easy and Repeatable Kubernetes Development__
  and describe customizations for a CI/CD pipeline.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.35.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.35.1</span></div>
 
 
 ## [stern](https://github.com/wercker/stern)
@@ -400,7 +400,7 @@ __Multi pod and container log tailing for Kubernetes__
  the pod. Each result is color coded for quicker debugging.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.11.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.11.0</span></div>
 
 
 ## [terraform](https://www.terraform.io)
@@ -413,7 +413,7 @@ __Tool for building, changing, and versioning infrastructure safely__
  existing and popular service providers as well as custom in-house solutions.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.1.3</span> <span class="badge version">1.0.11</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.1.3</span> <span class="badge version">1.0.11</span></div>
 
 
 ## [velero](https://velero.io)
@@ -424,12 +424,12 @@ __Backup and migrate Kubernetes applications and their persistent volumes__
  Kubernetes cluster resources and persistent volumes.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.7.1</span> <span class="badge version">1.7.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.7.1</span> <span class="badge version">1.7.0</span></div>
 
 
 ## [wakemebot](https://github.com/upciti/wakemebot)
 
-__bunch of tools used by our beloved wakemebot__
+__Bunch of tools used by our beloved wakemebot__
 
  Don't mind this package, you probably don't need it unless you are working on
  wakemeops itself. It contains the glue needed between aptly (APT repository
@@ -437,7 +437,7 @@ __bunch of tools used by our beloved wakemebot__
  documentation).
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.3.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.4.1</span> <span class="badge version">1.3.2</span></div>
 
 
 ## [waypoint](https://www.waypointproject.io)
@@ -449,6 +449,6 @@ __Build, deploy, and release any application on any platform__
  consistent and repeatable workflow.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.6.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.6.3</span></div>
 
 <!-- devops.end -->

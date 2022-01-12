@@ -10,11 +10,11 @@ __Cat clone with wings__
  index.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span></div>
 
-<span class="badge arch">arm64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span>
+<div><span class="badge arch">arm64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.3</span></div>
 
 
 ## [bottom](https://clementtsang.github.io/bottom)
@@ -26,9 +26,9 @@ __Yet another cross-platform graphical process/system monitor__
  Inspired by gtop, gotop, and htop.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.6.6</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.6.6</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">0.6.6</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.6.6</span></div>
 
 
 ## [chezmoi](https://github.com/twpayne/chezmoi)
@@ -44,11 +44,11 @@ __Manage your dotfiles across multiple diverse machines__
  machine.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.9.5</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.9.5</span></div>
 
-<span class="badge arch">arm64</span> <span class="badge version">2.9.5</span>
+<div><span class="badge arch">arm64</span> <span class="badge version">2.9.5</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">2.9.5</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">2.9.5</span></div>
 
 
 ## [choose](https://github.com/theryangeary/choose)
@@ -59,7 +59,7 @@ __A human-friendly and fast alternative to cut and (sometimes) awk__
  awk
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.3.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.3.3</span></div>
 
 
 ## [curlie](https://github.com/rs/curlie)
@@ -72,7 +72,7 @@ __The power of curl, the ease of use of httpie__
  are exposed with syntax sugar and output formatting inspired from httpie.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.6.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.6.0</span></div>
 
 
 ## [diskonaut](https://github.com/imsnif/diskonaut)
@@ -87,7 +87,7 @@ __Terminal disk space navigator__
  how much space you've freed up in this session.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.11.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.11.0</span></div>
 
 
 ## [dog](https://github.com/ogham/dog)
@@ -97,7 +97,7 @@ __Command-line DNS client__
  A user-friendly command-line DNS client. dig on steroids
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.1.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.1.0</span></div>
 
 
 ## [dust](https://github.com/bootandy/dust)
@@ -107,9 +107,9 @@ __More intuitive version of du in rust__
  du + rust = dust. Like du but more intuitive.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.7.5</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.7.5</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">0.7.5</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.7.5</span></div>
 
 
 ## [exa](https://github.com/ogham/exa)
@@ -119,7 +119,7 @@ __Modern replacement for ls__
  exa is a modern replacement for ls.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.10.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.10.1</span></div>
 
 
 ## [fd](https://github.com/sharkdp/fd)
@@ -132,11 +132,11 @@ __Simple, fast and user-friendly alternative to 'find'__
  a majority of use cases.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">8.3.1</span> <span class="badge version">8.2.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">8.3.1</span> <span class="badge version">8.2.1</span></div>
 
-<span class="badge arch">arm64</span> <span class="badge version">8.3.1</span>
+<div><span class="badge arch">arm64</span> <span class="badge version">8.3.1</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">8.3.1</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">8.3.1</span></div>
 
 
 ## [ghorg](https://github.com/gabrie30/ghorg)
@@ -149,7 +149,7 @@ __Quickly clone an entire org/users repositories into one directory__
  supports GitHub, GitLab, Bitbucket, and more.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.7.5</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.7.5</span></div>
 
 
 ## [gping](https://github.com/orf/gping)
@@ -159,7 +159,7 @@ __Ping, but with a graph__
  Ping, but with a graph.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.2.6</span> <span class="badge version">1.2.5</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.2.6</span> <span class="badge version">1.2.5</span></div>
 
 
 ## [grex](https://github.com/pemistahl/grex)
@@ -173,7 +173,7 @@ __Command-line tool and library for generating regular expressions__
  which it was generated from.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.3.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.3.0</span></div>
 
 
 ## [mergestat](https://docs.mergestat.com)
@@ -184,7 +184,7 @@ __Enables SQL queries for data in git repositories__
  understand everything that goes into building and shipping software.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.5.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.5.0</span></div>
 
 
 ## [procs](https://github.com/dalance/procs)
@@ -196,7 +196,7 @@ __Replacement for ps written in Rust__
  and more...
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.11.13</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.11.13</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span></div>
 
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)
@@ -211,7 +211,7 @@ __Recursively searches directories for a regex pattern__
  like The Silver Searcher, ack and grep.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">13.0.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">13.0.0</span></div>
 
 
 ## [skim](https://github.com/lotabout/skim)
@@ -222,7 +222,7 @@ __Fuzzy Finder in rust__
  You need skim! It is a general fuzzy finder that saves you time.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.9.4</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.9.4</span></div>
 
 
 ## [tokei](https://github.com/XAMPPRocky/tokei)
@@ -234,11 +234,11 @@ __Count your code, quickly__
  code, comments, and blanks grouped by language.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">12.1.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">12.1.2</span></div>
 
-<span class="badge arch">arm64</span> <span class="badge version">12.1.2</span>
+<div><span class="badge arch">arm64</span> <span class="badge version">12.1.2</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">12.1.2</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">12.1.2</span></div>
 
 
 ## [xh](https://github.com/ducaale/xh)
@@ -249,9 +249,9 @@ __Friendly and fast tool for sending HTTP requests__
  on improved performance.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.13.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.13.0</span></div>
 
-<span class="badge arch">armhf</span> <span class="badge version">0.14.1</span>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.14.1</span></div>
 
 
 ## [xsv](https://github.com/BurntSushi/xsv)
@@ -262,7 +262,7 @@ __A fast CSV command line toolkit__
  joining CSV files.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.13.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.13.0</span></div>
 
 
 ## [yq](https://github.com/mikefarah/yq)
@@ -275,6 +275,6 @@ __Portable command-line YAML processor__
  is being added continuously.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">4.16.2</span> <span class="badge version">4.16.1</span> <span class="badge version">4.14.2</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">4.16.2</span> <span class="badge version">4.16.1</span> <span class="badge version">4.14.2</span></div>
 
 <!-- terminal.end -->
