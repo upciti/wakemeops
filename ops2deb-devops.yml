@@ -84,7 +84,7 @@
     - mv docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: flux
-  version: 0.25.0
+  version: 0.25.1
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -93,7 +93,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 0b6cc284b59c8cf1580cc68d792f7b4a179c87d352d1ab73a526b2c719262b9e
+    sha256: 195e467b10a7afab53a49a52a7075ccd6e5fdbc8640c27ba857f536a9b027b0a
   script:
     - mv flux {{src}}/usr/bin/flux
 
@@ -348,14 +348,13 @@
     - mv linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
 - name: logcli
-  version: 2.4.1
+  version: 2.4.2
   homepage: https://github.com/grafana/loki
-  revision: 3
   summary: command-line interface for loki
   description: It facilitates running LogQL queries against a Loki instance.
   fetch:
     url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-    sha256: 021d7cc5922fc43e480ac727538c9b1c64a2aa4f7ba3541b0b15a8adbd18a7c6
+    sha256: 68e5e281b4488ad49303cce972e194fe4e186cd519ed8a14db0c28316ad01e05
   script:
     - mv logcli-linux-amd64 {{src}}/usr/bin/logcli
 
