@@ -41,6 +41,7 @@ markdown_extensions:
   - admonition
   - codehilite:
       linenums: true
+  - footnotes
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true

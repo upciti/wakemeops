@@ -15,6 +15,11 @@ Our repository is currently split into four components, __devops__, __dev__, __s
     curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash -s terminal
     ```
 
+??? abstract title "See script content[^1]"
+    ```shell title="install_repository"
+    --8<-- "assets/install_repository"
+    ```
+
 Once the repository is added to your system, update APT cache with:
 
 ```shell
@@ -53,6 +58,12 @@ hosted by wakemeops.
     ```shell
     curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/set_repository_priority | sudo bash -s 900
     ```
+
+??? abstract title "See script content[^1]"
+    ```shell title="set_repository_priority"
+    --8<-- "assets/set_repository_priority"
+    ```
+
 
 !!! info
     On Debian/Ubuntu, the default priority for repositories is 500. `apt-cache policy` will show you the 
@@ -203,11 +214,16 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
 
 ### Write Dockerfiles
 
-All docker images include a thin wrapper around `apt-get install` that adds retries and the usual `apt-get update`
-followed by `rm -r /var/lib/apt/lists /var/cache/apt/archives`.
-This handy script comes from [bitnami images](https://bitnami.com/stacks/containers). 
-You can leverage this script to write very short dockerfiles for your CI:
+All docker images include a thin wrapper around `apt-get install` named `install_packages`.
+It adds retries and does the usual `apt-get update` followed by `rm -r /var/lib/apt/lists /var/cache/apt/archives`.
+This handy script comes from the [bitnami minideb image](https://github.com/bitnami/minideb).
 
+??? abstract title "See script content[^1]"
+    ```shell title="install_packages"
+    --8<-- "assets/install_packages"
+    ```
+
+You can leverage this script to write very short dockerfiles for your CI:
 
 === "I'm careful"
 
@@ -222,10 +238,13 @@ You can leverage this script to write very short dockerfiles for your CI:
     USER 1001
     ```
 
-=== "I like to live on the edge"
+=== "I like to live on the edge :fire:"
 
     ```dockerfile
     FROM wakemeops/debian:bullseye
     
     RUN install_packages helm kustomize kubectl
     ```
+
+[^1]: The script content is inserted using the markdown extension `pymdownx.snippets`
+when the documentationis built in our CI. The actual content may differ.
