@@ -33,6 +33,7 @@ stages:
 .parallel_component:
   parallel:
     matrix:
+      - component: desktop
       - component: dev
       - component: devops
       - component: secops

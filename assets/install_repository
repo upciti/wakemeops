@@ -120,7 +120,7 @@ M1isGcqM+C+T2AMf+LSoI18ao7+aDUlvojZwJyVEwkiJ3SyoD5P/cBxVH5mVNXUS
 EOF
 
 cat <<EOF > /etc/apt/sources.list.d/wakemeops.list
-deb http://deb.wakemeops.com/ stable ${@-"dev devops secops terminal"}
+deb http://deb.wakemeops.com/ stable ${@-"dev devops secops terminal desktop"}
 EOF
 
 apt-get update -yq
