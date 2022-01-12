@@ -1,0 +1,35 @@
+name: mattermost-desktop
+version: 5.0.2
+homepage: https://mattermost.com
+summary: desktop application for Mattermost
+description: |-
+  Mattermost is an open source platform for secure communication, collaboration,
+  and orchestration of work across teams and tools.
+  Mattermost is built specifically for software development and engineering use
+  cases and integrates deeply with a rich ecosystem of third-party developer
+  tools. Mattermost gives companies full control over their data; with self-
+  hosted and private cloud deployment options and access to the source code,
+  developers can contribute directly to a shared, flexible, and extensible
+  platform built just for them.
+fetch:
+  url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
+  sha256: 54e029720d4386d530e1d12fed3dd64df838612d39985f4c8a8eb00a48e7c044
+script:
+  - install -d {{src}}/opt
+  - find . -type f -exec chmod 644 -- {} +
+  - find . -type d -exec chmod 775 -- {} +
+  - chmod 755 mattermost-desktop-{{version}}-linux-x64/mattermost-desktop
+  - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
+  - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
+  - install -d {{src}}/usr/share/applications
+  - |-
+    cat << EOF >> {{src}}/usr/share/applications/mattermost.desktop
+    [Desktop Entry]
+    Name=Mattermost
+    Comment=Mattermost Desktop application for Linux
+    Exec="/opt/mattermost-desktop/mattermost-desktop"
+    Terminal=false
+    Type=Application
+    Icon=/opt/mattermost-desktop/app_icon.png
+    Categories=Network;InstantMessaging;
+    EOF
