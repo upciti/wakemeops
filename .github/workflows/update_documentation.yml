@@ -9,7 +9,7 @@ jobs:
   update_documentation:
     runs-on: ubuntu-latest
     container: 
-      name: wakemeops/debian:bullseye
+      image: wakemeops/debian:bullseye
       options: --user 1001
     steps:
       - name: Checkout
