@@ -84,9 +84,8 @@
     - mv docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: flux
-  version: 0.24.1
+  version: 0.25.0
   homepage: https://fluxcd.io
-  revision: 2
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
     Flux is a tool for keeping Kubernetes clusters in sync with sources
@@ -94,7 +93,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 3373a272ff888772e40647e90ba41dfa232e7482df62b10735cdd86a25e42178
+    sha256: 0b6cc284b59c8cf1580cc68d792f7b4a179c87d352d1ab73a526b2c719262b9e
   script:
     - mv flux {{src}}/usr/bin/flux
 
