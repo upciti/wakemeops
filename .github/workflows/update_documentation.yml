@@ -8,18 +8,16 @@ on:
 jobs:
   update_documentation:
     runs-on: ubuntu-latest
-    container: 
-      image: wakemeops/debian:bullseye
-      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install wakemebot
-        run: install_packages wakemebot
-
       - name: Bump documentation
-        run: wakemebot docs
+        run: |
+          curl -sSL https://github.com/upciti/wakemebot/releases/download/1.4.1/wakemebot_linux_amd64 > wakemebot
+          chmod +x wakemebot
+          sudo mv wakemebot /usr/local/bin/
+          wakemebot docs
 
       - name: Create pull request
         id: cpr
