@@ -51,13 +51,13 @@ __Prevent Kubernetes misconfigurations from reaching production__
 
 ## [devspace](https://devspace.sh)
 
-__The Fastest Developer Tool for Kubernetes__
+__Developer tool for Kubernetes__
 
  Automate your deployment workflow with DevSpace and develop software directly
  inside Kubernetes.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">5.18.1</span> <span class="badge version">5.18.0</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">5.18.2</span> <span class="badge version">5.17.0</span> <span class="badge version">5.16.2</span></div>
 
 
 ## [docker-compose](https://docs.docker.com/compose)
