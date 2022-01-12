@@ -1,6 +1,6 @@
 ## Getting started
 
-### Add wakemeops repository
+### Add repository
 
 Our repository is currently split into four components, __devops__, __dev__, __secops__, and __terminal__.
 
@@ -37,7 +37,7 @@ sudo apt install bat fd dust exa gping
 ```
 
 
-## Basic usage with APT
+## Basic usage
 
 ### Repository priority
 
@@ -70,7 +70,7 @@ hosted by wakemeops.
     list of installed repositories alongside their priority.
 
 
-### List available versions of a package
+### List package versions
 
 Use `apt-cache madison` to list available versions for a given package:
 
@@ -129,10 +129,10 @@ Using wildcards is supported:
 
 
 
-## Use wakemeops with Docker
+## Docker images
 
 
-### Images
+### Image tags
 
 We provide docker images based on Debian and Ubuntu that come pre-configured with WakeMeOps repository:
 
