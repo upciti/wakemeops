@@ -15,7 +15,7 @@ __Provide simple and secure access to hosts and services__
  not require an agent to be installed on every end host.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.7.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.7.3</span></div>
 
 
 ## [feroxbuster](https://github.com/epi052/feroxbuster)
@@ -34,7 +34,7 @@ __Fast, simple, recursive content discovery tool__
  File Enumeration, Directory Enumeration, and Resource Enumeration.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span></div>
 
 
 ## [trivy](https://www.aquasec.com/products/trivy/)
@@ -45,7 +45,7 @@ __Scanner for vulnerabilities__
  repositories, as well as for configuration issues
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.3</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.22.0</span> <span class="badge version">0.21.3</span> <span class="badge version">0.21.2</span> <span class="badge version">0.21.1</span> <span class="badge version">0.21.0</span> <span class="badge version">0.20.2</span> <span class="badge version">0.20.1</span> <span class="badge version">0.20.0</span></div>
 
 
 ## [vault](https://www.hashicorp.com/products/vault)
@@ -58,6 +58,6 @@ __Tool for securely accessing secrets__
  log.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.9.2</span> <span class="badge version">1.9.1</span> <span class="badge version">1.9.0</span> <span class="badge version">1.8.5</span> <span class="badge version">1.8.4</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.9.2</span> <span class="badge version">1.9.1</span> <span class="badge version">1.9.0</span> <span class="badge version">1.8.5</span> <span class="badge version">1.8.4</span></div>
 
 <!-- secops.end -->

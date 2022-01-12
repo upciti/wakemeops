@@ -12,7 +12,7 @@ __Generate beautiful changelogs from your Git commit history__
  you'd like to specify.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.9.3</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.9.3</span></div>
 
 
 ## [datanymizer](https://github.com/datanymizer/datanymizer)
@@ -24,7 +24,7 @@ __Powerful postgres database anonymizer with flexible rules__
  Datanymizer is created & supported by Evrone.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.5.1</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.5.1</span></div>
 
 
 ## [github-cli](https://github.com/cli/cli)
@@ -35,7 +35,7 @@ __GitHub on the command line__
  where you are already working with git and your code.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">2.4.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.4.0</span></div>
 
 
 ## [mask](https://github.com/jakedeichert/mask)
@@ -47,7 +47,7 @@ __A CLI task runner defined by a simple markdown file__
  commands and arguments.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.11.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.11.0</span></div>
 
 
 ## [poetry](https://python-poetry.org)
@@ -58,7 +58,7 @@ __Tool for dependency management and packaging in Python__
  ensuring you have the right stack everywhere.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">1.1.12</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.1.12</span></div>
 
 
 ## [pyenv](https://github.com/pyenv/pyenv)
@@ -70,7 +70,7 @@ __Simple Python version management__
  that do one thing well.
 
 
-<span class="badge arch">all</span> <span class="badge version">2.2.3</span> <span class="badge version">2.2.2</span>
+<div><span class="badge arch">all</span> <span class="badge version">2.2.3</span> <span class="badge version">2.2.2</span></div>
 
 
 ## [pyoxidizer](https://pyoxidizer.readthedocs.io/en/latest/index.html)
@@ -82,6 +82,6 @@ __PyOxidizer is a utility for producing binaries that embed Python__
  applications instead of toiling with build systems and packaging tools.
 
 
-<span class="badge arch">amd64</span> <span class="badge version">0.18.0</span>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.18.0</span></div>
 
 <!-- dev.end -->
