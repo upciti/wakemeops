@@ -56,7 +56,7 @@
     - mv datree {{src}}/usr/bin/datree
 
 - name: devspace
-  version: 5.18.1
+  version: 5.18.2
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -64,7 +64,7 @@
     inside Kubernetes.
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
-    sha256: d83d61474d47d22cbcdc40602362a1fba0fed753c06cc0def8b1326d2151103e
+    sha256: ef680aac154b1b23b1a25328e6098d44efaf95052e6ca8e4cda3973a856ee1f0
   script:
     - mv devspace-linux-amd64 {{src}}/usr/bin/devspace
 
