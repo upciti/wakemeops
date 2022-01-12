@@ -81,7 +81,7 @@ __Open and extensible continuous delivery solution for Kubernetes__
  configuration when there is new code to deploy.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.25.1</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
 
 
 ## [gitlab-release-cli](https://gitlab.com/gitlab-org/release-cli/)
@@ -268,12 +268,12 @@ __Ultralight service mesh for Kubernetes__
 
 ## [logcli](https://github.com/grafana/loki)
 
-__LogCLI is the command-line interface to Loki__
+__Command-line interface for loki__
 
  It facilitates running LogQL queries against a Loki instance.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span> <span class="badge version">2.3.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.4.2</span> <span class="badge version">2.3.0</span></div>
 
 
 ## [minikube](https://minikube.sigs.k8s.io)
