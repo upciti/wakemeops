@@ -66,7 +66,7 @@ hosted by wakemeops.
 
 
 !!! info
-    On Debian/Ubuntu, the default priority for repositories is 500. `apt-cache policy` will show you the 
+    On Debian/Ubuntu, the default priority for repositories is 500. `apt-cache policy` will show you the
     list of installed repositories alongside their priority.
 
 
@@ -119,9 +119,9 @@ Using wildcards is supported:
     **The revision is the number after the last hyphen in a package version**
     (example: 1.23.1-**1**~ops2deb). The revision is not part of the application version,
     it basically is an iteration of the Debian package. In Debian distributions reasons
-    to bump the revision of a package include: packaging errors, backports of patches 
+    to bump the revision of a package include: packaging errors, backports of patches
     and security patches...
-    
+
     In short:
 
     * :material-check: `sudo apt-get install -yq kubectl=1.23.1*`
@@ -170,16 +170,16 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         ```
 
 
-    === "bookstorm"
+    === "bookworm"
 
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bookstorm'>https://hub.docker.com/r/wakemeops/debian/tags?name=bookstorm</a>"
-        docker pull wakemeops/debian:bookstorm
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bookworm'>https://hub.docker.com/r/wakemeops/debian/tags?name=bookworm</a>"
+        docker pull wakemeops/debian:bookworm
         ```
 
-    === "bookstorm-slim"
+    === "bookworm-slim"
 
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bookstorm-slim'>https://hub.docker.com/r/wakemeops/debian/tags?name=bookstorm-slim</a>"
-        docker pull wakemeops/debian:bookstorm-slim
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bookworm-slim'>https://hub.docker.com/r/wakemeops/debian/tags?name=bookworm-slim</a>"
+        docker pull wakemeops/debian:bookworm-slim
         ```
 
 === "Ubuntu"
@@ -209,7 +209,7 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         ```
 
 !!! info
-    WakeMeOps images are rebuilt every day [from this Dockerfile](https://github.com/upciti/wakemeops/blob/main/Dockerfile) 
+    WakeMeOps images are rebuilt every day [from this Dockerfile](https://github.com/upciti/wakemeops/blob/main/Dockerfile)
     to keep track of the latest changes - such as security fixes - in upstream images.
 
 ### Write Dockerfiles
@@ -229,7 +229,7 @@ You can leverage this script to write very short dockerfiles for your CI:
 
     ```dockerfile
     FROM wakemeops/debian:bullseye
-    
+
     RUN install_packages \
         helm=3.7.2* \
         kustomize=4.4.1* \
@@ -242,7 +242,7 @@ You can leverage this script to write very short dockerfiles for your CI:
 
     ```dockerfile
     FROM wakemeops/debian:bullseye
-    
+
     RUN install_packages helm kustomize kubectl
     ```
 
