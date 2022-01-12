@@ -1,1 +1,3 @@
-<!-- desktop.start --><!-- desktop.end -->
+<!-- desktop.start --># Desktop - 0 packages
+
+<!-- desktop.end -->
