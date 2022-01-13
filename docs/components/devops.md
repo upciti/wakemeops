@@ -81,7 +81,7 @@ __Open and extensible continuous delivery solution for Kubernetes__
  configuration when there is new code to deploy.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.25.1</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.25.2</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
 
 
 ## [gitlab-release-cli](https://gitlab.com/gitlab-org/release-cli/)
@@ -449,6 +449,6 @@ __Build, deploy, and release any application on any platform__
  consistent and repeatable workflow.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.6.3</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.7.0</span> <span class="badge version">0.6.3</span></div>
 
 <!-- devops.end -->
