@@ -46,7 +46,7 @@ __Prevent Kubernetes misconfigurations from reaching production__
  to be supported by the Kubernetes community.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.14.49</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.15.0</span> <span class="badge version">0.14.49</span></div>
 
 
 ## [devspace](https://devspace.sh)
