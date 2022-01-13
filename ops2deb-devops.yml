@@ -83,7 +83,7 @@
     - mv docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: flux
-  version: 0.25.1
+  version: 0.25.2
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -92,7 +92,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 195e467b10a7afab53a49a52a7075ccd6e5fdbc8640c27ba857f536a9b027b0a
+    sha256: 6fda55766b3100782a55e9870279d865a9ed3cebb39c27068d1a2e53e3b913f9
   script:
     - mv flux {{src}}/usr/bin/flux
 
@@ -563,7 +563,7 @@
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.6.3
+  version: 0.7.0
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -572,6 +572,6 @@
     consistent and repeatable workflow.
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_amd64.zip
-    sha256: cff51372fb30c32f159fd39f5986b353db86bcd301158ffd32218cb18aad11eb
+    sha256: fa3aefd80c934fb24f047336a7221de2ccda522e0a1941cbad11a4ece906a869
   script:
     - mv waypoint {{src}}/usr/bin/waypoint
