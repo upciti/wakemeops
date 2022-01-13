@@ -2,9 +2,9 @@
 
 ### Add repository
 
-Our repository is currently split into four components, __devops__, __dev__, __secops__, and __terminal__.
+Our repository is currently split into five components, __desktop__, __devops__, __dev__, __secops__, and __terminal__.
 
-=== "Install all four components :rocket:"
+=== "Install all five components :rocket:"
     ```shell
     curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash
     ```
