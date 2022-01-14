@@ -379,7 +379,7 @@ __Command Line Interface for Scaleway__
 
 ## [skaffold](https://skaffold.dev/)
 
-__Easy and Repeatable Kubernetes Development__
+__Easy and repeatable Kubernetes development__
 
  Command line tool that facilitates continuous development for Kubernetes
  applications.
@@ -389,7 +389,7 @@ __Easy and Repeatable Kubernetes Development__
  and describe customizations for a CI/CD pipeline.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.35.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.35.2</span></div>
 
 
 ## [stern](https://github.com/wercker/stern)
