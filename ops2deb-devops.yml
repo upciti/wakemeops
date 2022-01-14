@@ -483,7 +483,7 @@
     - mv scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
 
 - name: skaffold
-  version: 1.35.1
+  version: 1.35.2
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -497,7 +497,7 @@
     - kubectl
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-amd64
-    sha256: bae964dbd1b97263e1994f98b7a0ecbcc4ed0d1b556dc098421b26d1d8f5c746
+    sha256: 4ad847e1afd68776d37cebc45bcc044cb93165bbedcb8892b966ee6691bbf146
   script:
     - mv skaffold-linux-amd64 {{src}}/usr/bin/skaffold
 
