@@ -110,15 +110,11 @@ pages:
   tags: []
   needs: []
 
-buildah:
+.buildah:
   image: quay.io/buildah/stable:v1.23.1
-  extends: .parallel_distro
   stage: publish
   tags: ["docker"]
   retry: 1
-  before_script:
-    - IMAGE_NAME="wakemeops/${DISTRO}:${VERSION}"
-    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
   script:
     - >
       buildah bud \
@@ -141,3 +137,22 @@ buildah:
         - .gitlab-ci.yml
         - assets/**/*
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "1"'
+
+buildah_base:
+  extends:
+    - .parallel_distro
+    - .buildah
+  before_script:
+    - IMAGE_NAME="${REGISTRY_USER}/${DISTRO}:${VERSION}"
+    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
+
+buildah_custom:
+  extends: .buildah
+  before_script:
+    - IMAGE_NAME="${REGISTRY_USER}/${CUSTOM_NAME}:${VERSION}"
+    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
+  parallel:
+    matrix:
+      - DISTRO: bitnami/minideb
+        CUSTOM_NAME: minideb
+        VERSION: ["latest", "bullseye", "buster"]

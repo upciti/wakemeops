@@ -53,6 +53,8 @@ jobs:
           - ubuntu:rolling
           - ubuntu:20.04
           - ubuntu:18.04
+          - minideb:bullseye
+          - minideb:buster
     container: wakemeops/${{ matrix.distribution }}
     steps:
       - name: Checkout
