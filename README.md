@@ -17,7 +17,7 @@ WakeMeOps allows you to accelerate the setup of your terminal:
 
 ```bash
 sudo apt-get install bat fd dust exa gping
-sudo apt-get install pyenv=1.1.* poetry=2.2.*
+sudo apt-get install pyenv=2.2.* poetry=1.1.*
 sudo apt-get install helm=3.7.* kustomize=4.4.* kubectl=1.23.*
 ```
 
