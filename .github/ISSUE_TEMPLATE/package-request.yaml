@@ -10,7 +10,7 @@ body:
     id: package
     attributes:
       label: Package Name
-      description: 
+      description:
     validations:
       required: true
   - type: textarea
