@@ -1,30 +1,25 @@
 ARG REGISTRY="docker.io"
 ARG IMAGE="debian"
-ARG TAG="bullseye"
+ARG TAG="bullseye-slim"
 
-FROM ${REGISTRY}/${IMAGE}:${TAG} as runner
-
-USER 0
-
+## Base image for builder and runner stages
+FROM ${REGISTRY}/${IMAGE}:${TAG} as base_image
+COPY --chmod=0755 assets/install_packages /usr/local/bin/
 ARG DEBIAN_FRONTEND=noninteractive
-ENV FINAL_USER=${FINAL_USER} \
-    PACKAGES=${PACKAGES} \
-    DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
+ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
     LC_ALL=C.UTF-8 \
     LANG=C.UTF-8
+USER 0
 
-COPY assets/install_repository assets/install_packages /usr/local/bin/
-
-# install wakemops repository
+## Builder Stage
+FROM base_image as builder
+COPY --chmod=0755 assets/install_repository /usr/local/bin/
 ARG COMPONENTS="devops secops terminal dev"
-RUN chmod +x /usr/local/bin/install_packages && \
-    chmod +x /usr/local/bin/install_repository && \
-    install_repository ${COMPONENTS} && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+RUN install_repository ${COMPONENTS}
 
-# install packages if needed
-ARG PACKAGES=""
-RUN if [ ! -z "${PACKAGES}" ]; then install_packages ${PACKAGES}; fi
-
+## Final image
+FROM base_image as runner
+COPY --from=builder /etc/apt/sources.list.d/wakemeops.list /etc/apt/sources.list.d/wakemeops.list
+COPY --from=builder /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg
 ARG FINAL_USER=0
 USER ${FINAL_USER}
