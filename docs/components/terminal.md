@@ -156,10 +156,10 @@ __Quickly clone an entire org/users repositories into one directory__
 
 __Ping, but with a graph__
 
- Ping, but with a graph.
+ tool to visualize ping speed over time.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.2.6</span> <span class="badge version">1.2.5</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.2.7</span></div>
 
 
 ## [grex](https://github.com/pemistahl/grex)
