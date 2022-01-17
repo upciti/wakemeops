@@ -18,7 +18,7 @@
     - mv boundary {{src}}/usr/bin/boundary
 
 - name: feroxbuster
-  version: 2.4.1
+  version: 2.5.0
   homepage: https://github.com/epi052/feroxbuster
   summary: fast, simple, recursive content discovery tool
   description: |-
@@ -34,7 +34,7 @@
     File Enumeration, Directory Enumeration, and Resource Enumeration.
   fetch:
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/x86_64-linux-feroxbuster.tar.gz
-    sha256: adad86bbf732103c05854e3d8a039ef3c1d18a0d37a26d08c4ff56e2ea3cbf1f
+    sha256: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
   script:
     - mv feroxbuster {{src}}/usr/bin/
 
