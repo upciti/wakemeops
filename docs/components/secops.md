@@ -22,7 +22,7 @@ __Provide simple and secure access to hosts and services__
 
 __Fast, simple, recursive content discovery tool__
 
- feroxbuster is a tool designed to perform Forced Browsing.
+ Tool designed to perform Forced Browsing.
  Forced browsing is an attack where the aim is to enumerate and access
  resources that are not referenced by the web application, but are still
  accessible by an attacker.
@@ -34,7 +34,7 @@ __Fast, simple, recursive content discovery tool__
  File Enumeration, Directory Enumeration, and Resource Enumeration.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2.4.1</span> <span class="badge version">2.4.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.5.0</span> <span class="badge version">2.4.1</span></div>
 
 
 ## [trivy](https://www.aquasec.com/products/trivy/)
