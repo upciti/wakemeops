@@ -1,5 +1,5 @@
 - name: boundary
-  version: 0.7.3
+  version: 0.7.4
   homepage: https://www.boundaryproject.io
   summary: provide simple and secure access to hosts and services
   description: |-
@@ -13,7 +13,7 @@
     not require an agent to be installed on every end host.
   fetch:
     url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_amd64.zip
-    sha256: 153023f558cde9c34a8ca0978433e39aeeb086eb2975c92037405eac91059558
+    sha256: 35885c509ebdf7905886d61ad7adcf3f4929d60fc058b29b453a734598c39e2a
   script:
     - mv boundary {{src}}/usr/bin/boundary
 
