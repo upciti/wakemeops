@@ -147,7 +147,7 @@
     - mv helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
 - name: istioctl
-  version: 1.12.1
+  version: 1.12.2
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -155,7 +155,7 @@
     - kubectl
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: 7b1279810a77590bd7af60d6d26074a89c32e6aff7512fdc37f38b093e34e382
+    sha256: a115ad51c7a88684781078fbded6e62aa445ddbf274a768ce5e9e8041f284d31
   script:
     - install -d {{src}}/opt/istio
     - mv * {{src}}/opt/istio/
