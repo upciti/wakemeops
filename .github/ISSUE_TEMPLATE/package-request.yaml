@@ -1,0 +1,37 @@
+name: Package Request
+description: Suggest new package
+labels: [package request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to write your request!
+  - type: textarea
+    id: package
+    attributes:
+      label: Package Name
+      description:
+    validations:
+      required: true
+  - type: textarea
+    id: category
+    attributes:
+      label: Package Component
+      description: Category of the package
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Package Description
+      description: Description of the package
+    validations:
+      required: true
+  - type: textarea
+    id: url
+    attributes:
+      label: Project URL
+      description: Please provide the project URL
+      placeholder: https://github.com/.../..., https://github.com/.../...
+    validations:
+      required: true

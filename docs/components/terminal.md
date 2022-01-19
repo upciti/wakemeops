@@ -44,11 +44,11 @@ __Manage your dotfiles across multiple diverse machines__
  machine.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2.9.5</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.10.0</span> <span class="badge version">2.9.5</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">2.9.5</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">2.10.0</span> <span class="badge version">2.9.5</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">2.9.5</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">2.10.0</span> <span class="badge version">2.9.5</span></div>
 
 
 ## [choose](https://github.com/theryangeary/choose)
@@ -156,10 +156,10 @@ __Quickly clone an entire org/users repositories into one directory__
 
 __Ping, but with a graph__
 
- Ping, but with a graph.
+ tool to visualize ping speed over time.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.2.6</span> <span class="badge version">1.2.5</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.2.7</span></div>
 
 
 ## [grex](https://github.com/pemistahl/grex)
@@ -189,14 +189,14 @@ __Enables SQL queries for data in git repositories__
 
 ## [procs](https://github.com/dalance/procs)
 
-__Replacement for ps written in Rust__
+__Alternative in rust to 'ps'__
 
  Procs has a colored and human-readable output, multi-column keyword search,
  additional information which are not supported by ps, a tree view, a watch mode
  and more...
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.11.13</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.12.0</span> <span class="badge version">0.11.13</span></div>
 
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)

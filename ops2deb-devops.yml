@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.2.2
+  version: 2.2.3
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: 3ed09b1c1a274133bbf575e8ae6d33fa5c21b4e4fb357c8cc74f884423e6cade
+    sha256: 0414b6c852644f11af9dad115c51f09cbdfd8d8af76a18533e828c9b7afd9209
   script:
     - mv argocd-linux-amd64 {{src}}/usr/bin/argocd
 
@@ -83,7 +83,7 @@
     - mv docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
 
 - name: flux
-  version: 0.25.2
+  version: 0.25.3
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -92,7 +92,7 @@
     configuration when there is new code to deploy.
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: 6fda55766b3100782a55e9870279d865a9ed3cebb39c27068d1a2e53e3b913f9
+    sha256: a5e5818f02d1a8fc591de57e4e6055f2f1e001943c84834419fdd26535d18d13
   script:
     - mv flux {{src}}/usr/bin/flux
 
@@ -147,7 +147,7 @@
     - mv helmfile_linux_amd64 {{src}}/usr/bin/helmfile
 
 - name: istioctl
-  version: 1.12.1
+  version: 1.12.2
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -155,7 +155,7 @@
     - kubectl
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: 7b1279810a77590bd7af60d6d26074a89c32e6aff7512fdc37f38b093e34e382
+    sha256: a115ad51c7a88684781078fbded6e62aa445ddbf274a768ce5e9e8041f284d31
   script:
     - install -d {{src}}/opt/istio
     - mv * {{src}}/opt/istio/

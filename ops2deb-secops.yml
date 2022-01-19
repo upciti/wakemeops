@@ -1,5 +1,5 @@
 - name: boundary
-  version: 0.7.3
+  version: 0.7.4
   homepage: https://www.boundaryproject.io
   summary: provide simple and secure access to hosts and services
   description: |-
@@ -13,12 +13,12 @@
     not require an agent to be installed on every end host.
   fetch:
     url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_amd64.zip
-    sha256: 153023f558cde9c34a8ca0978433e39aeeb086eb2975c92037405eac91059558
+    sha256: 35885c509ebdf7905886d61ad7adcf3f4929d60fc058b29b453a734598c39e2a
   script:
     - mv boundary {{src}}/usr/bin/boundary
 
 - name: feroxbuster
-  version: 2.4.1
+  version: 2.5.0
   homepage: https://github.com/epi052/feroxbuster
   summary: fast, simple, recursive content discovery tool
   description: |-
@@ -34,7 +34,7 @@
     File Enumeration, Directory Enumeration, and Resource Enumeration.
   fetch:
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/x86_64-linux-feroxbuster.tar.gz
-    sha256: adad86bbf732103c05854e3d8a039ef3c1d18a0d37a26d08c4ff56e2ea3cbf1f
+    sha256: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
   script:
     - mv feroxbuster {{src}}/usr/bin/
 
