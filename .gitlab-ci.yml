@@ -8,7 +8,6 @@ default:
 
 stages:
   - build
-  - test
   - push
   - publish
   - pages
@@ -65,20 +64,6 @@ generate_packages:
       - build/**/*deb
     expire_in: 2 days
 
-test_packages:
-  stage: test
-  image: wakemeops/${DISTRO}:${VERSION}
-  extends:
-    - .no_schedule
-    - .parallel_distro
-  before_script:
-    - *install_dependencies
-    - make install-packages
-  script:
-    - make check-packages
-  variables:
-    APT_DEPENDENCIES: "make"
-
 push_packages:
   stage: push
   extends:
@@ -110,49 +95,44 @@ pages:
   tags: []
   needs: []
 
-.buildah:
+build_images:
   image: quay.io/buildah/stable:v1.23.1
   stage: publish
   tags: ["docker"]
+  needs: []
+  variables:
+    REGISTRY_USER: "wakemeops"
+  parallel:
+    matrix:
+      - IMGAE: ubuntu
+        TAG: ["latest", "rolling", "20.04", "18.04"]
+        REGISTRY_NAME: ubuntu
+      - IMAGE: debian
+        TAG: ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
+        REGISTRY_NAME: debian
+      - IMAGE: bitnami/minideb
+        TAG: ["latest", "bullseye", "buster"]
+        REGISTRY_NAME: minideb
   retry: 1
+  before_script:
+    - IMAGE_NAME="${REGISTRY_USER}/${REGISTRY_NAME}:${TAG}"
+    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
   script:
     - >
       buildah bud \
         -f ./Dockerfile \
         -t ${IMAGE_NAME} \
-        --build-arg IMAGE=${DISTRO} \
-        --build-arg TAG=${VERSION} \
+        --build-arg IMAGE=${IMAGE} \
+        --build-arg TAG=${TAG} \
         --label org.wakemeops.maintainers="WakeMeOps <wakemeops.com>" \
-        --label org.wakemeops.base_image="docker.io/${DISTRO}:${VERSION}" \
+        --label org.wakemeops.base_image="docker.io/${IMAGE}:${TAG}" \
         --label org.wakemeops.commit="${CI_COMMIT_SHA}" \
         .
     - buildah push --authfile /run/containers/0/auth.json ${IMAGE_NAME}
-  needs: []
-  variables:
-    REGISTRY_USER: "wakemeops"
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"'
       changes:
         - Dockerfile
         - .gitlab-ci.yml
         - assets/**/*
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_CONTAINER == "1"'
-
-buildah_base:
-  extends:
-    - .parallel_distro
-    - .buildah
-  before_script:
-    - IMAGE_NAME="${REGISTRY_USER}/${DISTRO}:${VERSION}"
-    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
-
-buildah_custom:
-  extends: .buildah
-  before_script:
-    - IMAGE_NAME="${REGISTRY_USER}/${CUSTOM_NAME}:${VERSION}"
-    - buildah login -u ${REGISTRY_USER} -p ${REGISTRY_TOKEN} docker.io
-  parallel:
-    matrix:
-      - DISTRO: bitnami/minideb
-        CUSTOM_NAME: minideb
-        VERSION: ["latest", "bullseye", "buster"]
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $BUILD_IMAGES == "1"'
