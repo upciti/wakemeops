@@ -8,7 +8,7 @@ __Continuous delivery tool for Kubernetes__
  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2.2.2</span> <span class="badge version">2.1.8</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.2.3</span> <span class="badge version">2.1.8</span></div>
 
 
 ## [container-diff](https://github.com/GoogleContainerTools/container-diff)
@@ -81,7 +81,7 @@ __Open and extensible continuous delivery solution for Kubernetes__
  configuration when there is new code to deploy.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.25.2</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.25.3</span> <span class="badge version">0.24.1</span> <span class="badge version">0.23.0</span> <span class="badge version">0.22.1</span> <span class="badge version">0.21.1</span> <span class="badge version">0.20.1</span> <span class="badge version">0.19.1</span></div>
 
 
 ## [gitlab-release-cli](https://gitlab.com/gitlab-org/release-cli/)
@@ -123,12 +123,12 @@ __Deploy Kubernetes Helm Charts__
 
 ## [istioctl](https://istio.io)
 
-__Istio service mesh CLI__
+__Command-line interface for Istio__
 
  Istio is an open platform to connect, manage, and secure microservices.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.12.1</span> <span class="badge version">1.12.0</span> <span class="badge version">1.11.4</span> <span class="badge version">1.11.3</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.12.2</span> <span class="badge version">1.11.4</span></div>
 
 
 ## [k3d](https://k3d.io)

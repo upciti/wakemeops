@@ -15,7 +15,7 @@ __Provide simple and secure access to hosts and services__
  not require an agent to be installed on every end host.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.7.3</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.7.4</span></div>
 
 
 ## [feroxbuster](https://github.com/epi052/feroxbuster)
