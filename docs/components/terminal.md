@@ -189,14 +189,14 @@ __Enables SQL queries for data in git repositories__
 
 ## [procs](https://github.com/dalance/procs)
 
-__Replacement for ps written in Rust__
+__Alternative in rust to 'ps'__
 
  Procs has a colored and human-readable output, multi-column keyword search,
  additional information which are not supported by ps, a tree view, a watch mode
  and more...
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.11.13</span> <span class="badge version">0.11.12</span> <span class="badge version">0.11.11</span> <span class="badge version">0.11.10</span> <span class="badge version">0.11.9</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.12.0</span> <span class="badge version">0.11.13</span></div>
 
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)
