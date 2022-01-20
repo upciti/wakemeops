@@ -82,7 +82,7 @@ publish:
 	-H 'Content-Type: application/json' --data \
 	"{\"ForceOverwrite\":true, \"Signing\" : \
 	{\"GpgKey\":\"wakemebot@protonmail.com\", \"Batch\":true}}" \
-	"http://_/api/publish/s3:wakemeops-eu-west-3:./stable"
+	"http://_/api/publish/s3:wakemeops-eu-west-3:wakemeops/stable"
 
 exec:
 	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops upciti/wakemebot:main bash
