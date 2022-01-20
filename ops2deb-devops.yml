@@ -358,9 +358,8 @@
     - mv logcli-linux-amd64 {{src}}/usr/bin/logcli
 
 - name: minikube
-  version: 1.24.0
+  version: 1.25.0
   homepage: https://minikube.sigs.k8s.io
-  revision: 3
   summary: quickly set up a local Kubernetes cluster
   description: |-
     Focus on helping application developers and new Kubernetes users.
@@ -373,7 +372,7 @@
     Addons for easily installed Kubernetes applications
   fetch:
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
-    sha256: 3bc218476cf205acf11b078d45210a4882e136d24a3cbb7d8d645408e423b8fe
+    sha256: ea633466a96ef354d8cee13b6894d9cff159635be8f9f6ac12bf630f578f2433
   script:
     - mv minikube-linux-amd64 {{src}}/usr/bin/minikube
 
