@@ -196,7 +196,7 @@ __Command line client for controlling a Kubernetes cluster__
  clusters.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.23.1</span> <span class="badge version">1.23.0</span> <span class="badge version">1.22.4</span> <span class="badge version">1.22.3</span> <span class="badge version">1.22.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.23.2</span> <span class="badge version">1.22.4</span></div>
 
 
 ## [kubectl-neat](https://github.com/itaysk/kubectl-neat)
@@ -290,7 +290,7 @@ __Quickly set up a local Kubernetes cluster__
  Addons for easily installed Kubernetes applications
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.24.0</span> <span class="badge version">1.23.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.25.0</span> <span class="badge version">1.24.0</span> <span class="badge version">1.23.2</span></div>
 
 
 ## [minio-client](https://min.io)
@@ -344,7 +344,7 @@ __Debian packaging tool for portable applications__
 
 ## [packer](https://www.packer.io)
 
-__Help to create identical machine images for multiple platforms from a single source configuration__
+__Create multi-platform machine images from a single source configuration__
 
  Lightweight, runs on every major operating system, and is highly performant,
  creating machine images for multiple platforms in parallel. Packer comes out of
@@ -352,7 +352,7 @@ __Help to create identical machine images for multiple platforms from a single s
  https://www.packer.io/docs/builders.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.7.8</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.7.9</span></div>
 
 
 ## [rancher](https://github.com/rancher/cli)
@@ -413,7 +413,7 @@ __Tool for building, changing, and versioning infrastructure safely__
  existing and popular service providers as well as custom in-house solutions.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.1.3</span> <span class="badge version">1.0.11</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.1.4</span> <span class="badge version">1.0.11</span></div>
 
 
 ## [velero](https://velero.io)
