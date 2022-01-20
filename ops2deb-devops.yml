@@ -548,6 +548,19 @@
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
+- name: terraform-docs
+  version: 0.16.0
+  homepage: https://terraform-docs.io
+  summary: generate documentation from Terraform modules in various output formats
+  description: |-
+    Utility to generate documentation from Terraform modules in various output
+    formats.
+  fetch:
+    url: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-amd64.tar.gz
+    sha256: 328c16cd6552b3b5c4686b8d945a2e2e18d2b8145b6b66129cd5491840010182
+  script:
+    - mv terraform-docs {{src}}/usr/bin/terraform-docs
+
 - name: velero
   version: 1.7.1
   homepage: https://velero.io
