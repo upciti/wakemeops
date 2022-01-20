@@ -104,7 +104,7 @@ build_images:
     REGISTRY_USER: "wakemeops"
   parallel:
     matrix:
-      - IMGAE: ubuntu
+      - IMAGE: ubuntu
         TAG: ["latest", "rolling", "20.04", "18.04"]
         REGISTRY_NAME: ubuntu
       - IMAGE: debian
