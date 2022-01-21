@@ -50,9 +50,3 @@ Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) 
 ## :notebook_with_decorative_cover: Documentation
 
 Please refer to our documentation at https://docs.wakemeops.com for more information.
-
-## :calendar: Roadmap
-
-* [ ] `armhf` support
-* [ ] Add license information to packages
-* [ ] More packages

@@ -208,6 +208,27 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/ubuntu:20.04
         ```
 
+=== "Minideb"
+
+    === "latest"
+
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=latest'>https://hub.docker.com/r/wakemeops/minideb/tags?name=latest</a>"
+        docker pull wakemeops/minideb:latest
+        ```
+
+    === "buster"
+
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=buster'>https://hub.docker.com/r/wakemeops/minideb/tags?name=buster</a>"
+        docker pull wakemeops/minideb:buster
+        ```
+
+    === "bullseye"
+
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=bullseye'>https://hub.docker.com/r/wakemeops/minideb/tags?name=bullseye</a>"
+        docker pull wakemeops/minideb:bullseye
+        ```
+
+
 !!! info
     WakeMeOps images are rebuilt every day [from this Dockerfile](https://github.com/upciti/wakemeops/blob/main/Dockerfile)
     to keep track of the latest changes - such as security fixes - in upstream images.

@@ -21,7 +21,7 @@ jobs:
     if: ${{ needs.changes.outputs.ops2deb == 'true' }}
     runs-on: ubuntu-latest
     container:
-      image: upciti/wakemebot:main
+      image: upciti/wakemebot:latest
       options: --user 1001
     steps:
       - name: Checkout
