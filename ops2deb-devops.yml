@@ -105,10 +105,13 @@
     Release object in GitLab Rails. GitLab Release is a CLI application written in
     Golang.
   fetch:
-    url: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-amd64
-    sha256: a219a95e5133bb7054b16d79b872b59fc42c31f05b2fa36a26350da6eea97685
+    url: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
+    sha256:
+      amd64: a219a95e5133bb7054b16d79b872b59fc42c31f05b2fa36a26350da6eea97685
+      armhf: ec88791fff27e84a62ccdc1d02b43704b3098873c61a6f057f1dc4e6a16886bd
+      arm64: 007e079990eb3be1f2b4e90bdb692cb92eb728a25714c2f4bdba38e6947e2c76
   script:
-    - mv release-cli-linux-amd64 {{src}}/usr/bin/release-cli
+    - mv release-cli-linux-{{goarch}} {{src}}/usr/bin/release-cli
 
 - name: helm
   version: 3.7.2
@@ -121,10 +124,13 @@
   depends:
     - kubectl
   fetch:
-    url: https://get.helm.sh/helm-v{{version}}-linux-amd64.tar.gz
-    sha256: 4ae30e48966aba5f807a4e140dad6736ee1a392940101e4d79ffb4ee86200a9e
+    url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: 4ae30e48966aba5f807a4e140dad6736ee1a392940101e4d79ffb4ee86200a9e
+      armhf: ab73727f1c00903aff010a3557ab4366a1a13ce2d243c9cb191e703fbb76c915
+      arm64: b0214eabbb64791f563bd222d17150ce39bf4e2f5de49f49fdb456ce9ae8162f
   script:
-    - mv linux-amd64/helm {{src}}/usr/bin/
+    - mv linux-{{goarch}}/helm {{src}}/usr/bin/
 
 - name: helmfile
   version: 0.143.0
@@ -141,10 +147,12 @@
     - helm
     - kustomize
   fetch:
-    url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
-    sha256: 829b2b27aa4d7111f6c5b047ca162d2a9aef76b6646bb31c895850683a86c2c1
+    url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_{{goarch}}
+    sha256:
+      amd64: 829b2b27aa4d7111f6c5b047ca162d2a9aef76b6646bb31c895850683a86c2c1
+      arm64: 91fae17f3b43dcfd34b0cc8b0d69eb3937b13d0e3ddca96dcada58bdafc1ccf4
   script:
-    - mv helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+    - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
 
 - name: istioctl
   version: 1.12.2
@@ -247,8 +255,11 @@
     kubectl is a command line client for running commands against Kubernetes
     clusters.
   fetch:
-    url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/amd64/kubectl
-    sha256: 5b55b58205acbafa7f4e3fc69d9ce5a9257be63455db318e24db4ab5d651cbde
+    url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
+    sha256:
+      amd64: 5b55b58205acbafa7f4e3fc69d9ce5a9257be63455db318e24db4ab5d651cbde
+      armhf: 6521719af33342f00ebb6cf020848e25152a63ed5f35a94440c08373b7a36173
+      arm64: 6e7bb8ddc5fc8fa89a4c31aba02942718b092a5107585bd09a83c95039c7510b
   script:
     - mv kubectl {{src}}/usr/bin/
 
@@ -327,8 +338,10 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
-    sha256: 2d5927efec40ba32a121c49f6df9955b8b8a296ef1dec4515a46fc84df158798
+    url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: 2d5927efec40ba32a121c49f6df9955b8b8a296ef1dec4515a46fc84df158798
+      arm64: 8e54066784ca38e451035dad5de985bfdbdcf55838603576ab58d880883550b5
   script:
     - mv kustomize {{src}}/usr/bin/
 
@@ -373,10 +386,13 @@
     Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
     Addons for easily installed Kubernetes applications
   fetch:
-    url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
-    sha256: 1a69a286e9846438778a712297d1daec44d2c702c5f4540d97b3269fdb2b4e3d
+    url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
+    sha256:
+      amd64: 1a69a286e9846438778a712297d1daec44d2c702c5f4540d97b3269fdb2b4e3d
+      armhf: 0588bc5dc6c73577fe847a942756026f5c60ce482025901790498c641dfc70d1
+      arm64: 6ed189c228dd9a510664f61010ce0c0f94b961d17edea418740f2838c48aa627
   script:
-    - mv minikube-linux-amd64 {{src}}/usr/bin/minikube
+    - mv minikube-linux-{{goarch}} {{src}}/usr/bin/minikube
 
 - name: minio-client
   version: 2022-01-07T06-01-38Z
