@@ -14,9 +14,8 @@ jobs:
 
       - name: Bump documentation
         run: |
-          curl -sSL https://github.com/upciti/wakemebot/releases/download/1.4.1/wakemebot_linux_amd64 > wakemebot
-          chmod +x wakemebot
-          sudo mv wakemebot /usr/local/bin/
+          curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash -s devops
+          sudo apt-get update -yq && sudo apt-get install --no-install-recommends wakemebot
           wakemebot docs
 
       - name: Create pull request
