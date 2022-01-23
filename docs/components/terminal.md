@@ -184,7 +184,7 @@ __Enables SQL queries for data in git repositories__
  understand everything that goes into building and shipping software.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.5.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.5.1</span></div>
 
 
 ## [procs](https://github.com/dalance/procs)
@@ -275,6 +275,6 @@ __Portable command-line YAML processor__
  is being added continuously.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">4.16.2</span> <span class="badge version">4.16.1</span> <span class="badge version">4.14.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">4.17.2</span> <span class="badge version">4.16.2</span> <span class="badge version">4.14.2</span></div>
 
 <!-- terminal.end -->

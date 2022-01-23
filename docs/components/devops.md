@@ -95,6 +95,10 @@ __GitLab Release command-line tool__
 
 <div><span class="badge arch">amd64</span> <span class="badge version">0.10.0</span></div>
 
+<div><span class="badge arch">arm64</span> <span class="badge version">0.10.0</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">0.10.0</span></div>
+
 
 ## [helm](https://helm.sh)
 
@@ -104,7 +108,11 @@ __The Kubernetes package manager__
  Charts are packages of pre-configured Kubernetes resources.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">3.7.2</span> <span class="badge version">3.7.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">3.7.2</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">3.7.2</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">3.7.2</span></div>
 
 
 ## [helmfile](https://github.com/roboll/helmfile)
@@ -119,6 +127,8 @@ __Deploy Kubernetes Helm Charts__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">0.143.0</span> <span class="badge version">0.142.0</span> <span class="badge version">0.141.0</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">0.143.0</span></div>
 
 
 ## [istioctl](https://istio.io)
@@ -198,6 +208,10 @@ __Command line client for controlling a Kubernetes cluster__
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.23.2</span> <span class="badge version">1.22.4</span></div>
 
+<div><span class="badge arch">arm64</span> <span class="badge version">1.23.2</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">1.23.2</span></div>
+
 
 ## [kubectl-neat](https://github.com/itaysk/kubectl-neat)
 
@@ -231,13 +245,17 @@ __Kubectl plugin that helps you switch between namespaces__
 
 ## [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
 
-__Secret management solution for k8s__
+__Secret management solution for Kubernetes__
 
  Encrypt your Secret into a SealedSecret, which is safe to store - even to a
  public repository.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.16.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.0</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">0.17.2</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">0.17.2</span></div>
 
 
 ## [kustomize](https://kustomize.io)
@@ -252,6 +270,8 @@ __Kubernetes native configuration management__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">4.4.1</span> <span class="badge version">4.0.0</span> <span class="badge version">3.10.0</span> <span class="badge version">3.8.10</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">4.4.1</span></div>
 
 
 ## [linkerd](https://linkerd.io)
@@ -290,7 +310,11 @@ __Quickly set up a local Kubernetes cluster__
  Addons for easily installed Kubernetes applications
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.25.0</span> <span class="badge version">1.24.0</span> <span class="badge version">1.23.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.25.1</span> <span class="badge version">1.24.0</span> <span class="badge version">1.23.2</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">1.25.1</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">1.25.1</span></div>
 
 
 ## [minio-client](https://min.io)
@@ -339,7 +363,7 @@ __Debian packaging tool for portable applications__
  in its configuration file.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.19.0</span> <span class="badge version">0.18.1</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.19.1</span> <span class="badge version">0.18.1</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span></div>
 
 
 ## [packer](https://www.packer.io)
@@ -437,7 +461,7 @@ __Bunch of tools used by our beloved wakemebot__
  documentation).
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.4.1</span> <span class="badge version">1.3.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.4.3</span> <span class="badge version">1.3.2</span></div>
 
 
 ## [waypoint](https://www.waypointproject.io)
