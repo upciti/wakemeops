@@ -44,11 +44,11 @@ __Manage your dotfiles across multiple diverse machines__
  machine.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2.10.0</span> <span class="badge version">2.9.5</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2.10.1</span> <span class="badge version">2.9.5</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">2.10.0</span> <span class="badge version">2.9.5</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">2.10.1</span> <span class="badge version">2.9.5</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">2.10.0</span> <span class="badge version">2.9.5</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">2.10.1</span> <span class="badge version">2.9.5</span></div>
 
 
 ## [choose](https://github.com/theryangeary/choose)
