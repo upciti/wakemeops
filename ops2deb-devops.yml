@@ -40,7 +40,7 @@
     - mv container-structure-test-linux-amd64 {{src}}/usr/bin/container-structure-test
 
 - name: datree
-  version: 0.15.0
+  version: 0.15.5
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -50,7 +50,7 @@
     to be supported by the Kubernetes community.
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_x86_64.zip
-    sha256: 91e26fd9d423f2554462305d3e6049065ee2d0f392d6be776c672799496e4b47
+    sha256: 710ae45d03c9345e21dd9bdf843f4efba09bf2711e7cff8477fb70ab92c0dcd7
   script:
     - mv datree {{src}}/usr/bin/datree
 
@@ -183,9 +183,8 @@
     - mv k3d-linux-amd64 {{src}}/usr/bin/k3d
 
 - name: k9s
-  version: 0.25.10
+  version: 0.25.18
   homepage: https://k9scli.io
-  revision: 2
   summary: manage your Kubernetes clusters with style
   description: |-
     K9s provides a terminal UI to interact with your Kubernetes clusters.
@@ -195,7 +194,7 @@
     - kubectl
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-    sha256: 0fb9072cf590962d8cd3fc4d7318120daf75616876f8911c1eb67e66b1240625
+    sha256: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
   script:
     - mv k9s {{src}}/usr/bin/k9s
 
@@ -577,7 +576,7 @@
     - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
 
 - name: wakemebot
-  version: 1.4.3
+  version: 1.4.4
   homepage: https://github.com/upciti/wakemebot
   summary: bunch of tools used by our beloved wakemebot
   description: |-
@@ -587,7 +586,7 @@
     documentation).
   fetch:
     url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
-    sha256: c0c91fd95f6e6b3c9d21c40b60629c8f66e38a0633e9c4b4699b235f06373749
+    sha256: 1582f97f92f3bdc3ee9e4ca2c64e824a8f44c38e4cb07297edc669bfe130e73a
   script:
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 

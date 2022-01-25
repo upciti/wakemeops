@@ -72,9 +72,8 @@
     - mv choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
 
 - name: curlie
-  version: 1.6.0
+  version: 1.6.7
   homepage: https://github.com/rs/curlie
-  revision: 3
   summary: the power of 'curl', the ease of use of 'httpie'
   description: |-
     If you like the interface of HTTPie but miss the features of curl, curlie is
@@ -83,7 +82,7 @@
     are exposed with syntax sugar and output formatting inspired from httpie.
   fetch:
     url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
-    sha256: 335e01a904b0bc6268e29559646028a3bebc4217e588e339433d96a008f284c7
+    sha256: db6d250c0e2386624b269fa5f906c1fb4fc9608f108956c7d37247b4d4ff1b5d
   script:
     - mv curlie {{src}}/usr/bin/curlie
 
