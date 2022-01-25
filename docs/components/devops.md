@@ -1,4 +1,4 @@
-<!-- devops.start --># Devops - 38 packages
+<!-- devops.start --># Devops - 39 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
@@ -438,6 +438,17 @@ __Tool for building, changing, and versioning infrastructure safely__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.1.4</span> <span class="badge version">1.0.11</span></div>
+
+
+## [terraform-docs](https://terraform-docs.io)
+
+__Generate documentation from Terraform modules in various output formats__
+
+ Utility to generate documentation from Terraform modules in various output
+ formats.
+
+
+<div><span class="badge arch">amd64</span> <span class="badge version">0.16.0</span></div>
 
 
 ## [velero](https://velero.io)
