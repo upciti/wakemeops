@@ -97,7 +97,7 @@
     - mv flux {{src}}/usr/bin/flux
 
 - name: gitlab-release-cli
-  version: 0.10.0
+  version: 0.11.0
   homepage: https://gitlab.com/gitlab-org/release-cli/
   summary: command-line interface for GitLab Release
   description: |-
@@ -107,9 +107,9 @@
   fetch:
     url: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
     sha256:
-      amd64: a219a95e5133bb7054b16d79b872b59fc42c31f05b2fa36a26350da6eea97685
-      armhf: ec88791fff27e84a62ccdc1d02b43704b3098873c61a6f057f1dc4e6a16886bd
-      arm64: 007e079990eb3be1f2b4e90bdb692cb92eb728a25714c2f4bdba38e6947e2c76
+      amd64: c3bc1c23c3c91267c550e8ab8b53f6b699ec914046434dff3857b4d317f179e1
+      armhf: 3521cf36c4e79dbf776bfe7eb23a7b6a3c404659dc9f2bffafe99eb5f9e929a9
+      arm64: ab9993dc0eda80a0107373897ad000b9ecf68eefd366fcff895e7c8dcb66c79e
   script:
     - mv release-cli-linux-{{goarch}} {{src}}/usr/bin/release-cli
 
@@ -246,7 +246,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.23.2
+  version: 1.23.3
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -255,9 +255,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: 5b55b58205acbafa7f4e3fc69d9ce5a9257be63455db318e24db4ab5d651cbde
-      armhf: 6521719af33342f00ebb6cf020848e25152a63ed5f35a94440c08373b7a36173
-      arm64: 6e7bb8ddc5fc8fa89a4c31aba02942718b092a5107585bd09a83c95039c7510b
+      amd64: d7da739e4977657a3b3c84962df49493e36b09cc66381a5e36029206dd1e01d0
+      armhf: bc41382fbd3f6b33cb5ccb1819c5a38f2e6f3c9ce22acfedd6970b0b9b7748da
+      arm64: 6708d7a701b3d9ab3b359c6be27a3012b1c486fa1e81f79e5bdc71ffca2c38f9
   script:
     - mv kubectl {{src}}/usr/bin/
 
@@ -591,7 +591,7 @@
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.7.0
+  version: 0.7.1
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -600,6 +600,6 @@
     consistent and repeatable workflow.
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_amd64.zip
-    sha256: fa3aefd80c934fb24f047336a7221de2ccda522e0a1941cbad11a4ece906a869
+    sha256: 8db1d7ea881ebd6837dbdb76ddab3820d80a727f0e6bed9b8b290847ba862e54
   script:
     - mv waypoint {{src}}/usr/bin/waypoint

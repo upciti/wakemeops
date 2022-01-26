@@ -204,7 +204,7 @@
     - mv grex {{src}}/usr/bin/
 
 - name: mergestat
-  version: 0.5.1
+  version: 0.5.2
   homepage: https://docs.mergestat.com
   summary: enables SQL queries for data in git repositories
   description: |-
@@ -212,7 +212,7 @@
     understand everything that goes into building and shipping software.
   fetch:
     url: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
-    sha256: 28247da76d9e7a0755f394265db7c68ea9e24c82a9617138b8e664ecf1a3c244
+    sha256: 5f6eef34bb969543a685f9fd608e04deb3ab1ed488ee932315e11e5993fb81ec
   script:
     - mv mergestat {{src}}/usr/bin/mergestat
 
