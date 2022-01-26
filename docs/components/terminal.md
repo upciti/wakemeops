@@ -64,7 +64,7 @@ __A human-friendly and fast alternative to cut and (sometimes) awk__
 
 ## [curlie](https://github.com/rs/curlie)
 
-__The power of curl, the ease of use of httpie__
+__The power of 'curl', the ease of use of 'httpie'__
 
  If you like the interface of HTTPie but miss the features of curl, curlie is
  what you are searching for. It is a frontend to curl that adds the ease of use
@@ -72,7 +72,7 @@ __The power of curl, the ease of use of httpie__
  are exposed with syntax sugar and output formatting inspired from httpie.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.6.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.6.7</span></div>
 
 
 ## [diskonaut](https://github.com/imsnif/diskonaut)
@@ -184,7 +184,7 @@ __Enables SQL queries for data in git repositories__
  understand everything that goes into building and shipping software.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.5.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.5.2</span></div>
 
 
 ## [procs](https://github.com/dalance/procs)

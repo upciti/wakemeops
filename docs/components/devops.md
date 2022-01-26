@@ -46,7 +46,7 @@ __Prevent Kubernetes misconfigurations from reaching production__
  to be supported by the Kubernetes community.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.15.0</span> <span class="badge version">0.14.49</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.15.5</span> <span class="badge version">0.14.49</span></div>
 
 
 ## [devspace](https://devspace.sh)
@@ -86,33 +86,33 @@ __Open and extensible continuous delivery solution for Kubernetes__
 
 ## [gitlab-release-cli](https://gitlab.com/gitlab-org/release-cli/)
 
-__GitLab Release command-line tool__
+__Command-line interface for GitLab Release__
 
  Consumes instructions in the :release node of the .gitlab-ci.yml to create a
  Release object in GitLab Rails. GitLab Release is a CLI application written in
  Golang.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.10.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.11.0</span> <span class="badge version">0.10.0</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">0.10.0</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">0.11.0</span> <span class="badge version">0.10.0</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">0.10.0</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.11.0</span> <span class="badge version">0.10.0</span></div>
 
 
 ## [helm](https://helm.sh)
 
-__The Kubernetes package manager__
+__Kubernetes package manager__
 
  Tool for managing Kubernetes charts.
  Charts are packages of pre-configured Kubernetes resources.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">3.7.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">3.8.0</span> <span class="badge version">3.7.2</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">3.7.2</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">3.8.0</span> <span class="badge version">3.7.2</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">3.7.2</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">3.8.0</span> <span class="badge version">3.7.2</span></div>
 
 
 ## [helmfile](https://github.com/roboll/helmfile)
@@ -155,14 +155,14 @@ __Little helper to run Rancher Lab's k3s in Docker__
 
 ## [k9s](https://k9scli.io)
 
-__K9s - Kubernetes CLI To Manage Your Clusters In Style__
+__Manage your Kubernetes clusters with style__
 
  K9s provides a terminal UI to interact with your Kubernetes clusters.
  The aim of this project is to make it easier to navigate,
  observe and manage your applications in the wild.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.25.10</span> <span class="badge version">0.25.9</span> <span class="badge version">0.25.8</span> <span class="badge version">0.25.7</span> <span class="badge version">0.25.6</span> <span class="badge version">0.25.5</span> <span class="badge version">0.25.4</span> <span class="badge version">0.25.3</span> <span class="badge version">0.25.2</span> <span class="badge version">0.25.1</span> <span class="badge version">0.25.0</span> <span class="badge version">0.24.15</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.25.18</span> <span class="badge version">0.24.15</span></div>
 
 
 ## [kind](https://kind.sigs.k8s.io)
@@ -206,11 +206,11 @@ __Command line client for controlling a Kubernetes cluster__
  clusters.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.23.2</span> <span class="badge version">1.22.4</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.23.3</span> <span class="badge version">1.22.4</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">1.23.2</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">1.23.3</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">1.23.2</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">1.23.3</span></div>
 
 
 ## [kubectl-neat](https://github.com/itaysk/kubectl-neat)
@@ -363,7 +363,7 @@ __Debian packaging tool for portable applications__
  in its configuration file.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.19.1</span> <span class="badge version">0.18.1</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.20.0</span> <span class="badge version">0.19.1</span> <span class="badge version">0.18.1</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.1</span> <span class="badge version">0.15.1</span></div>
 
 
 ## [packer](https://www.packer.io)
@@ -472,7 +472,7 @@ __Bunch of tools used by our beloved wakemebot__
  documentation).
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.4.3</span> <span class="badge version">1.3.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.4.4</span> <span class="badge version">1.3.2</span></div>
 
 
 ## [waypoint](https://www.waypointproject.io)
@@ -484,6 +484,6 @@ __Build, deploy, and release any application on any platform__
  consistent and repeatable workflow.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.7.0</span> <span class="badge version">0.6.3</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.7.1</span> <span class="badge version">0.6.3</span></div>
 
 <!-- devops.end -->
