@@ -153,6 +153,18 @@
   script:
     - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
 
+- name: iamlive
+  version: 0.44.0
+  homepage: https://github.com/iann0036/iamlive
+  summary: Generate policies from AWS calls
+  description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
+    IAM policy.
+  fetch:
+    url: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-amd64.tar.gz
+    sha256: 964938114ea29fbd5b594f5d63318bb40eb15f2b751c9ab56fab27347e1b24e3
+  script:
+    - mv iamlive {{src}}/usr/bin/iamlive
+
 - name: istioctl
   version: 1.12.2
   homepage: https://istio.io
