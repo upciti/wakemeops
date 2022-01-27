@@ -217,7 +217,7 @@
     - mv mergestat {{src}}/usr/bin/mergestat
 
 - name: procs
-  version: 0.12.0
+  version: 0.12.1
   homepage: https://github.com/dalance/procs
   summary: alternative in rust to 'ps'
   description: |-
@@ -226,7 +226,7 @@
     and more...
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
-    sha256: 9b76820bc589a29f49a00c068577c99b837071aa55e40b3dd76d2c9c87873406
+    sha256: 908800ba996421e5af24b4726c9a26f5985b9664d672d23bd040216743ad66a2
   script:
     - mv procs {{src}}/usr/bin/procs
 
