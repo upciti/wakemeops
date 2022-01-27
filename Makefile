@@ -6,7 +6,7 @@ OUTPUT_BASE_PATH := build
 
 ARCHITECTURE := amd64
 
-export OPS2DEB_REPOSITORY := http://deb.wakemeops.com/ stable
+export OPS2DEB_REPOSITORY := http://deb.wakemeops.com/wakemeops stable
 
 default:
 	@echo -e 'Usage:'
