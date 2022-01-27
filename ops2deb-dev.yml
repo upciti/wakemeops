@@ -116,9 +116,8 @@
       fi
 
 - name: pyenv
-  version: 2.2.3
+  version: 2.2.4
   homepage: https://github.com/pyenv/pyenv
-  revision: 2
   arch: all
   summary: simple Python version management
   description: |-
@@ -145,7 +144,7 @@
     - liblzma-dev
   fetch:
     url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
-    sha256: e47ce03ed4914882ae0cd3b012b3e5a230e129f074c1436769cff8b7147af8a5
+    sha256: 73ab87c5099192d9830e423b56b55718ee70719b61e2e4672bca5b31bfa1694a
   script:
     - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
     - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
