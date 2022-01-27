@@ -70,7 +70,7 @@ __Simple Python version management__
  that do one thing well.
 
 
-<div><span class="badge arch">all</span> <span class="badge version">2.2.3</span> <span class="badge version">2.2.2</span></div>
+<div><span class="badge arch">all</span> <span class="badge version">2.2.4</span> <span class="badge version">2.2.3</span> <span class="badge version">2.2.2</span></div>
 
 
 ## [pyoxidizer](https://pyoxidizer.readthedocs.io/en/latest/index.html)
