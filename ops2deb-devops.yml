@@ -530,6 +530,7 @@
 - name: ops2deb
   version: 0.20.0
   homepage: https://github.com/upciti/ops2deb
+  revision: 2
   summary: debian packaging tool for portable applications
   description: |-
     Ops2deb is primarily designed to easily generate Debian packages for portable
@@ -538,10 +539,12 @@
     releases of upstream applications and automatically bump application versions
     in its configuration file.
   depends:
+    - unzip
+    - tar
+  recommends:
     - build-essential
     - fakeroot
     - debhelper
-    - unzip
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_{{goarch}}
     sha256:
