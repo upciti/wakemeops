@@ -34,10 +34,12 @@
     commands in an image, as well as verify metadata and contents of the
     filesystem.
   fetch:
-    url: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-amd64
-    sha256: 1524da5fd5a0fc88c4c9257a3de05a45f135df07e6a684380dd5f659b9ce189b
+    url: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-{{goarch}}
+    sha256:
+      amd64: 1524da5fd5a0fc88c4c9257a3de05a45f135df07e6a684380dd5f659b9ce189b
+      arm64: b376ff80134d2d609c591b98d65d653a514755b4861185fd93159af7062ec65d
   script:
-    - mv container-structure-test-linux-amd64 {{src}}/usr/bin/container-structure-test
+    - mv container-structure-test-linux-{{goarch}} {{src}}/usr/bin/container-structure-test
 
 - name: datree
   version: 0.15.5
@@ -160,8 +162,10 @@
   description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
     IAM policy.
   fetch:
-    url: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-amd64.tar.gz
-    sha256: 964938114ea29fbd5b594f5d63318bb40eb15f2b751c9ab56fab27347e1b24e3
+    url: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: 964938114ea29fbd5b594f5d63318bb40eb15f2b751c9ab56fab27347e1b24e3
+      arm64: e3ad7d5c84edcabb10ca1560e0c808b586f7ba008b04ebc880c9fd9dca13bb7d
   script:
     - mv iamlive {{src}}/usr/bin/iamlive
 
@@ -366,10 +370,13 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
-    sha256: c976f8a739a6ece7535977a185daf53ce797cb854628e208d7149bb79e22988f
+    url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-{{goarch}}
+    sha256:
+      amd64: c976f8a739a6ece7535977a185daf53ce797cb854628e208d7149bb79e22988f
+      armhf: aa42a8d6cced007dfcac892eb027219fc644d13e0c89201614831ecfc22c9a5d
+      arm64: e2d4357a7d5dc533e4032a7998636b880b60a78933a14a8e44e8b7bc01c70c4c
   script:
-    - mv linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
+    - mv linkerd2-cli-edge-{{version}}-linux-{{goarch}} {{src}}/usr/bin/linkerd
 
 - name: logcli
   version: 2.4.2
@@ -405,20 +412,23 @@
     - mv minikube-linux-{{goarch}} {{src}}/usr/bin/minikube
 
 - name: minio-client
-  version: 2022-01-07T06-01-38Z
+  version: 2022-01-25T21-02-01Z
   homepage: https://min.io
   summary: command-line interface for MinIO (mc)
   description: |-
     MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
     for filesystems and object storage.
   fetch:
-    url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
-    sha256: 65efbfa31d85aaed8cee12e502b04108bd908d207a0527942c3735fa7d74c4f9
+    url: https://dl.min.io/client/mc/release/linux-{{goarch}}/archive/mc.RELEASE.{{version}}
+    sha256:
+      amd64: ed3f8307d6d64c5f61d274b7e0ebe9bdbad08fcfa8c0d77adc49a219d3b8221f
+      armhf: 5ca409d6f7c6decd706317d11c6fe363b0bba5c44dd4be7be4c166be4fd6d5a3
+      arm64: 4b403df80dff7f438c15a4ee6e3dc17675e76a772961390f6c6b75c611744797
   script:
     - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
 
 - name: minio-server
-  version: 2022-01-08T03-11-54Z
+  version: 2022-01-28T02-28-16Z
   homepage: https://min.io
   summary: high performance, Kubernetes native object storage
   description: |-
@@ -426,8 +436,11 @@
     Certain features such as versioning, object locking, and bucket replication
     require distributed deploying MinIO with Erasure Coding.
   fetch:
-    url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
-    sha256: e2b9bf780974862b85dfecb416c468f15d374ace1efe230f0ffbccd9fd6c81e5
+    url: https://dl.min.io/server/minio/release/linux-{{goarch}}/archive/minio.RELEASE.{{version}}
+    sha256:
+      amd64: d81f52faf6f0626fa4b23964c403bae60ff840577f4d75ec3e208ceb78f19ee2
+      armhf: 2053ecb6b166f8dad5330307672741ccdf7ef44a61eca67feb1eb6d8a991341e
+      arm64: 45779efe444b55c9e88bb061f5f0f2a825e081f98ba09a53659d1f40a7c5e4dd
   script:
     - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio
 
@@ -441,10 +454,12 @@
     various past tools that were named in the form nats-sub and nats-pub, adds
     several new capabilities and support full JetStream management.
   fetch:
-    url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-amd64.zip
-    sha256: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
+    url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-{{goarch}}.zip
+    sha256:
+      amd64: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
+      arm64: c7574e6f5db365b0430a1bde90badbd1d28a747d91d5f6986b73e531d87995d1
   script:
-    - mv nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
+    - mv nats-{{version}}-linux-{{goarch}}/nats {{src}}/usr/bin/nats
 
 - name: ops2deb
   version: 0.20.0
@@ -477,8 +492,11 @@
     the box with support for many platforms, the full list of which can be found at
     https://www.packer.io/docs/builders.
   fetch:
-    url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_amd64.zip
-    sha256: f89ed2e5f2becd391c7f0a9e51b79f3ea8a47fc4b486f1f54c3087e291d3f111
+    url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
+    sha256:
+      amd64: f89ed2e5f2becd391c7f0a9e51b79f3ea8a47fc4b486f1f54c3087e291d3f111
+      armhf: f80ebbc3a02cc7fe8b3b50ae0138b0efa1b7ec40aa4a1ffdabd735cc2009b3aa
+      arm64: 7c595ac4590e5152094aa04c0afb00a597eda0fbae3979e087acc19f6bd2d26e
   script:
     - mv packer {{src}}/usr/bin/packer
 
@@ -510,7 +528,7 @@
     - mv scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
 
 - name: skaffold
-  version: 1.35.0
+  version: 1.35.2
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -523,10 +541,12 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-amd64
-    sha256: f19458e10b199c713ec4d0b8915ed7ecfba199ec9a89ff18e157576faf337ed2
+    url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
+    sha256:
+      amd64: 4ad847e1afd68776d37cebc45bcc044cb93165bbedcb8892b966ee6691bbf146
+      arm64: de413c5966e692ccdde72b6646392716df4b8e8b6e091026d9a6266226522446
   script:
-    - mv skaffold-linux-amd64 {{src}}/usr/bin/skaffold
+    - mv skaffold-linux-{{goarch}} {{src}}/usr/bin/skaffold
 
 - name: stern
   version: 1.11.0
@@ -553,8 +573,11 @@
     codifies cloud APIs into declarative configuration files. Terraform can manage
     existing and popular service providers as well as custom in-house solutions.
   fetch:
-    url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
-    sha256: fca028d622f82788fdc35c1349e78d69ff07c7bb68c27d12f8b48c420e3ecdfb
+    url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
+    sha256:
+      amd64: fca028d622f82788fdc35c1349e78d69ff07c7bb68c27d12f8b48c420e3ecdfb
+      armhf: 390d8d177b26fcefe80d6a5b8d333b9ce29058a99f9d52f9b3e10e92ebcdf3cf
+      arm64: 3c1982cf0d16276c82960db60c998d79ba19e413af4fa2c7f6f86e4994379437
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
@@ -611,7 +634,9 @@
     lifecycle as code, reducing the time to deliver deployments through a
     consistent and repeatable workflow.
   fetch:
-    url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_amd64.zip
-    sha256: 8db1d7ea881ebd6837dbdb76ddab3820d80a727f0e6bed9b8b290847ba862e54
+    url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
+    sha256:
+      amd64: 8db1d7ea881ebd6837dbdb76ddab3820d80a727f0e6bed9b8b290847ba862e54
+      armhf: 0408d82cdef5e29ff62397ccc53e5442234dfbda231c41b0d95739f11e2c7980
   script:
     - mv waypoint {{src}}/usr/bin/waypoint
