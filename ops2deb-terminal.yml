@@ -285,9 +285,8 @@
     - mv tokei {{src}}/usr/bin/
 
 - name: xh
-  version: 0.14.1
+  version: 0.15.0
   homepage: https://github.com/ducaale/xh
-  revision: 3
   summary: user-friendly and fast tool for sending HTTP requests
   description: |-
     xh reimplements as much as possible of HTTPie's excellent design, with a focus
@@ -295,8 +294,8 @@
   fetch:
     url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target}}.tar.gz
     sha256:
-      amd64: ab9ba7a948173e38ca178c6c9ff3e9c65e556848b5bb839538d26a85837847b8
-      armhf: 13a0c676f98802182bd0a32b29ea23167bad9870ffa806cda50754669ff9e2db
+      amd64: a88bbcf990832a5b2cf695754023502efc7f5ec8a92bb741f3711135da3078be
+      armhf: 9b53898f44d278f70286f3d80a2805e112fd9cefb4a3778f9e658e4ee5ff1cf7
     targets:
       amd64: x86_64-unknown-linux-musl
       armhf: arm-unknown-linux-gnueabihf
