@@ -251,11 +251,11 @@ __Secret management solution for Kubernetes__
  public repository.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.17.2</span> <span class="badge version">0.16.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.17.3</span> <span class="badge version">0.16.0</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">0.17.2</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">0.17.3</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">0.17.2</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.17.3</span></div>
 
 
 ## [kustomize](https://kustomize.io)
