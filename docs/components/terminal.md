@@ -196,7 +196,7 @@ __Alternative in rust to 'ps'__
  and more...
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.12.0</span> <span class="badge version">0.11.13</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.12.1</span> <span class="badge version">0.11.13</span></div>
 
 
 ## [ripgrep](https://github.com/BurntSushi/ripgrep)
@@ -243,15 +243,15 @@ __Count your code, quickly__
 
 ## [xh](https://github.com/ducaale/xh)
 
-__Friendly and fast tool for sending HTTP requests__
+__User-friendly and fast tool for sending HTTP requests__
 
  xh reimplements as much as possible of HTTPie's excellent design, with a focus
  on improved performance.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">0.14.1</span> <span class="badge version">0.13.0</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">0.15.0</span> <span class="badge version">0.14.1</span> <span class="badge version">0.13.0</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">0.14.1</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">0.15.0</span> <span class="badge version">0.14.1</span></div>
 
 
 ## [xsv](https://github.com/BurntSushi/xsv)

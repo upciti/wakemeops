@@ -50,7 +50,7 @@ __Scanner for vulnerabilities__
 
 ## [vault](https://www.hashicorp.com/products/vault)
 
-__Tool for securely accessing secrets__
+__Tool to create, manage and store secrets__
 
  A secret is anything that you want to tightly control access to, such as API
  keys, passwords, or certificates. Vault provides a unified interface to any
@@ -58,6 +58,6 @@ __Tool for securely accessing secrets__
  log.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">1.9.2</span> <span class="badge version">1.9.1</span> <span class="badge version">1.9.0</span> <span class="badge version">1.8.5</span> <span class="badge version">1.8.4</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">1.9.3</span> <span class="badge version">1.8.5</span></div>
 
 <!-- secops.end -->
