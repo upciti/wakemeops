@@ -12,8 +12,11 @@
     resilient. It can run in clouds, on-prem, secure enclaves and more, and does
     not require an agent to be installed on every end host.
   fetch:
-    url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_amd64.zip
-    sha256: 35885c509ebdf7905886d61ad7adcf3f4929d60fc058b29b453a734598c39e2a
+    url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_{{goarch}}.zip
+    sha256:
+      amd64: 35885c509ebdf7905886d61ad7adcf3f4929d60fc058b29b453a734598c39e2a
+      armhf: f3e25637f728763f9890de9baff44eca9298390df0e80a95e82c05ff76c43056
+      arm64: 248daf8b263473f886100ccc9cf83bf20c1fb982588b633401e78f0b5e8267f7
   script:
     - mv boundary {{src}}/usr/bin/boundary
 
@@ -61,7 +64,10 @@
     secret, while providing tight access control and recording a detailed audit
     log.
   fetch:
-    url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
-    sha256: 16059f245fb4df2800fe6ba320ea66aba9c2615348e37bcfd42754591a528639
+    url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
+    sha256:
+      amd64: 16059f245fb4df2800fe6ba320ea66aba9c2615348e37bcfd42754591a528639
+      armhf: babbedfa3f134fbd68a4e1bb48e7302b9e40e8eae393f5f3688e295a7ea37f4f
+      arm64: c420f14b8b712197c8c47852ea3d1a5976e9ceaf5bb8e6a0b311624111aa14d4
   script:
     - mv vault {{src}}/usr/bin/vault
