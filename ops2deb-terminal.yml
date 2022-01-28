@@ -81,8 +81,10 @@
     of httpie, without compromising on features and performance. All curl options
     are exposed with syntax sugar and output formatting inspired from httpie.
   fetch:
-    url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
-    sha256: db6d250c0e2386624b269fa5f906c1fb4fc9608f108956c7d37247b4d4ff1b5d
+    url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: db6d250c0e2386624b269fa5f906c1fb4fc9608f108956c7d37247b4d4ff1b5d
+      arm64: 0163239a0414acfdcb025c7a7ff2d1efc3dd1f8552b20559977135b0ff8a2c66
   script:
     - mv curlie {{src}}/usr/bin/curlie
 
@@ -170,8 +172,10 @@
     onboarding new team members (cloning all team repos), performing audits... It
     supports GitHub, GitLab, Bitbucket, and more.
   fetch:
-    url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_linux_amd64.tar.gz
-    sha256: fbb7d05c0f123f27c0e584e55bc8f2e81ea5bdb474465b58956b5973b6664dc7
+    url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: fbb7d05c0f123f27c0e584e55bc8f2e81ea5bdb474465b58956b5973b6664dc7
+      arm64: c3bedaf174a92eec870c56fffc963c1686f70dd967df982c222bac3a4d63a06c
   script:
     - mv ghorg {{src}}/usr/bin/ghorg
 
@@ -340,7 +344,10 @@
     does - but it does support the most common operations and functions, and more
     is being added continuously.
   fetch:
-    url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_amd64
-    sha256: c02cc9c58a3a1531c224406973d3d8b8c4e47bf5064c3af48a812c8c19d2d46e
+    url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
+    sha256:
+      amd64: c02cc9c58a3a1531c224406973d3d8b8c4e47bf5064c3af48a812c8c19d2d46e
+      armhf: 60ec3ebfffb8fe8d2d9a77f8f5de8ff39f03504b981369e11cf98b7f8bf8d9b0
+      arm64: b79a19d1cf9217a542eb29e260082838d0588dc9be1d92c26bb274337db0fcf0
   script:
-    - mv yq_linux_amd64 {{src}}/usr/bin/yq
+    - mv yq_linux_{{goarch}} {{src}}/usr/bin/yq
