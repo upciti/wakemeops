@@ -1,4 +1,4 @@
-<!-- terminal.start --># Terminal - 21 packages
+<!-- terminal.start --># Terminal - 22 packages
 
 
 ## [bat](https://github.com/sharkdp/bat)
@@ -73,6 +73,8 @@ __The power of 'curl', the ease of use of 'httpie'__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.6.7</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">1.6.7</span></div>
 
 
 ## [diskonaut](https://github.com/imsnif/diskonaut)
@@ -151,6 +153,8 @@ __Quickly clone an entire org/users repositories into one directory__
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.7.5</span></div>
 
+<div><span class="badge arch">arm64</span> <span class="badge version">1.7.5</span></div>
+
 
 ## [gping](https://github.com/orf/gping)
 
@@ -174,6 +178,18 @@ __Command-line tool and library for generating regular expressions__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.3.0</span></div>
+
+
+## [himalaya](https://github.com/soywod/himalaya)
+
+__Command-line interface for email management__
+
+ CLI email client.
+ The project is under active development. Do not use in production before the
+ v1.0.0.
+
+
+<div><span class="badge arch">amd64</span> <span class="badge version">0.5.1</span></div>
 
 
 ## [mergestat](https://docs.mergestat.com)
@@ -275,6 +291,10 @@ __Portable command-line YAML processor__
  is being added continuously.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">4.17.2</span> <span class="badge version">4.16.2</span> <span class="badge version">4.14.2</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">4.18.1</span> <span class="badge version">4.17.2</span> <span class="badge version">4.16.2</span> <span class="badge version">4.14.2</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">4.18.1</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">4.18.1</span></div>
 
 <!-- terminal.end -->

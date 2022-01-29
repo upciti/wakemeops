@@ -1,4 +1,4 @@
-<!-- devops.start --># Devops - 39 packages
+<!-- devops.start --># Devops - 40 packages
 
 
 ## [argocd](https://github.com/argoproj/argo-cd)
@@ -34,6 +34,8 @@ __Validate the structure of your container images__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.11.0</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">1.11.0</span></div>
 
 
 ## [datree](https://github.com/datreeio/datree)
@@ -129,6 +131,18 @@ __Deploy Kubernetes Helm Charts__
 <div><span class="badge arch">amd64</span> <span class="badge version">0.143.0</span> <span class="badge version">0.142.0</span> <span class="badge version">0.141.0</span></div>
 
 <div><span class="badge arch">arm64</span> <span class="badge version">0.143.0</span></div>
+
+
+## [iamlive](https://github.com/iann0036/iamlive)
+
+__Generate policies from AWS calls__
+
+ Use client-side monitoring (CSM) or embedded proxy to generate AWS IAM policy.
+
+
+<div><span class="badge arch">amd64</span> <span class="badge version">0.44.0</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">0.44.0</span></div>
 
 
 ## [istioctl](https://istio.io)
@@ -285,6 +299,10 @@ __Ultralight service mesh for Kubernetes__
 
 <div><span class="badge arch">amd64</span> <span class="badge version">21.12.4</span> <span class="badge version">21.10.3</span></div>
 
+<div><span class="badge arch">arm64</span> <span class="badge version">21.12.4</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">21.12.4</span></div>
+
 
 ## [logcli](https://github.com/grafana/loki)
 
@@ -319,25 +337,33 @@ __Quickly set up a local Kubernetes cluster__
 
 ## [minio-client](https://min.io)
 
-__MinIO Client__
+__Command-line interface for MinIO (mc)__
 
- MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for
- filesystems and object storage.
+ MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
+ for filesystems and object storage.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2022-01-07T06-01-38Z</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2022-01-25T21-02-01Z</span> <span class="badge version">2022-01-07T06-01-38Z</span> <span class="badge version">2021-12-10T00-14-28Z</span> <span class="badge version">2021-11-16T20-37-36Z</span> <span class="badge version">2021-09-23T05-44-03Z</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">2022-01-25T21-02-01Z</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">2022-01-25T21-02-01Z</span></div>
 
 
 ## [minio-server](https://min.io)
 
-__High Performance, Kubernetes Native Object Storage__
+__High performance, Kubernetes native object storage__
 
  Standalone MinIO servers are best suited for early development and evaluation.
  Certain features such as versioning, object locking, and bucket replication
  require distributed deploying MinIO with Erasure Coding.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">2022-01-08T03-11-54Z</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">2022-01-28T02-28-16Z</span> <span class="badge version">2022-01-08T03-11-54Z</span> <span class="badge version">2021-12-10T23-03-39Z</span> <span class="badge version">2021-11-24T23-19-33Z</span> <span class="badge version">2021-10-08T23-58-24Z</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">2022-01-28T02-28-16Z</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">2022-01-28T02-28-16Z</span></div>
 
 
 ## [natscli](https://github.com/nats-io/natscli)
@@ -350,6 +376,8 @@ __The NATS Command Line Interface__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">0.0.26</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">0.0.26</span></div>
 
 
 ## [ops2deb](https://github.com/upciti/ops2deb)
@@ -377,6 +405,10 @@ __Create multi-platform machine images from a single source configuration__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.7.9</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">1.7.9</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">1.7.9</span></div>
 
 
 ## [rancher](https://github.com/rancher/cli)
@@ -415,6 +447,8 @@ __Easy and repeatable Kubernetes development__
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.35.2</span></div>
 
+<div><span class="badge arch">arm64</span> <span class="badge version">1.35.2</span></div>
+
 
 ## [stern](https://github.com/wercker/stern)
 
@@ -438,6 +472,10 @@ __Tool for building, changing, and versioning infrastructure safely__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.1.4</span> <span class="badge version">1.0.11</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">1.1.4</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">1.1.4</span></div>
 
 
 ## [terraform-docs](https://terraform-docs.io)
@@ -485,5 +523,7 @@ __Build, deploy, and release any application on any platform__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">0.7.1</span> <span class="badge version">0.6.3</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">0.7.1</span></div>
 
 <!-- devops.end -->

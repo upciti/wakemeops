@@ -17,6 +17,10 @@ __Provide simple and secure access to hosts and services__
 
 <div><span class="badge arch">amd64</span> <span class="badge version">0.7.4</span></div>
 
+<div><span class="badge arch">arm64</span> <span class="badge version">0.7.4</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">0.7.4</span></div>
+
 
 ## [feroxbuster](https://github.com/epi052/feroxbuster)
 
@@ -59,5 +63,9 @@ __Tool to create, manage and store secrets__
 
 
 <div><span class="badge arch">amd64</span> <span class="badge version">1.9.3</span> <span class="badge version">1.8.5</span></div>
+
+<div><span class="badge arch">arm64</span> <span class="badge version">1.9.3</span></div>
+
+<div><span class="badge arch">armhf</span> <span class="badge version">1.9.3</span></div>
 
 <!-- secops.end -->
