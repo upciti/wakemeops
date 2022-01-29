@@ -145,7 +145,7 @@
     - mv bin/exa {{src}}/usr/bin/exa
 
 - name: fd
-  version: 8.3.1
+  version: 8.3.2
   homepage: https://github.com/sharkdp/fd
   summary: human-friendly and fast alternative to 'find'
   description: |-
@@ -156,9 +156,9 @@
   fetch:
     url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: b785614c04d943dd6c37df431115a1ef1f849383a015d764c79687768cd3d891
-      armhf: 1d00ada58defe4e820c7ce6646853b79560565256f32d4f1cb37320d59af5c49
-      arm64: bf6d2af65a1aefb261ab7b480ae80b96ec14a0e290b8b44ff25915652527f1df
+      amd64: 64c43db1f6411df6dbe679d0881ac021b4fc8aec1b565a324cc6207aeada042f
+      armhf: b6f83826422acd972dc3e04f738eb8a16f1d7b49bcf490d7efeeb58097b9a033
+      arm64: 7e7defc64276b2ded5b2ba7e68c6dd499673348289b9aaef582aedad20e6d983
   script:
     - mv fd-v{{version}}-*/fd {{src}}/usr/bin/fd
 
