@@ -4,10 +4,11 @@
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
-    url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-amd64
-    sha256: 0414b6c852644f11af9dad115c51f09cbdfd8d8af76a18533e828c9b7afd9209
+    url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
+    sha256:
+      amd64: 0414b6c852644f11af9dad115c51f09cbdfd8d8af76a18533e828c9b7afd9209
   script:
-    - mv argocd-linux-amd64 {{src}}/usr/bin/argocd
+    - mv argocd-linux-{{goarch}} {{src}}/usr/bin/argocd
 
 - name: container-diff
   version: 0.17.0
@@ -18,10 +19,11 @@
     Container-diff can examine images along several different
     criteria, including: history, file system, size, packages...
   fetch:
-    url: https://github.com/GoogleContainerTools/container-diff/releases/download/v{{version}}/container-diff-linux-amd64
-    sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
+    url: https://github.com/GoogleContainerTools/container-diff/releases/download/v{{version}}/container-diff-linux-{{goarch}}
+    sha256:
+      amd64: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
   script:
-    - mv container-diff-linux-amd64 {{src}}/usr/bin/container-diff
+    - mv container-diff-linux-{{goarch}} {{src}}/usr/bin/container-diff
 
 - name: container-structure-test
   version: 1.11.0
@@ -51,8 +53,13 @@
     cause clusters to fail in production. Our CLI tool is open source, enabling it
     to be supported by the Kubernetes community.
   fetch:
-    url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_x86_64.zip
-    sha256: 710ae45d03c9345e21dd9bdf843f4efba09bf2711e7cff8477fb70ab92c0dcd7
+    url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
+    sha256:
+      amd64: 710ae45d03c9345e21dd9bdf843f4efba09bf2711e7cff8477fb70ab92c0dcd7
+      arm64: 5798b2692e091755a163e5c3402f3e4f073d1487c38450d73bc1f29954c6fc4e
+    targets:
+      amd64: x86_64
+      arm64: arm64
   script:
     - mv datree {{src}}/usr/bin/datree
 
@@ -64,10 +71,12 @@
     Automate your deployment workflow with DevSpace and develop software directly
     inside Kubernetes.
   fetch:
-    url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-amd64
-    sha256: ef680aac154b1b23b1a25328e6098d44efaf95052e6ca8e4cda3973a856ee1f0
+    url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
+    sha256:
+      amd64: ef680aac154b1b23b1a25328e6098d44efaf95052e6ca8e4cda3973a856ee1f0
+      arm64: 3c074c3b6ae7b2d2b09d09187802966f027a273de967e8005d40045217b0483e
   script:
-    - mv devspace-linux-amd64 {{src}}/usr/bin/devspace
+    - mv devspace-linux-{{goarch}} {{src}}/usr/bin/devspace
 
 - name: docker-compose
   version: 2.2.3
@@ -99,8 +108,11 @@
     of configuration (like Git repositories), and automating updates to
     configuration when there is new code to deploy.
   fetch:
-    url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
-    sha256: a5e5818f02d1a8fc591de57e4e6055f2f1e001943c84834419fdd26535d18d13
+    url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: a5e5818f02d1a8fc591de57e4e6055f2f1e001943c84834419fdd26535d18d13
+      armhf: d92b09603f570718a0f378e9fedc3ff3d647dc68b0cfeeed9a0a08f1e0814eb6
+      arm64: 9d93e399b6a62d676b0cae0d17a25973eb463b1ead829eb608bd1eecf3c707c4
   script:
     - mv flux {{src}}/usr/bin/flux
 
@@ -183,8 +195,15 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
-    sha256: a115ad51c7a88684781078fbded6e62aa445ddbf274a768ce5e9e8041f284d31
+    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    sha256:
+      amd64: a115ad51c7a88684781078fbded6e62aa445ddbf274a768ce5e9e8041f284d31
+      armhf: 1a888db2825af2baa2ee5a635ec037db9b6759ddc4a924317982984803537999
+      arm64: c69f7ad89516bbec5b4717b8902116ff646fbe3c462400fbcd5fd6795d05c5f3
+    targets:
+      amd64: amd64
+      armhf: armv7
+      arm64: arm64
   script:
     - install -d {{src}}/opt/istio
     - mv * {{src}}/opt/istio/
@@ -199,10 +218,13 @@
     distribution) in docker. k3d makes it very easy to create single- and multi-
     node k3s clusters in docker, e.g. for local development on Kubernetes.
   fetch:
-    url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
-    sha256: 7ddb900e6e50120b65d61568f6af007a82331bf83918608a6a7be8910792faef
+    url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}
+    sha256:
+      amd64: 7ddb900e6e50120b65d61568f6af007a82331bf83918608a6a7be8910792faef
+      armhf: e3e0c87d419c77295112ff7ccbc8d6228c8738f01b6ec458d76dceeff7710c5c
+      arm64: ccf1dafc1eddfef083375377a52ef0ca269a41c5bc4f0f4d7e11a7c56da08833
   script:
-    - mv k3d-linux-amd64 {{src}}/usr/bin/k3d
+    - mv k3d-linux-{{goarch}} {{src}}/usr/bin/k3d
 
 - name: k9s
   version: 0.25.18
@@ -215,8 +237,15 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-    sha256: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
+    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
+    sha256:
+      amd64: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
+      armhf: 2fb19caefec78c1a478a52940e51f625d80468a1fcb9033f092193611a2bd00a
+      arm64: f4a15b07633bbbecd3c775867ddcede880c62f8a6294ae6dc45ede43a6d0437c
+    targets:
+      amd64: x86_64
+      armhf: arm
+      arm64: arm64
   script:
     - mv k9s {{src}}/usr/bin/k9s
 
@@ -230,10 +259,12 @@
     "nodes". kind was primarily designed for testing Kubernetes itself, but may be
     used for local development or CI.
   fetch:
-    url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-amd64
-    sha256: 949f81b3c30ca03a3d4effdecda04f100fa3edc07a28b19400f72ede7c5f0491
+    url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-{{goarch}}
+    sha256:
+      amd64: 949f81b3c30ca03a3d4effdecda04f100fa3edc07a28b19400f72ede7c5f0491
+      arm64: 320c992ada56292ec5e12b0b85f5dfc60045a6ffcdfaf6ad3f5a554e40ef0235
   script:
-    - mv kind-linux-amd64 {{src}}/usr/bin/kind
+    - mv kind-linux-{{goarch}} {{src}}/usr/bin/kind
 
 - name: krew
   version: 0.4.2
@@ -245,10 +276,13 @@
     - kubectl
     - git
   fetch:
-    url: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_amd64.tar.gz
-    sha256: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
+    url: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
+      armhf: 115f503e35ef7f63f00a9b01236d80a9f94862ec684010a81c3a3b51bdca1351
+      arm64: 7581be80d803536acc63cceb20065023b96f07fd7eb9f4ee495dce0294a866eb
   script:
-    - mv krew-linux_amd64 {{src}}/usr/bin/krew
+    - mv krew-linux_{{goarch}} {{src}}/usr/bin/krew
 
 - name: kube-score
   version: 1.13.0
@@ -261,8 +295,15 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
-    sha256: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
+    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: e8b739c932ff8505ba80bb58e4e1a244c79caa9816f3db78171253634114c022
+      armhf: d1167987652700eef449122564c59f851f7d80565fa62d8f1efdce8e490e8a96
+      arm64: faf9f572fe17dd0bbe1acc6e480b9d1ba28a0360e481dc2d70ef40eaa0b9bda1
+    targets:
+      amd64: amd64
+      armhf: armv6
+      arm64: arm64
   script:
     - mv kube-score {{src}}/usr/bin/kube-score
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
@@ -292,8 +333,10 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_amd64.tar.gz
-    sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
+    url: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_{{goarch}}.tar.gz
+    sha256:
+      amd64: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
+      arm64: 1e3e175fdd220bb11128eb83cdbd986aa8e83dd4e1e55c285a0c5c97dacd26aa
   script:
     - mv kubectl-neat {{src}}/usr/bin/kubectl-neat
 
@@ -306,8 +349,15 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_x86_64.tar.gz
-    sha256: db5a48e85ff4d8c6fa947e3021e11ba4376f9588dd5fa779a80ed5c18287db22
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: db5a48e85ff4d8c6fa947e3021e11ba4376f9588dd5fa779a80ed5c18287db22
+      armhf: 7132ed27daf0c93b259452032703721bbc881bc1655a4eb5f6df3d489f1ef1bb
+      arm64: 5fab3c0624a83cf8fff5c34d90f854af6fa8b501ed63306aaf5355303ae884ed
+    targets:
+      amd64: x86_64
+      armhf: armhf
+      arm64: arm64
   script:
     - mv kubectx {{src}}/usr/bin/kubectx
     - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
@@ -321,8 +371,15 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubens_v{{version}}_linux_x86_64.tar.gz
-    sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubens_v{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
+      armhf: f7b888ba40ec139e1321616d62953d850c6de8ece3ac6e5169a8faba4eadb1c8
+      arm64: 7c2d0d4d46338bf400ebba1b23947d35b25725b9b4e3e1932bb88b3ec3f96a5a
+    targets:
+      amd64: x86_64
+      armhf: armhf
+      arm64: arm64
   script:
     - mv kubens {{src}}/usr/bin/kubens
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
@@ -390,10 +447,13 @@
   summary: command-line interface for loki
   description: It facilitates running LogQL queries against a Loki instance.
   fetch:
-    url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-    sha256: 68e5e281b4488ad49303cce972e194fe4e186cd519ed8a14db0c28316ad01e05
+    url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
+    sha256:
+      amd64: 68e5e281b4488ad49303cce972e194fe4e186cd519ed8a14db0c28316ad01e05
+      armhf: 362eb654400e33024c40d1a8f4595241f206fbcb39b8767fe7104cf301f8d325
+      arm64: 38003a38b3ffab792fc1f00d68bf48fe440ec48ff0eb13206c37805e18d19eac
   script:
-    - mv logcli-linux-amd64 {{src}}/usr/bin/logcli
+    - mv logcli-linux-{{goarch}} {{src}}/usr/bin/logcli
 
 - name: minikube
   version: 1.25.1
@@ -483,8 +543,9 @@
     - debhelper
     - unzip
   fetch:
-    url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 735128c2db58e7c6168d777abaf0547a2ca181b7fc9f50cc456c35bb6726424b
+    url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_{{goarch}}
+    sha256:
+      amd64: 735128c2db58e7c6168d777abaf0547a2ca181b7fc9f50cc456c35bb6726424b
   script:
     - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
 
@@ -514,8 +575,10 @@
     The Rancher Command Line Interface (CLI) is a unified tool for interacting with
     your Rancher Server.
   fetch:
-    url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
-    sha256: 70f4839ede2735485a8bee07da30db2854c9188483f1857b1ed12c38c39822c3
+    url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
+    sha256:
+      amd64: 70f4839ede2735485a8bee07da30db2854c9188483f1857b1ed12c38c39822c3
+      armhf: 5afbbb48e1274003feac352dbfca95c117f6374ee4ca1d3c6652e5887c7810d3
   script:
     - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
 
@@ -528,10 +591,13 @@
     Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
     directly from your terminal.
   fetch:
-    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
-    sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
+    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-{{target}}
+    sha256:
+      amd64: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
+    targets:
+      amd64: x86_64
   script:
-    - mv scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
+    - mv scw-{{version}}-linux-* {{src}}/usr/bin/scw
 
 - name: skaffold
   version: 1.35.0
@@ -564,10 +630,11 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/wercker/stern/releases/download/{{version}}/stern_linux_amd64
-    sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
+    url: https://github.com/wercker/stern/releases/download/{{version}}/stern_linux_{{goarch}}
+    sha256:
+      amd64: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
   script:
-    - mv stern_linux_amd64 {{src}}/usr/bin/stern
+    - mv stern_linux_{{goarch}} {{src}}/usr/bin/stern
 
 - name: terraform
   version: 1.1.4
@@ -595,8 +662,11 @@
     Utility to generate documentation from Terraform modules in various output
     formats.
   fetch:
-    url: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-amd64.tar.gz
-    sha256: 328c16cd6552b3b5c4686b8d945a2e2e18d2b8145b6b66129cd5491840010182
+    url: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: 328c16cd6552b3b5c4686b8d945a2e2e18d2b8145b6b66129cd5491840010182
+      armhf: 8b2ba1a0ffefe4cb05c3a7a4cc9203da2f64331ee4062ca1a4ec8226cc1651de
+      arm64: 8208c19c7dc01660e6caefe32e33ac02e0e03fdc2e2ade0bb37abb6349153d25
   script:
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
@@ -611,10 +681,13 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-amd64.tar.gz
-    sha256: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
+    url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
+      armhf: a170bdfe2f8aac6db876e08de9b58e54468812b34faf5d87ed67dacb9e6d9569
+      arm64: 7dcf7020c7b5c674cdb0f9221cdd04da01f19dd9b6a19ec74f0a62245d92c8d3
   script:
-    - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
+    - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
 
 - name: wakemebot
   version: 1.4.4
@@ -626,8 +699,9 @@
     management), ops2deb (Debian package generation) and mkdocs (wakemeops
     documentation).
   fetch:
-    url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
-    sha256: 1582f97f92f3bdc3ee9e4ca2c64e824a8f44c38e4cb07297edc669bfe130e73a
+    url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_{{goarch}}
+    sha256:
+      amd64: 1582f97f92f3bdc3ee9e4ca2c64e824a8f44c38e4cb07297edc669bfe130e73a
   script:
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
