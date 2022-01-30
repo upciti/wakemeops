@@ -126,7 +126,7 @@ __Modern replacement for ls__
 
 ## [fd](https://github.com/sharkdp/fd)
 
-__Simple, fast and user-friendly alternative to 'find'__
+__Human-friendly and fast alternative to 'find'__
 
  fd is a program to find entries in your filesystem. It is a simple, fast and
  user-friendly alternative to find. While it does not aim to support all of
@@ -134,11 +134,11 @@ __Simple, fast and user-friendly alternative to 'find'__
  a majority of use cases.
 
 
-<div><span class="badge arch">amd64</span> <span class="badge version">8.3.1</span> <span class="badge version">8.2.1</span></div>
+<div><span class="badge arch">amd64</span> <span class="badge version">8.3.2</span> <span class="badge version">8.2.1</span></div>
 
-<div><span class="badge arch">arm64</span> <span class="badge version">8.3.1</span></div>
+<div><span class="badge arch">arm64</span> <span class="badge version">8.3.2</span></div>
 
-<div><span class="badge arch">armhf</span> <span class="badge version">8.3.1</span></div>
+<div><span class="badge arch">armhf</span> <span class="badge version">8.3.2</span></div>
 
 
 ## [ghorg](https://github.com/gabrie30/ghorg)
