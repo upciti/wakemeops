@@ -70,19 +70,25 @@
     - mv devspace-linux-amd64 {{src}}/usr/bin/devspace
 
 - name: docker-compose
-  version: 1.29.2
+  version: 2.2.3
   homepage: https://docs.docker.com/compose
-  revision: 3
   summary: lightweight development environments using Docker
   description: |-
     docker-compose is a service management software built on top of docker. Define
     your services and their relationships in a simple YAML file, and let compose
     handle the rest.
   fetch:
-    url: https://github.com/docker/compose/releases/download/{{version}}/docker-compose-Linux-x86_64
-    sha256: f3f10cf3dbb8107e9ba2ea5f23c1d2159ff7321d16f0a23051d68d8e2547b323
+    url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
+    sha256:
+      amd64: f15a7cd54a85f760a8ece92da63fb85b93036c72ead8056391b8a3fe9dc73134
+      armhf: 0818fe399fa45e0d0c488ffe62a75e1a9a5b75953d3a38c4e6d12c16d25a27dc
+      arm64: acdef6cd8ade7ade54037846be2e8291f3a0f735a5c89460a79d8a28747c0f48
+    targets:
+      amd64: x86_64
+      armhf: armv7
+      arm64: aarch64
   script:
-    - mv docker-compose-Linux-x86_64 {{src}}/usr/bin/docker-compose
+    - mv docker-compose-linux-* {{src}}/usr/bin/docker-compose
 
 - name: flux
   version: 0.25.3
