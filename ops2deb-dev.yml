@@ -11,15 +11,13 @@
   depends:
     - git
   fetch:
-    url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-{{target}}.tar.gz
+    url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-{{target|rust_target}}.tar.gz
     sha256:
       amd64: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
       armhf: 12e4b84972b5dac3e7334d9938da806295ca0f5b0b008833a4ed728d35fb1d3c
       arm64: 1e90b8ab5906c17a2f8a59c1a815afd0dbdcb9fc9d0848dec350481ceb99d473
     targets:
-      amd64: x86_64-unknown-linux-gnu
       armhf: armv7-unknown-linux-gnueabihf
-      arm64: aarch64-unknown-linux-gnu
   script:
     - install -m 755 clog {{src}}/usr/bin/
 
@@ -53,9 +51,7 @@
       armhf: 44e44829a5361957217bfd7c2c8c6dc88fc5f56a72f2e4df772e0ea551a493bd
       arm64: 45cf80192438846315014494346d534a881baebcb85822dacf6da7d73cc866a3
     targets:
-      amd64: amd64
       armhf: armv6
-      arm64: arm64
   script:
     - mv gh_{{version}}_linux_*/bin/* {{src}}/usr/bin/
     - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/
@@ -78,7 +74,6 @@
     targets:
       amd64: x86_64
       armhf: armv6
-      arm64: arm64
   script:
     - mv bin/glab {{src}}/usr/bin/
 

@@ -24,12 +24,11 @@
     and a multitude of features. Supports Linux, macOS, and Windows.
     Inspired by gtop, gotop, and htop.
   fetch:
-    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target}}.tar.gz
+    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target|rust_target}}.tar.gz
     sha256:
       amd64: 5f50d2a58a3138ddc895822a6e047a9b005329665ff542bca8960539f891f648
       armhf: 8d89e39f45cdf267f8491efeda756b39bf22420318c19b2bc2441a9162ddb85c
     targets:
-      amd64: x86_64-unknown-linux-gnu
       armhf: armv7-unknown-linux-gnueabihf
   script:
     - mv btm {{src}}/usr/bin/
@@ -182,7 +181,6 @@
       arm64: eb692dca2b3fe3246240d300945dfbf600d91a8db63adc23fb19e086ce4fc7a8
     targets:
       amd64: x86_64
-      arm64: arm64
   script:
     - mv ghorg {{src}}/usr/bin/ghorg
 
@@ -192,7 +190,7 @@
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
-    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target}}.tar.gz
+    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target|rust_target}}.tar.gz
     sha256:
       amd64: cc35de02c2dc8df86f82217edba7e092c657df46cbf00e7189a839d37455539e
       armhf: f067d2428113ae02c0ff1a95c08329daafe5fb46623c27031f723ad571a3bbe7
@@ -200,7 +198,6 @@
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
-      arm64: aarch64-unknown-linux-gnu
   script:
     - mv gping {{src}}/usr/bin/gping
 
@@ -275,10 +272,12 @@
     available for every release. ripgrep is similar to other popular search tools
     like The Silver Searcher, ack and grep.
   fetch:
-    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-{{rust_target}}.tar.gz
+    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-{{target|rust_target}}.tar.gz
     sha256:
       amd64: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
       armhf: 70137ff167d3d1481994a0efc836db0f62814d67f39baa670ad89955bc94762f
+    targets:
+      amd64: x86_64-unknown-linux-musl
   script:
     - mv ripgrep-{{version}}-{{rust_target}}/rg {{src}}/usr/bin/rg
 
@@ -291,10 +290,12 @@
     Half of our life is spent on navigation: files, lines, commands...
     You need skim! It is a general fuzzy finder that saves you time.
   fetch:
-    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-{{rust_target}}.tar.gz
+    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-{{target|rust_target}}.tar.gz
     sha256:
       amd64: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
       armhf: 763907092fd5a0a3e02363efc5cef5d6d36fa9bd58387350aa477758d67ce4b0
+    targets:
+      amd64: x86_64-unknown-linux-musl
   script:
     - mv sk {{src}}/usr/bin/
 
@@ -308,15 +309,13 @@
     Tokei will show the number of files, total lines within those files and
     code, comments, and blanks grouped by language.
   fetch:
-    url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-{{target}}.tar.gz
+    url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-{{target|rust_target}}.tar.gz
     sha256:
       amd64: c8c5c4ab9e1ff47e745de70f4af3214078657399fa7a0da0b5f209d780e49978
       armhf: cfd9b2cf23fbe4f8693a87f1e7652126205e0ef3c79c05c38dfaff238d557e71
       arm64: ef514fd12cfc3ee2d1725e5ecb866ee1123163004879ec285b22f3323389ebe2
     targets:
-      amd64: x86_64-unknown-linux-gnu
       armhf: armv7-unknown-linux-gnueabihf
-      arm64: aarch64-unknown-linux-gnu
   script:
     - mv tokei {{src}}/usr/bin/
 
@@ -328,13 +327,12 @@
     xh reimplements as much as possible of HTTPie's excellent design, with a focus
     on improved performance.
   fetch:
-    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target}}.tar.gz
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target|rust_target}}.tar.gz
     sha256:
       amd64: a88bbcf990832a5b2cf695754023502efc7f5ec8a92bb741f3711135da3078be
       armhf: 9b53898f44d278f70286f3d80a2805e112fd9cefb4a3778f9e658e4ee5ff1cf7
     targets:
       amd64: x86_64-unknown-linux-musl
-      armhf: arm-unknown-linux-gnueabihf
   script:
     - mv xh-v{{version}}-*/xh {{src}}/usr/bin/xh
 

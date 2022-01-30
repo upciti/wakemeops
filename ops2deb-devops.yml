@@ -5,8 +5,7 @@
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256:
-      amd64: d2f726998dd6e09b357ac55686313c6a7ab84d1d856d2a7e998a1ee464a99972
+    sha256: d2f726998dd6e09b357ac55686313c6a7ab84d1d856d2a7e998a1ee464a99972
   script:
     - mv argocd-linux-{{goarch}} {{src}}/usr/bin/argocd
 
@@ -53,8 +52,7 @@
     criteria, including: history, file system, size, packages...
   fetch:
     url: https://github.com/GoogleContainerTools/container-diff/releases/download/v{{version}}/container-diff-linux-{{goarch}}
-    sha256:
-      amd64: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
+    sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
   script:
     - mv container-diff-linux-{{goarch}} {{src}}/usr/bin/container-diff
 
@@ -92,7 +90,6 @@
       arm64: 5798b2692e091755a163e5c3402f3e4f073d1487c38450d73bc1f29954c6fc4e
     targets:
       amd64: x86_64
-      arm64: arm64
   script:
     - mv datree {{src}}/usr/bin/datree
 
@@ -234,9 +231,7 @@
       armhf: 02019189a2c8b41bbf911a774535e557a1b92b574a515814cbe9b595b9b14f2c
       arm64: 5fed0c9cdc67f1d502392d2f07cf4b2ec8bb841e6eaaa1333e15d72b7aaa2088
     targets:
-      amd64: amd64
       armhf: armv7
-      arm64: arm64
   script:
     - install -d {{src}}/opt/istio
     - mv * {{src}}/opt/istio/
@@ -278,7 +273,6 @@
     targets:
       amd64: x86_64
       armhf: arm
-      arm64: arm64
   script:
     - mv k9s {{src}}/usr/bin/k9s
 
@@ -333,9 +327,7 @@
       armhf: d1167987652700eef449122564c59f851f7d80565fa62d8f1efdce8e490e8a96
       arm64: faf9f572fe17dd0bbe1acc6e480b9d1ba28a0360e481dc2d70ef40eaa0b9bda1
     targets:
-      amd64: amd64
       armhf: armv6
-      arm64: arm64
   script:
     - mv kube-score {{src}}/usr/bin/kube-score
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
@@ -388,8 +380,6 @@
       arm64: 5fab3c0624a83cf8fff5c34d90f854af6fa8b501ed63306aaf5355303ae884ed
     targets:
       amd64: x86_64
-      armhf: armhf
-      arm64: arm64
   script:
     - mv kubectx {{src}}/usr/bin/kubectx
     - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
@@ -410,8 +400,6 @@
       arm64: 7c2d0d4d46338bf400ebba1b23947d35b25725b9b4e3e1932bb88b3ec3f96a5a
     targets:
       amd64: x86_64
-      armhf: armhf
-      arm64: arm64
   script:
     - mv kubens {{src}}/usr/bin/kubens
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
@@ -624,11 +612,8 @@
     Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
     directly from your terminal.
   fetch:
-    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-{{target}}
-    sha256:
-      amd64: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
-    targets:
-      amd64: x86_64
+    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
+    sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
   script:
     - mv scw-{{version}}-linux-* {{src}}/usr/bin/scw
 
@@ -664,8 +649,7 @@
     - kubectl
   fetch:
     url: https://github.com/wercker/stern/releases/download/{{version}}/stern_linux_{{goarch}}
-    sha256:
-      amd64: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
+    sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
   script:
     - mv stern_linux_{{goarch}} {{src}}/usr/bin/stern
 
