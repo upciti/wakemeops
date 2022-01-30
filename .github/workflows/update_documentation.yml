@@ -3,40 +3,28 @@ name: 📖 Update documentation
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '30 */3 * * *'
 
 jobs:
   update_documentation:
     runs-on: ubuntu-latest
+    container:
+      image: upciti/wakemebot:latest
+      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Bump documentation
         run: |
-          curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash -s devops
-          sudo apt-get update -yq && sudo apt-get install --no-install-recommends wakemebot
           wakemebot docs
+          mkdocs build
 
-      - name: Create pull request
-        id: cpr
-        uses: peter-evans/create-pull-request@v3
+      - name: Deploy to Github pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
-          token: ${{ secrets.WAKEMEBOT_GITHUB_ACCESS_TOKEN }}
-          commit-message: "chore(docs): update documentation"
-          committer: wakemebot <wakemebot@protonmail.com>
-          author: wakemebot <wakemebot@users.noreply.github.com>
-          branch: chore/update-documentation
-          delete-branch: true
-          title: "chore(bot): update documentation"
-          body: |
-            Automated changes generated using `wakemebot docs`.
-            See https://github.com/upciti/wakemebot for more information.
-
-      - name: Enable pull request automerge
-        if: steps.cpr.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v1
-        with:
-          token: ${{ secrets.WAKEMEBOT_GITHUB_ACCESS_TOKEN }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: rebase
+          branch: gh-pages
+          folder: site
+          single-commit: true
+          git-config-name: wakemebot
+          git-config-email: wakemebot@protonmail.com

@@ -10,7 +10,6 @@ stages:
   - build
   - push
   - publish
-  - pages
 
 .no_schedule:
   rules:
@@ -77,23 +76,6 @@ publish_s3:
   extends: .prod_no_schedule
   script:
     - make publish
-
-pages:
-  stage: pages
-  script:
-    - make docs
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: never
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-      changes:
-        - docs/**/*
-        - mkdocs.yml
-  tags: []
-  needs: []
 
 build_images:
   image: quay.io/buildah/stable:v1.23.1
