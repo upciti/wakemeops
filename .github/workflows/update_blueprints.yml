@@ -8,12 +8,14 @@ on:
 jobs:
   bump_blueprints:
     runs-on: ubuntu-latest
-    container:
-      image: upciti/wakemebot:latest
-      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Install ops2deb
+        uses: upciti/wakemeops-action@v1
+        with:
+          packages: ops2deb
 
       - name: Bump blueprints
         run: make update
