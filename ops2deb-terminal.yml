@@ -16,9 +16,8 @@
     - mv bat-v{{version}}-*/bat {{src}}/usr/bin/bat
 
 - name: bottom
-  version: 0.6.6
+  version: 0.6.7
   homepage: https://clementtsang.github.io/bottom
-  revision: 2
   summary: cross-platform graphical process/system monitor
   description: |-
     A cross-platform graphical process/system monitor with a customizable interface
@@ -27,8 +26,8 @@
   fetch:
     url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target}}.tar.gz
     sha256:
-      amd64: 37ed4570d881f52784ed4780430c1f8c0d9132167e61306071d3ba09c49c0ca0
-      armhf: 7f3fb6d80de982b9ae3d7b4dfdfb640e838ba89ac0e7ff6d23ffffb1eae3b66c
+      amd64: 6434a464f6ce9e5d22d8bcb636543d13d160f536535afc66ec37ff08613c3347
+      armhf: 21b3c28b4d5356b854b611434edd010ed779799723c90dcf7819e2855ed839f3
     targets:
       amd64: x86_64-unknown-linux-gnu
       armhf: armv7-unknown-linux-gnueabihf
