@@ -64,7 +64,7 @@
     - mv datree {{src}}/usr/bin/datree
 
 - name: devspace
-  version: 5.18.2
+  version: 5.18.3
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -73,8 +73,8 @@
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
     sha256:
-      amd64: ef680aac154b1b23b1a25328e6098d44efaf95052e6ca8e4cda3973a856ee1f0
-      arm64: 3c074c3b6ae7b2d2b09d09187802966f027a273de967e8005d40045217b0483e
+      amd64: f84f71a85a770dc79ff500fc3711b896ecacbd3a1bc3ba6e5408b0355420dcd3
+      arm64: 34b3fc09ea0f6682e895c12ac25fa824d1dfb6eb0c4550bf91839dc728037879
   script:
     - mv devspace-linux-{{goarch}} {{src}}/usr/bin/devspace
 
@@ -100,7 +100,7 @@
     - mv docker-compose-linux-* {{src}}/usr/bin/docker-compose
 
 - name: flux
-  version: 0.25.3
+  version: 0.26.0
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -110,9 +110,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: a5e5818f02d1a8fc591de57e4e6055f2f1e001943c84834419fdd26535d18d13
-      armhf: d92b09603f570718a0f378e9fedc3ff3d647dc68b0cfeeed9a0a08f1e0814eb6
-      arm64: 9d93e399b6a62d676b0cae0d17a25973eb463b1ead829eb608bd1eecf3c707c4
+      amd64: 1bf58acd8228d97ad443744f439037eab688358fdd7e1cfd255d66c5787ddad1
+      armhf: 03b970deeb92d072b871def4a8f9963c3465c59ded26cae4af468b858e0945f9
+      arm64: 2ce5dfb4cce2ba2e5da016a1e13eeae420d6b1f3d2768cc7d4d165badaa96093
   script:
     - mv flux {{src}}/usr/bin/flux
 
