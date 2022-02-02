@@ -10,6 +10,22 @@
   script:
     - mv argocd-linux-{{goarch}} {{src}}/usr/bin/argocd
 
+- name: carvel-kapp
+  version: 0.45.0
+  homepage: https://carvel.dev/kapp/
+  summary: simple deployment tool focused on the concept of "Kubernetes application"
+  description: |-
+    Take control of your Kubernetes resources.
+    Deploy and view groups of Kubernetes resources as "applications".
+    Apply changes safely and predictably, watching resources as they converge.
+  fetch:
+    url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v{{version}}/kapp-linux-{{goarch}}
+    sha256:
+      amd64: 9d2c0441729bebe49e5fb9a1a7b7088f0bee4092ba23e267339a9478948c5731
+      arm64: 59c1cb33743efd2b6b3c2cf53a77a13435a6d3f7e9fc0563905d169e2359d4ea
+  script:
+    - mv kapp-linux-{{goarch}} {{src}}/usr/bin/kapp
+
 - name: container-diff
   version: 0.17.0
   homepage: https://github.com/GoogleContainerTools/container-diff
