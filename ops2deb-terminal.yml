@@ -16,7 +16,7 @@
     - mv bat-v{{version}}-*/bat {{src}}/usr/bin/bat
 
 - name: bottom
-  version: 0.6.7
+  version: 0.6.8
   homepage: https://clementtsang.github.io/bottom
   summary: cross-platform graphical process/system monitor
   description: |-
@@ -26,8 +26,8 @@
   fetch:
     url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target}}.tar.gz
     sha256:
-      amd64: 6434a464f6ce9e5d22d8bcb636543d13d160f536535afc66ec37ff08613c3347
-      armhf: 21b3c28b4d5356b854b611434edd010ed779799723c90dcf7819e2855ed839f3
+      amd64: 5f50d2a58a3138ddc895822a6e047a9b005329665ff542bca8960539f891f648
+      armhf: 8d89e39f45cdf267f8491efeda756b39bf22420318c19b2bc2441a9162ddb85c
     targets:
       amd64: x86_64-unknown-linux-gnu
       armhf: armv7-unknown-linux-gnueabihf
@@ -35,7 +35,7 @@
     - mv btm {{src}}/usr/bin/
 
 - name: chezmoi
-  version: 2.10.1
+  version: 2.11.0
   homepage: https://github.com/twpayne/chezmoi
   summary: manage your dotfiles across multiple diverse machines
   description: |-
@@ -49,9 +49,9 @@
   fetch:
     url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 90c3abf2f17d5e2f0d27acb48731119e3fc1d5dcf82e5966c899d6135864aa89
-      armhf: b6f16f9a339fdfcb4038e6aa2d336d228c4e0784a65ffe94b02ed804b6bed3d6
-      arm64: bbe81f5ea11bd6bf01e675398a123c621a86ee7670441b5f8cebbbf7163b229f
+      amd64: eab9c2bc224bcf1f238001f246d68c76f13b6193cfdef9924a7dacd09af002e3
+      armhf: bee90d78ea315b6ffe20cae0db4f9354df0ddd33fab0530e7b1057f32c8dbadc
+      arm64: c401ec72a56663e041353b518a7068ac0d22b9d8578321fa99a48a4dd36433a2
   script:
     - mv chezmoi {{src}}/usr/bin/
 
@@ -210,7 +210,7 @@
     - mv grex {{src}}/usr/bin/
 
 - name: himalaya
-  version: 0.5.1
+  version: 0.5.2
   homepage: https://github.com/soywod/himalaya
   summary: command-line interface for email management
   description: |-
@@ -219,7 +219,7 @@
     v1.0.0.
   fetch:
     url: https://github.com/soywod/himalaya/releases/download/v{{version}}/himalaya-linux.tar.gz
-    sha256: f6ce479924abbf779cb08864410d10ca90e8c5576525be05bdadd27faf43c062
+    sha256: 76319ad648f0a26864f759809fd259fc34f848d8689e5415ad1e8e696f22c0e4
   script:
     - mv himalaya {{src}}/usr/bin/himalaya
 
