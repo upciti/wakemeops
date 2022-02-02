@@ -36,8 +36,15 @@
     This attack is also known as Predictable Resource Location,
     File Enumeration, Directory Enumeration, and Resource Enumeration.
   fetch:
-    url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/x86_64-linux-feroxbuster.tar.gz
-    sha256: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
+    url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-feroxbuster.zip
+    sha256:
+      amd64: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
+      armhf: ed211ef7f763b2a396e76408061c020ab01493b0929af476ff0a7eec4710d0b3
+      arm64: 89c4f90fb7fea9536925309f233f35e6d40655f8b20da51c7725e897bbf41307
+    targets:
+      amd64: x86_64-linux
+      armhf: armv7
+      arm64: aarch64
   script:
     - mv feroxbuster {{src}}/usr/bin/
 
@@ -49,8 +56,15 @@
     Scanner for vulnerabilities in container images, file systems, and Git
     repositories, as well as for configuration issues
   fetch:
-    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
-    sha256: 49c5ed93c140faf47513388130437e8da46fc140f2461c2dd885fdd2b7739752
+    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
+    sha256:
+      amd64: 49c5ed93c140faf47513388130437e8da46fc140f2461c2dd885fdd2b7739752
+      armhf: 68f27923fe3b553c100701c7d60e779ace0bd94510acb02a0b1106d617bafa57
+      arm64: 587b20bd048d6cf2d0fe76a317b179a81f4af0389d75758de9148290612dd163
+    targets:
+      amd64: 64bit
+      armhf: ARM
+      arm64: ARM64
   script:
     - mv trivy {{src}}/usr/bin/trivy
 
