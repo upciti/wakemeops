@@ -88,7 +88,7 @@
     - python3-distutils
   fetch:
     url: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
-    sha256: 000f332f7f98c0dc5d317e0bd4e25d44e13293767d199fd964aae7c01284bcbe
+    sha256: e85f81b21cb0731591a1a957371cacd0e8ed4a951e63f5021c81eb2c2bd2c0ff
   script:
     - rm -r poetry/_vendor/py2.7 poetry/_vendor/py3.5 poetry/_vendor/py3.6 poetry/_vendor/.gitignore
     - mv poetry {{src}}/usr/lib/
