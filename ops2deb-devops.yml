@@ -26,6 +26,23 @@
   script:
     - mv kapp-linux-{{goarch}} {{src}}/usr/bin/kapp
 
+- name: carvel-ytt
+  version: 0.39.0
+  homepage: https://carvel.dev/ytt/
+  summary: YAML templating tool that works on YAML structure instead of text
+  description: |-
+    All your YAML shaping in one tool
+    Template and patch as needed to easily make your configuration reusable and
+    extensible.
+    Works with your own and third-party YAML configuration.
+  fetch:
+    url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v{{version}}/ytt-linux-{{goarch}}
+    sha256:
+      amd64: 7a472b8c62bfec5c12586bb39065beda42c6fe43cf24271275e4dbc0a04acb8b
+      arm64: 64e2bfd870d5b5249f3f261bc9224dbe870877f35cd3040c2ec46c3aaca94d43
+  script:
+    - mv ytt-linux-{{goarch}} {{src}}/usr/bin/ytt
+
 - name: container-diff
   version: 0.17.0
   homepage: https://github.com/GoogleContainerTools/container-diff
