@@ -138,8 +138,13 @@
   summary: modern replacement for 'ls'
   description: exa is a modern replacement for ls.
   fetch:
-    url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
-    sha256: a65a87bd545e969979ae9388f6333167f041a1f09fa9d60b32fd3072348ff6ce
+    url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-{{target}}-v{{version}}.zip
+    sha256:
+      amd64: a65a87bd545e969979ae9388f6333167f041a1f09fa9d60b32fd3072348ff6ce
+      armhf: f515ad4f1c9b92754bc26575e53f88f060c84d9b46794d303abc957093f7e9c3
+    targets:
+      amd64: x86_64
+      armhf: armv7
   script:
     - mv bin/exa {{src}}/usr/bin/exa
 
@@ -187,8 +192,15 @@
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
-    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-Linux-x86_64.tar.gz
-    sha256: cc35de02c2dc8df86f82217edba7e092c657df46cbf00e7189a839d37455539e
+    url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target}}.tar.gz
+    sha256:
+      amd64: cc35de02c2dc8df86f82217edba7e092c657df46cbf00e7189a839d37455539e
+      armhf: f067d2428113ae02c0ff1a95c08329daafe5fb46623c27031f723ad571a3bbe7
+      arm64: 22847c2871f29e5d65f1fb06a25cdf59b088a996759d11cecfe835ef06c94a0b
+    targets:
+      amd64: Linux-x86_64
+      armhf: armv7-unknown-linux-gnueabihf
+      arm64: aarch64-unknown-linux-gnu
   script:
     - mv gping {{src}}/usr/bin/gping
 
@@ -263,10 +275,12 @@
     available for every release. ripgrep is similar to other popular search tools
     like The Silver Searcher, ack and grep.
   fetch:
-    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
+    url: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-{{rust_target}}.tar.gz
+    sha256:
+      amd64: ee4e0751ab108b6da4f47c52da187d5177dc371f0f512a7caaec5434e711c091
+      armhf: 70137ff167d3d1481994a0efc836db0f62814d67f39baa670ad89955bc94762f
   script:
-    - mv ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
+    - mv ripgrep-{{version}}-{{rust_target}}/rg {{src}}/usr/bin/rg
 
 - name: skim
   version: 0.9.4
@@ -277,8 +291,10 @@
     Half of our life is spent on navigation: files, lines, commands...
     You need skim! It is a general fuzzy finder that saves you time.
   fetch:
-    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
+    url: https://github.com/lotabout/skim/releases/download/v{{version}}/skim-v{{version}}-{{rust_target}}.tar.gz
+    sha256:
+      amd64: a73c94622d9aaab18f9a03a9bf7af0ca2f7059280ea3df24c09c1e7e0b359c32
+      armhf: 763907092fd5a0a3e02363efc5cef5d6d36fa9bd58387350aa477758d67ce4b0
   script:
     - mv sk {{src}}/usr/bin/
 
