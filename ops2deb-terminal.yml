@@ -224,7 +224,7 @@
     - mv himalaya {{src}}/usr/bin/himalaya
 
 - name: mergestat
-  version: 0.5.2
+  version: 0.5.3
   homepage: https://docs.mergestat.com
   summary: enables SQL queries for data in git repositories
   description: |-
@@ -232,7 +232,7 @@
     understand everything that goes into building and shipping software.
   fetch:
     url: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
-    sha256: 5f6eef34bb969543a685f9fd608e04deb3ab1ed488ee932315e11e5993fb81ec
+    sha256: 3e4d70675d400d101e333f087ec03e6cfd9862997073b803a0f5a3c2cd604527
   script:
     - mv mergestat {{src}}/usr/bin/mergestat
 

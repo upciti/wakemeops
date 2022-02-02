@@ -403,7 +403,7 @@
     - mv kubeseal {{src}}/usr/bin/kubeseal
 
 - name: kustomize
-  version: 4.5.0
+  version: 4.5.1
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-
@@ -417,8 +417,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 1fb98a60ba65a47f6c47727fd15eb4bdf31dc5940b41e359759eab707d0f5742
-      arm64: 0e2961501ae89936cb03c42bce262df210fb30672422c22ada198252de9d1bc8
+      amd64: cc26e18e814fd162dacd5e2a1357aa133fb91589e23a15ccc8b7c163fd259c54
+      arm64: 4873fb965cad3a646bea4ffc2f2f9189501fe7bc6f0ae8854920593b9ba13d73
   script:
     - mv kustomize {{src}}/usr/bin/
 
@@ -640,7 +640,7 @@
     - mv stern_linux_{{goarch}} {{src}}/usr/bin/stern
 
 - name: terraform
-  version: 1.1.4
+  version: 1.1.5
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -651,9 +651,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: fca028d622f82788fdc35c1349e78d69ff07c7bb68c27d12f8b48c420e3ecdfb
-      armhf: 390d8d177b26fcefe80d6a5b8d333b9ce29058a99f9d52f9b3e10e92ebcdf3cf
-      arm64: 3c1982cf0d16276c82960db60c998d79ba19e413af4fa2c7f6f86e4994379437
+      amd64: 30942d5055c7151f051c8ea75481ff1dc95b2c4409dbb50196419c21168d6467
+      armhf: 7b58756f4123ff6fe8680aea0bde91d12ecad28b1a1d25e33465c812f88fe387
+      arm64: 2fb6324c24c14523ae63cedcbc94a8e6c1c317987eced0abfca2f6218d217ca5
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
