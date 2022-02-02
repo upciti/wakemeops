@@ -1,5 +1,5 @@
 name: mattermost-desktop
-version: 5.0.2
+version: 5.0.3
 homepage: https://mattermost.com
 summary: desktop application for Mattermost
 description: |-
@@ -13,7 +13,7 @@ description: |-
   platform built just for them.
 fetch:
   url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
-  sha256: 54e029720d4386d530e1d12fed3dd64df838612d39985f4c8a8eb00a48e7c044
+  sha256: 28b49626935230699fba06e414824b0e7c5c66daed0593868cb951fa40283130
 script:
   - install -d {{src}}/opt
   - find . -type f -exec chmod 644 -- {} +
