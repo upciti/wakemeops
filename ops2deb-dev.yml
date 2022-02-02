@@ -41,6 +41,7 @@
 - name: github-cli
   version: 2.5.0
   homepage: https://github.com/cli/cli
+  revision: 2
   summary: GitHub on the command line
   description: |-
     Brings pull requests, issues, and other GitHub concepts to the terminal next to
@@ -56,8 +57,8 @@
       armhf: armv6
       arm64: arm64
   script:
-    - mv gh_{{version}}_linux_{{target}}/bin {{src}}/usr/
-    - mv gh_{{version}}_linux_{{target}}/share {{src}}/usr/
+    - mv gh_{{version}}_linux_*/bin/* {{src}}/usr/bin/
+    - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/
 
 - name: mask
   version: 0.11.0
