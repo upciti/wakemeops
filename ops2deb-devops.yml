@@ -553,7 +553,7 @@
     - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
 
 - name: packer
-  version: 1.7.9
+  version: 1.7.10
   homepage: https://www.packer.io
   summary: create multi-platform machine images from a single source configuration
   description: |-
@@ -564,9 +564,9 @@
   fetch:
     url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: f89ed2e5f2becd391c7f0a9e51b79f3ea8a47fc4b486f1f54c3087e291d3f111
-      armhf: f80ebbc3a02cc7fe8b3b50ae0138b0efa1b7ec40aa4a1ffdabd735cc2009b3aa
-      arm64: 7c595ac4590e5152094aa04c0afb00a597eda0fbae3979e087acc19f6bd2d26e
+      amd64: 1c8c176dd30f3b9ec3b418f8cb37822261ccebdaf0b01d9b8abf60213d1205cb
+      armhf: 6da48ac438997cc824f8f6c0be75caceebcc8bcebc7f1c54d1a62699fc388b9b
+      arm64: 541e769c0582be48b15676e263461e1da85c312c35fa3decbcd08115371a8f80
   script:
     - mv packer {{src}}/usr/bin/packer
 
