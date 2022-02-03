@@ -129,6 +129,27 @@
   script:
     - mv docker-compose-linux-* {{src}}/usr/bin/docker-compose
 
+- name: docker-slim
+  version: 1.37.3
+  homepage: https://dockersl.im
+  summary: minify docker images by up to 30x
+  description: |-
+    Provides a set of commands (build, xray, lint and others) to simplify and
+    optimize your developer experience with containers. It makes your containers
+    betters, smaller and more secure.
+  fetch:
+    url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
+    sha256:
+      amd64: 3bc3ff63a1da0e6cae7b1c8b4a88deb339bc6718ae8544b751cc6aa3588b5157
+      armhf: faca950646862c212fae7b3a3879e2d7ad1cd2d8f0f4b740a33c641093b5c6d2
+      arm64: dd285874234df8e959dde419f8953d70d4e6b4ae57fcc535f5c5f188be2e83c3
+    targets:
+      amd64: linux
+      armhf: linux_arm
+      arm64: linux_arm64
+  script:
+    - mv dist_linux*/docker-slim* {{src}}/usr/bin/
+
 - name: flux
   version: 0.26.1
   homepage: https://fluxcd.io
