@@ -60,6 +60,28 @@
     - mv gh_{{version}}_linux_*/bin/* {{src}}/usr/bin/
     - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/
 
+- name: glab
+  version: 1.22.0
+  homepage: https://glab.readthedocs.io/
+  summary: Gitlab on the command line
+  description: |-
+    Bring GitLab to your terminal right next to where you're already working with
+    git and your code without switching between browser windows or tabs. Work with
+    issues, merge requests, look at running pipelines directly from your CLI, among
+    other features.
+  fetch:
+    url: https://github.com/profclems/glab/releases/download/v{{version}}/glab_{{version}}_Linux_{{target}}.tar.gz
+    sha256:
+      amd64: 7d70af94648cd7720899315ddd9efdf981769f636b3cf6976508a939d5248a5f
+      armhf: 4c37217e77156e964d72d46bc2550f232ef544905ad3d62b0641c77fb2b7dfc6
+      arm64: 72b83d99c9fb99ed5ba04cc50f5acf90e1d4bedbc7c0d950eae7eb8375d0068b
+    targets:
+      amd64: x86_64
+      armhf: armv6
+      arm64: arm64
+  script:
+    - mv bin/glab {{src}}/usr/bin/
+
 - name: mask
   version: 0.11.0
   homepage: https://github.com/jakedeichert/mask
