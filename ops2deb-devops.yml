@@ -578,9 +578,8 @@
     - fakeroot
     - debhelper
   fetch:
-    url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_{{goarch}}
-    sha256:
-      amd64: 0070196832942327ca1066fb6ce3b36b4914bee414685853222ab65cdc5008d7
+    url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
+    sha256: 0070196832942327ca1066fb6ce3b36b4914bee414685853222ab65cdc5008d7
   script:
     - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
 
@@ -734,9 +733,8 @@
     management), ops2deb (Debian package generation) and mkdocs (wakemeops
     documentation).
   fetch:
-    url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_{{goarch}}
-    sha256:
-      amd64: 7c139636fa6be7ff13007b55e958691fd6134870b3e1dd578a5694d77d0678b1
+    url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
+    sha256: 7c139636fa6be7ff13007b55e958691fd6134870b3e1dd578a5694d77d0678b1
   script:
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
