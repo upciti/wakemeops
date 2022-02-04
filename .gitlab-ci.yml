@@ -3,7 +3,6 @@ workflow:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 default:
-  image: upciti/wakemebot:latest
   tags: ["wakemebot"]
 
 stages:
@@ -46,11 +45,8 @@ stages:
         VERSION:
           ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
 
-.install_dependencies: &install_dependencies
-  - apt-get update
-  - apt-get install -y ${APT_DEPENDENCIES}
-
 generate_packages:
+  image: ghcr.io/upciti/ops2deb:latest
   stage: build
   extends:
     - .no_schedule
@@ -64,6 +60,7 @@ generate_packages:
     expire_in: 2 days
 
 push_packages:
+  image: upciti/wakemebot:latest
   stage: push
   extends:
     - .prod_no_schedule
@@ -72,6 +69,7 @@ push_packages:
     - make push-${component}
 
 publish_s3:
+  image: upciti/wakemebot:latest
   stage: publish
   extends: .prod_no_schedule
   script:
