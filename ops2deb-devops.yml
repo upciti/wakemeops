@@ -221,7 +221,7 @@
     - mv iamlive {{src}}/usr/bin/iamlive
 
 - name: istioctl
-  version: 1.12.2
+  version: 1.11.6
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -230,9 +230,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: a115ad51c7a88684781078fbded6e62aa445ddbf274a768ce5e9e8041f284d31
-      armhf: 1a888db2825af2baa2ee5a635ec037db9b6759ddc4a924317982984803537999
-      arm64: c69f7ad89516bbec5b4717b8902116ff646fbe3c462400fbcd5fd6795d05c5f3
+      amd64: 0b6b0feeaad86c2f6f1a9e743bfc206031e48ad9986c222d9c4632978a1dd083
+      armhf: 02019189a2c8b41bbf911a774535e557a1b92b574a515814cbe9b595b9b14f2c
+      arm64: 5fed0c9cdc67f1d502392d2f07cf4b2ec8bb841e6eaaa1333e15d72b7aaa2088
     targets:
       amd64: amd64
       armhf: armv7
