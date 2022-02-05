@@ -300,9 +300,8 @@
     - mv kind-linux-{{goarch}} {{src}}/usr/bin/kind
 
 - name: krew
-  version: 0.4.2
+  version: 0.4.3
   homepage: https://krew.sigs.k8s.io
-  revision: 4
   summary: find and install kubectl plugins
   description: Krew is the package manager for kubectl plugins.
   depends:
@@ -311,9 +310,9 @@
   fetch:
     url: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 203bfd8006b304c1e58d9e96f9afdc5f4a055e0fbd7ee397fac9f36bf202e721
-      armhf: 115f503e35ef7f63f00a9b01236d80a9f94862ec684010a81c3a3b51bdca1351
-      arm64: 7581be80d803536acc63cceb20065023b96f07fd7eb9f4ee495dce0294a866eb
+      amd64: 5df32eaa0e888a2566439c4ccb2ef3a3e6e89522f2f2126030171e2585585e4f
+      armhf: 68eb9e9f5bba29c7c19fb52bfc43a31300f92282a4e81f0c51ad26ed2c73eb03
+      arm64: 0994923848882ad0d4825d5af1dc227687a10a02688f785709b03549dd34d71d
   script:
     - mv krew-linux_{{goarch}} {{src}}/usr/bin/krew
 
