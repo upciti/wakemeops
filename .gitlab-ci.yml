@@ -46,7 +46,9 @@ stages:
           ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
 
 generate_packages:
-  image: ghcr.io/upciti/ops2deb:latest
+  image:
+    name: ghcr.io/upciti/ops2deb:latest
+    entrypoint: [""]
   stage: build
   extends:
     - .no_schedule
