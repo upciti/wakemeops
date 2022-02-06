@@ -71,10 +71,12 @@ check-packages:
 	done
 
 push-%:
+	[[ "$*" =~ (desktop|terminal) ]] && retain=3 || retain=100; \
 	if [ -d "build/$*" ]; then \
 		wakemebot aptly push wakemeops-$* \
 			$(OUTPUT_BASE_PATH)/$* \
-			--server /host/data/aptly/aptly.sock; \
+			--server /host/data/aptly/aptly.sock \
+			--retain $$retain; \
 	fi
 
 publish:
