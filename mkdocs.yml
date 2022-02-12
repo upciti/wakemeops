@@ -28,15 +28,7 @@ theme:
     - navigation.top
     - toc.integrate
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-    - scheme: slate
-      primary: grey
-      accent: red
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+    scheme: slate
 
 plugins:
   - search
