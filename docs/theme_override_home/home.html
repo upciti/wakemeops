@@ -1,74 +1,102 @@
 <!-- Custom HTML site displayed as the Home chapter -->
 
+<!-- prettier-ignore -->
 {% extends "main.html" %}
 
+<!-- prettier-ignore -->
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" href="./asciinema-player.css" />
 <link rel="stylesheet" type="text/css" href="./home.css" />
 {% endblock %}
 
+<!-- prettier-ignore -->
 {% block tabs %}
 {{ super() }}
 
 <!-- Main site Entry button descriptions -->
 <section class="tx-container">
-    <div class="md-grid md-typeset">
-      <div class="tx-hero">
-        <div class="tx-hero__content">
-          <h1>WakeMeOps</h1>
-          <p>WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions.</p>
-          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
-            Get started
-          </a>
-          <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
-            Go to Github
-          </a>
-        </div>
-        <script src="./asciinema-player.min.js"></script>
-        <div class="tx-hero__image" id="cast">
+  <div class="md-grid md-typeset">
+    <div class="tx-hero">
+      <div class="tx-hero__content">
+        <h1>WakeMeOps</h1>
+        <p>
+          WakeMeOps is an open source effort which aims at centralizing many
+          portable applications - such as statically build applications - in a
+          single Debian repository. WakeMeOps should be compatible with Debian,
+          Ubuntu and other Debian based distributions.
+        </p>
+        <a
+          href="{{ page.next_page.url | url }}"
+          title="{{ page.next_page.title | striptags }}"
+          class="md-button md-button--primary"
+        >
+          Get started
+        </a>
+        <a
+          href="{{ config.repo_url }}"
+          title="{{ lang.t('source.link.title') }}"
+          class="md-button"
+        >
+          Go to Github
+        </a>
+      </div>
+      <script src="./asciinema-player.min.js"></script>
+      <div class="tx-hero__image" id="cast">
         <script>
-	  AsciinemaPlayer.create(
-	    'https://asciinema.org/a/458744.cast',
-	     document.getElementById('cast'),
-	     {'autoplay': true, 'cols': 80, 'rows': 20}
-	  );
+          AsciinemaPlayer.create(
+            "https://asciinema.org/a/458744.cast",
+            document.getElementById("cast"),
+            { autoplay: true, cols: 80, rows: 20 }
+          );
         </script>
-        </div>
-
       </div>
     </div>
+  </div>
 </section>
 
 <!-- Main site box descriptions -->
 <div class="top-hr">
-    <div class="feature-item">
-        <h2>
-            ⏱  Updated every 2 hours
-        </h2>
-        <p>New releases of supported applications are automatically updated within two hours as long as they use semantic versioning.</p>
-    </div>
-    <div class="feature-item">
-        <h2>
-            🧞 Community driven
-        </h2>
-	<p>Is your favorite application missing? Open an <a href="https://github.com/upciti/wakemeops/issues/new">issue</a> to add it to our repository.</p>
-    </div>
-    <div class="feature-item">
-        <h2>
-            🚀 <!-- package_count.start -->74<!-- package_count.end --> debian packages
-        </h2>
-	<p>WakeMeOps packages many devops tools such as kubectl, kustomize, helm and terminal goodies such as bat and gping.</p>
-    </div>
+  <div class="feature-item">
+    <h2>⏱ Updated every 2 hours</h2>
+    <p>
+      New releases of supported applications are automatically updated within
+      two hours as long as they use semantic versioning.
+    </p>
+  </div>
+  <div class="feature-item">
+    <h2>🧞 Community driven</h2>
+    <p>
+      Is your favorite application missing? Open an
+      <a href="https://github.com/upciti/wakemeops/issues/new">issue</a> to add
+      it to our repository.
+    </p>
+  </div>
+  <div class="feature-item">
+    <h2>
+      🚀
+      <!-- package_count.start -->74<!-- package_count.end -->
+      debian packages
+    </h2>
+    <p>
+      WakeMeOps packages many devops tools such as kubectl, kustomize, helm and
+      terminal goodies such as bat and gping.
+    </p>
+  </div>
 </div>
 
 <!-- Custom narrow footer -->
 <div class="md-footer-meta__inner md-grid">
   <div class="md-footer-social">
-    This project is based on <a href="https://github.com/upciti/ops2deb">ops2deb</a>, <a href="https://github.com/upciti/ops2deb">wakemebot</a> and <a href="https://www.aptly.info/">aptly</a>. Provided by <a href="https://www.upciti.com">Upciti</a>.
+    This project is based on
+    <a href="https://github.com/upciti/ops2deb">ops2deb</a>,
+    <a href="https://github.com/upciti/ops2deb">wakemebot</a> and
+    <a href="https://www.aptly.info/">aptly</a>. Provided by
+    <a href="https://www.upciti.com">Upciti</a>.
   </div>
 </div>
 
+<!-- prettier-ignore -->
 {% endblock %}
 {% block content %}{% endblock %}
 {% block footer %}{% endblock %}

@@ -1,7 +1,7 @@
-name: '⌛ Close stale issues and PRs'
+name: "⌛ Close stale issues and PRs"
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: "0 1 * * *"
 
 jobs:
   stale:
@@ -16,5 +16,5 @@ jobs:
           close-pr-message: 'Due to the lack of activity in the last 5 days since it was marked as "stale", we proceed to close this Pull Request. Do not hesitate to reopen it later if necessary.'
           days-before-stale: 60
           days-before-close: 7
-          exempt-issue-labels: 'on-hold'
-          exempt-pr-labels: 'on-hold'
+          exempt-issue-labels: "on-hold"
+          exempt-pr-labels: "on-hold"
