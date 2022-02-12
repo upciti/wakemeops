@@ -22,7 +22,7 @@ stages:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
       changes:
         - ops2deb-*.yml
       when: on_success
@@ -43,7 +43,13 @@ stages:
         VERSION: ["latest", "rolling", "20.04", "18.04"]
       - DISTRO: debian
         VERSION:
-          ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
+          - latest
+          - bookworm
+          - bookworm-slim
+          - bullseye
+          - bullseye-slim
+          - buster
+          - buster-slim
 
 generate_packages:
   image:
@@ -90,7 +96,14 @@ build_images:
         TAG: ["latest", "rolling", "20.04", "18.04"]
         REGISTRY_NAME: ubuntu
       - IMAGE: debian
-        TAG: ["latest", "bookworm", "bookworm-slim", "bullseye", "bullseye-slim", "buster", "buster-slim"]
+        TAG:
+          - latest
+          - bookworm
+          - bookworm-slim
+          - bullseye
+          - bullseye-slim
+          - buster
+          - buster-slim
         REGISTRY_NAME: debian
       - IMAGE: bitnami/minideb
         TAG: ["latest", "bullseye", "buster"]

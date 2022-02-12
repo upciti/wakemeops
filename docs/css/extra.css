@@ -1,17 +1,17 @@
-.badge{
-	padding: 2px 5px;
-	border-radius: 4px;
-	font-weight: 600;
-	font-size: 12px;
-	box-shadow: 0 2px 5px rgba(0,0,0,.25);
-	font-family: var(--md-code-font-family);
-	line-height: 1;
+.badge {
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  font-family: var(--md-code-font-family);
+  line-height: 1;
 }
-.badge.version{
-	background: #00b8d4;
-	color: whitesmoke;
+.badge.version {
+  background: #00b8d4;
+  color: whitesmoke;
 }
-.badge.arch{
-	background: #DA605B;
-	color: whitesmoke;
+.badge.arch {
+  background: #da605b;
+  color: whitesmoke;
 }

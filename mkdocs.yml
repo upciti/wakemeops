@@ -9,11 +9,11 @@ nav:
   - Home: "index.md"
   - Usage: "usage.md"
   - Packages:
-    - Dev: "components/dev.md"
-    - Devops: "components/devops.md"
-    - Secops: "components/secops.md"
-    - Terminal: "components/terminal.md"
-    - Desktop: "components/desktop.md"
+      - Dev: "components/dev.md"
+      - Devops: "components/devops.md"
+      - Secops: "components/secops.md"
+      - Terminal: "components/terminal.md"
+      - Desktop: "components/desktop.md"
 
 theme:
   custom_dir: docs/theme_override_home/
