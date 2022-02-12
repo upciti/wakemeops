@@ -1,4 +1,8 @@
-# WakeMeOps
+<p align="center">
+  <a href="https://docs.wakemeops.com/"><img width="200" height="200" src="https://raw.githubusercontent.com/upciti/wakemeops/main/docs/images/colored-logo.png" alt='WakeMeOps'></a>
+</p>
+
+<p align="center"><strong>WakeMeOps</strong> <em>- Debian repository for portable applications.</em></p>
 
 ## :star: What is it?
 
