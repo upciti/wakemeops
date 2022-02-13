@@ -262,7 +262,7 @@ You can leverage this script to write very short dockerfiles for your CI:
 === "I like to live on the edge :fire:"
 
     ```dockerfile
-    FROM wakemeops/debian:bullseye
+    FROM wakemeops/debian:latest
 
     RUN install_packages helm kustomize kubectl
     ```

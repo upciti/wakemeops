@@ -1,12 +1,3 @@
-.md-main {
-  flex-grow: 0;
-}
-
-.md-main__inner {
-  display: flex;
-  height: 100%;
-}
-
 .tx-container {
   padding-top: 0rem;
   background: linear-gradient(
@@ -15,6 +6,10 @@
     #a63fd9 99%,
     var(--md-default-bg-color) 99%
   );
+}
+
+.top-hr {
+  margin: 32px 1rem;
 }
 
 .tx-hero {
@@ -32,12 +27,24 @@
 .tx-hero__content {
   padding-bottom: 1rem;
   margin: 0 auto;
+  display: flex;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.tx-hero__image {
-  max-width: 27rem;
-  height: auto;
-  order: 1;
+.tx-hero__content img {
+  max-width: 15rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.feature-item {
+  margin: 0rem 0.5rem 2rem 0.5rem;
+  flex: 1;
 }
 
 .tx-hero .md-button {
@@ -47,56 +54,22 @@
 
 .tx-hero .md-button--primary {
   background-color: var(--md-primary-bg-color);
-  margin-right: 0.5rem;
+  margin-right: 0.4rem;
   color: hsla(280deg, 37%, 48%, 1);
   border-color: var(--md-primary-bg-color);
 }
 
 .tx-hero .md-button:focus,
 .tx-hero .md-button:hover {
-  background-color: var(--md-accent-fg-color);
+  background-color: white;
   color: var(--md-default-bg-color);
-  border-color: var(--md-accent-fg-color);
+  border-color: white;
 }
 
-.feature-item h2 svg {
-  height: 30px;
-  float: left;
-  margin-right: 10px;
-  transform: translateY(10%);
-}
-
-.top-hr {
-  margin-top: 42px;
-}
-
-.feature-item {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  box-sizing: border-box;
-  padding: 0 15px;
-  word-break: break-word;
-}
-
-.feature-item h2 {
-  font-weight: 300;
-  font-size: 25px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: normal;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-family: inherit;
-}
-
-.feature-item p {
-  font-size: 16px;
-  line-height: 1.8em;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  margin: 0 0 10px;
-  display: block;
+.copyright {
+  text-align: center;
+  font-size: 0.64rem;
+  margin: 0 1.5rem 0 1.5rem;
 }
 
 @media screen and (max-width: 30em) {
@@ -105,108 +78,43 @@
   }
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 45em) {
+  .tx-hero__content {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 65em) {
   .md-sidebar--secondary {
     display: none;
   }
 
   .tx-hero {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+  }
+
+  .tx-hero__content div {
+    max-width: 30rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .tx-hero__content img {
+    padding-bottom: 0rem;
+  }
+
+  .tx-hero__examples {
+    display: flex;
     justify-content: center;
+    flex-direction: row;
   }
 
-  .tx-hero__content {
-    max-width: 22rem;
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-    margin-left: 1rem;
-    margin-right: 4rem;
-    align-items: center;
-  }
-}
-
-@media screen and (min-width: 76.25em) {
   .md-sidebar--primary {
     display: none;
   }
 
   .top-hr {
-    width: 100%;
     display: flex;
-    max-width: 61rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 0.2rem;
   }
-
-  .bottom-hr {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    max-width: 61rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 0.2rem;
-  }
-
-  .feature-item {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .feature-item:hover {
-    background-color: #526cfe47;
-    border-radius: 3px;
-  }
-}
-
-.hr {
-  border-bottom: 1px solid #eee;
-  width: 100%;
-  margin: 20px 0;
-}
-
-.text-center {
-  text-align: center;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 15px;
-  font-family: "Lato", sans-serif;
-  font-size: 23px;
-  font-weight: 300;
-  padding-bottom: 10px;
-}
-
-.logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
-  margin: 0 auto;
-}
-
-.logos img {
-  flex: 1 1 auto;
-  padding: 25px;
-  max-height: 130px;
-  vertical-align: middle;
-}
-
-.hr-logos {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.md-footer-meta__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
-
-.md-footer-social {
-  padding-top: 20px;
 }
