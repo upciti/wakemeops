@@ -5,8 +5,16 @@
 
 {% block scripts %}
 {{ super() }}
-<script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dockerfile.min.js"></script>
+<script
+  src="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"
+  integrity="sha384-WsK1dmF9Mn+ICF+uDdtvMkl5KXId4S+WV+lCpPYOIwKe+KLOa5ldMug/8WlgtnaE"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dockerfile.min.js"
+  integrity="sha384-W28TUK27SJhMnSKG9JUi/7HmOPKXcRRaLBOfOVbFpgpfSegYF2S9iuQ1qMam6QC0"
+  crossorigin="anonymous"
+></script>
 <script>
   hljs.highlightAll();
 </script>
@@ -17,7 +25,9 @@
 {{ super() }}
 <link
   rel="stylesheet"
-  href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/github-dark-dimmed.min.css"
+  href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/github-dark-dimmed.min.css"
+  integrity="sha384-PiLidnnRuzFgp4qiN8oGNmktrV8ETL+6a8heAxljUX4A+3XWlocwaMn9duBUepfK"
+  crossorigin="anonymous"
 />
 <link rel="stylesheet" type="text/css" href="./home.css" />
 {% endblock %}
