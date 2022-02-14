@@ -711,9 +711,8 @@
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
 - name: velero
-  version: 1.7.1
+  version: 1.8.0
   homepage: https://velero.io
-  revision: 3
   summary: backup and migrate Kubernetes applications and their persistent volumes
   description: |-
     Velero (formerly Heptio Ark) gives you tools to back up and restore your
@@ -723,9 +722,9 @@
   fetch:
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 5dd1e619a3a182d539f081a468a8e6118d3a6c50436c36315bdb2e33b5398adf
-      armhf: a170bdfe2f8aac6db876e08de9b58e54468812b34faf5d87ed67dacb9e6d9569
-      arm64: 7dcf7020c7b5c674cdb0f9221cdd04da01f19dd9b6a19ec74f0a62245d92c8d3
+      amd64: 0530082cb8d1412e926e4afcef72a7eff45f8820a6480d5358b70b4d8ffcbf78
+      armhf: 14a06856a84ff5f3e66ce0323319277b0234564d8a1982ce537cd92b2e67495c
+      arm64: 62c96df0b71d4b28d424b15aa79fb83ba120dfeb3c47418e82f638f83c365c34
   script:
     - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
 
