@@ -166,7 +166,7 @@
     - mv fd-v{{version}}-*/fd {{src}}/usr/bin/fd
 
 - name: ghorg
-  version: 1.7.7
+  version: 1.7.8
   homepage: https://github.com/gabrie30/ghorg
   summary: quickly clone an entire org/users repositories into one directory
   description: |-
@@ -177,8 +177,8 @@
   fetch:
     url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 95e69490a7706059c4f4472d399c69ad737995f0fd285160d2c1ae4ba47efb88
-      arm64: 07cc48396944308df0865e02e80b00bd4d7d3c8216533ec07a130ad597321903
+      amd64: ec3e120bbe008dfc552e8d4fdf3bd5b0a431f2511a44c1496e89978b671cf8a9
+      arm64: 76f9aa5ffea45ef6715910dcb4176fc17c9e5e132b8faf4ca39d6a52e7f32871
     targets:
       amd64: x86_64
   script:
