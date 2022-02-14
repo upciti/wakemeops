@@ -14,6 +14,17 @@ description: |-
 fetch:
   url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
   sha256: cbd2981ce282eecfea1167c500d900cdd31bd041b0861025743b7d58e4cb9229
+install:
+  - path: /usr/share/applications/mattermost.desktop
+    content: |
+      [Desktop Entry]
+      Name=Mattermost
+      Comment=Mattermost Desktop application for Linux
+      Exec="/opt/mattermost-desktop/mattermost-desktop"
+      Terminal=false
+      Type=Application
+      Icon=/opt/mattermost-desktop/app_icon.png
+      Categories=Network;InstantMessaging;
 script:
   - install -d {{src}}/opt
   - find . -type f -exec chmod 644 -- {} +
@@ -21,15 +32,3 @@ script:
   - chmod 755 mattermost-desktop-{{version}}-linux-x64/mattermost-desktop
   - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
   - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
-  - install -d {{src}}/usr/share/applications
-  - |-
-    cat << EOF >> {{src}}/usr/share/applications/mattermost.desktop
-    [Desktop Entry]
-    Name=Mattermost
-    Comment=Mattermost Desktop application for Linux
-    Exec="/opt/mattermost-desktop/mattermost-desktop"
-    Terminal=false
-    Type=Application
-    Icon=/opt/mattermost-desktop/app_icon.png
-    Categories=Network;InstantMessaging;
-    EOF
