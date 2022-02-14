@@ -730,7 +730,7 @@
     - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
 
 - name: wakemebot
-  version: 2.0.2
+  version: 2.0.3
   homepage: https://github.com/upciti/wakemebot
   summary: bunch of tools used by our beloved wakemebot
   description: |-
@@ -740,7 +740,7 @@
     documentation).
   fetch:
     url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
-    sha256: a188b7ac4a8d8d7679eb2bca5ae4a472ec81548920f3c7b93bfd75088e6a7427
+    sha256: 0ebaf5c7ef8433dcdc312a5106b057d5310976e6b9985471bb5944f509571606
   script:
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
