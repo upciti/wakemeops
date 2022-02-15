@@ -78,9 +78,8 @@
     - mv bin/glab {{src}}/usr/bin/
 
 - name: mask
-  version: 0.11.0
+  version: 0.11.1
   homepage: https://github.com/jakedeichert/mask
-  revision: 2
   summary: command-line task runner defined by a simple markdown file
   description: |-
     mask is a CLI task runner which is defined by a simple markdown file. It
@@ -88,7 +87,7 @@
     commands and arguments.
   fetch:
     url: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
-    sha256: 1247a00b9ecca1818d39672ca412c8a9df9e99940152f3a8fdb51b253d2ddb19
+    sha256: 90f3a5a174c90440eb6cc80453e8b20b2920a5f709246c147c3dd908c40c5bf9
   script:
     - mv mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
 
