@@ -93,6 +93,7 @@
 - name: poetry
   version: 1.1.13
   homepage: https://python-poetry.org
+  arch: all
   summary: tool for dependency management and packaging in Python
   description: |-
     Poetry helps you declare, manage and install dependencies of Python projects,
