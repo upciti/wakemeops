@@ -202,9 +202,8 @@
     - mv gping {{src}}/usr/bin/gping
 
 - name: grex
-  version: 1.3.0
+  version: 1.2.0
   homepage: https://github.com/pemistahl/grex
-  revision: 2
   summary: command-line tool and library for generating regular expressions
   description: |-
     grex is a library as well as a command-line utility that is meant to simplify
@@ -214,12 +213,12 @@
     which it was generated from.
   fetch:
     url: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
-    sha256: df47f82add291905af60d20a3499f6845c65bfe452fa9d30f8c7a900f45578e8
+    sha256: 5d78f64d75ed314fe4bf0d4a81c0cbba4ef5714a99619e49d49e34f67730deed
   script:
     - mv grex {{src}}/usr/bin/
 
 - name: himalaya
-  version: 0.5.5
+  version: 0.5.4
   homepage: https://github.com/soywod/himalaya
   summary: command-line interface for email management
   description: |-
@@ -228,7 +227,7 @@
     v1.0.0.
   fetch:
     url: https://github.com/soywod/himalaya/releases/download/v{{version}}/himalaya-linux.tar.gz
-    sha256: faf010e78aabdbb657f529cf9fd00d239dafce191d35ebae07f3c5541b7dcf60
+    sha256: 1fb381f8bf23aef6e90d694792279ef168fd6763664a59cdb99105c4dae77123
   script:
     - mv himalaya {{src}}/usr/bin/himalaya
 
