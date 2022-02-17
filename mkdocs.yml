@@ -1,20 +1,16 @@
 site_name: WakeMeOps
-site_url: https://docs.wakemeops.com
+site_url: https://docs.wakemeops.com/
 site_description: WakeMeOps documentation
 
 repo_url: https://github.com/upciti/wakemeops
-edit_uri: blob/main/docs/
+edit_uri: ""
 
 nav:
   - Home: "index.md"
   - Usage: "usage.md"
   - Packages:
-      - Dev: "components/dev.md"
-      - Devops: "components/devops.md"
-      - Secops: "components/secops.md"
-      - Terminal: "components/terminal.md"
-      - Desktop: "components/desktop.md"
-
+      - Overview: "packages/index.md"
+      - ...: "packages/template.md"
 theme:
   custom_dir: docs/theme_override_home/
   name: "material"
@@ -26,12 +22,12 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.top
-    - toc.integrate
   palette:
     scheme: slate
 
 plugins:
   - search
+  - wakemedoc
 markdown_extensions:
   - admonition
   - codehilite:
