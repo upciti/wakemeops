@@ -26,7 +26,7 @@
     - mv kapp-linux-{{goarch}} {{src}}/usr/bin/kapp
 
 - name: carvel-ytt
-  version: 0.39.0
+  version: 0.40.0
   homepage: https://carvel.dev/ytt/
   summary: YAML templating tool that works on YAML structure instead of text
   description: |-
@@ -37,8 +37,8 @@
   fetch:
     url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v{{version}}/ytt-linux-{{goarch}}
     sha256:
-      amd64: 7a472b8c62bfec5c12586bb39065beda42c6fe43cf24271275e4dbc0a04acb8b
-      arm64: 64e2bfd870d5b5249f3f261bc9224dbe870877f35cd3040c2ec46c3aaca94d43
+      amd64: 1f3d6cc66dd86b3f47ae6a062fea380f5e7e498887698948130203181c276b42
+      arm64: 04ab81f008300ca386c037a3d1c8be5a63b040c5de16ad691cc9ce8b1f9dc364
   script:
     - mv ytt-linux-{{goarch}} {{src}}/usr/bin/ytt
 
