@@ -17,7 +17,6 @@ jobs:
 
       - name: Bump documentation
         run: |
-          wakemebot docs
           mkdocs build
 
       - name: Deploy to Github pages
