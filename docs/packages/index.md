@@ -4,7 +4,7 @@ template: package_index.html
 
 # {{ repository.package_count }} packages
 
-{% for component in repository.components %}
+{% for component in repository.components.values() %}
 ## {{ component.name | capitalize }}
 
 {{ component.package_count }} packages.

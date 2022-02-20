@@ -59,6 +59,9 @@ RUN install_packages \\
 USER 1001
 " %}
 
+{% set devops = repository.components.devops %}
+{% set terminal = repository.components.terminal %}
+
 <!-- Main site Entry button descriptions -->
 <section class="tx-container">
   <div class="md-grid md-typeset">
@@ -104,7 +107,7 @@ USER 1001
             </span>
             Install and update tools for your terminal
           </h4>
-          <pre><code class="language-bash">sudo apt install bat fd dust exa gping</code></pre>
+          <pre><code class="language-bash">sudo apt install {{ repository.components.terminal.packages|sample(4)|map(attribute="name")|join(" ") }}</code></pre>
         </div>
         <div class="feature-item">
           <h4>
@@ -165,8 +168,10 @@ USER 1001
         {{ repository.package_count }} debian packages
       </h4>
       <p>
-        WakeMeOps packages many devops tools such as kubectl, kustomize, helm
-        and terminal goodies such as bat and gping.
+        WakeMeOps contains many devops tools such as
+        {{devops.packages|sample(4)|map(attribute="name")|join(", ")}} and
+        terminal goodies such as
+        {{terminal.packages|sample(4)|map(attribute="name")|join(", ")}}.
       </p>
     </div>
   </div>

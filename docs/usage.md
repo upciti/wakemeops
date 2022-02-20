@@ -2,7 +2,7 @@
 
 ### Add repository
 
-Our repository is currently split into five components, __desktop__, __devops__, __dev__, __secops__, and __terminal__.
+Our repository is currently split into five components: __{{ repository.components.keys()|join(", ") }}__.
 
 === "Install all five components :rocket:"
     ```shell
@@ -33,7 +33,7 @@ sudo apt-get update
 To get you started, here are a few terminal goodies that you will probably enjoy:
 
 ```shell
-sudo apt install bat fd dust exa gping
+sudo apt install {{ repository.components.terminal.packages|sample(5)|map(attribute="name")|join(" ") }}
 ```
 
 
