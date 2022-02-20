@@ -6,7 +6,19 @@
 
 ## :star: What is it?
 
-WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions. It currently mostly contains devops tools such as kubectl, kustomize, helm, k9s, [...](https://docs.wakemeops.com/packages/).
+WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions.
+
+Our repository contains over 70 packets and is divided into five components: Desktop, DevOps, Dev, SecOps, and Terminal.
+
+For instance, you will find in WakeMeOps these widely used packages:
+
+- Desktop: [mattermost-desktop](https://docs.wakemeops.com/packages/mattermost-desktop)
+- Dev: [poetry](https://docs.wakemeops.com/packages/poetry), [pyenv](https://docs.wakemeops.com/packages/pyenv), [github-cli](https://docs.wakemeops.com/packages/github-cli), [glab](https://docs.wakemeops.com/packages/glab)
+- DevOps: [kubectl](https://docs.wakemeops.com/packages/kubectl), [helm](https://docs.wakemeops.com/packages/helm), [docker-compose](https://docs.wakemeops.com/packages/docker-compose), [terraform](https://docs.wakemeops.com/packages/terraform)
+- SecOps: [trivy](https://docs.wakemeops.com/packages/trivy), [vault](https://docs.wakemeops.com/packages/vault), [boundary](https://docs.wakemeops.com/packages/boundary)
+- Terminal: [bat](https://docs.wakemeops.com/packages/bat), [fd](https://docs.wakemeops.com/packages/fd), [yq](https://docs.wakemeops.com/packages/yq), [gping](https://docs.wakemeops.com/packages/gping), [chezmoi](https://docs.wakemeops.com/packages/chezmoi)
+
+See all packages [here](https://docs.wakemeops.com/packages/)
 
 ## :rocket: Why do I need it?
 
@@ -20,16 +32,20 @@ Of course WakeMeOps doesn't have to be limited to devops, we are open to incorpo
 WakeMeOps allows you to accelerate the setup of your terminal:
 
 ```bash
-sudo apt-get install bat fd dust exa gping
-sudo apt-get install pyenv=2.2.* poetry=1.1.*
-sudo apt-get install helm=3.7.* kustomize=4.4.* kubectl=1.23.*
+# Add WakeMeOps repository
+curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | sudo bash
+
+# Now you can install packages from WakeMeOps
+sudo apt install bat fd dust exa gping
+sudo apt install pyenv=2.2.* poetry=1.1.*
+sudo apt install helm=3.7.3 kustomize=4.4.* kubectl=1.23.1
 ```
 
 And to speed up your updates:
 
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
 ```
 
 ### :whale: For Dockerfile
