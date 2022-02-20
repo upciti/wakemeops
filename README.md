@@ -2,11 +2,11 @@
   <a href="https://docs.wakemeops.com/"><img width="200" height="200" src="https://raw.githubusercontent.com/upciti/wakemeops/main/docs/images/colored-logo.png" alt='WakeMeOps'></a>
 </p>
 
-<p align="center"><strong>WakeMeOps</strong> <em>- Debian repository for portable applications.</em></p>
+<p align="center"><strong>WakeMeOps</strong> <em>- A Debian repository for portable applications.</em></p>
 
 ## :star: What is it?
 
-WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions. It currently mostly contains devops tools such as kubectl, kustomize, helm, k9s, [...](https://docs.wakemeops.com/components/devops/).
+WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions. It currently mostly contains devops tools such as kubectl, kustomize, helm, k9s, [...](https://docs.wakemeops.com/packages/).
 
 ## :rocket: Why do I need it?
 

@@ -7,6 +7,8 @@ __{{ package.summary[0]|upper}}{{package.summary[1:] }}__
 
 {{ package.description }}
 
+:material-format-section: [`{{ package.component }}`](/packages/#{{ package.component }})
+
 :material-home: [{{ package.homepage }}]({{ package.homepage }})
 
 :material-chip: {% for arch in package.versions[package.latest_version] %}<span class="badge arch">{{ arch }}</span> {% endfor %}
@@ -33,7 +35,7 @@ sudo apt install {{ package.name }}
     ```docker
     FROM wakemeops/minideb:bullseye
 
-    RUN install_packages \\
+    RUN install_packages \
         {{ package.name }}={{ package.latest_version }}*
 
     USER 1001
@@ -56,7 +58,7 @@ sudo apt install {{ package.name }}
 
 === "Markdown"
     ```markdown
-    [![WakeMeOps]({{ site_url }}badges/{{ package.name }}.svg)]({{ site_url }}/packages/{{ package.name }})
+    [![WakeMeOps]({{ site_url }}badges/{{ package.name }}.svg)]({{ site_url }}packages/{{ package.name }})
     ```
 
 === "HTML"
