@@ -498,7 +498,7 @@
     - mv logcli-linux-{{goarch}} {{src}}/usr/bin/logcli
 
 - name: minikube
-  version: 1.25.1
+  version: 1.25.2
   homepage: https://minikube.sigs.k8s.io
   summary: quickly set up a local Kubernetes cluster
   description: |-
@@ -513,9 +513,9 @@
   fetch:
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
     sha256:
-      amd64: 1a69a286e9846438778a712297d1daec44d2c702c5f4540d97b3269fdb2b4e3d
-      armhf: 0588bc5dc6c73577fe847a942756026f5c60ce482025901790498c641dfc70d1
-      arm64: 6ed189c228dd9a510664f61010ce0c0f94b961d17edea418740f2838c48aa627
+      amd64: ef610fa83571920f1b6c8538bb31a8dc5e10ff7e1fcdca071b2a8544c349c6fd
+      armhf: 9cb9e5690581be3f7f429993cab1a0d37bc1405a1c9f173c69b34843055126b3
+      arm64: 7a6401bf61347360c1b1d1e0833700b2eacd6de50f256cd633b050ef78d78343
   script:
     - mv minikube-linux-{{goarch}} {{src}}/usr/bin/minikube
 
@@ -743,7 +743,7 @@
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.7.1
+  version: 0.7.2
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -753,7 +753,7 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 8db1d7ea881ebd6837dbdb76ddab3820d80a727f0e6bed9b8b290847ba862e54
-      armhf: 0408d82cdef5e29ff62397ccc53e5442234dfbda231c41b0d95739f11e2c7980
+      amd64: f261bf03f98847271d743b618398010e14a9c396866b49f16425cf6fd6d0a5ab
+      armhf: 854930ce5478a11e4b06fbf4c288974944b9ee8a3cdc79d461f3aad3d05854e2
   script:
     - mv waypoint {{src}}/usr/bin/waypoint
