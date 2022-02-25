@@ -709,6 +709,22 @@
   script:
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
+- name: terragrunt
+  version: 0.36.2
+  homepage: https://terragrunt.gruntwork.io/
+  summary: provides extra tools for working with multiple Terraform modules
+  description: |-
+    Terragrunt is a thin wrapper for Terraform that provides extra tools for
+    keeping your Terraform configurations DRY, working with multiple Terraform
+    modules, and managing remote state.
+  fetch:
+    url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
+    sha256:
+      amd64: 0bf8322f73a0ccb1067774ea6b1b7691aeeeea880cffe74111dd5abae7662ac6
+      arm64: 8cc405818a6e9daea0c44673781217c85b13226017fc0a3c623b4849ea60e1f8
+  script:
+    - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
+
 - name: velero
   version: 1.8.0
   homepage: https://velero.io
