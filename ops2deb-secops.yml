@@ -85,3 +85,23 @@
       arm64: c420f14b8b712197c8c47852ea3d1a5976e9ceaf5bb8e6a0b311624111aa14d4
   script:
     - mv vault {{src}}/usr/bin/vault
+
+- name: vuls-scanner
+  version: 0.19.4
+  homepage: https://vuls.io/
+  summary: agent-less vulnerability scanner
+  description: |-
+    Vuls is open-source, agent-less vulnerability scanner based on information from
+    NVD, OVAL, etc.
+  recommends:
+    - iproute2
+  fetch:
+    url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: 029749156066181cd65a47d2b3fe33e1b9f7f22550467b714ae333a298b957ee
+      armhf: 63a77804c4bd2608cb5d448531a2cdbc74994fe1b4bbd1bd0c512aa2f16995b7
+      arm64: af6c0b1407796536ebe8615976ad13ce11c3ed9c8b9a87d0f88124a8d7e3243c
+    targets:
+      armhf: armv6
+  script:
+    - mv vuls-scanner {{src}}/usr/bin/vuls
