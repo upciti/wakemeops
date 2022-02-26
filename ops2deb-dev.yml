@@ -55,6 +55,22 @@
     - mv gh_{{version}}_linux_*/bin/* {{src}}/usr/bin/
     - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/
 
+- name: github-hub
+  version: 2.14.2
+  homepage: https://hub.github.com
+  summary: do everyday GitHub tasks without ever leaving the terminal
+  description: |-
+    hub is a command line tool that wraps git in order to extend it with extra
+    features and commands that make working with GitHub easier.
+  fetch:
+    url: https://github.com/github/hub/releases/download/v2.14.2/hub-linux-{{goarch}}-{{version}}.tgz
+    sha256:
+      amd64: 74d95fdfb3c78c8af4e2025b04b916ad905ab99a361778500d58269847c7922d
+      armhf: 234fa4cfcfdf1fc4051b27116fd1351a1741cfec556fa227506708ba4997bdeb
+      arm64: 53670fe3ed3d590dc1194257497c7b27b35daf2bfb5b497b1a49e50b3f5a0e61
+  script:
+    - mv hub-linux-{{goarch}}-{{version}}.tgz {{src}}/usr/bin/hub
+
 - name: glab
   version: 1.22.0
   homepage: https://glab.readthedocs.io/
