@@ -642,6 +642,22 @@
   script:
     - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
 
+- name: rclone
+  version: 1.57.0
+  homepage: https://rclone.org/
+  summary: rsync for cloud storage
+  description: |-
+    Rclone ("rsync for cloud storage") is a command-line program to sync files and
+    directories to and from different cloud storage providers.
+  fetch:
+    url: https://github.com/rclone/rclone/releases/download/v{{version}}/rclone-v{{version}}-linux-{{goarch}}.zip
+    sha256:
+      amd64: 49191e1156cf0c41d9e6af35bd31cf2a2884107483823e17671323717905e771
+      armhf: 1616dd35a9d247654567642b4202a7b4ad4601b434d3da85671a1558fffbd4b2
+      arm64: 7ca4bec4cc5f4ba72c863976da33085689083a04b3ee1f7bd37e08a278ca474f
+  script:
+    - mv rclone-v{{version}}-linux-* {{src}}/usr/bin/rclone
+
 - name: scw
   version: 2.4.0
   homepage: https://github.com/scaleway/scaleway-cli
