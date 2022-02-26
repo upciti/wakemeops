@@ -316,6 +316,23 @@
   script:
     - mv kind-linux-{{goarch}} {{src}}/usr/bin/kind
 
+- name: kompose
+  version: 1.26.1
+  homepage: https://kompose.io
+  summary: convert docker-compose.yaml into k8s deployments and services
+  description: |-
+    kompose is a tool to help users who are familiar with docker-compose move to
+    Kubernetes. kompose takes a Docker Compose file and translates it into
+    Kubernetes resources.
+  fetch:
+    url: https://github.com/kubernetes/kompose/releases/download/v{{version}}/kompose-linux-{{goarch}}
+    sha256:
+      amd64: cd85b8c205dc63985e9bde4911b15c8556029e09671599919ed81bff8453a36f
+      armhf: cddeef617c566492cb68e7807403454d3b961d970d7c4a700bd9e1a2595949d9
+      arm64: 3c0173417a0ab9dd695ff198cf8342bb85111604cfbe9a52c0c5c28d36bc0d48
+  script:
+    - mv kompose-linux-{{goarch}} {{src}}/usr/bin/kompose
+
 - name: krew
   version: 0.4.3
   homepage: https://krew.sigs.k8s.io
