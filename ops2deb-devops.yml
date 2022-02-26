@@ -713,6 +713,30 @@
   script:
     - mv rclone-v{{version}}-linux-* {{src}}/usr/bin/rclone
 
+- name: restic
+  version: 0.12.1
+  homepage: https://restic.net/
+  summary: fast, secure, efficient backup program
+  description: |-
+    Restic is a modern backup program that can back up your files:
+    - to many different storage types, including self-hosted and online services
+    - easily, being a single executable that you can run without a server or
+    complex setup
+    - effectively, only transferring the parts that actually changed in the files
+    you back up
+    - securely, by careful use of cryptography in every part of the process
+    - verifiably, enabling you to make sure that your files can be restored when
+    needed
+    - freely - restic is entirely free to use and completely open source
+  fetch:
+    url: https://github.com/restic/restic/releases/download/v{{version}}/restic_{{version}}_linux_{{goarch}}.bz2
+    sha256:
+      amd64: 11d6ee35ec73058dae73d31d9cd17fe79661090abeb034ec6e13e3c69a4e7088
+      armhf: f27c3b271ad36896e22e411dea4c1c14d5ec75a232538c62099771ab7472765a
+      arm64: c7e58365d0b888a60df772e7857ce8a0b53912bbd287582e865e3c5e17db723f
+  script:
+    - mv restic_{{version}}_linux_{{goarch}} {{src}}/usr/bin/restic
+
 - name: scw
   version: 2.4.0
   homepage: https://github.com/scaleway/scaleway-cli
