@@ -26,9 +26,7 @@ default:
 	@echo '* push-{component}            push to s3 repository                 '
 	@echo '* publish                     publish to s3 repository              '
 	@echo -e '\ndocumentation                                                  '
-	@echo '* docs                        run mkdocs build                      '
-	@echo '* docs-dev                    run mkdocs serve from wakemebot image '
-	@echo '* docs-update                 generate documentation with wakemebot '
+	@echo '* docs                        run mkdocs serve                      '
 
 install-wakemeops:
 	curl https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | bash -s $(COMPONENTS)
@@ -90,12 +88,7 @@ exec:
 	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops upciti/wakemebot:main bash
 
 docs:
-	@mkdocs build -d public
-
-docs-dev:
 	@docker run -u $$(id -u) --pull=always --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
 
-docs-update:
-	@docker run --pull=always -u $$(id -u) --rm -it -w /docs -v $$(pwd):/docs upciti/wakemebot:main wakemebot docs
 
-.PHONY: install-wakemeops install-packages check-packages publish docs docs-dev docs-update generate build format update exec
+.PHONY: install-wakemeops install-packages check-packages publish docs generate build format update exec
