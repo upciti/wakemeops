@@ -570,7 +570,7 @@
     - mv nats-{{version}}-linux-{{goarch}}/nats {{src}}/usr/bin/nats
 
 - name: ops2deb
-  version: 0.22.0
+  version: 0.23.0
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -588,7 +588,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 80e59b055202e1bb3db8204429ec9c2e8f0b0cac63b32c61ba65d80aa9c29e2d
+    sha256: abd0a341574b39c7c54b1b7d0c2c779399d73bfd6140a14c2842d7e928444ac4
   script:
     - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
 
