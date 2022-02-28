@@ -230,6 +230,26 @@
   script:
     - mv himalaya {{src}}/usr/bin/himalaya
 
+- name: mdbook
+  version: 0.4.15
+  homepage: https://rust-lang.github.io/mdBook/
+  summary: create book from markdown files
+  description: |-
+    mdBook is ideal for creating product or API documentation, tutorials, course
+    materials or anything that requires a clean, easily navigable and customizable
+    presentation. It features:
+
+    * An integrated search support
+    * Color syntax highlighting for code blocks for many different languages
+    * Theme files allow customizing the formatting of the output
+    * Preprocessors that provide extensions for custom syntax and modifying content
+    * Backends that can render the output to multiple formats
+  fetch:
+    url: https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+    sha256: 4ce861733f08e58ffcd35ed0beb536734fca2543f13b6efc59623234fb17a6fd
+  script:
+    - mv mdbook {{src}}/usr/bin/mdbook
+
 - name: mergestat
   version: 0.5.4
   homepage: https://docs.mergestat.com
