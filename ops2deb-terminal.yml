@@ -230,6 +230,23 @@
   script:
     - mv himalaya {{src}}/usr/bin/himalaya
 
+- name: hostctl
+  version: 1.1.1
+  homepage: http://guumaster.github.io/hostctl
+  summary: manage /etc/hosts from cli
+  description: |-
+    This tool gives you more control over the use of your hosts file. You can have
+    multiple profiles and switch them on/off as you need.
+  fetch:
+    url: https://github.com/guumaster/hostctl/releases/download/v{{version}}/hostctl_{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: 85951c9aaba3761befcf280786bd7dc98d13a8413f394721db3f76079e59bd24
+      arm64: 41e4e263a4c438697064975fa8ee3f6cf93aa46b7a6cfcf9d3efb6a465a0fc00
+    targets:
+      amd64: 64-bit
+  script:
+    - mv hostctl {{src}}/usr/bin/hostctl
+
 - name: mdbook
   version: 0.4.15
   homepage: https://rust-lang.github.io/mdBook/
