@@ -618,7 +618,7 @@
   depends:
     - kubectl
   fetch:
-    url: https://github.com/operator-framework/operator-sdk/releases/download/v1.18.0/operator-sdk_linux_{{goarch}}
+    url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
       amd64: b4986755607e217e152f08b950e27a6f3e17b40984fb00e5a9322c265a9f9dd7
       arm64: 60e2ffa5638c5686013a92ae48d86d2143642178c27ce34e98ccd21150863492
