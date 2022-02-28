@@ -387,6 +387,28 @@
   script:
     - mv kubectl {{src}}/usr/bin/
 
+- name: kubectl-kudo
+  version: 0.19.0
+  homepage: https://kudo.dev/
+  summary: Kubernetes universal declarative operator
+  description: |-
+    Kubernetes Universal Declarative Operator (KUDO) provides a declarative
+    approach to building production-grade Kubernetes Operators covering the entire
+    application lifecycle.
+  depends:
+    - kubectl
+  fetch:
+    url: https://github.com/kudobuilder/kudo/releases/download/v{{version}}/kudo_{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: a35f2fefbc3615cda98db236843ee38037d55f73970f911b43682211b52ca6d0
+      armhf: a1c92a4e16be2a2b7dc3b0b1512f5fc8df631df1eea7c4d1a55313eddaa952ae
+      arm64: 8c7ed02bba01165f0bb86f90ea5e8b675e5fe20fd3677b0b79399289a8db442e
+    targets:
+      amd64: x86_64
+      armhf: armv6
+  script:
+    - mv kubectl-kudo {{src}}/usr/bin/kubectl-kudo
+
 - name: kubectl-neat
   version: 2.0.3
   homepage: https://github.com/itaysk/kubectl-neat
