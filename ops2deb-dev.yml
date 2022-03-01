@@ -37,7 +37,7 @@
     - mv pg_datanymizer {{src}}/usr/bin/
 
 - name: github-cli
-  version: 2.5.1
+  version: 2.5.2
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
   description: |-
@@ -46,9 +46,9 @@
   fetch:
     url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: ed0c1a54edb83564bf3d608fa87fadb85175dca66bcfaeff98193238482c24f7
-      armhf: da72d92f28bd79f5be7dd7d2a306062d7ce8a2d4e77adb9da538d699c5445cca
-      arm64: 4de925151725b54ffecc29f49314301b865ccd50e18301fd8a529a5f73cae19d
+      amd64: 30629f88c1a142cb325a4f706eec812aca771f1fae21e9818057e8735883d89d
+      armhf: 3c02b5c62f14778b6fe29145c92f52a3890dbcee4e9f09cf37fe90ad5c0e2f1a
+      arm64: 34406c53c6c4da792e9b9b9236ff0bb797a14e6fa9ac4d4879f341d430b56008
     targets:
       armhf: armv6
   script:
