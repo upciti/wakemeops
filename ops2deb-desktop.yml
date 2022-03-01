@@ -1,34 +1,74 @@
-name: mattermost-desktop
-version: 5.0.4
-homepage: https://mattermost.com
-summary: desktop application for Mattermost
-description: |-
-  Mattermost is an open source platform for secure communication, collaboration,
-  and orchestration of work across teams and tools.
-  Mattermost is built specifically for software development and engineering use
-  cases and integrates deeply with a rich ecosystem of third-party developer
-  tools. Mattermost gives companies full control over their data; with self-
-  hosted and private cloud deployment options and access to the source code,
-  developers can contribute directly to a shared, flexible, and extensible
-  platform built just for them.
-fetch:
-  url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
-  sha256: cbd2981ce282eecfea1167c500d900cdd31bd041b0861025743b7d58e4cb9229
-install:
-  - path: /usr/share/applications/mattermost.desktop
-    content: |
-      [Desktop Entry]
-      Name=Mattermost
-      Comment=Mattermost Desktop application for Linux
-      Exec="/opt/mattermost-desktop/mattermost-desktop"
-      Terminal=false
-      Type=Application
-      Icon=/opt/mattermost-desktop/app_icon.png
-      Categories=Network;InstantMessaging;
-script:
-  - install -d {{src}}/opt
-  - find . -type f -exec chmod 644 -- {} +
-  - find . -type d -exec chmod 775 -- {} +
-  - chmod 755 mattermost-desktop-{{version}}-linux-x64/mattermost-desktop
-  - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
-  - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
+- name: balena-etcher
+  version: 1.7.7
+  homepage: https://github.com/balena-io/etcher
+  summary: flash OS images to SD cards and USB drives, safely and easily
+  description: |-
+    balenaEtcher is built with web technologies to ensure flashing an SDCard or USB
+    drive is a pleasant and safe experience. It protects you from accidentally
+    writing to your hard-drives, ensures every byte of data was written correctly
+    and much more.
+  fetch:
+    url: https://github.com/balena-io/etcher/releases/download/v{{version}}/balena-etcher-electron_{{version}}_amd64.deb
+    sha256: 643303fc6692aad27678ecd6ceb57eddcb068e392797ad14a426431e637ec0fc
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+
+- name: lens
+  version: 5.3.4-latest.20220120.1
+  homepage: https://k8slens.dev/
+  summary: powerful IDE for kubernetes
+  description: |-
+    Lens provides the full situational awareness for everything that runs in
+    Kubernetes. It’s lowering the barrier of entry for people just getting started
+    and radically improving productivity for people with more experience.
+
+    Lens is built on open source and backed by a number of Kubernetes and cloud
+    native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
+    it’s the largest and most advanced Kubernetes platform in the world.
+  fetch:
+    url: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
+    sha256: 8d43a212c38ddfd5480d4d7cc481b6747a76e2226c150b2701170974df252371
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+
+- name: mattermost-desktop
+  version: 5.0.4
+  homepage: https://mattermost.com
+  summary: desktop application for Mattermost
+  description: |-
+    Mattermost is an open source platform for secure communication, collaboration,
+    and orchestration of work across teams and tools.
+
+    Mattermost is built specifically for software development and engineering use
+    cases and integrates deeply with a rich ecosystem of third-party developer
+    tools. Mattermost gives companies full control over their data; with self-
+    hosted and private cloud deployment options and access to the source code,
+    developers can contribute directly to a shared, flexible, and extensible
+    platform built just for them.
+  fetch:
+    url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
+    sha256: cbd2981ce282eecfea1167c500d900cdd31bd041b0861025743b7d58e4cb9229
+  install:
+    - path: /usr/share/applications/mattermost.desktop
+      content: |
+        [Desktop Entry]
+        Name=Mattermost
+        Comment=Mattermost Desktop application for Linux
+        Exec="/opt/mattermost-desktop/mattermost-desktop"
+        Terminal=false
+        Type=Application
+        Icon=/opt/mattermost-desktop/app_icon.png
+        Categories=Network;InstantMessaging;
+  script:
+    - install -d {{src}}/opt
+    - find . -type f -exec chmod 644 -- {} +
+    - find . -type d -exec chmod 775 -- {} +
+    - chmod 755 mattermost-desktop-{{version}}-linux-x64/mattermost-desktop
+    - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
+    - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
