@@ -72,3 +72,20 @@
     - chmod 755 mattermost-desktop-{{version}}-linux-x64/mattermost-desktop
     - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
     - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
+
+- name: rpi-imager
+  version: 1.7.1
+  homepage: https://github.com/raspberrypi/rpi-imager
+  summary: Raspberry Pi imaging utility
+  description: |-
+    Graphical user-interface to write disk images and format SD cards. Lets you
+    quickly install Raspberry Pi OS and many other popular operating systems for
+    the Pi.
+  fetch:
+    url: https://github.com/raspberrypi/rpi-imager/releases/download/v{{version}}/rpi-imager_{{version}}_amd64.deb
+    sha256: 03e8a36b4342a00ff66abd44e88a5e74f271ec138a317b57dd0965bf0b0d5acd
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
