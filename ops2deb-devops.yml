@@ -709,7 +709,7 @@
     - mv stern_linux_{{goarch}} {{src}}/usr/bin/stern
 
 - name: terraform
-  version: 1.1.6
+  version: 1.1.7
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -720,9 +720,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 3e330ce4c8c0434cdd79fe04ed6f6e28e72db44c47ae50d01c342c8a2b05d331
-      armhf: 2b977ed400747f03374262f171d3deba710f303a0be2daafe9ae2fd65ed851f3
-      arm64: a53fb63625af3572f7252b9fb61d787ab153132a8984b12f4bb84b8ee408ec53
+      amd64: e4add092a54ff6febd3325d1e0c109c9e590dc6c38f8bb7f9632e4e6bcca99d4
+      armhf: 81013a3d554a2a40ac9f59dd1dbadf3e4f43d6e04c14d746a8eeffc45788f8cb
+      arm64: 2f72982008c52d2d57294ea50794d7c6ae45d2948e08598bfec3e492bce8d96e
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
