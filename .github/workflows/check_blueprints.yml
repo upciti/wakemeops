@@ -16,6 +16,15 @@ jobs:
             ops2deb:
               - 'ops2deb-*.yml'
 
+      - name: Clean up labels
+        uses: actions-ecosystem/action-remove-labels@v1
+        if: success()
+        with:
+          labels: |
+            build failed
+            tests failed
+          fail_on_error: false
+
   build_packages:
     needs: [changes]
     if: ${{ needs.changes.outputs.ops2deb == 'true' }}
@@ -37,6 +46,12 @@ jobs:
         run: |
           make generate
           make build
+
+      - name: Set build failed label on failure
+        uses: actions-ecosystem/action-add-labels@v1
+        if: failure()
+        with:
+          labels: build failed
 
       - name: Upload Debian packages
         uses: actions/upload-artifact@v2
@@ -76,8 +91,18 @@ jobs:
           make install-packages
           make check-packages
 
+      - name: Set tests failed label on failure
+        uses: actions-ecosystem/action-add-labels@v1
+        if: failure()
+        with:
+          labels: tests failed
+
   test_packages_success:
     runs-on: ubuntu-latest
-    needs: [test_packages]
+    needs: [test_packages, build_packages]
+    if: always()
     steps:
-      - run: echo Done!
+      - uses: docker://agilepathway/pull-request-label-checker:latest
+        with:
+          none_of: build failed,tests failed
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
