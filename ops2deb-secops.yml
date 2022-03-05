@@ -21,7 +21,7 @@
     - mv boundary {{src}}/usr/bin/boundary
 
 - name: feroxbuster
-  version: 2.5.0
+  version: 2.6.0
   homepage: https://github.com/epi052/feroxbuster
   summary: fast, simple, recursive content discovery tool
   description: |-
@@ -38,9 +38,9 @@
   fetch:
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-feroxbuster.zip
     sha256:
-      amd64: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
-      armhf: ed211ef7f763b2a396e76408061c020ab01493b0929af476ff0a7eec4710d0b3
-      arm64: 89c4f90fb7fea9536925309f233f35e6d40655f8b20da51c7725e897bbf41307
+      amd64: d823c799affe4e4fb3321ed130418e5dde5e30ebacd0873cb89ff0e1dda414d2
+      armhf: e88c79fd6b535f9af37b500351d1fccff59979dc7c4ec3b95c97448d365bb15d
+      arm64: debfb1f7527b4e1112bb64f4c97083886613616c79774a507ccf3111e4aec110
     targets:
       amd64: x86_64-linux
       armhf: armv7
