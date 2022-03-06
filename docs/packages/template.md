@@ -5,7 +5,7 @@
 
 __{{ package.summary[0]|upper}}{{package.summary[1:] }}__
 
-{{ package.description }}
+{{ package.description|replace("\n.\n", "\n\n") }}
 
 :material-format-section: [`{{ package.component }}`](/packages/#{{ package.component }})
 

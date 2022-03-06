@@ -13,7 +13,7 @@ template: package_index.html
 | Name | Summary | Version |
 | ---- | ------- | ------- |
 {% for package in component.packages -%}
-| [{{ package.name }}](/packages/{{ package.name }}) | {{ package.summary }} | {{ package.latest_version | truncate(10) }} |
+| [{{ package.name }}](/packages/{{ package.name }}) | {{ package.summary|capitalize }} | {{ package.latest_version | truncate(10) }} |
 {% endfor %}
 
 {% endfor %}
