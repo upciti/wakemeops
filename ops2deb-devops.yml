@@ -109,7 +109,7 @@
     - mv devspace-linux-{{goarch}} {{src}}/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.3.0
+  version: 2.3.1
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -119,9 +119,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: c3b42086f3b6b4cce2d9ec21a83690960561d0ee41aeb359b810908b56dd0906
-      armhf: dc388a54cc96abab70a132eb3b7e0f6b9efc513101b8f25f2a0b2b4b477812a9
-      arm64: 75e486a093000421d88746dbc7906d123e1b407342ed57a902692a512ac00a8f
+      amd64: 94e5a9327d94c67ccdfd40d0aa226ddf8130aa2a6aaf673f916b4d7fec36cae8
+      armhf: c87f06dbf890043c0bbd66a8a54fc866f55b3a4fa5252700920bfee3bab75cf1
+      arm64: c8c160624407fc0757acf2f666f1a8aa86300c8be9afeb37355ac61a2e25f52f
     targets:
       amd64: x86_64
       armhf: armv7
