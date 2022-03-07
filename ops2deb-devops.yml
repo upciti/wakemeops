@@ -300,9 +300,8 @@
     - mv k9s {{src}}/usr/bin/k9s
 
 - name: kind
-  version: 0.11.1
+  version: 0.12.0
   homepage: https://kind.sigs.k8s.io
-  revision: 3
   summary: deploy Kubernetes cluster in Docker
   description: |-
     kind is a tool for running local Kubernetes clusters using Docker container
@@ -311,8 +310,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-{{goarch}}
     sha256:
-      amd64: 949f81b3c30ca03a3d4effdecda04f100fa3edc07a28b19400f72ede7c5f0491
-      arm64: 320c992ada56292ec5e12b0b85f5dfc60045a6ffcdfaf6ad3f5a554e40ef0235
+      amd64: b80624c14c807490c0944d21fdc9c3455d6cc904fad486fe236f2187ecaa5789
+      arm64: 26c16a8ec90e2a3a42f2f8e1c7139b69769ce1011e7a314cb4ae86345e6363bd
   script:
     - mv kind-linux-{{goarch}} {{src}}/usr/bin/kind
 
