@@ -268,7 +268,7 @@
     - mv mdbook {{src}}/usr/bin/mdbook
 
 - name: mergestat
-  version: 0.5.4
+  version: 0.5.5
   homepage: https://docs.mergestat.com
   summary: enables SQL queries for data in git repositories
   description: |-
@@ -276,7 +276,7 @@
     understand everything that goes into building and shipping software.
   fetch:
     url: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
-    sha256: e85b83644e182d034c788c184b281a51727928b1904f31cea7c1558132923bf6
+    sha256: c54a5f70c06ea0b996a73b3ef8c14b77d8bdf829def6d5bacaeb85a94813b6a8
   script:
     - mv mergestat {{src}}/usr/bin/mergestat
 
