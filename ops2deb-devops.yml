@@ -109,7 +109,7 @@
     - mv devspace-linux-{{goarch}} {{src}}/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.3.1
+  version: 2.3.2
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -119,9 +119,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 94e5a9327d94c67ccdfd40d0aa226ddf8130aa2a6aaf673f916b4d7fec36cae8
-      armhf: c87f06dbf890043c0bbd66a8a54fc866f55b3a4fa5252700920bfee3bab75cf1
-      arm64: c8c160624407fc0757acf2f666f1a8aa86300c8be9afeb37355ac61a2e25f52f
+      amd64: c999dd4ed26c4549d94e29c86af080e1e1c8490b1586f2bd678abdddeb390a70
+      armhf: aad38b2e3f2e33e793ca2e3ca7157eb13a1d42fb0c7700815ba73cc0109dc75d
+      arm64: a01d2e37549b48b61df6f65e3d9f2fb987efe7849b5cd07c8be85c36fec11467
     targets:
       amd64: x86_64
       armhf: armv7
@@ -227,7 +227,7 @@
     - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
 
 - name: iamlive
-  version: 0.45.0
+  version: 0.46.0
   homepage: https://github.com/iann0036/iamlive
   summary: generate policies from AWS calls
   description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
@@ -235,8 +235,8 @@
   fetch:
     url: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 1982dfc0cdfa32bd67e54ab11ea09478d12a99d5995a5c427afd1e7c543e6a28
-      arm64: 49bec1e96bd591eb910db5b652800a0b401484eb77c67981d35fda31247fa3b1
+      amd64: 46512ca8f59f294b39aa3e0ab6f1ba92891a1f716aaa0f8e1aee4c1c7a89a65f
+      arm64: a5bbab8620ba5efd70ac7a58836efcb68c06fdf82a597e8df55b527538968569
   script:
     - mv iamlive {{src}}/usr/bin/iamlive
 
