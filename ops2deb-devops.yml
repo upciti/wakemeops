@@ -796,7 +796,7 @@
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
 - name: velero
-  version: 1.8.0
+  version: 1.7.2
   homepage: https://velero.io
   summary: backup and migrate Kubernetes applications and their persistent volumes
   description: |-
@@ -807,9 +807,9 @@
   fetch:
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 0530082cb8d1412e926e4afcef72a7eff45f8820a6480d5358b70b4d8ffcbf78
-      armhf: 14a06856a84ff5f3e66ce0323319277b0234564d8a1982ce537cd92b2e67495c
-      arm64: 62c96df0b71d4b28d424b15aa79fb83ba120dfeb3c47418e82f638f83c365c34
+      amd64: 8dac72c2050d36d484547864d72c572928e3fcea58cfcedbe4a6d2cc6513f924
+      armhf: 4fb54fc1f832b1d75021f1022a1b3f9368d7cd3a6bde66517ab5ab1de457ca8e
+      arm64: 6aace227d055f9120b08944b76f86b289ca3b215df900145b000c4b1e3b3fe22
   script:
     - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
 
