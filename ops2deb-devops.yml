@@ -185,7 +185,7 @@
     - mv release-cli-linux-{{goarch}} {{src}}/usr/bin/release-cli
 
 - name: helm
-  version: 3.8.0
+  version: 3.8.1
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
@@ -196,9 +196,9 @@
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 8408c91e846c5b9ba15eb6b1a5a79fc22dd4d33ac6ea63388e5698d1b2320c8b
-      armhf: 05e900d0688edd8d455e0d4c51b419cd2b10120d485be7a1262582f51c92e941
-      arm64: 23e08035dc0106fe4e0bd85800fd795b2b9ecd9f32187aa16c49b0a917105161
+      amd64: d643f48fe28eeb47ff68a1a7a26fc5142f348d02c8bc38d699674016716f61cd
+      armhf: 9f87153f545eea27b72ad9c639b197df792a4c784b403f118975e34a1bace2ca
+      arm64: dbf5118259717d86c57d379317402ed66016c642cc0d684f3505da6f194b760d
   script:
     - mv linux-{{goarch}}/helm {{src}}/usr/bin/
 
@@ -241,7 +241,7 @@
     - mv iamlive {{src}}/usr/bin/iamlive
 
 - name: istioctl
-  version: 1.13.1
+  version: 1.13.2
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -250,9 +250,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: fc3ce898bca06af01e3e0d28cb7ff34c59c7878bf50e5c7c56ee28d44eb96f3f
-      armhf: ee077551855a33c360cb696a4d4e8469cb72803ba1ba48269b4cb2cb959bad71
-      arm64: 1c11bf9b98b00e93f1ffdd276a27c566a5d9582fa7c92a88d83a270976dc7786
+      amd64: a1c30fe5c612fce80a19fe3d221ddac43f8fc6395e0f18d12bd34320f059dea7
+      armhf: 7fcbc2514c9cad3756557bb49015707f9ede72478980aa79ddaf22090d507929
+      arm64: 5ec5fd654a48189ee4738d18548002240e2e1c98afd477bdf48819b49354a25f
     targets:
       armhf: armv7
   script:
