@@ -75,7 +75,7 @@
     - mv container-structure-test-linux-{{goarch}} {{src}}/usr/bin/container-structure-test
 
 - name: datree
-  version: 0.15.52
+  version: 1.0.1
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -86,8 +86,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: b2cee63e5396eeb55d788a6c2407cd00eed1db80ceab79b70c1346993703e67b
-      arm64: e2665c7b18c50eac385a979dd90318213e9ef442bbf2ce087b71ae550e46c609
+      amd64: f35a912be92541b7abee5d7e5ecd9194fa4f213c46b20e8a0051aa2e4529fb6e
+      arm64: 18eea31a7e852821ba9c0622c7bf2f14f13c8387227acc5c0e96081694f66b9e
     targets:
       amd64: x86_64
   script:
@@ -779,7 +779,7 @@
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
 - name: terragrunt
-  version: 0.36.3
+  version: 0.36.5
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -789,8 +789,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: 74d8a8dc4274acdd8b636e725fbb56e7e8796d6cc829be5290e458906d3f34ed
-      arm64: ee9e4a21b54e6c508e990766911d0be51272ccecbd2201dabb3a1b14601d0243
+      amd64: a9a355d7d1bffa55823a3929e0bfd2088bc3e2256b45d7465838ce54716fbfb9
+      arm64: 6ea4fc3eb6eac407da78a9931a0b31e4ed9aa95c9ba76cfc646ab5acdb04b885
   script:
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
