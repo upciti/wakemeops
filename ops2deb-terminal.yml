@@ -231,7 +231,7 @@
     - mv himalaya {{src}}/usr/bin/himalaya
 
 - name: hostctl
-  version: 1.1.1
+  version: 1.1.2
   homepage: http://guumaster.github.io/hostctl
   summary: manage /etc/hosts from cli
   description: |-
@@ -240,8 +240,8 @@
   fetch:
     url: https://github.com/guumaster/hostctl/releases/download/v{{version}}/hostctl_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 85951c9aaba3761befcf280786bd7dc98d13a8413f394721db3f76079e59bd24
-      arm64: 41e4e263a4c438697064975fa8ee3f6cf93aa46b7a6cfcf9d3efb6a465a0fc00
+      amd64: a69c0abe184a1b721ac463bd55315cd119973321b7019f08063d72e48a40966e
+      arm64: 864f0d1d6bf00f39f6dda0ef5f66500f93e95e689f905fa1d2911a9af44e3e4c
     targets:
       amd64: 64-bit
   script:
