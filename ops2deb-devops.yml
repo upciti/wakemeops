@@ -709,7 +709,7 @@
     - mv scw-{{version}}-linux-* {{src}}/usr/bin/scw
 
 - name: skaffold
-  version: 1.36.0
+  version: 1.37.0
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -724,8 +724,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
     sha256:
-      amd64: 14e5545d5d9b69e3eff1fbfacaf5a9f5e8f33ceca4392bceb81eb27c69966c1a
-      arm64: c0a3020295e4ce5f44ec8fe5be981080af4c25d8abaa3be6879edc861cea9b29
+      amd64: a764386c6f18b678f2bb8782e4cdd62996be2cbce4cc81166dfc6d78569f0aa6
+      arm64: 2e8fa25d9f47009e92e0524aacfe9dce89e82c7ed5fd2ce0de90a4edf8a9a62c
   script:
     - mv skaffold-linux-{{goarch}} {{src}}/usr/bin/skaffold
 
@@ -779,7 +779,7 @@
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
 - name: terragrunt
-  version: 0.36.5
+  version: 0.36.6
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -789,8 +789,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: a9a355d7d1bffa55823a3929e0bfd2088bc3e2256b45d7465838ce54716fbfb9
-      arm64: 6ea4fc3eb6eac407da78a9931a0b31e4ed9aa95c9ba76cfc646ab5acdb04b885
+      amd64: a918cc71c18f1d99a403824aec1f4db8c9a5792e532b859ebabfe43e55f05a38
+      arm64: c7ec72757cd85ad4c22da1394d1ec3460b6f0365933bbe8383942ba8d4661d00
   script:
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
