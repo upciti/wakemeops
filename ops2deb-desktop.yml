@@ -1,5 +1,5 @@
 - name: balena-etcher
-  version: 1.7.7
+  version: 1.7.8
   homepage: https://github.com/balena-io/etcher
   summary: flash OS images to SD cards and USB drives, safely and easily
   description: |-
@@ -9,7 +9,7 @@
     and much more.
   fetch:
     url: https://github.com/balena-io/etcher/releases/download/v{{version}}/balena-etcher-electron_{{version}}_amd64.deb
-    sha256: 643303fc6692aad27678ecd6ceb57eddcb068e392797ad14a426431e637ec0fc
+    sha256: b1376f07a318e36caae048bfebf33509245b701c8f6d62d3ca19b9c4e81b21fc
   install:
     - data:/
   script:
