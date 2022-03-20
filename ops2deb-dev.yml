@@ -262,3 +262,18 @@
     sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
   script:
     - mv pyoxidizer {{src}}/usr/bin/pyoxidizer
+
+- name: scala-cli
+  version: 0.1.2
+  homepage: https://scala-cli.virtuslab.org/
+  summary: command-line tool to interact with the Scala language
+  description: |-
+    Scala CLI is an experimental tool to run/compile/test Scala that aims at being
+    a better scala command. It shares some similarities with build tools, but
+    doesn't aim at supporting multi-module projects, nor to be extended via a task
+    system.
+  fetch:
+    url: https://github.com/VirtusLab/scala-cli/releases/download/v{{version}}/scala-cli-x86_64-pc-linux.deb
+    sha256: 40058131f8784f5b7fdd200a31823d5a021f051b831ea4de712a769040466819
+  install:
+    - data/usr/share/scala/scala-cli:/usr/bin/scala-cli
