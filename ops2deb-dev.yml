@@ -190,6 +190,7 @@
 - name: pyenv
   version: 2.2.5
   homepage: https://github.com/pyenv/pyenv
+  revision: 2
   arch: all
   summary: simple Python version management
   description: |-
@@ -222,6 +223,7 @@
       content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
   script:
     - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - chmod +x {{src}}/usr/lib/pyenv/libexec/* {{src}}/usr/lib/pyenv/plugins/python-build/bin/*
     - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
 
 - name: pyoxidizer
