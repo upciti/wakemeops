@@ -744,6 +744,31 @@
   script:
     - mv stern_linux_{{goarch}} {{src}}/usr/bin/stern
 
+- name: telepresence
+  version: 2.5.3
+  homepage: https://www.telepresence.io/
+  summary: fast, local development for kubernetes and openshift microservices
+  description: |-
+    Open source tool that lets you run a single service locally, while connecting
+    that service to a remote Kubernetes cluster. This lets developers working on
+    multi-service applications to:
+
+    - Do fast local development of a single service, even if that service depends
+    on other services in your cluster. Make a change to your service, save, and you
+    can immediately see the new service in action.
+    - Use any tool installed locally to test/debug/edit your service. For example,
+    you can use a debugger or IDE!
+    - Make your local development machine operate as if it's part of your
+    Kubernetes cluster. If you've got an application on your machine that you want
+    to run against a service in the cluster -- it's easy to do.
+  fetch:
+    url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
+    sha256:
+      amd64: bc5e5495ec8e0b0d82a367a7060d7bd63c9f9483c0debc34c5eaf065185f40db
+      arm64: 7a8a7f6e08acdde747d2894d5a046e54c051f691b39a787a22a3881ac2bdf46e
+  script:
+    - mv telepresence {{src}}/usr/bin/telepresence
+
 - name: terraform
   version: 1.1.7
   homepage: https://www.terraform.io
