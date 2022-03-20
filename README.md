@@ -6,9 +6,9 @@
 
 ## :star: What is it?
 
-WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically build applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions.
+WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically built applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions.
 
-Our repository contains over 70 packets and is divided into five components: Desktop, DevOps, Dev, SecOps, and Terminal.
+Our repository contains over 90 applications and is divided into five components: Desktop, DevOps, Dev, SecOps, and Terminal.
 
 For instance, you will find in WakeMeOps these widely used packages:
 
