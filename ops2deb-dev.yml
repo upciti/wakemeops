@@ -22,7 +22,7 @@
     - install -m 755 clog {{src}}/usr/bin/
 
 - name: coursier
-  version: 2.0.16-200-ge888c6dea
+  version: 2.1.0-M5
   homepage: https://get-coursier.io/
   summary: Scala application and artifact manager
   description: |-
@@ -38,7 +38,7 @@
     - csound
   fetch:
     url: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
-    sha256: 5954aef9b7f5a8dce0fb61f56490aa7ebd6858a8dfb62d448b8c997c3fb00043
+    sha256: 3a9904baba49af5f8fea96eb9fd31aa6779637eb5b177b500ad6ad16706a0f1b
   script:
     - gzip -d cs-x86_64-pc-linux.gz
     - mv cs-x86_64-pc-linux {{src}}/usr/bin/cs
