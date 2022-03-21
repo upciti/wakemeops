@@ -217,7 +217,7 @@
     - mv grex {{src}}/usr/bin/
 
 - name: himalaya
-  version: 0.5.9
+  version: 0.5.10
   homepage: https://github.com/soywod/himalaya
   summary: command-line interface for email management
   description: |-
@@ -226,7 +226,7 @@
     v1.0.0.
   fetch:
     url: https://github.com/soywod/himalaya/releases/download/v{{version}}/himalaya-linux.tar.gz
-    sha256: 9f6441ff5eadd21357646f7e8ede08a14d4f7fc6280906d6862c73644d789017
+    sha256: c389e6804511a0ed52db3eb6d4fec80cc03d556e31653fdf77c6bbcadcf93507
   script:
     - mv himalaya {{src}}/usr/bin/himalaya
 
