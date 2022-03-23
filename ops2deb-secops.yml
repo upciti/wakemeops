@@ -69,7 +69,7 @@
     - mv trivy {{src}}/usr/bin/trivy
 
 - name: vault
-  version: 1.9.4
+  version: 1.10.0
   homepage: https://www.hashicorp.com/products/vault
   summary: tool to create, manage and store secrets
   description: |-
@@ -80,9 +80,9 @@
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 9be49dc07a1b73cc78dd5e5cca88588758bb1994fd954ae2c983eb5986887db5
-      armhf: ebb2bd7b38719648a02dec93119a44de9a1c92decbb5e61349ed5a48fcd7ed4d
-      arm64: 420d338c965e8ed4d31babe7ac69d44ad2ce898c54c4bb9b16cc6280ffef0763
+      amd64: ec06473d79e77c05700f051278c54b0f7b6f2df64f57f630a0690306323f1175
+      armhf: 342d450170f6396a9656c99205c4336b480fc0adb1e68b132d88abe5109fee29
+      arm64: e4f963616ed0c4a4a03d541fb531d692014357f2fb53b3c64e75dfe35b96d7be
   script:
     - mv vault {{src}}/usr/bin/vault
 
