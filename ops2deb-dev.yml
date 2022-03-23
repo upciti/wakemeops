@@ -39,9 +39,8 @@
   fetch:
     url: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
     sha256: 3a9904baba49af5f8fea96eb9fd31aa6779637eb5b177b500ad6ad16706a0f1b
-  script:
-    - gzip -d cs-x86_64-pc-linux.gz
-    - mv cs-x86_64-pc-linux {{src}}/usr/bin/cs
+  install:
+    - cs-x86_64-pc-linux:/usr/bin/cs
 
 - name: datanymizer
   version: 0.5.1
