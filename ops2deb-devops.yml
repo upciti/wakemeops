@@ -624,7 +624,7 @@
     - mv operator-sdk_linux_{{goarch}} {{src}}/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.28.0
+  version: 0.29.1
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -642,7 +642,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 2cf6d81c333f7af1bf9073b21a8c973de04aa22d40c72a87a56a8f30f1a62fb1
+    sha256: 57e876cdc88b77412f07d332a7e439620a99aaf8af58102fd19d26b6b2fdaf6c
   script:
     - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
 
