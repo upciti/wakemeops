@@ -6,8 +6,8 @@
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
     sha256: da3544c525bb1dccbd6702eaf19c20ff774bb439c904fb7184242ed7439b11d2
-  script:
-    - mv argocd-linux-{{goarch}} {{src}}/usr/bin/argocd
+  install:
+    - argocd-linux-{{goarch}}:/usr/bin/argocd
 
 - name: carvel-kapp
   version: 0.46.0
@@ -22,8 +22,8 @@
     sha256:
       amd64: 130f648cd921761b61bb03d7a0f535d1eea26e0b5fc60e2839af73f4ea98e22f
       arm64: f40cf819f170ce50632bcb683098a05711d0a2a7110b72eb2754a7fc651eb2f3
-  script:
-    - mv kapp-linux-{{goarch}} {{src}}/usr/bin/kapp
+  install:
+    - kapp-linux-{{goarch}}:/usr/bin/kapp
 
 - name: carvel-ytt
   version: 0.40.1
@@ -39,8 +39,8 @@
     sha256:
       amd64: 11222665c627b8f0a1443534a3dde3c9b3aac08b322d28e91f0e011e3aeb7df5
       arm64: c5d2f033b375ee87414b51d16c324d7a441de2f256865b5c774c4d5aea30ef60
-  script:
-    - mv ytt-linux-{{goarch}} {{src}}/usr/bin/ytt
+  install:
+    - ytt-linux-{{goarch}}:/usr/bin/ytt
 
 - name: container-diff
   version: 0.17.0
@@ -53,8 +53,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/container-diff/releases/download/v{{version}}/container-diff-linux-{{goarch}}
     sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
-  script:
-    - mv container-diff-linux-{{goarch}} {{src}}/usr/bin/container-diff
+  install:
+    - container-diff-linux-{{goarch}}:/usr/bin/container-diff
 
 - name: container-structure-test
   version: 1.11.0
@@ -71,8 +71,8 @@
     sha256:
       amd64: 1524da5fd5a0fc88c4c9257a3de05a45f135df07e6a684380dd5f659b9ce189b
       arm64: b376ff80134d2d609c591b98d65d653a514755b4861185fd93159af7062ec65d
-  script:
-    - mv container-structure-test-linux-{{goarch}} {{src}}/usr/bin/container-structure-test
+  install:
+    - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
   version: 1.1.22
@@ -90,8 +90,8 @@
       arm64: f0c6c0390ec1e2d58b6660a4513cc1e802c5929c93958a42bbf80cd8fabc9eff
     targets:
       amd64: x86_64
-  script:
-    - mv datree {{src}}/usr/bin/datree
+  install:
+    - datree:/usr/bin/
 
 - name: devspace
   version: 5.18.4
@@ -106,7 +106,7 @@
       amd64: 60bb562b73cdd7bb5ce36fc6643254f795cb5dc151a26c5d108548e2905be627
       arm64: c088ec2015b71db6ab1e8675051e66ebe769c03749f3abd4525f4e02ded8bedf
   script:
-    - mv devspace-linux-{{goarch}} {{src}}/usr/bin/devspace
+    - install devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
   version: 2.4.1
@@ -126,8 +126,8 @@
       amd64: x86_64
       armhf: armv7
       arm64: aarch64
-  script:
-    - mv docker-compose-linux-* {{src}}/usr/bin/docker-compose
+  install:
+    - docker-compose-linux-{{target}}:/usr/bin/docker-compose
 
 - name: docker-slim
   version: 1.37.5
@@ -164,8 +164,8 @@
       amd64: 39daf4fedce33620f2c7d3513b612575078162738422350254244b4842517f79
       armhf: 9dc2ac547ca6247e936d0424d86ea6e37d695f145bd9a5a595b94eb86940b25f
       arm64: 6be4cc952c4b18a9ff00997882780ce36a6c6a23d8f7ca80a63fce0e418adeb5
-  script:
-    - mv flux {{src}}/usr/bin/flux
+  install:
+    - flux:/usr/bin/
 
 - name: gitlab-release-cli
   version: 0.11.0
@@ -181,8 +181,8 @@
       amd64: c3bc1c23c3c91267c550e8ab8b53f6b699ec914046434dff3857b4d317f179e1
       armhf: 3521cf36c4e79dbf776bfe7eb23a7b6a3c404659dc9f2bffafe99eb5f9e929a9
       arm64: ab9993dc0eda80a0107373897ad000b9ecf68eefd366fcff895e7c8dcb66c79e
-  script:
-    - mv release-cli-linux-{{goarch}} {{src}}/usr/bin/release-cli
+  install:
+    - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
 - name: helm
   version: 3.8.1
@@ -199,8 +199,8 @@
       amd64: d643f48fe28eeb47ff68a1a7a26fc5142f348d02c8bc38d699674016716f61cd
       armhf: 9f87153f545eea27b72ad9c639b197df792a4c784b403f118975e34a1bace2ca
       arm64: dbf5118259717d86c57d379317402ed66016c642cc0d684f3505da6f194b760d
-  script:
-    - mv linux-{{goarch}}/helm {{src}}/usr/bin/
+  install:
+    - linux-{{goarch}}/helm:/usr/bin/
 
 - name: helmfile
   version: 0.144.0
@@ -222,8 +222,8 @@
     sha256:
       amd64: dcf865a715028d3a61e2fec09f2a0beaeb7ff10cde32e096bf94aeb9a6eb4f02
       arm64: 8461bbb13ba23f4333dc99d96bf7a24c283cd7683e746acf639d80bbd828926a
-  script:
-    - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
+  install:
+    - helmfile_linux_{{goarch}}:/usr/bin/helmfile
 
 - name: iamlive
   version: 0.46.0
@@ -236,12 +236,13 @@
     sha256:
       amd64: 46512ca8f59f294b39aa3e0ab6f1ba92891a1f716aaa0f8e1aee4c1c7a89a65f
       arm64: a5bbab8620ba5efd70ac7a58836efcb68c06fdf82a597e8df55b527538968569
-  script:
-    - mv iamlive {{src}}/usr/bin/iamlive
+  install:
+    - iamlive:/usr/bin/iamlive
 
 - name: istioctl
   version: 1.13.2
   homepage: https://istio.io
+  revision: 2
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
   depends:
@@ -254,10 +255,10 @@
       arm64: 5ec5fd654a48189ee4738d18548002240e2e1c98afd477bdf48819b49354a25f
     targets:
       armhf: armv7
+  install:
+    - istio-{{version}}:/opt/istio/
   script:
-    - install -d {{src}}/opt/istio
-    - mv * {{src}}/opt/istio/
-    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+    - ln -s /opt/istio/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: k3d
   version: 5.4.1
@@ -273,8 +274,8 @@
       amd64: 50f64747989dc1fcde5db5cb82f8ac132a174b607ca7dfdb13da2f0e509fda11
       armhf: 68a3db44493b121e8f48a88ce1976fda78f200a5740ca0fcd7a828cf21a5264a
       arm64: 712ffb338ec1fed6f7c1c8691b79bc80967cc17fef256cd620190d0d7e502052
-  script:
-    - mv k3d-linux-{{goarch}} {{src}}/usr/bin/k3d
+  install:
+    - k3d-linux-{{goarch}}:/usr/bin/k3d
 
 - name: k9s
   version: 0.25.18
@@ -295,8 +296,8 @@
     targets:
       amd64: x86_64
       armhf: arm
-  script:
-    - mv k9s {{src}}/usr/bin/k9s
+  install:
+    - k9s:/usr/bin/
 
 - name: kind
   version: 0.12.0
@@ -311,8 +312,8 @@
     sha256:
       amd64: b80624c14c807490c0944d21fdc9c3455d6cc904fad486fe236f2187ecaa5789
       arm64: 26c16a8ec90e2a3a42f2f8e1c7139b69769ce1011e7a314cb4ae86345e6363bd
-  script:
-    - mv kind-linux-{{goarch}} {{src}}/usr/bin/kind
+  install:
+    - kind-linux-{{goarch}}:/usr/bin/kind
 
 - name: kompose
   version: 1.26.1
@@ -328,8 +329,8 @@
       amd64: cd85b8c205dc63985e9bde4911b15c8556029e09671599919ed81bff8453a36f
       armhf: cddeef617c566492cb68e7807403454d3b961d970d7c4a700bd9e1a2595949d9
       arm64: 3c0173417a0ab9dd695ff198cf8342bb85111604cfbe9a52c0c5c28d36bc0d48
-  script:
-    - mv kompose-linux-{{goarch}} {{src}}/usr/bin/kompose
+  install:
+    - kompose-linux-{{goarch}}:/usr/bin/kompose
 
 - name: krew
   version: 0.4.3
@@ -345,8 +346,8 @@
       amd64: 5df32eaa0e888a2566439c4ccb2ef3a3e6e89522f2f2126030171e2585585e4f
       armhf: 68eb9e9f5bba29c7c19fb52bfc43a31300f92282a4e81f0c51ad26ed2c73eb03
       arm64: 0994923848882ad0d4825d5af1dc227687a10a02688f785709b03549dd34d71d
-  script:
-    - mv krew-linux_{{goarch}} {{src}}/usr/bin/krew
+  install:
+    - mv krew-linux_{{goarch}}:/usr/bin/krew
 
 - name: kube-score
   version: 1.14.0
@@ -404,8 +405,8 @@
     targets:
       amd64: x86_64
       armhf: armv6
-  script:
-    - mv kubectl-kudo {{src}}/usr/bin/kubectl-kudo
+  install:
+    - kubectl-kudo:/usr/bin/kubectl-kudo
 
 - name: kubectl-neat
   version: 2.0.3
@@ -420,8 +421,8 @@
     sha256:
       amd64: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
       arm64: 1e3e175fdd220bb11128eb83cdbd986aa8e83dd4e1e55c285a0c5c97dacd26aa
-  script:
-    - mv kubectl-neat {{src}}/usr/bin/kubectl-neat
+  install:
+    - kubectl-neat:/usr/bin/
 
 - name: kubectx
   version: 0.9.4
@@ -478,8 +479,8 @@
       amd64: a826158644323c75961e3d365a07f726a3319d48fc0fcdff06e3d3f9d19baa93
       armhf: 37ab509d386806224f649c4768c6886ef988ba01697c916160135c5bbaa21dc7
       arm64: 600b3eabaf2fd47b204c6d46ac10141381c6f98e0b6d0f95f2aab0338f3fff63
-  script:
-    - mv kubeseal {{src}}/usr/bin/kubeseal
+  install:
+    - kubeseal:/usr/bin/
 
 - name: kustomize
   version: 4.5.4
@@ -498,8 +499,8 @@
     sha256:
       amd64: 1159c5c17c964257123b10e7d8864e9fe7f9a580d4124a388e746e4003added3
       arm64: 094417546ab9b44ece44f3b31f3170080d0682519144301d5b6be080276a1f34
-  script:
-    - mv kustomize {{src}}/usr/bin/
+  install:
+    - kustomize:/usr/bin/
 
 - name: linkerd
   version: 21.12.4
@@ -517,8 +518,8 @@
       amd64: c976f8a739a6ece7535977a185daf53ce797cb854628e208d7149bb79e22988f
       armhf: aa42a8d6cced007dfcac892eb027219fc644d13e0c89201614831ecfc22c9a5d
       arm64: e2d4357a7d5dc533e4032a7998636b880b60a78933a14a8e44e8b7bc01c70c4c
-  script:
-    - mv linkerd2-cli-edge-{{version}}-linux-{{goarch}} {{src}}/usr/bin/linkerd
+  install:
+    - linkerd2-cli-edge-{{version}}-linux-{{goarch}}:/usr/bin/linkerd
 
 - name: logcli
   version: 2.4.2
@@ -531,8 +532,8 @@
       amd64: 68e5e281b4488ad49303cce972e194fe4e186cd519ed8a14db0c28316ad01e05
       armhf: 362eb654400e33024c40d1a8f4595241f206fbcb39b8767fe7104cf301f8d325
       arm64: 38003a38b3ffab792fc1f00d68bf48fe440ec48ff0eb13206c37805e18d19eac
-  script:
-    - mv logcli-linux-{{goarch}} {{src}}/usr/bin/logcli
+  install:
+    - logcli-linux-{{goarch}}:/usr/bin/logcli
 
 - name: minikube
   version: 1.25.2
@@ -553,8 +554,8 @@
       amd64: ef610fa83571920f1b6c8538bb31a8dc5e10ff7e1fcdca071b2a8544c349c6fd
       armhf: 9cb9e5690581be3f7f429993cab1a0d37bc1405a1c9f173c69b34843055126b3
       arm64: 7a6401bf61347360c1b1d1e0833700b2eacd6de50f256cd633b050ef78d78343
-  script:
-    - mv minikube-linux-{{goarch}} {{src}}/usr/bin/minikube
+  install:
+    - minikube-linux-{{goarch}}:/usr/bin/minikube
 
 - name: minio-client
   version: 2022-02-26T03-58-31Z
@@ -569,8 +570,8 @@
       amd64: 897bb9ca1fd026b02dda711b550541e28591447a32cb4d2584cec67934207256
       armhf: e361b7204fb1554d68b4e0cdedb8ecfdd745a46d95db02463da5429013e0fbfb
       arm64: ddbdbf3a6e0f6bc602e3264fa525d9a9063418440318f7639d8b2110cf58c06b
-  script:
-    - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
+  install:
+    - mc.RELEASE.{{version}}:/usr/bin/mc
 
 - name: minio-server
   version: 2022-02-26T02-54-46Z
@@ -586,8 +587,8 @@
       amd64: b87f0179626e9d7b17875ea0dedc6566cb5ea568bd037fd3a8a9714798c48714
       armhf: 05725661e1f10916227f5b794d399bf870bc237ae0581a4423cdeaac2a0cd1e3
       arm64: e180cf58b38129816d2bedfbf873bc727d214c7f920a9bfec86ac92073bd3d14
-  script:
-    - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio
+  install:
+    - minio.RELEASE.{{version}}:/usr/bin/minio
 
 - name: natscli
   version: 0.0.26
@@ -603,8 +604,8 @@
     sha256:
       amd64: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
       arm64: c7574e6f5db365b0430a1bde90badbd1d28a747d91d5f6986b73e531d87995d1
-  script:
-    - mv nats-{{version}}-linux-{{goarch}}/nats {{src}}/usr/bin/nats
+  install:
+    - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/nats
 
 - name: operator-sdk
   version: 1.18.1
@@ -620,8 +621,8 @@
     sha256:
       amd64: 276bf5f293095eb8c4ea8ec616eadb1805db591e46a375e3b8a52db42585f07a
       arm64: f3e86392f87995df7ae4bc08cdb25c99d250cc4932fc4abf76b92ce4d25bede3
-  script:
-    - mv operator-sdk_linux_{{goarch}} {{src}}/usr/bin/operator-sdk
+  install:
+    - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
   version: 0.29.1
@@ -661,8 +662,8 @@
       amd64: 94c5d65386fa8f17e36d3496fbbdf18d3bfab01306aa8000c14656b63070b7c2
       armhf: a00c11f3e19d6e1727d5d34d17c55a591c32436a67be6880919560bcd0ef00b6
       arm64: 8b3a8768021b148ada2cbdf1c39f55d92e4280147ceb5f76f840a7adf50edce2
-  script:
-    - mv packer {{src}}/usr/bin/packer
+  install:
+    - packer:/usr/bin/
 
 - name: rancher
   version: 2.6.4
@@ -676,8 +677,8 @@
     sha256:
       amd64: 341d5cde2067e2f360850f25d126b637ef00770223957a72fff848fc31e04bfc
       armhf: 29471a7068d55b15ec5b3b4d0962f4f1b83079f5b9149ac5b70dd1d4399cad22
-  script:
-    - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
+  install:
+    - rancher-v{{version}}/rancher:/usr/bin/rancher
 
 - name: rclone
   version: 1.58.0
@@ -726,8 +727,8 @@
     sha256:
       amd64: d45858e4b539188468724a703173f88dd9b7ba199a5ae326aa13ff136045b945
       arm64: aff259f2336d1090cd34c129fb0f894ace50ed34abd4fd262f4fe6ded585bc88
-  script:
-    - mv skaffold-linux-{{goarch}} {{src}}/usr/bin/skaffold
+  install:
+    - skaffold-linux-{{goarch}}:/usr/bin/skaffold
 
 - name: stern
   version: 1.11.0
@@ -741,8 +742,8 @@
   fetch:
     url: https://github.com/wercker/stern/releases/download/{{version}}/stern_linux_{{goarch}}
     sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
-  script:
-    - mv stern_linux_{{goarch}} {{src}}/usr/bin/stern
+  install:
+    - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
   version: 2.5.4
@@ -766,8 +767,8 @@
     sha256:
       amd64: cec763538391e999f0531f1aad7382ddfb5a2feab2186b1261a4c69ede719ff0
       arm64: 9d82f8eff85bad0cf269264fe3b0ecf4c85410d437bd63fc6b3527c55aa7ebaa
-  script:
-    - mv telepresence {{src}}/usr/bin/telepresence
+  install:
+    - telepresence:/usr/bin/
 
 - name: terraform
   version: 1.1.7
@@ -784,8 +785,8 @@
       amd64: e4add092a54ff6febd3325d1e0c109c9e590dc6c38f8bb7f9632e4e6bcca99d4
       armhf: 81013a3d554a2a40ac9f59dd1dbadf3e4f43d6e04c14d746a8eeffc45788f8cb
       arm64: 2f72982008c52d2d57294ea50794d7c6ae45d2948e08598bfec3e492bce8d96e
-  script:
-    - mv terraform {{src}}/usr/bin/terraform
+  install:
+    - terraform:/usr/bin/
 
 - name: terraform-docs
   version: 0.16.0
@@ -865,5 +866,5 @@
     sha256:
       amd64: f261bf03f98847271d743b618398010e14a9c396866b49f16425cf6fd6d0a5ab
       armhf: 854930ce5478a11e4b06fbf4c288974944b9ee8a3cdc79d461f3aad3d05854e2
-  script:
-    - mv waypoint {{src}}/usr/bin/waypoint
+  install:
+    - waypoint:/usr/bin/
