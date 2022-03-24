@@ -482,7 +482,7 @@
     - mv kubeseal {{src}}/usr/bin/kubeseal
 
 - name: kustomize
-  version: 4.5.2
+  version: 4.5.3
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-
@@ -496,8 +496,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: c4215332da8da16ddeb88e218d8dceb76c85b366a5c58d012bc5ece904bf2fd0
-      arm64: 7924d2c1c41976859558c7a1b8009c0d8cc63ebce242b8d4314d332236966481
+      amd64: e4dc2f795235b03a2e6b12c3863c44abe81338c5c0054b29baf27dcc734ae693
+      arm64: 97cf7d53214388b1ff2177a56404445f02d8afacb9421339c878c5ac2c8bc2c8
   script:
     - mv kustomize {{src}}/usr/bin/
 
@@ -665,7 +665,7 @@
     - mv packer {{src}}/usr/bin/packer
 
 - name: rancher
-  version: 2.4.14
+  version: 2.6.4
   homepage: https://github.com/rancher/cli
   summary: command-line interface for rancher
   description: |-
@@ -674,8 +674,8 @@
   fetch:
     url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
     sha256:
-      amd64: 70f4839ede2735485a8bee07da30db2854c9188483f1857b1ed12c38c39822c3
-      armhf: 5afbbb48e1274003feac352dbfca95c117f6374ee4ca1d3c6652e5887c7810d3
+      amd64: 341d5cde2067e2f360850f25d126b637ef00770223957a72fff848fc31e04bfc
+      armhf: 29471a7068d55b15ec5b3b4d0962f4f1b83079f5b9149ac5b70dd1d4399cad22
   script:
     - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
 
