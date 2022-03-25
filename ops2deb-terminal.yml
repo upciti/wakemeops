@@ -184,16 +184,16 @@
     - mv ghorg {{src}}/usr/bin/ghorg
 
 - name: gping
-  version: 1.3.0
+  version: 1.3.1
   homepage: https://github.com/orf/gping
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: d8d3d868c7a758336c63df1ee438060d61ad7e077b010d2d66f488fba07ee653
-      armhf: 0fc33423183ca32f2e988c887e7ced8381c66499090021c0a0d1cf2fcdaf0c88
-      arm64: 923ac7d745b7a79589155c5bb8c0e081178ea927fe0a7e7257bd03fc8f875c2d
+      amd64: aa8aa97c170f656569e82c82f2e784f1576bfe3e9fc97bab766307b7e336801f
+      armhf: e41aae6804f69883d82a79198e52a95b6139d6e7ed6942fc7fd0bd3a6257f571
+      arm64: 4f33e5545352b2b62fec2897a135dee160c75d5248171e3400fb2b25d0fb6933
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
