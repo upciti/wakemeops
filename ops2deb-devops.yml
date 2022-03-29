@@ -203,7 +203,7 @@
     - mv linux-{{goarch}}/helm {{src}}/usr/bin/
 
 - name: helmfile
-  version: 0.143.4
+  version: 0.143.5
   homepage: https://github.com/roboll/helmfile
   summary: deploy Kubernetes Helm Charts
   description: |-
@@ -220,8 +220,8 @@
   fetch:
     url: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_{{goarch}}
     sha256:
-      amd64: 8f2f212d167b94c4dfc94b8f05f66aabeaa600b3991381dbcaadddfaec0a1583
-      arm64: 9c619b39f54be4a9b8aa0c021953e17fbecab89c0b058a05e5b0976ef0065624
+      amd64: 599b21ea7286a26633488f637e423c8f779faf6d5d442f2406cfec6995842e8e
+      arm64: c37c94f6141792b3abfe92dd16d9dedc5c985014077472ed05bfd87e7918b19e
   script:
     - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
 
@@ -482,7 +482,7 @@
     - mv kubeseal {{src}}/usr/bin/kubeseal
 
 - name: kustomize
-  version: 4.5.3
+  version: 4.5.4
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-
@@ -496,8 +496,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: e4dc2f795235b03a2e6b12c3863c44abe81338c5c0054b29baf27dcc734ae693
-      arm64: 97cf7d53214388b1ff2177a56404445f02d8afacb9421339c878c5ac2c8bc2c8
+      amd64: 1159c5c17c964257123b10e7d8864e9fe7f9a580d4124a388e746e4003added3
+      arm64: 094417546ab9b44ece44f3b31f3170080d0682519144301d5b6be080276a1f34
   script:
     - mv kustomize {{src}}/usr/bin/
 
