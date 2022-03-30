@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.3.2
+  version: 2.3.3
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: 257c97715a7213f1bb129ee80164907e5e839aa85e7c0ce815d169ec724fe4ab
+    sha256: da3544c525bb1dccbd6702eaf19c20ff774bb439c904fb7184242ed7439b11d2
   script:
     - mv argocd-linux-{{goarch}} {{src}}/usr/bin/argocd
 
@@ -75,7 +75,7 @@
     - mv container-structure-test-linux-{{goarch}} {{src}}/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.1.5
+  version: 1.1.6
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -86,8 +86,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: 988e16c2d30e7e35235fb52ff19ae39108964c3609fb67862387c67a4bdac7f1
-      arm64: 0a3e143337832faaf72e9df26e338c3abf517119e81eccfb5e6b98d2f2e09715
+      amd64: 77d79edf5186ff3a248951105c0f5d0e7164db297d10cb0f89611274aa4311d1
+      arm64: 630cadd30ff6945bcae0fb5ac7fc9d236fb28adb801146b6ecddada9a0e3e052
     targets:
       amd64: x86_64
   script:
