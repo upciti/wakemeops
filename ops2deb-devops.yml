@@ -696,7 +696,7 @@
     - mv rclone-v{{version}}-linux-* {{src}}/usr/bin/rclone
 
 - name: scw
-  version: 2.3.1
+  version: 2.4.0
   homepage: https://github.com/scaleway/scaleway-cli
   summary: command-line interface for Scaleway
   description: |-
@@ -704,7 +704,7 @@
     directly from your terminal.
   fetch:
     url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
-    sha256: 906fb4405ead81b38cba258f15da36a37f11d847c1504b588b867b6b359591ae
+    sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
   script:
     - mv scw-{{version}}-linux-* {{src}}/usr/bin/scw
 
