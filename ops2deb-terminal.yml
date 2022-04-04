@@ -70,7 +70,7 @@
     - mv choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
 
 - name: curlie
-  version: 1.6.7
+  version: 1.6.9
   homepage: https://github.com/rs/curlie
   summary: the power of 'curl', the ease of use of 'httpie'
   description: |-
@@ -81,8 +81,8 @@
   fetch:
     url: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: db6d250c0e2386624b269fa5f906c1fb4fc9608f108956c7d37247b4d4ff1b5d
-      arm64: 0163239a0414acfdcb025c7a7ff2d1efc3dd1f8552b20559977135b0ff8a2c66
+      amd64: bdc3eaa9309e557476b7cf151f64d70437361d5754ecd594d1a0f24458e141d6
+      arm64: ca1e368635491d73f0aa231c3d2977fd91c39f905e2c8e1f48a759b0a6de5776
   script:
     - mv curlie {{src}}/usr/bin/curlie
 
