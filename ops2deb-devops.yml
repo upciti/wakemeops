@@ -837,6 +837,21 @@
   script:
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
+- name: vault-env
+  version: 1.15.1
+  homepage: https://banzaicloud.com/products/bank-vaults/
+  summary: exec a process with Vault sourced env vars
+  description: |-
+    Bank-Vaults tool inspired by vaultenv and envconsul to run a process with
+    environment variables from Vault.
+  fetch:
+    url: https://github.com/banzaicloud/bank-vaults/releases/download/{{version}}/vault-env-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: 4a44fa879667cc0fb34ec79c7b351074be84d6d62ab89eeaa7d3392c306682e0
+      arm64: a35bb29478fc038b7893ecc54e942296cde503edb6b8c59b528ac53f6f6d8ad7
+  install:
+    - vault-env:/usr/bin/
+
 - name: velero
   version: 1.8.1
   homepage: https://velero.io
