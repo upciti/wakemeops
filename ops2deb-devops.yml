@@ -9,6 +9,23 @@
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
+- name: bank-vaults
+  version: 1.15.1
+  homepage: https://banzaicloud.com/products/bank-vaults/
+  summary: make using and operating Hashicorp Vault easier on Kubernetes.
+  description: |-
+    Bank Vaults is a thick, tricky, shifty right with a fast and intense tube for
+    experienced surfers only, located on Mentawai. Think heavy steel doors, secret
+    unlocking combinations and burly guards with smack-down attitude. Watch out for
+    clean-up sets.
+  fetch:
+    url: https://github.com/banzaicloud/bank-vaults/releases/download/{{version}}/bank-vaults-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: 73397c220bbf892eba7b21b7a7b8dcb050b21f4f229da353e86f29e36adbec9b
+      arm64: cf75f043384da76fffab922eae15a9f8b17be56049c03ba939893fff50b54fd5
+  install:
+    - bank-vaults:/usr/bin/
+
 - name: carvel-kapp
   version: 0.46.0
   homepage: https://carvel.dev/kapp/
