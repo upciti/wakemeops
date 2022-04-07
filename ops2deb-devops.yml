@@ -771,7 +771,7 @@
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.1.7
+  version: 1.1.8
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -782,9 +782,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: e4add092a54ff6febd3325d1e0c109c9e590dc6c38f8bb7f9632e4e6bcca99d4
-      armhf: 81013a3d554a2a40ac9f59dd1dbadf3e4f43d6e04c14d746a8eeffc45788f8cb
-      arm64: 2f72982008c52d2d57294ea50794d7c6ae45d2948e08598bfec3e492bce8d96e
+      amd64: fbd37c1ec3d163f493075aa0fa85147e7e3f88dd98760ee7af7499783454f4c5
+      armhf: c2dac55b0ba4e625d0afe77eb4eb3f65ea4e3b5ed930de6217ceeb46c19d55e8
+      arm64: 10b2c063dcff91329ee44bce9d71872825566b713308b3da1e5768c6998fb84f
   install:
     - terraform:/usr/bin/
 
@@ -854,7 +854,7 @@
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.7.2
+  version: 0.8.0
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -864,7 +864,7 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: f261bf03f98847271d743b618398010e14a9c396866b49f16425cf6fd6d0a5ab
-      armhf: 854930ce5478a11e4b06fbf4c288974944b9ee8a3cdc79d461f3aad3d05854e2
+      amd64: cda7bb55fdc422849429c65b58fbab3f1f8318b6ef8beecd0f0242fa07fcefcc
+      armhf: 029d79071abb6f8d2f3ca80308314e8bbd33e24cc5bb9c90193cbcadbf6c700d
   install:
     - waypoint:/usr/bin/
