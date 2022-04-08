@@ -608,7 +608,7 @@
     - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/nats
 
 - name: operator-sdk
-  version: 1.18.1
+  version: 1.19.0
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -619,8 +619,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: 276bf5f293095eb8c4ea8ec616eadb1805db591e46a375e3b8a52db42585f07a
-      arm64: f3e86392f87995df7ae4bc08cdb25c99d250cc4932fc4abf76b92ce4d25bede3
+      amd64: 362b6f5321fbf047eb0ceb5460583e321de08de27146ab1b5c0c07474f06658c
+      arm64: ead417055741887e4e64d7b2697a08188bee9065d68287adcbce47feee61e7df
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
@@ -710,7 +710,7 @@
     - mv scw-{{version}}-linux-* {{src}}/usr/bin/scw
 
 - name: skaffold
-  version: 1.37.1
+  version: 1.38.0
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -725,8 +725,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
     sha256:
-      amd64: d45858e4b539188468724a703173f88dd9b7ba199a5ae326aa13ff136045b945
-      arm64: aff259f2336d1090cd34c129fb0f894ace50ed34abd4fd262f4fe6ded585bc88
+      amd64: 3c347c9478880f22ebf95807c13371844769c625cf3ea9c987cd85859067503c
+      arm64: 41c6385443787f864eaa448b985479115aa917b045245efb38d15d4b2dc5fed3
   install:
     - skaffold-linux-{{goarch}}:/usr/bin/skaffold
 
@@ -854,7 +854,7 @@
     - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.8.0
+  version: 0.8.1
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -864,7 +864,7 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: cda7bb55fdc422849429c65b58fbab3f1f8318b6ef8beecd0f0242fa07fcefcc
-      armhf: 029d79071abb6f8d2f3ca80308314e8bbd33e24cc5bb9c90193cbcadbf6c700d
+      amd64: ec2ef7e11f3e1b9ba4a71cc23478f2d60445baddab92d05782d03a6a5e9a824e
+      armhf: 4680aec963624283c65822db86e7ba541a70ba043ea1b665adfbfbb364a9ef03
   install:
     - waypoint:/usr/bin/
