@@ -34,7 +34,7 @@
     - mv btm {{src}}/usr/bin/
 
 - name: chezmoi
-  version: 2.15.0
+  version: 2.15.1
   homepage: https://github.com/twpayne/chezmoi
   summary: manage your dotfiles across multiple diverse machines
   description: |-
@@ -48,9 +48,9 @@
   fetch:
     url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: abe6e4b9339336ef43ed4e9c5adcf98c029dccfd83166b86067edd7ef88c4821
-      armhf: 411990b60492c03cc7a58cfe2f96c4839a884288cf6e1339cd59d69d4c428ced
-      arm64: c44cff757cfce5a46719449e0735607696baddbafd0456c59487e9b17edaa6ca
+      amd64: 107af05469f58dc1ee0ff9987ab195bce6395286808fe71ab20f568408bf91fb
+      armhf: 6378c7c70100edff17019f83c14828bfa56a2334bb0ab96845cf6f191660f60b
+      arm64: 7ce83fd80c98cb644889085bcbdea56d8ffbf1a267aa247f32f463e7d778585f
   script:
     - mv chezmoi {{src}}/usr/bin/
 
