@@ -10,7 +10,7 @@
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
 - name: bank-vaults
-  version: 1.15.1
+  version: 1.15.2
   homepage: https://banzaicloud.com/products/bank-vaults/
   summary: make using and operating Hashicorp Vault easier on Kubernetes.
   description: |-
@@ -21,8 +21,8 @@
   fetch:
     url: https://github.com/banzaicloud/bank-vaults/releases/download/{{version}}/bank-vaults-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 73397c220bbf892eba7b21b7a7b8dcb050b21f4f229da353e86f29e36adbec9b
-      arm64: cf75f043384da76fffab922eae15a9f8b17be56049c03ba939893fff50b54fd5
+      amd64: 6afbb85bf6a6528a3b015e00a86c89b3f59bf49759baed6f6bca209677f02b24
+      arm64: 83170f659bb886e880cc23077b93046a03900d9c31d73dcfeaf4aefb29d11ee2
   install:
     - bank-vaults:/usr/bin/
 
@@ -838,7 +838,7 @@
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
 - name: vault-env
-  version: 1.15.1
+  version: 1.15.2
   homepage: https://banzaicloud.com/products/bank-vaults/
   summary: exec a process with Vault sourced env vars
   description: |-
@@ -847,8 +847,8 @@
   fetch:
     url: https://github.com/banzaicloud/bank-vaults/releases/download/{{version}}/vault-env-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 4a44fa879667cc0fb34ec79c7b351074be84d6d62ab89eeaa7d3392c306682e0
-      arm64: a35bb29478fc038b7893ecc54e942296cde503edb6b8c59b528ac53f6f6d8ad7
+      amd64: ceb25790d9efb87a089b1bfb2a4dc07993b7f14ffb2d9581193002c0c88002e2
+      arm64: 4a525343fd0be02516cd9e7dba6144ef80a13d8982e2c03d7bea67dd8d8e9aa5
   install:
     - vault-env:/usr/bin/
 
