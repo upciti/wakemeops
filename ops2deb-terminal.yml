@@ -248,7 +248,7 @@
     - mv hostctl {{src}}/usr/bin/hostctl
 
 - name: mdbook
-  version: 0.4.17
+  version: 0.4.18
   homepage: https://rust-lang.github.io/mdBook/
   summary: create book from markdown files
   description: |-
@@ -263,7 +263,7 @@
     * Backends that can render the output to multiple formats
   fetch:
     url: https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 04f32a87356d3df34e2a3dfbd2bc1fb0d52b01a271bf86ccfdd434c718aab6c8
+    sha256: d276b0e594d5980de6a7917ce74c348f28d3cb8b353ca4eaae344ae8a4c40bea
   script:
     - mv mdbook {{src}}/usr/bin/mdbook
 
