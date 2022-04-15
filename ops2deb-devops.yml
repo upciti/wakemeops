@@ -822,7 +822,7 @@
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
 - name: terragrunt
-  version: 0.36.6
+  version: 0.36.7
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -832,8 +832,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: a918cc71c18f1d99a403824aec1f4db8c9a5792e532b859ebabfe43e55f05a38
-      arm64: c7ec72757cd85ad4c22da1394d1ec3460b6f0365933bbe8383942ba8d4661d00
+      amd64: be8ff26e4500f6fcc20cd559846436f225ac728ffe93865fddfdc42428f0155d
+      arm64: fd52f5113ef9ba0e54bfbc8a2b82a9532814ceeafe505ecba2de76d5b19f105a
   script:
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
