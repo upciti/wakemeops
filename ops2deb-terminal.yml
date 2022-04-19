@@ -86,6 +86,28 @@
   script:
     - mv curlie {{src}}/usr/bin/curlie
 
+- name: delta
+  version: 0.12.1
+  homepage: https://clementtsang.github.io/bottom
+  summary: syntax-highlighting pager for git, diff, and grep output
+  description: |-
+    Code evolves, and we all spend time studying diffs. Delta aims to make this
+    both efficient and enjoyable: it allows you to make extensive changes to the
+    layout and styling of diffs, as well as allowing you to stay arbitrarily close
+    to the default git/diff output.
+  fetch:
+    url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
+    sha256:
+      amd64: 8b6e8d735850fc3a14c10d8139f2ab19fa6fc17c99c905438d3713a76e3ab079
+      armhf: 72c538efc149935b634d1a2c735d560fbcc26e20b0b161e4c361b21f046e7572
+      arm64: fc58e181aefba7f57eeee10e3032df2a4ab30c5fe7f74ef53915211bfaf7fe20
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      armhf: arm-unknown-linux-gnueabihf
+      arm64: aarch64-unknown-linux-gnu
+  install:
+    - delta-{{version}}-{{target}}/delta:/usr/bin/delta
+
 - name: diskonaut
   version: 0.11.0
   homepage: https://github.com/imsnif/diskonaut
