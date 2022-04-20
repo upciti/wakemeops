@@ -518,6 +518,25 @@
   install:
     - kustomize:/usr/bin/
 
+- name: lazydocker
+  version: 0.12
+  homepage: https://github.com/jesseduffield/lazydocker
+  summary: a lazier way to manage everything docker
+  description: |-
+    A simple terminal UI for both docker and docker-compose, written in Go with the
+    gocui library.
+  fetch:
+    url: https://github.com/jesseduffield/lazydocker/releases/download/v{{version}}/lazydocker_{{version}}_Linux_{{target}}.tar.gz
+    sha256:
+      amd64: a52d6e33aceb88099ccecca76fce1122a0bda29aae704c1a727a98379d0271fc
+      armhf: 1a4d523d71c9cf3541271c90e2f08873e980da1cf1c474ea9256f45d4ca5aae5
+      arm64: 46a236c55ac143f72b7c01eedfb9317942b743f6fc1d6d00d80ca9b31b2eb5ab
+    targets:
+      amd64: x86_64
+      armhf: armv7
+  install:
+    - lazydocker:/usr/bin
+
 - name: linkerd
   version: 21.12.4
   homepage: https://linkerd.io
