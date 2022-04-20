@@ -185,7 +185,8 @@
 
 - name: git-delta
   version: 0.12.1
-  homepage: https://clementtsang.github.io/bottom
+  homepage: https://dandavison.github.io/delta/
+  revision: 2
   summary: syntax-highlighting pager for git, diff, and grep output
   description: |-
     Code evolves, and we all spend time studying diffs. Delta aims to make this
