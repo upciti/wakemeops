@@ -18,8 +18,8 @@
       arm64: 1e90b8ab5906c17a2f8a59c1a815afd0dbdcb9fc9d0848dec350481ceb99d473
     targets:
       armhf: armv7-unknown-linux-gnueabihf
-  script:
-    - install -m 755 clog {{src}}/usr/bin/
+  install:
+    - clog:/usr/bin/
 
 - name: coursier
   version: 2.1.0-M5
@@ -54,8 +54,8 @@
   fetch:
     url: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
     sha256: cc5fdb12f0bf2cb64e01c28f61aac24db7836cf03898b79d9cf3712874419c9a
-  script:
-    - mv pg_datanymizer {{src}}/usr/bin/
+  install:
+    - pg_datanymizer:/usr/bin/
 
 - name: github-cli
   version: 2.8.0
@@ -79,18 +79,19 @@
 - name: github-hub
   version: 2.14.2
   homepage: https://hub.github.com
+  revision: 2
   summary: do everyday GitHub tasks without ever leaving the terminal
   description: |-
     hub is a command line tool that wraps git in order to extend it with extra
     features and commands that make working with GitHub easier.
   fetch:
-    url: https://github.com/github/hub/releases/download/v2.14.2/hub-linux-{{goarch}}-{{version}}.tgz
+    url: https://github.com/github/hub/releases/download/v{{version}}/hub-linux-{{goarch}}-{{version}}.tgz
     sha256:
       amd64: 74d95fdfb3c78c8af4e2025b04b916ad905ab99a361778500d58269847c7922d
       armhf: 234fa4cfcfdf1fc4051b27116fd1351a1741cfec556fa227506708ba4997bdeb
       arm64: 53670fe3ed3d590dc1194257497c7b27b35daf2bfb5b497b1a49e50b3f5a0e61
-  script:
-    - mv hub-linux-{{goarch}}-{{version}}.tgz {{src}}/usr/bin/hub
+  install:
+    - hub-linux-{{goarch}}-{{version}}/bin/hub:/usr/bin/
 
 - name: glab
   version: 1.22.0
@@ -110,8 +111,8 @@
     targets:
       amd64: x86_64
       armhf: armv6
-  script:
-    - mv bin/glab {{src}}/usr/bin/
+  install:
+    - bin/glab:/usr/bin/
 
 - name: hugo
   version: 0.97.3
@@ -140,8 +141,8 @@
       arm64: e0a8581cac03de8992e0dbb171460dc13d6867d8c7f107433d5bc691b3a27fa0
     targets:
       amd64: 64bit
-  script:
-    - mv hugo {{src}}/usr/bin/hugo
+  install:
+    - bin/hugo:/usr/bin/
 
 - name: mask
   version: 0.11.1
@@ -154,8 +155,8 @@
   fetch:
     url: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
     sha256: 90f3a5a174c90440eb6cc80453e8b20b2920a5f709246c147c3dd908c40c5bf9
-  script:
-    - mv mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
+  install:
+    - mask-v{{version}}-x86_64-unknown-linux-gnu/mask:/usr/bin/
 
 - name: poetry
   version: 1.1.13
@@ -259,8 +260,8 @@
   fetch:
     url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
     sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
-  script:
-    - mv pyoxidizer {{src}}/usr/bin/pyoxidizer
+  install:
+    - pyoxidizer:/usr/bin/
 
 - name: scala-cli
   version: 0.1.4
