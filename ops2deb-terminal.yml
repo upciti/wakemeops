@@ -12,8 +12,8 @@
       amd64: a4a2b92f620e63ccdfc3f5d7d77a81ce6c46c1926b24d42cf385d961b92ade91
       armhf: 7dcc591a71a98a2c24240e97b240556106d2b0241f0cabdf7c8f9edb8dde6403
       arm64: 1f9e1856f01351ef945a8a6fb96e23a225850dfb3cd0f318e3655c5174a51f2b
-  script:
-    - mv bat-v{{version}}-*/bat {{src}}/usr/bin/bat
+  install:
+    - bat-v{{version}}-{{rust_target}}/bat:/usr/bin/
 
 - name: bottom
   version: 0.6.8
@@ -30,8 +30,8 @@
       armhf: 8d89e39f45cdf267f8491efeda756b39bf22420318c19b2bc2441a9162ddb85c
     targets:
       armhf: armv7-unknown-linux-gnueabihf
-  script:
-    - mv btm {{src}}/usr/bin/
+  install:
+    - btm:/usr/bin/
 
 - name: chezmoi
   version: 2.15.1
@@ -51,8 +51,8 @@
       amd64: 107af05469f58dc1ee0ff9987ab195bce6395286808fe71ab20f568408bf91fb
       armhf: 6378c7c70100edff17019f83c14828bfa56a2334bb0ab96845cf6f191660f60b
       arm64: 7ce83fd80c98cb644889085bcbdea56d8ffbf1a267aa247f32f463e7d778585f
-  script:
-    - mv chezmoi {{src}}/usr/bin/
+  install:
+    - chezmoi:/usr/bin/
 
 - name: choose
   version: 1.3.3
@@ -66,8 +66,8 @@
   fetch:
     url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
     sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
-  script:
-    - mv choose-x86_64-unknown-linux-gnu {{src}}/usr/bin/choose
+  install:
+    - choose-x86_64-unknown-linux-gnu:/usr/bin/choose
 
 - name: curlie
   version: 1.6.9
@@ -83,8 +83,8 @@
     sha256:
       amd64: bdc3eaa9309e557476b7cf151f64d70437361d5754ecd594d1a0f24458e141d6
       arm64: ca1e368635491d73f0aa231c3d2977fd91c39f905e2c8e1f48a759b0a6de5776
-  script:
-    - mv curlie {{src}}/usr/bin/curlie
+  install:
+    - curlie:/usr/bin/
 
 - name: diskonaut
   version: 0.11.0
@@ -101,8 +101,8 @@
   fetch:
     url: https://github.com/imsnif/diskonaut/releases/download/{{version}}/diskonaut-{{version}}-unknown-linux-musl.tar.gz
     sha256: ec4f0103b5e507e15752bb1958644bc168d6ad277c59dd12a771fb28178bf725
-  script:
-    - mv diskonaut {{src}}/usr/bin/
+  install:
+    - diskonaut:/usr/bin/
 
 - name: dog
   version: 0.1.0
@@ -113,8 +113,8 @@
   fetch:
     url: https://github.com/ogham/dog/releases/download/v{{version}}/dog-v{{version}}-x86_64-unknown-linux-gnu.zip
     sha256: 6093525fccf5de5b7ed66f920c9b6d2d16221adde8a44589dc3e4c47245039a0
-  script:
-    - mv bin/dog {{src}}/usr/bin/dog
+  install:
+    - bin/dog:/usr/bin/
 
 - name: dust
   version: 0.8.1-alpha.2
@@ -126,8 +126,8 @@
     sha256:
       amd64: d4609817ff59421787a2c7e508f1b2d31ee0842f9f1465b022bc44978934b201
       armhf: f4c0ec1c2a5ec79a025167da6443c83b9cf2e7171c943b8525d82f22deb5785f
-  script:
-    - mv dust-v{{version}}-*/dust {{src}}/usr/bin/dust
+  install:
+    - dust-v{{version}}-{{rust_target}}/dust:/usr/bin/
 
 - name: exa
   version: 0.10.1
@@ -143,8 +143,8 @@
     targets:
       amd64: x86_64
       armhf: armv7
-  script:
-    - mv bin/exa {{src}}/usr/bin/exa
+  install:
+    - bin/exa:/usr/bin/
 
 - name: fd
   version: 8.3.2
@@ -161,8 +161,8 @@
       amd64: 64c43db1f6411df6dbe679d0881ac021b4fc8aec1b565a324cc6207aeada042f
       armhf: b6f83826422acd972dc3e04f738eb8a16f1d7b49bcf490d7efeeb58097b9a033
       arm64: 7e7defc64276b2ded5b2ba7e68c6dd499673348289b9aaef582aedad20e6d983
-  script:
-    - mv fd-v{{version}}-*/fd {{src}}/usr/bin/fd
+  install:
+    - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 
 - name: ghorg
   version: 1.7.13
@@ -180,8 +180,8 @@
       arm64: 16aa1155eb8ea6777d8370259d7bc93b9de8a4b280862e5c063b5606de6fe239
     targets:
       amd64: x86_64
-  script:
-    - mv ghorg {{src}}/usr/bin/ghorg
+  install:
+    - ghorg:/usr/bin/
 
 - name: git-delta
   version: 0.12.1
@@ -220,8 +220,8 @@
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
-  script:
-    - mv gping {{src}}/usr/bin/gping
+  install:
+    - gping:/usr/bin/
 
 - name: grex
   version: 1.3.0
@@ -236,8 +236,8 @@
   fetch:
     url: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: df47f82add291905af60d20a3499f6845c65bfe452fa9d30f8c7a900f45578e8
-  script:
-    - mv grex {{src}}/usr/bin/
+  install:
+    - grex:/usr/bin/
 
 - name: himalaya
   version: 0.5.10
@@ -250,8 +250,8 @@
   fetch:
     url: https://github.com/soywod/himalaya/releases/download/v{{version}}/himalaya-linux.tar.gz
     sha256: c389e6804511a0ed52db3eb6d4fec80cc03d556e31653fdf77c6bbcadcf93507
-  script:
-    - mv himalaya {{src}}/usr/bin/himalaya
+  install:
+    - himalaya:/usr/bin/
 
 - name: hostctl
   version: 1.1.2
@@ -267,8 +267,8 @@
       arm64: 864f0d1d6bf00f39f6dda0ef5f66500f93e95e689f905fa1d2911a9af44e3e4c
     targets:
       amd64: 64-bit
-  script:
-    - mv hostctl {{src}}/usr/bin/hostctl
+  install:
+    - hostctl:/usr/bin/
 
 - name: mdbook
   version: 0.4.18
@@ -287,8 +287,8 @@
   fetch:
     url: https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
     sha256: d276b0e594d5980de6a7917ce74c348f28d3cb8b353ca4eaae344ae8a4c40bea
-  script:
-    - mv mdbook {{src}}/usr/bin/mdbook
+  install:
+    - mdbook:/usr/bin/
 
 - name: mergestat
   version: 0.5.5
@@ -300,8 +300,8 @@
   fetch:
     url: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
     sha256: c54a5f70c06ea0b996a73b3ef8c14b77d8bdf829def6d5bacaeb85a94813b6a8
-  script:
-    - mv mergestat {{src}}/usr/bin/mergestat
+  install:
+    - mergestat:/usr/bin/
 
 - name: procs
   version: 0.12.1
@@ -314,8 +314,8 @@
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
     sha256: 908800ba996421e5af24b4726c9a26f5985b9664d672d23bd040216743ad66a2
-  script:
-    - mv procs {{src}}/usr/bin/procs
+  install:
+    - procs:/usr/bin/
 
 - name: ripgrep
   version: 13.0.0
@@ -336,8 +336,8 @@
       armhf: 70137ff167d3d1481994a0efc836db0f62814d67f39baa670ad89955bc94762f
     targets:
       amd64: x86_64-unknown-linux-musl
-  script:
-    - mv ripgrep-{{version}}-{{rust_target}}/rg {{src}}/usr/bin/rg
+  install:
+    - ripgrep-{{version}}-{{target|rust_target}}/rg:/usr/bin/
 
 - name: skim
   version: 0.9.4
@@ -354,8 +354,8 @@
       armhf: 763907092fd5a0a3e02363efc5cef5d6d36fa9bd58387350aa477758d67ce4b0
     targets:
       amd64: x86_64-unknown-linux-musl
-  script:
-    - mv sk {{src}}/usr/bin/
+  install:
+    - sk:/usr/bin/
 
 - name: tokei
   version: 12.1.2
@@ -374,8 +374,8 @@
       arm64: ef514fd12cfc3ee2d1725e5ecb866ee1123163004879ec285b22f3323389ebe2
     targets:
       armhf: armv7-unknown-linux-gnueabihf
-  script:
-    - mv tokei {{src}}/usr/bin/
+  install:
+    - tokei:/usr/bin/
 
 - name: xh
   version: 0.16.0
@@ -391,8 +391,8 @@
       armhf: 45cf136f127a2b20b367171b75b8153767f3c89387b754e687469cf014f1727d
     targets:
       amd64: x86_64-unknown-linux-musl
-  script:
-    - mv xh-v{{version}}-*/xh {{src}}/usr/bin/xh
+  install:
+    - xh-v{{version}}-{{target|rust_target}}/xh:/usr/bin/
 
 - name: xsv
   version: 0.13.0
@@ -405,8 +405,8 @@
   fetch:
     url: https://github.com/BurntSushi/xsv/releases/download/{{version}}/xsv-{{version}}-x86_64-unknown-linux-musl.tar.gz
     sha256: d36b1be0f008d6597c2437e764fbe720eb7557f8980e0b03ca709e1020b5c52b
-  script:
-    - mv xsv {{src}}/usr/bin/xsv
+  install:
+    - xsv:/usr/bin/
 
 - name: yq
   version: 4.24.5
@@ -423,5 +423,5 @@
       amd64: c93a696e13d3076e473c3a43c06fdb98fafd30dc2f43bc771c4917531961c760
       armhf: ab1a4202baf7f11dd7e3707b966bed76b32207880d247483ed00d491520deabe
       arm64: 8879e61c0b3b70908160535ea358ec67989ac4435435510e1fcb2eda5d74a0e9
-  script:
-    - mv yq_linux_{{goarch}} {{src}}/usr/bin/yq
+  install:
+    - yq_linux_{{goarch}}:/usr/bin/yq
