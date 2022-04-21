@@ -208,6 +208,12 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/ubuntu:20.04
         ```
 
+    === "22.04"
+
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/ubuntu/tags?name=22.04'>https://hub.docker.com/r/wakemeops/ubuntu/tags?name=22.04</a>"
+        docker pull wakemeops/ubuntu:22.04
+        ```
+
 === "Minideb"
 
     === "latest"
