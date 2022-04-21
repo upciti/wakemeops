@@ -602,6 +602,8 @@
   description: |-
     MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
     for filesystems and object storage.
+  conflicts:
+    - mc
   fetch:
     url: https://dl.min.io/client/mc/release/linux-{{goarch}}/archive/mc.RELEASE.{{version}}
     sha256:
