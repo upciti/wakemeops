@@ -41,20 +41,20 @@ stages:
     matrix:
       - DISTRO: ubuntu
         VERSION:
-          - latest
-          - rolling
-          - 22.04
-          - 20.04
-          - 18.04
+          - "latest"
+          - "rolling"
+          - "22.04"
+          - "20.04"
+          - "18.04"
       - DISTRO: debian
         VERSION:
-          - latest
-          - bookworm
-          - bookworm-slim
-          - bullseye
-          - bullseye-slim
-          - buster
-          - buster-slim
+          - "latest"
+          - "bookworm"
+          - "bookworm-slim"
+          - "bullseye"
+          - "bullseye-slim"
+          - "buster"
+          - "buster-slim"
 
 generate_packages:
   image:
@@ -99,21 +99,21 @@ build_images:
     matrix:
       - IMAGE: ubuntu
         TAG:
-          - latest
-          - rolling
-          - 22.04
-          - 20.04
-          - 18.04
+          - "latest"
+          - "rolling"
+          - "22.04"
+          - "20.04"
+          - "18.04"
         REGISTRY_NAME: ubuntu
       - IMAGE: debian
         TAG:
-          - latest
-          - bookworm
-          - bookworm-slim
-          - bullseye
-          - bullseye-slim
-          - buster
-          - buster-slim
+          - "latest"
+          - "bookworm"
+          - "bookworm-slim"
+          - "bullseye"
+          - "bullseye-slim"
+          - "buster"
+          - "buster-slim"
         REGISTRY_NAME: debian
       - IMAGE: bitnami/minideb
         TAG: ["latest", "bullseye", "buster"]
