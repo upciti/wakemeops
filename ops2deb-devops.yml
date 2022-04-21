@@ -609,7 +609,7 @@
     - mc.RELEASE.{{version}}:/usr/bin/mc
 
 - name: minio-server
-  version: 2022-02-26T02-54-46Z
+  version: 2022-04-16T04-26-02Z
   homepage: https://min.io
   summary: high performance, Kubernetes native object storage
   description: |-
@@ -619,9 +619,9 @@
   fetch:
     url: https://dl.min.io/server/minio/release/linux-{{goarch}}/archive/minio.RELEASE.{{version}}
     sha256:
-      amd64: b87f0179626e9d7b17875ea0dedc6566cb5ea568bd037fd3a8a9714798c48714
-      armhf: 05725661e1f10916227f5b794d399bf870bc237ae0581a4423cdeaac2a0cd1e3
-      arm64: e180cf58b38129816d2bedfbf873bc727d214c7f920a9bfec86ac92073bd3d14
+      amd64: cd27696aaa3fc8fdc63f15d84a8ada4efee3b345c35ad2c6a5cc3cc1bc411844
+      armhf: 77b545daa3314432d6f94c280bb5cbd27044515a9624efc1fe1f87ac7ddeaf1b
+      arm64: 665f6690b630a7f7f5326dd3cbbf0647bbbc14c4a6cadbe7dfc919a23d727d56
   install:
     - minio.RELEASE.{{version}}:/usr/bin/minio
 
