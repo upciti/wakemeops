@@ -98,7 +98,12 @@ build_images:
   parallel:
     matrix:
       - IMAGE: ubuntu
-        TAG: ["latest", "rolling", "20.04", "18.04"]
+        TAG:
+          - latest
+          - rolling
+          - 22.04
+          - 20.04
+          - 18.04
         REGISTRY_NAME: ubuntu
       - IMAGE: debian
         TAG:
