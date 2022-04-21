@@ -164,8 +164,8 @@
       amd64: linux
       armhf: linux_arm
       arm64: linux_arm64
-  script:
-    - mv dist_linux*/docker-slim* {{src}}/usr/bin/
+  install:
+    - dist_linux/docker-slim:/usr/bin/
 
 - name: flux
   version: 0.29.2
@@ -457,8 +457,9 @@
       arm64: 5fab3c0624a83cf8fff5c34d90f854af6fa8b501ed63306aaf5355303ae884ed
     targets:
       amd64: x86_64
+  install:
+    - kubectx:/usr/bin/
   script:
-    - mv kubectx {{src}}/usr/bin/kubectx
     - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
 
 - name: kubens
@@ -477,8 +478,9 @@
       arm64: 7c2d0d4d46338bf400ebba1b23947d35b25725b9b4e3e1932bb88b3ec3f96a5a
     targets:
       amd64: x86_64
+  install:
+    - kubens:/usr/bin/
   script:
-    - mv kubens {{src}}/usr/bin/kubens
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
 
 - name: kubeseal
