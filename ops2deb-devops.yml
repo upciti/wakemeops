@@ -122,8 +122,8 @@
     sha256:
       amd64: 60bb562b73cdd7bb5ce36fc6643254f795cb5dc151a26c5d108548e2905be627
       arm64: c088ec2015b71db6ab1e8675051e66ebe769c03749f3abd4525f4e02ded8bedf
-  script:
-    - install devspace-linux-{{goarch}}:/usr/bin/devspace
+  install:
+    - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
   version: 2.4.1
@@ -363,7 +363,7 @@
       armhf: 68eb9e9f5bba29c7c19fb52bfc43a31300f92282a4e81f0c51ad26ed2c73eb03
       arm64: 0994923848882ad0d4825d5af1dc227687a10a02688f785709b03549dd34d71d
   install:
-    - mv krew-linux_{{goarch}}:/usr/bin/krew
+    - krew-linux_{{goarch}}:/usr/bin/krew
 
 - name: kube-score
   version: 1.14.0
@@ -382,8 +382,9 @@
       arm64: f76bd3fdb8ead9561e5ebbb9d930d7f7be2505f3b24127f90fb8948a5992c8c1
     targets:
       armhf: armv6
+  install:
+    - kube-score:/usr/bin/
   script:
-    - mv kube-score {{src}}/usr/bin/kube-score
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
@@ -399,8 +400,8 @@
       amd64: 703a06354bab9f45c80102abff89f1a62cbc2c6d80678fd3973a014acc7c500a
       armhf: 30d8e9656334b57e78c8dbc5d5f245a64b9a74c4fd03db47182fa7a21c2f5e32
       arm64: 4be771c8e6a082ba61f0367077f480237f9858ef5efe14b1dbbfc05cd42fc360
-  script:
-    - mv kubectl {{src}}/usr/bin/
+  install:
+    - kubectl:/usr/bin/
 
 - name: kubectl-kudo
   version: 0.19.0
@@ -640,7 +641,7 @@
       amd64: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
       arm64: c7574e6f5db365b0430a1bde90badbd1d28a747d91d5f6986b73e531d87995d1
   install:
-    - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/nats
+    - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
   version: 1.19.1
@@ -679,8 +680,8 @@
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
     sha256: 57e876cdc88b77412f07d332a7e439620a99aaf8af58102fd19d26b6b2fdaf6c
-  script:
-    - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
+  install:
+    - ops2deb_linux_amd64:/usr/bin/ops2deb
 
 - name: packer
   version: 1.8.0
@@ -713,7 +714,7 @@
       amd64: 341d5cde2067e2f360850f25d126b637ef00770223957a72fff848fc31e04bfc
       armhf: 29471a7068d55b15ec5b3b4d0962f4f1b83079f5b9149ac5b70dd1d4399cad22
   install:
-    - rancher-v{{version}}/rancher:/usr/bin/rancher
+    - rancher-v{{version}}/rancher:/usr/bin/
 
 - name: rclone
   version: 1.58.0
@@ -728,8 +729,8 @@
       amd64: 586553898cc1e9e1f3198d7a0c5d84a34ca4709a35013954a3e648f09e65aa37
       armhf: f5bb1c3947c4cdf7ed4e4afd4f0a8eeffbc522cde8af5ed15a979b3f58ea2446
       arm64: 28db376098fd00a050c065ffbbfc5e4d878cea412ce4b3dbc3c45c5c96dfee4f
-  script:
-    - mv rclone-v{{version}}-linux-* {{src}}/usr/bin/rclone
+  install:
+    - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
 - name: scw
   version: 2.4.0
@@ -741,8 +742,8 @@
   fetch:
     url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
     sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
-  script:
-    - mv scw-{{version}}-linux-* {{src}}/usr/bin/scw
+  install:
+    - scw-{{version}}-linux-x86_64:/usr/bin/scw
 
 - name: skaffold
   version: 1.38.0
@@ -836,8 +837,8 @@
       amd64: 328c16cd6552b3b5c4686b8d945a2e2e18d2b8145b6b66129cd5491840010182
       armhf: 8b2ba1a0ffefe4cb05c3a7a4cc9203da2f64331ee4062ca1a4ec8226cc1651de
       arm64: 8208c19c7dc01660e6caefe32e33ac02e0e03fdc2e2ade0bb37abb6349153d25
-  script:
-    - mv terraform-docs {{src}}/usr/bin/terraform-docs
+  install:
+    - terraform-docs:/usr/bin/
 
 - name: terragrunt
   version: 0.36.7
@@ -852,8 +853,8 @@
     sha256:
       amd64: be8ff26e4500f6fcc20cd559846436f225ac728ffe93865fddfdc42428f0155d
       arm64: fd52f5113ef9ba0e54bfbc8a2b82a9532814ceeafe505ecba2de76d5b19f105a
-  script:
-    - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
+  install:
+    - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
 - name: vault-env
   version: 1.15.2
@@ -885,8 +886,8 @@
       amd64: b50952735b1dcec595ce6b84cbc5f1eb184c5c756708c8cb9196fa53f36ca6de
       armhf: babc6ff30f5629f6b7d2b1ca6ed52cad7daf4cff2b53776d1d1fc57592f5eddd
       arm64: afae7d0e244a1552b9c557664925f623336361773855773a7ea2c07c3e0a4020
-  script:
-    - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
+  install:
+    - velero-v{{version}}-linux-{{goarch}}/velero:/usr/bin/velero
 
 - name: wakemebot
   version: 3.1.0
@@ -900,8 +901,8 @@
   fetch:
     url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
     sha256: 952beecc266eaa1a248a787b1a95d59897d049890f5af6c938ab04e128fe3869
-  script:
-    - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
+  install:
+    - wakemebot_linux_amd64:/usr/bin/wakemebot
 
 - name: waypoint
   version: 0.8.1
