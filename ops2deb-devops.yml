@@ -593,7 +593,7 @@
     - minikube-linux-{{goarch}}:/usr/bin/minikube
 
 - name: minio-client
-  version: 2022-02-26T03-58-31Z
+  version: 2022-04-16T21-11-21Z
   homepage: https://min.io
   summary: command-line interface for MinIO (mc)
   description: |-
@@ -602,9 +602,9 @@
   fetch:
     url: https://dl.min.io/client/mc/release/linux-{{goarch}}/archive/mc.RELEASE.{{version}}
     sha256:
-      amd64: 897bb9ca1fd026b02dda711b550541e28591447a32cb4d2584cec67934207256
-      armhf: e361b7204fb1554d68b4e0cdedb8ecfdd745a46d95db02463da5429013e0fbfb
-      arm64: ddbdbf3a6e0f6bc602e3264fa525d9a9063418440318f7639d8b2110cf58c06b
+      amd64: ba30f3907a67fc769447b3f1c9036781cf2c9ac9d4bad92e1b403ae28a97e9e9
+      armhf: 2a3946759ce097aa70b7a7a873f06eea251c39ad8350c5d2a47f23b06883528c
+      arm64: 1d4abc64870a7a149735b1322226cf07095c94877f5120bd29f75e314b1d1b1a
   install:
     - mc.RELEASE.{{version}}:/usr/bin/mc
 
