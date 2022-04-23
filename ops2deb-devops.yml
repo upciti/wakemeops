@@ -147,7 +147,7 @@
     - docker-compose-linux-{{target}}:/usr/bin/docker-compose
 
 - name: docker-slim
-  version: 1.37.5
+  version: 1.37.6
   homepage: https://dockersl.im
   summary: minify docker images by up to 30x
   description: |-
@@ -157,9 +157,9 @@
   fetch:
     url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
     sha256:
-      amd64: dab611c00b7b8582e63d6822b5581d2e987b818c142252afcde22fa508777c58
-      armhf: 817607f33d97931c8c3694c31098e97203a0ab355a49743ddc1db228b691321e
-      arm64: 5a3db859fe3de109d5ce7a681488571fd93c9161fee80051b3e0ed7cf6c20092
+      amd64: e9efdef85157e98a835fe01ea5a4131f26a60909587bff9e32dcf259fa916372
+      armhf: 1bb658ec9dc1b7fcaeab990060a7ee6c2db37466f0c7e8324e23b96a9cf47304
+      arm64: 59067ac6c8c940db0213613ba8675feaebd57f2d7b55645a9993a94825d08f79
     targets:
       amd64: linux
       armhf: linux_arm
