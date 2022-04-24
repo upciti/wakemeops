@@ -55,9 +55,8 @@
     - chezmoi:/usr/bin/
 
 - name: choose
-  version: 1.3.3
+  version: 1.3.4
   homepage: https://github.com/theryangeary/choose
-  revision: 3
   summary: human-friendly and fast alternative to cut and sometimes awk
   description: |-
     Not a complete replacement for cut and awk, but rather a simple and intuitive
@@ -65,7 +64,7 @@
     necessary to run them.
   fetch:
     url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
-    sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
+    sha256: 80c0e3927757d5f69d93489cf5e4a7ddbe577b0f4e857eeda10701e54e1c3447
   install:
     - choose-x86_64-unknown-linux-gnu:/usr/bin/choose
 
