@@ -49,7 +49,7 @@
     - feroxbuster:/usr/bin/
 
 - name: trivy
-  version: 0.27.0
+  version: 0.27.1
   homepage: https://www.aquasec.com/products/trivy/
   summary: vulnerability and misconfiguration scanner
   description: |-
@@ -58,9 +58,9 @@
   fetch:
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
     sha256:
-      amd64: 3f00ddcac8abecadcc761bdb46787d83dd3cfae1e2e0d9116794a81c086ab125
-      armhf: ee3c7c62b51262b43a251174792e8c9f96390d15b6be19b58a17645715d5886b
-      arm64: 08082f095ae928b558913ee2408749f3732a653f2a75fdd4228c4464dd66f984
+      amd64: 5dedcb4e1073d6bc179923c066b86959d22c88d51df38dd3fbb5c9c846d5aea9
+      armhf: 129eae34796d707d6446fcc0f9e66de2a2ce810dd05928b0f778cc883b11a964
+      arm64: 07435d5911bde53f70d1dc20bbf1e84e3643f01352649b73649234a50ae7f88b
     targets:
       amd64: 64bit
       armhf: ARM
@@ -87,7 +87,7 @@
     - vault:/usr/bin/
 
 - name: vuls-scanner
-  version: 0.19.5
+  version: 0.19.6
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-
@@ -98,9 +98,9 @@
   fetch:
     url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: c2f2d0ade7ce61ca3b5fd0388ae238c8b25c3a670d67a43e1028a522c43bab16
-      armhf: 74a5009e73b26648acb23f5a46c16df343578e8878eea880b57261ed04b28512
-      arm64: d4ea504ad8902f4f26ef1f632e3e45f878ff1689f0af58dd70f96c6dc2319c00
+      amd64: cb334b1964e248e44c09993609917825b9b3ac389ae272c415fb8bf82c26a592
+      armhf: 8edc1bf09a588a76ace068beec189f06103432c27dbd11d7e8b70ce975f9e710
+      arm64: c74acb88bac92d11e82f4c7b1574e8d2acf2261cf39716574a5c6d7e7643a643
     targets:
       armhf: armv6
   install:
