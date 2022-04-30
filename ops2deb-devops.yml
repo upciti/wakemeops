@@ -126,7 +126,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.4.1
+  version: 2.5.0
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -136,9 +136,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 6dc9096eb6aed220e9b876b3ae6edbffa8bb3beaa5936d11495acd90ea6246f1
-      armhf: 59c437662de1481e4eaaad737e2050020b50cdc0ed829c353ef27ac0e272263f
-      arm64: 5296819ee4fd8b5c71e5f110ff238e2ebb330927863fc91f26baa0ddf4bb1d85
+      amd64: 6296d17268c77a7159f57f04ed26dd2989f909c58cca4d44d1865f28bd27dd67
+      armhf: d728dcbe5e20103e9b025efdbb6bfbca9ea9866851e669f7775fe3ebb7ab945c
+      arm64: 7efc61cc85fe712f14f04a6886d1481c96fe958be265f67482583b4b713b6a22
     targets:
       amd64: x86_64
       armhf: armv7
@@ -168,7 +168,7 @@
     - mv dist_linux*/docker-slim* {{src}}/usr/bin/
 
 - name: flux
-  version: 0.29.4
+  version: 0.29.5
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -178,9 +178,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 4f3d4c0dec3dc0f456e362e8ce1f495c1b35adb65091b49e68d861f612b7d908
-      armhf: f9329fe5cd67ac2d0446a5d1cb833867e40c13f83e897fa3cd6c0a2b95b145b6
-      arm64: 435dae5ef750fe5edaa6d3c429d39bb607861c9bf2a99cf18477e23d91d7a727
+      amd64: ae788beab03824889bcdb3643256d51b061d3596b0fea5da629238c899c7416a
+      armhf: a2b752b96c2ad08728eed3ecd0e68c50d5fbcc28f0f4a46fd94e819e58f8ccf9
+      arm64: c3f1511cefe034f969b516e12b9c1cbaadaf1203d04f3ba04294d48165cd7422
   install:
     - flux:/usr/bin/
 
@@ -644,7 +644,7 @@
     - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.19.1
+  version: 1.20.0
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -655,8 +655,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: 90d7a497134a39a75c993fbfad03caf128d8c64d65b205f5052ec8918c787674
-      arm64: 68577ccecc184e714a44ba7985d8cb115fcd4e3fb22fa0374d0ad61c2dc6de52
+      amd64: b21437d72700fadbef4525b1840719003fa43b019a14eecc62b88d191d30f5e5
+      arm64: e8e55319fe3c4ccc80c1123eaf92fdcc025d65b53c7f4e61df2675686da00d04
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
@@ -717,7 +717,7 @@
     - rancher-v{{version}}/rancher:/usr/bin/
 
 - name: rclone
-  version: 1.58.0
+  version: 1.58.1
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-
@@ -726,9 +726,9 @@
   fetch:
     url: https://github.com/rclone/rclone/releases/download/v{{version}}/rclone-v{{version}}-linux-{{goarch}}.zip
     sha256:
-      amd64: 586553898cc1e9e1f3198d7a0c5d84a34ca4709a35013954a3e648f09e65aa37
-      armhf: f5bb1c3947c4cdf7ed4e4afd4f0a8eeffbc522cde8af5ed15a979b3f58ea2446
-      arm64: 28db376098fd00a050c065ffbbfc5e4d878cea412ce4b3dbc3c45c5c96dfee4f
+      amd64: 135a4a0965cb58eafb07941f2013a82282c44c28fea9595587778e969d9ed035
+      armhf: 252ac98bb095787764fb981b61eb453c13717e7b2fc1e6275fdfacdc9ff1cbf2
+      arm64: b1abf65d6e9817ce5e2be532edeeb45cbd9ad671e8325d9d145e4d3c3ad41715
   install:
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
@@ -841,7 +841,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.36.8
+  version: 0.36.9
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -851,8 +851,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: d9a907574279efdfc2f3f952964478e49ff965a818ee71f7e143c9dc4231bbbf
-      arm64: 0a25c8f554b374f810caa03d98a85cd80e466e3c46141f42f2ac3406425f9dce
+      amd64: 8fa1fd802af37c2820e3cb9ad74b804ed91b76719548dfb12d73e5a08170de7a
+      arm64: 8a8d913fb3187b993072d86543a6ecd420418379d237688f7f98d4d992ebf471
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
