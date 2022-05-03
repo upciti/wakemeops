@@ -168,7 +168,7 @@
     - mv dist_linux*/docker-slim* {{src}}/usr/bin/
 
 - name: flux
-  version: 0.29.5
+  version: 0.30.0
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -178,9 +178,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: ae788beab03824889bcdb3643256d51b061d3596b0fea5da629238c899c7416a
-      armhf: a2b752b96c2ad08728eed3ecd0e68c50d5fbcc28f0f4a46fd94e819e58f8ccf9
-      arm64: c3f1511cefe034f969b516e12b9c1cbaadaf1203d04f3ba04294d48165cd7422
+      amd64: b03a55b9076f247cd598b44eeadbc867de3121d4a0de5b7a7d7cb077b2a8f75f
+      armhf: 11441419f981f11c6293b8de2ade4fdbb6e847d002df00ac28b589f513083dac
+      arm64: c9bf95e36550728242b0796b0340784d6c09fd13761a2a8db853bb19bb7a5d81
   install:
     - flux:/usr/bin/
 
@@ -388,7 +388,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.23.6
+  version: 1.24.0
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -397,9 +397,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: 703a06354bab9f45c80102abff89f1a62cbc2c6d80678fd3973a014acc7c500a
-      armhf: 30d8e9656334b57e78c8dbc5d5f245a64b9a74c4fd03db47182fa7a21c2f5e32
-      arm64: 4be771c8e6a082ba61f0367077f480237f9858ef5efe14b1dbbfc05cd42fc360
+      amd64: 94d686bb6772f6fb59e3a32beff908ab406b79acdfb2427abdc4ac3ce1bb98d7
+      armhf: 410fc0b3c718f8f431fe4f7d5820bf8133b16ffb76187a53fa90929a77a38cbc
+      arm64: 449278789de283648e4076ade46816da249714f96e71567e035e9d17e1fff06d
   install:
     - kubectl:/usr/bin/
 
