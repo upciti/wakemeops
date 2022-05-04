@@ -92,7 +92,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.4.3
+  version: 1.4.4
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -103,8 +103,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: 78b676d9a5190844c5de9a5eb902124ea0bff6bc376c9f9778ae7b16cffebe57
-      arm64: c362edb38d2555b060794b5bf9958198618b25bc87e0002fe82bc91daf3a600d
+      amd64: 97efdbc6e3394e604f0ea4a2fd4c9c476e9a264ce00426aa1964356bbfa10cfd
+      arm64: 03c270ae7429b9ff344bd2f5272828083d4394d4298e8d926ba85e97102d6ab7
     targets:
       amd64: x86_64
   install:
@@ -168,7 +168,7 @@
     - mv dist_linux*/docker-slim* {{src}}/usr/bin/
 
 - name: flux
-  version: 0.30.1
+  version: 0.30.2
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -178,9 +178,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: d5cd0a31439e769eda676cefb7c5a3b8edefcab0768bdd425a47b8a2645fa761
-      armhf: c1b19e768d0cf56740942635b9d5291568606a253027414d7e7038ef6a6b8790
-      arm64: 972ba2033a931626a0f570f66c4f1e98149e8c2647a2d0f1e8e408f4e1edcb7f
+      amd64: 3a777f79bd6d942751a51e17b31408abb8bdfa84cd743847b53ee7ec01b7962a
+      armhf: 6cf7cd710ccd77cb6e55831a887eb3a4c11fc7c6f9aaa4bb25754b056374201b
+      arm64: c904e31dabd6de09a2e36db3077abc6de5568b3ab115c5c02e4513ac047d8ccd
   install:
     - flux:/usr/bin/
 
