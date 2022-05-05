@@ -27,7 +27,7 @@
     - bank-vaults:/usr/bin/
 
 - name: carvel-kapp
-  version: 0.46.0
+  version: 0.47.0
   homepage: https://carvel.dev/kapp/
   summary: simple deployment tool focused on the concept of "Kubernetes application"
   description: |-
@@ -37,8 +37,8 @@
   fetch:
     url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v{{version}}/kapp-linux-{{goarch}}
     sha256:
-      amd64: 130f648cd921761b61bb03d7a0f535d1eea26e0b5fc60e2839af73f4ea98e22f
-      arm64: f40cf819f170ce50632bcb683098a05711d0a2a7110b72eb2754a7fc651eb2f3
+      amd64: 2b1bd5e3a35ed63045be80a7cc8cbc054fe4e98c89c55f9006c8fec2243658a4
+      arm64: 8808e0cbe06028581b8ed48e0a8426b7fd9dc26d17e24f9ab96522774892839a
   install:
     - kapp-linux-{{goarch}}:/usr/bin/kapp
 
