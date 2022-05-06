@@ -17,7 +17,7 @@
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
 - name: lens
-  version: 5.3.4-latest.20220120.1
+  version: 5.4.6-latest.20220428.1
   homepage: https://k8slens.dev/
   summary: powerful IDE for kubernetes
   description: |-
@@ -30,7 +30,7 @@
     it’s the largest and most advanced Kubernetes platform in the world.
   fetch:
     url: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
-    sha256: 8d43a212c38ddfd5480d4d7cc481b6747a76e2226c150b2701170974df252371
+    sha256: b953e512312e2f69451c920dd010e41901a8fcfbb41347d8c713c3c1815eff2f
   install:
     - data:/
   script:
