@@ -702,7 +702,7 @@
     - packer:/usr/bin/
 
 - name: rancher
-  version: 2.6.4
+  version: 2.6.5
   homepage: https://github.com/rancher/cli
   summary: command-line interface for rancher
   description: |-
@@ -711,8 +711,8 @@
   fetch:
     url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
     sha256:
-      amd64: 341d5cde2067e2f360850f25d126b637ef00770223957a72fff848fc31e04bfc
-      armhf: 29471a7068d55b15ec5b3b4d0962f4f1b83079f5b9149ac5b70dd1d4399cad22
+      amd64: d04106c03e91c4af2c8d169625b7c47ac2e3ce34524d62d30cbc9c0d420304a0
+      armhf: 809439523db5f26a750b62e10c142de7e6c43eed429986349ee9887bdca21a58
   install:
     - rancher-v{{version}}/rancher:/usr/bin/
 
