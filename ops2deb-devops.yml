@@ -92,7 +92,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.4.4
+  version: 1.4.10
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -103,8 +103,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: 97efdbc6e3394e604f0ea4a2fd4c9c476e9a264ce00426aa1964356bbfa10cfd
-      arm64: 03c270ae7429b9ff344bd2f5272828083d4394d4298e8d926ba85e97102d6ab7
+      amd64: 3074f777fc02a25d6a54784b404ea77a9548fc4f8cc9949138bb767238a14431
+      arm64: b623c4a000d5253004534b5df672415f4f0850986f1c0559aec4aaac8324fb8a
     targets:
       amd64: x86_64
   install:
@@ -520,7 +520,7 @@
     - kustomize:/usr/bin/
 
 - name: lazydocker
-  version: 0.17.1
+  version: 0.18.1
   homepage: https://github.com/jesseduffield/lazydocker
   summary: a lazier way to manage everything docker
   description: |-
@@ -529,9 +529,9 @@
   fetch:
     url: https://github.com/jesseduffield/lazydocker/releases/download/v{{version}}/lazydocker_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: e967a41d7a0dafca75813c135b8503549d80f3589096f7785272eb38f1bb8607
-      armhf: 3f3dbfe141c8fbfe2b4519b5ed68f5451ba15043fc4396e3f9f901a41d8fc223
-      arm64: 56d7e13db5034e3e7794daf9c714338630aee398f396dedf6236ca2abc71e265
+      amd64: c42ac84b27c9c2a1508f61379dd730bd9006bfd5919b4776466f6f0e582a991a
+      armhf: 449bbd310310ca4b232a095901c8a4adac33988145a428ad34216eae662402b0
+      arm64: e6b64c5fd9fee45630175ecb19241b6589a9db10225d4da36de853d218815861
     targets:
       amd64: x86_64
       armhf: armv7
@@ -841,7 +841,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.36.11
+  version: 0.37.0
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -851,8 +851,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: c0bcc2bb7e0e3a9667868fa111009cb4d4fd1da4056ae1a8c214d3d22c477a9d
-      arm64: 158b2b767c882b6e94b484fa0f4f58b669de91f0d86dddfebe291e8f04e9133f
+      amd64: 226db120b62af207f7c6a3c890b39baad8a1f3c44d0d954ceeebee5e204443d9
+      arm64: 95c271e11e74b7eb354fa42dabd2e07e587fe3567d55c927d4b78ff784824492
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
