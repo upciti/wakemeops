@@ -126,7 +126,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.5.0
+  version: 2.5.1
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -136,9 +136,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 6296d17268c77a7159f57f04ed26dd2989f909c58cca4d44d1865f28bd27dd67
-      armhf: d728dcbe5e20103e9b025efdbb6bfbca9ea9866851e669f7775fe3ebb7ab945c
-      arm64: 7efc61cc85fe712f14f04a6886d1481c96fe958be265f67482583b4b713b6a22
+      amd64: d99de1ea7616f2a4c7914d37674f0650660a5e832be555805a71c0fc377233c9
+      armhf: f5a15fa6ef16f3c79cf8c2e965d7426d1f3968c273eb588c76d1f2851b1bf90f
+      arm64: 002662ed18a22d9d65d3d2c0358008c7c6a3db7dacb8983488130b3954d00e63
     targets:
       amd64: x86_64
       armhf: armv7
@@ -257,7 +257,7 @@
     - iamlive:/usr/bin/iamlive
 
 - name: istioctl
-  version: 1.13.3
+  version: 1.13.4
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -266,9 +266,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: 5dfed06990a2b2337f02617c4843e8e444df1c8456bad93f570892ec6e6e4cd9
-      armhf: 2792cf3ab71b6be7d66113f15bf3c5ac77a480db65b7455bd2609578ca761fcf
-      arm64: 74e67eb5ee892a69212339b6ae802135b72cf4cd592322f8387560d56bcd2e5f
+      amd64: a7066afc8ff91266f8903ce6c3c994aafc12da80175c5a3f9f7ab0ed7eaa020f
+      armhf: d1d5b03551184ca5fd599cb66c464ebddf97a3908ec0beca1c3b70b7f4f97358
+      arm64: 1d6f68e6ae636ad858f4acb97a4691818bb7b6a589d2fdb76b4615a0d482253c
     targets:
       armhf: armv7
   install:
@@ -782,7 +782,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.6.1
+  version: 2.6.2
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -801,8 +801,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: ddda4ce8790bbbe5dc04cd53ad60b65d90a6bcfcea9326f8bf118d3b06d45554
-      arm64: aa2a5f4f30e65dea65e685c67ac5040ef9ccabd6e111a97e8e34972c59a47aac
+      amd64: 12e974640f264392bc2fbbbec9cc8a6e61562e30e15b7c178468bd73294e2801
+      arm64: 993d5174391e44d45e37bbde512535db06f77f974ade266b799de385878e98ab
   install:
     - telepresence:/usr/bin/
 
