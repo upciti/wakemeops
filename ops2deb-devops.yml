@@ -202,7 +202,7 @@
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
 - name: helm
-  version: 3.8.2
+  version: 3.9.0
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
@@ -213,9 +213,9 @@
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 6cb9a48f72ab9ddfecab88d264c2f6508ab3cd42d9c09666be16a7bf006bed7b
-      armhf: 3447782673a8dec87f0736d3fcde5c2af6316b0dd19f43b7ffaf873e4f5a486e
-      arm64: 238db7f55e887f9c1038b7e43585b84389a05fff5424e70557886cad1635b3ce
+      amd64: 1484ffb0c7a608d8069470f48b88d729e88c41a1b6602f145231e8ea7b43b50a
+      armhf: bcdc6c68dacfabeeb6963dc2e6761e2e87026ffd9ea1cde266ee36841e7c6e6a
+      arm64: 5c0aa709c5aaeedd190907d70f9012052c1eea7dff94bffe941b879a33873947
   install:
     - linux-{{goarch}}/helm:/usr/bin/
 
