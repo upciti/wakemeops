@@ -316,7 +316,7 @@
     - k9s:/usr/bin/
 
 - name: kind
-  version: 0.13.0
+  version: 0.14.0
   homepage: https://kind.sigs.k8s.io
   summary: deploy Kubernetes cluster in Docker
   description: |-
@@ -326,8 +326,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-{{goarch}}
     sha256:
-      amd64: c80c6d1013337cbbe226c2eda0a3dc2d75af16e5fa8af4ce3fc9fedcf1f9d2dc
-      arm64: b66c2b74470c9d5a41a99a9a37fee522073236178064284b6401bdf79a6e90dc
+      amd64: af5e8331f2165feab52ec2ae07c427c7b66f4ad044d09f253004a20252524c8b
+      arm64: 95c9601f21fdb2c286442339d5e370149b4fe2fc7c49f615647e4e27bdfb17e2
   install:
     - kind-linux-{{goarch}}:/usr/bin/kind
 
@@ -644,7 +644,7 @@
     - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.20.0
+  version: 1.20.1
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -655,8 +655,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: b21437d72700fadbef4525b1840719003fa43b019a14eecc62b88d191d30f5e5
-      arm64: e8e55319fe3c4ccc80c1123eaf92fdcc025d65b53c7f4e61df2675686da00d04
+      amd64: ddd29d15111cff3450232b84eccac804490e7ffedf106f113bcbdf524a3d4f0f
+      arm64: 712a92051342361717eef39e4ad2cc22f51b15cd44ad91c42b210d3f1e6814d9
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
