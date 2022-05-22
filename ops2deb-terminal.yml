@@ -376,7 +376,7 @@
     - tokei:/usr/bin/
 
 - name: xh
-  version: 0.16.0
+  version: 0.16.1
   homepage: https://github.com/ducaale/xh
   summary: user-friendly and fast tool for sending HTTP requests
   description: |-
@@ -385,8 +385,8 @@
   fetch:
     url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: bfaaf3d1dc080c5d6dbfe7b33be00a391fd0bc56a3c8a9975b5202a2b7b14fd0
-      armhf: 45cf136f127a2b20b367171b75b8153767f3c89387b754e687469cf014f1727d
+      amd64: e369cdd618da40418704e32df820831705a03c1b9a42e38e1dcb033d19a63cfe
+      armhf: 79514ec2db635ed1029a5dc0ca6d7b6b3d2c7636d6aab704b8250abacf20b3ad
     targets:
       amd64: x86_64-unknown-linux-musl
   install:
