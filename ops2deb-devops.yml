@@ -92,7 +92,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.4.26
+  version: 1.4.28
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -103,8 +103,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: 1b7d2e29c82443ea4814c9e06385eec204e6b36653403138b8fb67ff05dc7a7d
-      arm64: 2f0735ceeb6ed3e651a3422e55e783f6587aed0377407e2c9e45a8259665f814
+      amd64: 5c2adf66fa4d0f1264db77e2111e922a827de5430774e701e421cc693baaf580
+      arm64: 0fb6cb8466cef9debb0ae0ec28dd1c9953d30d1cc40c700545eb5908f0c59c01
     targets:
       amd64: x86_64
   install:
@@ -782,7 +782,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.6.3
+  version: 2.6.4
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -801,8 +801,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 709e314dfc2d2998677119658aaf15d80c4946af478fe2b94c1b0d409a9516e4
-      arm64: fc754ce9f090544502051fe2bcd6d2c0986779dd4e5e96c720366d68f6fa72e4
+      amd64: 254db3ea82e329f445d2fd20774950364f92c23096ed0e6a5df1129367c8b88d
+      arm64: 6a0d6f8026f9ba6d3d30a57b285a13f351493a65235d13fa15a65398e80e1dc4
   install:
     - telepresence:/usr/bin/
 
