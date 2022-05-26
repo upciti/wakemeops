@@ -34,7 +34,7 @@
     - btm:/usr/bin/
 
 - name: chezmoi
-  version: 2.16.0
+  version: 2.17.0
   homepage: https://github.com/twpayne/chezmoi
   summary: manage your dotfiles across multiple diverse machines
   description: |-
@@ -48,9 +48,9 @@
   fetch:
     url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 44d45c687852a0c120f44f5201e7a4745c8fd63069315462556065121c50577d
-      armhf: 1f3459f64f14e35dace4228ec4c16d54910b1b3fea7cc3cff8822b284eb1c1c3
-      arm64: b8844840cc145f3c4dc3918935269d50e905353a282ec894d1db74d2c8a8500b
+      amd64: 5c978ba36ca1783286725d4c465d3bd0478e411385f266f90b7aaf5883008c5f
+      armhf: 35bc1450de5844df93ba32e21e49c6067077b7062bdd4d8b4bc9d6d98dd681f1
+      arm64: 40f0330ff5c3d3e9e384a2f6cf5f060d60188909a53128f0482aeed67f717ea3
   install:
     - chezmoi:/usr/bin/
 
@@ -164,7 +164,7 @@
     - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 
 - name: ghorg
-  version: 1.7.13
+  version: 1.7.14
   homepage: https://github.com/gabrie30/ghorg
   summary: quickly clone an entire org/users repositories into one directory
   description: |-
@@ -175,8 +175,8 @@
   fetch:
     url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 2372f18aa5775446082a74a41de28cb756e226446a6e742092a24f3e4861ae27
-      arm64: 16aa1155eb8ea6777d8370259d7bc93b9de8a4b280862e5c063b5606de6fe239
+      amd64: 338edd235661c480d6750bce50ac4e13d966aecd6575650d46e7a3feca40ba81
+      arm64: 4e2c351cd0e2e760629dfdd46f36c1727a7d5c21c85ae986c5552916ca1f4e25
     targets:
       amd64: x86_64
   install:
