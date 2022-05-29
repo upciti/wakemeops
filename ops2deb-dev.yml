@@ -210,7 +210,7 @@
     - mv poetry {{src}}/usr/lib/
 
 - name: pyenv
-  version: 2.3.0
+  version: 2.3.1
   homepage: https://github.com/pyenv/pyenv
   arch: all
   summary: simple Python version management
@@ -238,7 +238,7 @@
     - liblzma-dev
   fetch:
     url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
-    sha256: b85b391213ada32334ad56cff44ad5bb58da18d021356ffbe81c5d55e1a19f99
+    sha256: 87b1e28181b430158f67c5368a93198eae3263f87eea5827eb77f0e00b6a3964
   install:
     - path: /etc/profile.d/ops2deb-pyenv.sh
       content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
