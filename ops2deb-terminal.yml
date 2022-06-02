@@ -164,7 +164,7 @@
     - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 
 - name: ghorg
-  version: 1.7.15
+  version: 1.7.16
   homepage: https://github.com/gabrie30/ghorg
   summary: quickly clone an entire org/users repositories into one directory
   description: |-
@@ -175,8 +175,8 @@
   fetch:
     url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: defe60721fdca9b840ae8f55db1f2ff1f759f70757d0325c388de54eceee0bc8
-      arm64: a0c30cf6f4a54cb3691a8fa0703cb4189dd0590d4f49cf4ff01bc91646599bfb
+      amd64: f15fa15acb353339bffed7b9842107ac2088e0b8abadfb9e94eb23ae77922905
+      arm64: 8679e149509463f8274e31f98856fa71c18e45c262afcf76de151b7a5594e91e
     targets:
       amd64: x86_64
   install:
