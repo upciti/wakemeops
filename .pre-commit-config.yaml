@@ -14,3 +14,10 @@ repos:
     hooks:
       - id: prettier
         exclude: ^(ops2deb-.+\.yml|.+\.md|.+asciinema-player\..+)
+  - repo: local
+    hooks:
+      - id: ops2deb
+        name: Ops2deb Format
+        entry: make format
+        language: system
+        pass_filenames: false
