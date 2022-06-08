@@ -168,7 +168,7 @@
     - mv dist_linux*/docker-slim* {{src}}/usr/bin/
 
 - name: flux
-  version: 0.31.0
+  version: 0.31.1
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -178,9 +178,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 0d761af617dc042141b90540323bd57b9d34f5cb83628d4f4857199236a3a29b
-      armhf: 6d244256f8619d1dfe51ddf6a427b98b0dd2a0f61819f8c23e509e07e4684ce7
-      arm64: 753bd0c54c9e75e9abd291d2fd1a642459db09f7447b4b33338933042f88c621
+      amd64: 640d2f9b403f446fbb7ee7b99bf58341aa1a98d64688b9f47e533b78dd212166
+      armhf: d41152c46b9bb9a299f69b299479117ba90847e765f49c676df3cc4056e37d7d
+      arm64: d0257e775a0e82d2c272f0f7e93b247e8ca306c9bd9eeab77301166be46d8127
   install:
     - flux:/usr/bin/
 
@@ -841,7 +841,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.37.1
+  version: 0.37.2
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -851,8 +851,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: 1d1606fba6a2bc2b9919f1fe78192cd320a3d379feb57a033439faa681cde902
-      arm64: de105b8fefbd4f8cb6616e9f6870c88aa7dfbde3bbf460a7f4361481d8c28450
+      amd64: c5c8d5d7679951c3a851d79bbc38774d8f7713d528526225673569b36ff749ce
+      arm64: aed8d133703175b16f4bfc35646767b566c19ab010c75ebd04d6482ec429f54d
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
