@@ -257,7 +257,7 @@
     - iamlive:/usr/bin/iamlive
 
 - name: istioctl
-  version: 1.14.0
+  version: 1.14.1
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -266,9 +266,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: b2c048bf142282afcf806872731bd45e4958d3006e79bd2affa6d8204d37f328
-      armhf: d3e936e3cadc4449e9f4f2c0e3c5791dc77d91a85e401d576b96e726d33a6e78
-      arm64: 5827cd123412de804a1ffe0e37fc7de495458fe6c80d1794608dcfc25460bbda
+      amd64: 9b57bf3c475e0b2adaabbabb1d0deb20062dd176027c223cd5cfbb96d68744b7
+      armhf: 2cce12dec8c7aabee72086821fe2123eb30484148d9fa60a7343f0f93a3a6ac4
+      arm64: aca4f0796d7b0524676685a5e55e46571ec958d2c2b6163cd75c30d4a33c1150
     targets:
       armhf: armv7
   install:
@@ -782,7 +782,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.6.5
+  version: 2.6.6
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -801,8 +801,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 241a9ce558e2cb844e37fb77393256b189d3830ebe6dc5666be19dabe1cde082
-      arm64: 4ada898b533d30d549551e5319e457052ef372eae63f2f3d0e52f4a2a58f444d
+      amd64: 38ded42d177f4b08748dc74b2a4028e96552044e2927a715c457c6a0a80d0f70
+      arm64: b358e12800201ccc1b1f21e60b18bc4cd54ef319e51fa8f7f821d3459cccb5c4
   install:
     - telepresence:/usr/bin/
 
