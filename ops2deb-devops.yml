@@ -9,6 +9,19 @@
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
+- name: aws-iam-authenticator
+  version: 0.5.7
+  homepage: https://github.com/kubernetes-sigs/aws-iam-authenticator
+  summary: Kubernetes authentication using AWS IAM
+  description: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster.
+  fetch:
+    url: https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v{{version}}/aws-iam-authenticator_{{version}}_linux_{{goarch}}
+    sha256:
+      amd64: cfc17dbec11281477a82ccefce476909e56b3eb345518b1af53fe78a815451bb
+      arm64: bbc9e31d715949f8d7f2d860c81a41765203b9cb1e973cefe15eb686752c6274
+  install:
+    - aws-iam-authenticator_{{version}}_linux_{{goarch}}:/usr/bin/aws-iam-authenticator
+
 - name: bank-vaults
   version: 1.15.2
   homepage: https://banzaicloud.com/products/bank-vaults/
