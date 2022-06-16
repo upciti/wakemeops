@@ -115,7 +115,7 @@
     - bin/glab:/usr/bin/
 
 - name: hugo
-  version: 0.100.2
+  version: 0.101.0
   homepage: https://gohugo.io/
   summary: fast and flexible Static Site Generator
   description: |-
@@ -136,9 +136,9 @@
   fetch:
     url: https://github.com/gohugoio/hugo/releases/download/v{{version}}/hugo_{{version}}_Linux-{{target|goarch}}.tar.gz
     sha256:
-      amd64: 3989c9992cfd88b4dada11031255c3d12dec185478c214694a66062cd6249c3f
-      armhf: 48fb3534d2002cfc8b6e9be24a4e1cb5ddb41e6f26e6507bad3876bb4fd35ac1
-      arm64: 24bbff956646703288d1bffde9d51d6b3bdfcfeda8e05b448b4563e19d1a5236
+      amd64: 3a22bf2b467b861afa62bd0cd1c0bbd18e2c95cac0e0b61f3c7c8459c2b313eb
+      armhf: 86a0b8b71d41d0a7ec7cac6690c0be39799192899d3e477970f1f9a233746080
+      arm64: 02787420d516c9db2040cbc2926586cd9198c2e4dde15731196ccc2d9796df92
     targets:
       amd64: 64bit
   install:
