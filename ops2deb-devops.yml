@@ -1,13 +1,26 @@
 - name: argocd
-  version: 2.3.3
+  version: 2.4.0
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: da3544c525bb1dccbd6702eaf19c20ff774bb439c904fb7184242ed7439b11d2
+    sha256: c97145a6cdac1afd9aba1249b686d3ab97bf743667f8860cc09d76be0cdaa9a1
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
+
+- name: aws-iam-authenticator
+  version: 0.5.7
+  homepage: https://github.com/kubernetes-sigs/aws-iam-authenticator
+  summary: Kubernetes authentication using AWS IAM
+  description: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster.
+  fetch:
+    url: https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v{{version}}/aws-iam-authenticator_{{version}}_linux_{{goarch}}
+    sha256:
+      amd64: cfc17dbec11281477a82ccefce476909e56b3eb345518b1af53fe78a815451bb
+      arm64: bbc9e31d715949f8d7f2d860c81a41765203b9cb1e973cefe15eb686752c6274
+  install:
+    - aws-iam-authenticator_{{version}}_linux_{{goarch}}:/usr/bin/aws-iam-authenticator
 
 - name: bank-vaults
   version: 1.15.2
@@ -27,7 +40,7 @@
     - bank-vaults:/usr/bin/
 
 - name: carvel-kapp
-  version: 0.46.0
+  version: 0.49.0
   homepage: https://carvel.dev/kapp/
   summary: simple deployment tool focused on the concept of "Kubernetes application"
   description: |-
@@ -37,13 +50,13 @@
   fetch:
     url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v{{version}}/kapp-linux-{{goarch}}
     sha256:
-      amd64: 130f648cd921761b61bb03d7a0f535d1eea26e0b5fc60e2839af73f4ea98e22f
-      arm64: f40cf819f170ce50632bcb683098a05711d0a2a7110b72eb2754a7fc651eb2f3
+      amd64: dec5040d90478fdf0af3c1548d46f9ded642f156245bba83fe99171c8461e4f7
+      arm64: e2047147c4bc00d8fcf9a5f01bdefc9fdf0aa5de9582357f03e54d4cd9fc0d75
   install:
     - kapp-linux-{{goarch}}:/usr/bin/kapp
 
 - name: carvel-ytt
-  version: 0.40.1
+  version: 0.41.1
   homepage: https://carvel.dev/ytt/
   summary: YAML templating tool that works on YAML structure instead of text
   description: |-
@@ -54,8 +67,8 @@
   fetch:
     url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v{{version}}/ytt-linux-{{goarch}}
     sha256:
-      amd64: 11222665c627b8f0a1443534a3dde3c9b3aac08b322d28e91f0e011e3aeb7df5
-      arm64: c5d2f033b375ee87414b51d16c324d7a441de2f256865b5c774c4d5aea30ef60
+      amd64: 65dbc4f3a4a2ed84296dd1b323e8e7bd77e488fa7540d12dd36cf7fb2fc77c03
+      arm64: 3eaa8fcb3526a2a305a4845196bbffe7e1b0f3ea57fcd90daad94c855139df86
   install:
     - ytt-linux-{{goarch}}:/usr/bin/ytt
 
@@ -92,7 +105,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.3.0
+  version: 1.5.15
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -103,15 +116,15 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: fb61e87f5dc36bb07de893600c620cb1cc4da2797eaf124f4e711451e6e77445
-      arm64: d2c21b90767d70589f0df653335c2459cf7cdb7b82857394133e2fb91d7f32bf
+      amd64: bc5c5e5223b903dfda5faaaa152264f4f3c0aadb45d84036265577c81419f36b
+      arm64: e341d53ad871c411edff501f1482d1be7675a87bb701fa05bd382e3c068b5e70
     targets:
       amd64: x86_64
   install:
     - datree:/usr/bin/
 
 - name: devspace
-  version: 5.18.4
+  version: 5.18.5
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -120,13 +133,13 @@
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
     sha256:
-      amd64: 60bb562b73cdd7bb5ce36fc6643254f795cb5dc151a26c5d108548e2905be627
-      arm64: c088ec2015b71db6ab1e8675051e66ebe769c03749f3abd4525f4e02ded8bedf
+      amd64: 5df42500c2e6be3f9335d459d833cb78ec3322bd29ecd03ab4d1b9ffdd92da35
+      arm64: 4026b52a0ea657ec4e8435d46a88688df284763c4f36b2bd20d60a123e18f010
   install:
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.4.1
+  version: 2.6.0
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -136,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 6dc9096eb6aed220e9b876b3ae6edbffa8bb3beaa5936d11495acd90ea6246f1
-      armhf: 59c437662de1481e4eaaad737e2050020b50cdc0ed829c353ef27ac0e272263f
-      arm64: 5296819ee4fd8b5c71e5f110ff238e2ebb330927863fc91f26baa0ddf4bb1d85
+      amd64: 4eb9084cd9e33d906bd1ea11b5bc2e77a43f8ffbe7228bcf7c829a7687f5c4bb
+      armhf: cf566ae18f89498bb20ac71d949b82b97bec3e9f972e009141c4f2faf440257a
+      arm64: f2bc74dddaa58add7b428b5a764ccd4f048b366f3eb5c80a77ff06fcdc00b3ce
     targets:
       amd64: x86_64
       armhf: armv7
@@ -147,7 +160,7 @@
     - docker-compose-linux-{{target}}:/usr/bin/docker-compose
 
 - name: docker-slim
-  version: 1.37.5
+  version: 1.37.6
   homepage: https://dockersl.im
   summary: minify docker images by up to 30x
   description: |-
@@ -157,9 +170,9 @@
   fetch:
     url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
     sha256:
-      amd64: dab611c00b7b8582e63d6822b5581d2e987b818c142252afcde22fa508777c58
-      armhf: 817607f33d97931c8c3694c31098e97203a0ab355a49743ddc1db228b691321e
-      arm64: 5a3db859fe3de109d5ce7a681488571fd93c9161fee80051b3e0ed7cf6c20092
+      amd64: e9efdef85157e98a835fe01ea5a4131f26a60909587bff9e32dcf259fa916372
+      armhf: 1bb658ec9dc1b7fcaeab990060a7ee6c2db37466f0c7e8324e23b96a9cf47304
+      arm64: 59067ac6c8c940db0213613ba8675feaebd57f2d7b55645a9993a94825d08f79
     targets:
       amd64: linux
       armhf: linux_arm
@@ -168,7 +181,7 @@
     - dist_linux/docker-slim:/usr/bin/
 
 - name: flux
-  version: 0.29.2
+  version: 0.31.1
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -178,9 +191,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 2684556bcfa785612f1546427d819ac65d211e6e342e3a796196e760fdafa8aa
-      armhf: 1c4347d19762e9841479a8fea3c709a082e2b1e7cf4f0653f80d9fe66e09a687
-      arm64: f67bc91c336d810f4622f7585719a0deb2d9bfe833e7b15fa8865cc27a35bba4
+      amd64: 640d2f9b403f446fbb7ee7b99bf58341aa1a98d64688b9f47e533b78dd212166
+      armhf: d41152c46b9bb9a299f69b299479117ba90847e765f49c676df3cc4056e37d7d
+      arm64: d0257e775a0e82d2c272f0f7e93b247e8ca306c9bd9eeab77301166be46d8127
   install:
     - flux:/usr/bin/
 
@@ -202,7 +215,7 @@
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
 - name: helm
-  version: 3.8.2
+  version: 3.9.0
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
@@ -213,9 +226,9 @@
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 6cb9a48f72ab9ddfecab88d264c2f6508ab3cd42d9c09666be16a7bf006bed7b
-      armhf: 3447782673a8dec87f0736d3fcde5c2af6316b0dd19f43b7ffaf873e4f5a486e
-      arm64: 238db7f55e887f9c1038b7e43585b84389a05fff5424e70557886cad1635b3ce
+      amd64: 1484ffb0c7a608d8069470f48b88d729e88c41a1b6602f145231e8ea7b43b50a
+      armhf: bcdc6c68dacfabeeb6963dc2e6761e2e87026ffd9ea1cde266ee36841e7c6e6a
+      arm64: 5c0aa709c5aaeedd190907d70f9012052c1eea7dff94bffe941b879a33873947
   install:
     - linux-{{goarch}}/helm:/usr/bin/
 
@@ -243,7 +256,7 @@
     - helmfile_linux_{{goarch}}:/usr/bin/helmfile
 
 - name: iamlive
-  version: 0.46.0
+  version: 0.47.3
   homepage: https://github.com/iann0036/iamlive
   summary: generate policies from AWS calls
   description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
@@ -251,13 +264,13 @@
   fetch:
     url: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 46512ca8f59f294b39aa3e0ab6f1ba92891a1f716aaa0f8e1aee4c1c7a89a65f
-      arm64: a5bbab8620ba5efd70ac7a58836efcb68c06fdf82a597e8df55b527538968569
+      amd64: fde581925142c09a3b028a4f4a7a132404f6e4b4c9e3b9affca1f500b2af9da8
+      arm64: 20b7bf5d1f9b2832720a18881a701a6594bc642b7dcccf167c0f3e1ef752a9de
   install:
     - iamlive:/usr/bin/iamlive
 
 - name: istioctl
-  version: 1.13.3
+  version: 1.14.1
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -266,9 +279,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: 5dfed06990a2b2337f02617c4843e8e444df1c8456bad93f570892ec6e6e4cd9
-      armhf: 2792cf3ab71b6be7d66113f15bf3c5ac77a480db65b7455bd2609578ca761fcf
-      arm64: 74e67eb5ee892a69212339b6ae802135b72cf4cd592322f8387560d56bcd2e5f
+      amd64: 9b57bf3c475e0b2adaabbabb1d0deb20062dd176027c223cd5cfbb96d68744b7
+      armhf: 2cce12dec8c7aabee72086821fe2123eb30484148d9fa60a7343f0f93a3a6ac4
+      arm64: aca4f0796d7b0524676685a5e55e46571ec958d2c2b6163cd75c30d4a33c1150
     targets:
       armhf: armv7
   install:
@@ -277,7 +290,7 @@
     - ln -s /opt/istio/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: k3d
-  version: 5.4.1
+  version: 5.4.3
   homepage: https://k3d.io
   summary: run Rancher Lab's k3s in Docker
   description: |-
@@ -287,9 +300,9 @@
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}
     sha256:
-      amd64: 50f64747989dc1fcde5db5cb82f8ac132a174b607ca7dfdb13da2f0e509fda11
-      armhf: 68a3db44493b121e8f48a88ce1976fda78f200a5740ca0fcd7a828cf21a5264a
-      arm64: 712ffb338ec1fed6f7c1c8691b79bc80967cc17fef256cd620190d0d7e502052
+      amd64: 8360b69f5f86b3fedfd632ac67b6e8f70af731d4c64df6dbb3d3c67eb723421b
+      armhf: 979ef6f6e1a42701405cbe9440d6fb65ab86599697f136f7f85ba25373d23d53
+      arm64: f604723614cc2a0a0cdbb69b927320b1634365cd36cd2fefb7375995f947559b
   install:
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
@@ -316,7 +329,7 @@
     - k9s:/usr/bin/
 
 - name: kind
-  version: 0.12.0
+  version: 0.14.0
   homepage: https://kind.sigs.k8s.io
   summary: deploy Kubernetes cluster in Docker
   description: |-
@@ -326,8 +339,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-{{goarch}}
     sha256:
-      amd64: b80624c14c807490c0944d21fdc9c3455d6cc904fad486fe236f2187ecaa5789
-      arm64: 26c16a8ec90e2a3a42f2f8e1c7139b69769ce1011e7a314cb4ae86345e6363bd
+      amd64: af5e8331f2165feab52ec2ae07c427c7b66f4ad044d09f253004a20252524c8b
+      arm64: 95c9601f21fdb2c286442339d5e370149b4fe2fc7c49f615647e4e27bdfb17e2
   install:
     - kind-linux-{{goarch}}:/usr/bin/kind
 
@@ -388,7 +401,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.23.6
+  version: 1.24.2
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -397,9 +410,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: 703a06354bab9f45c80102abff89f1a62cbc2c6d80678fd3973a014acc7c500a
-      armhf: 30d8e9656334b57e78c8dbc5d5f245a64b9a74c4fd03db47182fa7a21c2f5e32
-      arm64: 4be771c8e6a082ba61f0367077f480237f9858ef5efe14b1dbbfc05cd42fc360
+      amd64: f15fb430afd79f79ef7cf94a4e402cd212f02d8ec5a5e6a7ba9c3d5a2f954542
+      armhf: c342216e1d32c28953e13f28ced387feda675b969a196ed69eaeda137fa7486a
+      arm64: 5a4c3652f08b4d095b686e1323ac246edbd8b6e5edd5a2626fb71afbcd89bc79
   install:
     - kubectl:/usr/bin/
 
@@ -484,7 +497,7 @@
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
 
 - name: kubeseal
-  version: 0.17.5
+  version: 0.18.0
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-
@@ -495,14 +508,14 @@
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 7a832db451c09a8bb2c49930b9248c23ddf151f30ff579615e4996317dac9d61
-      armhf: be0aeab42f312ae67c02ee963c0a5f617f7e3a180555a0c2252c722ffa9371d1
-      arm64: fb328aa09ff7f94130699ff5759a30a44975343ed1eba0a400da431fa335300e
+      amd64: 51f3180d0e61d6b51b95f3c99f31d77f4417eb4945a03884afa55c20ce01c19a
+      armhf: 3b663024f5b12083c35ffad84cd2e4b60af42d02294e2312a2d55171555e4013
+      arm64: 8a108df213f5b632bad281eb0c985552cefc1f2e40c3d0707df19f1f21ea05d2
   install:
     - kubeseal:/usr/bin/
 
 - name: kustomize
-  version: 4.5.4
+  version: 4.5.5
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-
@@ -516,13 +529,13 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 1159c5c17c964257123b10e7d8864e9fe7f9a580d4124a388e746e4003added3
-      arm64: 094417546ab9b44ece44f3b31f3170080d0682519144301d5b6be080276a1f34
+      amd64: bba81aa61dba057db1d5abeddf1e522b568b2d906ab67a5c80935e97302c8773
+      arm64: c491191b81c97ddebc4844f9254683ecfc80f40dfb15510433cbfdaeb86627c3
   install:
     - kustomize:/usr/bin/
 
 - name: lazydocker
-  version: 0.12
+  version: 0.18.1
   homepage: https://github.com/jesseduffield/lazydocker
   summary: a lazier way to manage everything docker
   description: |-
@@ -531,9 +544,9 @@
   fetch:
     url: https://github.com/jesseduffield/lazydocker/releases/download/v{{version}}/lazydocker_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: a52d6e33aceb88099ccecca76fce1122a0bda29aae704c1a727a98379d0271fc
-      armhf: 1a4d523d71c9cf3541271c90e2f08873e980da1cf1c474ea9256f45d4ca5aae5
-      arm64: 46a236c55ac143f72b7c01eedfb9317942b743f6fc1d6d00d80ca9b31b2eb5ab
+      amd64: c42ac84b27c9c2a1508f61379dd730bd9006bfd5919b4776466f6f0e582a991a
+      armhf: 449bbd310310ca4b232a095901c8a4adac33988145a428ad34216eae662402b0
+      arm64: e6b64c5fd9fee45630175ecb19241b6589a9db10225d4da36de853d218815861
     targets:
       amd64: x86_64
       armhf: armv7
@@ -648,7 +661,7 @@
     - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.19.1
+  version: 1.22.0
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -659,13 +672,13 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: 90d7a497134a39a75c993fbfad03caf128d8c64d65b205f5052ec8918c787674
-      arm64: 68577ccecc184e714a44ba7985d8cb115fcd4e3fb22fa0374d0ad61c2dc6de52
+      amd64: 2fc68a50b94b7c477e804729365baa5de6d5afcfea9b7fcac9f93dd649c29e90
+      arm64: d2c5c1f1ade6ea77b704936043516e0a8804f17232fde9b54a1cb311a20542f1
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.29.1
+  version: 0.30.0
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -683,12 +696,12 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 57e876cdc88b77412f07d332a7e439620a99aaf8af58102fd19d26b6b2fdaf6c
+    sha256: 749dae0fac1c5973446c6b8e1f3a4aeab8d89b72d43d6918a91843ebeb6565fb
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
 - name: packer
-  version: 1.8.0
+  version: 1.8.1
   homepage: https://www.packer.io
   summary: create multi-platform machine images from a single source configuration
   description: |-
@@ -699,14 +712,14 @@
   fetch:
     url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 94c5d65386fa8f17e36d3496fbbdf18d3bfab01306aa8000c14656b63070b7c2
-      armhf: a00c11f3e19d6e1727d5d34d17c55a591c32436a67be6880919560bcd0ef00b6
-      arm64: 8b3a8768021b148ada2cbdf1c39f55d92e4280147ceb5f76f840a7adf50edce2
+      amd64: ae834c85509669c40b26033e5b2210d5594db3921103e38af1e3f537b58338a3
+      armhf: 8fb625dbe88850d856f18fd3360f904990a9c7fed7ece38e3cb30a5a1d46e4c4
+      arm64: 1e2d018ca5c9fa705a3b9627c2104edaffbd4ba9be4e14612ad5daf4b1c32be0
   install:
     - packer:/usr/bin/
 
 - name: rancher
-  version: 2.6.4
+  version: 2.6.5
   homepage: https://github.com/rancher/cli
   summary: command-line interface for rancher
   description: |-
@@ -715,13 +728,13 @@
   fetch:
     url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
     sha256:
-      amd64: 341d5cde2067e2f360850f25d126b637ef00770223957a72fff848fc31e04bfc
-      armhf: 29471a7068d55b15ec5b3b4d0962f4f1b83079f5b9149ac5b70dd1d4399cad22
+      amd64: d04106c03e91c4af2c8d169625b7c47ac2e3ce34524d62d30cbc9c0d420304a0
+      armhf: 809439523db5f26a750b62e10c142de7e6c43eed429986349ee9887bdca21a58
   install:
     - rancher-v{{version}}/rancher:/usr/bin/
 
 - name: rclone
-  version: 1.58.0
+  version: 1.58.1
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-
@@ -730,9 +743,9 @@
   fetch:
     url: https://github.com/rclone/rclone/releases/download/v{{version}}/rclone-v{{version}}-linux-{{goarch}}.zip
     sha256:
-      amd64: 586553898cc1e9e1f3198d7a0c5d84a34ca4709a35013954a3e648f09e65aa37
-      armhf: f5bb1c3947c4cdf7ed4e4afd4f0a8eeffbc522cde8af5ed15a979b3f58ea2446
-      arm64: 28db376098fd00a050c065ffbbfc5e4d878cea412ce4b3dbc3c45c5c96dfee4f
+      amd64: 135a4a0965cb58eafb07941f2013a82282c44c28fea9595587778e969d9ed035
+      armhf: 252ac98bb095787764fb981b61eb453c13717e7b2fc1e6275fdfacdc9ff1cbf2
+      arm64: b1abf65d6e9817ce5e2be532edeeb45cbd9ad671e8325d9d145e4d3c3ad41715
   install:
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
@@ -786,7 +799,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.5.6
+  version: 2.6.6
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -805,13 +818,13 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 55e6371a47396829bf798ce9e58c0ab9c7831cd6c86d9514260d801199484e76
-      arm64: cb17cc31564bc9e20cb13356de573ee003dc265076c566ddd355d44fd10a71ec
+      amd64: 38ded42d177f4b08748dc74b2a4028e96552044e2927a715c457c6a0a80d0f70
+      arm64: b358e12800201ccc1b1f21e60b18bc4cd54ef319e51fa8f7f821d3459cccb5c4
   install:
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.1.9
+  version: 1.2.3
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -822,9 +835,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 9d2d8a89f5cc8bc1c06cb6f34ce76ec4b99184b07eb776f8b39183b513d7798a
-      armhf: 800eee18651b5e552772c60fc1b5eb00cdcefddf11969412203c6de6189aa10a
-      arm64: e8a09d1fe5a68ed75e5fabe26c609ad12a7e459002dea6543f1084993b87a266
+      amd64: 728b6fbcb288ad1b7b6590585410a98d3b7e05efe4601ef776c37e15e9a83a96
+      armhf: a28b2e9163d6fc351bc791e827b01f7a356b9d76d89fa94f94bfe6dc50756d53
+      arm64: a48991e938a25bfe5d257f4b6cbbdc73d920cc34bbc8f0e685e28b9610ad75fe
   install:
     - terraform:/usr/bin/
 
@@ -845,7 +858,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.36.7
+  version: 0.37.4
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -855,8 +868,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: be8ff26e4500f6fcc20cd559846436f225ac728ffe93865fddfdc42428f0155d
-      arm64: fd52f5113ef9ba0e54bfbc8a2b82a9532814ceeafe505ecba2de76d5b19f105a
+      amd64: a5b3ad28fa72c16dd10edfe84ff631c2b965f80b202452579c381257161fe202
+      arm64: c3c4d24484abf584899ca58a1434c6113b7c633cf4aaa2cc3035fde97f4ff721
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
@@ -909,7 +922,7 @@
     - wakemebot_linux_amd64:/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.8.1
+  version: 0.8.2
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -919,7 +932,7 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: ec2ef7e11f3e1b9ba4a71cc23478f2d60445baddab92d05782d03a6a5e9a824e
-      armhf: 4680aec963624283c65822db86e7ba541a70ba043ea1b665adfbfbb364a9ef03
+      amd64: bc5ee76b94641b87b190073f31e74f822f0d290404c71659e6cd1aa69425ed6e
+      armhf: 6f739b6dd0a0a504a36cda20312fa72f5433b488bd9e48fdb28702b60f1610c7
   install:
     - waypoint:/usr/bin/

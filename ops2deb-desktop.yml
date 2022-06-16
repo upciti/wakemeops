@@ -1,5 +1,5 @@
 - name: balena-etcher
-  version: 1.7.8
+  version: 1.7.9
   homepage: https://github.com/balena-io/etcher
   summary: flash OS images to SD cards and USB drives, safely and easily
   description: |-
@@ -9,7 +9,7 @@
     and much more.
   fetch:
     url: https://github.com/balena-io/etcher/releases/download/v{{version}}/balena-etcher-electron_{{version}}_amd64.deb
-    sha256: b1376f07a318e36caae048bfebf33509245b701c8f6d62d3ca19b9c4e81b21fc
+    sha256: 941a03678408b67f7b2b6d3dad48a3e1070eadb53af561c292d7da93b26a91e5
   install:
     - data:/
   script:
@@ -17,7 +17,7 @@
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
 - name: lens
-  version: 5.3.4-latest.20220120.1
+  version: 5.4.6-latest.20220428.1
   homepage: https://k8slens.dev/
   summary: powerful IDE for kubernetes
   description: |-
@@ -30,7 +30,7 @@
     it’s the largest and most advanced Kubernetes platform in the world.
   fetch:
     url: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
-    sha256: 8d43a212c38ddfd5480d4d7cc481b6747a76e2226c150b2701170974df252371
+    sha256: b953e512312e2f69451c920dd010e41901a8fcfbb41347d8c713c3c1815eff2f
   install:
     - data:/
   script:
@@ -38,7 +38,7 @@
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
 - name: mattermost-desktop
-  version: 5.0.4
+  version: 5.1.0
   homepage: https://mattermost.com
   summary: desktop application for Mattermost
   description: |-
@@ -53,7 +53,7 @@
     platform built just for them.
   fetch:
     url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
-    sha256: cbd2981ce282eecfea1167c500d900cdd31bd041b0861025743b7d58e4cb9229
+    sha256: 2a6b5052a8363836d9eb3263b27c25bc1faf851d716cad97f6aaa6669c9347bf
   install:
     - path: /usr/share/applications/mattermost.desktop
       content: |

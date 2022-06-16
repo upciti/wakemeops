@@ -1,5 +1,5 @@
 - name: bat
-  version: 0.20.0
+  version: 0.21.0
   homepage: https://github.com/sharkdp/bat
   summary: cat replacement with syntax highlighting
   description: |-
@@ -9,9 +9,9 @@
   fetch:
     url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: a4a2b92f620e63ccdfc3f5d7d77a81ce6c46c1926b24d42cf385d961b92ade91
-      armhf: 7dcc591a71a98a2c24240e97b240556106d2b0241f0cabdf7c8f9edb8dde6403
-      arm64: 1f9e1856f01351ef945a8a6fb96e23a225850dfb3cd0f318e3655c5174a51f2b
+      amd64: 36efd61465a9a406069e1ccbd34c3739690607e7448baa6773f5c01d2b1a4ee1
+      armhf: a3a5278a2f9808233b5196a2bcdc72f85af8ac4fa7e5c1aa53d4d42dee48d4b7
+      arm64: 697dc98cbe9727d78b7e62ef6274bd98b091a101f14e3b578b3d72ce78e89a42
   install:
     - bat-v{{version}}-{{rust_target}}/bat:/usr/bin/
 
@@ -34,7 +34,7 @@
     - btm:/usr/bin/
 
 - name: chezmoi
-  version: 2.15.1
+  version: 2.17.1
   homepage: https://github.com/twpayne/chezmoi
   summary: manage your dotfiles across multiple diverse machines
   description: |-
@@ -48,16 +48,15 @@
   fetch:
     url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 107af05469f58dc1ee0ff9987ab195bce6395286808fe71ab20f568408bf91fb
-      armhf: 6378c7c70100edff17019f83c14828bfa56a2334bb0ab96845cf6f191660f60b
-      arm64: 7ce83fd80c98cb644889085bcbdea56d8ffbf1a267aa247f32f463e7d778585f
+      amd64: d22b64993c124d5dd9a06f6a1113a32749a24d5eaa823f831e737365a1fed9e8
+      armhf: 7476038d08973ca27ab03605c76ab7c5d82fa5a80f7013e3a4c59b477ca02176
+      arm64: 2cbcbfddc6e765d5e4ceb9453751342b40a08c183f00c54ff17b9fb3f0567687
   install:
     - chezmoi:/usr/bin/
 
 - name: choose
-  version: 1.3.3
+  version: 1.3.4
   homepage: https://github.com/theryangeary/choose
-  revision: 3
   summary: human-friendly and fast alternative to cut and sometimes awk
   description: |-
     Not a complete replacement for cut and awk, but rather a simple and intuitive
@@ -65,7 +64,7 @@
     necessary to run them.
   fetch:
     url: https://github.com/theryangeary/choose/releases/download/v{{version}}/choose-x86_64-unknown-linux-gnu
-    sha256: be74d8432765c8474d067d7c7d4916d2100ad92e232c1e1381a4c4293f118945
+    sha256: 80c0e3927757d5f69d93489cf5e4a7ddbe577b0f4e857eeda10701e54e1c3447
   install:
     - choose-x86_64-unknown-linux-gnu:/usr/bin/choose
 
@@ -147,7 +146,7 @@
     - bin/exa:/usr/bin/
 
 - name: fd
-  version: 8.3.2
+  version: 8.4.0
   homepage: https://github.com/sharkdp/fd
   summary: human-friendly and fast alternative to 'find'
   description: |-
@@ -158,14 +157,14 @@
   fetch:
     url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 64c43db1f6411df6dbe679d0881ac021b4fc8aec1b565a324cc6207aeada042f
-      armhf: b6f83826422acd972dc3e04f738eb8a16f1d7b49bcf490d7efeeb58097b9a033
-      arm64: 7e7defc64276b2ded5b2ba7e68c6dd499673348289b9aaef582aedad20e6d983
+      amd64: a1e72cf4f4fbd1b061387569678f3ab3555ee1cf025280b3ce6b2eee96cd3210
+      armhf: d60b7a2391c4b927767d116791ce86efefa47c869f1dd492a5610cf5e9d66083
+      arm64: c7795c6f139f598ba4ac5ecffd770b5772e4e438919068b9f83d1392eb2ebd22
   install:
     - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 
 - name: ghorg
-  version: 1.7.13
+  version: 1.7.16
   homepage: https://github.com/gabrie30/ghorg
   summary: quickly clone an entire org/users repositories into one directory
   description: |-
@@ -176,17 +175,16 @@
   fetch:
     url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 2372f18aa5775446082a74a41de28cb756e226446a6e742092a24f3e4861ae27
-      arm64: 16aa1155eb8ea6777d8370259d7bc93b9de8a4b280862e5c063b5606de6fe239
+      amd64: f15fa15acb353339bffed7b9842107ac2088e0b8abadfb9e94eb23ae77922905
+      arm64: 8679e149509463f8274e31f98856fa71c18e45c262afcf76de151b7a5594e91e
     targets:
       amd64: x86_64
   install:
     - ghorg:/usr/bin/
 
 - name: git-delta
-  version: 0.12.1
+  version: 0.13.0
   homepage: https://dandavison.github.io/delta/
-  revision: 2
   summary: syntax-highlighting pager for git, diff, and grep output
   description: |-
     Code evolves, and we all spend time studying diffs. Delta aims to make this
@@ -196,9 +194,9 @@
   fetch:
     url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
     sha256:
-      amd64: 8b6e8d735850fc3a14c10d8139f2ab19fa6fc17c99c905438d3713a76e3ab079
-      armhf: 72c538efc149935b634d1a2c735d560fbcc26e20b0b161e4c361b21f046e7572
-      arm64: fc58e181aefba7f57eeee10e3032df2a4ab30c5fe7f74ef53915211bfaf7fe20
+      amd64: 69ddecc92e86b77016692589c094bf3a32e7cb8a0dfd9f97f253c173cce830e9
+      armhf: 1d7ee6e1af30c5170ad241063fce33678dbbd501b81eb07066704e1d0ffa9371
+      arm64: 95e3f7e2118160e5f91b98551bc6fdd628a05e1f49ac643a0ce2bf58d3bb2f05
     targets:
       amd64: x86_64-unknown-linux-gnu
       armhf: arm-unknown-linux-gnueabihf
@@ -207,16 +205,16 @@
     - delta-{{version}}-{{target}}/delta:/usr/bin/delta
 
 - name: gping
-  version: 1.3.1
+  version: 1.3.2
   homepage: https://github.com/orf/gping
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: aa8aa97c170f656569e82c82f2e784f1576bfe3e9fc97bab766307b7e336801f
-      armhf: e41aae6804f69883d82a79198e52a95b6139d6e7ed6942fc7fd0bd3a6257f571
-      arm64: 4f33e5545352b2b62fec2897a135dee160c75d5248171e3400fb2b25d0fb6933
+      amd64: 300c1163d405ef25a66fe2362a6d18a5c50f738f2cf02cc406b04140bde110c1
+      armhf: 3670f6913df883e948b86588afe7679d1e1c7716abb5472a8a5d9975ba810b44
+      arm64: 4ca65c173433af2f564b959078dca89a793a9154576342ff3d5ad73fc1cc8a14
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
@@ -291,7 +289,7 @@
     - mdbook:/usr/bin/
 
 - name: mergestat
-  version: 0.5.5
+  version: 0.5.6
   homepage: https://docs.mergestat.com
   summary: enables SQL queries for data in git repositories
   description: |-
@@ -299,7 +297,7 @@
     understand everything that goes into building and shipping software.
   fetch:
     url: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
-    sha256: c54a5f70c06ea0b996a73b3ef8c14b77d8bdf829def6d5bacaeb85a94813b6a8
+    sha256: 77aefaa2841a872694e41ee7c31b0068c2a10d4192ab2523a16d752d1287b272
   install:
     - mergestat:/usr/bin/
 
@@ -378,7 +376,7 @@
     - tokei:/usr/bin/
 
 - name: xh
-  version: 0.16.0
+  version: 0.16.1
   homepage: https://github.com/ducaale/xh
   summary: user-friendly and fast tool for sending HTTP requests
   description: |-
@@ -387,8 +385,8 @@
   fetch:
     url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: bfaaf3d1dc080c5d6dbfe7b33be00a391fd0bc56a3c8a9975b5202a2b7b14fd0
-      armhf: 45cf136f127a2b20b367171b75b8153767f3c89387b754e687469cf014f1727d
+      amd64: e369cdd618da40418704e32df820831705a03c1b9a42e38e1dcb033d19a63cfe
+      armhf: 79514ec2db635ed1029a5dc0ca6d7b6b3d2c7636d6aab704b8250abacf20b3ad
     targets:
       amd64: x86_64-unknown-linux-musl
   install:
@@ -409,7 +407,7 @@
     - xsv:/usr/bin/
 
 - name: yq
-  version: 4.24.5
+  version: 4.25.2
   homepage: https://github.com/mikefarah/yq
   summary: portable command-line YAML processor
   description: |-
@@ -420,8 +418,8 @@
   fetch:
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
     sha256:
-      amd64: c93a696e13d3076e473c3a43c06fdb98fafd30dc2f43bc771c4917531961c760
-      armhf: ab1a4202baf7f11dd7e3707b966bed76b32207880d247483ed00d491520deabe
-      arm64: 8879e61c0b3b70908160535ea358ec67989ac4435435510e1fcb2eda5d74a0e9
+      amd64: 042f7462ec8378f8b0d3bac85d1b1a063b63beef5d8e3826bb2377294116ae90
+      armhf: 05a731113abe264e2422e294b476bada289b4806635975987244e62915735209
+      arm64: dc58ef7f1651f5a8da6ded8d1ced99df933f9f511b102302c1502ba70350c527
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq

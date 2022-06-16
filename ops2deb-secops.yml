@@ -1,5 +1,5 @@
 - name: boundary
-  version: 0.7.6
+  version: 0.8.1
   homepage: https://www.boundaryproject.io
   summary: provide simple and secure access to hosts and services
   description: |-
@@ -14,9 +14,9 @@
   fetch:
     url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 28cf7425e6763dda3406d5ae0cf416cf1b1f7d1b938e5913c8a8fd2bd22e64ed
-      armhf: 2f30d4cf11dd2508d1af87c4ba155827a8035e64b57f1d447689819109051ea2
-      arm64: b2cf95af472383cbf552f9d3a19345a3e774d9f67b41c646f5503b48bdc85d93
+      amd64: d50e8f0483e39e596b3ff5f37316bffe33ae78a07bed51c9b6ccdb0e3d3230cc
+      armhf: b6d1fcdead971b3d1882b36f82f24713b694ad47749d2c393ebea2c2ba757377
+      arm64: a5235d8fe7c08bdb52acbd7a4e4b33dad1fabe0769576cc69d2fc5cb848e3b72
   install:
     - boundary:/usr/bin/
 
@@ -49,7 +49,7 @@
     - feroxbuster:/usr/bin/
 
 - name: trivy
-  version: 0.26.0
+  version: 0.28.1
   homepage: https://www.aquasec.com/products/trivy/
   summary: vulnerability and misconfiguration scanner
   description: |-
@@ -58,9 +58,9 @@
   fetch:
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
     sha256:
-      amd64: 98fa7307a206d9218c9f2f80bee19ab9935bc905334430edbf5da7e6a7fd036e
-      armhf: d395f124dfd6763e2b16d6a4d565f9573fc687ce0080c55f726ebe45d0aa3af1
-      arm64: b13224efe88209a75804a8c331b1e88ae786ec6bb87462a8cf54e9fed8cf3a84
+      amd64: 2b3f401a181fbcd52624f1e79a38ddf4e28afab5354136496a058d2a76f59f0b
+      armhf: 19f0691bff0fd761ba60e3300a0d81d7bfcab72f8ae53ea570f546e7787f2d48
+      arm64: de83386f0c6f57a101937410f415d5172f2a9c42f5500b237aa7b7d1733aa66b
     targets:
       amd64: 64bit
       armhf: ARM
@@ -69,7 +69,7 @@
     - trivy:/usr/bin/
 
 - name: vault
-  version: 1.10.0
+  version: 1.10.4
   homepage: https://www.hashicorp.com/products/vault
   summary: tool to create, manage and store secrets
   description: |-
@@ -80,14 +80,14 @@
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: ec06473d79e77c05700f051278c54b0f7b6f2df64f57f630a0690306323f1175
-      armhf: 342d450170f6396a9656c99205c4336b480fc0adb1e68b132d88abe5109fee29
-      arm64: e4f963616ed0c4a4a03d541fb531d692014357f2fb53b3c64e75dfe35b96d7be
+      amd64: 0cfa7796139baf58365e10c4a353e72e56ef6332f4c9a4e66b6ae9a244167346
+      armhf: b6bc5ef9fbdacd3076c016184a91499a51cebdab41238deb80d0e2d88a615d1e
+      arm64: fe205af098a0a8cadad7c2ab197c4b71f64891e3a8a36d7aa08935e8cc16a003
   install:
     - vault:/usr/bin/
 
 - name: vuls-scanner
-  version: 0.19.5
+  version: 0.19.7
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-
@@ -98,9 +98,9 @@
   fetch:
     url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: c2f2d0ade7ce61ca3b5fd0388ae238c8b25c3a670d67a43e1028a522c43bab16
-      armhf: 74a5009e73b26648acb23f5a46c16df343578e8878eea880b57261ed04b28512
-      arm64: d4ea504ad8902f4f26ef1f632e3e45f878ff1689f0af58dd70f96c6dc2319c00
+      amd64: aeda7caf292fdcfa27d826bf0ada14e1ccc1be4211dd555db6f37bc992ca83f9
+      armhf: f2ff637bacecd9a6fe1d6da527034d1ce874728e78119b505a020d25b4082a1c
+      arm64: df0357616985947f7629369a713e020e338f0e6222782c95722a8c74dabff7ca
     targets:
       armhf: armv6
   install:

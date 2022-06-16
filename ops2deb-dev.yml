@@ -22,7 +22,7 @@
     - clog:/usr/bin/
 
 - name: coursier
-  version: 2.1.0-M5
+  version: 2.1.0-M6
   homepage: https://get-coursier.io/
   summary: Scala application and artifact manager
   description: |-
@@ -38,7 +38,7 @@
     - csound
   fetch:
     url: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
-    sha256: 3a9904baba49af5f8fea96eb9fd31aa6779637eb5b177b500ad6ad16706a0f1b
+    sha256: bcf5f70ee7e4123ed060b12670b1dcb980dbdf1b6a76d58afab714f3101fb504
   install:
     - cs-x86_64-pc-linux:/usr/bin/cs
 
@@ -58,7 +58,7 @@
     - pg_datanymizer:/usr/bin/
 
 - name: github-cli
-  version: 2.8.0
+  version: 2.12.1
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
   description: |-
@@ -67,9 +67,9 @@
   fetch:
     url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 3db79714805262011b2dd65235ed602c0f931248297b0e5f2b25fcf88a1a2757
-      armhf: 7c323739a2a8189c71b1adb8475976d806709c2a6bd27ace2972370061f21572
-      arm64: 684321133d176df901a7915e3f3582c81d807e22d3b0d2b9c3630837be110416
+      amd64: 359ff9d759b67e174214098144a530a8afc4b0c9d738cd07c83ac84390cdc988
+      armhf: 777a481cf7f683b5f92719863002731a3c69488f6d8f854236463b1a751aaaed
+      arm64: 5906fdd8f1cce057b577b298bc5e688f82acf376f1d746c7dce938f689554929
     targets:
       armhf: armv6
   script:
@@ -115,7 +115,7 @@
     - bin/glab:/usr/bin/
 
 - name: hugo
-  version: 0.97.3
+  version: 0.100.2
   homepage: https://gohugo.io/
   summary: fast and flexible Static Site Generator
   description: |-
@@ -136,16 +136,16 @@
   fetch:
     url: https://github.com/gohugoio/hugo/releases/download/v{{version}}/hugo_{{version}}_Linux-{{target|goarch}}.tar.gz
     sha256:
-      amd64: 3d3de272b895a95849ec5011a254da2e34148ed6f03bab24e3930c1f5ee52cdf
-      armhf: e07d7b9cbdb68d0c49179efa0db58237a2228090f0e497c41b974f0841231ba5
-      arm64: e0a8581cac03de8992e0dbb171460dc13d6867d8c7f107433d5bc691b3a27fa0
+      amd64: 3989c9992cfd88b4dada11031255c3d12dec185478c214694a66062cd6249c3f
+      armhf: 48fb3534d2002cfc8b6e9be24a4e1cb5ddb41e6f26e6507bad3876bb4fd35ac1
+      arm64: 24bbff956646703288d1bffde9d51d6b3bdfcfeda8e05b448b4563e19d1a5236
     targets:
       amd64: 64bit
   install:
-    - bin/hugo:/usr/bin/
+    - hugo:/usr/bin/
 
 - name: mask
-  version: 0.11.1
+  version: 0.11.2
   homepage: https://github.com/jakedeichert/mask
   summary: command-line task runner defined by a simple markdown file
   description: |-
@@ -154,7 +154,7 @@
     commands and arguments.
   fetch:
     url: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
-    sha256: 90f3a5a174c90440eb6cc80453e8b20b2920a5f709246c147c3dd908c40c5bf9
+    sha256: b9e484ab3d949452fe1ae4806ef141fc6d4c2ce884503b505875994ec459c54c
   install:
     - mask-v{{version}}-x86_64-unknown-linux-gnu/mask:/usr/bin/
 
@@ -210,9 +210,8 @@
     - mv poetry {{src}}/usr/lib/
 
 - name: pyenv
-  version: 2.2.5
+  version: 2.3.1
   homepage: https://github.com/pyenv/pyenv
-  revision: 2
   arch: all
   summary: simple Python version management
   description: |-
@@ -239,7 +238,7 @@
     - liblzma-dev
   fetch:
     url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
-    sha256: 2e87a2c101c225d8b0c68cbc4490526c15654decac7989fb3846489c16849816
+    sha256: 87b1e28181b430158f67c5368a93198eae3263f87eea5827eb77f0e00b6a3964
   install:
     - path: /etc/profile.d/ops2deb-pyenv.sh
       content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
@@ -264,7 +263,7 @@
     - pyoxidizer:/usr/bin/
 
 - name: scala-cli
-  version: 0.1.4
+  version: 0.1.8
   homepage: https://scala-cli.virtuslab.org/
   summary: command-line tool to interact with the Scala language
   description: |-
@@ -274,6 +273,6 @@
     system.
   fetch:
     url: https://github.com/VirtusLab/scala-cli/releases/download/v{{version}}/scala-cli-x86_64-pc-linux.deb
-    sha256: 447c2ad852fa79cf590f1a9d6403b2fcb750c7e54f18a00a486edb3f99c2cb6b
+    sha256: e90bfa0ae81fef704efb8587ba9f5b35b2c0606d6d6f6d621518602d62de3b5a
   install:
     - data/usr/share/scala/scala-cli:/usr/bin/scala-cli
