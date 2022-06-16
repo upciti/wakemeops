@@ -609,7 +609,7 @@
     - minikube-linux-{{goarch}}:/usr/bin/minikube
 
 - name: minio-client
-  version: 2022-04-16T21-11-21Z
+  version: 2022-06-11T21-10-36Z
   homepage: https://min.io
   summary: command-line interface for MinIO (mc)
   description: |-
@@ -620,14 +620,14 @@
   fetch:
     url: https://dl.min.io/client/mc/release/linux-{{goarch}}/archive/mc.RELEASE.{{version}}
     sha256:
-      amd64: ba30f3907a67fc769447b3f1c9036781cf2c9ac9d4bad92e1b403ae28a97e9e9
-      armhf: 2a3946759ce097aa70b7a7a873f06eea251c39ad8350c5d2a47f23b06883528c
-      arm64: 1d4abc64870a7a149735b1322226cf07095c94877f5120bd29f75e314b1d1b1a
+      amd64: 77a784948c3bce2c169bf3f4d998ae1485c060193689268627ff896ddcf9f617
+      armhf: 6a7a38164a6fe48d884093429d561620f0592737326d3e21418a53e1616a148b
+      arm64: c30bf41b3444b830467ad342b2a28c2b223e044a401c419936ae0561ff287350
   install:
     - mc.RELEASE.{{version}}:/usr/bin/mc
 
 - name: minio-server
-  version: 2022-04-16T04-26-02Z
+  version: 2022-06-11T19-55-32Z
   homepage: https://min.io
   summary: high performance, Kubernetes native object storage
   description: |-
@@ -637,9 +637,9 @@
   fetch:
     url: https://dl.min.io/server/minio/release/linux-{{goarch}}/archive/minio.RELEASE.{{version}}
     sha256:
-      amd64: cd27696aaa3fc8fdc63f15d84a8ada4efee3b345c35ad2c6a5cc3cc1bc411844
-      armhf: 77b545daa3314432d6f94c280bb5cbd27044515a9624efc1fe1f87ac7ddeaf1b
-      arm64: 665f6690b630a7f7f5326dd3cbbf0647bbbc14c4a6cadbe7dfc919a23d727d56
+      amd64: a0544ca79eff33ee91bc2890c7bd9b5e5bbd318b653e2e513d289d72a9ab1752
+      armhf: ffdf55bfc337b7f21edf5f59922c7c4992aa2f406f2ba24b0eb38e4088ff53b3
+      arm64: 02fa5bcbccd852036477e13cedf78440ff51520ffcfb61656f139a0129506491
   install:
     - minio.RELEASE.{{version}}:/usr/bin/minio
 
