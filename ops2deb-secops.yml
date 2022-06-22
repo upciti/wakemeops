@@ -49,7 +49,7 @@
     - feroxbuster:/usr/bin/
 
 - name: trivy
-  version: 0.29.1
+  version: 0.29.2
   homepage: https://www.aquasec.com/products/trivy/
   summary: vulnerability and misconfiguration scanner
   description: |-
@@ -58,9 +58,9 @@
   fetch:
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
     sha256:
-      amd64: cd3aec42cfd3158d2f0187ee075e962d05f25b1c931d1991bc1fb9017610f74c
-      armhf: 248f0bf0245d134350e66815a3385c98159eefcf717b378e336db8f7cf39de01
-      arm64: 3a58da54d3029f09d78f9da308bbc132b73a0b699883e6215487bf8ca7a964b3
+      amd64: d9d0fdb351dfea340e6621b2f9cbd4e1b86ecc83f05a9d31ce265839259c7576
+      armhf: 00373c0ae8b1a3ea9fc605fed0053ee6d03cfca319e663f2b03096f727f99fc1
+      arm64: ef10e768c0b1c3da52a0ab0ab19fdbcc48448fc615b07807807dfffc49dc7897
     targets:
       amd64: 64bit
       armhf: ARM
