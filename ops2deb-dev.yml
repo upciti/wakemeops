@@ -144,6 +144,21 @@
   install:
     - hugo:/usr/bin/
 
+- name: influx-cli
+  version: 2.3.0
+  homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
+  summary: command line client for influxdb
+  description: |-
+    Use the influx CLI to interact with and manage your InfluxDB instance. Write
+    and query data, generate InfluxDB templates, export data, and more.
+  fetch:
+    url: https://dl.influxdata.com/influxdb/releases/influxdb2-client-{{version}}-linux-{{goarch}}.tar.gz
+    sha256:
+      amd64: b3e7a5c6ce14dff7f5298429bf1cde0f07af8670d17677a53117a80ece39df63
+      arm64: a03fd4362bece99ce0b7dc4725c76a82ec2fa70dccba1a55aeadfd5e8336402b
+  install:
+    - influxdb2-client-{{version}}-linux-{{goarch}}/influx:/usr/bin/
+
 - name: mask
   version: 0.11.2
   homepage: https://github.com/jakedeichert/mask
