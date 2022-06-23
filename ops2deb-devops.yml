@@ -587,7 +587,7 @@
     - logcli-linux-{{goarch}}:/usr/bin/logcli
 
 - name: minikube
-  version: 1.25.2
+  version: 1.26.0
   homepage: https://minikube.sigs.k8s.io
   summary: quickly set up a local Kubernetes cluster
   description: |-
@@ -602,9 +602,9 @@
   fetch:
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
     sha256:
-      amd64: ef610fa83571920f1b6c8538bb31a8dc5e10ff7e1fcdca071b2a8544c349c6fd
-      armhf: 9cb9e5690581be3f7f429993cab1a0d37bc1405a1c9f173c69b34843055126b3
-      arm64: 7a6401bf61347360c1b1d1e0833700b2eacd6de50f256cd633b050ef78d78343
+      amd64: a988b7c890d9dc34033155b8b721827b3eff0e22c3d436409a8a3310aa564547
+      armhf: 5319911f90d173d3f1156082e608c3d7bde5e0d0d5706e61a968972b44e8885d
+      arm64: 7b6e79f51e671d2708afe8daea4d0bc0d9464992d9cf3d4415f608205c26a6ff
   install:
     - minikube-linux-{{goarch}}:/usr/bin/minikube
 
@@ -799,7 +799,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.6.6
+  version: 2.6.7
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -818,8 +818,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 38ded42d177f4b08748dc74b2a4028e96552044e2927a715c457c6a0a80d0f70
-      arm64: b358e12800201ccc1b1f21e60b18bc4cd54ef319e51fa8f7f821d3459cccb5c4
+      amd64: 26218e5f99e5de0c197588cf2ae7cdf2624a4e2cca97f28cd693dc7e74904db3
+      arm64: 7b7e2fa1ef1a5ef132a39569659d3367c4ac42e44a4f6dd46b440425614c5a97
   install:
     - telepresence:/usr/bin/
 
