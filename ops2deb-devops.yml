@@ -763,7 +763,7 @@
     - scw-{{version}}-linux-x86_64:/usr/bin/scw
 
 - name: skaffold
-  version: 1.38.0
+  version: 1.39.0
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -778,8 +778,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
     sha256:
-      amd64: 3c347c9478880f22ebf95807c13371844769c625cf3ea9c987cd85859067503c
-      arm64: 41c6385443787f864eaa448b985479115aa917b045245efb38d15d4b2dc5fed3
+      amd64: 0b0d1a213ca1726b4c70da39e1f5856f3a221733fe26b1ffea447dbffaceefbc
+      arm64: 3c5797dc0c1877c9675e46abcdda84298edb310019e11e8575828170845098c6
   install:
     - skaffold-linux-{{goarch}}:/usr/bin/skaffold
 
