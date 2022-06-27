@@ -38,7 +38,7 @@
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
 - name: mattermost-desktop
-  version: 5.1.0
+  version: 5.1.1
   homepage: https://mattermost.com
   summary: desktop application for Mattermost
   description: |-
@@ -53,7 +53,7 @@
     platform built just for them.
   fetch:
     url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
-    sha256: 2a6b5052a8363836d9eb3263b27c25bc1faf851d716cad97f6aaa6669c9347bf
+    sha256: ef4bad78fb225d7e8c9f232acccfd3878d4d3c955663538d15e9a20910d3a433
   install:
     - path: /usr/share/applications/mattermost.desktop
       content: |
