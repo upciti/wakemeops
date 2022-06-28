@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.4.2
+  version: 2.4.3
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: 55df785005b132a579a436bc05ec06456b03b81a917cd944d750610d6848b48a
+    sha256: f6db00a5ecdc90e8eb019ef2e09af257132054c4a08149081f91c765bc50966d
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
@@ -307,7 +307,7 @@
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
 - name: k9s
-  version: 0.25.18
+  version: 0.25.19
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-
@@ -319,9 +319,9 @@
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
     sha256:
-      amd64: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
-      armhf: 2fb19caefec78c1a478a52940e51f625d80468a1fcb9033f092193611a2bd00a
-      arm64: f4a15b07633bbbecd3c775867ddcede880c62f8a6294ae6dc45ede43a6d0437c
+      amd64: 298ec215aaa781c61b7784bf2d076be536eccdeb835becdaa390b19b3d9801fb
+      armhf: c8e7dc4c8165399c8e771c1d09259d084f9cf9a19d8a7c8d7f6c5f7ff5840523
+      arm64: 336c923c1f0db3fbfc9dd8f54dc58a9c9ec8f6499680f016e086da73723d6a41
     targets:
       amd64: x86_64
       armhf: arm
@@ -763,7 +763,7 @@
     - scw-{{version}}-linux-x86_64:/usr/bin/scw
 
 - name: skaffold
-  version: 1.39.0
+  version: 1.39.1
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -778,8 +778,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
     sha256:
-      amd64: 0b0d1a213ca1726b4c70da39e1f5856f3a221733fe26b1ffea447dbffaceefbc
-      arm64: 3c5797dc0c1877c9675e46abcdda84298edb310019e11e8575828170845098c6
+      amd64: 0c2c221734d449e5e0db00b303d063be9bc733402bea0663c47dcafca8aa71d0
+      arm64: 9b994ca27fa05af77e18a0e8fa2a0823edb353dee3c532e117d098c609ea80e9
   install:
     - skaffold-linux-{{goarch}}:/usr/bin/skaffold
 
