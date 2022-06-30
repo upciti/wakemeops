@@ -289,7 +289,7 @@
     - mdbook:/usr/bin/
 
 - name: mergestat
-  version: 0.5.7
+  version: 0.5.8
   homepage: https://docs.mergestat.com
   summary: enables SQL queries for data in git repositories
   description: |-
@@ -297,7 +297,7 @@
     understand everything that goes into building and shipping software.
   fetch:
     url: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
-    sha256: 4b57038ca579920b95c72e342106d2305ab7a69d1525eea89b3fe35ee64892a4
+    sha256: 6714635921ab5d0dbdf25bb067fed16938e539a70df7b47118276ed5d80fbb08
   install:
     - mergestat:/usr/bin/
 
