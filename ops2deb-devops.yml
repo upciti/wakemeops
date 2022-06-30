@@ -307,7 +307,7 @@
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
 - name: k9s
-  version: 0.25.20
+  version: 0.25.21
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-
@@ -319,9 +319,9 @@
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 9cd7ef0a416be160cbccefb568c9a72c403122e3a96d3d8b9c95de9f29586b80
-      armhf: 40434c18ad344e51d90786d61947c70275cda4a02fe485b24de8d12018ac3e43
-      arm64: 8a04bc16ea5f465e2d6e69f0019eef5abca2fe51c6bc64dec3d62e8229653306
+      amd64: baa54edb4aace44f2c713f3bffe75ee60994f6a8244d3e50b940e8367922e454
+      armhf: 8a333bb9680cd5f04169d01cf47d5552967828a52fee70a01b1084beb45ea0cb
+      arm64: f22703144cdb8e7adb1d27d91b6e1f555e3acd4d63fb2b576458dcc30c12b640
     targets:
       amd64: x86_64
       armhf: arm
