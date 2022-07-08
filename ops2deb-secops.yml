@@ -48,6 +48,24 @@
   install:
     - feroxbuster:/usr/bin/
 
+- name: terrascan
+  version: 1.15.2
+  homepage: https://runterrascan.io/
+  summary: policy as code for secure cloud infrastructure
+  description: |-
+    Detect compliance and security violations across Infrastructure as Code to
+    mitigate risk before provisioning cloud native infrastructure.
+  fetch:
+    url: https://github.com/tenable/terrascan/releases/download/v{{version}}/terrascan_{{version}}_Linux_{{target}}.tar.gz
+    sha256:
+      amd64: 9aebcf198f4ee6442435c1682b9f20215063a52a5191e85d91d75d0873a0c227
+      arm64: 87025e8ea9cb5afd7391a7799f7e9d27837ceb0eade97b6d6ce3585076d65b54
+    targets:
+      amd64: x86_64
+      arm64: arm64
+  install:
+    - terrascan:/usr/bin/terrascan
+
 - name: trivy
   version: 0.29.2
   homepage: https://www.aquasec.com/products/trivy/
