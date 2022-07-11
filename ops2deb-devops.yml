@@ -290,7 +290,7 @@
     - ln -s /opt/istio/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: k3d
-  version: 5.4.3
+  version: 5.4.4
   homepage: https://k3d.io
   summary: run Rancher Lab's k3s in Docker
   description: |-
@@ -300,9 +300,9 @@
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}
     sha256:
-      amd64: 8360b69f5f86b3fedfd632ac67b6e8f70af731d4c64df6dbb3d3c67eb723421b
-      armhf: 979ef6f6e1a42701405cbe9440d6fb65ab86599697f136f7f85ba25373d23d53
-      arm64: f604723614cc2a0a0cdbb69b927320b1634365cd36cd2fefb7375995f947559b
+      amd64: 786151745379e511bd4dd95d1593241bb2b0a1d91e088573a1a1cb104732a3bd
+      armhf: c1468a8db2737bf9a481926a40076de93cac341ede4d4104df78c830ecdc451e
+      arm64: 9feb8067e89702947ed17d1e18fd3e445046f4114fbae6f491df8463a72fedfa
   install:
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
