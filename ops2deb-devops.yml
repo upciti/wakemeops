@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.4.4
+  version: 2.4.5
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: 9c673c02c462e4e52c2e59437a9be8d85020f17de9cb46ac36760b2c89c027c5
+    sha256: 9c208ce9df0644956c4d1fe5d38bbba5667a7ca11393a46080115bd62a65462b
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
