@@ -269,7 +269,7 @@
     - hostctl:/usr/bin/
 
 - name: mdbook
-  version: 0.4.19
+  version: 0.4.20
   homepage: https://rust-lang.github.io/mdBook/
   summary: create book from markdown files
   description: |-
@@ -284,7 +284,7 @@
     * Backends that can render the output to multiple formats
   fetch:
     url: https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 50a419363d8233f42a038ff3c5d977d44b7cb7f860f34b4567161241642aec9a
+    sha256: 77e49898e2570370d30d0221393f6114ab66ad138ef4e9e2da2a5e652a090255
   install:
     - mdbook:/usr/bin/
 
@@ -407,7 +407,7 @@
     - xsv:/usr/bin/
 
 - name: yq
-  version: 4.25.3
+  version: 4.26.1
   homepage: https://github.com/mikefarah/yq
   summary: portable command-line YAML processor
   description: |-
@@ -418,8 +418,8 @@
   fetch:
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
     sha256:
-      amd64: cb66f4382a65d0443824f0a0fcda9c5c5f7b6bd4e4346539b2f0abc647ecf0ea
-      armhf: 2b11d52d529eeafa155bb1cb0dbad3cfbd8cb13710dd3910d696a95a10cad857
-      arm64: 0fe0facd2f8ccf8a1d520b1cff3c1a2f91ed3a16323b31c3fff0a817bf67aa2b
+      amd64: 9e35b817e7cdc358c1fcd8498f3872db169c3303b61645cc1faf972990f37582
+      armhf: fcb1e45bfd54d4e8375a9adef7a1bb55bf1b5d2eda90e46f382fb2f65d55177c
+      arm64: 8966f9698a9bc321eae6745ffc5129b5e1b509017d3f710ee0eccec4f5568766
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq
