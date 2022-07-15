@@ -269,6 +269,22 @@
   install:
     - iamlive:/usr/bin/iamlive
 
+- name: infracost
+  version: 0.10.7
+  homepage: https://www.infracost.io
+  summary: cloud cost estimates for Terraform in pull requests
+  description: |-
+    Infracost shows cloud cost estimates for Terraform. It lets DevOps, SRE and
+    engineers see a cost breakdown and understand costs before making changes,
+    either in the terminal or pull requests.
+  fetch:
+    url: https://github.com/infracost/infracost/releases/download/v{{version}}/infracost-linux-{{target}}.tar.gz
+    sha256:
+      amd64: 6520d1feb0aaa1db2dfdba5166e9eacae23864f4516b1c310d7352488510c3c4
+      arm64: 39d44f5dff834c60da793ad6aaa3696ed09b2ebed77ac594a7b67afd09f254b1
+  install:
+    - infracost-linux-{{target}}:/usr/bin/infracost
+
 - name: istioctl
   version: 1.14.1
   homepage: https://istio.io
