@@ -278,7 +278,7 @@
     - pyoxidizer:/usr/bin/
 
 - name: scala-cli
-  version: 0.1.9
+  version: 0.1.10
   homepage: https://scala-cli.virtuslab.org/
   summary: command-line tool to interact with the Scala language
   description: |-
@@ -288,6 +288,6 @@
     system.
   fetch:
     url: https://github.com/VirtusLab/scala-cli/releases/download/v{{version}}/scala-cli-x86_64-pc-linux.deb
-    sha256: 6909ea82b7eab10921088003419a2f0c9d828b617b0a928a4603c3ccb12038e9
+    sha256: eaeffa5b6fc640343d96452c84a907dfc08715e7ca52644796641c02f97f5957
   install:
     - data/usr/share/scala/scala-cli:/usr/bin/scala-cli
