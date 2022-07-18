@@ -181,7 +181,7 @@
     - dist_linux/docker-slim:/usr/bin/
 
 - name: flux
-  version: 0.31.3
+  version: 0.31.4
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -191,9 +191,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: e776251315230ac9b75ef1de205a0e59a6b365cfc05ef8a313ecec1709e56f94
-      armhf: a43a65f9993797d78b6646e51fb40f587b1f9172019e548266502af2aa1cd790
-      arm64: db8c67e5fe306421a23ab97c9557189f308c55430516d2bc0cc1d45d8ca0f5f0
+      amd64: 32879bf8df13a924cc675c9fdcfb73e3bb97028e9e065f85973238d57eb293cf
+      armhf: 37a3093948d8dd7e58511737afa1375dda9d71bb377e40e21375c8eda8d9c66d
+      arm64: 14ef8b0e2faeb80a0c7c94c1d903f0b4420f80b65f0052d37da877af20b0aa87
   install:
     - flux:/usr/bin/
 
@@ -589,16 +589,16 @@
     - linkerd2-cli-edge-{{version}}-linux-{{goarch}}:/usr/bin/linkerd
 
 - name: logcli
-  version: 2.6.0
+  version: 2.6.1
   homepage: https://github.com/grafana/loki
   summary: command-line interface for loki
   description: It facilitates running LogQL queries against a Loki instance.
   fetch:
     url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
     sha256:
-      amd64: ec390ceb802b5295f8abbd3b14c46b90c86ee332a86e86de3e6ba782ae0cbda7
-      armhf: 4697cb472bffe73bf0a6b24cfea37b893c2d6e2904044b5a92781daa584fc35d
-      arm64: 5972be4f9252cdfd9858e972aba53794d4854309a0087bb6299d6ba0a62362e1
+      amd64: 8fe59a3b2f83c02920f29251a97ad1f6d4a83a8bbbc20097b73fb839d946cb75
+      armhf: 2ad747a3bba8bff77f03f7f38edb6c2f60d186a8e1bd395c425c0ed5d0676c1f
+      arm64: e2c3cb728402087cadc120e190d617db8e0b39eb21bbff73f0d040e535822ca8
   install:
     - logcli-linux-{{goarch}}:/usr/bin/logcli
 
