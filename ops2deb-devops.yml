@@ -215,7 +215,7 @@
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
 - name: helm
-  version: 3.9.1
+  version: 3.9.2
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
@@ -226,9 +226,9 @@
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 73df7ddd5ab05e96230304bf0e6e31484b1ba136d0fc22679345c0b4bd43f7ac
-      armhf: 6de0c62cac3aba3449a8ae211df039d3bf2762127f98b5268b20522a19ce5b75
-      arm64: 655dbceb4ab4b246af2214e669b9d44e3a35f170f39df8eebdb8d87619c585d1
+      amd64: 3f5be38068a1829670440ccf00b3b6656fd90d0d9cfd4367539f3b13e4c20531
+      armhf: fb9f0c1c9475c66c2b3579b908c181d519761bbfae963ffac860bc683a2253de
+      arm64: e4e2f9aad786042d903534e3131bc5300d245c24bbadf64fc46cca1728051dbc
   install:
     - linux-{{goarch}}/helm:/usr/bin/
 
@@ -677,7 +677,7 @@
     - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.22.1
+  version: 1.22.2
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -688,8 +688,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: af98ba776c2a6ea5d6df2834c5e99a83cf8def2189400012f9003ef39b7ddb3b
-      arm64: 965c3e829969ea7bcb11e13cfeb1d2360d520fa363800c6508cc63957b24c9ac
+      amd64: 6bbb933e6169c1f36dca1f02ee337802b6216695f8d97b97e767553667ebdebf
+      arm64: 3ae3b4f94dbd06387095ad711f889aedaa939fe8789dd7db20161466f1885109
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
