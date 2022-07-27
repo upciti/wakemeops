@@ -181,7 +181,7 @@
     - dist_linux/docker-slim:/usr/bin/
 
 - name: flux
-  version: 0.31.4
+  version: 0.31.5
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -191,9 +191,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 32879bf8df13a924cc675c9fdcfb73e3bb97028e9e065f85973238d57eb293cf
-      armhf: 37a3093948d8dd7e58511737afa1375dda9d71bb377e40e21375c8eda8d9c66d
-      arm64: 14ef8b0e2faeb80a0c7c94c1d903f0b4420f80b65f0052d37da877af20b0aa87
+      amd64: b2f9ccec32cb3ddc701e47792f62e7a5f739346b6ad31f168570b8a8b5fe2f85
+      armhf: f38f5420957d8e86d863c64d880d948fe38dbbfa48f7fa287977b385b6175ffc
+      arm64: 1a6ee419981f91b58ea8ec4169f284f650ce1e01081afd15421da44be226b452
   install:
     - flux:/usr/bin/
 
@@ -840,7 +840,7 @@
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.2.5
+  version: 1.2.6
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -851,9 +851,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 281344ed7e2b49b3d6af300b1fe310beed8778c56f3563c4d60e5541c0978f1b
-      armhf: 3c9f27b88fc5a56b7e7494e067e3df2136b62f726fe4986b2404d38fcec6f824
-      arm64: 0544420eb29b792444014988018ae77a7c8df6b23d84983728695ba73e38f54a
+      amd64: 9fd445e7a191317dcfc99d012ab632f2cc01f12af14a44dfbaba82e0f9680365
+      armhf: ed49a5422ca51cbc90472a754979f9bbba5f0c39f6a0abe570e525bbae4e6540
+      arm64: 322755d11f0da11169cdb234af74ada5599046c698dccc125859505f85da2a20
   install:
     - terraform:/usr/bin/
 
