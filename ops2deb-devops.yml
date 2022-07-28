@@ -938,7 +938,7 @@
     - wakemebot_linux_amd64:/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.9.0
+  version: 0.9.1
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -948,7 +948,7 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: bb5fcbbd4af22f3d2fabe85fa9f92007a6e808d5eb5c4226e60dbf7038db8d4d
-      armhf: 1376cd3184c54ce89f986b0cf03ff55f6ee71ed40c9b981f1c3c769fcbe1f777
+      amd64: dabc135c73a4eb9cf1378816ee6b93ec33f6ec849103bcd936c88e08da0e1bbb
+      armhf: 9d757754ca19e7fcd8915e902c53774ba931227601799eebdce0b42cd849e827
   install:
     - waypoint:/usr/bin/
