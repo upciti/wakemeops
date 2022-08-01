@@ -888,6 +888,26 @@
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
+- name: tflint
+  version: 0.39.1
+  homepage: https://github.com/terraform-linters/tflint
+  summary: pluggable Terraform linter
+  description: |-
+    TFLint is a framework and each feature is provided by plugins, the key features
+    are as follows:
+
+    - Find possible errors (like illegal instance types) for Major Cloud providers
+    (AWS/Azure/GCP).
+    - Warn about deprecated syntax, unused declarations.
+    - Enforce best practices, naming conventions.
+  fetch:
+    url: https://github.com/terraform-linters/tflint/releases/download/v{{version}}/tflint_linux_{{target}}.zip
+    sha256:
+      amd64: 385c977660f98e033b6b0b22a16dafad9ca530322320fea13882ba5af5340bd4
+      arm64: 3c441136502d9f30596e4ceeb9d047b9af022b19764591d6924eea765f9ddadf
+  install:
+    - tflint:/usr/bin/tflint
+
 - name: vault-env
   version: 1.15.2
   homepage: https://banzaicloud.com/products/bank-vaults/
