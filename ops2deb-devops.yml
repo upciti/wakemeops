@@ -139,7 +139,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.7.0
+  version: 2.8.0
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -149,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 184df811a70366fa339e99df38fc6ff24fc9e51b3388335efe51c1941377d4ce
-      armhf: 53ed781ff04efa2e93fc6e0c02fc3c7d792083780c747ef06e9e0e46e8bb7eb1
-      arm64: bcc79aff65b35581246feca30d53261eddcfc79285868061b31f3ff86d102563
+      amd64: e16838a28c297644908820c2fd8e7750f674603d2f1be7ffc1fc8870fdd3fec7
+      armhf: 6cfa4331a47c69336ef81f4295a85392fe892f54d186a71c5f79117ecea9359b
+      arm64: 74170a438753371968e6211a6f13db6e311b248ba1f952b203798a3dcfb69e33
     targets:
       amd64: x86_64
       armhf: armv7
@@ -228,7 +228,6 @@
     sha256:
       amd64: 3f5be38068a1829670440ccf00b3b6656fd90d0d9cfd4367539f3b13e4c20531
       armhf: fb9f0c1c9475c66c2b3579b908c181d519761bbfae963ffac860bc683a2253de
-      arm64: e4e2f9aad786042d903534e3131bc5300d245c24bbadf64fc46cca1728051dbc
   install:
     - linux-{{goarch}}/helm:/usr/bin/
 
@@ -531,7 +530,7 @@
     - kubeseal:/usr/bin/
 
 - name: kustomize
-  version: 4.5.5
+  version: 4.5.6
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-
@@ -545,8 +544,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: bba81aa61dba057db1d5abeddf1e522b568b2d906ab67a5c80935e97302c8773
-      arm64: c491191b81c97ddebc4844f9254683ecfc80f40dfb15510433cbfdaeb86627c3
+      amd64: 6802d54917eb5887f9c71031c59e6845c1a490c13881b050ea6959b714b4a432
+      arm64: 3b66709c7692c5ccfdcb2f4dd383e7aa622b451b046f2197b59033f16457b3b3
   install:
     - kustomize:/usr/bin/
 
