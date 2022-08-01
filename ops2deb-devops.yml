@@ -139,7 +139,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.8.0
+  version: 2.9.0
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -149,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: e16838a28c297644908820c2fd8e7750f674603d2f1be7ffc1fc8870fdd3fec7
-      armhf: 6cfa4331a47c69336ef81f4295a85392fe892f54d186a71c5f79117ecea9359b
-      arm64: 74170a438753371968e6211a6f13db6e311b248ba1f952b203798a3dcfb69e33
+      amd64: 3be9ce88ecba41b734e3fc8e59a9b11531133761414a78827d1615aadb5ef1f5
+      armhf: 658db542e40c8063cdafc23f650493bedc10b41b6d6fb581b7866bfeb5ffb0ba
+      arm64: 6d227b060b2bc3dc5f315a07ae4f647f042755691e2da905b1a21e60a8ae3ddf
     targets:
       amd64: x86_64
       armhf: armv7
@@ -285,7 +285,7 @@
     - infracost-linux-{{target}}:/usr/bin/infracost
 
 - name: istioctl
-  version: 1.14.1
+  version: 1.14.3
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -294,9 +294,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: 9b57bf3c475e0b2adaabbabb1d0deb20062dd176027c223cd5cfbb96d68744b7
-      armhf: 2cce12dec8c7aabee72086821fe2123eb30484148d9fa60a7343f0f93a3a6ac4
-      arm64: aca4f0796d7b0524676685a5e55e46571ec958d2c2b6163cd75c30d4a33c1150
+      amd64: f5e2fbd1b15433fbf9597ee2818e837d221c45714a24f3aa392a46e0e1384eb4
+      armhf: 72f63ac3468841e32c88bbf32f4903d43da97f7906470bbc5968f95ee0e57606
+      arm64: f967801bdf05480b0be3b1a1d866dc4fc08593d17c71e068b7f24f0d21e0dec5
     targets:
       armhf: armv7
   install:
