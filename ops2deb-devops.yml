@@ -942,7 +942,7 @@
     - velero-v{{version}}-linux-{{goarch}}/velero:/usr/bin/velero
 
 - name: wakemebot
-  version: 3.1.0
+  version: 3.1.1
   homepage: https://github.com/upciti/wakemebot
   summary: bunch of tools used by our beloved wakemebot
   description: |-
@@ -952,7 +952,7 @@
     documentation).
   fetch:
     url: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
-    sha256: 952beecc266eaa1a248a787b1a95d59897d049890f5af6c938ab04e128fe3869
+    sha256: f1d2e88b244e9af91230f1fd3b2bec060df5dc51d919f02675f0e41ce6ab6d03
   install:
     - wakemebot_linux_amd64:/usr/bin/wakemebot
 
