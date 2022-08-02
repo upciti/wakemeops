@@ -530,7 +530,7 @@
     - kubeseal:/usr/bin/
 
 - name: kustomize
-  version: 4.5.6
+  version: 4.5.7
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-
@@ -544,8 +544,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 6802d54917eb5887f9c71031c59e6845c1a490c13881b050ea6959b714b4a432
-      arm64: 3b66709c7692c5ccfdcb2f4dd383e7aa622b451b046f2197b59033f16457b3b3
+      amd64: 701e3c4bfa14e4c520d481fdf7131f902531bfc002cb5062dcf31263a09c70c9
+      arm64: 65665b39297cc73c13918f05bbe8450d17556f0acd16242a339271e14861df67
   install:
     - kustomize:/usr/bin/
 
