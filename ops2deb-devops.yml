@@ -40,7 +40,7 @@
     - bank-vaults:/usr/bin/
 
 - name: carvel-kapp
-  version: 0.50.0
+  version: 0.51.0
   homepage: https://carvel.dev/kapp/
   summary: simple deployment tool focused on the concept of "Kubernetes application"
   description: |-
@@ -50,8 +50,8 @@
   fetch:
     url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v{{version}}/kapp-linux-{{goarch}}
     sha256:
-      amd64: a9bcebef169ba759ba24b341f42022edef5b234b8ba61116df2305b3c8c5f2fb
-      arm64: bc2f7d973217cd8c7e801f861cfd1ecfe108ccb72cf388dc4af6bb374ef52b9f
+      amd64: 58443df4200c683597f5c8a43ea8f5b7110bbcb1fbd8ca3f2061e9eff1a10e0e
+      arm64: 368281fd8281bfc37d14704fd4482ec21cfabd63aeb66d07d520864057ceb599
   install:
     - kapp-linux-{{goarch}}:/usr/bin/kapp
 
@@ -322,7 +322,7 @@
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
 - name: k9s
-  version: 0.26.0
+  version: 0.26.1
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-
@@ -334,9 +334,9 @@
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
     sha256:
-      amd64: cddbc88403d1cfb02f3e55558b61ce63a0486f9bb8fcd258fcd104565b794c80
-      armhf: b35d572537373601bc8f0aa5ed05a080f95e0b10a675c07f0af693e619f1d704
-      arm64: a4629833ad6de6b6c1168003a30c0e462b8c2259e90a554399cb2454fd806a8d
+      amd64: a923dcd13a6b2decf6e03d5a3119799908c443d019ce3b4062860f19ca51e410
+      armhf: 40cf15d3c9bad95b13b2b7660b48aed68a18a90a0b215fc891f1a215d808da6a
+      arm64: 256edbbbd045b2b5aadbe637b9af7a74cc3f01ac026e3f87e41e39ce9c30710d
     targets:
       amd64: x86_64
       armhf: arm
@@ -716,7 +716,7 @@
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
 - name: packer
-  version: 1.8.2
+  version: 1.8.3
   homepage: https://www.packer.io
   summary: create multi-platform machine images from a single source configuration
   description: |-
@@ -727,9 +727,9 @@
   fetch:
     url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 675bd82561a2e49f89747e092141c7ce79c2e2a9105e6a2ebd49a26df849a468
-      armhf: c1d77dde21327b12ae24b85a175918a6c4fb001669c3867373cdc3f968bb28e8
-      arm64: 35c9b45dfd14bffd95601a518d70c2830ad362e75c8aefb752c89fd232f88beb
+      amd64: 0587f7815ed79589cd9c2b754c82115731c8d0b8fd3b746fe40055d969facba5
+      armhf: a1dcaa97bb9ce93fe9f057733aab8ccef6bf4f2ef520236b7dcad4d90d4030a1
+      arm64: edb096a34b88193294cb92deaac7ea4f67dfdeb21b0810d9b08a439f6767c2db
   install:
     - packer:/usr/bin/
 
