@@ -44,9 +44,12 @@ jobs:
       - name: Upload Debian packages
         working-directory: artifact
         shell: bash
+        env:
+          WAKEMEBOT_APTLY_SERVER_URL: ${{ secrets.WAKEMEBOT_APTLY_SERVER_URL }}
+          WAKEMEBOT_APTLY_CA_CERT: ${{ secrets.WAKEMEBOT_APTLY_CA_CERT }}
+          WAKEMEBOT_APTLY_CLIENT_CERT: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_CERT }}
+          WAKEMEBOT_APTLY_CLIENT_KEY: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_KEY }}
         run: |
-          for i in $(ls build); do wakemebot aptly push wakemeops-$i build/$i; done
-
-      - name: Publish repository
-        run: |
+          ls -lah
+          for i in $(ls); do wakemebot aptly push wakemeops-$i $i; done
           wakemebot aptly publish s3:wakemeops-eu-west-3:wakemeops/stable
