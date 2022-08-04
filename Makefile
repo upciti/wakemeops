@@ -73,7 +73,6 @@ push-%:
 	if [ -d "build/$*" ]; then \
 		wakemebot aptly push wakemeops-$* \
 			$(OUTPUT_BASE_PATH)/$* \
-			--server /host/data/aptly/aptly.sock \
 			--retain $$retain; \
 	fi
 
