@@ -42,7 +42,6 @@ jobs:
         uses: actions/download-artifact@v3
 
       - name: Upload Debian packages
-        working-directory: artifact
         shell: bash
         env:
           WAKEMEBOT_APTLY_SERVER_URL: ${{ secrets.WAKEMEBOT_APTLY_SERVER_URL }}
@@ -51,5 +50,5 @@ jobs:
           WAKEMEBOT_APTLY_CLIENT_KEY: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_KEY }}
         run: |
           ls -lah
-          for i in $(ls); do wakemebot aptly push wakemeops-$i $i; done
+          for i in $(ls artifact); do wakemebot aptly push wakemeops-$i artifact/$i; done
           wakemebot aptly publish s3:wakemeops-eu-west-3:wakemeops/stable
