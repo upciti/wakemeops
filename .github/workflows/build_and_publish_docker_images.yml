@@ -1,0 +1,80 @@
+name: "🐋 Publish Docker images"
+on:
+  schedule:
+    - cron: "0 7 * * *"
+
+env:
+  DOCKERHUB_USER: wakemeops
+
+jobs:
+  docker-publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - image: ubuntu
+            registry_name: ubuntu
+            tag: latest
+          - image: ubuntu
+            registry_name: ubuntu
+            tag: rolling
+          - image: ubuntu
+            registry_name: ubuntu
+            tag: 22.04
+          - image: ubuntu
+            registry_name: ubuntu
+            tag: 20.04
+          - image: ubuntu
+            registry_name: ubuntu
+            tag: 18.04
+
+          - image: debian
+            registry_name: debian
+            tag: latest
+          - image: debian
+            registry_name: debian
+            tag: bookworm
+          - image: debian
+            registry_name: debian
+            tag: bookworm-slim
+          - image: debian
+            registry_name: debian
+            tag: bullseye
+          - image: debian
+            registry_name: debian
+            tag: bullseye-slim
+          - image: debian
+            registry_name: debian
+            tag: buster
+          - image: debian
+            registry_name: debian
+            tag: buster-slim
+
+          - image: bitnami/minideb
+            registry_name: minideb
+            tag: latest
+          - image: bitnami/minideb
+            registry_name: minideb
+            tag: bullseye
+          - image: bitnami/minideb
+            registry_name: minideb
+            tag: buster
+
+    steps:
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build Docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: docker.io/${{ env.DOCKERHUB_USER }}/${{ matrix.registry_name }}:${{ matrix.tag }}
+          labels: |
+            org.wakemeops.maintainers="WakeMeOps <wakemeops.com>"
+            org.wakemeops.base_image="docker.io/${{ matrix.image }}:${{ matrix.tag }}"
+            org.wakemeops.commit="${{ github.sha }}"
+          build-args: |
+            IMAGE=${{ matrix.image }}
+            TAG=${{ matrix.tag }}
