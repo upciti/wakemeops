@@ -33,7 +33,7 @@ jobs:
     needs: [build_packages]
     runs-on: ubuntu-latest
     container:
-      image: upciti/wakemebot:latest
+      image: ghcr.io/upciti/wakemebot:4
     steps:
       - name: Print wakemebot version
         run: wakemebot version
