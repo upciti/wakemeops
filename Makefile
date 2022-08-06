@@ -83,6 +83,6 @@ publish:
 	"http://_/api/publish/s3:wakemeops-eu-west-3:wakemeops/stable"
 
 exec:
-	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops ghcr.io/upciti/wakemebot:latest bash
+	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops ghcr.io/upciti/wakemebot:python-mkdocs bash
 
 .PHONY: install-wakemeops install-packages check-packages publish docs generate build format update exec
