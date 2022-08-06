@@ -25,8 +25,7 @@ default:
 	@echo -e '\naptly                                                          '
 	@echo '* push-{component}            push to s3 repository                 '
 	@echo '* publish                     publish to s3 repository              '
-	@echo -e '\ndocumentation                                                  '
-	@echo '* docs                        run mkdocs serve                      '
+	@echo
 
 install-wakemeops:
 	curl https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | bash -s $(COMPONENTS)
@@ -84,10 +83,6 @@ publish:
 	"http://_/api/publish/s3:wakemeops-eu-west-3:wakemeops/stable"
 
 exec:
-	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops upciti/wakemebot:main bash
-
-docs:
-	@docker run -u $$(id -u) --pull=always --rm -it -p 8000:8000 -w /docs -v $$(pwd):/docs upciti/wakemebot:main mkdocs serve --dev-addr=0.0.0.0:8000
-
+	@docker run --pull=always -uroot -it  --rm -w /wakemeops -v $$(pwd):/wakemeops ghcr.io/upciti/wakemebot:latest bash
 
 .PHONY: install-wakemeops install-packages check-packages publish docs generate build format update exec
