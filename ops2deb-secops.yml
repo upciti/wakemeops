@@ -48,6 +48,22 @@
   install:
     - feroxbuster:/usr/bin/
 
+- name: kubeaudit
+  version: 0.19.0
+  homepage: https://github.com/Shopify/kubeaudit
+  summary: kubeaudit helps you audit your Kubernetes clusters against common security
+    controls
+  description: |-
+    Kubeaudit is a command line tool and a Go package to audit Kubernetes clusters
+    for various different security concerns
+  fetch:
+    url: https://github.com/Shopify/kubeaudit/releases/download/v{{version}}/kubeaudit_{{version}}_linux_{{target}}.tar.gz
+    sha256:
+      amd64: da42b6b62dd50cba67b4a7dd5400c87f869a18bf92a52b470611ffd8061c5f56
+      arm64: 1a5361df827235fc8f4d49678b483acd640a22b49e5b8ea3e9332dd877e01fb9
+  install:
+    - kubeaudit:/usr/bin/
+
 - name: terrascan
   version: 1.15.2
   homepage: https://runterrascan.io/
