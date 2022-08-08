@@ -48,6 +48,20 @@
   install:
     - feroxbuster:/usr/bin/
 
+- name: kube-linter
+  version: 0.4.0
+  homepage: https://github.com/stackrox/kube-linter
+  summary: checks Kubernetes YAML files and Helm charts
+  description: |-
+    KubeLinter is a static analysis tool that checks Kubernetes YAML files and Helm
+    charts to ensure the applications represented in them adhere to best practices.
+  fetch:
+    url: https://github.com/stackrox/kube-linter/releases/download/{{version}}/kube-linter-linux.tar.gz
+    sha256:
+      amd64: 6ffc975c7f775fc8b74f64afab1191500ab6aa1a01701af2dc901d3d586aa729
+  install:
+    - kube-linter:/usr/bin/
+
 - name: kubeaudit
   version: 0.19.0
   homepage: https://github.com/Shopify/kubeaudit
