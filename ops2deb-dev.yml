@@ -43,9 +43,8 @@
     - cs-x86_64-pc-linux:/usr/bin/cs
 
 - name: datanymizer
-  version: 0.5.1
+  version: 0.6.0
   homepage: https://github.com/datanymizer/datanymizer
-  revision: 2
   summary: powerful postgres database anonymizer with flexible rules
   description: |-
     Datanymizer generates database-native dump. You can import or process your dump
@@ -53,7 +52,7 @@
     Datanymizer is created & supported by Evrone.
   fetch:
     url: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
-    sha256: cc5fdb12f0bf2cb64e01c28f61aac24db7836cf03898b79d9cf3712874419c9a
+    sha256: e255a2caf6a43b40df479bf20511e3897118967b55e8b31f0f31de24de273e92
   install:
     - pg_datanymizer:/usr/bin/
 
