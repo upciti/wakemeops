@@ -304,6 +304,7 @@
 - name: nushell
   version: 0.66.2
   homepage: https://www.nushell.sh/
+  revision: 2
   summary: new type of shell written in rust
   description: |-
     The goal of this project is to take the Unix philosophy of shells, where pipes
@@ -321,12 +322,6 @@
     - Solving problems as a modern programming language that works with the
     structure of your data
     - Giving clear error messages and clean IDE support
-  depends:
-    - pkg-config
-    - libssl-dev
-  recommends:
-    - libxcb-composite0-dev
-    - libx11-dev
   fetch:
     url: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
     sha256:
