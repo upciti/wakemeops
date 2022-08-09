@@ -9,7 +9,7 @@ jobs:
   update_documentation:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/upciti/wakemebot:python-mkdocs
+      image: ghcr.io/upciti/wakemebot:latest
       options: --user 1001
     steps:
       - name: Checkout
