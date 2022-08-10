@@ -215,7 +215,7 @@
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
 - name: helm
-  version: 3.9.2
+  version: 3.9.3
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
@@ -226,8 +226,8 @@
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 3f5be38068a1829670440ccf00b3b6656fd90d0d9cfd4367539f3b13e4c20531
-      armhf: fb9f0c1c9475c66c2b3579b908c181d519761bbfae963ffac860bc683a2253de
+      amd64: 2d07360a9d93b18488f1ddb9de818b92ba738acbec6e1c66885a88703fa7b21c
+      armhf: 2b8cdb8064914ed1f1cd17f8366e68eab2f14e9fb0b2a0bac0f47fac7fbddf36
   install:
     - linux-{{goarch}}/helm:/usr/bin/
 
@@ -815,7 +815,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.7.0
+  version: 2.7.1
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -834,13 +834,13 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: c275635db932c85d337373e88f8cc80eb018965323f7a36ba5a616f1f545ab31
-      arm64: 212ecef0e6b4aaafc448405f194ad74719109ae6f3111034c869cca14fba9cc6
+      amd64: e9114511d270bb6e6466fecdb12a2d58c5b3d476ba404a98e20251ac1f24d1a8
+      arm64: df53b973d5155d2eef7e3dafe3a402b0a08c06efbb32fe0dd55d8177e9353b07
   install:
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.2.6
+  version: 1.2.7
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -851,9 +851,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 9fd445e7a191317dcfc99d012ab632f2cc01f12af14a44dfbaba82e0f9680365
-      armhf: ed49a5422ca51cbc90472a754979f9bbba5f0c39f6a0abe570e525bbae4e6540
-      arm64: 322755d11f0da11169cdb234af74ada5599046c698dccc125859505f85da2a20
+      amd64: dfd7c44a5b6832d62860a01095a15b53616fb3ea4441ab89542f9364e3fca718
+      armhf: c2557f3f878330a66a02de3c08ae8d0824b658c66fcb36b1eb07939bf2bc0468
+      arm64: 80d064008d57ba5dc97e189215c87275bf39ca14b1234430eae2f114394ea229
   install:
     - terraform:/usr/bin/
 
