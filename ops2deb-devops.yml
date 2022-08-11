@@ -181,7 +181,7 @@
     - dist_linux/docker-slim:/usr/bin/
 
 - name: flux
-  version: 0.31.5
+  version: 0.32.0
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -191,9 +191,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: b2f9ccec32cb3ddc701e47792f62e7a5f739346b6ad31f168570b8a8b5fe2f85
-      armhf: f38f5420957d8e86d863c64d880d948fe38dbbfa48f7fa287977b385b6175ffc
-      arm64: 1a6ee419981f91b58ea8ec4169f284f650ce1e01081afd15421da44be226b452
+      amd64: c94a42e96620848f9aed69a130c01b7d740412f6f2b3ad3c95fe23471f2b8e4e
+      armhf: 9a76e273107ce617a9fc1b7895297aa63e75006cbe1f03b9f0606539f54e08da
+      arm64: 6834c6fde64df9883b76c6b3a3111a6d00f88553373b892f363491b0896c0654
   install:
     - flux:/usr/bin/
 
@@ -693,7 +693,7 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.30.0
+  version: 0.31.0
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -711,7 +711,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 749dae0fac1c5973446c6b8e1f3a4aeab8d89b72d43d6918a91843ebeb6565fb
+    sha256: bbce7f4313e482b660efafd168d18db56335e26cdc06aa6845f690e0c330894f
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
