@@ -269,7 +269,7 @@
     - iamlive:/usr/bin/iamlive
 
 - name: infracost
-  version: 0.10.9
+  version: 0.10.10
   homepage: https://www.infracost.io
   summary: cloud cost estimates for Terraform in pull requests
   description: |-
@@ -279,8 +279,8 @@
   fetch:
     url: https://github.com/infracost/infracost/releases/download/v{{version}}/infracost-linux-{{target}}.tar.gz
     sha256:
-      amd64: f683b34240715fa2973398cb4cd8274b2af87ee885c4496115ffd21ee8aa53b6
-      arm64: fd1e3dd4a17d0de8c7f91700a3a936967071f6a89eb2c17d3fe784cdbc9c930f
+      amd64: 85b2bddaf62e1553f2f8234ae95d7294ffde1c4317ec7924135b634dddd78ec2
+      arm64: 66efbff2e83b22a460909b8abd4ceeca0ef00235404de0e46035002bc61813e9
   install:
     - infracost-linux-{{target}}:/usr/bin/infracost
 
@@ -693,7 +693,7 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.31.0
+  version: 0.31.1
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -711,7 +711,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: bbce7f4313e482b660efafd168d18db56335e26cdc06aa6845f690e0c330894f
+    sha256: 0415607b16e151f7bab2862617412a60df5d8cdad8c419abe3083c870dac8d7e
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
