@@ -7,6 +7,7 @@ OUTPUT_BASE_PATH := build
 ARCHITECTURE := amd64
 
 export OPS2DEB_REPOSITORY := http://deb.wakemeops.com/wakemeops stable
+export OPS2DEB_ONLY_BLUEPRINTS := $(shell git log -1 --format=short | sed -n "s/.\+pdated \(.\+\) from.\+/\1/p" | tr "\n" " ")
 
 default:
 	@echo -e 'Usage:'
@@ -36,7 +37,6 @@ generate-%:
 	mkdir -p $(OUTPUT_BASE_PATH)/$*
 	ops2deb generate -c ./ops2deb-$*.yml -o $(OUTPUT_BASE_PATH)/$*
 
-
 build: $(foreach component,$(COMPONENTS),build-$(component))
 
 build-%:
@@ -48,7 +48,6 @@ update:
 		-c ops2deb-$${component}.yml \
 		--output-file ops2deb-$${component}.log; \
 	done
-
 
 format:
 	for component in $(COMPONENTS); do \
