@@ -16,6 +16,22 @@
     - grep "^Depends. " control/control >> {{debian}}/control
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
+- name: insomnia
+  version: 2022.5.0
+  homepage: https://insomnia.rest/
+  summary: collaborative API Client and Design Tool
+  description: |-
+    Insomnia is an open-source, cross-platform API client for GraphQL, REST, and
+    gRPC.
+  fetch:
+    url: https://github.com/Kong/insomnia/releases/download/core%40{{version}}/Insomnia.Core-{{version}}.deb
+    sha256: 21e4fb0580ab78f8bfe7416a73670208351b90920c55ab9e6f266444700b1af2
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+
 - name: lens
   version: 6.0.0-latest.20220728.2
   homepage: https://k8slens.dev/
