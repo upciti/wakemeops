@@ -36,7 +36,7 @@
     This attack is also known as Predictable Resource Location,
     File Enumeration, Directory Enumeration, and Resource Enumeration.
   fetch:
-    url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-feroxbuster.zip
+    url: https://github.com/epi052/feroxbuster/releases/download/{{version}}/{{target}}-feroxbuster.zip
     sha256:
       amd64: 2922500afdace1ad5c2b326fb065434b01df72f9ed44f10370b01129fd8cc257
       armhf: 7ac076487dd895bbf9216ee2f24d9dc996d95382edee7f4c453c73a814e1c639
