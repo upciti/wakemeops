@@ -765,18 +765,19 @@
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
 - name: scw
-  version: 2.4.0
+  version: 2.5.5
   homepage: https://github.com/scaleway/scaleway-cli
-  revision: 3
   summary: command-line interface for Scaleway
   description: |-
     Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
     directly from your terminal.
   fetch:
-    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
-    sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
+    url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scaleway-cli_{{version}}_linux_{{goarch}}
+    sha256:
+      amd64: 11e5cac01c888fee6685628e50e5d9dc3a4b0fa61e414f55d459fd11e087bd14
+      arm64: 5f8a38134011271615a45056d129e5ebcd85fbbc53fd06a5bb5c7a4e67a809c8
   install:
-    - scw-{{version}}-linux-x86_64:/usr/bin/scw
+    - scaleway-cli_{{version}}_linux_{{goarch}}:/usr/bin/scw
 
 - name: skaffold
   version: 1.39.2
