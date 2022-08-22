@@ -173,7 +173,7 @@
     - mask-v{{version}}-x86_64-unknown-linux-gnu/mask:/usr/bin/
 
 - name: poetry
-  version: 1.1.14
+  version: 1.1.15
   homepage: https://python-poetry.org
   arch: all
   summary: tool for dependency management and packaging in Python
@@ -186,7 +186,7 @@
     - python3-distutils
   fetch:
     url: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
-    sha256: 5d02a16b3bd7a515b5b97e58a3832efa5a95e51a40a5d376566ac18a276f0ae9
+    sha256: 1c7e6a5175dbabe240cf10fd8167f31a07c404d7cd0b55cb5c68c160049cf486
   install:
     - path: /usr/bin/poetry
       content: |
