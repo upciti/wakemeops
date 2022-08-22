@@ -21,7 +21,7 @@
     - boundary:/usr/bin/
 
 - name: feroxbuster
-  version: 2.6.4
+  version: 2.7.1
   homepage: https://github.com/epi052/feroxbuster
   summary: fast, simple, recursive content discovery tool
   description: |-
@@ -38,9 +38,9 @@
   fetch:
     url: https://github.com/epi052/feroxbuster/releases/download/{{version}}/{{target}}-feroxbuster.zip
     sha256:
-      amd64: 2922500afdace1ad5c2b326fb065434b01df72f9ed44f10370b01129fd8cc257
-      armhf: 7ac076487dd895bbf9216ee2f24d9dc996d95382edee7f4c453c73a814e1c639
-      arm64: b73bb034eafd54f4cc8e33d44752a5f04d53a2a57885e9c3afba94ae55cf3e89
+      amd64: 4f78e276db5c6db290fc27fead807c5c961f1374acacd655f906be54a78429b0
+      armhf: f6395cbbd282c3dcba404c6155ca4f721075e510945af9c6766ce7e7f1e74e4b
+      arm64: bf7478e33140bd12a0480e2f19cdf0943cf7d7bf20bfcb02953642966843ec36
     targets:
       amd64: x86_64-linux
       armhf: armv7
