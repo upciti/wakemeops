@@ -339,7 +339,7 @@
     additional information which are not supported by ps, a tree view, a watch mode
     and more...
   fetch:
-    url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
+    url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-linux.zip
     sha256: 908800ba996421e5af24b4726c9a26f5985b9664d672d23bd040216743ad66a2
   install:
     - procs:/usr/bin/
