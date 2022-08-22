@@ -659,21 +659,23 @@
     - minio.RELEASE.{{version}}:/usr/bin/minio
 
 - name: natscli
-  version: 0.0.26
+  version: 0.0.33
   homepage: https://github.com/nats-io/natscli
-  revision: 3
   summary: command-line interface for NATS
   description: |-
     A command line utility to interact with and manage NATS. This utility replaces
     various past tools that were named in the form nats-sub and nats-pub, adds
     several new capabilities and support full JetStream management.
   fetch:
-    url: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-{{goarch}}.zip
+    url: https://github.com/nats-io/natscli/releases/download/v{{version}}/nats-{{version}}-linux-{{target|goarch}}.zip
     sha256:
-      amd64: d6a1f0aed5710eee69740fc1da24576a716076e7e3eca83a4772d1ea637a8fde
-      arm64: c7574e6f5db365b0430a1bde90badbd1d28a747d91d5f6986b73e531d87995d1
+      amd64: e1f8cbece8b7f5c24e0e4cb884ea44f2b40b47231b6fe28aefb30f19de16be88
+      armhf: a19684ef73fe76593231c544a1027e0876207fb8e2ce450fba264dbb917957aa
+      arm64: b7c523c4bde007d29c6b4247a9d2f16fe84727ff945b3a0d53ef2889c783e477
+    targets:
+      armhf: arm7
   install:
-    - nats-{{version}}-linux-{{goarch}}/nats:/usr/bin/
+    - nats-{{version}}-linux-{{target|goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
   version: 1.22.2
