@@ -116,15 +116,15 @@
     - bin/dog:/usr/bin/
 
 - name: dust
-  version: 0.8.1
+  version: 0.8.2
   homepage: https://github.com/bootandy/dust
   summary: human-friendly and fast alternative to 'du'
   description: du + rust = dust. Like du but more intuitive.
   fetch:
     url: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: c7aeb6ca5662caaa0b51e8bd6e1fecfd00a02520befb5c847eea3426b58d392c
-      armhf: 38dc4374c5d5bbba9a6a266124a6bce3e099e8adb0185e2ac90a8354fdefe520
+      amd64: 4a31755f54ea4feb637dc75cbc908af3582b8feedce63282f10b51537ad1e6e3
+      armhf: 4b9ebc1f6bab04f195a0f95f046c5f3b5fb3d0d568f09ed81be5fec0aa0ec236
   install:
     - dust-v{{version}}-{{rust_target}}/dust:/usr/bin/
 
