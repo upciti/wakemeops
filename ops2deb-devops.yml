@@ -124,7 +124,7 @@
     - datree:/usr/bin/
 
 - name: devspace
-  version: 5.18.5
+  version: 6.0.0
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -133,8 +133,8 @@
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
     sha256:
-      amd64: 5df42500c2e6be3f9335d459d833cb78ec3322bd29ecd03ab4d1b9ffdd92da35
-      arm64: 4026b52a0ea657ec4e8435d46a88688df284763c4f36b2bd20d60a123e18f010
+      amd64: 8baeab091f256a78aa698ae5869afe198baf863a73447d044e7d47f5e98c6c56
+      arm64: 713bd79d4577df6da8608651d383d8eaf79d75cf1ad41636242a8d42acdc23f3
   install:
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
@@ -767,7 +767,7 @@
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
 - name: scw
-  version: 2.5.5
+  version: 2.5.6
   homepage: https://github.com/scaleway/scaleway-cli
   summary: command-line interface for Scaleway
   description: |-
@@ -776,8 +776,8 @@
   fetch:
     url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scaleway-cli_{{version}}_linux_{{goarch}}
     sha256:
-      amd64: 11e5cac01c888fee6685628e50e5d9dc3a4b0fa61e414f55d459fd11e087bd14
-      arm64: 5f8a38134011271615a45056d129e5ebcd85fbbc53fd06a5bb5c7a4e67a809c8
+      amd64: a76b9376a5f0445068e55fbfe1a78811e94bc74ca0c60b824549c4176bfc0616
+      arm64: e2b27991ee0e703f6b2a6b71541eddb24fc7bbdfa01d75ac9c2704ee594a33a1
   install:
     - scaleway-cli_{{version}}_linux_{{goarch}}:/usr/bin/scw
 
