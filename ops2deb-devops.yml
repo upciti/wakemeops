@@ -139,7 +139,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.10.0
+  version: 2.10.1
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -149,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 81a27fee03789fbe8e534c20c557543bef7362e44d87e7e81af21a440bbb1016
-      armhf: 78720d037e9ba99b34a284539c65ed331a07cc01c6d857674a153e5f5a6d2c03
-      arm64: b3cabd324a44ed0353c2dc4fc4d6bbebf6d0065f9c92ada06283b0b160b761a7
+      amd64: dfe2e3f134cc053e020891a11c23a0923eb49ee35556ec40b37d098eaa5a55f6
+      armhf: 4a1bd3d72ff2d21248f5e1a32cdabc81aca9d613ce0eee661ac3cb6815db1258
+      arm64: 2598b299693d3ef6087a8faa02e91e29bc2f4515347a0cf4c9ea18967584f153
     targets:
       amd64: x86_64
       armhf: armv7
@@ -843,7 +843,7 @@
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.2.7
+  version: 1.2.8
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -854,9 +854,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: dfd7c44a5b6832d62860a01095a15b53616fb3ea4441ab89542f9364e3fca718
-      armhf: c2557f3f878330a66a02de3c08ae8d0824b658c66fcb36b1eb07939bf2bc0468
-      arm64: 80d064008d57ba5dc97e189215c87275bf39ca14b1234430eae2f114394ea229
+      amd64: 3e9c46d6f37338e90d5018c156d89961b0ffb0f355249679593aff99f9abe2a2
+      armhf: 188d6a4cbaea522a61981b3376c1be63a28db2b30b209a16c030a54494bb96a4
+      arm64: 26c05cadb05cdaa8ac64b90b982b4e9350715ec2e9995a6b03bb964d230de055
   install:
     - terraform:/usr/bin/
 
