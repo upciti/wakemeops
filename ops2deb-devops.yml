@@ -139,7 +139,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.10.1
+  version: 2.10.2
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -149,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: dfe2e3f134cc053e020891a11c23a0923eb49ee35556ec40b37d098eaa5a55f6
-      armhf: 4a1bd3d72ff2d21248f5e1a32cdabc81aca9d613ce0eee661ac3cb6815db1258
-      arm64: 2598b299693d3ef6087a8faa02e91e29bc2f4515347a0cf4c9ea18967584f153
+      amd64: 41e9657c8abd7d656c3a40df1ae9c1171930313707a3abd5420ec8852b59eeb7
+      armhf: 709aa427507a3a064d822977d2b1d68a0bd78a114c714970033b5e6731f9879b
+      arm64: dcac4e71c52264a795d0271b36cd6b2ea0ac266931618fab2e9e9a803ed16a4a
     targets:
       amd64: x86_64
       armhf: armv7
@@ -877,7 +877,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.38.7
+  version: 0.38.8
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -887,8 +887,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: c3dd39836d968c9299647d9b950ba9110922c6a910c60d8dcc30e8549333aac1
-      arm64: 3b04996b359e74095d4e67afb6b9b29dd6ee88f475b38d1d17e08ace80cf26cc
+      amd64: f1a5b1355c4a9ea807131f27b44bfbfe04dc25a3c4cd353910a2e68e0d7efafd
+      arm64: 443e22c90755dd7d40f7c954873f95ebaba5f44bcf30841382c05ce6b95acf5d
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
