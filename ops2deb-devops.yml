@@ -181,7 +181,7 @@
     - dist_{{target}}/docker-slim:/usr/bin/
 
 - name: flux
-  version: 0.32.0
+  version: 0.33.0
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -191,9 +191,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: c94a42e96620848f9aed69a130c01b7d740412f6f2b3ad3c95fe23471f2b8e4e
-      armhf: 9a76e273107ce617a9fc1b7895297aa63e75006cbe1f03b9f0606539f54e08da
-      arm64: 6834c6fde64df9883b76c6b3a3111a6d00f88553373b892f363491b0896c0654
+      amd64: b640626c705fb71eb8c676700257a7092178968f9e06c3e62c87d827cfa35017
+      armhf: ba9c7691cc36282d760b213f8c13ae4a43332c6929cbbf78cc6fca4531943da4
+      arm64: d621bb8a3d77b6e0efc372bd8ca89facffcc18b3ba4b00585eea548dab8191f3
   install:
     - flux:/usr/bin/
 
@@ -305,7 +305,7 @@
     - ln -s /opt/istio/bin/istioctl {{src}}/usr/bin/istioctl
 
 - name: k3d
-  version: 5.4.4
+  version: 5.4.6
   homepage: https://k3d.io
   summary: run Rancher Lab's k3s in Docker
   description: |-
@@ -315,9 +315,9 @@
   fetch:
     url: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}
     sha256:
-      amd64: 786151745379e511bd4dd95d1593241bb2b0a1d91e088573a1a1cb104732a3bd
-      armhf: c1468a8db2737bf9a481926a40076de93cac341ede4d4104df78c830ecdc451e
-      arm64: 9feb8067e89702947ed17d1e18fd3e445046f4114fbae6f491df8463a72fedfa
+      amd64: 8075d40c74c97d2642f15f535cb48d6d6e82df143f528833a193d87caac6a176
+      armhf: a807aecef48f32da81b0c65b7269f3f60dea7734385a05d3577425e8cbd72863
+      arm64: 36db97dfb3f5b56c7cd048924d87abfa5f499c62f524e00e2500fe75f88056ae
   install:
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
@@ -877,7 +877,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.38.8
+  version: 0.38.9
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -887,8 +887,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: f1a5b1355c4a9ea807131f27b44bfbfe04dc25a3c4cd353910a2e68e0d7efafd
-      arm64: 443e22c90755dd7d40f7c954873f95ebaba5f44bcf30841382c05ce6b95acf5d
+      amd64: c5c3fc6bc42b21e5f229d307f9b9493b9167a19cff423d6cc1e980658cff63b5
+      arm64: 9a9c0a6790ff58660fbdf17269448aab4de5c4f759f66cb6051ab34011a57535
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
