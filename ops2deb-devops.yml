@@ -269,7 +269,7 @@
     - iamlive:/usr/bin/iamlive
 
 - name: infracost
-  version: 0.10.10
+  version: 0.10.11
   homepage: https://www.infracost.io
   summary: cloud cost estimates for Terraform in pull requests
   description: |-
@@ -279,8 +279,8 @@
   fetch:
     url: https://github.com/infracost/infracost/releases/download/v{{version}}/infracost-linux-{{target}}.tar.gz
     sha256:
-      amd64: 85b2bddaf62e1553f2f8234ae95d7294ffde1c4317ec7924135b634dddd78ec2
-      arm64: 66efbff2e83b22a460909b8abd4ceeca0ef00235404de0e46035002bc61813e9
+      amd64: d2a9004a81369d86fc378b516a73aa7264a98ad81046a4efa1669d19ac4df91d
+      arm64: 77b7f2dfabaf5c389ea3d4ae820b8984751a94b61e88df29a515f90d90e0172c
   install:
     - infracost-linux-{{target}}:/usr/bin/infracost
 
