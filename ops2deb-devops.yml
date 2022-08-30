@@ -160,7 +160,7 @@
     - docker-compose-linux-{{target}}:/usr/bin/docker-compose
 
 - name: docker-slim
-  version: 1.37.6
+  version: 1.38.0
   homepage: https://dockersl.im
   summary: minify docker images by up to 30x
   description: |-
@@ -170,15 +170,15 @@
   fetch:
     url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
     sha256:
-      amd64: e9efdef85157e98a835fe01ea5a4131f26a60909587bff9e32dcf259fa916372
-      armhf: 1bb658ec9dc1b7fcaeab990060a7ee6c2db37466f0c7e8324e23b96a9cf47304
-      arm64: 59067ac6c8c940db0213613ba8675feaebd57f2d7b55645a9993a94825d08f79
+      amd64: eaa4f29162dbec3c027768cababfa7153eba0c003b50f3da76e67ebd584ef436
+      armhf: 4536915c85f99e97ce2775caaa1a1846ad9baa0449892f831ce955ef423fb139
+      arm64: 2f7b2a32412636c0cf249afd34a05936e4570b34bf71e166767e13debbf2ee51
     targets:
       amd64: linux
       armhf: linux_arm
       arm64: linux_arm64
   install:
-    - dist_linux/docker-slim:/usr/bin/
+    - dist_{{target}}/docker-slim:/usr/bin/
 
 - name: flux
   version: 0.32.0
