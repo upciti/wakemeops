@@ -34,7 +34,7 @@
     - btm:/usr/bin/
 
 - name: chezmoi
-  version: 2.21.0
+  version: 2.21.1
   homepage: https://github.com/twpayne/chezmoi
   summary: manage your dotfiles across multiple diverse machines
   description: |-
@@ -48,9 +48,9 @@
   fetch:
     url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 25ff98f5e9a18a0733f521d227d5797c9139aa4cf2da2e2e45a65cb7fdab22cd
-      armhf: b0fd1d557956b72b820b946f6648a1077ae6b92fd4d1eb685a9a7f05e39662d5
-      arm64: 26acc842ae414ab63339e0455df0d52ba6e61d1a41d3e1da597d4fcd77fc658b
+      amd64: b2229ec5b9e8a72ed25ea44754bdbace05a8d869a6ec04f46db765e70fb94961
+      armhf: 409e0005073ef1d5f497aa33526ce18e1b983f315279b3bb7fa4bfb6add6684e
+      arm64: f376ae829edce03ea3f97ac5d5484a68ccb254ffb1ddc08e371a3f93a335a386
   install:
     - chezmoi:/usr/bin/
 
@@ -436,7 +436,7 @@
     - xsv:/usr/bin/
 
 - name: yq
-  version: 4.27.2
+  version: 4.27.3
   homepage: https://github.com/mikefarah/yq
   summary: portable command-line YAML processor
   description: |-
@@ -447,8 +447,8 @@
   fetch:
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
     sha256:
-      amd64: 19a50ad8c7e173d40ae34310164adf19e2eef278db7cb6c4b7efcd097c030600
-      armhf: d46d586e1affdc5aa81532b2074082d952441ee4a24cf4fbc9a7251438e5f23e
-      arm64: 9ef1d5f08d038024c8c713085b72d42822f458a3bc15d0dd8dad5c4c3678e5d2
+      amd64: 9bef9dfdfdca811c307625b5d5ae75be07a382b5a7b9314d91918216965c3028
+      armhf: f9c0bac61aee25a61bfc5dd73d700fa2bffd2796edea80baf73beca0fba5ebdf
+      arm64: 6ae872dbfef21e137e050e96814f948df4ab982fc7ba676cf2f4f8f7c4067e8f
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq
