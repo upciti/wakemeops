@@ -117,7 +117,7 @@
     - trivy:/usr/bin/
 
 - name: vault
-  version: 1.11.2
+  version: 1.11.3
   homepage: https://www.hashicorp.com/products/vault
   summary: tool to create, manage and store secrets
   description: |-
@@ -128,9 +128,9 @@
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: ace4138269cb7214c73529f984b793d66074e3a3ad373eaa77bc9b39490d9ef9
-      armhf: ae882482e5cff9cf702305cf37334c249ab704b9c36d43490ec000135e2e0935
-      arm64: 111db187b28c0dd29aa91636278132d42b5b18717531d5a34de26b90c86ea02c
+      amd64: b433413ce524f26abe6292f7fc95f267e809daeacdf7ba92b68dead322f92deb
+      armhf: 01beb03da41b02e44553e4a55eee95914942fa56844ae15625374126baed7cb8
+      arm64: 5ccf49bd3601e29d6d1a8c321ece1eacf0f7cc12ea604ac392edd4f7a54d69c4
   install:
     - vault:/usr/bin/
 
