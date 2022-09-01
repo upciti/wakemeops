@@ -285,7 +285,7 @@
     - infracost-linux-{{target}}:/usr/bin/infracost
 
 - name: istioctl
-  version: 1.14.3
+  version: 1.15.0
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -294,9 +294,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: f5e2fbd1b15433fbf9597ee2818e837d221c45714a24f3aa392a46e0e1384eb4
-      armhf: 72f63ac3468841e32c88bbf32f4903d43da97f7906470bbc5968f95ee0e57606
-      arm64: f967801bdf05480b0be3b1a1d866dc4fc08593d17c71e068b7f24f0d21e0dec5
+      amd64: 5d84897dc25be6757568ef50bb3ddf86388456768cd658ed2670a4f12803c3f8
+      armhf: a0933aa68122188d92fca65f2c0efe00853ce4c6954b5a39449d0d671eb26f27
+      arm64: 1f56175c1a9509357326f254a80061ea9b3582c91a9f4b594c029c7531a160cb
     targets:
       armhf: armv7
   install:
