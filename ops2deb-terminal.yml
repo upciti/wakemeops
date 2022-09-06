@@ -1,5 +1,5 @@
 - name: bat
-  version: 0.21.0
+  version: 0.22.0
   homepage: https://github.com/sharkdp/bat
   summary: cat replacement with syntax highlighting
   description: |-
@@ -9,9 +9,9 @@
   fetch:
     url: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 36efd61465a9a406069e1ccbd34c3739690607e7448baa6773f5c01d2b1a4ee1
-      armhf: a3a5278a2f9808233b5196a2bcdc72f85af8ac4fa7e5c1aa53d4d42dee48d4b7
-      arm64: 697dc98cbe9727d78b7e62ef6274bd98b091a101f14e3b578b3d72ce78e89a42
+      amd64: 3e23983782417430b724e481598268106f5bb0f161a31f543e827b3a86215a9f
+      armhf: d6fe73d0840d136fbb9290bd451ce8f3bcb923460f3dce8d9a754ab533d45b41
+      arm64: 87cc4150dd56c9df4922cca37733a7a38e907306b60604bfba3adb3f07abad85
   install:
     - bat-v{{version}}-{{rust_target}}/bat:/usr/bin/
 
