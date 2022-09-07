@@ -63,7 +63,7 @@
     - kube-linter:/usr/bin/
 
 - name: kubeaudit
-  version: 0.19.0
+  version: 0.20.0
   homepage: https://github.com/Shopify/kubeaudit
   summary: kubeaudit helps you audit your Kubernetes clusters against common security
     controls
@@ -73,8 +73,8 @@
   fetch:
     url: https://github.com/Shopify/kubeaudit/releases/download/v{{version}}/kubeaudit_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: da42b6b62dd50cba67b4a7dd5400c87f869a18bf92a52b470611ffd8061c5f56
-      arm64: 1a5361df827235fc8f4d49678b483acd640a22b49e5b8ea3e9332dd877e01fb9
+      amd64: 040492e8b44322d2f775186c3fd086ec5a15b967bb88a17e818b4dbc9c97f4f5
+      arm64: 79530cf2d73ec68bc5390084147685141b1915eeb5db7078ffcde1841743341c
   install:
     - kubeaudit:/usr/bin/
 
@@ -135,7 +135,7 @@
     - vault:/usr/bin/
 
 - name: vuls-scanner
-  version: 0.20.2
+  version: 0.20.3
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-
@@ -146,9 +146,9 @@
   fetch:
     url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 851a4ec292b00ac5d35db5f32aa2ec5330aca2966b4144188cf19ff850d1b188
-      armhf: a285e7e2b6d609392895e39fc1fb386a3ae4f8f4aa1d49b11c4a35242451623a
-      arm64: 9db1645a708854811ad9838b99f3eca5b4c31ee1df15fdfbde636addbac1cacc
+      amd64: 55b1ca699c61f90a078c9337436e93ac1d67bfd837a39269d10f317ae7ccf809
+      armhf: 28683a81c6dc62f8fe63cb555a12f49cb30a732cd433898db81fd2900ee68374
+      arm64: d2a88857d0fb1402a314062ea58165f80dab39adfd6f7f724e46e5e7459ecab6
     targets:
       armhf: armv6
   install:
