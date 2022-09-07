@@ -88,3 +88,19 @@
     - chmod 755 mattermost-desktop-{{version}}-linux-x64/mattermost-desktop
     - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
     - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
+
+- name: teams-for-linux
+  version: 1.0.33
+  homepage: https://github.com/IsmaelMartinez/teams-for-linux/
+  summary: unofficial Microsoft Teams for Linux client
+  description: |-
+    Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App
+    and wraps it as a standalone application using Electron.
+  fetch:
+    url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
+    sha256: 15fd3dce19407f6dc3da5137694bb76f27901480b7fc34a7c7205a395f341104
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
