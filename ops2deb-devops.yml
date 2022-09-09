@@ -659,7 +659,7 @@
     - minio.RELEASE.{{version}}:/usr/bin/minio
 
 - name: natscli
-  version: 0.0.33
+  version: 0.0.34
   homepage: https://github.com/nats-io/natscli
   summary: command-line interface for NATS
   description: |-
@@ -669,9 +669,9 @@
   fetch:
     url: https://github.com/nats-io/natscli/releases/download/v{{version}}/nats-{{version}}-linux-{{target|goarch}}.zip
     sha256:
-      amd64: e1f8cbece8b7f5c24e0e4cb884ea44f2b40b47231b6fe28aefb30f19de16be88
-      armhf: a19684ef73fe76593231c544a1027e0876207fb8e2ce450fba264dbb917957aa
-      arm64: b7c523c4bde007d29c6b4247a9d2f16fe84727ff945b3a0d53ef2889c783e477
+      amd64: 4f57234271b0600dc905933e6add707a36fb14353090de3c973220e8f8e2d65b
+      armhf: e05bd5b938916db7a9b5fa336f2c262b76aaf9cfd78cf8b80c6eb599c8a005bc
+      arm64: a8a1d3f42d460bd5ac5407f78a4ceda1d731ee8bd363efc9b808d8b592c65fb6
     targets:
       armhf: arm7
   install:
