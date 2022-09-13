@@ -226,6 +226,7 @@
 - name: pre-commit
   version: 2.20.0
   homepage: https://pre-commit.com/
+  revision: 2
   arch: all
   summary: framework for managing and maintaining multi-language pre-commit hooks
   description: |-
@@ -241,11 +242,11 @@
     url: https://github.com/pre-commit/pre-commit/releases/download/v{{version}}/pre-commit-{{version}}.pyz
     sha256: 83afdec9f97cbb1d2a2fd7eae645ab732e9f7a3b60cfe499269fec03fb836c42
   install:
-    - pre-commit-{{version}}.pyz:/var/lib/pre-commit/pre-commit.pyz
+    - pre-commit-{{version}}.pyz:/usr/lib/pre-commit/pre-commit.pyz
     - path: /usr/bin/pre-commit
       content: |
         #!/usr/bin/env sh
-        exec python3 /var/lib/pre-commit/pre-commit.pyz
+        exec python3 /usr/lib/pre-commit/pre-commit.pyz $@
 
 - name: pyenv
   version: 2.3.4
