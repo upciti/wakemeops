@@ -105,7 +105,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.6.23
+  version: 1.6.26
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -116,8 +116,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: c82cf9132917cd7f8fd2aeb0f1a6172d2b3e8bc38285a09944d4d97bd13599d2
-      arm64: a0b939d16bfc8cf99921a249c9b1910806b0900a182f079b7146d238561603f0
+      amd64: 6891cfdfa7db0364e7c04febf0426871e6a1ce5132f9b46c96aaa8b2bd19d871
+      arm64: 565725e9ae76d981da24b36897d1ddb32c052b49e9106adb4352cc5a74c50277
     targets:
       amd64: x86_64
   install:
@@ -695,7 +695,7 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.31.1
+  version: 0.31.2
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -713,7 +713,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 0415607b16e151f7bab2862617412a60df5d8cdad8c419abe3083c870dac8d7e
+    sha256: 95f64771f55eeda8f6d864d9e26b4c3dac30ec8ef47af2bca5af0d1be03e7259
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
