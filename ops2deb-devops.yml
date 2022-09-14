@@ -105,7 +105,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.6.27
+  version: 1.6.28
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -116,8 +116,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: f2f7f352315fada0ca24b639da83bcd591be2df8124602b2233ad05ae3973290
-      arm64: a17ae13c99e511f8d8bab7f3f7dcbf88146a27117bdfc1721ea3445a1c894730
+      amd64: fcaba0b45d78a0a18846c7ae9814a90e07c42e0f171acec826cf17bbdcc63a19
+      arm64: 6a1a29cbb67f8e5cd62914f129abacb694f638e91e7ffa32de6a042c57bbd427
     targets:
       amd64: x86_64
   install:
@@ -139,7 +139,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.10.2
+  version: 2.11.0
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -149,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 41e9657c8abd7d656c3a40df1ae9c1171930313707a3abd5420ec8852b59eeb7
-      armhf: 709aa427507a3a064d822977d2b1d68a0bd78a114c714970033b5e6731f9879b
-      arm64: dcac4e71c52264a795d0271b36cd6b2ea0ac266931618fab2e9e9a803ed16a4a
+      amd64: e15e0d04bb2ae3885a375a575f27ebd79679f01df2dcb1257bd2c5afe1966122
+      armhf: d13b829fc9637bbf291cd4c90ddc19da7d9c69e4788399641e01657f93208c9e
+      arm64: 26088a6f1afbb58c78b2d7a7eaa0ec36df59f9f45729843ca1031ec75472b6bc
     targets:
       amd64: x86_64
       armhf: armv7
