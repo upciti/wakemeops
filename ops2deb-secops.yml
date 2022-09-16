@@ -49,7 +49,7 @@
     - feroxbuster:/usr/bin/
 
 - name: kube-linter
-  version: 0.4.0
+  version: 0.5.0
   homepage: https://github.com/stackrox/kube-linter
   summary: checks Kubernetes YAML files and Helm charts
   description: |-
@@ -58,7 +58,7 @@
   fetch:
     url: https://github.com/stackrox/kube-linter/releases/download/{{version}}/kube-linter-linux.tar.gz
     sha256:
-      amd64: 6ffc975c7f775fc8b74f64afab1191500ab6aa1a01701af2dc901d3d586aa729
+      amd64: 01cb7fc6d14ee155786eefa2c03394429481bb777e532ed8ec566da201a1663a
   install:
     - kube-linter:/usr/bin/
 
