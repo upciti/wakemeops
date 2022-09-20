@@ -331,7 +331,7 @@
     - mv nu_* {{src}}/usr/bin/
 
 - name: procs
-  version: 0.13.0
+  version: 0.13.1
   homepage: https://github.com/dalance/procs
   summary: alternative in rust to 'ps'
   description: |-
@@ -340,7 +340,7 @@
     and more...
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-linux.zip
-    sha256: 7c185402243b0ddadbe3082d0f7bf0136f30d0467b61a5698aa289449df40bae
+    sha256: a7bc87b40595b1b6f2fbd6a3bffb4119ba330c28b34d2cf0d24da3ff78cac28a
   install:
     - procs:/usr/bin/
 
