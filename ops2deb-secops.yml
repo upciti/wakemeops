@@ -56,11 +56,11 @@
     KubeLinter is a static analysis tool that checks Kubernetes YAML files and Helm
     charts to ensure the applications represented in them adhere to best practices.
   fetch:
-    url: https://github.com/stackrox/kube-linter/releases/download/{{version}}/kube-linter-linux.tar.gz
+    url: https://github.com/stackrox/kube-linter/releases/download/{{version}}/kube-linter-linux
     sha256:
-      amd64: 01cb7fc6d14ee155786eefa2c03394429481bb777e532ed8ec566da201a1663a
+      amd64: 313084c57cac08e1ba26db718cd6a49e10529f7bec28bbbc6f52b7053826f11f
   install:
-    - kube-linter:/usr/bin/
+    - kube-linter-linux:/usr/bin/
 
 - name: kubeaudit
   version: 0.20.0
