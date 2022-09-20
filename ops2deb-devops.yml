@@ -569,7 +569,7 @@
     - lazydocker:/usr/bin
 
 - name: linkerd
-  version: 22.9.1
+  version: 22.9.2
   homepage: https://linkerd.io
   summary: ultralight service mesh for Kubernetes
   description: |-
@@ -581,9 +581,9 @@
   fetch:
     url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-{{goarch}}
     sha256:
-      amd64: 019266363a1e7f5f9b057decb32c78fb1b8c3feff44b3da3abd2d09b0a94e6b2
-      armhf: 5f7bc84781c140811ce5ced31016f29ff92a15dc6892a78ee318434bb2bf6486
-      arm64: 488d5e9afef5f1e2c5ed4d0b5be748f2ec16aebfd8629d394bbdf7839e7cfdd8
+      amd64: 8790ffe184f78a73737b1734918b82d61fed86b60f8c3456411ef860e70340cd
+      armhf: 279675a0ca0d842bcc66065528f79513030af7a799cfe5c4f7c7ed61a10642a2
+      arm64: 4f8a9beb1d360e08ce239da6b9c037d5e82ddcd4c93378a92e4f167314c5411f
   install:
     - linkerd2-cli-edge-{{version}}-linux-{{goarch}}:/usr/bin/linkerd
 
