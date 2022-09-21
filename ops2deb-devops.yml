@@ -322,7 +322,7 @@
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
 - name: k9s
-  version: 0.26.3
+  version: 0.26.4
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-
@@ -334,9 +334,9 @@
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 3447ac17cfa46fe91ab2bfcb021d43f7f2d40ac37c7b573241a511b85fc162cf
-      armhf: f3a978e082454cc12a0ecf7f2b888de85ce9d8239aa88d729e5f391ba9af2520
-      arm64: 8caca92ce204449b34cb98dd4ed371fa15d1c4f93983d8f5cefe76c115b9397b
+      amd64: cb3edcdf01580b88fbfd36df47c414155d2bb1fb2e33302af370702fd7fed9b6
+      armhf: bc479968f66d2af57ad975ddb05466c1f8c3d43a51e5897dbb3f6c86a9613f34
+      arm64: 3e6764c5e600f4a01ce6d9fa4ff4cfee9e6210319abe6f686ee0f3080350599b
     targets:
       amd64: x86_64
       armhf: arm
@@ -416,7 +416,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.25.1
+  version: 1.25.2
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -425,9 +425,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: 9cc2d6ce59740b6acf6d5d4a04d4a7d839b0a81373248ef0ce6c8d707143435b
-      armhf: e8c6bfd8797e42501d14c7d75201324630f15436f712c4f7e46ce8c8067d9adc
-      arm64: 73602eabf20b877f88642fafcbe1eda439162c2c1dbcc9ed09fdd4d7ac9919ea
+      amd64: 8639f2b9c33d38910d706171ce3d25be9b19fc139d0e3d4627f38ce84f9040eb
+      armhf: d6b581a41b010ef86a9364102f8612d2ee7fbc7dd2036e40ab7c85adb52331cb
+      arm64: b26aa656194545699471278ad899a90b1ea9408d35f6c65e3a46831b9c063fd5
   install:
     - kubectl:/usr/bin/
 
