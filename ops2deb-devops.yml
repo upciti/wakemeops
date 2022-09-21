@@ -843,7 +843,7 @@
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.2.9
+  version: 1.3.0
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -854,9 +854,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 0e0fc38641addac17103122e1953a9afad764a90e74daf4ff8ceeba4e362f2fb
-      armhf: 647a69acf01b3cac829f4436e8095d927ee6732cd6c076e24674a3c09326aad2
-      arm64: 6da7bf01f5a72e61255c2d80eddeba51998e2bb1f50a6d81b0d3b71e70e18531
+      amd64: 380ca822883176af928c80e5771d1c0ac9d69b13c6d746e6202482aedde7d457
+      armhf: 92fd3389c72f508808dbf558f7e65eda6748cd853e8141fd5a62561764e5d2a6
+      arm64: 0a15de6f934cf2217e5055412e7600d342b4f7dcc133564690776fece6213a9a
   install:
     - terraform:/usr/bin/
 
