@@ -767,7 +767,7 @@
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
 - name: scw
-  version: 2.5.6
+  version: 2.6.0
   homepage: https://github.com/scaleway/scaleway-cli
   summary: command-line interface for Scaleway
   description: |-
@@ -776,8 +776,8 @@
   fetch:
     url: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scaleway-cli_{{version}}_linux_{{goarch}}
     sha256:
-      amd64: a76b9376a5f0445068e55fbfe1a78811e94bc74ca0c60b824549c4176bfc0616
-      arm64: e2b27991ee0e703f6b2a6b71541eddb24fc7bbdfa01d75ac9c2704ee594a33a1
+      amd64: a0496510202a2f749e914d298e9a7178ea79f08cc4ec0dad4d4c94519b1c4865
+      arm64: f7e896955d2bb85c3b72a2e7654bbccde034a4f205d00b3da6621f90730d9bef
   install:
     - scaleway-cli_{{version}}_linux_{{goarch}}:/usr/bin/scw
 
