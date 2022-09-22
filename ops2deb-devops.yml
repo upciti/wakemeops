@@ -322,7 +322,7 @@
     - k3d-linux-{{goarch}}:/usr/bin/k3d
 
 - name: k9s
-  version: 0.26.4
+  version: 0.26.5
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-
@@ -334,9 +334,9 @@
   fetch:
     url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
     sha256:
-      amd64: cb3edcdf01580b88fbfd36df47c414155d2bb1fb2e33302af370702fd7fed9b6
-      armhf: bc479968f66d2af57ad975ddb05466c1f8c3d43a51e5897dbb3f6c86a9613f34
-      arm64: 3e6764c5e600f4a01ce6d9fa4ff4cfee9e6210319abe6f686ee0f3080350599b
+      amd64: 8ae556d05b4744f7b79cc71549e4096daa9c6b913be88ee43be42ef800137bc3
+      armhf: f0f193e0fb1a3b8c533a10fe337c3052dbd1c56456298f660848dc61d406b0eb
+      arm64: 62bc8fe98ad035a64bbeede91bdd57de357af3059bd80975a9d22b6b072d97f8
     targets:
       amd64: x86_64
       armhf: arm
@@ -695,7 +695,7 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.33.0
+  version: 0.34.0
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -713,7 +713,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 078459ce6754741f8edca7a4de3929854990c31a391c23af7427f2eb0e98d620
+    sha256: 817395e427a0305d07ca7c3ca002cf5e1fcadb4b0fb3336bf925fbc3a4dd1cb9
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
