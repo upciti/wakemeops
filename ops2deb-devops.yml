@@ -893,7 +893,7 @@
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
 - name: tflint
-  version: 0.40.1
+  version: 0.41.0
   homepage: https://github.com/terraform-linters/tflint
   summary: pluggable Terraform linter
   description: |-
@@ -907,8 +907,8 @@
   fetch:
     url: https://github.com/terraform-linters/tflint/releases/download/v{{version}}/tflint_linux_{{target}}.zip
     sha256:
-      amd64: b5eb172ac6cdb61c104f0319397db8b0c0a1b214213b708e7fbef0f352cfc81e
-      arm64: 0df99deb0424a494bfc71c31a98843760c4fcb08b3089a01da68d4c87dcaba5c
+      amd64: 653aa84f25d49f2d8978c619ba13b9ef595eb781ba950e389fbeab1ac496df22
+      arm64: f03ed9b2fe579e75b0a4d2bcf7c4e8728d39fcae9f2f6e0d2f6becf5add9d695
   install:
     - tflint:/usr/bin/tflint
 
