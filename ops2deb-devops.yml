@@ -512,7 +512,7 @@
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
 
 - name: kubeseal
-  version: 0.18.4
+  version: 0.18.5
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-
@@ -523,9 +523,9 @@
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 2e765b87889bfcf06a6249cde8e28507e3b7be29851e4fac651853f7638f12f3
-      armhf: c8c9d1d8ee4adb829ca5476065a3e93aa7f0f1dcea422037f99ff69d6676cc74
-      arm64: 3b71db91bd98b56a7f713d7edf64ed38a2ecbd04205539a5e25129e40e6fde0f
+      amd64: cea4ee4fbedbd59c5f2dd6a26206de0677c7f7983181f1c47f0a938ed3d93432
+      armhf: f80d42ed4b157d060714279ea828b3e78898b4f8223f6ed54ec3de4553d88642
+      arm64: da52279164fa9f020f21b795c7fcb84d901c08c67dc8a8f7b63015e640bf5483
   install:
     - kubeseal:/usr/bin/
 
@@ -695,7 +695,7 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.34.0
+  version: 0.34.1
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -713,7 +713,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 817395e427a0305d07ca7c3ca002cf5e1fcadb4b0fb3336bf925fbc3a4dd1cb9
+    sha256: 716bea1f2f650ebd757e87709bfb2effa75a0b1bd970594095dab821c2126b92
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
