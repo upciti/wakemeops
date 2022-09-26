@@ -57,7 +57,7 @@
     - pg_datanymizer:/usr/bin/
 
 - name: github-cli
-  version: 2.16.0
+  version: 2.16.1
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
   description: |-
@@ -66,9 +66,9 @@
   fetch:
     url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 936514eab0780d17372e443f4469585fbe25e5f890d3cf293f4673a2b4e90146
-      armhf: 47fd2cf1f7cde35229abb98ebb3a7a32c12a42528b55a592cea1fcbb772c3c92
-      arm64: 04f0f599dfdc9c76f941f80a6353fff1bedfe842d7d18ec26d69d07e30c832c6
+      amd64: 1dbafd8139e2ddf64f0c86a9e85fe89d843b904a6bae9eaf1b0127111bafa478
+      armhf: dd81ff797bde1c547d0f000fe5fd6cfeaa3e3d66f82bb99222e18c5a6a8d85b5
+      arm64: 6aacaf0872176f3eb412eec844af0477320ce43181ad7322230e84937feca7e6
     targets:
       armhf: armv6
   script:
@@ -114,7 +114,7 @@
     - bin/glab:/usr/bin/
 
 - name: hugo
-  version: 0.104.0
+  version: 0.104.1
   homepage: https://gohugo.io/
   summary: fast and flexible Static Site Generator
   description: |-
@@ -135,9 +135,9 @@
   fetch:
     url: https://github.com/gohugoio/hugo/releases/download/v{{version}}/hugo_{{version}}_Linux-{{target|goarch}}.tar.gz
     sha256:
-      amd64: df4bcd7926e52710213de29b391f458726ffb48c84be889baaac94c0f89f056c
-      armhf: 2dff880d5230890ee1b38de255b0d02812d7929eba150c74bc69a99f6faf6630
-      arm64: eb3fe554fa9fa9ebe995feecd9da2cfe2dc202b98b3a417d9876a8ee2a3bc9cb
+      amd64: 048a3d16c0b19d3edb49f289ce8ce82f58c52dfa9afce7ec1cc5112f0f344df4
+      armhf: 26a21a9d5daabc8ad0ad676fdabd2ab03237953fa7ca1d96929e6473a3b6b978
+      arm64: 3e88230572b75b0a640f81452daa6dc5cbfc89af115226c48ac444075d942477
     targets:
       amd64: 64bit
   install:
