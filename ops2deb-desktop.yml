@@ -17,7 +17,7 @@
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
 - name: insomnia
-  version: 2022.5.1
+  version: 2022.6.0
   homepage: https://insomnia.rest/
   summary: collaborative API Client and Design Tool
   description: |-
@@ -25,7 +25,7 @@
     gRPC.
   fetch:
     url: https://github.com/Kong/insomnia/releases/download/core%40{{version}}/Insomnia.Core-{{version}}.deb
-    sha256: 13175f5dfa6298ce84fd2eb188b4c776addfe3fc9db727d9dbef68df6cfcee07
+    sha256: 01118870d1e7a90132a75255355e7d16fbd8bfd253492e7947e9531e5d08ad69
   install:
     - data:/
   script:
