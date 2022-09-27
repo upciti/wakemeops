@@ -1,5 +1,5 @@
 - name: boundary
-  version: 0.10.5
+  version: 0.11.0
   homepage: https://www.boundaryproject.io
   summary: provide simple and secure access to hosts and services
   description: |-
@@ -14,9 +14,9 @@
   fetch:
     url: https://releases.hashicorp.com/boundary/{{version}}/boundary_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 433fd79b9981c0426a99195f9194229d62e22fcb17ef77ee082c7e7e72543eb3
-      armhf: 4b592dc236332f52f7253c6ca88e58b7e9f9d8ca58c9af21f74863b08447968b
-      arm64: a9fbe3c23e967ea6da6617f933e8e4d1b19c902ff9145d44414c8737e8a8bc9b
+      amd64: 0eb60ba3b945415d13124cbb1639e038e120a9aa1ca8dc8bc229cdd58abc4988
+      armhf: 483591add675836416c99ac84de9ccd0d327895fbe8a2741342c1956a67afc6d
+      arm64: 3688c79657308f184b4b709e0b3c374d7be53648bc0e8f91433663ab01e46707
   install:
     - boundary:/usr/bin/
 
