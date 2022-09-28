@@ -269,7 +269,7 @@
     - iamlive:/usr/bin/iamlive
 
 - name: infracost
-  version: 0.10.11
+  version: 0.10.12
   homepage: https://www.infracost.io
   summary: cloud cost estimates for Terraform in pull requests
   description: |-
@@ -279,8 +279,8 @@
   fetch:
     url: https://github.com/infracost/infracost/releases/download/v{{version}}/infracost-linux-{{target}}.tar.gz
     sha256:
-      amd64: d2a9004a81369d86fc378b516a73aa7264a98ad81046a4efa1669d19ac4df91d
-      arm64: 77b7f2dfabaf5c389ea3d4ae820b8984751a94b61e88df29a515f90d90e0172c
+      amd64: 811a18e033ee1a161346e2b57aa046d003c5cf6a8b7cec6c1b484765ebee68f1
+      arm64: e372980b8698bc3e220cb1c4e2113b9522a8fb5b136326b5daf75d7cbe232539
   install:
     - infracost-linux-{{target}}:/usr/bin/infracost
 
@@ -843,7 +843,7 @@
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.3.0
+  version: 1.3.1
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -854,9 +854,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 380ca822883176af928c80e5771d1c0ac9d69b13c6d746e6202482aedde7d457
-      armhf: 92fd3389c72f508808dbf558f7e65eda6748cd853e8141fd5a62561764e5d2a6
-      arm64: 0a15de6f934cf2217e5055412e7600d342b4f7dcc133564690776fece6213a9a
+      amd64: 0847b14917536600ba743a759401c45196bf89937b51dd863152137f32791899
+      armhf: 88e9cbd70a456c54db92ca777ad5ed324c002533ca383675cc27c6a9105a7502
+      arm64: 7ebb3d1ff94017fbef8acd0193e0bd29dec1a8925e2b573c05a92fdb743d1d5b
   install:
     - terraform:/usr/bin/
 
