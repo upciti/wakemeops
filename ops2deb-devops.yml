@@ -198,7 +198,7 @@
     - flux:/usr/bin/
 
 - name: gitlab-release-cli
-  version: 0.13.0
+  version: 0.14.0
   homepage: https://gitlab.com/gitlab-org/release-cli/
   summary: command-line interface for GitLab Release
   description: |-
@@ -208,9 +208,9 @@
   fetch:
     url: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
     sha256:
-      amd64: 5afa1cd8d6713e15a3627d0fb53cbc5f084912c6b404507b60c175832eb9b386
-      armhf: da3871e82168e503dded9b554a6622ac8521b0d7abd1d02847a8f83eb5cb5a62
-      arm64: 992ee86cee6cede8e90a7405932b140ca8da782c6bb6dcb7ccc3baa1e1ce4330
+      amd64: a777edeeda2608f402862c6c130aa33f8dc6d464455b0fb81444885df774588a
+      armhf: 4a40aedd24a6ca35cd48e04bfef2c1e5516edd19439cf966ace8d4f41c6163f8
+      arm64: b49f374064c152431a062ca6ce18f892e7754b0952215d39e2e7a0b20b81cd5b
   install:
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
