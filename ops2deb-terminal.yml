@@ -331,7 +331,7 @@
     - mv nu_* {{src}}/usr/bin/
 
 - name: procs
-  version: 0.13.1
+  version: 0.13.2
   homepage: https://github.com/dalance/procs
   summary: alternative in rust to 'ps'
   description: |-
@@ -340,7 +340,7 @@
     and more...
   fetch:
     url: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-linux.zip
-    sha256: a7bc87b40595b1b6f2fbd6a3bffb4119ba330c28b34d2cf0d24da3ff78cac28a
+    sha256: 00c768dd4118e9398804f7545322cbf8e80aefbc12036543f9337594049b8c72
   install:
     - procs:/usr/bin/
 
@@ -436,7 +436,7 @@
     - xsv:/usr/bin/
 
 - name: yq
-  version: 4.27.3
+  version: 4.28.1
   homepage: https://github.com/mikefarah/yq
   summary: portable command-line YAML processor
   description: |-
@@ -447,8 +447,8 @@
   fetch:
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
     sha256:
-      amd64: 9bef9dfdfdca811c307625b5d5ae75be07a382b5a7b9314d91918216965c3028
-      armhf: f9c0bac61aee25a61bfc5dd73d700fa2bffd2796edea80baf73beca0fba5ebdf
-      arm64: 6ae872dbfef21e137e050e96814f948df4ab982fc7ba676cf2f4f8f7c4067e8f
+      amd64: 818cb646d68c016b840d8db2f614553e488121d6a41aa0619fd16f17ed3a83d8
+      armhf: 205f583ce6e2bcb6c9e2f039cad1e633255e445a294fb8d3e7d751806eb7d28f
+      arm64: 4a3a2195700326d59483c644c541752cdea053991f1abddd80a14998291ba651
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq
