@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.4.13
+  version: 2.4.14
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: 2ce68916af02016957e45a3f32d6c47a67d638f4c2683ca67774cf9a6f64e959
+    sha256: 8da480a31f6867da5b35f3aa38a8d62c089b64b920d3d885c99dde018d35f9c4
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
@@ -877,7 +877,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.39.0
+  version: 0.39.1
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -887,8 +887,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: 19c08b0cfc926dbb823dc2599055fcb33d2048edd21708edd11932c8e3f56746
-      arm64: fda878ec7a4d62f2568dcca40682db7e3ed521a8efce2f9c110ef0a404f1fcee
+      amd64: 9e78b6e8ba8775ea91b618a1b44c3e7660bbb311ac2c77532b289982e0fa3f17
+      arm64: f4b44aa9967ffdf7d2ab16ab9fb15afa5f599d6f05c99e557d583553c9dc4c3b
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
