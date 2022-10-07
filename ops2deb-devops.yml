@@ -975,7 +975,7 @@
     - waypoint:/usr/bin/
 
 - name: wheel2deb
-  version: 0.7.0
+  version: 0.7.1
   homepage: https://github.com/upciti/wheel2deb
   summary: python wheel to debian package converter
   description: |-
@@ -991,6 +991,6 @@
     - devscripts
   fetch:
     url: https://github.com/upciti/wheel2deb/releases/download/{{version}}/wheel2deb_linux_amd64
-    sha256: 6a59cdfd64c6533bfaf3e00401c438403ac891d6173343a28c0f751815cc5d23
+    sha256: 9dfd53b0be8a8f0cb73b9115d328b3e300b4707428eef993b9659a66c76dbec5
   install:
     - wheel2deb_linux_amd64:/usr/bin/wheel2deb
