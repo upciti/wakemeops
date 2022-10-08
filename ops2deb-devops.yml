@@ -602,7 +602,7 @@
     - logcli-linux-{{goarch}}:/usr/bin/logcli
 
 - name: minikube
-  version: 1.27.0
+  version: 1.27.1
   homepage: https://minikube.sigs.k8s.io
   summary: quickly set up a local Kubernetes cluster
   description: |-
@@ -617,9 +617,9 @@
   fetch:
     url: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
     sha256:
-      amd64: b6ab1207474255b9ea755ced4394b4b618a1cfa7b8394ddd1d307288130fb495
-      armhf: 4ab5323f1f365589d944818dc73700f1ceb9d930932de47e0dc0012a22c51f38
-      arm64: 5d698c417d41d42e577e33eeb3666d33232c1f45585665cd6d4f6dacb8aeb0d2
+      amd64: 159bc79f3914dadb7c9f56b6e9d5b73a1c54acb26dca8f1ea84b99ff5da42620
+      armhf: f14348a7653672745e92eba934543c0a9f3fa14fbdeff3cf76da41e174769bf0
+      arm64: 6a3fb0eaac110c35f018948838aa6ab0898e811a08f76e74b85d8573fb08b1d0
   install:
     - minikube-linux-{{goarch}}:/usr/bin/minikube
 
