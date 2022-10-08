@@ -249,7 +249,7 @@
         exec python3 /usr/lib/pre-commit/pre-commit.pyz $@
 
 - name: pyenv
-  version: 2.3.4
+  version: 2.3.5
   homepage: https://github.com/pyenv/pyenv
   arch: all
   summary: simple Python version management
@@ -277,7 +277,7 @@
     - liblzma-dev
   fetch:
     url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
-    sha256: 4b06abcc0f329661098090f0c8a7dfcc04be81d9f12e00a57bb8a6c25462b407
+    sha256: 25cc047e1277ee1ac6c3726ff0893aea3ced796e22cd4a594d490320532f84c1
   install:
     - path: /etc/profile.d/ops2deb-pyenv.sh
       content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
