@@ -90,7 +90,7 @@
     - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
 
 - name: teams-for-linux
-  version: 1.0.43
+  version: 1.0.44
   homepage: https://github.com/IsmaelMartinez/teams-for-linux/
   summary: unofficial Microsoft Teams for Linux client
   description: |-
@@ -98,7 +98,7 @@
     and wraps it as a standalone application using Electron.
   fetch:
     url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
-    sha256: 9c06b5e4d813e7dd35c12adfcedd99171ddeff50a6a280d3c7c776d795db8c14
+    sha256: 0de3cb04d16f4ef351db117547417e2a0d7b3b3263e20dbfb9b3293e96521e3c
   install:
     - data:/
   script:
