@@ -416,7 +416,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.25.2
+  version: 1.25.3
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -425,9 +425,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: 8639f2b9c33d38910d706171ce3d25be9b19fc139d0e3d4627f38ce84f9040eb
-      armhf: d6b581a41b010ef86a9364102f8612d2ee7fbc7dd2036e40ab7c85adb52331cb
-      arm64: b26aa656194545699471278ad899a90b1ea9408d35f6c65e3a46831b9c063fd5
+      amd64: f57e568495c377407485d3eadc27cda25310694ef4ffc480eeea81dea2b60624
+      armhf: 59e1dba0951f19d4d18eb04db50fcd437c1d57460f2008bc03e668f71b8ea685
+      arm64: cfd5092ce347a69fe49c93681a164d9a8376d69eef587da894207c62ec7d6a5d
   install:
     - kubectl:/usr/bin/
 
@@ -512,7 +512,7 @@
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
 
 - name: kubeseal
-  version: 0.18.5
+  version: 0.19.0
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-
@@ -523,9 +523,9 @@
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: cea4ee4fbedbd59c5f2dd6a26206de0677c7f7983181f1c47f0a938ed3d93432
-      armhf: f80d42ed4b157d060714279ea828b3e78898b4f8223f6ed54ec3de4553d88642
-      arm64: da52279164fa9f020f21b795c7fcb84d901c08c67dc8a8f7b63015e640bf5483
+      amd64: edf008c525cdbe438de06ae2f9fba09ef2be1b6d6102e6ab5cd63b3758f4f024
+      armhf: 34a3bd419b183063e41df955c97f4f432f8118203f9ccc74092df695573e1a7c
+      arm64: bdaf62d586b45bdb486ce53d140f46b579ebee05b9814fc5609940f8d429f27f
   install:
     - kubeseal:/usr/bin/
 
