@@ -734,7 +734,7 @@
     - packer:/usr/bin/
 
 - name: rancher
-  version: 2.6.7
+  version: 2.6.9
   homepage: https://github.com/rancher/cli
   summary: command-line interface for rancher
   description: |-
@@ -743,8 +743,8 @@
   fetch:
     url: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
     sha256:
-      amd64: abd5535077a463a1f005fd8a2490944092cf2c6733095a61028914f31b5a82d7
-      armhf: 5c8b7e5e703785b68b04426887d54adf8aaef68d6a6bf716d86a8b07a7d0b4bf
+      amd64: fb6588f772e655479f3e8ddf361ddf9d9e0f50919f5144320aa0f53956370398
+      armhf: a8fd5492e26cd4654b042d9fb5af20b98885129ad7a581e2fa9a13097de5cd54
   install:
     - rancher-v{{version}}/rancher:/usr/bin/
 
@@ -816,7 +816,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.8.0
+  version: 2.8.1
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -835,8 +835,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 34335269f98821bbfc362628cc93e4900fd0ffb1f0bcc6b45e41f275f8e12b1b
-      arm64: 74ccf5d559ff8bbc0d307fc02cc170c4ae16ece80b7d707bc821fedd62a344d2
+      amd64: 192f1f69772eba476ead6942fade6fe149fe3d5dc1844b79ce7afbdad1f40887
+      arm64: b4729ea5ebeec4fec547a6dda9cdb0737571e945e5f7f6bffc815a1224080197
   install:
     - telepresence:/usr/bin/
 
