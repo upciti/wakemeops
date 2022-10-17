@@ -678,7 +678,7 @@
     - nats-{{version}}-linux-{{target|goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.24.0
+  version: 1.24.1
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -689,8 +689,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: 84fd128f9097097e049eb88500dcf29c6ac6d857be97e26ab1006b0c6c817641
-      arm64: 6fbf725cf9d31862f3685a43c2ce527a77e6234a9524cf7c8cd99f46a0bed01e
+      amd64: 29590a1da14c74b0c91c66723892541d5d5d8de3ee1004d178393c8df6b75096
+      arm64: 37adf92cd4675ffd1dc59ea8eba9954eadfbfd41ab7444c74740189762a9e98d
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
