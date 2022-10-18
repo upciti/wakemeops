@@ -875,7 +875,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.39.1
+  version: 0.39.2
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -885,8 +885,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: 9e78b6e8ba8775ea91b618a1b44c3e7660bbb311ac2c77532b289982e0fa3f17
-      arm64: f4b44aa9967ffdf7d2ab16ab9fb15afa5f599d6f05c99e557d583553c9dc4c3b
+      amd64: 0b4f6fbd0b09c00ff5bfece40b80dbb25b16538095330cf646bbe9dd2278ff19
+      arm64: 8204d60dc259b29d447079ca56f06d9c136989c5ece4b78cc871a4a2c73d1377
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
