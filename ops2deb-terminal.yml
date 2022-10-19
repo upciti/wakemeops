@@ -302,7 +302,7 @@
     - mergestat:/usr/bin/
 
 - name: nushell
-  version: 0.69.1
+  version: 0.70.0
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
@@ -324,8 +324,8 @@
   fetch:
     url: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 389fd2791398d0271587e40b8d54f49ac720c6b9f3fc5fd3e3c09d3c38974668
-      arm64: 5c05575291905ede3958ce03430a6ca0ebd2f1435528ddaee1783406570e1c5f
+      amd64: 97c4ec8f7167fe13411556e38533cdb72e76fd5858ee49d7772728e9f6b8dcc7
+      arm64: d71b8eadc8ddf441c834751b568a0d0918681be54c88910f1590c81d09b89162
   script:
     - mv nu {{src}}/usr/bin/
     - mv nu_* {{src}}/usr/bin/
@@ -436,7 +436,7 @@
     - xsv:/usr/bin/
 
 - name: yq
-  version: 4.28.1
+  version: 4.28.2
   homepage: https://github.com/mikefarah/yq
   summary: portable command-line YAML processor
   description: |-
@@ -447,8 +447,8 @@
   fetch:
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
     sha256:
-      amd64: 818cb646d68c016b840d8db2f614553e488121d6a41aa0619fd16f17ed3a83d8
-      armhf: 205f583ce6e2bcb6c9e2f039cad1e633255e445a294fb8d3e7d751806eb7d28f
-      arm64: 4a3a2195700326d59483c644c541752cdea053991f1abddd80a14998291ba651
+      amd64: 7e0d59c65be5054a14ff2a76eb12c2d4ec3e5bc2f1dfa03c7356bb35b50bbf41
+      armhf: b4595a37d5903bd8b928d5735c76a3c1c5c2013e9bf987f5749aa2efc4c5ae2c
+      arm64: 6cd03bf2b94a07ce149a9f388bbded1f85b4a0d4e0418ef2fc7e0f4285178a36
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq
