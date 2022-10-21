@@ -780,7 +780,7 @@
     - scaleway-cli_{{version}}_linux_{{goarch}}:/usr/bin/scw
 
 - name: skaffold
-  version: 1.39.2
+  version: 2.0.0
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -795,8 +795,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
     sha256:
-      amd64: 6ecdda952ce8e917dde9a362859952dd1d3ad8ae44b2c56696ec6a89c5d8ce4d
-      arm64: ed9ceb08f8d125e361e6372e8daceef299759d79ed43b23cf0c60f60dc3861ab
+      amd64: e3b20725a06484e424939fb746c3bb460c4c6b5e69fc378e98ecdc00bea8f952
+      arm64: cb21ad4fd4bb5231cfb7fcd59b489753e0f8b3e84889448a3f19493c4fa65375
   install:
     - skaffold-linux-{{goarch}}:/usr/bin/skaffold
 
