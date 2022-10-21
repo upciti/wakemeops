@@ -139,7 +139,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.12.0
+  version: 2.12.1
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -149,9 +149,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: 2054f3a24cb6814b390bd22c95fa37af7675831e37776bb1473a29a912d48b4b
-      armhf: 63f94bcea4f2b6e9abeba90ac81620b1b0cab116b40890f0a68619fd26e3eb3f
-      arm64: 3708946bf5d78db23502e95a7ef1f716c16060e098b28acbe604a38b3ab3a51a
+      amd64: e83b45a94d8453b2db550018ebe9fb663ac87abb56c5fb32e7f62717c64f4b20
+      armhf: 907e32cf1f4d27093f51a4600847bcf20817d13984c7f5f63484e9e18fc84448
+      arm64: efa8630c6fe56d050937e5fa3f9f7821054be94860eb8b2f0ca485f5a84e6474
     targets:
       amd64: x86_64
       armhf: armv7
@@ -749,7 +749,7 @@
     - rancher-v{{version}}/rancher:/usr/bin/
 
 - name: rclone
-  version: 1.59.2
+  version: 1.60.0
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-
@@ -758,9 +758,9 @@
   fetch:
     url: https://github.com/rclone/rclone/releases/download/v{{version}}/rclone-v{{version}}-linux-{{goarch}}.zip
     sha256:
-      amd64: 81e7be456369f5957713463e3624023e9159c1cae756e807937046ebc9394383
-      armhf: e05409fc66a81a3eab2410908bf37f7cf497c88edb27cbcc92d8f5f1917e195f
-      arm64: 19c515af1a70491e5a451f62fdfe41573face748e6d6ccd7cd61732fd1a076d5
+      amd64: 04e2517acc6b8adfdadf0b2891afa83592d8e62bd0477918dd57a74e6066a1c5
+      armhf: 7704cd231ce7852898420cffe834f8efd031876df46420b6ded0d060c878e4ad
+      arm64: 86bfc150238405ea58c396e25766dee4b1e01caedbcfd32ed3fd74533e29d910
   install:
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
