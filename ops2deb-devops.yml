@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.4.15
+  version: 2.5.0
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: 6224b02b2428a9869a6d3f0224376ae9cb2cb48672cc01b72b117f4f9527d41f
+    sha256: 51586404d52d082f252bb3ceecee1d92d8cea7bddfda850c199ca06f51070ae2
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
@@ -891,7 +891,7 @@
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
 - name: tflint
-  version: 0.42.1
+  version: 0.42.2
   homepage: https://github.com/terraform-linters/tflint
   summary: pluggable Terraform linter
   description: |-
@@ -905,8 +905,8 @@
   fetch:
     url: https://github.com/terraform-linters/tflint/releases/download/v{{version}}/tflint_linux_{{target}}.zip
     sha256:
-      amd64: 11294cb2f395182fefdc7d35f49fc18966dda8860fcea1ecd67b6ab190ab7ea0
-      arm64: e4f43948369cbed59a9b1aa65546d913fd380baf9a0e3d6eabb47869d4c721f9
+      amd64: f8ae2758f5b6dcf2d9fecc2b0d7c2cce094112635a13b1f9734a5d0bce8b6e83
+      arm64: f4673e91b5e453fffc9191437efffc76043d80c8d2c314a261729b2159308dcf
   install:
     - tflint:/usr/bin/tflint
 
