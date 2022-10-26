@@ -344,7 +344,7 @@
     - k9s:/usr/bin/
 
 - name: kind
-  version: 0.16.0
+  version: 0.17.0
   homepage: https://kind.sigs.k8s.io
   summary: deploy Kubernetes cluster in Docker
   description: |-
@@ -354,8 +354,8 @@
   fetch:
     url: https://github.com/kubernetes-sigs/kind/releases/download/v{{version}}/kind-linux-{{goarch}}
     sha256:
-      amd64: a9438c56776bde1637ec763f3e450078258b791aaa631b8211b7ed3e4f50d089
-      arm64: d40e33e9bc4b14796029aaa1e5773511dfb48b728d34f8676c52e0e8c2ceaf88
+      amd64: a8c045856db33f839908b6acb90dc8ec397253ffdaef7baf058f5a542e009b9c
+      arm64: 24ae8c7ef46c3c1ec7167a8c210979233b42dacd2426f1e86fc89021632333e6
   install:
     - kind-linux-{{goarch}}:/usr/bin/kind
 
