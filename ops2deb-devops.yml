@@ -285,7 +285,7 @@
     - infracost-linux-{{target}}:/usr/bin/infracost
 
 - name: istioctl
-  version: 1.15.2
+  version: 1.15.3
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -294,9 +294,9 @@
   fetch:
     url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     sha256:
-      amd64: 6e9aa99437ffc1249fdfc7623fc4c89bb7725b94823f0d2765d497ea0b488156
-      armhf: 9ab34f4a01bcdb08d561c3b82f2be7e49388a6eb4ce410b3840b06f34843ecce
-      arm64: ae1db25b73623ebf00327753c0168b5723cdf57afb0e31ba56c576d96349a1aa
+      amd64: f5fe82687f3777d6e5c9e4cda0d99bd03ff7aefaa9f10b0e608e0990a6ab000a
+      armhf: e1c9e31c92764e5d528654de986f2cdfac52fbaa71a486661e6567f10cf3e336
+      arm64: c05a5fe216b9d59313235e8f26c44b2b5c81facd4268ecc3e2f88c48db6df0c2
     targets:
       armhf: armv7
   install:
@@ -716,7 +716,7 @@
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
 - name: packer
-  version: 1.8.3
+  version: 1.8.4
   homepage: https://www.packer.io
   summary: create multi-platform machine images from a single source configuration
   description: |-
@@ -727,9 +727,9 @@
   fetch:
     url: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 0587f7815ed79589cd9c2b754c82115731c8d0b8fd3b746fe40055d969facba5
-      armhf: a1dcaa97bb9ce93fe9f057733aab8ccef6bf4f2ef520236b7dcad4d90d4030a1
-      arm64: edb096a34b88193294cb92deaac7ea4f67dfdeb21b0810d9b08a439f6767c2db
+      amd64: ba25b84cc4d3541e9a1dcc0b8e1c7c693f1b39a5d129149194eb6b6050ae56c3
+      armhf: 25f742fe68f45927b033bfb0c6db1266c767bcf8fb64d53325ec449d39bcbb1f
+      arm64: 13c1895b7e09123d7d45d646b21dc5c194335204c56d8a29851a76e196f39be0
   install:
     - packer:/usr/bin/
 
