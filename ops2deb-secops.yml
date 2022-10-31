@@ -97,7 +97,7 @@
     - terrascan:/usr/bin/terrascan
 
 - name: trivy
-  version: 0.33.0
+  version: 0.34.0
   homepage: https://www.aquasec.com/products/trivy/
   summary: vulnerability and misconfiguration scanner
   description: |-
@@ -106,9 +106,9 @@
   fetch:
     url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
     sha256:
-      amd64: 01de599ddceef2296a3f3ef3c0aba4599bcac6114958f2b1922addc1a1b22f25
-      armhf: 676eb9edc66626415dd5b49498ecf28669effb4390d2eec71b5d9195cee956c9
-      arm64: 998b6480b3690ff1d13649bac61823657b4d825c9eda16910eb67353b24cea2f
+      amd64: 53f176ca461412563cec7199798ad9acf8bbb38527c0d9a38f745442f022f111
+      armhf: 3c8cb60a6faf0f582c36cc37c45b8f6d26de72fc14b7d4457c49280aaafdbb13
+      arm64: 9cfd9efa36b69ad48a3b97843076d14ee848e240cd73c1b2da742d4de0bf568c
     targets:
       amd64: 64bit
       armhf: ARM
