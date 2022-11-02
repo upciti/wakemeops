@@ -366,6 +366,19 @@
   install:
     - ripgrep-{{version}}-{{target|rust_target}}/rg:/usr/bin/
 
+- name: shell2http
+  version: 1.14.2
+  homepage: https://github.com/msoap/shell2http
+  summary: HTTP server to execute shell commands
+  description: Designed for development, prototyping or remote control.
+  fetch:
+    url: https://github.com/msoap/shell2http/releases/download/v{{version}}/shell2http_{{version}}_linux_{{arch}}.tar.gz
+    sha256:
+      amd64: 4708b1f89599f1bcd7aabd5e6a2843b2ed3580be207673b604f964b5d20cd3b5
+      arm64: 97d16ca853e97ae25e766466b53048db29a1681197f458a990e697a5d31e2c93
+  install:
+    - shell2http:/usr/bin/shell2http
+
 - name: skim
   version: 0.9.4
   homepage: https://github.com/lotabout/skim
