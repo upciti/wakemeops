@@ -34,7 +34,7 @@
     - btm:/usr/bin/
 
 - name: chezmoi
-  version: 2.25.0
+  version: 2.26.0
   homepage: https://github.com/twpayne/chezmoi
   summary: manage your dotfiles across multiple diverse machines
   description: |-
@@ -48,9 +48,9 @@
   fetch:
     url: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: f90f427e8542cf2e5bba88a62268b330b117dfe2449650eabbcea48c8c7933f8
-      armhf: 945c978583232d1af17d51a3c77816f8dca6340c755efa0327d7cce6aa7403ff
-      arm64: 90d275913286b2f6b9b4383c5613da8b58e06e611a50e9d0eea8c7db422fe8df
+      amd64: afb25c4032672fcd1b813b62ea33dc731822e1088e42c10be809e019f21255c5
+      armhf: b52618687d7dd77fa247d8c2eacdf0ba1402caf8c4f7c9bdda2b6a4174a41448
+      arm64: 7cb76584265634c1962a4396f55e753edf5a0ac70944e0b6478d49ed9c6d65dc
   install:
     - chezmoi:/usr/bin/
 
@@ -146,7 +146,7 @@
     - bin/exa:/usr/bin/
 
 - name: fd
-  version: 8.4.0
+  version: 8.5.2
   homepage: https://github.com/sharkdp/fd
   summary: human-friendly and fast alternative to 'find'
   description: |-
@@ -157,9 +157,9 @@
   fetch:
     url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: a1e72cf4f4fbd1b061387569678f3ab3555ee1cf025280b3ce6b2eee96cd3210
-      armhf: d60b7a2391c4b927767d116791ce86efefa47c869f1dd492a5610cf5e9d66083
-      arm64: c7795c6f139f598ba4ac5ecffd770b5772e4e438919068b9f83d1392eb2ebd22
+      amd64: 046aca23f5b6e3dfc096f936216264df7efd45b36b4fe1ef39a9e01bb6078b39
+      armhf: 42b3dc974bab8c739dc36ff741cbfcce5f9e65c61c9bc3b391c37a20ed60a65a
+      arm64: ada0565c49c2b001db1c250645b29460a57a2dedeaf6d324c0f2c828a7d01a89
   install:
     - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 

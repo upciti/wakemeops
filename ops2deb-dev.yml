@@ -144,7 +144,7 @@
     - hugo:/usr/bin/
 
 - name: influx-cli
-  version: 2.4.0
+  version: 2.5.0
   homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
   summary: command line client for influxdb
   description: |-
@@ -153,8 +153,8 @@
   fetch:
     url: https://dl.influxdata.com/influxdb/releases/influxdb2-client-{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 85eade8aa32de8823d9816eecf47c2f9620883f53cb975db6aab06e796d715c3
-      arm64: ccfb6695f82fcd14a891fda47fbbd02b2bc8cd67a50976817b1344e6f5eff843
+      amd64: e397b659b381f7f5e881e6ccd9b133650b90184987c3dddcebfcd0f8ca3c5a56
+      arm64: 3fb8f788493e5f398e03b0b61594d44e3337d6bf6c98974337b119810f6ac48a
   install:
     - influxdb2-client-{{version}}-linux-{{goarch}}/influx:/usr/bin/
 
@@ -249,7 +249,7 @@
         exec python3 /usr/lib/pre-commit/pre-commit.pyz $@
 
 - name: pyenv
-  version: 2.3.5
+  version: 2.3.6
   homepage: https://github.com/pyenv/pyenv
   arch: all
   summary: simple Python version management
@@ -277,7 +277,7 @@
     - liblzma-dev
   fetch:
     url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
-    sha256: 25cc047e1277ee1ac6c3726ff0893aea3ced796e22cd4a594d490320532f84c1
+    sha256: 83c4121e4c013d2027a775f1ca3efdbf6ef6e8cc079e8af738e0dd6dca6bbc67
   install:
     - path: /etc/profile.d/ops2deb-pyenv.sh
       content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi

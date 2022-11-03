@@ -1,11 +1,11 @@
 - name: argocd
-  version: 2.5.0
+  version: 2.5.1
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
   fetch:
     url: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{goarch}}
-    sha256: 51586404d52d082f252bb3ceecee1d92d8cea7bddfda850c199ca06f51070ae2
+    sha256: b3b8108b810671e108dc41c3f05ecff0924efe0f89bc728bbedefd2821f6e0b3
   install:
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
@@ -695,9 +695,8 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.34.1
+  version: 0.35.0
   homepage: https://github.com/upciti/ops2deb
-  revision: 2
   summary: debian packaging tool for portable applications
   description: |-
     Ops2deb is primarily designed to easily generate Debian packages for portable
@@ -711,7 +710,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 716bea1f2f650ebd757e87709bfb2effa75a0b1bd970594095dab821c2126b92
+    sha256: 65e2ab3967dddb99c330d1027bb4e74e04b0eb5942c48f8b9ad38c912363d1d5
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
@@ -816,7 +815,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.8.3
+  version: 2.8.5
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -835,13 +834,13 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 328680e560ce10899638b47c21f7e5f83485e4cf1b644f16c25c8c2fe4e975e5
-      arm64: 2d0fb164e100c3c40891e0adb27b99a96305eef9305049ba77f71e22023cfd4b
+      amd64: f6eec5b7f77a63a7a49baccc33aab4b62a01f2b6bbd071dc40c195573747d723
+      arm64: 1081c058226bf93a289b7e12ba2170ab7c4c6ee3fe1efc98124dab34d8799033
   install:
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.3.3
+  version: 1.3.4
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -852,9 +851,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: fa5cbf4274c67f2937cabf1a6544529d35d0b8b729ce814b40d0611fd26193c1
-      armhf: 97296119835ab6961ad170b18157bdb58661175acdc120907117a758afe7d13f
-      arm64: b940a080c698564df5e6a2f1c4e1b51b2c70a5115358d2361e3697d3985ecbfe
+      amd64: b24210f28191fa2a08efe69f54e3db2e87a63369ac4f5dcaf9f34dc9318eb1a8
+      armhf: ab67fc5fca76c57bfed1ecb02b3263d8a2cb671b30466711e7811de597efb9c1
+      arm64: 65381c6b61b2d1a98892199f649a5764ff5a772080a73d70f8663245e6402c39
   install:
     - terraform:/usr/bin/
 
