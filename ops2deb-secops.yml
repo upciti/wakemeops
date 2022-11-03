@@ -117,7 +117,7 @@
     - trivy:/usr/bin/
 
 - name: vault
-  version: 1.12.0
+  version: 1.12.1
   homepage: https://www.hashicorp.com/products/vault
   summary: tool to create, manage and store secrets
   description: |-
@@ -128,14 +128,14 @@
   fetch:
     url: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 56d140b34bec780cd458672e39b3bb0ea9e4b7e4fb9ea7e15de31e1562130d7a
-      armhf: 90509373fd7f1d68866edbfc67589d00d18f550337cf6181cf5a5e90c46bc160
-      arm64: 8178d5d3354934eb53cceeb212e4ec4bf2a60b2ae48150a7157898288c20519e
+      amd64: 839fa81eacd250e0b0298e518751a792cd5d7194650af78cf5da74d7b7b1e5fb
+      armhf: 9ff85110c239c1f97873cb731c2bdaca7fb6df57828d03c7d8814e13f9c3a7a3
+      arm64: f583cdd21ed1fdc99ec50f5400e79ebc723ed3ce92d2d1d42490cff9143ed693
   install:
     - vault:/usr/bin/
 
 - name: vuls-scanner
-  version: 0.20.5
+  version: 0.21.0
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-
@@ -146,9 +146,9 @@
   fetch:
     url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 419052ce7247a22bc19f3b6c11b18edbe2214ac61ab15243bb3d279665cac4d2
-      armhf: c8fccc8c8fb8ce93a20da92ce6a2819058a3077e2817077d5f2793eb1791a8b4
-      arm64: b6aab05aa1806dec6e2e85e8af4271421f8b7228d52c698112519405972ecc0d
+      amd64: 705ee2a65295239a675a0f3ad0c35af433f7f336482f205e9b78a1e78468153a
+      armhf: dc69f8ed21fb0e4dfb4dc834d913a8ed5f5ceb764f0516dd99b2726037007038
+      arm64: 0fd099ba1cd2a847941102764ad10fd26a01402e882954cb452bb461153eb683
     targets:
       armhf: armv6
   install:
