@@ -87,9 +87,8 @@
     - container-diff-linux-{{goarch}}:/usr/bin/container-diff
 
 - name: container-structure-test
-  version: 1.11.0
+  version: 1.13.0
   homepage: https://github.com/GoogleContainerTools/container-structure-test
-  revision: 2
   summary: validate the structure of your container images
   description: |-
     The Container Structure Tests provide a powerful framework to validate the
@@ -99,8 +98,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-{{goarch}}
     sha256:
-      amd64: 1524da5fd5a0fc88c4c9257a3de05a45f135df07e6a684380dd5f659b9ce189b
-      arm64: b376ff80134d2d609c591b98d65d653a514755b4861185fd93159af7062ec65d
+      amd64: 1e95f63f6c4deabe82761fdfc7c3e7ecc814b80618b58256e98db14b3edab617
+      arm64: 3a3e703a0e877e4d7d4e5550a949c0f4093ab3ab5e87b7533caea9c6f55d99bb
   install:
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
