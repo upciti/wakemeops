@@ -104,7 +104,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.6.48
+  version: 1.7.1
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -115,8 +115,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: 1d8124399e548d4da8f990ed0283b4c90dcaba32cc4bb7cac707b642e3419e26
-      arm64: 456286eddcdef9fe69bd424eea5205f27d2fdf287d1beedf6fb86da86e228821
+      amd64: 3ac870db888393d75de0f566ac22114be8ea41ee22499c64cc6da05ee37d87e1
+      arm64: de2fb6b9e2a7d3eca92f5da28437607a6fee3524621fa5470d26adb5e6811ca8
     targets:
       amd64: x86_64
   install:
