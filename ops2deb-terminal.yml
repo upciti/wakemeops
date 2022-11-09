@@ -302,7 +302,7 @@
     - mergestat:/usr/bin/
 
 - name: nushell
-  version: 0.70.0
+  version: 0.71.0
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
@@ -314,8 +314,10 @@
 
     Nu takes cues from a lot of familiar territory: traditional shells like bash,
     object based shells like PowerShell, gradually typed languages like TypeScript,
-    functional programming, systems programming, and more. But rather than trying
-    to be a jack of all trades, Nu focuses its energy on doing a few things well:
+    functional programming, systems programming, and more.
+
+    Rather than trying to be a jack of all trades, Nu focuses its energy on doing a
+    few things well:
 
     - Being a flexible cross-platform shell with a modern feel
     - Solving problems as a modern programming language that works with the
@@ -324,11 +326,11 @@
   fetch:
     url: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 97c4ec8f7167fe13411556e38533cdb72e76fd5858ee49d7772728e9f6b8dcc7
-      arm64: d71b8eadc8ddf441c834751b568a0d0918681be54c88910f1590c81d09b89162
+      amd64: 00d013f0c3bb8c093b0c6ec9c9a26fb62d45829c375425f99d80368d5f78c10e
+      arm64: cd02a5402c812a76803e2a0a94e0726b3e72f8f9cd30208c8ef7b2f6ac7c676e
   script:
-    - mv nu {{src}}/usr/bin/
-    - mv nu_* {{src}}/usr/bin/
+    - mv ./*/nu {{src}}/usr/bin/
+    - mv ./*/nu_* {{src}}/usr/bin/
 
 - name: procs
   version: 0.13.3
