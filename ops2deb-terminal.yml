@@ -302,7 +302,7 @@
     - mergestat:/usr/bin/
 
 - name: nushell
-  version: 0.70.0
+  version: 0.71.0
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
@@ -324,8 +324,8 @@
   fetch:
     url: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 97c4ec8f7167fe13411556e38533cdb72e76fd5858ee49d7772728e9f6b8dcc7
-      arm64: d71b8eadc8ddf441c834751b568a0d0918681be54c88910f1590c81d09b89162
+      amd64: 00d013f0c3bb8c093b0c6ec9c9a26fb62d45829c375425f99d80368d5f78c10e
+      arm64: cd02a5402c812a76803e2a0a94e0726b3e72f8f9cd30208c8ef7b2f6ac7c676e
   script:
     - mv nu {{src}}/usr/bin/
     - mv nu_* {{src}}/usr/bin/
@@ -418,7 +418,7 @@
     - tokei:/usr/bin/
 
 - name: xh
-  version: 0.16.1
+  version: 0.17.0
   homepage: https://github.com/ducaale/xh
   summary: user-friendly and fast tool for sending HTTP requests
   description: |-
@@ -427,8 +427,8 @@
   fetch:
     url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: e369cdd618da40418704e32df820831705a03c1b9a42e38e1dcb033d19a63cfe
-      armhf: 79514ec2db635ed1029a5dc0ca6d7b6b3d2c7636d6aab704b8250abacf20b3ad
+      amd64: 682b063985a85df4c96a62df968132d70b9be32cc1b69fc3ac53e4d08dc99ead
+      armhf: 968e81cf631e5b1aa14cb6844c98426755c4ce51f5262e90ee1be5601d3892b6
     targets:
       amd64: x86_64-unknown-linux-musl
   install:
