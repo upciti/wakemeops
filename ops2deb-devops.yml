@@ -214,7 +214,7 @@
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
 - name: helm
-  version: 3.10.1
+  version: 3.10.2
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
@@ -225,8 +225,8 @@
   fetch:
     url: https://get.helm.sh/helm-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: c12d2cd638f2d066fec123d0bd7f010f32c643afdf288d39a4610b1f9cb32af3
-      armhf: 309f56a35185023262b4f20f7315d4e60854b517243444b34f5a458c81b33009
+      amd64: 2315941a13291c277dac9f65e75ead56386440d3907e0540bf157ae70f188347
+      armhf: 25af344f46348958baa1c758cdf3b204ede3ddc483be1171ed3738d47efd0aae
   install:
     - linux-{{goarch}}/helm:/usr/bin/
 
@@ -873,7 +873,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.40.1
+  version: 0.40.2
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -883,8 +883,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: 7af7985ec93d67f8f3b2a67a45306ab1c1ba78c516135fdbe45897aa62a3a118
-      arm64: 040662612a839c805d4c74d5e30eedfacfcb64d046500c52883a2af3c8f29c5f
+      amd64: f943e4e4eb6069906ebb850067b7192dd86c6772ac0802b0bd5b3d44a212d7b4
+      arm64: 5000360defbd9bab23acf9975ae9554bf55da0e03f30fe2880d5db635ebaafb9
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
