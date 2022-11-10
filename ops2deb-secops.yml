@@ -135,7 +135,7 @@
     - vault:/usr/bin/
 
 - name: vuls-scanner
-  version: 0.21.0
+  version: 0.21.1
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-
@@ -146,9 +146,9 @@
   fetch:
     url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 705ee2a65295239a675a0f3ad0c35af433f7f336482f205e9b78a1e78468153a
-      armhf: dc69f8ed21fb0e4dfb4dc834d913a8ed5f5ceb764f0516dd99b2726037007038
-      arm64: 0fd099ba1cd2a847941102764ad10fd26a01402e882954cb452bb461153eb683
+      amd64: f6da6ea889f55bbca4d32468627e71fd6d5c828da469871bc498c8312d3d2d5e
+      armhf: fb369f462868dab22abc8003c4ececef8ef6454ebf58fa3d479214b9c6ecd2da
+      arm64: 670b73d3efdd38b87aad78889fae9919019b2069909cb45b080389c043454495
     targets:
       armhf: armv6
   install:
