@@ -587,16 +587,16 @@
     - linkerd2-cli-edge-{{version}}-linux-{{goarch}}:/usr/bin/linkerd
 
 - name: logcli
-  version: 2.6.1
+  version: 2.7.0
   homepage: https://github.com/grafana/loki
   summary: command-line interface for loki
   description: It facilitates running LogQL queries against a Loki instance.
   fetch:
     url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
     sha256:
-      amd64: 8fe59a3b2f83c02920f29251a97ad1f6d4a83a8bbbc20097b73fb839d946cb75
-      armhf: 2ad747a3bba8bff77f03f7f38edb6c2f60d186a8e1bd395c425c0ed5d0676c1f
-      arm64: e2c3cb728402087cadc120e190d617db8e0b39eb21bbff73f0d040e535822ca8
+      amd64: 5df9bf01cead8852c21f0a9e9bf1801d0f41a83f4921395f9b70244778f7d712
+      armhf: f863117b680ccad04484d1bc41f5809a78b8c9017ff41f31cc557ff839a9568f
+      arm64: ae36882a653f4b9708583e45fbf9cfd5ac70fa8fcdf676d53834d09179ff7dda
   install:
     - logcli-linux-{{goarch}}:/usr/bin/logcli
 
