@@ -549,7 +549,7 @@
     - kustomize:/usr/bin/
 
 - name: lazydocker
-  version: 0.19.0
+  version: 0.20.0
   homepage: https://github.com/jesseduffield/lazydocker
   summary: a lazier way to manage everything docker
   description: |-
@@ -558,9 +558,9 @@
   fetch:
     url: https://github.com/jesseduffield/lazydocker/releases/download/v{{version}}/lazydocker_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 510e47f22faa1eaf1506ab13776908ae92ed4245306f94c439fb0aabcd32b443
-      armhf: 4a279e30ccbafeab6740ec1ac837866a9892b920c4c9c5fdcbfbfc3b2b794176
-      arm64: 8189781279ba3162a54821199e8ad688e29d20d39bb2ee46e52dbd9a8f5d51aa
+      amd64: b025ddbf607d97936382bd60d776fdf8bb2b42da4341e2a2022d821f314b79d3
+      armhf: f8bacd56eeac2d5255f9a54064c7c5bbc6eff475fd005a4ceae8aa428ad20c39
+      arm64: 1c318e22be15ef2ae44ed83782e441f1c47db63f97db0aebe46c5f608f1b0400
     targets:
       amd64: x86_64
       armhf: armv7
