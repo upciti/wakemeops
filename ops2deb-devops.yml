@@ -231,7 +231,7 @@
     - linux-{{goarch}}/helm:/usr/bin/
 
 - name: helmfile
-  version: 0.147.0
+  version: 0.148.0
   homepage: https://helmfile.readthedocs.io/
   summary: deploy Kubernetes Helm Charts
   description: |-
@@ -248,8 +248,8 @@
   fetch:
     url: https://github.com/helmfile/helmfile/releases/download/v{{version}}/helmfile_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 7d15a4441c4be8edd9dc86ade33b38bf24aa6e9e9dff3ca3c253db7787e97506
-      arm64: abba5f91c4d1507ae4ef428b37d8b9d5fadc6b2bce0d27062c6c58891917f291
+      amd64: 484755aab9fe1dff13c197a788547cb8a64b662fdbc56506ec2a75ab517f44d4
+      arm64: 3ef5164d9efec80fa9ab458be12774f078908bcfeaa149d58322cb61b230e3d5
   install:
     - helmfile:/usr/bin/helmfile
 
