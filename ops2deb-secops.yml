@@ -63,7 +63,7 @@
     - kube-linter-linux:/usr/bin/
 
 - name: kubeaudit
-  version: 0.20.0
+  version: 0.21.0
   homepage: https://github.com/Shopify/kubeaudit
   summary: kubeaudit helps you audit your Kubernetes clusters against common security
     controls
@@ -73,8 +73,8 @@
   fetch:
     url: https://github.com/Shopify/kubeaudit/releases/download/v{{version}}/kubeaudit_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 040492e8b44322d2f775186c3fd086ec5a15b967bb88a17e818b4dbc9c97f4f5
-      arm64: 79530cf2d73ec68bc5390084147685141b1915eeb5db7078ffcde1841743341c
+      amd64: 4b7222adf273f8c7cb37d0207ca54143a571e953613a5bfb7e3f7d1988d23d00
+      arm64: e1c8dcadb55532cbe057a239069873e194377365575f0de705af00f03bac9abd
   install:
     - kubeaudit:/usr/bin/
 
