@@ -104,7 +104,7 @@
     - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test
 
 - name: datree
-  version: 1.7.3
+  version: 1.8.0
   homepage: https://github.com/datreeio/datree
   summary: prevent Kubernetes misconfigurations from reaching production
   description: |-
@@ -115,8 +115,8 @@
   fetch:
     url: https://github.com/datreeio/datree/releases/download/{{version}}/datree-cli_{{version}}_Linux_{{target}}.zip
     sha256:
-      amd64: 0d9b4fc2d123ae46b64c85ba7170dbeafe8b4be88c1a727975adf6e06e6acaff
-      arm64: b32b387a6da8b8cce850ef76c8b1e8e81dd0aab0c8c2bdf2f43b9634e8194954
+      amd64: f123b0f0c8868f9af14639a10eda822483803b34d909183944410a7450e7d33e
+      arm64: 1b4897cfc3b375be060a5e2e0fb7bd15243613e99380f29aa82fb821d6f6e1fb
     targets:
       amd64: x86_64
   install:
@@ -677,7 +677,7 @@
     - nats-{{version}}-linux-{{target|goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.25.1
+  version: 1.25.2
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -688,8 +688,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: 9596b2894b4b1d7f1c3b54cb1ec317b86494dbc00718b48561dfbcb232477c26
-      arm64: 80a27e50bd47ec2e97112f269bd9252602cc265746446a97e9034475563f9446
+      amd64: 6b147b2a0d6968655d4d1236e6899e2887724ed6eaa6d4c34be920dc91a34c38
+      arm64: e73018bddcf6a21c78cca22f1f71e51354902cf2a3fabaa68f68db2453a32449
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
