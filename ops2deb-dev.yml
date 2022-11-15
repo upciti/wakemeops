@@ -22,7 +22,7 @@
     - clog:/usr/bin/
 
 - name: coursier
-  version: 2.1.0-RC1
+  version: 2.1.0-RC2
   homepage: https://get-coursier.io/
   summary: Scala application and artifact manager
   description: |-
@@ -38,7 +38,7 @@
     - csound
   fetch:
     url: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
-    sha256: a1797fb7e165503f3ec946c4e72b9e276c020b183dbe498b938a15670722c0f1
+    sha256: de0ec8dd59269c973083a35992986a6b2a71ff0f6f1aa01f238c01d09626dff3
   install:
     - cs-x86_64-pc-linux:/usr/bin/cs
 
@@ -57,7 +57,7 @@
     - pg_datanymizer:/usr/bin/
 
 - name: github-cli
-  version: 2.20.1
+  version: 2.20.2
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
   description: |-
@@ -66,9 +66,9 @@
   fetch:
     url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 7f771098c1e61faa29e3869cf405c4c9ddfda6a2ab527d16254183e504c94c34
-      armhf: 666d519caf6fadc6ede93e757c442b448f3644f32522df83f4ba4fdbb375fa0d
-      arm64: 6f46154695b07c7f9d19c284a4366026cbba5bd7764986a832a7ec345b91b433
+      amd64: 3bc7cd3b2fd9082218b8246595673f55badb351db1b9e627eec121beb8b26450
+      armhf: 46efb77e397e4a995096dfca3dd2619d087fa7b6f14e3e58ff290b3f7690c951
+      arm64: c9aaa99fd4496be714738620931559f5bab3edc343ea87bbb070d97a1a780554
     targets:
       armhf: armv6
   script:
