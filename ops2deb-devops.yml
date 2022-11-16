@@ -814,7 +814,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.9.1
+  version: 2.9.2
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -833,8 +833,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: c07cbbe820bd5e8a40e903127ac02bf1a3197e181243016a927335ef1381e6cd
-      arm64: 7d064466960fa715b2fbd520f93d149c72a5631f5f00fa4c9ff034ce93714171
+      amd64: c1c2b7cf84f752790c828ffa8a51a297ca81263cda4c14d49e84f2959e04a98d
+      arm64: 36f400ff6942cf57092b484e8269b3d6178c7fe264ffaf1c8ec5bfd0b1b5133a
   install:
     - telepresence:/usr/bin/
 
