@@ -56,7 +56,7 @@
     - kapp-linux-{{goarch}}:/usr/bin/kapp
 
 - name: carvel-ytt
-  version: 0.43.0
+  version: 0.44.0
   homepage: https://carvel.dev/ytt/
   summary: YAML templating tool that works on YAML structure instead of text
   description: |-
@@ -67,8 +67,8 @@
   fetch:
     url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v{{version}}/ytt-linux-{{goarch}}
     sha256:
-      amd64: 29e647beeacbcc2be5f2f481e405c73bcd6d7563bd229ff924a7997b6f2edd5f
-      arm64: 62b8b0698bb9a88d5cfb91ed2f42853dff4f6b4f59f61036df07ad38ca10267b
+      amd64: b3fbce9c6828c7eea09491c24fe49ddba7afe09e4405db33373d2776c91b1e6c
+      arm64: 4d36b859c01d9899e87a65e5533cb37ab62b17ee8120dd0454b417608130e431
   install:
     - ytt-linux-{{goarch}}:/usr/bin/ytt
 
@@ -568,7 +568,7 @@
     - lazydocker:/usr/bin
 
 - name: linkerd
-  version: 22.11.1
+  version: 22.11.2
   homepage: https://linkerd.io
   summary: ultralight service mesh for Kubernetes
   description: |-
@@ -580,9 +580,9 @@
   fetch:
     url: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-{{goarch}}
     sha256:
-      amd64: 5e559d370ccf21e4e4ce5ed85a58022f1ad64c86d32ffc32dc194fe74e6dd481
-      armhf: 4f48391bdba05ba74c156a2b9e9776bfabe42568ca663c5cd6034fa1c0c7fda0
-      arm64: 205daf039d65151b411d4839523f6f0449f8eec23b3e68c8e5d4afc28a7f1962
+      amd64: db0e26c79c5aef8f81dbf9b1ef071bf74feac11d462f33c27c2191764666f62d
+      armhf: fb5bee877b18b06b1f28af94a8417e39070296d0a5571b9419fbce8bcd230bed
+      arm64: 5a2e9a610d28cbf2f17a4a88b7a3cfc5b1882adddcecd398e7604d80a8aa371d
   install:
     - linkerd2-cli-edge-{{version}}-linux-{{goarch}}:/usr/bin/linkerd
 
@@ -839,7 +839,7 @@
     - telepresence:/usr/bin/
 
 - name: terraform
-  version: 1.3.4
+  version: 1.3.5
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -850,9 +850,9 @@
   fetch:
     url: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: b24210f28191fa2a08efe69f54e3db2e87a63369ac4f5dcaf9f34dc9318eb1a8
-      armhf: ab67fc5fca76c57bfed1ecb02b3263d8a2cb671b30466711e7811de597efb9c1
-      arm64: 65381c6b61b2d1a98892199f649a5764ff5a772080a73d70f8663245e6402c39
+      amd64: ac28037216c3bc41de2c22724e863d883320a770056969b8d211ca8af3d477cf
+      armhf: 8e866d0753ccf6e92de19dc9dd8ce7a406bf668b315d31f947c1f67a067416e6
+      arm64: ba5b1761046b899197bbfce3ad9b448d14550106d2cc37c52a60fc6822b584ed
   install:
     - terraform:/usr/bin/
 
