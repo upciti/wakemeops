@@ -511,7 +511,7 @@
     - ln -s /usr/bin/kubens {{src}}/usr/bin/kubectl-ns
 
 - name: kubeseal
-  version: 0.19.1
+  version: 0.19.2
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-
@@ -522,9 +522,9 @@
   fetch:
     url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{version}}/kubeseal-{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: a78aa5c04b24bd3cbc72527a40bc13ae4d15f911e3053da510a68ddcd2cfd27a
-      armhf: 44109a5b14f217521b019e49c35c167031089eac9c63844f2d5489ea4df3c1ab
-      arm64: eede3709300fa3db46a00833ab3e32a647f5f1c2a15f943056931ec40f8afaf9
+      amd64: f259f7d4754a882031f1ccfc6c004fa4646734e48f0e68c1adce72309ae16f03
+      armhf: 2e1ba8cee5cafe86924b9176f32a8a441efbbc9e75d63b73be14dddf6b8d9e51
+      arm64: 6cfbcf76e7b7bb2cb9e808d6a13ec11f29e244e79ed077cbc77cb75ddf2241fe
   install:
     - kubeseal:/usr/bin/
 
