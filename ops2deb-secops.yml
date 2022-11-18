@@ -79,7 +79,7 @@
     - kubeaudit:/usr/bin/
 
 - name: terrascan
-  version: 1.16.0
+  version: 1.17.0
   homepage: https://runterrascan.io/
   summary: policy as code for secure cloud infrastructure
   description: |-
@@ -88,8 +88,8 @@
   fetch:
     url: https://github.com/tenable/terrascan/releases/download/v{{version}}/terrascan_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 81558c0fcb708bbc56422dda44f2dbc76e121a295da65ac805608a7976dbd46c
-      arm64: 9a62cad3974ffa1a4c780c075edda360f9f4b0bc968f92a9f32ec684409bd549
+      amd64: 64c1442df115718bc48d4ca3d6cc204839f6fd930a2094933a296bd2dabebff4
+      arm64: efee3e8360506385d052f04d75fbe43dceb13debf8d30cbf2ab950dde570dece
     targets:
       amd64: x86_64
       arm64: arm64
