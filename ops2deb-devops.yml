@@ -359,7 +359,7 @@
     - kind-linux-{{goarch}}:/usr/bin/kind
 
 - name: kompose
-  version: 1.26.1
+  version: 1.27.0
   homepage: https://kompose.io
   summary: convert docker-compose.yaml into k8s deployments and services
   description: |-
@@ -369,9 +369,9 @@
   fetch:
     url: https://github.com/kubernetes/kompose/releases/download/v{{version}}/kompose-linux-{{goarch}}
     sha256:
-      amd64: cd85b8c205dc63985e9bde4911b15c8556029e09671599919ed81bff8453a36f
-      armhf: cddeef617c566492cb68e7807403454d3b961d970d7c4a700bd9e1a2595949d9
-      arm64: 3c0173417a0ab9dd695ff198cf8342bb85111604cfbe9a52c0c5c28d36bc0d48
+      amd64: 6ae92c67f17a2170ac1b6d69214ed6452ea507bdb0df4eee8ea792f33107710d
+      armhf: c347a80f3e4558685f8e27528497dbf2a65da1f49581a90df7dc289fa4c31052
+      arm64: b4699fe6e498620944fc5bf975ab6169dff266bdc47f0b8e8b0eb4099516f08c
   install:
     - kompose-linux-{{goarch}}:/usr/bin/kompose
 
