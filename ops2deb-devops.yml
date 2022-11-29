@@ -924,7 +924,7 @@
     - vault-env:/usr/bin/
 
 - name: velero
-  version: 1.9.3
+  version: 1.10.0
   homepage: https://velero.io
   summary: backup and migrate Kubernetes applications and their persistent volumes
   description: |-
@@ -935,9 +935,9 @@
   fetch:
     url: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 13e498c1ebec1e7c5bd633cbd39775e2b60cc55c29333abf019abaf29f19cc0e
-      armhf: 304e8e2b54562b941144ccb76da78b3973e034788b5d8aa5aabd565dc957fb62
-      arm64: 94adcf41e1a896c3db23f8ee667b7fe87fe01dda15a4f90be5077d78c858901e
+      amd64: 3cf8c26b17a06f3f43ec43c854618a619f4e14e2e690bd813e55797aae1db155
+      armhf: 723c95fccff7d4ccb5e6e0caf22111eea64f634a792f53ece38017842e7f79b1
+      arm64: b05c3e6c8cec09073017f815ddd08369a0361d8d97f39b5677079075fa59e69b
   install:
     - velero-v{{version}}-linux-{{goarch}}/velero:/usr/bin/velero
 
