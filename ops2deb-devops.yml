@@ -123,7 +123,7 @@
     - datree:/usr/bin/
 
 - name: devspace
-  version: 6.2.0
+  version: 6.2.1
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -132,8 +132,8 @@
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
     sha256:
-      amd64: 4db6fb1b16b1fc933b544a761eaa2eb8979a64a6099013ffaaa3bb8dd864e9aa
-      arm64: 17c35e3c40c99fea4839827a4ba93e1e0f5ab53c8b9c584a1a723ac99f4f264f
+      amd64: 399bc5b7bc36adf3eb465f61725c5223d31077a9cdfde765317fa26aac02d7e8
+      arm64: 412dd489b5cdd07857c5e01daef32f1db8cc15a6b8de894e64a80d11a23a831d
   install:
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
@@ -873,7 +873,7 @@
     - terraform-docs:/usr/bin/
 
 - name: terragrunt
-  version: 0.42.1
+  version: 0.42.2
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -883,8 +883,8 @@
   fetch:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
     sha256:
-      amd64: 009d82303f99c1db7d76f0fb6c2c3fab307cdd2c7781f6649d8d6f18f1643b41
-      arm64: 39e2aa2fdd9f57165c8ffed898c9056b788f3920e597d47ff6c996ffa3a85639
+      amd64: e9d2f9cef660ee5c90e93b8dc7f121b4752d47a228e4bda1bebdc1118344f7b1
+      arm64: 0410616574de43bce173e7b27de511555d9946ed24c1e2c4ad53e2a8b902bad0
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt
 
