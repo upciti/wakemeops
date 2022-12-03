@@ -183,7 +183,7 @@
     - ghorg:/usr/bin/
 
 - name: git-delta
-  version: 0.15.0
+  version: 0.15.1
   homepage: https://dandavison.github.io/delta/
   summary: syntax-highlighting pager for git, diff, and grep output
   description: |-
@@ -194,9 +194,9 @@
   fetch:
     url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
     sha256:
-      amd64: 12f16a89d0b4ff703f8905411251406bd9828e3383189d2a4e1c0d69934fb6ea
-      armhf: 692e33f33487bfc673c6a0b024e4db1dc757044f955b496ce6d6495ec8b30d50
-      arm64: b1d0393ad478f127b6a7b62568b95c9fa1d2911d5c85d330f598917b7fd1e1fe
+      amd64: 9d9b42a7b9ea554b4bf123f245d5f2014478ac87ddc508744a3f34f5c2d512c7
+      armhf: dfc958a8ffd78e335982940fd1a85ad1afde856ad0273ca50e054c298ad9ac46
+      arm64: ab3b7d7b87c679a9cb464a6b8731f53d2e36b39268d63a4f8ed3e141efc3915d
     targets:
       amd64: x86_64-unknown-linux-gnu
       armhf: arm-unknown-linux-gnueabihf
