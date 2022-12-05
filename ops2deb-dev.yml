@@ -93,7 +93,7 @@
     - hub-linux-{{goarch}}-{{version}}/bin/hub:/usr/bin/
 
 - name: glab
-  version: 1.22.0
+  version: 1.23.1
   homepage: https://glab.readthedocs.io/
   summary: Gitlab on the command line
   description: |-
@@ -102,16 +102,14 @@
     issues, merge requests, look at running pipelines directly from your CLI, among
     other features.
   fetch:
-    url: https://github.com/profclems/glab/releases/download/v{{version}}/glab_{{version}}_Linux_{{target}}.tar.gz
+    url: https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_Linux_{{target}}.deb
     sha256:
-      amd64: 7d70af94648cd7720899315ddd9efdf981769f636b3cf6976508a939d5248a5f
-      armhf: 4c37217e77156e964d72d46bc2550f232ef544905ad3d62b0641c77fb2b7dfc6
-      arm64: 72b83d99c9fb99ed5ba04cc50f5acf90e1d4bedbc7c0d950eae7eb8375d0068b
+      amd64: 907ae5622d6e2b74115b571ef711a118ddf86a305912d7acefb2f86032ae678b
+      arm64: 07f1e94284f56c467a7d48514879702345e4fcf739ba0935dc13aeac2f2da425
     targets:
       amd64: x86_64
-      armhf: armv6
   install:
-    - bin/glab:/usr/bin/
+    - data/usr/bin/glab:/usr/bin/
 
 - name: hugo
   version: 0.107.0
