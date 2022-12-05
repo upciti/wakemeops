@@ -205,16 +205,16 @@
     - delta-{{version}}-{{target}}/delta:/usr/bin/delta
 
 - name: gping
-  version: 1.4.0
+  version: 1.5.0
   homepage: https://github.com/orf/gping
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: 2f923ebecabaa48193a16df3e814c810aadd291b0efd593d3065856c2fbbe2f5
-      armhf: f7f30a5e211fcb175ac0b448840ce364fc93e669b61d20d6abff653d88e0cd38
-      arm64: e5c30ce6a076e87d632666940139fe67f2e2d951a0b0cf7604467163fbb79ce6
+      amd64: 8e2ff7ff2fe57810154b2367d1b4dc788511d56adc18cf903146568b29d5d17b
+      armhf: 33bef539db5ed54ccc0dfe2451072b48d4001f1d29c9ac552df984afe260911c
+      arm64: 40accf10dc1bc344f9178d475b13a73e7f443200823469e6361648cadc745328
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
@@ -302,7 +302,7 @@
     - mergestat:/usr/bin/
 
 - name: nushell
-  version: 0.72.0
+  version: 0.72.1
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
@@ -326,8 +326,8 @@
   fetch:
     url: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 9becf4c6e35730f1ac3a92da84ae10719ce1b6c519f82fbb3276ff74d80c4d01
-      arm64: ffbd198ba7d6595579ed10948456215837c2f95d571980d3fdb591b0c7d83f99
+      amd64: b7b783adf884ef534b74bd23c01b391e537151e15a8bb10dc71e06cd02310e0c
+      arm64: a683926e7fc6acf0d88a2a2f7dc4707d4d299fcaa001131a058c696a63af8d72
   script:
     - mv ./*/nu {{src}}/usr/bin/
     - mv ./*/nu_* {{src}}/usr/bin/
