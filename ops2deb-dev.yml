@@ -93,7 +93,7 @@
     - hub-linux-{{goarch}}-{{version}}/bin/hub:/usr/bin/
 
 - name: glab
-  version: 1.23.1
+  version: 1.24.0
   homepage: https://glab.readthedocs.io/
   summary: Gitlab on the command line
   description: |-
@@ -104,8 +104,8 @@
   fetch:
     url: https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_Linux_{{target}}.deb
     sha256:
-      amd64: 907ae5622d6e2b74115b571ef711a118ddf86a305912d7acefb2f86032ae678b
-      arm64: 07f1e94284f56c467a7d48514879702345e4fcf739ba0935dc13aeac2f2da425
+      amd64: eddac4e0dfb79ac6c5e18686c28d0533005efac1dd2722e46073092d7840b917
+      arm64: 3b762cc5bd40139dcff3341d275d70e14bbcb3ae35ed4be25cb3c3bf50739934
     targets:
       amd64: x86_64
   install:
