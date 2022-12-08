@@ -415,7 +415,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.25.4
+  version: 1.25.5
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -424,9 +424,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: e4e569249798a09f37e31b8b33571970fcfbdecdd99b1b81108adc93ca74b522
-      armhf: 49ab7f05bb27a710575c2d77982cbfb4a09247ec94a8e21af28a6e300b698a44
-      arm64: a8e9cd3c6ca80b67091fc41bc7fe8e9f246835925c835823a08a20ed9bcea1ba
+      amd64: 6a660cd44db3d4bfe1563f6689cbe2ffb28ee4baf3532e04fff2d7b909081c29
+      armhf: fec9a0f7cd922744935dd5dfc2366ab307424ef4c533299d67edf7de15346e51
+      arm64: 7bc650f28a5b4436df2abcfae5905e461728ba416146beac17a2634fa82a6f0a
   install:
     - kubectl:/usr/bin/
 
@@ -957,7 +957,7 @@
     - wakemebot_linux_amd64:/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.10.3
+  version: 0.10.4
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -967,8 +967,8 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 2a97de706246b3e06147af49fe2dd6226162d9f0a2f966931eee16ecbd6eec6f
-      armhf: a4ec27f28769147d001a1a835a3fba43c6709a2aaf1e54f771cc6c6536f469a7
+      amd64: 9124871b37c1b9e46489fa6cf22e2ca64c7dbe9eb39f0eb0c30a1c1e49d46448
+      armhf: cca355515f78b4d84468dc3b3d787ccb02cfff2e936101c585cce94055191307
   install:
     - waypoint:/usr/bin/
 
