@@ -146,7 +146,7 @@
     - bin/exa:/usr/bin/
 
 - name: fd
-  version: 8.5.3
+  version: 8.6.0
   homepage: https://github.com/sharkdp/fd
   summary: human-friendly and fast alternative to 'find'
   description: |-
@@ -157,9 +157,9 @@
   fetch:
     url: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: 82fa20ed74a7c2460e950ad9cfecdbbc08c2533042abc3c7639893209c569be9
-      armhf: 0fc98d454a2a06691cee684270e0e11b08f4abe45810a65889bbb9ce06bf8fc5
-      arm64: e64869c8d7e657baa45ebd467d0bd4fec172c6ea54b98853cfbc57250f8f6501
+      amd64: 32b386efe6e871a1b6777f84eea49628eb225d958d88f971c36a6e02014524b8
+      armhf: 3d12ddf24007910a4b1dfb66289449f47fd81d26c9bf486b8c7460a3ead5aaa3
+      arm64: be0096fcd18536158a37b2d582beea193cf882efbe8f3085dfb3431cc4334dcb
   install:
     - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 
