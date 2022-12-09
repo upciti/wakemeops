@@ -415,7 +415,7 @@
     - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
 
 - name: kubectl
-  version: 1.25.5
+  version: 1.26.0
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -424,9 +424,9 @@
   fetch:
     url: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
     sha256:
-      amd64: 6a660cd44db3d4bfe1563f6689cbe2ffb28ee4baf3532e04fff2d7b909081c29
-      armhf: fec9a0f7cd922744935dd5dfc2366ab307424ef4c533299d67edf7de15346e51
-      arm64: 7bc650f28a5b4436df2abcfae5905e461728ba416146beac17a2634fa82a6f0a
+      amd64: b6769d8ac6a0ed0f13b307d289dc092ad86180b08f5b5044af152808c04950ae
+      armhf: 8eef310d0de238c582556d81ab8cbe8d6fca3c0e43ee337a905dcdd3578f9dda
+      arm64: 79b14e4ddada9e81d2989f36a89faa9e56f8abe6e0246e7bdc305c93c3731ea4
   install:
     - kubectl:/usr/bin/
 
@@ -814,7 +814,7 @@
     - stern_linux_{{goarch}}:/usr/bin/stern
 
 - name: telepresence
-  version: 2.9.4
+  version: 2.9.5
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
@@ -833,8 +833,8 @@
   fetch:
     url: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
     sha256:
-      amd64: 31c922f51c269726b8424a4f143bacdf7f4b2ca85361ec78628f849fa3a02702
-      arm64: 14b584e541aac0c506c9b3eccfda0c35e0955245aa1d0c9474f183f679639c5d
+      amd64: f297d49f6da3b7548d3a150c561f6e47f42d5d00bf0558c296158b7ec7f7923d
+      arm64: fab7bc2700a6508d7c7efd2edf61fad1e4e7fbef843ee8827a717cb88c4b20a2
   install:
     - telepresence:/usr/bin/
 
