@@ -587,16 +587,16 @@
     - linkerd2-cli-edge-{{version}}-linux-{{goarch}}:/usr/bin/linkerd
 
 - name: logcli
-  version: 2.7.0
+  version: 2.7.1
   homepage: https://github.com/grafana/loki
   summary: command-line interface for loki
   description: It facilitates running LogQL queries against a Loki instance.
   fetch:
     url: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
     sha256:
-      amd64: 5df9bf01cead8852c21f0a9e9bf1801d0f41a83f4921395f9b70244778f7d712
-      armhf: f863117b680ccad04484d1bc41f5809a78b8c9017ff41f31cc557ff839a9568f
-      arm64: ae36882a653f4b9708583e45fbf9cfd5ac70fa8fcdf676d53834d09179ff7dda
+      amd64: 5b1033be27f8bb77cb4f5a836558b3f0719a989cd9add7c848800e4b2f59b394
+      armhf: a1fad7f5dbcf0f31c6e5e5a8bb48d23ac23fde0c00c5c1582717bd78343ee95c
+      arm64: 905ccb70e74196b0272bb07b282801ff20fc6b61d83844cb01d8743a8f778b2c
   install:
     - logcli-linux-{{goarch}}:/usr/bin/logcli
 
@@ -677,7 +677,7 @@
     - nats-{{version}}-linux-{{target|goarch}}/nats:/usr/bin/
 
 - name: operator-sdk
-  version: 1.25.3
+  version: 1.26.0
   homepage: https://sdk.operatorframework.io
   summary: SDK for building Kubernetes applications
   description: |-
@@ -688,8 +688,8 @@
   fetch:
     url: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
     sha256:
-      amd64: a6fb09275cbbbe4f02c9d92434b28167d641feae526c7aca551f42af48157706
-      arm64: 57f0c21384b1c57405178dac3c1a78458939fc407caef3bb063ce5ff18883f91
+      amd64: bdbdcb2843c7bcaa0da2bf99a9a6949711aaa9d0ac1a2085b19077d2eca157a1
+      arm64: c5e87c3a79ed8a5959762ceb016c0d93ea4c55f1703baa245c20b0a68a20a0f7
   install:
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
