@@ -164,7 +164,7 @@
     - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/
 
 - name: ghorg
-  version: 1.9.0
+  version: 1.9.1
   homepage: https://github.com/gabrie30/ghorg
   summary: quickly clone an entire org/users repositories into one directory
   description: |-
@@ -175,8 +175,8 @@
   fetch:
     url: https://github.com/gabrie30/ghorg/releases/download/v{{version}}/ghorg_{{version}}_Linux_{{target}}.tar.gz
     sha256:
-      amd64: 3ba0ea193e4f022aee6fec02d2583196cff4d630f17c72b4314439a1b3da2aee
-      arm64: 948e5d2e6fd1447a2df75d59de5e5886a5f364605c962c58dc9036a14b676a89
+      amd64: 4c0876e1dcfa4d816e8796acf901962543afeb53fe2abe4522dbfecc26392de7
+      arm64: 8f630030d5f3a7a1eff424d7cbe6910e9f73b3bc2bfaf333b763303da8a1bdba
     targets:
       amd64: x86_64
   install:
@@ -205,16 +205,16 @@
     - delta-{{version}}-{{target}}/delta:/usr/bin/delta
 
 - name: gping
-  version: 1.5.1
+  version: 1.6.0
   homepage: https://github.com/orf/gping
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: 01b6f3d896df79a835e0efc437ddf03a93ebd7d555dba4949a820465f8b1b514
-      armhf: 5d9501334aeb04b621411fa22ab62d8da92a210c60bcb30b01dd905697680a04
-      arm64: 03e73474cd0773ace5d36157be27fd0e8493ec122dd886b7d9cce9b122044d84
+      amd64: e2907a8e09cef6a3c5270faded6882f48ca0f4bdc2be159c8d404edd2e6afcb3
+      armhf: 6a7d23f8020f58dbc7fab45f5d68dc39fc524faf2960e3b6bd4be4f9d27a0faf
+      arm64: d8725ca2bd921d351d3283e3e676b480f384f35bbe8749065d16ba921e5a18bc
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
