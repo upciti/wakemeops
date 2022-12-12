@@ -393,7 +393,7 @@
     - krew-linux_{{goarch}}:/usr/bin/krew
 
 - name: kube-score
-  version: 1.15.0
+  version: 1.16.0
   homepage: https://github.com/zegl/kube-score
   summary: Kubernetes object analysis for improved reliability and security
   description: |-
@@ -404,9 +404,9 @@
   fetch:
     url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_{{target}}.tar.gz
     sha256:
-      amd64: 41571804b7e73827a2b383f63fa950f4c9b5086f380d3191a63afa88742e3acd
-      armhf: c93222b0cfff612c622a3c1435769d823d7c4575fc6e423ebf87178e627740aa
-      arm64: fe332d67ff9cb70220ad18bca584d76783d1ab04e9a485df9ceff9d6333b7909
+      amd64: 2de8bab50e56c29982ac296c145821f3cfda6a771d46430025ffac4211d085dd
+      armhf: 3796331195a4c03f971cc8ed0f719c2ad4d79b9a5dfb11c9357c85ccf195862d
+      arm64: c99f2df47e19b0febd3e64a2ca9e24b14eba0d35d8a6da450db159e9f408584e
     targets:
       armhf: armv6
   install:
