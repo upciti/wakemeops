@@ -22,7 +22,7 @@
     - clog:/usr/bin/
 
 - name: coursier
-  version: 2.1.0-RC2
+  version: 2.1.0-RC3
   homepage: https://get-coursier.io/
   summary: Scala application and artifact manager
   description: |-
@@ -38,7 +38,7 @@
     - csound
   fetch:
     url: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
-    sha256: de0ec8dd59269c973083a35992986a6b2a71ff0f6f1aa01f238c01d09626dff3
+    sha256: 4e450412f2858cd09c60277426de84b182f778dbe1f2792c024a5e834225d650
   install:
     - cs-x86_64-pc-linux:/usr/bin/cs
 
