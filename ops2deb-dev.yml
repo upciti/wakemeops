@@ -142,7 +142,7 @@
     - hugo:/usr/bin/
 
 - name: influx-cli
-  version: 2.5.0
+  version: 2.6.0
   homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
   summary: command line client for influxdb
   description: |-
@@ -151,8 +151,8 @@
   fetch:
     url: https://dl.influxdata.com/influxdb/releases/influxdb2-client-{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: e397b659b381f7f5e881e6ccd9b133650b90184987c3dddcebfcd0f8ca3c5a56
-      arm64: 3fb8f788493e5f398e03b0b61594d44e3337d6bf6c98974337b119810f6ac48a
+      amd64: c4917fac0cc235e6fcc893161d5f2146f356f87a8042170fb256e1ee095dbcfb
+      arm64: b574835cb7a29f99e1a57de7740880713db7630cbbcd469b71f03042f4a57333
   install:
     - influxdb2-client-{{version}}-linux-{{goarch}}/influx:/usr/bin/
 
