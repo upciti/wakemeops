@@ -138,7 +138,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.14.0
+  version: 2.14.1
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -148,9 +148,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: fdf634ab2b01aca33372bef2bf866699ef2e1f2dab19972e37967b1fc2a11402
-      armhf: c1664c4dcefc2a56a4f16f4dbd76e531f237bfbf713b90d3acea50df42a1aada
-      arm64: 0265f45b30f4f0e1d53c1968c590181f64c546129d967460de382c6de38af191
+      amd64: e0c916bd108c49830c7847e416787387398f97de8dda7c1c35dad59438692664
+      armhf: 4f283a2341f8faa9dd58fd68ffa45bc4909051ab8d8f376998155ec0a3d4123e
+      arm64: 49924009641e9a60f178b4085c9d308bb726b5ae74eed46c5d1a7dbc8f04948b
     targets:
       amd64: x86_64
       armhf: armv7
@@ -197,7 +197,7 @@
     - flux:/usr/bin/
 
 - name: gitlab-release-cli
-  version: 0.14.0
+  version: 0.15.0
   homepage: https://gitlab.com/gitlab-org/release-cli/
   summary: command-line interface for GitLab Release
   description: |-
@@ -207,9 +207,9 @@
   fetch:
     url: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
     sha256:
-      amd64: a777edeeda2608f402862c6c130aa33f8dc6d464455b0fb81444885df774588a
-      armhf: 4a40aedd24a6ca35cd48e04bfef2c1e5516edd19439cf966ace8d4f41c6163f8
-      arm64: b49f374064c152431a062ca6ce18f892e7754b0952215d39e2e7a0b20b81cd5b
+      amd64: d59169bab5dfe4693af4f181b08bf11ef1c96a4da30eff0f04abb236c54e62e9
+      armhf: a83316b42bca3cacbf77d9f6a29fa217944b3b275fa449a1dce311da3dcf6c8f
+      arm64: e902833857935f5220fd3422f9d6ce2ca88552eeb729e2d314a6cac62d862b82
   install:
     - release-cli-linux-{{goarch}}:/usr/bin/release-cli
 
@@ -957,7 +957,7 @@
     - wakemebot_linux_amd64:/usr/bin/wakemebot
 
 - name: waypoint
-  version: 0.10.4
+  version: 0.10.5
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -967,8 +967,8 @@
   fetch:
     url: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
     sha256:
-      amd64: 9124871b37c1b9e46489fa6cf22e2ca64c7dbe9eb39f0eb0c30a1c1e49d46448
-      armhf: cca355515f78b4d84468dc3b3d787ccb02cfff2e936101c585cce94055191307
+      amd64: dbce2ea1ed85fc06ddd7f4157560719c40236e3c735bb87d6715d790e7691519
+      armhf: 778faeea74f6d959235cb3bdf56f9aeba965aa8bd461b1b454c47bb998d6b720
   install:
     - waypoint:/usr/bin/
 
