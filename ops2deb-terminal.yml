@@ -451,7 +451,7 @@
     - xsv:/usr/bin/
 
 - name: yq
-  version: 4.30.5
+  version: 4.30.6
   homepage: https://github.com/mikefarah/yq
   summary: portable command-line YAML processor
   description: |-
@@ -462,8 +462,8 @@
   fetch:
     url: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
     sha256:
-      amd64: 813d7d5b16a627a1fbbd763cb508fc8f143122f8f7195c872e7367d6295a331a
-      armhf: 0c174e8e0f84976d2588a5eb1b0e83a55c5d8c78c639bb175ddd746d6d36ddb8
-      arm64: aa786eb97871b58348fd1963e94779e13416a8ec22427c5f09152ee698f7169c
+      amd64: 2aabdd748d301fc2286ea9f73eb20477b4ce173fbf072e0102fff1fcbed05985
+      armhf: e524b5b63f9b822534d5615c84348fccf038c933230b6411cfb0c797252e9725
+      arm64: 40ee3000d5b65703caffb0263a7d5e75164f10afd2c9a3c879b6016f0300ac25
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq
