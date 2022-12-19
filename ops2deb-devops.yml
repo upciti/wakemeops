@@ -10,15 +10,15 @@
     - argocd-linux-{{goarch}}:/usr/bin/argocd
 
 - name: aws-iam-authenticator
-  version: 0.5.12
+  version: 0.6.2
   homepage: https://github.com/kubernetes-sigs/aws-iam-authenticator
   summary: Kubernetes authentication using AWS IAM
   description: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster.
   fetch:
     url: https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v{{version}}/aws-iam-authenticator_{{version}}_linux_{{goarch}}
     sha256:
-      amd64: 2b0d7e9bf920c1d07e0a58493127ca693bd8dfd930618d92415335c85fdfc5e9
-      arm64: 001db9578ef912bfb2fa8814423dcadba2724763edffac09a6c2b236854b4f4e
+      amd64: 953faf58a5e3653d6355e8f2c35aa4daaafb1c28987708a6c72760f49dc91023
+      arm64: 9730b1ca87faccc29578166a943d75d70298712e38fbf015202b6918696a6080
   install:
     - aws-iam-authenticator_{{version}}_linux_{{goarch}}:/usr/bin/aws-iam-authenticator
 
