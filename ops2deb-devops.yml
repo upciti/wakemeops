@@ -138,7 +138,7 @@
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
 - name: docker-compose
-  version: 2.14.1
+  version: 2.14.2
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
@@ -148,9 +148,9 @@
   fetch:
     url: https://github.com/docker/compose/releases/download/v{{version}}/docker-compose-linux-{{target}}
     sha256:
-      amd64: e0c916bd108c49830c7847e416787387398f97de8dda7c1c35dad59438692664
-      armhf: 4f283a2341f8faa9dd58fd68ffa45bc4909051ab8d8f376998155ec0a3d4123e
-      arm64: 49924009641e9a60f178b4085c9d308bb726b5ae74eed46c5d1a7dbc8f04948b
+      amd64: d056a8330a01f22c249b9fa03ad0d5be889b79b648cad43c8549eb4c3f8ff0ba
+      armhf: 6e01028d97bc48bfd3894d9161586e74c0f37cf7d67a67ab7eafb351c2003cb3
+      arm64: 48ef22ecea70b4b197def1c1bfd2e797f7117db5257f6e505e64f03fdc329a7e
     targets:
       amd64: x86_64
       armhf: armv7
