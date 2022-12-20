@@ -205,16 +205,16 @@
     - delta-{{version}}-{{target}}/delta:/usr/bin/delta
 
 - name: gping
-  version: 1.6.1
+  version: 1.6.2
   homepage: https://github.com/orf/gping
   summary: ping, but with a graph
   description: tool to visualize ping speed over time.
   fetch:
     url: https://github.com/orf/gping/releases/download/gping-v{{version}}/gping-{{target|rust_target}}.tar.gz
     sha256:
-      amd64: c8b8a5a5d9f498f1f3912976f3b8929181431a51bc9c4150a25753a08b1df1dd
-      armhf: 6b3a1f5b100e41e982b68b5b7875881410238fc527919c54fd306c8bb20d65c1
-      arm64: 70d153deeeda9e298d0b36a8a0ba17323496d75aecc038b989c270a3b3e432f4
+      amd64: 8ea2c6e53b0ce4a38c3824f765cdf004e3972057cad1f22e43a80b689820f104
+      armhf: 0f333c5b8de949ea65f8cd8105102ce0c73434086e641c3e2a3a1a2fe73f6b0f
+      arm64: 0734de80af1af4e060e2a392ecf6dc5844faac907f1f1672d24bfdc5e2519d9a
     targets:
       amd64: Linux-x86_64
       armhf: armv7-unknown-linux-gnueabihf
