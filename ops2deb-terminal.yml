@@ -302,7 +302,7 @@
     - mergestat:/usr/bin/
 
 - name: nushell
-  version: 0.72.1
+  version: 0.73.0
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
@@ -326,8 +326,8 @@
   fetch:
     url: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
     sha256:
-      amd64: b7b783adf884ef534b74bd23c01b391e537151e15a8bb10dc71e06cd02310e0c
-      arm64: a683926e7fc6acf0d88a2a2f7dc4707d4d299fcaa001131a058c696a63af8d72
+      amd64: f269dfb207a4cbb16d6cb6593ac355cedd4dd4279c2f34ecfd71d3cb20f992cc
+      arm64: 68f12ecef8bab8ae571b472a2eedd955e8e4b2660499eab25e9c1be5d12dd1ce
   script:
     - mv ./*/nu {{src}}/usr/bin/
     - mv ./*/nu_* {{src}}/usr/bin/
