@@ -694,7 +694,7 @@
     - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk
 
 - name: ops2deb
-  version: 0.35.1
+  version: 0.36.0
   homepage: https://github.com/upciti/ops2deb
   summary: debian packaging tool for portable applications
   description: |-
@@ -709,7 +709,7 @@
     - debhelper
   fetch:
     url: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
-    sha256: 52f95d138288b779db50ddcec5f3b88e7dfc988aa6fa58a82beec60536ea4da5
+    sha256: 14dbd2db1a0ae45d611480e90fe1b4de51c68db29b715a7f05a503b2ea8941e9
   install:
     - ops2deb_linux_amd64:/usr/bin/ops2deb
 
@@ -778,7 +778,7 @@
     - scaleway-cli_{{version}}_linux_{{goarch}}:/usr/bin/scw
 
 - name: skaffold
-  version: 2.0.3
+  version: 2.0.4
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -793,8 +793,8 @@
   fetch:
     url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
     sha256:
-      amd64: 7d544461d53d541a6c1e6ba721a8e9f502d6cb240453faf31513f9e4d9b157c1
-      arm64: cbf59fc9150db7888797f140838e17396e680bdddc2b5fe57e5297ceab1a053c
+      amd64: f1c54245b97073f39b209dd4b769802701c9901ceaa95774e7507d95bbd1d4c0
+      arm64: 03f077e7d2b210dfa3c34d6a938a6a64f93b490fbb2c39b77d5896ffad27a52a
   install:
     - skaffold-linux-{{goarch}}:/usr/bin/skaffold
 
