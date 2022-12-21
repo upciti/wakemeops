@@ -180,7 +180,7 @@
     - dist_{{target}}/docker-slim:/usr/bin/
 
 - name: flux
-  version: 0.37.0
+  version: 0.38.0
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -190,9 +190,9 @@
   fetch:
     url: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
     sha256:
-      amd64: 28717941414b212f4e4521f9f960f5cf75b901178edc6d03c278be7e43025a0f
-      armhf: 9773972ecc7834840aa25a37810be46eaaf011d384d545d1e45bf516e32aa89b
-      arm64: 5b09d1a9ee5c6fb91bf164003de9b8f0d199834db7579865df6ede844495df8a
+      amd64: 92db03e001b7eb6674e20d6d4320962b4787cbc8478da461e6f3529aef922fe0
+      armhf: e1d69b65baee8d790168106256b61b01ab06a85a12ab96cf232417b5f946d8e7
+      arm64: a25738f10590e2c3d6221dd9c91d008d5b2ca2c4df719c296512aca8b75553a3
   install:
     - flux:/usr/bin/
 
