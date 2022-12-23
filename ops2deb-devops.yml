@@ -747,7 +747,7 @@
     - rancher-v{{version}}/rancher:/usr/bin/
 
 - name: rclone
-  version: 1.61.0
+  version: 1.61.1
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-
@@ -756,9 +756,9 @@
   fetch:
     url: https://github.com/rclone/rclone/releases/download/v{{version}}/rclone-v{{version}}-linux-{{goarch}}.zip
     sha256:
-      amd64: 748696842cc0d2277c0ffed2dec5a42aa3822558465770a638e730e9a1956c7e
-      armhf: 335e0c71b9818e5d688121452eadca3107ade9e60a36af0328e2843a70b2ebfb
-      arm64: 2bae86030b8915d8278720c4d3fe1ea3aa9f414575f38d0a66ecce3906cb6d2d
+      amd64: 6d6455e1cb69eb0615a52cc046a296395e44d50c0f32627ba8590c677ddf50a9
+      armhf: 00d485a13e0db43cacbb8a66316906b18356c8e0aed5821d7d26f077943f431e
+      arm64: fff35786bf9ee9320037db69e239df83768b8f756bae2343253ba6512e70d86c
   install:
     - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
 
