@@ -89,6 +89,22 @@
     - mv mattermost-desktop-{{version}}-linux-x64 {{src}}/opt/mattermost-desktop
     - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
 
+- name: signal-desktop
+  version: 6.1.0
+  homepage: https://github.com/signalapp/signal-desktop
+  summary: private messaging from your desktop
+  description: |-
+    Links with Signal on Android or iOS and lets you message from your Windows,
+    macOS, and Linux computers.
+  fetch:
+    url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_{{version}}_amd64.deb
+    sha256: ef4210ff6ca31db7b3f12a59c6a64a6bf5d6204600ddc37b24020cf64823377d
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+
 - name: teams-for-linux
   version: 1.0.46
   homepage: https://github.com/IsmaelMartinez/teams-for-linux/
