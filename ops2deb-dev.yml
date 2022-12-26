@@ -222,9 +222,8 @@
     - mv poetry {{src}}/usr/lib/
 
 - name: pre-commit
-  version: 2.20.0
+  version: 2.21.0
   homepage: https://pre-commit.com/
-  revision: 2
   arch: all
   summary: framework for managing and maintaining multi-language pre-commit hooks
   description: |-
@@ -238,7 +237,7 @@
     - python3
   fetch:
     url: https://github.com/pre-commit/pre-commit/releases/download/v{{version}}/pre-commit-{{version}}.pyz
-    sha256: 83afdec9f97cbb1d2a2fd7eae645ab732e9f7a3b60cfe499269fec03fb836c42
+    sha256: 5b222bb00db637bb41feb96fded6838338bec0ae2c4f157d5ef1ad5f5060fb6a
   install:
     - pre-commit-{{version}}.pyz:/usr/lib/pre-commit/pre-commit.pyz
     - path: /usr/bin/pre-commit
