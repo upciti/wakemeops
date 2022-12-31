@@ -35,7 +35,7 @@ generate: $(foreach component,$(COMPONENTS),generate-$(component))
 
 generate-%:
 	mkdir -p $(OUTPUT_BASE_PATH)/$*
-	ops2deb generate -c ./ops2deb-$*.yml -o $(OUTPUT_BASE_PATH)/$*
+	ops2deb generate -c ./ops2deb-$*.yml -k ./ops2deb-$*.lock.yml -o $(OUTPUT_BASE_PATH)/$*
 
 build: $(foreach component,$(COMPONENTS),build-$(component))
 
@@ -46,12 +46,18 @@ update:
 	for component in $(COMPONENTS); do \
 		ops2deb update \
 		-c ops2deb-$${component}.yml \
+		-k ops2deb-$${component}.lock.yml \
 		--output-file ops2deb-$${component}.log; \
 	done
 
 format:
 	for component in $(COMPONENTS); do \
 		ops2deb format -c ops2deb-$${component}.yml || exit 77; \
+	done
+
+lock:
+	for component in $(COMPONENTS); do \
+		ops2deb lock -c ops2deb-$${component}.yml -k ops2deb-$${component}.lock.yml || exit 77; \
 	done
 
 install-packages:
