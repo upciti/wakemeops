@@ -16,7 +16,7 @@
     - bat-v{{version}}-{{rust_target}}/bat:/usr/bin/
 
 - name: bottom
-  version: 0.6.8
+  version: 0.7.0
   homepage: https://clementtsang.github.io/bottom
   summary: cross-platform graphical process/system monitor
   description: |-
@@ -26,8 +26,8 @@
   fetch:
     url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target|rust_target}}.tar.gz
     sha256:
-      amd64: 5f50d2a58a3138ddc895822a6e047a9b005329665ff542bca8960539f891f648
-      armhf: 8d89e39f45cdf267f8491efeda756b39bf22420318c19b2bc2441a9162ddb85c
+      amd64: 41693e01a3f2676e1b072dd197473e2aa86258d6a2df1c6e5b5939c1e3de1679
+      armhf: 630e9e28c1f452011cb9278c4d5eee16eb4ef8322c71be501862fe6759dbdea4
     targets:
       armhf: armv7-unknown-linux-gnueabihf
   install:
