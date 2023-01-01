@@ -254,7 +254,7 @@
     - helmfile:/usr/bin/helmfile
 
 - name: iamlive
-  version: 0.49.0
+  version: 0.50.0
   homepage: https://github.com/iann0036/iamlive
   summary: generate policies from AWS calls
   description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
@@ -262,8 +262,8 @@
   fetch:
     url: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
     sha256:
-      amd64: 6b3dbfcfa876666889b6fae599c6a5e7b5fda3be66d30d52a4e362cbacc5db69
-      arm64: b211f1e4be8632d0ae67893a3ab9713fdc62af18a063d0c8240deef775169643
+      amd64: 0da23aa2b4c312d9b59488fcfb3a0ef639ead19d82fe56a6801103dcd1747f14
+      arm64: 758503a50e45b7380c6f96203623575672d29843caa08f84fc4e14644df04059
   install:
     - iamlive:/usr/bin/iamlive
 
