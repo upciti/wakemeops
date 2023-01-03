@@ -123,7 +123,7 @@
     - datree:/usr/bin/
 
 - name: devspace
-  version: 6.2.2
+  version: 6.2.3
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -132,8 +132,8 @@
   fetch:
     url: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
     sha256:
-      amd64: 90c4c1717a13137a6d42568098b42681a47f87ec6a839bdf0356e98411bf0112
-      arm64: 61b75cc21df896e36e1906856dcf312114983edb8fd7de359515c72fece0b065
+      amd64: d57e7c0fc08e4c8bf41226280404b352ee3fd051a78a251237462d1957ff735c
+      arm64: 52c49aabec14031c902038184ce5884611478c9faa82975ce11c1bc2e1083ab1
   install:
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
