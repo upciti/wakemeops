@@ -1,0 +1,60 @@
+- url: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_linux_amd64.tar.gz
+  sha256: 4b7222adf273f8c7cb37d0207ca54143a571e953613a5bfb7e3f7d1988d23d00
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_linux_arm64.tar.gz
+  sha256: e1c8dcadb55532cbe057a239069873e194377365575f0de705af00f03bac9abd
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.36.0/trivy_0.36.0_Linux-64bit.tar.gz
+  sha256: 121f4d8282aa465cbb121b754d45c4366a6b23467d180291832247dcb8b13838
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.36.0/trivy_0.36.0_Linux-ARM.tar.gz
+  sha256: fbce103779247c0e752dc38bc2f8c4cb7286cc9485af713ccad5572cd11bca9d
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.36.0/trivy_0.36.0_Linux-ARM64.tar.gz
+  sha256: 0c8abd07d4203e7f86cdd710d6533c700ce0a7ab46bb8c3c72d48ad2bdc29f04
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/aarch64-feroxbuster.zip
+  sha256: bf7478e33140bd12a0480e2f19cdf0943cf7d7bf20bfcb02953642966843ec36
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/armv7-feroxbuster.zip
+  sha256: f6395cbbd282c3dcba404c6155ca4f721075e510945af9c6766ce7e7f1e74e4b
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/x86_64-linux-feroxbuster.zip
+  sha256: 4f78e276db5c6db290fc27fead807c5c961f1374acacd655f906be54a78429b0
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/future-architect/vuls/releases/download/v0.22.0/vuls-scanner_0.22.0_linux_amd64.tar.gz
+  sha256: f45082bfe3b683cac4e336af64b5e7b1d49eaa0792aa271596ab73386c0f667a
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/future-architect/vuls/releases/download/v0.22.0/vuls-scanner_0.22.0_linux_arm64.tar.gz
+  sha256: 56306b81df6720dc56ae0f9b9c1db0e5a2e665e5a9ce35fb93d25cf77e682393
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/future-architect/vuls/releases/download/v0.22.0/vuls-scanner_0.22.0_linux_armv6.tar.gz
+  sha256: 283744778eb431a9fa1c38dcfde84f5921e1dd01101b9fc73cb49ac6d9d25baa
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/stackrox/kube-linter/releases/download/0.5.1/kube-linter-linux
+  sha256: 427a33c7de292f884bdb2c8911dec96c9d4fa7cc5fda4fa61bc5c3387bd4e1c3
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/tenable/terrascan/releases/download/v1.17.1/terrascan_1.17.1_Linux_arm64.tar.gz
+  sha256: 9d5147ac23f7d63ad452ccfece475f881fdcd2293e6555881c811146507d2d28
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/tenable/terrascan/releases/download/v1.17.1/terrascan_1.17.1_Linux_x86_64.tar.gz
+  sha256: 9b224220624f7cdcd8f31183f073791dbaf6aae1706cbf0e2da87234aa9910b4
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_amd64.zip
+  sha256: bc5012ba320a73a1a92a79b9646664f873d5f1447b01cae38f37e3b82a462b76
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_arm.zip
+  sha256: c73a7028e3277e0862a7fe8ef2b0445eef8196f7d8e539e65878b6ea5fdf2ffb
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_arm64.zip
+  sha256: 8adf83f8f81c6c828de0ca530039657550287a83c3d7a22603747c38545317af
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/vault/1.12.2/vault_1.12.2_linux_amd64.zip
+  sha256: 116c143de377a77a7ea455a367d5e9fe5290458e8a941a6e2dd85d92aaedba67
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/vault/1.12.2/vault_1.12.2_linux_arm.zip
+  sha256: fdc33fbe90daf7a496863c568fccfc98cdd664e034ae3a380c877fc6570fc7a5
+  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/vault/1.12.2/vault_1.12.2_linux_arm64.zip
+  sha256: 7b35d12518729cfe3efe2007a07862934b0a6df053146ea15243f89e6b0bfbf2
+  timestamp: 2023-01-03 23:06:26+00:00

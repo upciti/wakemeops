@@ -1,0 +1,72 @@
+- url: https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.6.1-linux-amd64.tar.gz
+  sha256: 38f3830a13eb31a58736c5b7063a36d4beb876c6c5556c29f7fc4a974fbfb7c1
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.6.1-linux-arm64.tar.gz
+  sha256: b8a5ef6e95ab461686de6c34a7d897752fbe8b9fa4841c0fd10c127a4a4197d5
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/VirtusLab/scala-cli/releases/download/v0.1.19/scala-cli-x86_64-pc-linux.deb
+  sha256: 2d2e7834a5a5e2a1a0ec1958401abda3b9d5839c4900ef201616213e565e0c31
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/cli/cli/releases/download/v2.21.1/gh_2.21.1_linux_amd64.tar.gz
+  sha256: 0c0ab559721d2ff05df9d64fcdaca4f8f0b76d177832379116bd5c4d032fea88
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/cli/cli/releases/download/v2.21.1/gh_2.21.1_linux_arm64.tar.gz
+  sha256: 597447f94c07d4680fba787137fd1354ee9f963366a712e5d718aa24cd8f9bd3
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/cli/cli/releases/download/v2.21.1/gh_2.21.1_linux_armv6.tar.gz
+  sha256: 4218c205359a8f4b94e56419d6383301ae43265c4217f6567f054cf76aac9490
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/clog-tool/clog-cli/releases/download/v0.9.3/clog-v0.9.3-aarch64-unknown-linux-gnu.tar.gz
+  sha256: 1e90b8ab5906c17a2f8a59c1a815afd0dbdcb9fc9d0848dec350481ceb99d473
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/clog-tool/clog-cli/releases/download/v0.9.3/clog-v0.9.3-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: 12e4b84972b5dac3e7334d9938da806295ca0f5b0b008833a4ed728d35fb1d3c
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/clog-tool/clog-cli/releases/download/v0.9.3/clog-v0.9.3-x86_64-unknown-linux-gnu.tar.gz
+  sha256: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/coursier/coursier/releases/download/v2.1.0-RC4/cs-x86_64-pc-linux.gz
+  sha256: 176e92e08ab292531aa0c4993dbc9f2c99dec79578752f3b9285f54f306db572
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/datanymizer/datanymizer/releases/download/v0.6.0/pg_datanymizer-linux-x86_64.tar.gz
+  sha256: e255a2caf6a43b40df479bf20511e3897118967b55e8b31f0f31de24de273e92
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/github/hub/releases/download/v2.14.2/hub-linux-amd64-2.14.2.tgz
+  sha256: 74d95fdfb3c78c8af4e2025b04b916ad905ab99a361778500d58269847c7922d
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/github/hub/releases/download/v2.14.2/hub-linux-arm-2.14.2.tgz
+  sha256: 234fa4cfcfdf1fc4051b27116fd1351a1741cfec556fa227506708ba4997bdeb
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/github/hub/releases/download/v2.14.2/hub-linux-arm64-2.14.2.tgz
+  sha256: 53670fe3ed3d590dc1194257497c7b27b35daf2bfb5b497b1a49e50b3f5a0e61
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_0.109.0_Linux-64bit.tar.gz
+  sha256: 36cfd9a0c4e0a084c3b4d2802d408211d2599cab960f223eb10b433579634d9c
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_0.109.0_Linux-arm.tar.gz
+  sha256: d7d47655447844519486d27a04e3dc9c8a066656e5ddf2188740d0cd5d8e6437
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_0.109.0_Linux-arm64.tar.gz
+  sha256: 40d1906e5d389f899f07cfe35320c90d205a41f0d1633aa8ac8b5f02113a430e
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F0.18.0/pyoxidizer-0.18.0-linux-x86_64.zip
+  sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/jakedeichert/mask/releases/download/v0.11.2/mask-v0.11.2-x86_64-unknown-linux-gnu.zip
+  sha256: b9e484ab3d949452fe1ae4806ef141fc6d4c2ce884503b505875994ec459c54c
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/pre-commit/pre-commit/releases/download/v2.21.0/pre-commit-2.21.0.pyz
+  sha256: 5b222bb00db637bb41feb96fded6838338bec0ae2c4f157d5ef1ad5f5060fb6a
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.9.zip
+  sha256: 831000a2534bba60cdc4db5b2b952660dfdc018fc4d6392ef2389f4a351872e2
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://github.com/python-poetry/poetry/releases/download/1.1.15/poetry-1.1.15-linux.tar.gz
+  sha256: 1c7e6a5175dbabe240cf10fd8167f31a07c404d7cd0b55cb5c68c160049cf486
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.24.1/downloads/glab_1.24.1_Linux_arm64.deb
+  sha256: 47415ff81e10e1727146036a6e7e6e59d8be06688b861c825a11b36f869149f1
+  timestamp: 2023-01-03 23:06:40+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.24.1/downloads/glab_1.24.1_Linux_x86_64.deb
+  sha256: 7a8ebae3a4d21cf2cc73f734d4821c6b55049e954e45aa946b44a7ac16c4e67d
+  timestamp: 2023-01-03 23:06:40+00:00

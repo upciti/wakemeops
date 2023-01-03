@@ -7,9 +7,7 @@
     drive is a pleasant and safe experience. It protects you from accidentally
     writing to your hard-drives, ensures every byte of data was written correctly
     and much more.
-  fetch:
-    url: https://github.com/balena-io/etcher/releases/download/v{{version}}/balena-etcher-electron_{{version}}_amd64.deb
-    sha256: 941a03678408b67f7b2b6d3dad48a3e1070eadb53af561c292d7da93b26a91e5
+  fetch: https://github.com/balena-io/etcher/releases/download/v{{version}}/balena-etcher-electron_{{version}}_amd64.deb
   install:
     - data:/
   script:
@@ -23,9 +21,7 @@
   description: |-
     Insomnia is an open-source, cross-platform API client for GraphQL, REST, and
     gRPC.
-  fetch:
-    url: https://github.com/Kong/insomnia/releases/download/core%40{{version}}/Insomnia.Core-{{version}}.deb
-    sha256: e32733beedf95e4a05b65cb14eab857ce9606bf49b1f9e6b8ac98327ea63c413
+  fetch: https://github.com/Kong/insomnia/releases/download/core%40{{version}}/Insomnia.Core-{{version}}.deb
   install:
     - data:/
   script:
@@ -44,9 +40,7 @@
     Lens is built on open source and backed by a number of Kubernetes and cloud
     native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
     it’s the largest and most advanced Kubernetes platform in the world.
-  fetch:
-    url: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
-    sha256: 517685f4f9492462acf5e4e03fbe947c01391d5e5db4c858c4b9f2ffe26c5475
+  fetch: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
   install:
     - data:/
   script:
@@ -67,9 +61,7 @@
     hosted and private cloud deployment options and access to the source code,
     developers can contribute directly to a shared, flexible, and extensible
     platform built just for them.
-  fetch:
-    url: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
-    sha256: b8a60053149e0c8963afffd2d305bd4f2c2190fe1c55281b04778d039f1255fb
+  fetch: https://releases.mattermost.com/desktop/{{version}}/mattermost-desktop-{{version}}-linux-x64.tar.gz
   install:
     - path: /usr/share/applications/mattermost.desktop
       content: |
@@ -96,9 +88,7 @@
   description: |-
     Links with Signal on Android or iOS and lets you message from your Windows,
     macOS, and Linux computers.
-  fetch:
-    url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_{{version}}_amd64.deb
-    sha256: ef4210ff6ca31db7b3f12a59c6a64a6bf5d6204600ddc37b24020cf64823377d
+  fetch: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_{{version}}_amd64.deb
   install:
     - data:/
   script:
@@ -112,9 +102,7 @@
   description: |-
     Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App
     and wraps it as a standalone application using Electron.
-  fetch:
-    url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
-    sha256: eabcd1140aca4b9d97e20da7fef80db5627953bbf347a0c6ee576ab769004f65
+  fetch: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
   install:
     - data:/
   script:

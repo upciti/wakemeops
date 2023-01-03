@@ -1,4 +1,9 @@
 - name: clog-cli
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+      - arm64
   version: 0.9.3
   homepage: https://github.com/clog-tool/clog-cli
   summary: generate beautiful changelogs from your Git commit history
@@ -12,10 +17,6 @@
     - git
   fetch:
     url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-{{target|rust_target}}.tar.gz
-    sha256:
-      amd64: c878d73e0f22fea2f2fd8da53e3cf987a88e50f474649e026ad196b67d8a0401
-      armhf: 12e4b84972b5dac3e7334d9938da806295ca0f5b0b008833a4ed728d35fb1d3c
-      arm64: 1e90b8ab5906c17a2f8a59c1a815afd0dbdcb9fc9d0848dec350481ceb99d473
     targets:
       armhf: armv7-unknown-linux-gnueabihf
   install:
@@ -36,9 +37,7 @@
     - Create standalone launchers for Scala applications.
   conflicts:
     - csound
-  fetch:
-    url: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
-    sha256: 176e92e08ab292531aa0c4993dbc9f2c99dec79578752f3b9285f54f306db572
+  fetch: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
   install:
     - cs-x86_64-pc-linux:/usr/bin/cs
 
@@ -50,13 +49,16 @@
     Datanymizer generates database-native dump. You can import or process your dump
     with supported database without 3rd-party importers.
     Datanymizer is created & supported by Evrone.
-  fetch:
-    url: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
-    sha256: e255a2caf6a43b40df479bf20511e3897118967b55e8b31f0f31de24de273e92
+  fetch: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
   install:
     - pg_datanymizer:/usr/bin/
 
 - name: github-cli
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+      - arm64
   version: 2.21.1
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
@@ -65,10 +67,6 @@
     where you are already working with git and your code.
   fetch:
     url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
-    sha256:
-      amd64: 0c0ab559721d2ff05df9d64fcdaca4f8f0b76d177832379116bd5c4d032fea88
-      armhf: 4218c205359a8f4b94e56419d6383301ae43265c4217f6567f054cf76aac9490
-      arm64: 597447f94c07d4680fba787137fd1354ee9f963366a712e5d718aa24cd8f9bd3
     targets:
       armhf: armv6
   script:
@@ -76,23 +74,27 @@
     - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/
 
 - name: github-hub
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+      - arm64
   version: 2.14.2
-  homepage: https://hub.github.com
   revision: 2
+  homepage: https://hub.github.com
   summary: do everyday GitHub tasks without ever leaving the terminal
   description: |-
     hub is a command line tool that wraps git in order to extend it with extra
     features and commands that make working with GitHub easier.
-  fetch:
-    url: https://github.com/github/hub/releases/download/v{{version}}/hub-linux-{{goarch}}-{{version}}.tgz
-    sha256:
-      amd64: 74d95fdfb3c78c8af4e2025b04b916ad905ab99a361778500d58269847c7922d
-      armhf: 234fa4cfcfdf1fc4051b27116fd1351a1741cfec556fa227506708ba4997bdeb
-      arm64: 53670fe3ed3d590dc1194257497c7b27b35daf2bfb5b497b1a49e50b3f5a0e61
+  fetch: https://github.com/github/hub/releases/download/v{{version}}/hub-linux-{{goarch}}-{{version}}.tgz
   install:
     - hub-linux-{{goarch}}-{{version}}/bin/hub:/usr/bin/
 
 - name: glab
+  matrix:
+    architectures:
+      - amd64
+      - arm64
   version: 1.24.1
   homepage: https://glab.readthedocs.io/
   summary: Gitlab on the command line
@@ -103,15 +105,17 @@
     other features.
   fetch:
     url: https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_Linux_{{target}}.deb
-    sha256:
-      amd64: 7a8ebae3a4d21cf2cc73f734d4821c6b55049e954e45aa946b44a7ac16c4e67d
-      arm64: 47415ff81e10e1727146036a6e7e6e59d8be06688b861c825a11b36f869149f1
     targets:
       amd64: x86_64
   install:
     - data/usr/bin/glab:/usr/bin/
 
 - name: hugo
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+      - arm64
   version: 0.109.0
   homepage: https://gohugo.io/
   summary: fast and flexible Static Site Generator
@@ -132,27 +136,23 @@
     and docs.
   fetch:
     url: https://github.com/gohugoio/hugo/releases/download/v{{version}}/hugo_{{version}}_Linux-{{target|goarch}}.tar.gz
-    sha256:
-      amd64: 36cfd9a0c4e0a084c3b4d2802d408211d2599cab960f223eb10b433579634d9c
-      armhf: d7d47655447844519486d27a04e3dc9c8a066656e5ddf2188740d0cd5d8e6437
-      arm64: 40d1906e5d389f899f07cfe35320c90d205a41f0d1633aa8ac8b5f02113a430e
     targets:
       amd64: 64bit
   install:
     - hugo:/usr/bin/
 
 - name: influx-cli
+  matrix:
+    architectures:
+      - amd64
+      - arm64
   version: 2.6.1
   homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
   summary: command line client for influxdb
   description: |-
     Use the influx CLI to interact with and manage your InfluxDB instance. Write
     and query data, generate InfluxDB templates, export data, and more.
-  fetch:
-    url: https://dl.influxdata.com/influxdb/releases/influxdb2-client-{{version}}-linux-{{goarch}}.tar.gz
-    sha256:
-      amd64: 38f3830a13eb31a58736c5b7063a36d4beb876c6c5556c29f7fc4a974fbfb7c1
-      arm64: b8a5ef6e95ab461686de6c34a7d897752fbe8b9fa4841c0fd10c127a4a4197d5
+  fetch: https://dl.influxdata.com/influxdb/releases/influxdb2-client-{{version}}-linux-{{goarch}}.tar.gz
   install:
     - influxdb2-client-{{version}}-linux-{{goarch}}/influx:/usr/bin/
 
@@ -164,16 +164,14 @@
     mask is a CLI task runner which is defined by a simple markdown file. It
     searches for a maskfile.md in the current directory which it then parses for
     commands and arguments.
-  fetch:
-    url: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
-    sha256: b9e484ab3d949452fe1ae4806ef141fc6d4c2ce884503b505875994ec459c54c
+  fetch: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
   install:
     - mask-v{{version}}-x86_64-unknown-linux-gnu/mask:/usr/bin/
 
 - name: poetry
   version: 1.1.15
+  architecture: all
   homepage: https://python-poetry.org
-  arch: all
   summary: tool for dependency management and packaging in Python
   description: |-
     Poetry helps you declare, manage and install dependencies of Python projects,
@@ -182,9 +180,7 @@
     - libc6
     - python3
     - python3-distutils
-  fetch:
-    url: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
-    sha256: 1c7e6a5175dbabe240cf10fd8167f31a07c404d7cd0b55cb5c68c160049cf486
+  fetch: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
   install:
     - path: /usr/bin/poetry
       content: |
@@ -223,8 +219,8 @@
 
 - name: pre-commit
   version: 2.21.0
+  architecture: all
   homepage: https://pre-commit.com/
-  arch: all
   summary: framework for managing and maintaining multi-language pre-commit hooks
   description: |-
     Multi-language package manager for pre-commit hooks. You specify a list of
@@ -235,9 +231,7 @@
     downloading and building node to run eslint without root.
   depends:
     - python3
-  fetch:
-    url: https://github.com/pre-commit/pre-commit/releases/download/v{{version}}/pre-commit-{{version}}.pyz
-    sha256: 5b222bb00db637bb41feb96fded6838338bec0ae2c4f157d5ef1ad5f5060fb6a
+  fetch: https://github.com/pre-commit/pre-commit/releases/download/v{{version}}/pre-commit-{{version}}.pyz
   install:
     - pre-commit-{{version}}.pyz:/usr/lib/pre-commit/pre-commit.pyz
     - path: /usr/bin/pre-commit
@@ -247,8 +241,8 @@
 
 - name: pyenv
   version: 2.3.9
+  architecture: all
   homepage: https://github.com/pyenv/pyenv
-  arch: all
   summary: simple Python version management
   description: |-
     Tool that lets you easily switch between multiple versions of Python. It's
@@ -272,9 +266,7 @@
     - libxmlsec1-dev
     - libffi-dev
     - liblzma-dev
-  fetch:
-    url: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
-    sha256: 831000a2534bba60cdc4db5b2b952660dfdc018fc4d6392ef2389f4a351872e2
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
   install:
     - path: /etc/profile.d/ops2deb-pyenv.sh
       content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
@@ -285,16 +277,14 @@
 
 - name: pyoxidizer
   version: 0.18.0
-  homepage: https://pyoxidizer.readthedocs.io/en/latest/index.html
   revision: 2
+  homepage: https://pyoxidizer.readthedocs.io/en/latest/index.html
   summary: utility for producing binaries that embed Python
   description: |-
     The over-arching goal of PyOxidizer is to make complex packaging and
     distribution problems simple so application maintainers can focus on building
     applications instead of toiling with build systems and packaging tools.
-  fetch:
-    url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
-    sha256: 77d4b1528981c25e6fb02ecd142990460a7e846789102462d9e42215de049914
+  fetch: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
   install:
     - pyoxidizer:/usr/bin/
 
@@ -307,8 +297,6 @@
     a better scala command. It shares some similarities with build tools, but
     doesn't aim at supporting multi-module projects, nor to be extended via a task
     system.
-  fetch:
-    url: https://github.com/VirtusLab/scala-cli/releases/download/v{{version}}/scala-cli-x86_64-pc-linux.deb
-    sha256: 2d2e7834a5a5e2a1a0ec1958401abda3b9d5839c4900ef201616213e565e0c31
+  fetch: https://github.com/VirtusLab/scala-cli/releases/download/v{{version}}/scala-cli-x86_64-pc-linux.deb
   install:
     - data/usr/share/scala/scala-cli:/usr/bin/scala-cli
