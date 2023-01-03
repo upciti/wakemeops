@@ -1,0 +1,399 @@
+- url: https://app.getambassador.io/download/tel2/linux/amd64/2.9.5/telepresence
+  sha256: f297d49f6da3b7548d3a150c561f6e47f42d5d00bf0558c296158b7ec7f7923d
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://app.getambassador.io/download/tel2/linux/arm64/2.9.5/telepresence
+  sha256: fab7bc2700a6508d7c7efd2edf61fad1e4e7fbef843ee8827a717cb88c4b20a2
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2022-08-05T08-01-28Z
+  sha256: dd5d54e0ad29e10652ff607640bac1dc7289930b6500ff7798ce6123e94a0e94
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/client/mc/release/linux-arm/archive/mc.RELEASE.2022-08-05T08-01-28Z
+  sha256: f7236e9820c504eb759e0627d8a869cd97c24424a0b31f5f8caf9eaacd641e87
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/client/mc/release/linux-arm64/archive/mc.RELEASE.2022-08-05T08-01-28Z
+  sha256: 23f7a2c7ba71941c55339253e3c3ed76d09b5e1121e5278fea816d339fd168fe
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-08-08T18-34-09Z
+  sha256: c6712d5cfb4887941822403d291f7a56b7784aa6b219839767d83faece819230
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm/archive/minio.RELEASE.2022-08-08T18-34-09Z
+  sha256: 799af5e1a67e66aa4d0fb044f27e0b3378be15eef153a2b8029f909342f5ae24
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2022-08-08T18-34-09Z
+  sha256: 5b485e9d4eaa46284b93d43c7ee312ed7dca78b2281720787a759981371fb11b
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux.tar.gz
+  sha256: d6fe2847d077f5e977cefc98fdff03ec5303483e595fdc44aceed5d6a09d1f88
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux_arm.tar.gz
+  sha256: 5c311bd998911a1a0bf59dcb4c0513254ec6916734b3f4e0970fcfa546daed79
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux_arm64.tar.gz
+  sha256: 941dab46f4a3bf97a7766d7ca6dccfe237cc40a2964aa41b0aaf6e9042450870
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
+  sha256: 950439759ece902157cf915b209b8d694e6f675eaab5099fb7894f30eeaee9a2
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://get.helm.sh/helm-v3.10.3-linux-arm.tar.gz
+  sha256: dca718eb68c72c51fc7157c4c2ebc8ce7ac79b95fc9355c5427ded99e913ec4c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/GoogleContainerTools/container-diff/releases/download/v0.17.0/container-diff-linux-amd64
+  sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v1.14.0/container-structure-test-linux-amd64
+  sha256: f778b05f0d7763f17912fc8dd75da630c0f1f9de293fbb63e96dcb19f0587ac0
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v1.14.0/container-structure-test-linux-arm64
+  sha256: 6003e4855e669f95d95c6690609f23fa8d546557c92bcbad81ea04b0f5cb9d73
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/GoogleContainerTools/skaffold/releases/download/v2.0.4/skaffold-linux-amd64
+  sha256: f1c54245b97073f39b209dd4b769802701c9901ceaa95774e7507d95bbd1d4c0
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/GoogleContainerTools/skaffold/releases/download/v2.0.4/skaffold-linux-arm64
+  sha256: 03f077e7d2b210dfa3c34d6a938a6a64f93b490fbb2c39b77d5896ffad27a52a
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubectx_v0.9.4_linux_arm64.tar.gz
+  sha256: 5fab3c0624a83cf8fff5c34d90f854af6fa8b501ed63306aaf5355303ae884ed
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubectx_v0.9.4_linux_armhf.tar.gz
+  sha256: 7132ed27daf0c93b259452032703721bbc881bc1655a4eb5f6df3d489f1ef1bb
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubectx_v0.9.4_linux_x86_64.tar.gz
+  sha256: db5a48e85ff4d8c6fa947e3021e11ba4376f9588dd5fa779a80ed5c18287db22
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_arm64.tar.gz
+  sha256: 7c2d0d4d46338bf400ebba1b23947d35b25725b9b4e3e1932bb88b3ec3f96a5a
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_armhf.tar.gz
+  sha256: f7b888ba40ec139e1321616d62953d850c6de8ece3ac6e5169a8faba4eadb1c8
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_x86_64.tar.gz
+  sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/argoproj/argo-cd/releases/download/v2.5.5/argocd-linux-amd64
+  sha256: 1f23ad150a2114378139a1cfb51992a5880ee7d0ba11222a41d2719f074d4859
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/bank-vaults-linux-amd64.tar.gz
+  sha256: 6afbb85bf6a6528a3b015e00a86c89b3f59bf49759baed6f6bca209677f02b24
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/bank-vaults-linux-arm64.tar.gz
+  sha256: 83170f659bb886e880cc23077b93046a03900d9c31d73dcfeaf4aefb29d11ee2
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/vault-env-linux-amd64.tar.gz
+  sha256: ceb25790d9efb87a089b1bfb2a4dc07993b7f14ffb2d9581193002c0c88002e2
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/vault-env-linux-arm64.tar.gz
+  sha256: 4a525343fd0be02516cd9e7dba6144ef80a13d8982e2c03d7bea67dd8d8e9aa5
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.3/kubeseal-0.19.3-linux-amd64.tar.gz
+  sha256: f6c420d38f84008deffd040f0bbc527b08c2b70bdb373ab4e0598f64510af566
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.3/kubeseal-0.19.3-linux-arm.tar.gz
+  sha256: e3fb4aa3cc181577190c29e28d1304d1bbb18ebc5cb603e3dac1299cc4930043
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.3/kubeseal-0.19.3-linux-arm64.tar.gz
+  sha256: dfa1a9ccc5e21286394626c1a0dbde4bfb231d04a40c06fe1a95cefedea2f71a
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.12/datree-cli_1.8.12_Linux_arm64.zip
+  sha256: ff2092e2b98278f5bbae4cbdf3f0ef8d54ceab2572f5c0f84e55bd45c2efb852
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.12/datree-cli_1.8.12_Linux_x86_64.zip
+  sha256: 20b3e96d7c9fa999d04400ed474984c395556626510dce092dd6d17be63494b2
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_arm.tar.gz
+  sha256: c735b01b7098b26a9e711000ad7a94c88dad53eccb14709544479b4a7cf6770c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_arm64.tar.gz
+  sha256: 2888feae5298517cf4862251a8877ff978b3eb234cbc3ebc0d9eb07fc671673d
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz
+  sha256: f774bb75045e361e17a4f267491c5ec66f41db7bffd996859ffb1465420af249
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-aarch64
+  sha256: 48ef22ecea70b4b197def1c1bfd2e797f7117db5257f6e505e64f03fdc329a7e
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-armv7
+  sha256: 6e01028d97bc48bfd3894d9161586e74c0f37cf7d67a67ab7eafb351c2003cb3
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64
+  sha256: d056a8330a01f22c249b9fa03ad0d5be889b79b648cad43c8549eb4c3f8ff0ba
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v0.38.2/flux_0.38.2_linux_amd64.tar.gz
+  sha256: 98b4df1f39bc509f3974bbd9d00c91143a1a5cd39fb10fab03911ff713cf8b01
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v0.38.2/flux_0.38.2_linux_arm.tar.gz
+  sha256: a8f18f67f2f5e4566a934ce08389a1353e46ee22aa9ed28724e776fc7bb48137
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v0.38.2/flux_0.38.2_linux_arm64.tar.gz
+  sha256: 6b63010027b05391480e1b600622ea80d7104f78a91c2caa5c91660b3a847d57
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.1/logcli-linux-amd64.zip
+  sha256: 5b1033be27f8bb77cb4f5a836558b3f0719a989cd9add7c848800e4b2f59b394
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.1/logcli-linux-arm.zip
+  sha256: a1fad7f5dbcf0f31c6e5e5a8bb48d23ac23fde0c00c5c1582717bd78343ee95c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.1/logcli-linux-arm64.zip
+  sha256: 905ccb70e74196b0272bb07b282801ff20fc6b61d83844cb01d8743a8f778b2c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.42.5/terragrunt_linux_amd64
+  sha256: 3ab6057f4ccf977cbc744fd73fe37763738eedd45f027985a9f5ccbf1e92bc70
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.42.5/terragrunt_linux_arm64
+  sha256: 3ab3914b8cb58edf091b3c397c0b8821607c708460ff69f10119508f8a224777
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/helmfile/helmfile/releases/download/v0.149.0/helmfile_0.149.0_linux_amd64.tar.gz
+  sha256: 10645a3319c727bd2a9f663d2e2083966a4c79b9880131589d397050d80f5870
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/helmfile/helmfile/releases/download/v0.149.0/helmfile_0.149.0_linux_arm64.tar.gz
+  sha256: 72d68ff5f29e4564e2f8c29ee1de7fdd9025a2fe2d30ce59f2517d127c81a0b1
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/iann0036/iamlive/releases/download/v0.50.0/iamlive-v0.50.0-linux-amd64.tar.gz
+  sha256: 0da23aa2b4c312d9b59488fcfb3a0ef639ead19d82fe56a6801103dcd1747f14
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/iann0036/iamlive/releases/download/v0.50.0/iamlive-v0.50.0-linux-arm64.tar.gz
+  sha256: 758503a50e45b7380c6f96203623575672d29843caa08f84fc4e14644df04059
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/infracost/infracost/releases/download/v0.10.15/infracost-linux-amd64.tar.gz
+  sha256: 3820ec97289cc44813bfab5d44514f7b4abd0942459b14f22f55091adf244070
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/infracost/infracost/releases/download/v0.10.15/infracost-linux-arm64.tar.gz
+  sha256: dcd3bd5bc64292f4cf10fac388373f184c2b0f6354fb82824d6bac805e39b17d
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/istio/istio/releases/download/1.16.1/istio-1.16.1-linux-amd64.tar.gz
+  sha256: e5f6efc11c5dde58592478e1976b3c8e7bb9993cf22c57ac8a63003288baafdf
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/istio/istio/releases/download/1.16.1/istio-1.16.1-linux-arm64.tar.gz
+  sha256: c94a209f72d0b5de4d11cfd8216f99d7c0624cf33b68c2663c5c008633e6174a
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/istio/istio/releases/download/1.16.1/istio-1.16.1-linux-armv7.tar.gz
+  sha256: c6b6fce489c6128ddfe43558ce5f0592697a3f17fc4178c08e3eae09d69bc478
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_amd64.tar.gz
+  sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_arm64.tar.gz
+  sha256: 1e3e175fdd220bb11128eb83cdbd986aa8e83dd4e1e55c285a0c5c97dacd26aa
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/jesseduffield/lazydocker/releases/download/v0.20.0/lazydocker_0.20.0_Linux_arm64.tar.gz
+  sha256: 1c318e22be15ef2ae44ed83782e441f1c47db63f97db0aebe46c5f608f1b0400
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/jesseduffield/lazydocker/releases/download/v0.20.0/lazydocker_0.20.0_Linux_armv7.tar.gz
+  sha256: f8bacd56eeac2d5255f9a54064c7c5bbc6eff475fd005a4ceae8aa428ad20c39
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/jesseduffield/lazydocker/releases/download/v0.20.0/lazydocker_0.20.0_Linux_x86_64.tar.gz
+  sha256: b025ddbf607d97936382bd60d776fdf8bb2b42da4341e2a2022d821f314b79d3
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.6.2/aws-iam-authenticator_0.6.2_linux_amd64
+  sha256: 953faf58a5e3653d6355e8f2c35aa4daaafb1c28987708a6c72760f49dc91023
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.6.2/aws-iam-authenticator_0.6.2_linux_arm64
+  sha256: 9730b1ca87faccc29578166a943d75d70298712e38fbf015202b6918696a6080
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/kind/releases/download/v0.17.0/kind-linux-amd64
+  sha256: a8c045856db33f839908b6acb90dc8ec397253ffdaef7baf058f5a542e009b9c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/kind/releases/download/v0.17.0/kind-linux-arm64
+  sha256: 24ae8c7ef46c3c1ec7167a8c210979233b42dacd2426f1e86fc89021632333e6
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_amd64.tar.gz
+  sha256: 5df32eaa0e888a2566439c4ccb2ef3a3e6e89522f2f2126030171e2585585e4f
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_arm.tar.gz
+  sha256: 68eb9e9f5bba29c7c19fb52bfc43a31300f92282a4e81f0c51ad26ed2c73eb03
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_arm64.tar.gz
+  sha256: 0994923848882ad0d4825d5af1dc227687a10a02688f785709b03549dd34d71d
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.7/kustomize_v4.5.7_linux_amd64.tar.gz
+  sha256: 701e3c4bfa14e4c520d481fdf7131f902531bfc002cb5062dcf31263a09c70c9
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.7/kustomize_v4.5.7_linux_arm64.tar.gz
+  sha256: 65665b39297cc73c13918f05bbe8450d17556f0acd16242a339271e14861df67
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes/kompose/releases/download/v1.27.0/kompose-linux-amd64
+  sha256: 6ae92c67f17a2170ac1b6d69214ed6452ea507bdb0df4eee8ea792f33107710d
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes/kompose/releases/download/v1.27.0/kompose-linux-arm
+  sha256: c347a80f3e4558685f8e27528497dbf2a65da1f49581a90df7dc289fa4c31052
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes/kompose/releases/download/v1.27.0/kompose-linux-arm64
+  sha256: b4699fe6e498620944fc5bf975ab6169dff266bdc47f0b8e8b0eb4099516f08c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_linux_arm64.tar.gz
+  sha256: 8c7ed02bba01165f0bb86f90ea5e8b675e5fe20fd3677b0b79399289a8db442e
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_linux_armv6.tar.gz
+  sha256: a1c92a4e16be2a2b7dc3b0b1512f5fc8df631df1eea7c4d1a55313eddaa952ae
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_linux_x86_64.tar.gz
+  sha256: a35f2fefbc3615cda98db236843ee38037d55f73970f911b43682211b52ca6d0
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.12.1/linkerd2-cli-edge-22.12.1-linux-amd64
+  sha256: 60162326037b6e0ac52e4de771704ed30673799643f8149919d9cbee99ec5a68
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.12.1/linkerd2-cli-edge-22.12.1-linux-arm
+  sha256: d2477ebb735a8e314bb9f9a0f656e2278b9f8519add35daf3cf1bfdd240932d8
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.12.1/linkerd2-cli-edge-22.12.1-linux-arm64
+  sha256: 38526a793da117a5ac770841f40fa0de9612a6941fa949d123aaa03988c8d32f
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/loft-sh/devspace/releases/download/v6.2.3/devspace-linux-amd64
+  sha256: d57e7c0fc08e4c8bf41226280404b352ee3fd051a78a251237462d1957ff735c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/loft-sh/devspace/releases/download/v6.2.3/devspace-linux-arm64
+  sha256: 52c49aabec14031c902038184ce5884611478c9faa82975ce11c1bc2e1083ab1
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-amd64.zip
+  sha256: edc9437c20d983cd4a82a086519d06de6ab19f37a61e94b2f6359d460ea48d24
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-arm64.zip
+  sha256: 847f2b9a815a9894ea5b8f8c006039e240188d16bfb0c53ed450fa2b24933b19
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-arm7.zip
+  sha256: cb5ee074144adfeaef4764f62c3c8f5a78af2092fa7c5edc5eb9ce3437b13155
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/operator-framework/operator-sdk/releases/download/v1.26.0/operator-sdk_linux_amd64
+  sha256: bdbdcb2843c7bcaa0da2bf99a9a6949711aaa9d0ac1a2085b19077d2eca157a1
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/operator-framework/operator-sdk/releases/download/v1.26.0/operator-sdk_linux_arm64
+  sha256: c5e87c3a79ed8a5959762ceb016c0d93ea4c55f1703baa245c20b0a68a20a0f7
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rancher/cli/releases/download/v2.7.0/rancher-linux-amd64-v2.7.0.tar.gz
+  sha256: 7b814cc0b38344c5b34341b7ce1ce963a1d05cbd176a0572bd31c499aa99b801
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rancher/cli/releases/download/v2.7.0/rancher-linux-arm-v2.7.0.tar.gz
+  sha256: 18bf0e5d0ab3da8aef8278ea6a80c67abe8fe977c8cfe5c6fadf0bdab9f963ad
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-amd64
+  sha256: 8075d40c74c97d2642f15f535cb48d6d6e82df143f528833a193d87caac6a176
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-arm
+  sha256: a807aecef48f32da81b0c65b7269f3f60dea7734385a05d3577425e8cbd72863
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-arm64
+  sha256: 36db97dfb3f5b56c7cd048924d87abfa5f499c62f524e00e2500fe75f88056ae
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rclone/rclone/releases/download/v1.61.1/rclone-v1.61.1-linux-amd64.zip
+  sha256: 6d6455e1cb69eb0615a52cc046a296395e44d50c0f32627ba8590c677ddf50a9
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rclone/rclone/releases/download/v1.61.1/rclone-v1.61.1-linux-arm.zip
+  sha256: 00d485a13e0db43cacbb8a66316906b18356c8e0aed5821d7d26f077943f431e
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rclone/rclone/releases/download/v1.61.1/rclone-v1.61.1-linux-arm64.zip
+  sha256: fff35786bf9ee9320037db69e239df83768b8f756bae2343253ba6512e70d86c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/scaleway/scaleway-cli/releases/download/v2.7.0/scaleway-cli_2.7.0_linux_amd64
+  sha256: 86355891f9acb62221ad7cb647b30016a3ef631151222b6bec45c83d9e0406f7
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/scaleway/scaleway-cli/releases/download/v2.7.0/scaleway-cli_2.7.0_linux_arm64
+  sha256: f3dc7fa70c12f3f18bb24e9dfa32e056d9b105dd4562f3b12d24fc504d898fa8
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-amd64.tar.gz
+  sha256: 328c16cd6552b3b5c4686b8d945a2e2e18d2b8145b6b66129cd5491840010182
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-arm.tar.gz
+  sha256: 8b2ba1a0ffefe4cb05c3a7a4cc9203da2f64331ee4062ca1a4ec8226cc1651de
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-arm64.tar.gz
+  sha256: 8208c19c7dc01660e6caefe32e33ac02e0e03fdc2e2ade0bb37abb6349153d25
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/terraform-linters/tflint/releases/download/v0.44.1/tflint_linux_amd64.zip
+  sha256: 272918c5433ad7a507b04c33015b0ccfb1903828be1c23f0c28149669a327f4c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/terraform-linters/tflint/releases/download/v0.44.1/tflint_linux_arm64.zip
+  sha256: 2a09a0be9753b31b580c4ec72c331c856f85827d9bd751180b268ba7aaffa968
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/upciti/ops2deb/releases/download/0.36.1/ops2deb_linux_amd64
+  sha256: a396c3174141a7c658ae0a7baed366a1dd6e6e2defb009147d8fa9cdd3859ff9
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/upciti/wakemebot/releases/download/4.0.2/wakemebot_linux_amd64
+  sha256: 58dbf45805113230c387f23c278a4433342e83b53cabd2ff9ad4d9a7d3835c9e
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/upciti/wheel2deb/releases/download/0.7.1/wheel2deb_linux_amd64
+  sha256: 9dfd53b0be8a8f0cb73b9115d328b3e300b4707428eef993b9659a66c76dbec5
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.1/kapp-linux-amd64
+  sha256: 436e30a34647b2d889010d08a9242b4d3954f4c84c9ca26dd30751934ecf9950
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.1/kapp-linux-arm64
+  sha256: 197971e92b44a54ddeb28aa3549310382c1a109e408a485b6eb41d9d0b73dba3
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.1/ytt-linux-amd64
+  sha256: 9f2f151cf42a54cdfee5ee1a98b7255821c9c047498d4af788cec8c4cf520fb8
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.1/ytt-linux-arm64
+  sha256: 2b29dfb97be4a7333ab1e911887c884b2d1de16ee75f16b697fdbfe9661f58be
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/velero/releases/download/v1.10.0/velero-v1.10.0-linux-amd64.tar.gz
+  sha256: 3cf8c26b17a06f3f43ec43c854618a619f4e14e2e690bd813e55797aae1db155
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/velero/releases/download/v1.10.0/velero-v1.10.0-linux-arm.tar.gz
+  sha256: 723c95fccff7d4ccb5e6e0caf22111eea64f634a792f53ece38017842e7f79b1
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/velero/releases/download/v1.10.0/velero-v1.10.0-linux-arm64.tar.gz
+  sha256: b05c3e6c8cec09073017f815ddd08369a0361d8d97f39b5677079075fa59e69b
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64
+  sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/zegl/kube-score/releases/download/v1.16.1/kube-score_1.16.1_linux_amd64.tar.gz
+  sha256: b57731b40df8f7aff3b45751f291274e80d853befeb9e6b693d1e84b28d3bc36
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/zegl/kube-score/releases/download/v1.16.1/kube-score_1.16.1_linux_arm64.tar.gz
+  sha256: 3dcd9a6b883d0bd37d6234a92fd647efc5a2d78028fe8d07c0c89e4805cca870
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/zegl/kube-score/releases/download/v1.16.1/kube-score_1.16.1_linux_armv6.tar.gz
+  sha256: d012345acf615ff799964ea6db6193776a902ae54d48a5c4c37c7f47709997e0
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://gitlab.com/gitlab-org/release-cli/-/releases/v0.15.0/downloads/bin/release-cli-linux-amd64
+  sha256: d59169bab5dfe4693af4f181b08bf11ef1c96a4da30eff0f04abb236c54e62e9
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://gitlab.com/gitlab-org/release-cli/-/releases/v0.15.0/downloads/bin/release-cli-linux-arm
+  sha256: a83316b42bca3cacbf77d9f6a29fa217944b3b275fa449a1dce311da3dcf6c8f
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://gitlab.com/gitlab-org/release-cli/-/releases/v0.15.0/downloads/bin/release-cli-linux-arm64
+  sha256: e902833857935f5220fd3422f9d6ce2ca88552eeb729e2d314a6cac62d862b82
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/packer/1.8.5/packer_1.8.5_linux_amd64.zip
+  sha256: 1f17a724e5ccc696010c842e6d2bb2c2749ab18ce7bf06482012d3ddb9edeef2
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/packer/1.8.5/packer_1.8.5_linux_arm.zip
+  sha256: c9d317e5cd1dff67757d04084077ae640c333bc9130edbdaaeb506a70929d88c
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/packer/1.8.5/packer_1.8.5_linux_arm64.zip
+  sha256: 28ad00415862586bd4877b6cb5db6b4340787728dcc570456b8c4fdc482ac498
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/terraform/1.3.6/terraform_1.3.6_linux_amd64.zip
+  sha256: bb44a4c2b0a832d49253b9034d8ccbd34f9feeb26eda71c665f6e7fa0861f49b
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/terraform/1.3.6/terraform_1.3.6_linux_arm.zip
+  sha256: c0efeb1a94ab503c7dfb604262dee162246f3207600588a735d15ec75fe983ef
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/terraform/1.3.6/terraform_1.3.6_linux_arm64.zip
+  sha256: f4b1af29094290f1b3935c29033c4e5291664ee2c015ca251a020dd425c847c3
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/waypoint/0.10.5/waypoint_0.10.5_linux_amd64.zip
+  sha256: dbce2ea1ed85fc06ddd7f4157560719c40236e3c735bb87d6715d790e7691519
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/waypoint/0.10.5/waypoint_0.10.5_linux_arm.zip
+  sha256: 778faeea74f6d959235cb3bdf56f9aeba965aa8bd461b1b454c47bb998d6b720
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/linux/amd64/kubectl
+  sha256: b6769d8ac6a0ed0f13b307d289dc092ad86180b08f5b5044af152808c04950ae
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/linux/arm/kubectl
+  sha256: 8eef310d0de238c582556d81ab8cbe8d6fca3c0e43ee337a905dcdd3578f9dda
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/linux/arm64/kubectl
+  sha256: 79b14e4ddada9e81d2989f36a89faa9e56f8abe6e0246e7bdc305c93c3731ea4
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/minikube/releases/v1.28.0/minikube-linux-amd64
+  sha256: 58cead5ece9815a61d4be253a07b2385f8cf373d9e1eba5c9783444e4e9e2d8e
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/minikube/releases/v1.28.0/minikube-linux-arm
+  sha256: 802af1d58e5707f2c1e2253f88dadf79bbde25bd803ad726d68ef21eb2b2b75a
+  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/minikube/releases/v1.28.0/minikube-linux-arm64
+  sha256: 648d09c00ceee3b53d60ea92796c772abcb42bd9bb7e871fe0b233e39a4675ce
+  timestamp: 2023-01-03 23:06:34+00:00
