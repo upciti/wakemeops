@@ -459,3 +459,25 @@
   fetch: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
   install:
     - yq_linux_{{goarch}}:/usr/bin/yq
+
+- name: zellij
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 0.34.4
+  homepage: https://zellij.dev
+  summary: terminal workspace with batteries included
+  description: |-
+    Zellij is a workspace aimed at developers, ops-oriented people and anyone who
+    loves the terminal. At its core, it is a terminal multiplexer (similar to tmux
+    and GNU Screen), but this is merely its infrastructure layer. Zellij includes a
+    layout system, and a plugin system allowing one to create plugins in any
+    language that compiles to WebAssembly.
+  fetch:
+    url: https://github.com/zellij-org/zellij/releases/download/v{{version}}/zellij-{{target|rust_target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-musl
+      arm64: aarch64-unknown-linux-musl
+  install:
+    - zellij:/usr/bin/zellij
