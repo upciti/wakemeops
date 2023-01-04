@@ -234,6 +234,36 @@
   install:
     - grex:/usr/bin/
 
+- name: helix
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 22.12
+  homepage: https://helix-editor.com/
+  summary: modal text editor inspired by Kakoune / Neovim
+  description: |-
+    Helix is terminal-based editor written in Rust, it features:
+
+    * Vim-like modal editing
+    * Multiple selections
+    * Built-in language server support
+    * Smart, incremental syntax highlighting and code editing via tree-sitter
+  fetch:
+    url: https://github.com/helix-editor/helix/releases/download/{{version}}/helix-{{version}}-{{target}}-linux.tar.xz
+    targets:
+      amd64: x86_64
+      arm64: aarch64
+  install:
+    - helix-{{version}}-{{target}}-linux/hx:/usr/bin/hx
+    - path: "{{debian}}/postinst"
+      content: |
+        #/bin/bash -e
+        HELIX_RUNTIME=/var/lib/helix
+        install -d $HELIX_RUNTIME
+        hx -g fetch
+        hx -g build
+
 - name: himalaya
   version: 0.6.1
   homepage: https://github.com/soywod/himalaya
