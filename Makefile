@@ -1,6 +1,6 @@
 SHELL := bash
 
-COMPONENTS := $(shell ls ops2deb-*yml | cut -f2 -d "-" | cut -f1 -d ".")
+COMPONENTS := $(shell find ./ -regex "./ops2deb-[a-z]+.yml" | cut -f2 -d "-" | cut -f1 -d ".")
 
 OUTPUT_BASE_PATH := build
 
