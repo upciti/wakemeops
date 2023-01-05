@@ -32,8 +32,8 @@ jobs:
             title="chore(bot): $(echo "$changes" | tr '[:upper:]' '[:lower:]')"
             body=
           fi
-          echo ::set-output name=title::$title
-          echo ::set-output name=body::"${body//$'\n'/'%0A'}"
+          echo "title=$title" >> $GITHUB_OUTPUT
+          echo "body=${body//$'\n'/'%0A'}" >> $GITHUB_OUTPUT
 
       - name: Create pull request
         id: cpr
