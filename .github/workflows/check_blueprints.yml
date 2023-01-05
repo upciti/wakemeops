@@ -66,14 +66,12 @@ jobs:
       matrix:
         distribution:
           - debian:bookworm-slim
-          - debian:bullseye-slim
-          - debian:buster-slim
+          - minideb:bullseye
+          - minideb:buster
           - ubuntu:rolling
           - ubuntu:22.04
           - ubuntu:20.04
           - ubuntu:18.04
-          - minideb:bullseye
-          - minideb:buster
     container: wakemeops/${{ matrix.distribution }}
     steps:
       - name: Checkout
