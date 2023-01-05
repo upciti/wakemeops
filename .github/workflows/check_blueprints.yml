@@ -54,7 +54,7 @@ jobs:
           labels: build failed
 
       - name: Upload Debian packages
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: build/**/*deb
           retention-days: 2
