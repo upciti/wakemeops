@@ -157,7 +157,7 @@
     - influxdb2-client-{{version}}-linux-{{goarch}}/influx:/usr/bin/
 
 - name: mask
-  version: 0.11.2
+  version: 0.11.3
   homepage: https://github.com/jakedeichert/mask
   summary: command-line task runner defined by a simple markdown file
   description: |-
