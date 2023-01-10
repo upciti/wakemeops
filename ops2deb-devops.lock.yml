@@ -25,12 +25,21 @@
 - url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-08-08T18-34-09Z
   sha256: c6712d5cfb4887941822403d291f7a56b7784aa6b219839767d83faece819230
   timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-12-12T19-27-27Z
+  sha256: cbb59260d85bb409467aebcb332053ebc0ad3dcea1e3385565851d32256baf44
+  timestamp: 2023-01-10 09:37:15+00:00
 - url: https://dl.min.io/server/minio/release/linux-arm/archive/minio.RELEASE.2022-08-08T18-34-09Z
   sha256: 799af5e1a67e66aa4d0fb044f27e0b3378be15eef153a2b8029f909342f5ae24
   timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm/archive/minio.RELEASE.2022-12-12T19-27-27Z
+  sha256: a254c0ba0b7e4fe6bf16a90acd3dd104494623c84de91c0bf570900e8abaa821
+  timestamp: 2023-01-10 09:37:15+00:00
 - url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2022-08-08T18-34-09Z
   sha256: 5b485e9d4eaa46284b93d43c7ee312ed7dca78b2281720787a759981371fb11b
   timestamp: 2023-01-03 23:06:34+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2022-12-12T19-27-27Z
+  sha256: cd8b3b1a09cf2624a8ec7dc64cacbb6c4fd1254134e52081753d319c41390aa0
+  timestamp: 2023-01-10 09:37:15+00:00
 - url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux.tar.gz
   sha256: d6fe2847d077f5e977cefc98fdff03ec5303483e595fdc44aceed5d6a09d1f88
   timestamp: 2023-01-03 23:06:34+00:00
