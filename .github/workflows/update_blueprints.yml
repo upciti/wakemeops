@@ -33,7 +33,7 @@ jobs:
             body=
           fi
           echo "title=$title" >> $GITHUB_OUTPUT
-          echo "body=${body//$'\n'/'%0A'}" >> $GITHUB_OUTPUT
+          echo -e "body<<EOF\n$body\nEOF" >> $GITHUB_OUTPUT
 
       - name: Create pull request
         id: cpr
