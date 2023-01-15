@@ -240,7 +240,7 @@
         exec python3 /usr/lib/pre-commit/pre-commit.pyz $@
 
 - name: pyenv
-  version: 2.3.10
+  version: 2.3.11
   architecture: all
   homepage: https://github.com/pyenv/pyenv
   summary: simple Python version management
