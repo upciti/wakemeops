@@ -40,15 +40,15 @@
 - url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2022-12-12T19-27-27Z
   sha256: cd8b3b1a09cf2624a8ec7dc64cacbb6c4fd1254134e52081753d319c41390aa0
   timestamp: 2023-01-10 09:37:15+00:00
-- url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux.tar.gz
-  sha256: d6fe2847d077f5e977cefc98fdff03ec5303483e595fdc44aceed5d6a09d1f88
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux_arm.tar.gz
-  sha256: 5c311bd998911a1a0bf59dcb4c0513254ec6916734b3f4e0970fcfa546daed79
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://downloads.dockerslim.com/releases/1.39.1/dist_linux_arm64.tar.gz
-  sha256: 941dab46f4a3bf97a7766d7ca6dccfe237cc40a2964aa41b0aaf6e9042450870
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://downloads.dockerslim.com/releases/1.40.0/dist_linux.tar.gz
+  sha256: 6351236186464c60e5ccbab42856d2101725ab4136f63fde79f7169977567f79
+  timestamp: 2023-01-16 01:39:39+00:00
+- url: https://downloads.dockerslim.com/releases/1.40.0/dist_linux_arm.tar.gz
+  sha256: bb9a28ce1c9350c71a0568cc830d65791ad51481466aaf7ce0992712d3b3f371
+  timestamp: 2023-01-16 01:39:39+00:00
+- url: https://downloads.dockerslim.com/releases/1.40.0/dist_linux_arm64.tar.gz
+  sha256: a03cc7ff7c62704166c150537a3e7e46f0077d036afa985d69e9a098461abc98
+  timestamp: 2023-01-16 01:39:39+00:00
 - url: https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
   sha256: 950439759ece902157cf915b209b8d694e6f675eaab5099fb7894f30eeaee9a2
   timestamp: 2023-01-03 23:06:34+00:00
