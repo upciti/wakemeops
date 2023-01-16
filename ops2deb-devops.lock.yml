@@ -1,9 +1,9 @@
-- url: https://app.getambassador.io/download/tel2/linux/amd64/2.10.1/telepresence
-  sha256: f567b5616f1123be3ce8953b2aa91a23d2bc3c9d2a0d3f58584a4ac2fedc7afa
-  timestamp: 2023-01-11 21:17:37+00:00
-- url: https://app.getambassador.io/download/tel2/linux/arm64/2.10.1/telepresence
-  sha256: 14b9747b482f0670b9091c6a88bec0415e474e167374c7352693ed7d63ab9b17
-  timestamp: 2023-01-11 21:17:37+00:00
+- url: https://app.getambassador.io/download/tel2/linux/amd64/2.10.2/telepresence
+  sha256: 6455b224cdcce793caab0d27e08c404298879c5b173302e8107973b64d7cb48d
+  timestamp: 2023-01-16 21:16:09+00:00
+- url: https://app.getambassador.io/download/tel2/linux/arm64/2.10.2/telepresence
+  sha256: c2310c6072aa05f8c8cc1a764f22161aff316f520af08969e31a0f8ad84b9d6b
+  timestamp: 2023-01-16 21:16:09+00:00
 - url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2022-08-05T08-01-28Z
   sha256: dd5d54e0ad29e10652ff607640bac1dc7289930b6500ff7798ce6123e94a0e94
   timestamp: 2023-01-03 23:06:34+00:00
@@ -172,12 +172,12 @@
 - url: https://github.com/iann0036/iamlive/releases/download/v0.50.0/iamlive-v0.50.0-linux-arm64.tar.gz
   sha256: 758503a50e45b7380c6f96203623575672d29843caa08f84fc4e14644df04059
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/infracost/infracost/releases/download/v0.10.15/infracost-linux-amd64.tar.gz
-  sha256: 3820ec97289cc44813bfab5d44514f7b4abd0942459b14f22f55091adf244070
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/infracost/infracost/releases/download/v0.10.15/infracost-linux-arm64.tar.gz
-  sha256: dcd3bd5bc64292f4cf10fac388373f184c2b0f6354fb82824d6bac805e39b17d
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/infracost/infracost/releases/download/v0.10.16/infracost-linux-amd64.tar.gz
+  sha256: 9805f13f86ceb18f1b4dd03afe81e1721e369786b7ec3137015040ad860fd31b
+  timestamp: 2023-01-16 21:16:09+00:00
+- url: https://github.com/infracost/infracost/releases/download/v0.10.16/infracost-linux-arm64.tar.gz
+  sha256: 161cc0e406edd43010b848a4658071d727e6baf8b450d6fd0549c4534315dbf4
+  timestamp: 2023-01-16 21:16:09+00:00
 - url: https://github.com/istio/istio/releases/download/1.16.1/istio-1.16.1-linux-amd64.tar.gz
   sha256: e5f6efc11c5dde58592478e1976b3c8e7bb9993cf22c57ac8a63003288baafdf
   timestamp: 2023-01-03 23:06:34+00:00
