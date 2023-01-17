@@ -15,7 +15,7 @@
     - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
 
 - name: insomnia
-  version: 2022.7.3
+  version: 2022.7.4
   homepage: https://insomnia.rest/
   summary: collaborative API Client and Design Tool
   description: |-
