@@ -1,9 +1,9 @@
-- url: https://app.getambassador.io/download/tel2/linux/amd64/2.10.2/telepresence
-  sha256: 6455b224cdcce793caab0d27e08c404298879c5b173302e8107973b64d7cb48d
-  timestamp: 2023-01-16 21:16:09+00:00
-- url: https://app.getambassador.io/download/tel2/linux/arm64/2.10.2/telepresence
-  sha256: c2310c6072aa05f8c8cc1a764f22161aff316f520af08969e31a0f8ad84b9d6b
-  timestamp: 2023-01-16 21:16:09+00:00
+- url: https://app.getambassador.io/download/tel2/linux/amd64/2.10.3/telepresence
+  sha256: 3c8313e0cec4fc37b40879831065b05d86cdec62e4333c386630dd299e5b4b7f
+  timestamp: 2023-01-18 03:21:22+00:00
+- url: https://app.getambassador.io/download/tel2/linux/arm64/2.10.3/telepresence
+  sha256: 3f20b5217cdd006ad34543bf0e5ec644590badcd6cbb081c071c6f9eab13aa24
+  timestamp: 2023-01-18 03:21:22+00:00
 - url: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2022-08-05T08-01-28Z
   sha256: dd5d54e0ad29e10652ff607640bac1dc7289930b6500ff7798ce6123e94a0e94
   timestamp: 2023-01-03 23:06:34+00:00
@@ -88,9 +88,9 @@
 - url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_x86_64.tar.gz
   sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/argoproj/argo-cd/releases/download/v2.5.6/argocd-linux-amd64
-  sha256: 30c8d39cfe45122a0940f2b5dc58c5231d941b69c74634540b3ed1cb74895c21
-  timestamp: 2023-01-10 21:17:27+00:00
+- url: https://github.com/argoproj/argo-cd/releases/download/v2.5.7/argocd-linux-amd64
+  sha256: e7763fa52f17270426cb382215fdce4fb4189b0619ddf03476f723d0d9f44945
+  timestamp: 2023-01-18 03:21:22+00:00
 - url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/bank-vaults-linux-amd64.tar.gz
   sha256: 6afbb85bf6a6528a3b015e00a86c89b3f59bf49759baed6f6bca209677f02b24
   timestamp: 2023-01-03 23:06:34+00:00
