@@ -49,12 +49,12 @@
 - url: https://downloads.dockerslim.com/releases/1.40.0/dist_linux_arm64.tar.gz
   sha256: a03cc7ff7c62704166c150537a3e7e46f0077d036afa985d69e9a098461abc98
   timestamp: 2023-01-16 01:39:39+00:00
-- url: https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
-  sha256: 950439759ece902157cf915b209b8d694e6f675eaab5099fb7894f30eeaee9a2
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://get.helm.sh/helm-v3.10.3-linux-arm.tar.gz
-  sha256: dca718eb68c72c51fc7157c4c2ebc8ce7ac79b95fc9355c5427ded99e913ec4c
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
+  sha256: 6c3440d829a56071a4386dd3ce6254eab113bc9b1fe924a6ee99f7ff869b9e0b
+  timestamp: 2023-01-18 18:22:50+00:00
+- url: https://get.helm.sh/helm-v3.11.0-linux-arm.tar.gz
+  sha256: cddbef72886c82a123038883f32b04e739cc4bd7b9e5f869740d51e50a38be01
+  timestamp: 2023-01-18 18:22:50+00:00
 - url: https://github.com/GoogleContainerTools/container-diff/releases/download/v0.17.0/container-diff-linux-amd64
   sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
   timestamp: 2023-01-03 23:06:34+00:00
