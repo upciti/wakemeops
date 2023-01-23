@@ -365,7 +365,7 @@
       - amd64
       - armhf
       - arm64
-  version: 1.27.0
+  version: 1.28.0
   homepage: https://kompose.io
   summary: convert docker-compose.yaml into k8s deployments and services
   description: |-
@@ -787,7 +787,7 @@
     architectures:
       - amd64
       - arm64
-  version: 2.0.5
+  version: 2.1.0
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
