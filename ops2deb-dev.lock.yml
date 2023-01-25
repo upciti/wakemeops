@@ -7,15 +7,15 @@
 - url: https://github.com/VirtusLab/scala-cli/releases/download/v0.1.20/scala-cli-x86_64-pc-linux.deb
   sha256: f1986a0dfdb33b536192631f3186f1eea4bdf8d120e89ec227d5ac224d686ae2
   timestamp: 2023-01-19 06:23:43+00:00
-- url: https://github.com/cli/cli/releases/download/v2.21.2/gh_2.21.2_linux_amd64.tar.gz
-  sha256: 6b3e56ee3253795d9c48e019cfd7b8dfc03b28073a411d1f527f5021764f63cb
-  timestamp: 2023-01-04 01:35:42+00:00
-- url: https://github.com/cli/cli/releases/download/v2.21.2/gh_2.21.2_linux_arm64.tar.gz
-  sha256: fc341a2672d9444ed963530cf4ab28a9590ae07b644ce0de52372b3477535b01
-  timestamp: 2023-01-04 01:35:42+00:00
-- url: https://github.com/cli/cli/releases/download/v2.21.2/gh_2.21.2_linux_armv6.tar.gz
-  sha256: b9a4354d42174d444993177876c40c8fc77df01c23dc7a3ab99fed90a88966d2
-  timestamp: 2023-01-04 01:35:42+00:00
+- url: https://github.com/cli/cli/releases/download/v2.22.0/gh_2.22.0_linux_amd64.tar.gz
+  sha256: 065d78c51f4e400c1dfe4e3cdc14832ff8d5204926a485f5ae06d52f411eec04
+  timestamp: 2023-01-25 18:21:58+00:00
+- url: https://github.com/cli/cli/releases/download/v2.22.0/gh_2.22.0_linux_arm64.tar.gz
+  sha256: 33d36e860fecefc3441faadaf91b993899dfc0d1e6ede458c83bafe906d8ae15
+  timestamp: 2023-01-25 18:21:58+00:00
+- url: https://github.com/cli/cli/releases/download/v2.22.0/gh_2.22.0_linux_armv6.tar.gz
+  sha256: a0cb066212c356b0d78756d961d948c13cdb7d033e3990487e17e7699ef442d5
+  timestamp: 2023-01-25 18:21:58+00:00
 - url: https://github.com/clog-tool/clog-cli/releases/download/v0.9.3/clog-v0.9.3-aarch64-unknown-linux-gnu.tar.gz
   sha256: 1e90b8ab5906c17a2f8a59c1a815afd0dbdcb9fc9d0848dec350481ceb99d473
   timestamp: 2023-01-03 23:06:40+00:00
