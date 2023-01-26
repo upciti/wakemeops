@@ -219,7 +219,7 @@
     - mv poetry {{src}}/usr/lib/
 
 - name: pre-commit
-  version: 3.0.0
+  version: 3.0.1
   architecture: all
   homepage: https://pre-commit.com/
   summary: framework for managing and maintaining multi-language pre-commit hooks
