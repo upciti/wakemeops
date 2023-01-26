@@ -145,15 +145,15 @@
 - url: https://github.com/fluxcd/flux2/releases/download/v0.38.3/flux_0.38.3_linux_arm64.tar.gz
   sha256: 79edf0d531d714bf3bcc6659edfaa79473014dd32d69e2e71fe970d8d3a8e914
   timestamp: 2023-01-10 18:23:53+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.7.1/logcli-linux-amd64.zip
-  sha256: 5b1033be27f8bb77cb4f5a836558b3f0719a989cd9add7c848800e4b2f59b394
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.7.1/logcli-linux-arm.zip
-  sha256: a1fad7f5dbcf0f31c6e5e5a8bb48d23ac23fde0c00c5c1582717bd78343ee95c
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.7.1/logcli-linux-arm64.zip
-  sha256: 905ccb70e74196b0272bb07b282801ff20fc6b61d83844cb01d8743a8f778b2c
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.2/logcli-linux-amd64.zip
+  sha256: ae9d78a6703b4593a973e3add8f11abac54246626a2be2443e400093a3a354ab
+  timestamp: 2023-01-26 21:16:26+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.2/logcli-linux-arm.zip
+  sha256: 70c51bb938998c8e61d307abe601da6d45ff7559c7b424e2321685a765a48228
+  timestamp: 2023-01-26 21:16:26+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.2/logcli-linux-arm64.zip
+  sha256: 149e645cc68a38f0ba2316cabd8dce75609ce069b9af73a7a6875298f0e0fcd7
+  timestamp: 2023-01-26 21:16:26+00:00
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.43.0/terragrunt_linux_amd64
   sha256: e5ceb5ff1b0871a5836cd4877793828cd2baeec0b89bbd3b5c1b0e5150c0f017
   timestamp: 2023-01-19 15:21:46+00:00
