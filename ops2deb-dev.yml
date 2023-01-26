@@ -170,6 +170,7 @@
 
 - name: poetry
   version: 1.1.15
+  revision: 2
   architecture: all
   homepage: https://python-poetry.org
   summary: tool for dependency management and packaging in Python
@@ -184,7 +185,7 @@
   install:
     - path: /usr/bin/poetry
       content: |
-        #!/usr/bin/env python3
+        #!/usr/bin/python3
         # -*- coding: utf-8 -*-
         import glob
         import sys
