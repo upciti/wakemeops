@@ -277,17 +277,24 @@
     - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
 
 - name: pyoxidizer
-  version: 0.18.0
-  revision: 2
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 0.24.0
   homepage: https://pyoxidizer.readthedocs.io/en/latest/index.html
   summary: utility for producing binaries that embed Python
   description: |-
     The over-arching goal of PyOxidizer is to make complex packaging and
     distribution problems simple so application maintainers can focus on building
     applications instead of toiling with build systems and packaging tools.
-  fetch: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-linux-x86_64.zip
+  fetch:
+    url: https://github.com/indygreg/PyOxidizer/releases/download/pyoxidizer%2F{{version}}/pyoxidizer-{{version}}-{{target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-musl
+      arm64: aarch64-unknown-linux-musl
   install:
-    - pyoxidizer:/usr/bin/
+    - pyoxidizer-{{version}}-{{target}}/pyoxidizer:/usr/bin/
 
 - name: scala-cli
   version: 0.1.20
