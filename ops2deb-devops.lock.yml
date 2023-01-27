@@ -256,12 +256,12 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-22.12.1/linkerd2-cli-edge-22.12.1-linux-arm64
   sha256: 38526a793da117a5ac770841f40fa0de9612a6941fa949d123aaa03988c8d32f
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/loft-sh/devspace/releases/download/v6.2.4/devspace-linux-amd64
-  sha256: efd3e63e6fec4beff58e15aea55f7d848c5d304671326862cc90465696fce9df
-  timestamp: 2023-01-10 12:37:25+00:00
-- url: https://github.com/loft-sh/devspace/releases/download/v6.2.4/devspace-linux-arm64
-  sha256: 9f89ab28caf09fb425a120f2802a2b22b3ed83a35bdda99c43d5c7a6b192cf0f
-  timestamp: 2023-01-10 12:37:25+00:00
+- url: https://github.com/loft-sh/devspace/releases/download/v6.2.5/devspace-linux-amd64
+  sha256: 88d7e9f9df093fb5faf4c2cc22ba5281176b9ad82b99ce3c2bead15b5d62d898
+  timestamp: 2023-01-27 21:16:45+00:00
+- url: https://github.com/loft-sh/devspace/releases/download/v6.2.5/devspace-linux-arm64
+  sha256: 7e2c476efa1eadf8df6ad1cb4b86ff2a795a63972d0a90234b44302b7ae6163c
+  timestamp: 2023-01-27 21:16:45+00:00
 - url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-amd64.zip
   sha256: edc9437c20d983cd4a82a086519d06de6ab19f37a61e94b2f6359d460ea48d24
   timestamp: 2023-01-03 23:06:34+00:00
@@ -406,12 +406,12 @@
 - url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm64/kubectl
   sha256: 4027cb0a2840bc14ec3f18151b3360dd2d1f6ce730ed5ac28bd846c17e7d73f5
   timestamp: 2023-01-18 21:16:57+00:00
-- url: https://storage.googleapis.com/minikube/releases/v1.28.0/minikube-linux-amd64
-  sha256: 58cead5ece9815a61d4be253a07b2385f8cf373d9e1eba5c9783444e4e9e2d8e
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://storage.googleapis.com/minikube/releases/v1.28.0/minikube-linux-arm
-  sha256: 802af1d58e5707f2c1e2253f88dadf79bbde25bd803ad726d68ef21eb2b2b75a
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://storage.googleapis.com/minikube/releases/v1.28.0/minikube-linux-arm64
-  sha256: 648d09c00ceee3b53d60ea92796c772abcb42bd9bb7e871fe0b233e39a4675ce
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-amd64
+  sha256: aafb65cbee8e971ec00509fdb1817254b17d6bee4890b839c3b6e8f11e97413a
+  timestamp: 2023-01-27 21:16:45+00:00
+- url: https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-arm
+  sha256: 9cf1c74c258f09e9133d02c371dbe0a85817c992d8dee815701c78e6fe442dcb
+  timestamp: 2023-01-27 21:16:45+00:00
+- url: https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-arm64
+  sha256: e53bee7692b8b58144290c082c0191d50af7cc2994daf34d87e0abef9e73fae2
+  timestamp: 2023-01-27 21:16:45+00:00
