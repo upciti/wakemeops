@@ -331,12 +331,12 @@
 - url: https://github.com/upciti/wheel2deb/releases/download/0.7.1/wheel2deb_linux_amd64
   sha256: 9dfd53b0be8a8f0cb73b9115d328b3e300b4707428eef993b9659a66c76dbec5
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.1/kapp-linux-amd64
-  sha256: 436e30a34647b2d889010d08a9242b4d3954f4c84c9ca26dd30751934ecf9950
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.1/kapp-linux-arm64
-  sha256: 197971e92b44a54ddeb28aa3549310382c1a109e408a485b6eb41d9d0b73dba3
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.2/kapp-linux-amd64
+  sha256: bb586f4ee94a8fdeea5b3fcb934b95b20bb0d502deab19e9a445a573b6a27071
+  timestamp: 2023-01-27 09:18:24+00:00
+- url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.2/kapp-linux-arm64
+  sha256: 0e81eeb34bda28108f58011184c04226c422a83fc8a2d575dd5b85d4f569977a
+  timestamp: 2023-01-27 09:18:24+00:00
 - url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.1/ytt-linux-amd64
   sha256: 9f2f151cf42a54cdfee5ee1a98b7255821c9c047498d4af788cec8c4cf520fb8
   timestamp: 2023-01-03 23:06:34+00:00
