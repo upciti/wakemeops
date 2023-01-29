@@ -325,7 +325,7 @@
     - mv ./*/nu_* {{src}}/usr/bin/
 
 - name: procs
-  version: 0.13.3
+  version: 0.13.4
   homepage: https://github.com/dalance/procs
   summary: alternative in rust to 'ps'
   description: |-
