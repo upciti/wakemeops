@@ -283,15 +283,15 @@
 - url: https://github.com/rancher/cli/releases/download/v2.7.0/rancher-linux-arm-v2.7.0.tar.gz
   sha256: 18bf0e5d0ab3da8aef8278ea6a80c67abe8fe977c8cfe5c6fadf0bdab9f963ad
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-amd64
-  sha256: 8075d40c74c97d2642f15f535cb48d6d6e82df143f528833a193d87caac6a176
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-arm
-  sha256: a807aecef48f32da81b0c65b7269f3f60dea7734385a05d3577425e8cbd72863
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-arm64
-  sha256: 36db97dfb3f5b56c7cd048924d87abfa5f499c62f524e00e2500fe75f88056ae
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-amd64
+  sha256: c54218d5bf6cb6e74987bf21f7820483f581b00c49fee11dbdb8c17c7829a025
+  timestamp: 2023-02-02 15:20:40+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-arm
+  sha256: 0f9c8a313d306e3667f6c716bad6e4e8b28e913af89e153fb184e91cde84f9ee
+  timestamp: 2023-02-02 15:20:40+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-arm64
+  sha256: c8ceb55ed2ffe2015b915848d0b6eaa72dbc1358270dee4e0c12358c16231d40
+  timestamp: 2023-02-02 15:20:40+00:00
 - url: https://github.com/rclone/rclone/releases/download/v1.61.1/rclone-v1.61.1-linux-amd64.zip
   sha256: 6d6455e1cb69eb0615a52cc046a296395e44d50c0f32627ba8590c677ddf50a9
   timestamp: 2023-01-03 23:06:34+00:00
