@@ -1,5 +1,5 @@
 - name: argocd
-  version: 2.5.9
+  version: 2.5.10
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
@@ -184,7 +184,7 @@
       - amd64
       - armhf
       - arm64
-  version: 0.38.3
+  version: 0.39.0
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
@@ -538,7 +538,7 @@
     architectures:
       - amd64
       - arm64
-  version: 4.5.7
+  version: 5.0.0
   homepage: https://kustomize.io
   summary: Kubernetes native configuration management
   description: |-

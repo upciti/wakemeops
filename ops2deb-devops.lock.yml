@@ -88,9 +88,9 @@
 - url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_x86_64.tar.gz
   sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/argoproj/argo-cd/releases/download/v2.5.9/argocd-linux-amd64
-  sha256: 924dbe072ae142a30b04e57285e46ba9c0a9acaad72357cd9c83f48c2fbf825e
-  timestamp: 2023-01-28 03:20:04+00:00
+- url: https://github.com/argoproj/argo-cd/releases/download/v2.5.10/argocd-linux-amd64
+  sha256: d3f24a281c8e1111ed6a4ab653b745f01e3965448b12c3b439033f29fd809884
+  timestamp: 2023-02-02 18:23:45+00:00
 - url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/bank-vaults-linux-amd64.tar.gz
   sha256: 6afbb85bf6a6528a3b015e00a86c89b3f59bf49759baed6f6bca209677f02b24
   timestamp: 2023-01-03 23:06:34+00:00
@@ -136,15 +136,15 @@
 - url: https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64
   sha256: bcfd9ea51dee4c19dccdfaeef0e7956ef68bf14f3d175933742061a7271ef0f5
   timestamp: 2023-01-09 15:26:45+00:00
-- url: https://github.com/fluxcd/flux2/releases/download/v0.38.3/flux_0.38.3_linux_amd64.tar.gz
-  sha256: 268b8d9a2fa5b0c9e462b551eaefdadb9e03370eb53061a88a2a9ac40e95e8e4
-  timestamp: 2023-01-10 18:23:53+00:00
-- url: https://github.com/fluxcd/flux2/releases/download/v0.38.3/flux_0.38.3_linux_arm.tar.gz
-  sha256: abaaa864d435fbb5d5e6101f7ea3c39ffde88fa92995bf729b54b4813c4d4825
-  timestamp: 2023-01-10 18:23:53+00:00
-- url: https://github.com/fluxcd/flux2/releases/download/v0.38.3/flux_0.38.3_linux_arm64.tar.gz
-  sha256: 79edf0d531d714bf3bcc6659edfaa79473014dd32d69e2e71fe970d8d3a8e914
-  timestamp: 2023-01-10 18:23:53+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v0.39.0/flux_0.39.0_linux_amd64.tar.gz
+  sha256: 11431aab00e967e93484cb4aa9936f2634726aeb8ee692eae40d2e581a305e0d
+  timestamp: 2023-02-02 18:23:45+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v0.39.0/flux_0.39.0_linux_arm.tar.gz
+  sha256: 6434e4a743dc78a877b70259d7e0490f556f3ad0fffaf010f87722c4bbaf21a2
+  timestamp: 2023-02-02 18:23:45+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v0.39.0/flux_0.39.0_linux_arm64.tar.gz
+  sha256: 1afe196d5e5d10181b5724088848734e59d817278fce8c50b58a11dc2322afca
+  timestamp: 2023-02-02 18:23:45+00:00
 - url: https://github.com/grafana/loki/releases/download/v2.7.3/logcli-linux-amd64.zip
   sha256: d295d510e5eca6f2437acc085aba399ea4274705d1fec436cf916919c75cec45
   timestamp: 2023-02-01 15:20:01+00:00
@@ -223,12 +223,12 @@
 - url: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_arm64.tar.gz
   sha256: 0994923848882ad0d4825d5af1dc227687a10a02688f785709b03549dd34d71d
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.7/kustomize_v4.5.7_linux_amd64.tar.gz
-  sha256: 701e3c4bfa14e4c520d481fdf7131f902531bfc002cb5062dcf31263a09c70c9
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.7/kustomize_v4.5.7_linux_arm64.tar.gz
-  sha256: 65665b39297cc73c13918f05bbe8450d17556f0acd16242a339271e14861df67
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.0.0/kustomize_v5.0.0_linux_amd64.tar.gz
+  sha256: 2e8c28a80ce213528251f489db8d2dcbea7c63b986c8f7595a39fc76ff871cd7
+  timestamp: 2023-02-02 18:23:45+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.0.0/kustomize_v5.0.0_linux_arm64.tar.gz
+  sha256: e97b12a83e7b9b0407cac97cac4c25bc135c42383bd3764d5544e32c96542eca
+  timestamp: 2023-02-02 18:23:45+00:00
 - url: https://github.com/kubernetes/kompose/releases/download/v1.28.0/kompose-linux-amd64
   sha256: c5324bba90f2d55962aaf6397a787bcb36f886618c500a8a0d78e49fa86fc76c
   timestamp: 2023-01-23 21:16:28+00:00
