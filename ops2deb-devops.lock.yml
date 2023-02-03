@@ -154,12 +154,12 @@
 - url: https://github.com/grafana/loki/releases/download/v2.7.3/logcli-linux-arm64.zip
   sha256: fb06d4040609a38d6f23eab8664af8935452c191a21ff5961ee1a13132e7cabf
   timestamp: 2023-02-01 15:20:01+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.43.1/terragrunt_linux_amd64
-  sha256: ba27f57b0375cc6ce5da67641ace17ee83b18f6ef48d46ca4713dc469f411781
-  timestamp: 2023-02-01 03:27:36+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.43.1/terragrunt_linux_arm64
-  sha256: 46e13ea78a9aba1e315e01e575268aa28ae285862a29011d016c6c77ccb36db1
-  timestamp: 2023-02-01 03:27:36+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.43.2/terragrunt_linux_amd64
+  sha256: d9886c7de21fbe7127251735599f634eb7899f635e7cd73015a7b1a0a25772fc
+  timestamp: 2023-02-03 01:42:30+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.43.2/terragrunt_linux_arm64
+  sha256: 50897234135811a2673e1a1454ef2097069c0aa87f4b040b6ceb7735038d41e6
+  timestamp: 2023-02-03 01:42:30+00:00
 - url: https://github.com/helmfile/helmfile/releases/download/v0.150.0/helmfile_0.150.0_linux_amd64.tar.gz
   sha256: 1a8790558602011e8f073cb033dccc1c444c46b5b961e57e15bb466199794970
   timestamp: 2023-01-17 03:20:10+00:00
@@ -271,12 +271,12 @@
 - url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-arm7.zip
   sha256: cb5ee074144adfeaef4764f62c3c8f5a78af2092fa7c5edc5eb9ce3437b13155
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/operator-framework/operator-sdk/releases/download/v1.26.0/operator-sdk_linux_amd64
-  sha256: bdbdcb2843c7bcaa0da2bf99a9a6949711aaa9d0ac1a2085b19077d2eca157a1
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/operator-framework/operator-sdk/releases/download/v1.26.0/operator-sdk_linux_arm64
-  sha256: c5e87c3a79ed8a5959762ceb016c0d93ea4c55f1703baa245c20b0a68a20a0f7
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/operator-framework/operator-sdk/releases/download/v1.27.0/operator-sdk_linux_amd64
+  sha256: d953372d4142f85904f1613881f3d78c1fb5390444589f54029e33cc7e38ee13
+  timestamp: 2023-02-03 01:42:30+00:00
+- url: https://github.com/operator-framework/operator-sdk/releases/download/v1.27.0/operator-sdk_linux_arm64
+  sha256: 159cca716c64e61e5ed201cff94feeea03061aee917a456b0b9d7f41d61845c4
+  timestamp: 2023-02-03 01:42:30+00:00
 - url: https://github.com/rancher/cli/releases/download/v2.7.0/rancher-linux-amd64-v2.7.0.tar.gz
   sha256: 7b814cc0b38344c5b34341b7ce1ce963a1d05cbd176a0572bd31c499aa99b801
   timestamp: 2023-01-03 23:06:34+00:00
