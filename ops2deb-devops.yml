@@ -152,7 +152,7 @@
   description: |-
     Automate your deployment workflow with DevSpace and develop software directly
     inside Kubernetes.
-  fetch: https://github.com/loft-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
+  fetch: https://github.com/devspace-sh/devspace/releases/download/v{{version}}/devspace-linux-{{goarch}}
   install:
     - devspace-linux-{{goarch}}:/usr/bin/devspace
 
