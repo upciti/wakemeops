@@ -1,8 +1,6 @@
 {%- set package = repository.packages.get(title) -%}
 {%- set site_url = config.site_url -%}
 
-# {{ package.name }}
-
 __{{ package.summary[0]|upper}}{{package.summary[1:] }}__
 
 {{ package.description|replace("\n.\n", "\n\n") }}
