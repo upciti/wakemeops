@@ -127,6 +127,12 @@
 - url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz
   sha256: f774bb75045e361e17a4f267491c5ec66f41db7bffd996859ffb1465420af249
   timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-amd64
+  sha256: 88d7e9f9df093fb5faf4c2cc22ba5281176b9ad82b99ce3c2bead15b5d62d898
+  timestamp: 2023-01-27 21:16:45+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-arm64
+  sha256: 7e2c476efa1eadf8df6ad1cb4b86ff2a795a63972d0a90234b44302b7ae6163c
+  timestamp: 2023-01-27 21:16:45+00:00
 - url: https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-aarch64
   sha256: 14d31297794868520cb2e61b543bb1c821aaa484af22b397904314ae8227f6a2
   timestamp: 2023-01-09 15:26:45+00:00
@@ -256,12 +262,6 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-22.12.1/linkerd2-cli-edge-22.12.1-linux-arm64
   sha256: 38526a793da117a5ac770841f40fa0de9612a6941fa949d123aaa03988c8d32f
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-amd64
-  sha256: 88d7e9f9df093fb5faf4c2cc22ba5281176b9ad82b99ce3c2bead15b5d62d898
-  timestamp: 2023-01-27 21:16:45+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-arm64
-  sha256: 7e2c476efa1eadf8df6ad1cb4b86ff2a795a63972d0a90234b44302b7ae6163c
-  timestamp: 2023-01-27 21:16:45+00:00
 - url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-amd64.zip
   sha256: edc9437c20d983cd4a82a086519d06de6ab19f37a61e94b2f6359d460ea48d24
   timestamp: 2023-01-03 23:06:34+00:00
@@ -271,6 +271,15 @@
 - url: https://github.com/nats-io/natscli/releases/download/v0.0.35/nats-0.0.35-linux-arm7.zip
   sha256: cb5ee074144adfeaef4764f62c3c8f5a78af2092fa7c5edc5eb9ce3437b13155
   timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/nektos/act/releases/download/v0.2.42/act_Linux_arm64.tar.gz
+  sha256: c30b2e0b5a271df6612399adb2ff8523aa1d009fd1c72040df1f8418fc5f724a
+  timestamp: 2023-02-06 12:56:15+00:00
+- url: https://github.com/nektos/act/releases/download/v0.2.42/act_Linux_armv7.tar.gz
+  sha256: 5445987ef19d635c75cec5f2f91dda60db0fea6a8255145d55f1970772789c41
+  timestamp: 2023-02-06 12:56:15+00:00
+- url: https://github.com/nektos/act/releases/download/v0.2.42/act_Linux_x86_64.tar.gz
+  sha256: 416c6856a2416d8524145c96fa9af7393ceffcadf93238d739a278048fbca9db
+  timestamp: 2023-02-06 10:44:36+00:00
 - url: https://github.com/operator-framework/operator-sdk/releases/download/v1.27.0/operator-sdk_linux_amd64
   sha256: d953372d4142f85904f1613881f3d78c1fb5390444589f54029e33cc7e38ee13
   timestamp: 2023-02-03 01:42:30+00:00
@@ -415,6 +424,3 @@
 - url: https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-arm64
   sha256: e53bee7692b8b58144290c082c0191d50af7cc2994daf34d87e0abef9e73fae2
   timestamp: 2023-01-27 21:16:45+00:00
-- url: https://github.com/nektos/act/releases/download/v0.2.42/act_Linux_x86_64.tar.gz
-  sha256: 416c6856a2416d8524145c96fa9af7393ceffcadf93238d739a278048fbca9db
-  timestamp: 2023-02-06 10:44:36+00:00
