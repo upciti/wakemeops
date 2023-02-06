@@ -1,22 +1,28 @@
 - name: act
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+      - arm64
   version: 0.2.42
+  revision: 2
   homepage: https://github.com/nektos/act/
   summary: run your GitHub Actions locally
   description: |-
-    Run your GitHub Actions locally! Why would you want to do this? Two reasons:
-    Fast Feedback - Rather than having to commit/push every time you want to test
-    out the changes you are making
-    to your .github/workflows/ files (or for any changes to embedded GitHub
-    actions), you can use act to run the actions locally.
-    The environment variables and filesystem are all configured to match what
-    GitHub provides.
-    Local Task Runner - I love make. However, I also hate repeating myself.
-    With act, you can use the GitHub Actions defined in your .github/workflows/ to
-    replace your Makefile!
+    Why would you want to do this? Two reasons:
+
+    - Fast Feedback: Rather than having to commit/push every time you want to test
+    out the changes you are making to your .github/workflows/ files (or for any
+    changes to embedded GitHub actions), you can use act to run the actions
+    locally. The environment variables and filesystem are all configured to match
+    what GitHub provides.
+    - Local Task Runner: With act, you can use the GitHub Actions defined in your
+    .github/workflows/ to replace your Makefile!
   fetch:
     url: https://github.com/nektos/act/releases/download/v{{version}}/act_Linux_{{target}}.tar.gz
     targets:
       amd64: x86_64
+      armhf: armv7
   install:
     - act:/usr/bin/act
 
