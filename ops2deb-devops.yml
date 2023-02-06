@@ -26,6 +26,24 @@
   install:
     - act:/usr/bin/act
 
+- name: aptly
+  version: 1.4.0
+  homepage: https://www.aptly.info/
+  summary: swiss army knife for Debian repository management
+  description: |-
+    Aptly allows you to mirror remote repositories, manage local package
+    repositories, take snapshots, pull new versions of packages along with
+    dependencies, publish as Debian repository.
+  depends:
+    - bzip2
+    - xz-utils
+    - gnupg
+    - gpgv
+    - libc6
+  fetch: https://github.com/aptly-dev/aptly/releases/download/v{{version}}/aptly_{{version}}_linux_{{goarch}}.tar.gz
+  install:
+    - aptly_{{version}}_linux_{{goarch}}/aptly:/usr/bin/aptly
+
 - name: argocd
   version: 2.5.10
   homepage: https://github.com/argoproj/argo-cd
