@@ -88,9 +88,9 @@
 - url: https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_x86_64.tar.gz
   sha256: 8b3672961fb15f8b87d5793af8bd3c1cca52c016596fbf57c46ab4ef39265fcd
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/aptly-dev/aptly/releases/download/v1.4.0/aptly_1.4.0_linux_amd64.tar.gz
-  sha256: b3eb077d0e53b2361ab8db37b9bca1bf22018663274fddac0f3e4da6c48f1efb
-  timestamp: 2023-02-06 12:29:08+00:00
+- url: https://github.com/aptly-dev/aptly/releases/download/v1.5.0/aptly_1.5.0_linux_amd64.tar.gz
+  sha256: f8777df4491178fb3523bf0367141d7df1ceb9e919ee903f6c95b9c18af93824
+  timestamp: 2023-02-06 15:01:45+00:00
 - url: https://github.com/argoproj/argo-cd/releases/download/v2.5.10/argocd-linux-amd64
   sha256: d3f24a281c8e1111ed6a4ab653b745f01e3965448b12c3b439033f29fd809884
   timestamp: 2023-02-02 18:23:45+00:00
@@ -337,9 +337,9 @@
 - url: https://github.com/upciti/ops2deb/releases/download/1.0.3/ops2deb_linux_amd64
   sha256: 3fa1e1bfebf10d56c8785c1eb9e0f8b30471d28907d182d29dcdf0eeffdbeb80
   timestamp: 2023-01-06 15:00:33+00:00
-- url: https://github.com/upciti/wakemebot/releases/download/4.0.2/wakemebot_linux_amd64
-  sha256: 58dbf45805113230c387f23c278a4433342e83b53cabd2ff9ad4d9a7d3835c9e
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/upciti/wakemebot/releases/download/4.1.0/wakemebot_linux_amd64
+  sha256: 15753f03949134a1e5bd49c212a248895473f8bc242d38e86a3961fc2612c071
+  timestamp: 2023-02-06 15:01:45+00:00
 - url: https://github.com/upciti/wheel2deb/releases/download/0.8.1/wheel2deb_linux_amd64
   sha256: da8de17bbb9fd5d2c26500444ebb9d64a8c5f916d05967f40ebebe659bdcd31e
   timestamp: 2023-02-03 18:23:36+00:00
