@@ -34,12 +34,12 @@
 - url: https://github.com/stackrox/kube-linter/releases/download/0.6.0/kube-linter-linux
   sha256: 20a24b61c6cd0f0e948ae3e6101a0c7d3b30f74bd5a9e9f7e9a477d44e6b0868
   timestamp: 2023-01-19 15:21:51+00:00
-- url: https://github.com/tenable/terrascan/releases/download/v1.17.1/terrascan_1.17.1_Linux_arm64.tar.gz
-  sha256: 9d5147ac23f7d63ad452ccfece475f881fdcd2293e6555881c811146507d2d28
-  timestamp: 2023-01-03 23:06:26+00:00
-- url: https://github.com/tenable/terrascan/releases/download/v1.17.1/terrascan_1.17.1_Linux_x86_64.tar.gz
-  sha256: 9b224220624f7cdcd8f31183f073791dbaf6aae1706cbf0e2da87234aa9910b4
-  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://github.com/tenable/terrascan/releases/download/v1.18.0/terrascan_1.18.0_Linux_arm64.tar.gz
+  sha256: c054f43c8bbec8bb1f078982b3720c5d8e6a8c50203d770053cf6d9425d6c99e
+  timestamp: 2023-02-06 15:01:50+00:00
+- url: https://github.com/tenable/terrascan/releases/download/v1.18.0/terrascan_1.18.0_Linux_x86_64.tar.gz
+  sha256: cabf9ef46cc9aadcced34c1ad992dffbc12cc1f28a9e16ad9ce341b90967e1fb
+  timestamp: 2023-02-06 15:01:50+00:00
 - url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_amd64.zip
   sha256: bc5012ba320a73a1a92a79b9646664f873d5f1447b01cae38f37e3b82a462b76
   timestamp: 2023-01-03 23:06:26+00:00

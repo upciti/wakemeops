@@ -27,7 +27,7 @@
     - act:/usr/bin/act
 
 - name: aptly
-  version: 1.4.0
+  version: 1.5.0
   homepage: https://www.aptly.info/
   summary: swiss army knife for Debian repository management
   description: |-
@@ -991,7 +991,7 @@
     - velero-v{{version}}-linux-{{goarch}}/velero:/usr/bin/velero
 
 - name: wakemebot
-  version: 4.0.2
+  version: 4.1.0
   homepage: https://github.com/upciti/wakemebot
   summary: bunch of tools used by our beloved wakemebot
   description: |-
