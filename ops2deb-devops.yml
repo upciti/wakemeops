@@ -45,7 +45,7 @@
     - aptly_{{version}}_linux_{{goarch}}/aptly:/usr/bin/aptly
 
 - name: argocd
-  version: 2.5.10
+  version: 2.6.0
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
