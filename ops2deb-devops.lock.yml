@@ -136,15 +136,15 @@
 - url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-arm64
   sha256: 7e2c476efa1eadf8df6ad1cb4b86ff2a795a63972d0a90234b44302b7ae6163c
   timestamp: 2023-01-27 21:16:45+00:00
-- url: https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-aarch64
-  sha256: 14d31297794868520cb2e61b543bb1c821aaa484af22b397904314ae8227f6a2
-  timestamp: 2023-01-09 15:26:45+00:00
-- url: https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-armv7
-  sha256: e5b03ac1258ad4243af0ac4afcb1c6cc8c9956b2483a50309cdb38cdb8387e37
-  timestamp: 2023-01-09 15:26:45+00:00
-- url: https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64
-  sha256: bcfd9ea51dee4c19dccdfaeef0e7956ef68bf14f3d175933742061a7271ef0f5
-  timestamp: 2023-01-09 15:26:45+00:00
+- url: https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-aarch64
+  sha256: edaf196a0b9ebe749aa1a42a6ce4550d2c6c2620762aa98c36088a9b96fd22ef
+  timestamp: 2023-02-08 12:36:56+00:00
+- url: https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-armv7
+  sha256: 558a083683bd597f5e167178dbdbe57824eecf2132bfb497a58f5d39c5e49e8a
+  timestamp: 2023-02-08 12:36:56+00:00
+- url: https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64
+  sha256: 54ab01967b05e392e6bf13afbc654146890b9fa40501b40aca83a2db18f10427
+  timestamp: 2023-02-08 12:36:56+00:00
 - url: https://github.com/fluxcd/flux2/releases/download/v0.39.0/flux_0.39.0_linux_amd64.tar.gz
   sha256: 11431aab00e967e93484cb4aa9936f2634726aeb8ee692eae40d2e581a305e0d
   timestamp: 2023-02-02 18:23:45+00:00
