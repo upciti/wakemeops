@@ -40,15 +40,15 @@
 - url: https://github.com/tenable/terrascan/releases/download/v1.18.0/terrascan_1.18.0_Linux_x86_64.tar.gz
   sha256: cabf9ef46cc9aadcced34c1ad992dffbc12cc1f28a9e16ad9ce341b90967e1fb
   timestamp: 2023-02-06 15:01:50+00:00
-- url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_amd64.zip
-  sha256: bc5012ba320a73a1a92a79b9646664f873d5f1447b01cae38f37e3b82a462b76
-  timestamp: 2023-01-03 23:06:26+00:00
-- url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_arm.zip
-  sha256: c73a7028e3277e0862a7fe8ef2b0445eef8196f7d8e539e65878b6ea5fdf2ffb
-  timestamp: 2023-01-03 23:06:26+00:00
-- url: https://releases.hashicorp.com/boundary/0.11.2/boundary_0.11.2_linux_arm64.zip
-  sha256: 8adf83f8f81c6c828de0ca530039657550287a83c3d7a22603747c38545317af
-  timestamp: 2023-01-03 23:06:26+00:00
+- url: https://releases.hashicorp.com/boundary/0.12.0/boundary_0.12.0_linux_amd64.zip
+  sha256: f74bbbb7ae86b02caf6033502ab77d1fbc0ea38c4d0351ccb56894385269eee3
+  timestamp: 2023-02-08 18:24:43+00:00
+- url: https://releases.hashicorp.com/boundary/0.12.0/boundary_0.12.0_linux_arm.zip
+  sha256: 6a9620447efbbaf3a14c2cff48fc922e17c302ce890f585b37dfa3cb04e65bd5
+  timestamp: 2023-02-08 18:24:43+00:00
+- url: https://releases.hashicorp.com/boundary/0.12.0/boundary_0.12.0_linux_arm64.zip
+  sha256: 138e7c1ca02747ea26849d0ddfe96c10c908b88d0d6d714c09656b3e7e695451
+  timestamp: 2023-02-08 18:24:43+00:00
 - url: https://releases.hashicorp.com/vault/1.12.3/vault_1.12.3_linux_amd64.zip
   sha256: f4825bad06e77687b407eff7423acb9238adfd545d7345f2a0bb9e81b0c4b1eb
   timestamp: 2023-02-06 21:17:14+00:00
