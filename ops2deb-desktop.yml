@@ -82,7 +82,7 @@
     - ln -s /opt/mattermost-desktop/mattermost-desktop {{src}}/usr/bin/mattermost-desktop
 
 - name: signal-desktop
-  version: 6.5.0
+  version: 6.5.1
   homepage: https://github.com/signalapp/signal-desktop
   summary: private messaging from your desktop
   description: |-
