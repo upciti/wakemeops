@@ -106,15 +106,15 @@
 - url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/vault-env-linux-arm64.tar.gz
   sha256: 4a525343fd0be02516cd9e7dba6144ef80a13d8982e2c03d7bea67dd8d8e9aa5
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-amd64.tar.gz
-  sha256: a0f8c81dcb9ca5c52bec80bb706bcfa0c06786650d3aa29a170fb768364d91f2
-  timestamp: 2023-01-16 15:20:12+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-arm.tar.gz
-  sha256: 2ec2f22559cfd1087890a6c239efa3c7bce6e5575f0e703ae44ed73aca2ceabc
-  timestamp: 2023-01-16 15:20:12+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-arm64.tar.gz
-  sha256: 770cd9c7a227ab26bc8a56d00bcbc1a05b345501ac7b4c79d5ca8eaa6f7c31c7
-  timestamp: 2023-01-16 15:20:12+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-amd64.tar.gz
+  sha256: 9f8de35b8272533cc687c909ce717d4340aea23a16a3e422a92a6105f23b835b
+  timestamp: 2023-02-15 15:20:53+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-arm.tar.gz
+  sha256: bd60686e066121df227efa28d2c2bd1b94881d73f909814bbca4062ffb47f86f
+  timestamp: 2023-02-15 15:20:53+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-arm64.tar.gz
+  sha256: 65f99a7bbbe2d4d8cce333b0470fd7e01d2bed1af5588fddba330798f4c4cd1b
+  timestamp: 2023-02-15 15:20:53+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.8.21/datree-cli_1.8.21_Linux_arm64.zip
   sha256: ea5bde426051a767d34c8bcfc2159679b4b187fba99b41d6da160e897b3a0d95
   timestamp: 2023-01-31 15:19:53+00:00
