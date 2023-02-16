@@ -91,9 +91,9 @@
 - url: https://github.com/aptly-dev/aptly/releases/download/v1.5.0/aptly_1.5.0_linux_amd64.tar.gz
   sha256: f8777df4491178fb3523bf0367141d7df1ceb9e919ee903f6c95b9c18af93824
   timestamp: 2023-02-06 15:01:45+00:00
-- url: https://github.com/argoproj/argo-cd/releases/download/v2.6.1/argocd-linux-amd64
-  sha256: 81c1f8921f18c56097ada697c4a2f55b84548e536f57698dfd8dd49a3175c6b6
-  timestamp: 2023-02-08 21:17:13+00:00
+- url: https://github.com/argoproj/argo-cd/releases/download/v2.6.2/argocd-linux-amd64
+  sha256: f01f59661b0bf4c18419ba4fdc8a869ce8a16a335a150b3e67d207f825b49967
+  timestamp: 2023-02-16 18:23:25+00:00
 - url: https://github.com/banzaicloud/bank-vaults/releases/download/1.15.2/bank-vaults-linux-amd64.tar.gz
   sha256: 6afbb85bf6a6528a3b015e00a86c89b3f59bf49759baed6f6bca209677f02b24
   timestamp: 2023-01-03 23:06:34+00:00
@@ -403,12 +403,12 @@
 - url: https://releases.hashicorp.com/terraform/1.3.9/terraform_1.3.9_linux_arm64.zip
   sha256: da571087268c5faf884912c4239c6b9c8e1ed8e8401ab1dcb45712df70f42f1b
   timestamp: 2023-02-15 18:24:41+00:00
-- url: https://releases.hashicorp.com/waypoint/0.10.5/waypoint_0.10.5_linux_amd64.zip
-  sha256: dbce2ea1ed85fc06ddd7f4157560719c40236e3c735bb87d6715d790e7691519
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://releases.hashicorp.com/waypoint/0.10.5/waypoint_0.10.5_linux_arm.zip
-  sha256: 778faeea74f6d959235cb3bdf56f9aeba965aa8bd461b1b454c47bb998d6b720
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://releases.hashicorp.com/waypoint/0.11.0/waypoint_0.11.0_linux_amd64.zip
+  sha256: 83df70b96b1d25d32ccc060c462c15d602b42f13e6972e16505dc05b8b360c47
+  timestamp: 2023-02-16 18:23:25+00:00
+- url: https://releases.hashicorp.com/waypoint/0.11.0/waypoint_0.11.0_linux_arm.zip
+  sha256: 1b60fe4541eefae7b78dced4be8585ad94038423711666547df8175ac91a74bb
+  timestamp: 2023-02-16 18:23:25+00:00
 - url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl
   sha256: d57be22cfa25f7427cfb538cfc8853d763878f8b36c76ce93830f6f2d67c6e5d
   timestamp: 2023-01-18 21:16:57+00:00
