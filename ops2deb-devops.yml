@@ -45,7 +45,7 @@
     - aptly_{{version}}_linux_{{goarch}}/aptly:/usr/bin/aptly
 
 - name: argocd
-  version: 2.6.1
+  version: 2.6.2
   homepage: https://github.com/argoproj/argo-cd
   summary: continuous delivery tool for Kubernetes
   description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
@@ -1008,7 +1008,7 @@
     architectures:
       - amd64
       - armhf
-  version: 0.10.5
+  version: 0.11.0
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
