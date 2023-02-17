@@ -115,12 +115,12 @@
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-arm64.tar.gz
   sha256: 65f99a7bbbe2d4d8cce333b0470fd7e01d2bed1af5588fddba330798f4c4cd1b
   timestamp: 2023-02-15 15:20:53+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.8.21/datree-cli_1.8.21_Linux_arm64.zip
-  sha256: ea5bde426051a767d34c8bcfc2159679b4b187fba99b41d6da160e897b3a0d95
-  timestamp: 2023-01-31 15:19:53+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.8.21/datree-cli_1.8.21_Linux_x86_64.zip
-  sha256: da153be605f74778dc9efaa0b517b3f6042271aa6414234492adcc8ce58ea8ad
-  timestamp: 2023-01-31 15:19:53+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.24/datree-cli_1.8.24_Linux_arm64.zip
+  sha256: 2bab07d65c623e8107986e39e5d1467946be882be2d5ef5c8d47e02a9035d563
+  timestamp: 2023-02-17 09:19:35+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.24/datree-cli_1.8.24_Linux_x86_64.zip
+  sha256: a78056746f3b10bbb882ab11c411c609d44bf2f40e54ed3437f0a4eb46a5fcc8
+  timestamp: 2023-02-17 09:19:35+00:00
 - url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_arm.tar.gz
   sha256: c735b01b7098b26a9e711000ad7a94c88dad53eccb14709544479b4a7cf6770c
   timestamp: 2023-01-03 23:06:34+00:00
