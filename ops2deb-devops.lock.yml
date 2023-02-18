@@ -349,12 +349,12 @@
 - url: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v0.54.3/kapp-linux-arm64
   sha256: 9b4c8c0d718a0655acfc37a7df04450a3caa6126facfe301cd479466e20f954f
   timestamp: 2023-02-01 09:19:01+00:00
-- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.1/ytt-linux-amd64
-  sha256: 9f2f151cf42a54cdfee5ee1a98b7255821c9c047498d4af788cec8c4cf520fb8
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.1/ytt-linux-arm64
-  sha256: 2b29dfb97be4a7333ab1e911887c884b2d1de16ee75f16b697fdbfe9661f58be
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.3/ytt-linux-amd64
+  sha256: c047bd7084beea2b4a585b13148d7c1084ee6c4aee8a68592fc8ed7d75ecebc5
+  timestamp: 2023-02-18 01:40:13+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.44.3/ytt-linux-arm64
+  sha256: 91d9ce5f2c9f8d11a127b1676d3a9fcb1982ec9b89084751c8bd335acffdb0c4
+  timestamp: 2023-02-18 01:40:13+00:00
 - url: https://github.com/vmware-tanzu/velero/releases/download/v1.10.1/velero-v1.10.1-linux-amd64.tar.gz
   sha256: 91187a3e727b25caa577934dc1587ac0db0f808aa8c2c85df291b84fe8ed9966
   timestamp: 2023-02-06 03:20:41+00:00
