@@ -992,7 +992,7 @@
     - velero-v{{version}}-linux-{{goarch}}/velero:/usr/bin/velero
 
 - name: wakemebot
-  version: 4.1.0
+  version: 4.1.1
   homepage: https://github.com/upciti/wakemebot
   summary: bunch of tools used by our beloved wakemebot
   description: |-
