@@ -130,12 +130,12 @@
 - url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz
   sha256: f774bb75045e361e17a4f267491c5ec66f41db7bffd996859ffb1465420af249
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-amd64
-  sha256: 88d7e9f9df093fb5faf4c2cc22ba5281176b9ad82b99ce3c2bead15b5d62d898
-  timestamp: 2023-01-27 21:16:45+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.2.5/devspace-linux-arm64
-  sha256: 7e2c476efa1eadf8df6ad1cb4b86ff2a795a63972d0a90234b44302b7ae6163c
-  timestamp: 2023-01-27 21:16:45+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-amd64
+  sha256: 26ffc4d9d4d942cc6d7d190fe48f8bcf2add8b656c091b31d9ad3b537b0b129b
+  timestamp: 2023-02-23 21:17:44+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-arm64
+  sha256: c02f04e24f0277d639d4eeecd9d024d5cfa5d4574b696dceeb55cb77f93c7a50
+  timestamp: 2023-02-23 21:17:44+00:00
 - url: https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-aarch64
   sha256: edaf196a0b9ebe749aa1a42a6ce4550d2c6c2620762aa98c36088a9b96fd22ef
   timestamp: 2023-02-08 12:36:56+00:00
@@ -187,15 +187,15 @@
 - url: https://github.com/infracost/infracost/releases/download/v0.10.17/infracost-linux-arm64.tar.gz
   sha256: afcd3a32e187f760bc328bae6cf910b71a14f7493a20225f49353268ba14a4c9
   timestamp: 2023-02-07 15:20:14+00:00
-- url: https://github.com/istio/istio/releases/download/1.17.0/istio-1.17.0-linux-amd64.tar.gz
-  sha256: 532bae7bdfbfb79ac5576dce46b2f71ddb7164a8e9312b21649adddd05ff6ce3
-  timestamp: 2023-02-15 01:44:15+00:00
-- url: https://github.com/istio/istio/releases/download/1.17.0/istio-1.17.0-linux-arm64.tar.gz
-  sha256: 9cd07ddaa65c50c23e3ae60fe356dfe10d69142569d95483c87be0d580915c21
-  timestamp: 2023-02-15 01:44:15+00:00
-- url: https://github.com/istio/istio/releases/download/1.17.0/istio-1.17.0-linux-armv7.tar.gz
-  sha256: 4c36933128a46db5fe45097139623788fe6087cbf66f141510d33533e390b959
-  timestamp: 2023-02-15 01:44:15+00:00
+- url: https://github.com/istio/istio/releases/download/1.17.1/istio-1.17.1-linux-amd64.tar.gz
+  sha256: 69e9d29aba94d5cbb713e02f20e4c686a23cb6f9c2bcd1369d7e9ed579b4d7b9
+  timestamp: 2023-02-23 21:17:44+00:00
+- url: https://github.com/istio/istio/releases/download/1.17.1/istio-1.17.1-linux-arm64.tar.gz
+  sha256: 9b04fa06d81c614e7c6b2cee6b29a550412769fe9dca10d7a3df064e78284ff4
+  timestamp: 2023-02-23 21:17:44+00:00
+- url: https://github.com/istio/istio/releases/download/1.17.1/istio-1.17.1-linux-armv7.tar.gz
+  sha256: 154353ef76747caf1cebe33a740290fc0b1e67e55c090cb4530effb10f061746
+  timestamp: 2023-02-23 21:17:44+00:00
 - url: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_amd64.tar.gz
   sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
   timestamp: 2023-01-03 23:06:34+00:00

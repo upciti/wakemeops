@@ -170,7 +170,7 @@
     architectures:
       - amd64
       - arm64
-  version: 6.2.5
+  version: 6.3.0
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-
@@ -334,7 +334,7 @@
       - amd64
       - armhf
       - arm64
-  version: 1.17.0
+  version: 1.17.1
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
