@@ -804,6 +804,7 @@
       - armhf
       - arm64
   version: 1.61.1
+  revision: 2
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-
@@ -811,7 +812,7 @@
     directories to and from different cloud storage providers.
   fetch: https://github.com/rclone/rclone/releases/download/v{{version}}/rclone-v{{version}}-linux-{{goarch}}.zip
   install:
-    - rclone-v{{version}}-linux-{{goarch}}:/usr/bin/rclone
+    - rclone-v{{version}}-linux-{{goarch}}/rclone:/usr/bin/rclone
 
 - name: scw
   matrix:
