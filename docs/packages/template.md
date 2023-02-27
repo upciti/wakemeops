@@ -50,6 +50,17 @@ sudo apt install {{ package.name }}
     ```
 {% endif -%}
 
+## Download
+
+{% for arch, files in package.files.items() %}
+=== "{{arch}}"
+    | Version | SHA256 | Size (KB) |
+    | ------- | ------ | ---- |
+    {% for file in files[:10] -%}
+    | [{{file.version}}]({{file.url}}) | `{{file.sha256}}` | {{file.size}} |
+    {% endfor %}
+{% endfor %}
+
 ## Badge
 
 [![WakeMeOps](/badges/{{ package.name }}.svg)](/packages/{{ package.name }})
