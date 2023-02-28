@@ -1,3 +1,5 @@
+# lockfile=ops2deb-devops.lock.yml
+
 - name: act
   matrix:
     architectures:

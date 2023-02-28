@@ -1,3 +1,5 @@
+# lockfile=ops2deb-secops.lock.yml
+
 - name: boundary
   matrix:
     architectures:
