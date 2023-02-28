@@ -1,3 +1,5 @@
+# lockfile=ops2deb-dev.lock.yml
+
 - name: clog-cli
   matrix:
     architectures:
