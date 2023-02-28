@@ -163,12 +163,12 @@
 - url: https://github.com/grafana/loki/releases/download/v2.7.4/logcli-linux-arm64.zip
   sha256: a17401becad1195bd31186b52fad95681cefba78f5538a7ec309da4d39680077
   timestamp: 2023-02-24 21:15:46+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.44.0/terragrunt_linux_amd64
-  sha256: 2cc9df041fde14a989d9388f6938a924b1a13b2353baacc42f67ecabdec8e2c9
-  timestamp: 2023-02-22 21:17:16+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.44.0/terragrunt_linux_arm64
-  sha256: 363ae71e892a6f3ad808624b22c208e84b3133e0017bb68d68e74f557080e45a
-  timestamp: 2023-02-22 21:17:16+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.44.1/terragrunt_linux_amd64
+  sha256: 4ebdae85702a7a5fbe21868d173f4fa2a26bc9c3aeda0a2a1ab8a751ae99dd96
+  timestamp: 2023-02-28 15:20:47+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.44.1/terragrunt_linux_arm64
+  sha256: 7132bd11d81b05e8c11d5d9cccfb2776bc8f4d2d2aeb64d22487603c3628f537
+  timestamp: 2023-02-28 15:20:47+00:00
 - url: https://github.com/helmfile/helmfile/releases/download/v0.151.0/helmfile_0.151.0_linux_amd64.tar.gz
   sha256: f33bdad8c1c7081cc95a858c4d307baf419f03d77758fae26ac8625725b398d9
   timestamp: 2023-02-17 15:20:27+00:00
