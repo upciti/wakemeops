@@ -409,15 +409,15 @@
 - url: https://releases.hashicorp.com/waypoint/0.11.0/waypoint_0.11.0_linux_arm.zip
   sha256: 1b60fe4541eefae7b78dced4be8585ad94038423711666547df8175ac91a74bb
   timestamp: 2023-02-16 18:23:25+00:00
-- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl
-  sha256: d57be22cfa25f7427cfb538cfc8853d763878f8b36c76ce93830f6f2d67c6e5d
-  timestamp: 2023-01-18 21:16:57+00:00
-- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm/kubectl
-  sha256: e067d59ac19e287026b5c2b75a1077b1312ba82ad64ee01dff2cdafd57720f39
-  timestamp: 2023-01-18 21:16:57+00:00
-- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm64/kubectl
-  sha256: 4027cb0a2840bc14ec3f18151b3360dd2d1f6ce730ed5ac28bd846c17e7d73f5
-  timestamp: 2023-01-18 21:16:57+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/amd64/kubectl
+  sha256: fcf86d21fb1a49b012bce7845cf00081d2dd7a59f424b28621799deceb5227b3
+  timestamp: 2023-03-01 01:53:01+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/arm/kubectl
+  sha256: a8944021fc9022f73976d8ab2736f21b64b30de3b2a6ccfddd0316ca1d3c6a1d
+  timestamp: 2023-03-01 01:53:01+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/arm64/kubectl
+  sha256: 291e85bef77e8440205c873686e9938d7f87c0534e9a491de64e3cc0584295b6
+  timestamp: 2023-03-01 01:53:01+00:00
 - url: https://storage.googleapis.com/minikube/releases/v1.29.0/minikube-linux-amd64
   sha256: aafb65cbee8e971ec00509fdb1817254b17d6bee4890b839c3b6e8f11e97413a
   timestamp: 2023-01-27 21:16:45+00:00
