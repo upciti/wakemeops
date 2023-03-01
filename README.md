@@ -67,6 +67,14 @@ USER 1001
 
 Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) blueprints versioned the `ops2deb-*.yml` configuration files. Those configuration files are automatically updated when new application releases are available.
 
+## How to add new applications?
+
+* Install [ops2deb](https://github.com/upciti/ops2deb)
+* Add the configuration for the new application
+* run `make format` to format the configuration-file
+* run `make lock-$COMPONENT` to update the lock-file for $COMPONENT
+* Create a new Pull Request using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
 ## :notebook_with_decorative_cover: Documentation
 
 Please refer to our documentation at https://docs.wakemeops.com for more information.
