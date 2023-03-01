@@ -145,6 +145,12 @@
 - url: https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64
   sha256: 54ab01967b05e392e6bf13afbc654146890b9fa40501b40aca83a2db18f10427
   timestamp: 2023-02-08 12:36:56+00:00
+- url: https://github.com/doitintl/kube-no-trouble/releases/download/0.7.0/kubent-0.7.0-linux-amd64.tar.gz
+  sha256: 01c01835184553cf554e254b5ccfa082a096bf68453bb06201d4abbf335c72f4
+  timestamp: 2023-03-01 09:38:14+00:00
+- url: https://github.com/doitintl/kube-no-trouble/releases/download/0.7.0/kubent-0.7.0-linux-arm64.tar.gz
+  sha256: 64c3d63752dcb1cc9664bf7500bbfc4619d62ba84771bad1da1c943cb1889f1a
+  timestamp: 2023-03-01 09:38:14+00:00
 - url: https://github.com/fluxcd/flux2/releases/download/v0.40.2/flux_0.40.2_linux_amd64.tar.gz
   sha256: d406c617634d924035a61e44949f15452b7a4573d0516c9e5c5a919160e35430
   timestamp: 2023-02-28 18:25:11+00:00
