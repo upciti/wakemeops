@@ -55,6 +55,12 @@
 - url: https://get.helm.sh/helm-v3.11.1-linux-arm.tar.gz
   sha256: 77b797134ea9a121f2ede9d159a43a8b3895a9ff92cc24b71b77fb726d9eba6d
   timestamp: 2023-02-08 18:24:34+00:00
+- url: https://github.com/FairwindsOps/pluto/releases/download/v5.15.1/pluto_5.15.1_linux_amd64.tar.gz
+  sha256: fe523bf36868d6c25dff7833f4efcc3699213578e835b6304d6e5e4346517dbd
+  timestamp: 2023-03-01 09:37:15+00:00
+- url: https://github.com/FairwindsOps/pluto/releases/download/v5.15.1/pluto_5.15.1_linux_arm64.tar.gz
+  sha256: ab7274bb504c0974b9a4d07d478fed2f07a4b51a906520934f1220c7649248f0
+  timestamp: 2023-03-01 09:37:15+00:00
 - url: https://github.com/GoogleContainerTools/container-diff/releases/download/v0.17.0/container-diff-linux-amd64
   sha256: 818c219ce9f9670cd5c766b9da5036cf75bbf98bc99eb258f5e8f90e80367c88
   timestamp: 2023-01-03 23:06:34+00:00
