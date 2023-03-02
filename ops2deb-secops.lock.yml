@@ -4,15 +4,15 @@
 - url: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_linux_arm64.tar.gz
   sha256: e1c8dcadb55532cbe057a239069873e194377365575f0de705af00f03bac9abd
   timestamp: 2023-01-03 23:06:26+00:00
-- url: https://github.com/aquasecurity/trivy/releases/download/v0.38.0/trivy_0.38.0_Linux-64bit.tar.gz
-  sha256: d3220b1629958b7b95aa20b731c394261bbdcd2ada4822c47fe953010c14718f
-  timestamp: 2023-03-01 12:39:12+00:00
-- url: https://github.com/aquasecurity/trivy/releases/download/v0.38.0/trivy_0.38.0_Linux-ARM.tar.gz
-  sha256: f01c0127d083da761f90aedb2b9c6e7436f85af7bd17b8c2e43a7ff23bb55154
-  timestamp: 2023-03-01 12:39:12+00:00
-- url: https://github.com/aquasecurity/trivy/releases/download/v0.38.0/trivy_0.38.0_Linux-ARM64.tar.gz
-  sha256: 94c1bdc911640c47474e9d5607602b503dbbe6e3d5cad223ef229540a400a1ff
-  timestamp: 2023-03-01 12:39:12+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.38.1/trivy_0.38.1_Linux-64bit.tar.gz
+  sha256: 5bc142306bd3cc827b16882bd63a6fc2bb4a8389f6e0270cc6fc8772dd7bbc9c
+  timestamp: 2023-03-02 21:17:31+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.38.1/trivy_0.38.1_Linux-ARM.tar.gz
+  sha256: 836c2b2e11b0c4b732a8782415b0894cb0d93d4ac30abc086c10ba67d6fee470
+  timestamp: 2023-03-02 21:17:31+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.38.1/trivy_0.38.1_Linux-ARM64.tar.gz
+  sha256: 5674b71a62a69e651e6fe25f2522de5253bff6e3355bf54ba44dd014575bb82e
+  timestamp: 2023-03-02 21:17:31+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/aarch64-feroxbuster.zip
   sha256: bf7478e33140bd12a0480e2f19cdf0943cf7d7bf20bfcb02953642966843ec36
   timestamp: 2023-01-03 23:06:26+00:00
