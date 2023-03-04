@@ -127,15 +127,15 @@
 - url: https://github.com/datreeio/datree/releases/download/1.8.33/datree-cli_1.8.33_Linux_x86_64.zip
   sha256: 72032fdd4be783e103ebc0bf03e61bc9d495afcd225a786e5b061a336d34563c
   timestamp: 2023-03-01 12:39:07+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_arm.tar.gz
-  sha256: c735b01b7098b26a9e711000ad7a94c88dad53eccb14709544479b4a7cf6770c
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_arm64.tar.gz
-  sha256: 2888feae5298517cf4862251a8877ff978b3eb234cbc3ebc0d9eb07fc671673d
-  timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz
-  sha256: f774bb75045e361e17a4f267491c5ec66f41db7bffd996859ffb1465420af249
-  timestamp: 2023-01-03 23:06:34+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
+  sha256: b0eb5fb0decedbee5b6bd415f72af8ce6135ffb8128f9709bc7adcd5cbfa690b
+  timestamp: 2023-03-04 00:14:01+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_arm.tar.gz
+  sha256: 40de204f6b0a2ade7e48434b12d5293055f1df3bcfb5b6d278582eb5f6228295
+  timestamp: 2023-03-04 00:14:01+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_arm64.tar.gz
+  sha256: c2b2e8ccd05cea311600ed47d2a72df835a93fd5b9b470c42f7b248398f45592
+  timestamp: 2023-03-04 00:14:01+00:00
 - url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-amd64
   sha256: 26ffc4d9d4d942cc6d7d190fe48f8bcf2add8b656c091b31d9ad3b537b0b129b
   timestamp: 2023-02-23 21:17:44+00:00
@@ -348,7 +348,7 @@
   timestamp: 2023-02-12 18:22:09+00:00
 - url: https://github.com/upciti/ops2deb/releases/download/1.2.0/ops2deb_linux_amd64
   sha256: 487416c8f05562dfa70920ecb1d78b3c27904ec7202177b90776f83d76cdab72
-  timestamp: "2023-03-03T22:45:10Z"
+  timestamp: 2023-03-03 22:45:10+00:00
 - url: https://github.com/upciti/wakemebot/releases/download/4.2.0/wakemebot_linux_amd64
   sha256: 0a75d60e7c00174065c7ac97b3506d64a53a9ca8acba639a12753b2293b77823
   timestamp: 2023-02-27 21:17:47+00:00
