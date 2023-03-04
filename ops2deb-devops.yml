@@ -373,7 +373,7 @@
       - amd64
       - armhf
       - arm64
-  version: 0.26.7
+  version: 0.27.3
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-
@@ -382,11 +382,7 @@
     observe and manage your applications in the wild.
   depends:
     - kubectl
-  fetch:
-    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
-    targets:
-      amd64: x86_64
-      armhf: arm
+  fetch: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{goarch}}.tar.gz
   install:
     - k9s:/usr/bin/
 
