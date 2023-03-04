@@ -1,0 +1,46 @@
+- name: rancher
+  version: 2.4.14
+  homepage: https://github.com/rancher/cli
+  summary: command-line interface for rancher
+  description: |-
+    The Rancher Command Line Interface (CLI) is a unified tool for interacting with
+    your Rancher Server.
+  fetch: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-amd64-v{{version}}.tar.gz
+  script:
+    - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
+
+- name: rancher
+  matrix:
+    versions:
+      - 2.4.14
+      - 2.6.4
+    architectures:
+      - armhf
+      - amd64
+  homepage: https://github.com/rancher/cli
+  summary: command-line interface for rancher
+  description: |-
+    The Rancher Command Line Interface (CLI) is a unified tool for interacting with
+    your Rancher Server.
+  fetch: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
+  script:
+    - mv rancher-v{{version}}/rancher {{src}}/usr/bin/rancher
+
+- name: rancher
+  matrix:
+    versions:
+      - 2.6.5
+      - 2.6.7
+      - 2.6.9
+      - 2.7.0
+    architectures:
+      - amd64
+      - armhf
+  homepage: https://github.com/rancher/cli
+  summary: command-line interface for rancher
+  description: |-
+    The Rancher Command Line Interface (CLI) is a unified tool for interacting with
+    your Rancher Server.
+  fetch: https://github.com/rancher/cli/releases/download/v{{version}}/rancher-linux-{{goarch}}-v{{version}}.tar.gz
+  install:
+    - rancher-v{{version}}/rancher:/usr/bin/

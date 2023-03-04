@@ -1,0 +1,33 @@
+name: scala-cli
+matrix:
+  versions:
+    - 0.1.2
+    - 0.1.3
+    - 0.1.4
+    - 0.1.5
+    - 0.1.6
+    - 0.1.7
+    - 0.1.8
+    - 0.1.9
+    - 0.1.10
+    - 0.1.11
+    - 0.1.12
+    - 0.1.13
+    - 0.1.14
+    - 0.1.15
+    - 0.1.16
+    - 0.1.17
+    - 0.1.18
+    - 0.1.19
+    - 0.1.20
+    - 0.2.0
+homepage: https://scala-cli.virtuslab.org/
+summary: command-line tool to interact with the Scala language
+description: |-
+  Scala CLI is an experimental tool to run/compile/test Scala that aims at being
+  a better scala command. It shares some similarities with build tools, but
+  doesn't aim at supporting multi-module projects, nor to be extended via a task
+  system.
+fetch: https://github.com/VirtusLab/scala-cli/releases/download/v{{version}}/scala-cli-x86_64-pc-linux.deb
+install:
+  - data/usr/share/scala/scala-cli:/usr/bin/scala-cli

@@ -1,0 +1,47 @@
+- name: container-structure-test
+  version: 1.11.0
+  revision: "2"
+  homepage: https://github.com/GoogleContainerTools/container-structure-test
+  summary: validate the structure of your container images
+  description: |-
+    The Container Structure Tests provide a powerful framework to validate the
+    structure of a container image. These tests can be used to check the output of
+    commands in an image, as well as verify metadata and contents of the
+    filesystem.
+  fetch: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-amd64
+  script:
+    - mv container-structure-test-linux-amd64 {{src}}/usr/bin/container-structure-test
+
+- name: container-structure-test
+  version: 1.11.0
+  revision: "2"
+  architecture: arm64
+  homepage: https://github.com/GoogleContainerTools/container-structure-test
+  summary: validate the structure of your container images
+  description: |-
+    The Container Structure Tests provide a powerful framework to validate the
+    structure of a container image. These tests can be used to check the output of
+    commands in an image, as well as verify metadata and contents of the
+    filesystem.
+  fetch: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-{{goarch}}
+  script:
+    - mv container-structure-test-linux-{{goarch}} {{src}}/usr/bin/container-structure-test
+
+- name: container-structure-test
+  matrix:
+    versions:
+      - 1.13.0
+      - 1.14.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://github.com/GoogleContainerTools/container-structure-test
+  summary: validate the structure of your container images
+  description: |-
+    The Container Structure Tests provide a powerful framework to validate the
+    structure of a container image. These tests can be used to check the output of
+    commands in an image, as well as verify metadata and contents of the
+    filesystem.
+  fetch: https://github.com/GoogleContainerTools/container-structure-test/releases/download/v{{version}}/container-structure-test-linux-{{goarch}}
+  install:
+    - container-structure-test-linux-{{goarch}}:/usr/bin/container-structure-test

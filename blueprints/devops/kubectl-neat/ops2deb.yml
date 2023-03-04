@@ -1,0 +1,20 @@
+- name: kubectl-neat
+  version: 2.0.3
+  revision: "3"
+  homepage: https://github.com/itaysk/kubectl-neat
+  summary: clean up Kubernetes yaml and json output to make it readable
+  description: Remove clutter from Kubernetes manifests to make them more readable.
+  fetch: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_amd64.tar.gz
+  script:
+    - mv kubectl-neat {{src}}/usr/bin/kubectl-neat
+
+- name: kubectl-neat
+  version: 2.0.3
+  revision: "3"
+  architecture: arm64
+  homepage: https://github.com/itaysk/kubectl-neat
+  summary: clean up Kubernetes yaml and json output to make it readable
+  description: Remove clutter from Kubernetes manifests to make them more readable.
+  fetch: https://github.com/itaysk/kubectl-neat/releases/download/v{{version}}/kubectl-neat_linux_{{goarch}}.tar.gz
+  script:
+    - mv kubectl-neat {{src}}/usr/bin/kubectl-neat

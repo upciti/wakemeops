@@ -1,0 +1,117 @@
+- name: flux
+  matrix:
+    versions:
+      - 0.19.1
+      - 0.20.1
+      - 0.21.1
+      - 0.22.1
+      - 0.23.0
+  homepage: https://fluxcd.io
+  summary: open and extensible continuous delivery solution for Kubernetes
+  description: |-
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
+  script:
+    - install -m 755 flux {{src}}/usr/bin/flux
+
+- name: flux
+  version: 0.24.1
+  revision: "2"
+  homepage: https://fluxcd.io
+  summary: open and extensible continuous delivery solution for Kubernetes
+  description: |-
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
+  script:
+    - mv flux {{src}}/usr/bin/flux
+
+- name: flux
+  version: 0.25.3
+  homepage: https://fluxcd.io
+  summary: open and extensible continuous delivery solution for Kubernetes
+  description: |-
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_amd64.tar.gz
+  script:
+    - mv flux {{src}}/usr/bin/flux
+
+- name: flux
+  matrix:
+    versions:
+      - 0.25.3
+      - 0.26.1
+      - 0.26.2
+      - 0.26.3
+      - 0.27.0
+      - 0.27.1
+      - 0.27.2
+      - 0.27.3
+      - 0.27.4
+      - 0.28.1
+      - 0.28.2
+      - 0.28.3
+      - 0.28.4
+      - 0.28.5
+    architectures:
+      - arm64
+      - armhf
+      - amd64
+  homepage: https://fluxcd.io
+  summary: open and extensible continuous delivery solution for Kubernetes
+  description: |-
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
+  script:
+    - mv flux {{src}}/usr/bin/flux
+
+- name: flux
+  matrix:
+    versions:
+      - 0.29.0
+      - 0.29.1
+      - 0.29.2
+      - 0.29.3
+      - 0.29.4
+      - 0.29.5
+      - 0.30.0
+      - 0.30.2
+      - 0.31.0
+      - 0.31.1
+      - 0.31.2
+      - 0.31.3
+      - 0.31.5
+      - 0.32.0
+      - 0.33.0
+      - 0.34.0
+      - 0.35.0
+      - 0.36.0
+      - 0.37.0
+      - 0.38.0
+      - 0.38.1
+      - 0.38.2
+      - 0.38.3
+      - 0.39.0
+      - 0.40.0
+      - 0.40.1
+      - 0.40.2
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://fluxcd.io
+  summary: open and extensible continuous delivery solution for Kubernetes
+  description: |-
+    Flux is a tool for keeping Kubernetes clusters in sync with sources
+    of configuration (like Git repositories), and automating updates to
+    configuration when there is new code to deploy.
+  fetch: https://github.com/fluxcd/flux2/releases/download/v{{version}}/flux_{{version}}_linux_{{goarch}}.tar.gz
+  install:
+    - flux:/usr/bin/

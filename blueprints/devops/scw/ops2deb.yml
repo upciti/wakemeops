@@ -1,0 +1,47 @@
+- name: scw
+  version: 2.3.1
+  homepage: https://github.com/scaleway/scaleway-cli
+  summary: command-line interface for Scaleway
+  description: |-
+    Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
+    directly from your terminal.
+  fetch: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
+  script:
+    - install -m 755 scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
+
+- name: scw
+  version: 2.4.0
+  revision: "3"
+  homepage: https://github.com/scaleway/scaleway-cli
+  summary: command-line interface for Scaleway
+  description: |-
+    Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
+    directly from your terminal.
+  fetch: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scw-{{version}}-linux-x86_64
+  script:
+    - mv scw-{{version}}-linux-x86_64 {{src}}/usr/bin/scw
+
+- name: scw
+  matrix:
+    versions:
+      - 2.5.5
+      - 2.5.6
+      - 2.6.0
+      - 2.6.1
+      - 2.6.2
+      - 2.7.0
+      - 2.8.0
+      - 2.10.0
+      - 2.11.0
+      - 2.11.1
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://github.com/scaleway/scaleway-cli
+  summary: command-line interface for Scaleway
+  description: |-
+    Scaleway CLI is a tool to help you pilot your Scaleway infrastructure
+    directly from your terminal.
+  fetch: https://github.com/scaleway/scaleway-cli/releases/download/v{{version}}/scaleway-cli_{{version}}_linux_{{goarch}}
+  install:
+    - scaleway-cli_{{version}}_linux_{{goarch}}:/usr/bin/scw

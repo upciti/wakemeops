@@ -1,0 +1,53 @@
+- name: fd
+  version: 8.2.1
+  homepage: https://github.com/sharkdp/fd
+  summary: human-friendly and fast alternative to 'find'
+  description: |-
+    fd is a program to find entries in your filesystem. It is a simple, fast and
+    user-friendly alternative to find. While it does not aim to support all of
+    find's powerful functionality, it provides sensible (opinionated) defaults for
+    a majority of use cases.
+  fetch: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+  script:
+    - install -m 755 fd-v{{version}}-x86_64-unknown-linux-gnu/fd {{src}}/usr/bin/fd
+
+- name: fd
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 8.3.2
+  homepage: https://github.com/sharkdp/fd
+  summary: human-friendly and fast alternative to 'find'
+  description: |-
+    fd is a program to find entries in your filesystem. It is a simple, fast and
+    user-friendly alternative to find. While it does not aim to support all of
+    find's powerful functionality, it provides sensible (opinionated) defaults for
+    a majority of use cases.
+  fetch: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv fd-v{{version}}-*/fd {{src}}/usr/bin/fd
+
+- name: fd
+  matrix:
+    versions:
+      - 8.4.0
+      - 8.5.2
+      - 8.5.3
+      - 8.6.0
+      - 8.7.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://github.com/sharkdp/fd
+  summary: human-friendly and fast alternative to 'find'
+  description: |-
+    fd is a program to find entries in your filesystem. It is a simple, fast and
+    user-friendly alternative to find. While it does not aim to support all of
+    find's powerful functionality, it provides sensible (opinionated) defaults for
+    a majority of use cases.
+  fetch: https://github.com/sharkdp/fd/releases/download/v{{version}}/fd-v{{version}}-{{rust_target}}.tar.gz
+  install:
+    - fd-v{{version}}-{{rust_target}}/fd:/usr/bin/

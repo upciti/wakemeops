@@ -1,0 +1,24 @@
+- name: datanymizer
+  version: 0.5.1
+  revision: "2"
+  homepage: https://github.com/datanymizer/datanymizer
+  summary: powerful postgres database anonymizer with flexible rules
+  description: |-
+    Datanymizer generates database-native dump. You can import or process your dump
+    with supported database without 3rd-party importers.
+    Datanymizer is created & supported by Evrone.
+  fetch: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
+  script:
+    - mv pg_datanymizer {{src}}/usr/bin/
+
+- name: datanymizer
+  version: 0.6.0
+  homepage: https://github.com/datanymizer/datanymizer
+  summary: powerful postgres database anonymizer with flexible rules
+  description: |-
+    Datanymizer generates database-native dump. You can import or process your dump
+    with supported database without 3rd-party importers.
+    Datanymizer is created & supported by Evrone.
+  fetch: https://github.com/datanymizer/datanymizer/releases/download/v{{version}}/pg_datanymizer-linux-x86_64.tar.gz
+  install:
+    - pg_datanymizer:/usr/bin/

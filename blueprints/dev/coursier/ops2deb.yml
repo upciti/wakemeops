@@ -1,0 +1,46 @@
+- name: coursier
+  matrix:
+    versions:
+      - 2.0.16-200-ge888c6dea
+      - 2.1.0-M5
+  homepage: https://get-coursier.io/
+  summary: Scala application and artifact manager
+  description: |-
+    Coursier can install Scala applications and setup your Scala development
+    environment. It can also download and cache artifacts from the web. Once
+    installed, the main usage of coursier is through its command-line tool cs. Its
+    features include:
+
+    - Install additional Scala applications.
+    - Launch Scala applications.
+    - Create standalone launchers for Scala applications.
+  fetch: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
+  script:
+    - gzip -d cs-x86_64-pc-linux.gz
+    - mv cs-x86_64-pc-linux {{src}}/usr/bin/cs
+
+- name: coursier
+  matrix:
+    versions:
+      - 2.1.0-M6
+      - 2.1.0-M7
+      - 2.1.0-RC1
+      - 2.1.0-RC2
+      - 2.1.0-RC3
+      - 2.1.0-RC4
+      - 2.1.0-RC5
+      - 2.1.0-RC6
+  homepage: https://get-coursier.io/
+  summary: Scala application and artifact manager
+  description: |-
+    Coursier can install Scala applications and setup your Scala development
+    environment. It can also download and cache artifacts from the web. Once
+    installed, the main usage of coursier is through its command-line tool cs. Its
+    features include:
+
+    - Install additional Scala applications.
+    - Launch Scala applications.
+    - Create standalone launchers for Scala applications.
+  fetch: https://github.com/coursier/coursier/releases/download/v{{version}}/cs-x86_64-pc-linux.gz
+  install:
+    - cs-x86_64-pc-linux:/usr/bin/cs

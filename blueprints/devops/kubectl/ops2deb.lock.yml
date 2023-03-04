@@ -1,0 +1,165 @@
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.22.4/bin/linux/amd64/kubectl
+  sha256: 21f24aa723002353eba1cc2668d0be22651f9063f444fd01626dce2b6e1c568c
+  timestamp: 2021-12-05 20:09:00+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.3/bin/linux/amd64/kubectl
+  sha256: d7da739e4977657a3b3c84962df49493e36b09cc66381a5e36029206dd1e01d0
+  timestamp: 2022-01-26 02:15:06+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.3/bin/linux/arm/kubectl
+  sha256: bc41382fbd3f6b33cb5ccb1819c5a38f2e6f3c9ce22acfedd6970b0b9b7748da
+  timestamp: 2022-01-26 02:15:06+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.3/bin/linux/arm64/kubectl
+  sha256: 6708d7a701b3d9ab3b359c6be27a3012b1c486fa1e81f79e5bdc71ffca2c38f9
+  timestamp: 2022-01-26 02:15:06+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.4/bin/linux/amd64/kubectl
+  sha256: 3f0398d4c8a5ff633e09abd0764ed3b9091fafbe3044970108794b02731c72d6
+  timestamp: 2022-02-17 19:24:02+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.4/bin/linux/arm/kubectl
+  sha256: bde3d7801cfe444d4e226d4669dfd518e4687e16c99efddd016c4bf3d529b198
+  timestamp: 2022-02-17 19:24:02+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.4/bin/linux/arm64/kubectl
+  sha256: aa45dba48791eeb78a994a2723c462d155af4e39fdcfbcb39ce9c96f604a967a
+  timestamp: 2022-02-17 19:24:02+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.5/bin/linux/amd64/kubectl
+  sha256: 715da05c56aa4f8df09cb1f9d96a2aa2c33a1232f6fd195e3ffce6e98a50a879
+  timestamp: 2022-03-17 02:23:23+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.5/bin/linux/arm/kubectl
+  sha256: 58420bc549e1683a4529066b38b2ac657611ed3b70041be78fba3b29401415db
+  timestamp: 2022-03-17 02:23:23+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.5/bin/linux/arm64/kubectl
+  sha256: 15cd560c04def7bbe5ee3f6f75e2cfd3913371c7e76354f4b2d5d6f536b70e39
+  timestamp: 2022-03-17 02:23:23+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/amd64/kubectl
+  sha256: 703a06354bab9f45c80102abff89f1a62cbc2c6d80678fd3973a014acc7c500a
+  timestamp: 2022-04-20 23:19:30+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/arm/kubectl
+  sha256: 30d8e9656334b57e78c8dbc5d5f245a64b9a74c4fd03db47182fa7a21c2f5e32
+  timestamp: 2022-04-20 23:19:30+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/arm64/kubectl
+  sha256: 4be771c8e6a082ba61f0367077f480237f9858ef5efe14b1dbbfc05cd42fc360
+  timestamp: 2022-04-20 23:19:30+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.0/bin/linux/amd64/kubectl
+  sha256: 94d686bb6772f6fb59e3a32beff908ab406b79acdfb2427abdc4ac3ce1bb98d7
+  timestamp: 2022-05-03 23:20:55+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.0/bin/linux/arm/kubectl
+  sha256: 410fc0b3c718f8f431fe4f7d5820bf8133b16ffb76187a53fa90929a77a38cbc
+  timestamp: 2022-05-03 23:20:55+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.0/bin/linux/arm64/kubectl
+  sha256: 449278789de283648e4076ade46816da249714f96e71567e035e9d17e1fff06d
+  timestamp: 2022-05-03 23:20:55+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.1/bin/linux/amd64/kubectl
+  sha256: 0ec3c2dbafc6dd27fc8ad25fa27fc527b5d7356d1830c0efbb8adcf975d9e84a
+  timestamp: 2022-05-26 05:52:50+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.1/bin/linux/arm/kubectl
+  sha256: 42e880ff20a55e8ec49187d54e2c1367226d220a0a6a1797e7fbf97426762f4f
+  timestamp: 2022-05-26 05:52:50+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.1/bin/linux/arm64/kubectl
+  sha256: b817b54183e089494f8b925096e9b65af3a356d87f94b73929bf5a6028a06271
+  timestamp: 2022-05-26 05:52:50+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.2/bin/linux/amd64/kubectl
+  sha256: f15fb430afd79f79ef7cf94a4e402cd212f02d8ec5a5e6a7ba9c3d5a2f954542
+  timestamp: 2022-06-15 23:18:58+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.2/bin/linux/arm/kubectl
+  sha256: c342216e1d32c28953e13f28ced387feda675b969a196ed69eaeda137fa7486a
+  timestamp: 2022-06-15 23:18:58+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.2/bin/linux/arm64/kubectl
+  sha256: 5a4c3652f08b4d095b686e1323ac246edbd8b6e5edd5a2626fb71afbcd89bc79
+  timestamp: 2022-06-15 23:18:58+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.3/bin/linux/amd64/kubectl
+  sha256: 8a45348bdaf81d46caf1706c8bf95b3f431150554f47d444ffde89e8cdd712c1
+  timestamp: 2022-07-13 23:22:25+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.3/bin/linux/arm/kubectl
+  sha256: 4ae94095580973931da53fd3b823909d85ca05055d6300f392d9dc9e5748d612
+  timestamp: 2022-07-13 23:22:25+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.3/bin/linux/arm64/kubectl
+  sha256: bdad4d3063ddb7bfa5ecf17fb8b029d5d81d7d4ea1650e4369aafa13ed97149a
+  timestamp: 2022-07-13 23:22:25+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.4/bin/linux/amd64/kubectl
+  sha256: 4a76c70217581ba327f0ad0a0a597c1a02c62222bb80fbfea4f2f5cb63f3e2d8
+  timestamp: 2022-08-18 04:28:52+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.4/bin/linux/arm/kubectl
+  sha256: 060c0bb55aa3284c489cf8224ab10296d486b5a2e7f3e5d6440c9382698bf68a
+  timestamp: 2022-08-18 04:28:52+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.24.4/bin/linux/arm64/kubectl
+  sha256: 0aa4a08ff81efe3fc1a8ef880ca2f8622e3b1f93bf622583d7b9bfe3124afe61
+  timestamp: 2022-08-18 04:28:52+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.0/bin/linux/amd64/kubectl
+  sha256: e23cc7092218c95c22d8ee36fb9499194a36ac5b5349ca476886b7edc0203885
+  timestamp: 2022-08-24 04:23:26+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.0/bin/linux/arm/kubectl
+  sha256: 0b907cfdcabafae7d2d4ac7de55e3ef814df999acdf6b1bd0ecf6abbef7c7131
+  timestamp: 2022-08-24 04:23:26+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.0/bin/linux/arm64/kubectl
+  sha256: 24db547bbae294c5c44f2b4a777e45f0e2f3d6295eace0d0c4be2b2dfa45330d
+  timestamp: 2022-08-24 04:23:26+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.1/bin/linux/amd64/kubectl
+  sha256: 9cc2d6ce59740b6acf6d5d4a04d4a7d839b0a81373248ef0ce6c8d707143435b
+  timestamp: 2022-09-15 17:27:07+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.1/bin/linux/arm/kubectl
+  sha256: e8c6bfd8797e42501d14c7d75201324630f15436f712c4f7e46ce8c8067d9adc
+  timestamp: 2022-09-15 17:27:07+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.1/bin/linux/arm64/kubectl
+  sha256: 73602eabf20b877f88642fafcbe1eda439162c2c1dbcc9ed09fdd4d7ac9919ea
+  timestamp: 2022-09-15 17:27:07+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/amd64/kubectl
+  sha256: 8639f2b9c33d38910d706171ce3d25be9b19fc139d0e3d4627f38ce84f9040eb
+  timestamp: 2022-09-21 23:22:50+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/arm/kubectl
+  sha256: d6b581a41b010ef86a9364102f8612d2ee7fbc7dd2036e40ab7c85adb52331cb
+  timestamp: 2022-09-21 23:22:50+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.2/bin/linux/arm64/kubectl
+  sha256: b26aa656194545699471278ad899a90b1ea9408d35f6c65e3a46831b9c063fd5
+  timestamp: 2022-09-21 23:22:50+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.3/bin/linux/amd64/kubectl
+  sha256: f57e568495c377407485d3eadc27cda25310694ef4ffc480eeea81dea2b60624
+  timestamp: 2022-10-13 20:36:25+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.3/bin/linux/arm/kubectl
+  sha256: 59e1dba0951f19d4d18eb04db50fcd437c1d57460f2008bc03e668f71b8ea685
+  timestamp: 2022-10-13 20:36:25+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.3/bin/linux/arm64/kubectl
+  sha256: cfd5092ce347a69fe49c93681a164d9a8376d69eef587da894207c62ec7d6a5d
+  timestamp: 2022-10-13 20:36:25+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.4/bin/linux/amd64/kubectl
+  sha256: e4e569249798a09f37e31b8b33571970fcfbdecdd99b1b81108adc93ca74b522
+  timestamp: 2022-11-10 19:28:59+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.4/bin/linux/arm/kubectl
+  sha256: 49ab7f05bb27a710575c2d77982cbfb4a09247ec94a8e21af28a6e300b698a44
+  timestamp: 2022-11-10 19:28:59+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.4/bin/linux/arm64/kubectl
+  sha256: a8e9cd3c6ca80b67091fc41bc7fe8e9f246835925c835823a08a20ed9bcea1ba
+  timestamp: 2022-11-10 19:28:59+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.5/bin/linux/amd64/kubectl
+  sha256: 6a660cd44db3d4bfe1563f6689cbe2ffb28ee4baf3532e04fff2d7b909081c29
+  timestamp: 2022-12-08 19:24:03+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.5/bin/linux/arm/kubectl
+  sha256: fec9a0f7cd922744935dd5dfc2366ab307424ef4c533299d67edf7de15346e51
+  timestamp: 2022-12-08 19:24:03+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.25.5/bin/linux/arm64/kubectl
+  sha256: 7bc650f28a5b4436df2abcfae5905e461728ba416146beac17a2634fa82a6f0a
+  timestamp: 2022-12-08 19:24:03+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/linux/amd64/kubectl
+  sha256: b6769d8ac6a0ed0f13b307d289dc092ad86180b08f5b5044af152808c04950ae
+  timestamp: 2022-12-09 02:41:54+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/linux/arm/kubectl
+  sha256: 8eef310d0de238c582556d81ab8cbe8d6fca3c0e43ee337a905dcdd3578f9dda
+  timestamp: 2022-12-09 02:41:54+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.0/bin/linux/arm64/kubectl
+  sha256: 79b14e4ddada9e81d2989f36a89faa9e56f8abe6e0246e7bdc305c93c3731ea4
+  timestamp: 2022-12-09 02:41:54+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl
+  sha256: d57be22cfa25f7427cfb538cfc8853d763878f8b36c76ce93830f6f2d67c6e5d
+  timestamp: 2023-01-18 22:17:02+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm/kubectl
+  sha256: e067d59ac19e287026b5c2b75a1077b1312ba82ad64ee01dff2cdafd57720f39
+  timestamp: 2023-01-18 22:17:02+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm64/kubectl
+  sha256: 4027cb0a2840bc14ec3f18151b3360dd2d1f6ce730ed5ac28bd846c17e7d73f5
+  timestamp: 2023-01-18 22:17:02+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/amd64/kubectl
+  sha256: fcf86d21fb1a49b012bce7845cf00081d2dd7a59f424b28621799deceb5227b3
+  timestamp: 2023-03-01 02:53:17+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/arm/kubectl
+  sha256: a8944021fc9022f73976d8ab2736f21b64b30de3b2a6ccfddd0316ca1d3c6a1d
+  timestamp: 2023-03-01 02:53:17+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/arm64/kubectl
+  sha256: 291e85bef77e8440205c873686e9938d7f87c0534e9a491de64e3cc0584295b6
+  timestamp: 2023-03-01 02:53:17+00:00

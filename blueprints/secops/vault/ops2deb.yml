@@ -1,0 +1,78 @@
+- name: vault
+  version: 1.8.5
+  homepage: https://www.hashicorp.com/products/vault
+  summary: tool to create, manage and store secrets
+  description: |-
+    A secret is anything that you want to tightly control access to, such as API
+    keys, passwords, or certificates. Vault provides a unified interface to any
+    secret, while providing tight access control and recording a detailed audit
+    log.
+  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
+  script:
+    - install -m 755 vault {{src}}/usr/bin/vault
+
+- name: vault
+  version: 1.9.3
+  homepage: https://www.hashicorp.com/products/vault
+  summary: tool to create, manage and store secrets
+  description: |-
+    A secret is anything that you want to tightly control access to, such as API
+    keys, passwords, or certificates. Vault provides a unified interface to any
+    secret, while providing tight access control and recording a detailed audit
+    log.
+  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
+  script:
+    - mv vault {{src}}/usr/bin/vault
+
+- name: vault
+  matrix:
+    versions:
+      - 1.9.3
+      - 1.9.4
+      - 1.10.0
+    architectures:
+      - arm64
+      - armhf
+      - amd64
+  homepage: https://www.hashicorp.com/products/vault
+  summary: tool to create, manage and store secrets
+  description: |-
+    A secret is anything that you want to tightly control access to, such as API
+    keys, passwords, or certificates. Vault provides a unified interface to any
+    secret, while providing tight access control and recording a detailed audit
+    log.
+  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
+  script:
+    - mv vault {{src}}/usr/bin/vault
+
+- name: vault
+  matrix:
+    versions:
+      - 1.10.1
+      - 1.10.2
+      - 1.10.3
+      - 1.10.4
+      - 1.11.0
+      - 1.11.1
+      - 1.11.2
+      - 1.11.3
+      - 1.11.4
+      - 1.12.0
+      - 1.12.1
+      - 1.12.2
+      - 1.12.3
+      - 1.13.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://www.hashicorp.com/products/vault
+  summary: tool to create, manage and store secrets
+  description: |-
+    A secret is anything that you want to tightly control access to, such as API
+    keys, passwords, or certificates. Vault provides a unified interface to any
+    secret, while providing tight access control and recording a detailed audit
+    log.
+  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
+  install:
+    - vault:/usr/bin/

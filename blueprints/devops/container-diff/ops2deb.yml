@@ -1,0 +1,11 @@
+name: container-diff
+version: 0.17.0
+homepage: https://github.com/GoogleContainerTools/container-diff
+summary: diff your Docker containers
+description: |-
+  Tool for analyzing and comparing container images.
+  Container-diff can examine images along several different
+  criteria, including: history, file system, size, packages...
+fetch: https://github.com/GoogleContainerTools/container-diff/releases/download/v{{version}}/container-diff-linux-amd64
+script:
+  - install -m 755 container-diff-linux-amd64 {{src}}/usr/bin/container-diff

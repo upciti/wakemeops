@@ -1,0 +1,16 @@
+name: github-hub
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+version: 2.14.2
+revision: "2"
+homepage: https://hub.github.com
+summary: do everyday GitHub tasks without ever leaving the terminal
+description: |-
+  hub is a command line tool that wraps git in order to extend it with extra
+  features and commands that make working with GitHub easier.
+fetch: https://github.com/github/hub/releases/download/v{{version}}/hub-linux-{{goarch}}-{{version}}.tgz
+install:
+  - hub-linux-{{goarch}}-{{version}}/bin/hub:/usr/bin/

@@ -1,0 +1,34 @@
+- name: tokei
+  version: 12.1.2
+  revision: "2"
+  homepage: https://github.com/XAMPPRocky/tokei
+  summary: counts the lines of source code
+  description: |-
+    Tokei is a program that displays statistics about your code.
+    Tokei will show the number of files, total lines within those files and
+    code, comments, and blanks grouped by language.
+  fetch: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-x86_64-unknown-linux-gnu.tar.gz
+  script:
+    - mv tokei {{src}}/usr/bin/
+
+- name: tokei
+  matrix:
+    architectures:
+      - arm64
+      - armhf
+  version: 12.1.2
+  revision: "2"
+  homepage: https://github.com/XAMPPRocky/tokei
+  summary: counts the lines of source code
+  description: |-
+    Tokei is a program that displays statistics about your code.
+    Tokei will show the number of files, total lines within those files and
+    code, comments, and blanks grouped by language.
+  fetch:
+    url: https://github.com/XAMPPRocky/tokei/releases/download/v{{version}}/tokei-{{target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      arm64: aarch64-unknown-linux-gnu
+      armhf: armv7-unknown-linux-gnueabihf
+  script:
+    - mv tokei {{src}}/usr/bin/

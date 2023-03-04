@@ -1,0 +1,63 @@
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v3.10.0/kustomize_v3.10.0_linux_amd64.tar.gz
+  sha256: bab4ab8881718c29ba174bdf677fd89986ad25c40eb363fec9e78c1aff2ff0ea
+  timestamp: 2022-01-10 15:01:55+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v3.8.10/kustomize_v3.8.10_linux_amd64.tar.gz
+  sha256: 10281b6cd16a50fcbb4a762652bf5ab333633d37035fc7f76ee7b941b50b511d
+  timestamp: 2021-12-14 15:37:09+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.0.0/kustomize_v4.0.0_linux_amd64.tar.gz
+  sha256: 6d8da061bbd9e7c57b2f39f34ef5f4cce76321e94bfe6cae4e972a7483f3bf30
+  timestamp: 2022-01-10 15:57:12+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.4.1/kustomize_v4.4.1_linux_amd64.tar.gz
+  sha256: 2d5927efec40ba32a121c49f6df9955b8b8a296ef1dec4515a46fc84df158798
+  timestamp: 2022-01-10 16:07:21+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.4.1/kustomize_v4.4.1_linux_arm64.tar.gz
+  sha256: 8e54066784ca38e451035dad5de985bfdbdcf55838603576ab58d880883550b5
+  timestamp: 2022-01-21 18:01:09+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.1/kustomize_v4.5.1_linux_amd64.tar.gz
+  sha256: cc26e18e814fd162dacd5e2a1357aa133fb91589e23a15ccc8b7c163fd259c54
+  timestamp: 2022-02-02 22:17:47+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.1/kustomize_v4.5.1_linux_arm64.tar.gz
+  sha256: 4873fb965cad3a646bea4ffc2f2f9189501fe7bc6f0ae8854920593b9ba13d73
+  timestamp: 2022-02-02 22:17:47+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.2/kustomize_v4.5.2_linux_amd64.tar.gz
+  sha256: c4215332da8da16ddeb88e218d8dceb76c85b366a5c58d012bc5ece904bf2fd0
+  timestamp: 2022-02-10 02:11:17+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.2/kustomize_v4.5.2_linux_arm64.tar.gz
+  sha256: 7924d2c1c41976859558c7a1b8009c0d8cc63ebce242b8d4314d332236966481
+  timestamp: 2022-02-10 02:11:17+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.3/kustomize_v4.5.3_linux_amd64.tar.gz
+  sha256: e4dc2f795235b03a2e6b12c3863c44abe81338c5c0054b29baf27dcc734ae693
+  timestamp: 2022-03-24 22:19:29+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.3/kustomize_v4.5.3_linux_arm64.tar.gz
+  sha256: 97cf7d53214388b1ff2177a56404445f02d8afacb9421339c878c5ac2c8bc2c8
+  timestamp: 2022-03-24 22:19:29+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.4/kustomize_v4.5.4_linux_amd64.tar.gz
+  sha256: 1159c5c17c964257123b10e7d8864e9fe7f9a580d4124a388e746e4003added3
+  timestamp: 2022-03-29 03:44:54+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.4/kustomize_v4.5.4_linux_arm64.tar.gz
+  sha256: 094417546ab9b44ece44f3b31f3170080d0682519144301d5b6be080276a1f34
+  timestamp: 2022-03-29 03:44:54+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.5/kustomize_v4.5.5_linux_amd64.tar.gz
+  sha256: bba81aa61dba057db1d5abeddf1e522b568b2d906ab67a5c80935e97302c8773
+  timestamp: 2022-05-20 23:21:11+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.5/kustomize_v4.5.5_linux_arm64.tar.gz
+  sha256: c491191b81c97ddebc4844f9254683ecfc80f40dfb15510433cbfdaeb86627c3
+  timestamp: 2022-05-20 23:21:11+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.6/kustomize_v4.5.6_linux_amd64.tar.gz
+  sha256: 6802d54917eb5887f9c71031c59e6845c1a490c13881b050ea6959b714b4a432
+  timestamp: 2022-07-29 23:20:05+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.6/kustomize_v4.5.6_linux_arm64.tar.gz
+  sha256: 3b66709c7692c5ccfdcb2f4dd383e7aa622b451b046f2197b59033f16457b3b3
+  timestamp: 2022-07-29 23:20:05+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.7/kustomize_v4.5.7_linux_amd64.tar.gz
+  sha256: 701e3c4bfa14e4c520d481fdf7131f902531bfc002cb5062dcf31263a09c70c9
+  timestamp: 2022-08-02 20:28:00+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v4.5.7/kustomize_v4.5.7_linux_arm64.tar.gz
+  sha256: 65665b39297cc73c13918f05bbe8450d17556f0acd16242a339271e14861df67
+  timestamp: 2022-08-02 20:28:00+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.0.0/kustomize_v5.0.0_linux_amd64.tar.gz
+  sha256: 2e8c28a80ce213528251f489db8d2dcbea7c63b986c8f7595a39fc76ff871cd7
+  timestamp: 2023-02-02 19:23:49+00:00
+- url: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.0.0/kustomize_v5.0.0_linux_arm64.tar.gz
+  sha256: e97b12a83e7b9b0407cac97cac4c25bc135c42383bd3764d5544e32c96542eca
+  timestamp: 2023-02-02 19:23:49+00:00

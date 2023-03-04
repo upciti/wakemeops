@@ -1,0 +1,50 @@
+- name: git-delta
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 0.12.1
+  revision: "2"
+  homepage: https://dandavison.github.io/delta/
+  summary: syntax-highlighting pager for git, diff, and grep output
+  description: |-
+    Code evolves, and we all spend time studying diffs. Delta aims to make this
+    both efficient and enjoyable: it allows you to make extensive changes to the
+    layout and styling of diffs, as well as allowing you to stay arbitrarily close
+    to the default git/diff output.
+  fetch:
+    url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      arm64: aarch64-unknown-linux-gnu
+      armhf: arm-unknown-linux-gnueabihf
+  install:
+    - delta-{{version}}-{{target}}/delta:/usr/bin/delta
+
+- name: git-delta
+  matrix:
+    versions:
+      - 0.13.0
+      - 0.14.0
+      - 0.15.0
+      - 0.15.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://dandavison.github.io/delta/
+  summary: syntax-highlighting pager for git, diff, and grep output
+  description: |-
+    Code evolves, and we all spend time studying diffs. Delta aims to make this
+    both efficient and enjoyable: it allows you to make extensive changes to the
+    layout and styling of diffs, as well as allowing you to stay arbitrarily close
+    to the default git/diff output.
+  fetch:
+    url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      arm64: aarch64-unknown-linux-gnu
+      armhf: arm-unknown-linux-gnueabihf
+  install:
+    - delta-{{version}}-{{target}}/delta:/usr/bin/delta

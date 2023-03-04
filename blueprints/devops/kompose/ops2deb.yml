@@ -1,0 +1,35 @@
+- name: kompose
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 1.26.1
+  homepage: https://kompose.io
+  summary: convert docker-compose.yaml into k8s deployments and services
+  description: |-
+    kompose is a tool to help users who are familiar with docker-compose move to
+    Kubernetes. kompose takes a Docker Compose file and translates it into
+    Kubernetes resources.
+  fetch: https://github.com/kubernetes/kompose/releases/download/v{{version}}/kompose-linux-{{goarch}}
+  script:
+    - mv kompose-linux-{{goarch}} {{src}}/usr/bin/kompose
+
+- name: kompose
+  matrix:
+    versions:
+      - 1.27.0
+      - 1.28.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://kompose.io
+  summary: convert docker-compose.yaml into k8s deployments and services
+  description: |-
+    kompose is a tool to help users who are familiar with docker-compose move to
+    Kubernetes. kompose takes a Docker Compose file and translates it into
+    Kubernetes resources.
+  fetch: https://github.com/kubernetes/kompose/releases/download/v{{version}}/kompose-linux-{{goarch}}
+  install:
+    - kompose-linux-{{goarch}}:/usr/bin/kompose

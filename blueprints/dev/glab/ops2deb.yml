@@ -1,0 +1,45 @@
+- name: glab
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 1.22.0
+  homepage: https://glab.readthedocs.io/
+  summary: Gitlab on the command line
+  description: |-
+    Bring GitLab to your terminal right next to where you're already working with
+    git and your code without switching between browser windows or tabs. Work with
+    issues, merge requests, look at running pipelines directly from your CLI, among
+    other features.
+  fetch:
+    url: https://github.com/profclems/glab/releases/download/v{{version}}/glab_{{version}}_Linux_{{target}}.tar.gz
+    targets:
+      amd64: x86_64
+      armhf: armv6
+  script:
+    - mv bin/glab {{src}}/usr/bin/
+
+- name: glab
+  matrix:
+    versions:
+      - 1.23.1
+      - 1.24.0
+      - 1.24.1
+      - 1.25.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://glab.readthedocs.io/
+  summary: Gitlab on the command line
+  description: |-
+    Bring GitLab to your terminal right next to where you're already working with
+    git and your code without switching between browser windows or tabs. Work with
+    issues, merge requests, look at running pipelines directly from your CLI, among
+    other features.
+  fetch:
+    url: https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_Linux_{{target}}.deb
+    targets:
+      amd64: x86_64
+  install:
+    - data/usr/bin/glab:/usr/bin/

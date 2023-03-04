@@ -1,0 +1,27 @@
+- name: kube-linter
+  matrix:
+    versions:
+      - 0.4.0
+      - 0.5.0
+  homepage: https://github.com/stackrox/kube-linter
+  summary: checks Kubernetes YAML files and Helm charts
+  description: |-
+    KubeLinter is a static analysis tool that checks Kubernetes YAML files and Helm
+    charts to ensure the applications represented in them adhere to best practices.
+  fetch: https://github.com/stackrox/kube-linter/releases/download/{{version}}/kube-linter-linux.tar.gz
+  install:
+    - kube-linter:/usr/bin/
+
+- name: kube-linter
+  matrix:
+    versions:
+      - 0.5.1
+      - 0.6.0
+  homepage: https://github.com/stackrox/kube-linter
+  summary: checks Kubernetes YAML files and Helm charts
+  description: |-
+    KubeLinter is a static analysis tool that checks Kubernetes YAML files and Helm
+    charts to ensure the applications represented in them adhere to best practices.
+  fetch: https://github.com/stackrox/kube-linter/releases/download/{{version}}/kube-linter-linux
+  install:
+    - kube-linter-linux:/usr/bin/

@@ -1,0 +1,104 @@
+- name: helmfile
+  version: 0.141.0
+  homepage: https://helmfile.readthedocs.io/
+  summary: deploy Kubernetes Helm Charts
+  description: |-
+    Helmfile is a declarative spec for deploying helm charts. It lets you...
+
+    - Keep a directory of chart value files and maintain changes in version
+    control.
+    - Apply CI/CD to configuration changes.
+    - Periodically sync to avoid skew in environments.
+  fetch: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
+  script:
+    - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+
+- name: helmfile
+  version: 0.142.0
+  revision: "3"
+  homepage: https://helmfile.readthedocs.io/
+  summary: deploy Kubernetes Helm Charts
+  description: |-
+    Helmfile is a declarative spec for deploying helm charts. It lets you...
+
+    - Keep a directory of chart value files and maintain changes in version
+    control.
+    - Apply CI/CD to configuration changes.
+    - Periodically sync to avoid skew in environments.
+  fetch: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_amd64
+  script:
+    - install -m 755 helmfile_linux_amd64 {{src}}/usr/bin/helmfile
+
+- name: helmfile
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 0.143.0
+  revision: "2"
+  homepage: https://helmfile.readthedocs.io/
+  summary: deploy Kubernetes Helm Charts
+  description: |-
+    Helmfile is a declarative spec for deploying helm charts. It lets you...
+
+    - Keep a directory of chart value files and maintain changes in version
+    control.
+    - Apply CI/CD to configuration changes.
+    - Periodically sync to avoid skew in environments.
+  fetch: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_{{goarch}}
+  script:
+    - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
+
+- name: helmfile
+  matrix:
+    versions:
+      - 0.143.1
+      - 0.143.3
+      - 0.143.4
+      - 0.143.5
+      - 0.144.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://helmfile.readthedocs.io/
+  summary: deploy Kubernetes Helm Charts
+  description: |-
+    Helmfile is a declarative spec for deploying helm charts. It lets you...
+
+    - Keep a directory of chart value files and maintain changes in version
+    control.
+    - Apply CI/CD to configuration changes.
+    - Periodically sync to avoid skew in environments.
+  fetch: https://github.com/roboll/helmfile/releases/download/v{{version}}/helmfile_linux_{{goarch}}
+  script:
+    - mv helmfile_linux_{{goarch}} {{src}}/usr/bin/helmfile
+
+- name: helmfile
+  matrix:
+    versions:
+      - 0.145.0
+      - 0.145.3
+      - 0.145.4
+      - 0.145.5
+      - 0.146.0
+      - 0.147.0
+      - 0.148.0
+      - 0.148.1
+      - 0.149.0
+      - 0.150.0
+      - 0.151.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://helmfile.readthedocs.io/
+  summary: deploy Kubernetes Helm Charts
+  description: |-
+    Helmfile is a declarative spec for deploying helm charts. It lets you...
+
+    - Keep a directory of chart value files and maintain changes in version
+    control.
+    - Apply CI/CD to configuration changes.
+    - Periodically sync to avoid skew in environments.
+  fetch: https://github.com/helmfile/helmfile/releases/download/v{{version}}/helmfile_{{version}}_linux_{{goarch}}.tar.gz
+  install:
+    - helmfile:/usr/bin/helmfile

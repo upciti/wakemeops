@@ -1,0 +1,32 @@
+- name: himalaya
+  matrix:
+    versions:
+      - 0.5.8
+      - 0.5.9
+      - 0.5.10
+  homepage: https://github.com/soywod/himalaya
+  summary: command-line interface for email management
+  description: |-
+    CLI email client.
+    The project is under active development. Do not use in production before the
+    v1.0.0.
+  fetch: https://github.com/soywod/himalaya/releases/download/v{{version}}/himalaya-linux.tar.gz
+  script:
+    - mv himalaya {{src}}/usr/bin/himalaya
+
+- name: himalaya
+  matrix:
+    versions:
+      - 0.6.0
+      - 0.6.1
+      - 0.7.0
+      - 0.7.1
+  homepage: https://github.com/soywod/himalaya
+  summary: command-line interface for email management
+  description: |-
+    CLI email client.
+    The project is under active development. Do not use in production before the
+    v1.0.0.
+  fetch: https://github.com/soywod/himalaya/releases/download/v{{version}}/himalaya-linux.tar.gz
+  install:
+    - himalaya:/usr/bin/

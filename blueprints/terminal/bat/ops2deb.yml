@@ -1,0 +1,38 @@
+- name: bat
+  matrix:
+    versions:
+      - 0.19.0
+      - 0.20.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://github.com/sharkdp/bat
+  summary: cat replacement with syntax highlighting
+  description: |-
+    Supports syntax highlighting for a large number of programming and markup
+    languages and communicates with git to show modifications with respect to the
+    index.
+  fetch: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv bat-v{{version}}-*/bat {{src}}/usr/bin/bat
+
+- name: bat
+  matrix:
+    versions:
+      - 0.21.0
+      - 0.22.0
+      - 0.22.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://github.com/sharkdp/bat
+  summary: cat replacement with syntax highlighting
+  description: |-
+    Supports syntax highlighting for a large number of programming and markup
+    languages and communicates with git to show modifications with respect to the
+    index.
+  fetch: https://github.com/sharkdp/bat/releases/download/v{{version}}/bat-v{{version}}-{{rust_target}}.tar.gz
+  install:
+    - bat-v{{version}}-{{rust_target}}/bat:/usr/bin/

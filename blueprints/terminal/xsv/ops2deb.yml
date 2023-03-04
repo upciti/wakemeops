@@ -1,0 +1,11 @@
+name: xsv
+version: 0.13.0
+revision: "2"
+homepage: https://github.com/BurntSushi/xsv
+summary: fast CSV command-line toolkit
+description: |-
+  xsv is a command line program for indexing, slicing, analyzing, splitting and
+  joining CSV files.
+fetch: https://github.com/BurntSushi/xsv/releases/download/{{version}}/xsv-{{version}}-x86_64-unknown-linux-musl.tar.gz
+script:
+  - mv xsv {{src}}/usr/bin/xsv

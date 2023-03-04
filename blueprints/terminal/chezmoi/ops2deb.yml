@@ -1,0 +1,45 @@
+name: chezmoi
+matrix:
+  versions:
+    - 2.18.0
+    - 2.18.1
+    - 2.20.0
+    - 2.21.0
+    - 2.21.1
+    - 2.22.0
+    - 2.22.1
+    - 2.23.0
+    - 2.24.0
+    - 2.25.0
+    - 2.26.0
+    - 2.27.0
+    - 2.27.1
+    - 2.27.2
+    - 2.27.3
+    - 2.28.0
+    - 2.29.0
+    - 2.29.1
+    - 2.29.2
+    - 2.29.3
+    - 2.29.4
+    - 2.30.0
+    - 2.30.1
+    - 2.31.0
+    - 2.31.1
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+homepage: https://github.com/twpayne/chezmoi
+summary: manage your dotfiles across multiple diverse machines
+description: |-
+  Lets you install and update your personal configuration files on multiple
+  machines with a single command. chezmoi is helpful if you have spent time
+  customizing the tools you use (e.g. shells, editors, and version control
+  systems) and want to keep machines running different accounts (e.g. home and
+  work) and/or different operating systems (e.g. Linux, macOS, and Windows) in
+  sync, while still being able to easily cope with differences from machine to
+  machine.
+fetch: https://github.com/twpayne/chezmoi/releases/download/v{{version}}/chezmoi_{{version}}_linux_{{goarch}}.tar.gz
+install:
+  - chezmoi:/usr/bin/

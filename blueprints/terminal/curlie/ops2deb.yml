@@ -1,0 +1,31 @@
+- name: curlie
+  version: 1.6.7
+  homepage: https://github.com/rs/curlie
+  summary: the power of 'curl', the ease of use of 'httpie'
+  description: |-
+    If you like the interface of HTTPie but miss the features of curl, curlie is
+    what you are searching for. It is a frontend to curl that adds the ease of use
+    of httpie, without compromising on features and performance. All curl options
+    are exposed with syntax sugar and output formatting inspired from httpie.
+  fetch: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_amd64.tar.gz
+  script:
+    - mv curlie {{src}}/usr/bin/curlie
+
+- name: curlie
+  matrix:
+    versions:
+      - 1.6.7
+      - 1.6.9
+    architectures:
+      - arm64
+      - amd64
+  homepage: https://github.com/rs/curlie
+  summary: the power of 'curl', the ease of use of 'httpie'
+  description: |-
+    If you like the interface of HTTPie but miss the features of curl, curlie is
+    what you are searching for. It is a frontend to curl that adds the ease of use
+    of httpie, without compromising on features and performance. All curl options
+    are exposed with syntax sugar and output formatting inspired from httpie.
+  fetch: https://github.com/rs/curlie/releases/download/v{{version}}/curlie_{{version}}_linux_{{goarch}}.tar.gz
+  script:
+    - mv curlie {{src}}/usr/bin/curlie

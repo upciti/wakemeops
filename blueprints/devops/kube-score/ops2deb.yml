@@ -1,0 +1,88 @@
+- name: kube-score
+  version: 1.12.0
+  homepage: https://github.com/zegl/kube-score
+  summary: Kubernetes object analysis for improved reliability and security
+  description: |-
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  fetch: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
+  script:
+    - install -m 755 kube-score {{src}}/usr/bin/kube-score
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: kube-score
+  version: 1.13.0
+  revision: "3"
+  homepage: https://github.com/zegl/kube-score
+  summary: Kubernetes object analysis for improved reliability and security
+  description: |-
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  fetch: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_amd64.tar.gz
+  script:
+    - mv kube-score {{src}}/usr/bin/kube-score
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: kube-score
+  matrix:
+    architectures:
+      - arm64
+      - armhf
+  version: 1.13.0
+  revision: "3"
+  homepage: https://github.com/zegl/kube-score
+  summary: Kubernetes object analysis for improved reliability and security
+  description: |-
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  fetch:
+    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  script:
+    - mv kube-score {{src}}/usr/bin/kube-score
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: kube-score
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 1.14.0
+  homepage: https://github.com/zegl/kube-score
+  summary: Kubernetes object analysis for improved reliability and security
+  description: |-
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  fetch:
+    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  script:
+    - mv kube-score {{src}}/usr/bin/kube-score
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score
+
+- name: kube-score
+  matrix:
+    versions:
+      - 1.15.0
+      - 1.16.0
+      - 1.16.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://github.com/zegl/kube-score
+  summary: Kubernetes object analysis for improved reliability and security
+  description: |-
+    kube-score is a tool that performs static code analysis of
+    your Kubernetes object definitions.
+  fetch:
+    url: https://github.com/zegl/kube-score/releases/download/v{{version}}/kube-score_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  install:
+    - kube-score:/usr/bin/
+  script:
+    - ln -s /usr/bin/kube-score {{src}}/usr/bin/kubectl-score

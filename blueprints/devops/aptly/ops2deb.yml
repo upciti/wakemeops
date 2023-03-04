@@ -1,0 +1,14 @@
+name: aptly
+matrix:
+  versions:
+    - 1.4.0
+    - 1.5.0
+homepage: https://www.aptly.info/
+summary: swiss army knife for Debian repository management
+description: |-
+  Aptly allows you to mirror remote repositories, manage local package
+  repositories, take snapshots, pull new versions of packages along with
+  dependencies, publish as Debian repository.
+fetch: https://github.com/aptly-dev/aptly/releases/download/v{{version}}/aptly_{{version}}_linux_{{goarch}}.tar.gz
+install:
+  - aptly_{{version}}_linux_{{goarch}}/aptly:/usr/bin/aptly

@@ -1,0 +1,24 @@
+- name: exa
+  version: 0.10.1
+  revision: "3"
+  homepage: https://github.com/ogham/exa
+  summary: modern replacement for 'ls'
+  description: exa is a modern replacement for ls.
+  fetch: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-x86_64-v{{version}}.zip
+  script:
+    - mv bin/exa {{src}}/usr/bin/exa
+
+- name: exa
+  version: 0.10.1
+  revision: "3"
+  architecture: armhf
+  homepage: https://github.com/ogham/exa
+  summary: modern replacement for 'ls'
+  description: exa is a modern replacement for ls.
+  fetch:
+    url: https://github.com/ogham/exa/releases/download/v{{version}}/exa-linux-{{target}}-v{{version}}.zip
+    targets:
+      amd64: x86_64
+      armhf: armv7
+  script:
+    - mv bin/exa {{src}}/usr/bin/exa

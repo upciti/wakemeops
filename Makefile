@@ -1,6 +1,6 @@
 SHELL := bash
 
-COMPONENTS := $(shell find ./ -regex "./ops2deb-[a-z]+.yml" | cut -f2 -d "-" | cut -f1 -d ".")
+COMPONENTS := $(shell ls ./blueprints)
 
 OUTPUT_BASE_PATH := build
 
@@ -35,7 +35,7 @@ generate: $(foreach component,$(COMPONENTS),generate-$(component))
 
 generate-%:
 	mkdir -p $(OUTPUT_BASE_PATH)/$*
-	ops2deb generate -c ./ops2deb-$*.yml -o $(OUTPUT_BASE_PATH)/$*
+	ops2deb generate -c "./blueprints/$*/*/ops2deb.yml" -o $(OUTPUT_BASE_PATH)/$*
 
 build: $(foreach component,$(COMPONENTS),build-$(component))
 
@@ -43,13 +43,13 @@ build-%:
 	ops2deb build -o $(OUTPUT_BASE_PATH)/$*
 
 update:
-	ops2deb update -c "ops2deb-*.yml" --output-file ops2deb-summary.log -v
+	ops2deb update --output-file ops2deb-summary.log -v --max-versions 100
 
 format:
-	ops2deb format -c "ops2deb-*.yml"
+	ops2deb format
 
 lock:
-	ops2deb lock -c "ops2deb-*.yml"
+	ops2deb lock
 
 install-packages:
 	apt-get update -yq

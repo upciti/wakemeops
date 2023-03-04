@@ -1,0 +1,52 @@
+- name: dust
+  version: 0.7.5
+  revision: "3"
+  homepage: https://github.com/bootandy/dust
+  summary: human-friendly and fast alternative to 'du'
+  description: du + rust = dust. Like du but more intuitive.
+  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+  script:
+    - mv dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
+
+- name: dust
+  version: 0.7.5
+  revision: "3"
+  architecture: armhf
+  homepage: https://github.com/bootandy/dust
+  summary: human-friendly and fast alternative to 'du'
+  description: du + rust = dust. Like du but more intuitive.
+  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv dust-v{{version}}-*/dust {{src}}/usr/bin/dust
+
+- name: dust
+  matrix:
+    versions:
+      - 0.8.0
+      - 0.8.1-alpha.2
+    architectures:
+      - amd64
+      - armhf
+  homepage: https://github.com/bootandy/dust
+  summary: human-friendly and fast alternative to 'du'
+  description: du + rust = dust. Like du but more intuitive.
+  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv dust-v{{version}}-*/dust {{src}}/usr/bin/dust
+
+- name: dust
+  matrix:
+    versions:
+      - 0.8.1
+      - 0.8.2
+      - 0.8.3
+      - 0.8.4
+    architectures:
+      - amd64
+      - armhf
+  homepage: https://github.com/bootandy/dust
+  summary: human-friendly and fast alternative to 'du'
+  description: du + rust = dust. Like du but more intuitive.
+  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+  install:
+    - dust-v{{version}}-{{rust_target}}/dust:/usr/bin/

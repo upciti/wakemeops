@@ -1,0 +1,68 @@
+- name: velero
+  version: 1.7.1
+  revision: "3"
+  homepage: https://velero.io
+  summary: backup and migrate Kubernetes applications and their persistent volumes
+  description: |-
+    Velero (formerly Heptio Ark) gives you tools to back up and restore your
+    Kubernetes cluster resources and persistent volumes.
+  fetch: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-amd64.tar.gz
+  script:
+    - mv velero-v{{version}}-linux-amd64/velero {{src}}/usr/bin/velero
+
+- name: velero
+  matrix:
+    architectures:
+      - arm64
+      - armhf
+  version: 1.7.1
+  revision: "3"
+  homepage: https://velero.io
+  summary: backup and migrate Kubernetes applications and their persistent volumes
+  description: |-
+    Velero (formerly Heptio Ark) gives you tools to back up and restore your
+    Kubernetes cluster resources and persistent volumes.
+  fetch: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
+  script:
+    - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
+
+- name: velero
+  matrix:
+    versions:
+      - 1.8.0
+      - 1.7.2
+      - 1.8.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://velero.io
+  summary: backup and migrate Kubernetes applications and their persistent volumes
+  description: |-
+    Velero (formerly Heptio Ark) gives you tools to back up and restore your
+    Kubernetes cluster resources and persistent volumes.
+  fetch: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
+  script:
+    - mv velero-v{{version}}-linux-{{goarch}}/velero {{src}}/usr/bin/velero
+
+- name: velero
+  matrix:
+    versions:
+      - 1.9.0
+      - 1.9.1
+      - 1.9.2
+      - 1.9.3
+      - 1.10.0
+      - 1.10.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://velero.io
+  summary: backup and migrate Kubernetes applications and their persistent volumes
+  description: |-
+    Velero (formerly Heptio Ark) gives you tools to back up and restore your
+    Kubernetes cluster resources and persistent volumes.
+  fetch: https://github.com/vmware-tanzu/velero/releases/download/v{{version}}/velero-v{{version}}-linux-{{goarch}}.tar.gz
+  install:
+    - velero-v{{version}}-linux-{{goarch}}/velero:/usr/bin/velero

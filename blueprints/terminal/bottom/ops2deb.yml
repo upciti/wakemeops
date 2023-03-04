@@ -1,0 +1,41 @@
+- name: bottom
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+  version: 0.6.8
+  homepage: https://clementtsang.github.io/bottom
+  summary: cross-platform graphical process/system monitor
+  description: |-
+    A cross-platform graphical process/system monitor with a customizable interface
+    and a multitude of features. Supports Linux, macOS, and Windows.
+    Inspired by gtop, gotop, and htop.
+  fetch:
+    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-gnu
+      armhf: armv7-unknown-linux-gnueabihf
+  script:
+    - mv btm {{src}}/usr/bin/
+
+- name: bottom
+  matrix:
+    versions:
+      - 0.7.0
+      - 0.7.1
+      - 0.8.0
+    architectures:
+      - amd64
+      - armhf
+  homepage: https://clementtsang.github.io/bottom
+  summary: cross-platform graphical process/system monitor
+  description: |-
+    A cross-platform graphical process/system monitor with a customizable interface
+    and a multitude of features. Supports Linux, macOS, and Windows.
+    Inspired by gtop, gotop, and htop.
+  fetch:
+    url: https://github.com/ClementTsang/bottom/releases/download/{{version}}/bottom_{{target|rust_target}}.tar.gz
+    targets:
+      armhf: armv7-unknown-linux-gnueabihf
+  install:
+    - btm:/usr/bin/

@@ -1,0 +1,23 @@
+name: insomnia
+matrix:
+  versions:
+    - 2022.5.0
+    - 2022.5.1
+    - 2022.6.0
+    - 2022.7.0
+    - 2022.7.1
+    - 2022.7.2
+    - 2022.7.3
+    - 2022.7.4
+    - 2022.7.5
+homepage: https://insomnia.rest/
+summary: collaborative API Client and Design Tool
+description: |-
+  Insomnia is an open-source, cross-platform API client for GraphQL, REST, and
+  gRPC.
+fetch: https://github.com/Kong/insomnia/releases/download/core%40{{version}}/Insomnia.Core-{{version}}.deb
+install:
+  - data:/
+script:
+  - grep "^Depends. " control/control >> {{debian}}/control
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules

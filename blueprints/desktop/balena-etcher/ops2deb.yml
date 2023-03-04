@@ -1,0 +1,19 @@
+name: balena-etcher
+matrix:
+  versions:
+    - 1.7.7
+    - 1.7.8
+    - 1.7.9
+homepage: https://github.com/balena-io/etcher
+summary: flash OS images to SD cards and USB drives, safely and easily
+description: |-
+  balenaEtcher is built with web technologies to ensure flashing an SDCard or USB
+  drive is a pleasant and safe experience. It protects you from accidentally
+  writing to your hard-drives, ensures every byte of data was written correctly
+  and much more.
+fetch: https://github.com/balena-io/etcher/releases/download/v{{version}}/balena-etcher-electron_{{version}}_amd64.deb
+install:
+  - data:/
+script:
+  - grep "^Depends. " control/control >> {{debian}}/control
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules

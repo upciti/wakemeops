@@ -1,0 +1,28 @@
+name: carvel-kapp
+matrix:
+  versions:
+    - 0.45.0
+    - 0.46.0
+    - 0.47.0
+    - 0.48.0
+    - 0.49.0
+    - 0.50.0
+    - 0.51.0
+    - 0.52.0
+    - 0.53.0
+    - 0.54.0
+    - 0.54.1
+    - 0.54.2
+    - 0.54.3
+  architectures:
+    - amd64
+    - arm64
+homepage: https://carvel.dev/kapp/
+summary: simple deployment tool focused on the concept of "Kubernetes application"
+description: |-
+  Take control of your Kubernetes resources.
+  Deploy and view groups of Kubernetes resources as "applications".
+  Apply changes safely and predictably, watching resources as they converge.
+fetch: https://github.com/vmware-tanzu/carvel-kapp/releases/download/v{{version}}/kapp-linux-{{goarch}}
+install:
+  - kapp-linux-{{goarch}}:/usr/bin/kapp

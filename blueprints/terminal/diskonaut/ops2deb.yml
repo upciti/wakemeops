@@ -1,0 +1,15 @@
+name: diskonaut
+version: 0.11.0
+revision: "2"
+homepage: https://github.com/imsnif/diskonaut
+summary: terminal disk space navigator
+description: |-
+  Given a path on your hard-drive (which could also be the root path, eg. /)
+  diskonaut scans it and indexes its metadata to memory so that you could explore
+  its contents (even while still scanning!). Once completed, you can navigate
+  through subfolders, getting a visual treemap representation of what's taking up
+  your disk space. You can even delete files or folders and diskonaut will track
+  how much space you've freed up in this session.
+fetch: https://github.com/imsnif/diskonaut/releases/download/{{version}}/diskonaut-{{version}}-unknown-linux-musl.tar.gz
+script:
+  - mv diskonaut {{src}}/usr/bin/

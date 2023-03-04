@@ -1,0 +1,28 @@
+name: teams-for-linux
+matrix:
+  versions:
+    - 1.0.33
+    - 1.0.35
+    - 1.0.36
+    - 1.0.37
+    - 1.0.38
+    - 1.0.39
+    - 1.0.40
+    - 1.0.41
+    - 1.0.42
+    - 1.0.43
+    - 1.0.45
+    - 1.0.46
+    - 1.0.49
+    - 1.0.52
+homepage: https://github.com/IsmaelMartinez/teams-for-linux/
+summary: unofficial Microsoft Teams for Linux client
+description: |-
+  Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App
+  and wraps it as a standalone application using Electron.
+fetch: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
+install:
+  - data:/
+script:
+  - grep "^Depends. " control/control >> {{debian}}/control
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules

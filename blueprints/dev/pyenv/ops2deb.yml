@@ -1,0 +1,124 @@
+- name: pyenv
+  version: 2.2.2
+  architecture: all
+  homepage: https://github.com/pyenv/pyenv
+  summary: simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
+    - install -d 755 {{src}}/etc/profile.d/
+    - echo 'if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi' > {{src}}/etc/profile.d/ops2deb-pyenv.sh
+    - chmod 755 {{src}}/etc/profile.d/ops2deb-pyenv.sh
+
+- name: pyenv
+  version: 2.2.3
+  revision: "2"
+  architecture: all
+  homepage: https://github.com/pyenv/pyenv
+  summary: simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
+    - install -d 755 {{src}}/etc/profile.d/
+    - echo 'if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi' > {{src}}/etc/profile.d/ops2deb-pyenv.sh
+    - chmod 755 {{src}}/etc/profile.d/ops2deb-pyenv.sh
+
+- name: pyenv
+  matrix:
+    versions:
+      - 2.2.4
+      - 2.2.4-1
+  architecture: all
+  homepage: https://github.com/pyenv/pyenv
+  summary: simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
+    - install -d 755 {{src}}/etc/profile.d/
+    - echo 'if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi' > {{src}}/etc/profile.d/ops2deb-pyenv.sh
+    - chmod 755 {{src}}/etc/profile.d/ops2deb-pyenv.sh
+
+- name: pyenv
+  version: 2.2.5
+  architecture: all
+  homepage: https://github.com/pyenv/pyenv
+  summary: simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+  install:
+    - content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
+      path: /etc/profile.d/ops2deb-pyenv.sh
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
+
+- name: pyenv
+  version: 2.2.5
+  revision: "2"
+  architecture: all
+  homepage: https://github.com/pyenv/pyenv
+  summary: simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+  install:
+    - content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
+      path: /etc/profile.d/ops2deb-pyenv.sh
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - chmod +x {{src}}/usr/lib/pyenv/libexec/* {{src}}/usr/lib/pyenv/plugins/python-build/bin/*
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv
+
+- name: pyenv
+  matrix:
+    versions:
+      - 2.3.0
+      - 2.3.1
+      - 2.3.2
+      - 2.3.3
+      - 2.3.4
+      - 2.3.5
+      - 2.3.6
+      - 2.3.7
+      - 2.3.8
+      - 2.3.9
+      - 2.3.10
+      - 2.3.11
+      - 2.3.12
+      - 2.3.13
+      - 2.3.14
+  architecture: all
+  homepage: https://github.com/pyenv/pyenv
+  summary: simple Python version management
+  description: |-
+    Tool that lets you easily switch between multiple versions of Python. It's
+    simple, unobtrusive, and follows the UNIX tradition of single-purpose tools
+    that do one thing well.
+  fetch: https://github.com/pyenv/pyenv/archive/refs/tags/v{{version}}.zip
+  install:
+    - content: if [[ -f /usr/bin/pyenv ]]; then eval "$(pyenv init --path)"; fi
+      path: /etc/profile.d/ops2deb-pyenv.sh
+  script:
+    - mv pyenv-{{version}} {{src}}/usr/lib/pyenv
+    - chmod +x {{src}}/usr/lib/pyenv/libexec/* {{src}}/usr/lib/pyenv/plugins/python-build/bin/*
+    - ln -s /usr/lib/pyenv/libexec/pyenv {{src}}/usr/bin/pyenv

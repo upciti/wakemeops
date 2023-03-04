@@ -1,0 +1,32 @@
+- name: ripgrep
+  version: 13.0.0
+  revision: "3"
+  homepage: https://github.com/BurntSushi/ripgrep
+  summary: recursively searches directories for a regex pattern
+  description: |-
+    ripgrep is a line-oriented search tool that recursively searches the current
+    directory for a regex pattern. By default, ripgrep will respect gitignore rules
+    and automatically skip hidden files/directories and binary files. ripgrep has
+    first class support on Windows, macOS and Linux, with binary downloads
+    available for every release. ripgrep is similar to other popular search tools
+    like The Silver Searcher, ack and grep.
+  fetch: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-x86_64-unknown-linux-musl.tar.gz
+  script:
+    - mv ripgrep-{{version}}-x86_64-unknown-linux-musl/rg {{src}}/usr/bin/rg
+
+- name: ripgrep
+  version: 13.0.0
+  revision: "3"
+  architecture: armhf
+  homepage: https://github.com/BurntSushi/ripgrep
+  summary: recursively searches directories for a regex pattern
+  description: |-
+    ripgrep is a line-oriented search tool that recursively searches the current
+    directory for a regex pattern. By default, ripgrep will respect gitignore rules
+    and automatically skip hidden files/directories and binary files. ripgrep has
+    first class support on Windows, macOS and Linux, with binary downloads
+    available for every release. ripgrep is similar to other popular search tools
+    like The Silver Searcher, ack and grep.
+  fetch: https://github.com/BurntSushi/ripgrep/releases/download/{{version}}/ripgrep-{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv ripgrep-{{version}}-{{rust_target}}/rg {{src}}/usr/bin/rg

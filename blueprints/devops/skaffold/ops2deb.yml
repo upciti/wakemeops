@@ -1,0 +1,71 @@
+- name: skaffold
+  matrix:
+    versions:
+      - 1.35.2
+      - 1.35.0
+  homepage: https://skaffold.dev/
+  summary: easy and repeatable Kubernetes development
+  description: |-
+    Command line tool that facilitates continuous development for Kubernetes
+    applications.
+    You can iterate on your application source code locally then deploy to local or
+    remote Kubernetes clusters. Skaffold handles the workflow for building,
+    pushing and deploying your application. It also provides building blocks
+    and describe customizations for a CI/CD pipeline.
+  fetch: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-amd64
+  script:
+    - mv skaffold-linux-amd64 {{src}}/usr/bin/skaffold
+
+- name: skaffold
+  matrix:
+    versions:
+      - 1.35.2
+      - 1.35.0
+      - 1.36.0
+      - 1.37.0
+      - 1.37.1
+    architectures:
+      - arm64
+      - amd64
+  homepage: https://skaffold.dev/
+  summary: easy and repeatable Kubernetes development
+  description: |-
+    Command line tool that facilitates continuous development for Kubernetes
+    applications.
+    You can iterate on your application source code locally then deploy to local or
+    remote Kubernetes clusters. Skaffold handles the workflow for building,
+    pushing and deploying your application. It also provides building blocks
+    and describe customizations for a CI/CD pipeline.
+  fetch: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
+  script:
+    - mv skaffold-linux-{{goarch}} {{src}}/usr/bin/skaffold
+
+- name: skaffold
+  matrix:
+    versions:
+      - 1.38.0
+      - 1.39.0
+      - 1.39.1
+      - 1.39.2
+      - 2.0.0
+      - 2.0.1
+      - 2.0.2
+      - 2.0.3
+      - 2.0.4
+      - 2.0.5
+      - 2.1.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://skaffold.dev/
+  summary: easy and repeatable Kubernetes development
+  description: |-
+    Command line tool that facilitates continuous development for Kubernetes
+    applications.
+    You can iterate on your application source code locally then deploy to local or
+    remote Kubernetes clusters. Skaffold handles the workflow for building,
+    pushing and deploying your application. It also provides building blocks
+    and describe customizations for a CI/CD pipeline.
+  fetch: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{version}}/skaffold-linux-{{goarch}}
+  install:
+    - skaffold-linux-{{goarch}}:/usr/bin/skaffold

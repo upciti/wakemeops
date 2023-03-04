@@ -1,0 +1,14 @@
+name: shell2http
+matrix:
+  versions:
+    - 1.14.2
+    - 1.15.0
+  architectures:
+    - amd64
+    - arm64
+homepage: https://github.com/msoap/shell2http
+summary: HTTP server to execute shell commands
+description: Designed for development, prototyping or remote control.
+fetch: https://github.com/msoap/shell2http/releases/download/v{{version}}/shell2http_{{version}}_linux_{{arch}}.tar.gz
+install:
+  - shell2http:/usr/bin/shell2http

@@ -1,0 +1,51 @@
+- name: docker-slim
+  matrix:
+    versions:
+      - 1.37.3
+      - 1.37.4
+      - 1.37.5
+      - 1.37.6
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://dockersl.im
+  summary: minify docker images by up to 30x
+  description: |-
+    Provides a set of commands (build, xray, lint and others) to simplify and
+    optimize your developer experience with containers. It makes your containers
+    betters, smaller and more secure.
+  fetch:
+    url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
+    targets:
+      amd64: linux
+      arm64: linux_arm64
+      armhf: linux_arm
+  script:
+    - mv dist_linux*/docker-slim* {{src}}/usr/bin/
+
+- name: docker-slim
+  matrix:
+    versions:
+      - 1.38.0
+      - 1.39.0
+      - 1.39.1
+      - 1.40.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://dockersl.im
+  summary: minify docker images by up to 30x
+  description: |-
+    Provides a set of commands (build, xray, lint and others) to simplify and
+    optimize your developer experience with containers. It makes your containers
+    betters, smaller and more secure.
+  fetch:
+    url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
+    targets:
+      amd64: linux
+      arm64: linux_arm64
+      armhf: linux_arm
+  install:
+    - dist_{{target}}/docker-slim:/usr/bin/

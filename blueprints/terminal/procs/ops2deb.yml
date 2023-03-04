@@ -1,0 +1,32 @@
+- name: procs
+  matrix:
+    versions:
+      - 0.11.13
+      - 0.12.1
+  homepage: https://github.com/dalance/procs
+  summary: alternative in rust to 'ps'
+  description: |-
+    Procs has a colored and human-readable output, multi-column keyword search,
+    additional information which are not supported by ps, a tree view, a watch mode
+    and more...
+  fetch: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
+  script:
+    - mv procs {{src}}/usr/bin/procs
+
+- name: procs
+  matrix:
+    versions:
+      - 0.13.0
+      - 0.13.1
+      - 0.13.2
+      - 0.13.3
+      - 0.13.4
+  homepage: https://github.com/dalance/procs
+  summary: alternative in rust to 'ps'
+  description: |-
+    Procs has a colored and human-readable output, multi-column keyword search,
+    additional information which are not supported by ps, a tree view, a watch mode
+    and more...
+  fetch: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-linux.zip
+  install:
+    - procs:/usr/bin/
