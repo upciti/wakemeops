@@ -307,15 +307,15 @@
 - url: https://github.com/rancher/cli/releases/download/v2.7.0/rancher-linux-arm-v2.7.0.tar.gz
   sha256: 18bf0e5d0ab3da8aef8278ea6a80c67abe8fe977c8cfe5c6fadf0bdab9f963ad
   timestamp: 2023-01-03 23:06:34+00:00
-- url: https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-amd64
-  sha256: c54218d5bf6cb6e74987bf21f7820483f581b00c49fee11dbdb8c17c7829a025
-  timestamp: 2023-02-02 15:20:40+00:00
-- url: https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-arm
-  sha256: 0f9c8a313d306e3667f6c716bad6e4e8b28e913af89e153fb184e91cde84f9ee
-  timestamp: 2023-02-02 15:20:40+00:00
-- url: https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-arm64
-  sha256: c8ceb55ed2ffe2015b915848d0b6eaa72dbc1358270dee4e0c12358c16231d40
-  timestamp: 2023-02-02 15:20:40+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.8/k3d-linux-amd64
+  sha256: d58bd1b056b88ba4c4cc52b9437c8789209f78ac7c007c441c417f2ccdf3f136
+  timestamp: 2023-03-04 21:04:35+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.8/k3d-linux-arm
+  sha256: 01f89c300769fe941dd4e77a5e6af457ffe600b371cf9519dd1b09a9420782ac
+  timestamp: 2023-03-04 21:04:35+00:00
+- url: https://github.com/rancher/k3d/releases/download/v5.4.8/k3d-linux-arm64
+  sha256: 992f3eb4dd7b35cd0991a538d6feb14ec20f364c36d83a1570a823aab0c1f42d
+  timestamp: 2023-03-04 21:04:35+00:00
 - url: https://github.com/rclone/rclone/releases/download/v1.61.1/rclone-v1.61.1-linux-amd64.zip
   sha256: 6d6455e1cb69eb0615a52cc046a296395e44d50c0f32627ba8590c677ddf50a9
   timestamp: 2023-01-03 23:06:34+00:00
@@ -346,9 +346,9 @@
 - url: https://github.com/terraform-linters/tflint/releases/download/v0.45.0/tflint_linux_arm64.zip
   sha256: 655213f2eae45688517ffc734c440ec24e8aed0fd4d03304cf79c2ed6c2c41dc
   timestamp: 2023-02-12 18:22:09+00:00
-- url: https://github.com/upciti/ops2deb/releases/download/2.0.0/ops2deb_linux_amd64
-  sha256: 1cf7456ba671c2c7d60c9e0c6779a2915717a28afc2118b63914900200498b5e
-  timestamp: 2023-03-04 00:50:33+00:00
+- url: https://github.com/upciti/ops2deb/releases/download/2.1.0/ops2deb_linux_amd64
+  sha256: 71fe1995c00f62bfcc8d3f6a0723d5b72d060b874973d5ea42d08732d1501cce
+  timestamp: 2023-03-04 21:04:35+00:00
 - url: https://github.com/upciti/wakemebot/releases/download/4.2.0/wakemebot_linux_amd64
   sha256: 0a75d60e7c00174065c7ac97b3506d64a53a9ca8acba639a12753b2293b77823
   timestamp: 2023-02-27 21:17:47+00:00
