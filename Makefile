@@ -43,21 +43,13 @@ build-%:
 	ops2deb build -o $(OUTPUT_BASE_PATH)/$*
 
 update:
-	for component in $(COMPONENTS); do \
-		ops2deb update \
-		-c ops2deb-$${component}.yml \
-		--output-file ops2deb-$${component}.log; \
-	done
+	ops2deb update -c "ops2deb-*.yml" --output-file ops2deb-summary.log
 
 format:
-	for component in $(COMPONENTS); do \
-		ops2deb format -c ops2deb-$${component}.yml || exit 77; \
-	done
+	ops2deb format -c "ops2deb-*.yml"
 
 lock:
-	for component in $(COMPONENTS); do \
-		ops2deb lock -c ops2deb-$${component}.yml || exit 77; \
-	done
+	ops2deb lock -c "ops2deb-*.yml"
 
 install-packages:
 	apt-get update -yq
