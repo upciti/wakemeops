@@ -70,15 +70,15 @@
 - url: https://github.com/mergestat/mergestat/releases/download/v0.5.10/mergestat-linux-amd64.tar.gz
   sha256: ea73c71e1e76bebc36a8b2495d4854863931dcbb0173572196675a0a2d65ac41
   timestamp: 2023-01-03 23:06:59+00:00
-- url: https://github.com/mikefarah/yq/releases/download/v4.31.1/yq_linux_amd64
-  sha256: 1aef844cbecbbf81036449ea5e7dfcdf19d2d374fab6303fdb8f849d04275d76
-  timestamp: 2023-02-20 06:25:20+00:00
-- url: https://github.com/mikefarah/yq/releases/download/v4.31.1/yq_linux_arm
-  sha256: 1ce1d4efc47982f69f80fbadc6f3b152ff597390edd2f1436947858afb2f15e6
-  timestamp: 2023-02-20 06:25:20+00:00
-- url: https://github.com/mikefarah/yq/releases/download/v4.31.1/yq_linux_arm64
-  sha256: ad52ed9ffe685f92cc655e9f539d241677ab772b9d11329c65a3654a7f97b7be
-  timestamp: 2023-02-20 06:25:20+00:00
+- url: https://github.com/mikefarah/yq/releases/download/v4.31.2/yq_linux_amd64
+  sha256: 71ef4141dbd9aec3f7fb45963b92460568d044245c945a7390831a5a470623f7
+  timestamp: 2023-03-04 01:17:25+00:00
+- url: https://github.com/mikefarah/yq/releases/download/v4.31.2/yq_linux_arm
+  sha256: 4873c86de5571487cb2dcfd68138fc9e0aa9a1382db958527fa8bc02349b5b26
+  timestamp: 2023-03-04 01:17:25+00:00
+- url: https://github.com/mikefarah/yq/releases/download/v4.31.2/yq_linux_arm64
+  sha256: 590f19f0a696103376e383c719fe0df28c62515627bf44e5e69403073ba83cbf
+  timestamp: 2023-03-04 01:17:25+00:00
 - url: https://github.com/msoap/shell2http/releases/download/v1.15.0/shell2http_1.15.0_linux_amd64.tar.gz
   sha256: e807ec671d8297d7ca72ce2666ddddc7798793bd4dc107ebf1c7c98ae80c3f17
   timestamp: 2023-02-12 01:43:15+00:00
@@ -145,15 +145,15 @@
 - url: https://github.com/theryangeary/choose/releases/download/v1.3.4/choose-x86_64-unknown-linux-gnu
   sha256: 80c0e3927757d5f69d93489cf5e4a7ddbe577b0f4e857eeda10701e54e1c3447
   timestamp: 2023-01-03 23:06:59+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.31.0/chezmoi_2.31.0_linux_amd64.tar.gz
-  sha256: 257cfebc1e9deef104d9bd380ab8ff89b3e0fd951b827b7c8044cd3d7e618599
-  timestamp: 2023-02-17 15:20:19+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.31.0/chezmoi_2.31.0_linux_arm.tar.gz
-  sha256: b445cec7ba5761c71eadeb94d375f1a86326db6bf110763fd84e6b24fbbfbd5a
-  timestamp: 2023-02-17 15:20:19+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.31.0/chezmoi_2.31.0_linux_arm64.tar.gz
-  sha256: f2789996e6803c4355bfb54cf7dc15e3e7488bcb9cc2349c15c4728336e89224
-  timestamp: 2023-02-17 15:20:19+00:00
+- url: https://github.com/twpayne/chezmoi/releases/download/v2.31.1/chezmoi_2.31.1_linux_amd64.tar.gz
+  sha256: 91edaa885715b6d011968c43e1faafdf0cd7ef061b79d7dd507db57bcbed573d
+  timestamp: 2023-03-04 01:17:25+00:00
+- url: https://github.com/twpayne/chezmoi/releases/download/v2.31.1/chezmoi_2.31.1_linux_arm.tar.gz
+  sha256: 385f54618d270bb42b7b2e68eebd1339e50a8c220a943f50e5a9af0bcd17e096
+  timestamp: 2023-03-04 01:17:25+00:00
+- url: https://github.com/twpayne/chezmoi/releases/download/v2.31.1/chezmoi_2.31.1_linux_arm64.tar.gz
+  sha256: 21c22f02ee51099e7cb9e1d4d7e7849d6121e8d35778abf56e5c3cc16c3622ad
+  timestamp: 2023-03-04 01:17:25+00:00
 - url: https://github.com/zellij-org/zellij/releases/download/v0.34.4/zellij-aarch64-unknown-linux-musl.tar.gz
   sha256: 2154bb27d4662eb2963f5af82ef55d9453adb5a985b7714e5661f472a376cc4e
   timestamp: 2023-01-04 17:08:10+00:00
