@@ -43,7 +43,7 @@ build-%:
 	ops2deb build -o $(OUTPUT_BASE_PATH)/$*
 
 update:
-	ops2deb update -c "ops2deb-*.yml" --output-file ops2deb-summary.log
+	ops2deb update -c "ops2deb-*.yml" --output-file ops2deb-summary.log -v
 
 format:
 	ops2deb format -c "ops2deb-*.yml"
