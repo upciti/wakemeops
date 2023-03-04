@@ -1,0 +1,22 @@
+name: terrascan
+matrix:
+  versions:
+    - 1.15.2
+    - 1.16.0
+    - 1.17.0
+    - 1.17.1
+    - 1.18.0
+  architectures:
+    - amd64
+    - arm64
+homepage: https://runterrascan.io/
+summary: policy as code for secure cloud infrastructure
+description: |-
+  Detect compliance and security violations across Infrastructure as Code to
+  mitigate risk before provisioning cloud native infrastructure.
+fetch:
+  url: https://github.com/tenable/terrascan/releases/download/v{{version}}/terrascan_{{version}}_Linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+install:
+  - terrascan:/usr/bin/terrascan

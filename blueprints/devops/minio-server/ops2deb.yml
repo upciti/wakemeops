@@ -1,0 +1,80 @@
+- name: minio-server
+  version: 2021-10-08T23-58-24Z
+  homepage: https://min.io
+  summary: high performance, Kubernetes native object storage
+  description: |-
+    Standalone MinIO servers are best suited for early development and evaluation.
+    Certain features such as versioning, object locking, and bucket replication
+    require distributed deploying MinIO with Erasure Coding.
+  fetch: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
+  script:
+    - install -m 755 minio.RELEASE.{{version}} {{src}}/usr/bin/minio
+
+- name: minio-server
+  version: 2022-01-08T03-11-54Z
+  homepage: https://min.io
+  summary: high performance, Kubernetes native object storage
+  description: |-
+    Standalone MinIO servers are best suited for early development and evaluation.
+    Certain features such as versioning, object locking, and bucket replication
+    require distributed deploying MinIO with Erasure Coding.
+  fetch: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
+  script:
+    - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio
+
+- name: minio-server
+  matrix:
+    versions:
+      - 2022-01-28T02-28-16Z
+      - 2022-02-26T02-54-46Z
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://min.io
+  summary: high performance, Kubernetes native object storage
+  description: |-
+    Standalone MinIO servers are best suited for early development and evaluation.
+    Certain features such as versioning, object locking, and bucket replication
+    require distributed deploying MinIO with Erasure Coding.
+  fetch: https://dl.min.io/server/minio/release/linux-{{goarch}}/archive/minio.RELEASE.{{version}}
+  script:
+    - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio
+
+- name: minio-server
+  matrix:
+    versions:
+      - 2022-04-16T04-26-02Z
+      - 2022-06-11T19-55-32Z
+      - 2022-07-30T05-21-40Z
+      - 2022-08-08T18-34-09Z
+      - 2022-12-12T19-27-27Z
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://min.io
+  summary: high performance, Kubernetes native object storage
+  description: |-
+    Standalone MinIO servers are best suited for early development and evaluation.
+    Certain features such as versioning, object locking, and bucket replication
+    require distributed deploying MinIO with Erasure Coding.
+  fetch: https://dl.min.io/server/minio/release/linux-{{goarch}}/archive/minio.RELEASE.{{version}}
+  install:
+    - minio.RELEASE.{{version}}:/usr/bin/minio
+
+- name: minio-server
+  matrix:
+    versions:
+      - 2021-11-24T23-19-33Z
+      - 2021-12-10T23-03-39Z
+  revision: "3"
+  homepage: https://min.io
+  summary: high performance, Kubernetes native object storage
+  description: |-
+    Standalone MinIO servers are best suited for early development and evaluation.
+    Certain features such as versioning, object locking, and bucket replication
+    require distributed deploying MinIO with Erasure Coding.
+  fetch: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.{{version}}
+  script:
+    - mv minio.RELEASE.{{version}} {{src}}/usr/bin/minio

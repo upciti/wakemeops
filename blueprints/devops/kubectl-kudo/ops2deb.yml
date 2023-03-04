@@ -1,0 +1,20 @@
+name: kubectl-kudo
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+version: 0.19.0
+homepage: https://kudo.dev/
+summary: Kubernetes universal declarative operator
+description: |-
+  Kubernetes Universal Declarative Operator (KUDO) provides a declarative
+  approach to building production-grade Kubernetes Operators covering the entire
+  application lifecycle.
+fetch:
+  url: https://github.com/kudobuilder/kudo/releases/download/v{{version}}/kudo_{{version}}_linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+    armhf: armv6
+script:
+  - mv kubectl-kudo {{src}}/usr/bin/kubectl-kudo

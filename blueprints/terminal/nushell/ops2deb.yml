@@ -1,0 +1,105 @@
+- name: nushell
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 0.66.2
+  revision: "2"
+  homepage: https://www.nushell.sh/
+  summary: new type of shell written in rust
+  description: |-
+    The goal of this project is to take the Unix philosophy of shells, where pipes
+    connect simple commands together, and bring it to the modern style of
+    development. Thus, rather than being either a shell, or a programming language,
+    Nushell connects both by bringing a rich programming language and a full-
+    featured shell together into one package.
+
+    Nu takes cues from a lot of familiar territory: traditional shells like bash,
+    object based shells like PowerShell, gradually typed languages like TypeScript,
+    functional programming, systems programming, and more.
+
+    Rather than trying to be a jack of all trades, Nu focuses its energy on doing a
+    few things well:
+
+    - Being a flexible cross-platform shell with a modern feel
+    - Solving problems as a modern programming language that works with the
+    structure of your data
+    - Giving clear error messages and clean IDE support
+  fetch: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv nu {{src}}/usr/bin/
+    - mv nu_* {{src}}/usr/bin/
+
+- name: nushell
+  matrix:
+    versions:
+      - 0.67.0
+      - 0.68.0
+      - 0.68.1
+      - 0.69.1
+      - 0.70.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://www.nushell.sh/
+  summary: new type of shell written in rust
+  description: |-
+    The goal of this project is to take the Unix philosophy of shells, where pipes
+    connect simple commands together, and bring it to the modern style of
+    development. Thus, rather than being either a shell, or a programming language,
+    Nushell connects both by bringing a rich programming language and a full-
+    featured shell together into one package.
+
+    Nu takes cues from a lot of familiar territory: traditional shells like bash,
+    object based shells like PowerShell, gradually typed languages like TypeScript,
+    functional programming, systems programming, and more.
+
+    Rather than trying to be a jack of all trades, Nu focuses its energy on doing a
+    few things well:
+
+    - Being a flexible cross-platform shell with a modern feel
+    - Solving problems as a modern programming language that works with the
+    structure of your data
+    - Giving clear error messages and clean IDE support
+  fetch: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv nu {{src}}/usr/bin/
+    - mv nu_* {{src}}/usr/bin/
+
+- name: nushell
+  matrix:
+    versions:
+      - 0.71.0
+      - 0.72.0
+      - 0.72.1
+      - 0.73.0
+      - 0.74.0
+      - 0.75.0
+      - 0.76.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://www.nushell.sh/
+  summary: new type of shell written in rust
+  description: |-
+    The goal of this project is to take the Unix philosophy of shells, where pipes
+    connect simple commands together, and bring it to the modern style of
+    development. Thus, rather than being either a shell, or a programming language,
+    Nushell connects both by bringing a rich programming language and a full-
+    featured shell together into one package.
+
+    Nu takes cues from a lot of familiar territory: traditional shells like bash,
+    object based shells like PowerShell, gradually typed languages like TypeScript,
+    functional programming, systems programming, and more.
+
+    Rather than trying to be a jack of all trades, Nu focuses its energy on doing a
+    few things well:
+
+    - Being a flexible cross-platform shell with a modern feel
+    - Solving problems as a modern programming language that works with the
+    structure of your data
+    - Giving clear error messages and clean IDE support
+  fetch: https://github.com/nushell/nushell/releases/download/{{version}}/nu-{{version}}-{{rust_target}}.tar.gz
+  script:
+    - mv ./*/nu {{src}}/usr/bin/
+    - mv ./*/nu_* {{src}}/usr/bin/

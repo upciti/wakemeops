@@ -1,0 +1,27 @@
+name: mdbook
+matrix:
+  versions:
+    - 0.4.19
+    - 0.4.20
+    - 0.4.21
+    - 0.4.22
+    - 0.4.23
+    - 0.4.24
+    - 0.4.25
+    - 0.4.26
+    - 0.4.27
+homepage: https://rust-lang.github.io/mdBook/
+summary: create book from markdown files
+description: |-
+  mdBook is ideal for creating product or API documentation, tutorials, course
+  materials or anything that requires a clean, easily navigable and customizable
+  presentation. It features:
+
+  * An integrated search support
+  * Color syntax highlighting for code blocks for many different languages
+  * Theme files allow customizing the formatting of the output
+  * Preprocessors that provide extensions for custom syntax and modifying content
+  * Backends that can render the output to multiple formats
+fetch: https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+install:
+  - mdbook:/usr/bin/

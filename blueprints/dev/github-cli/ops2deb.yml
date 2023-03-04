@@ -1,0 +1,89 @@
+- name: github-cli
+  version: 2.4.0
+  homepage: https://github.com/cli/cli
+  summary: GitHub on the command line
+  description: |-
+    Brings pull requests, issues, and other GitHub concepts to the terminal next to
+    where you are already working with git and your code.
+  fetch: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_amd64.tar.gz
+  script:
+    - mv gh_{{version}}_linux_amd64/bin {{src}}/usr/
+    - mv gh_{{version}}_linux_amd64/share {{src}}/usr/
+
+- name: github-cli
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 2.5.0
+  revision: "2"
+  homepage: https://github.com/cli/cli
+  summary: GitHub on the command line
+  description: |-
+    Brings pull requests, issues, and other GitHub concepts to the terminal next to
+    where you are already working with git and your code.
+  fetch:
+    url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  script:
+    - mv gh_{{version}}_linux_*/bin/* {{src}}/usr/bin/
+    - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/
+
+- name: github-cli
+  matrix:
+    versions:
+      - 2.5.1
+      - 2.5.2
+      - 2.6.0
+      - 2.7.0
+      - 2.8.0
+      - 2.9.0
+      - 2.10.1
+      - 2.11.0
+      - 2.11.1
+      - 2.11.2
+      - 2.11.3
+      - 2.12.0
+      - 2.12.1
+      - 2.13.0
+      - 2.14.0
+      - 2.14.1
+      - 2.14.2
+      - 2.14.3
+      - 2.14.4
+      - 2.14.5
+      - 2.14.6
+      - 2.14.7
+      - 2.15.0
+      - 2.16.1
+      - 2.17.0
+      - 2.18.0
+      - 2.18.1
+      - 2.19.0
+      - 2.20.0
+      - 2.20.1
+      - 2.20.2
+      - 2.21.0
+      - 2.21.1
+      - 2.21.2
+      - 2.22.0
+      - 2.22.1
+      - 2.23.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://github.com/cli/cli
+  summary: GitHub on the command line
+  description: |-
+    Brings pull requests, issues, and other GitHub concepts to the terminal next to
+    where you are already working with git and your code.
+  fetch:
+    url: https://github.com/cli/cli/releases/download/v{{version}}/gh_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  script:
+    - mv gh_{{version}}_linux_*/bin/* {{src}}/usr/bin/
+    - mv gh_{{version}}_linux_*/share/* {{src}}/usr/share/

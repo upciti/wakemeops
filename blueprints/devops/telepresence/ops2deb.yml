@@ -1,0 +1,90 @@
+- name: telepresence
+  matrix:
+    versions:
+      - 2.5.3
+      - 2.5.4
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://www.telepresence.io/
+  summary: fast, local development for kubernetes and openshift microservices
+  description: |-
+    Open source tool that lets you run a single service locally, while connecting
+    that service to a remote Kubernetes cluster. This lets developers working on
+    multi-service applications to:
+
+    - Do fast local development of a single service, even if that service depends
+    on other services in your cluster. Make a change to your service, save, and you
+    can immediately see the new service in action.
+    - Use any tool installed locally to test/debug/edit your service. For example,
+    you can use a debugger or IDE!
+    - Make your local development machine operate as if it's part of your
+    Kubernetes cluster. If you've got an application on your machine that you want
+    to run against a service in the cluster -- it's easy to do.
+  fetch: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
+  script:
+    - mv telepresence {{src}}/usr/bin/telepresence
+
+- name: telepresence
+  matrix:
+    versions:
+      - 2.5.5
+      - 2.5.6
+      - 2.5.7
+      - 2.5.8
+      - 2.6.0
+      - 2.6.1
+      - 2.6.2
+      - 2.6.3
+      - 2.6.4
+      - 2.6.5
+      - 2.6.6
+      - 2.6.7
+      - 2.6.8
+      - 2.7.0
+      - 2.7.1
+      - 2.7.2
+      - 2.7.3
+      - 2.7.4
+      - 2.7.5
+      - 2.7.6
+      - 2.8.0
+      - 2.8.1
+      - 2.8.2
+      - 2.8.3
+      - 2.8.5
+      - 2.9.1
+      - 2.9.2
+      - 2.9.3
+      - 2.9.4
+      - 2.9.5
+      - 2.10.0
+      - 2.10.1
+      - 2.10.2
+      - 2.10.3
+      - 2.10.4
+      - 2.10.5
+      - 2.10.6
+      - 2.11.0
+      - 2.11.1
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://www.telepresence.io/
+  summary: fast, local development for kubernetes and openshift microservices
+  description: |-
+    Open source tool that lets you run a single service locally, while connecting
+    that service to a remote Kubernetes cluster. This lets developers working on
+    multi-service applications to:
+
+    - Do fast local development of a single service, even if that service depends
+    on other services in your cluster. Make a change to your service, save, and you
+    can immediately see the new service in action.
+    - Use any tool installed locally to test/debug/edit your service. For example,
+    you can use a debugger or IDE!
+    - Make your local development machine operate as if it's part of your
+    Kubernetes cluster. If you've got an application on your machine that you want
+    to run against a service in the cluster -- it's easy to do.
+  fetch: https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence
+  install:
+    - telepresence:/usr/bin/

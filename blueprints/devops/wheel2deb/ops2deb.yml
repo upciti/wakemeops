@@ -1,0 +1,15 @@
+name: wheel2deb
+matrix:
+  versions:
+    - 0.7.0
+    - 0.7.1
+    - 0.8.0
+    - 0.8.1
+homepage: https://github.com/upciti/wheel2deb
+summary: python wheel to debian package converter
+description: |-
+  Wheel2deb takes a list of wheels as input and produces a list of Debian binary
+  CPython packages (packages prefixed with python- or python3-).
+fetch: https://github.com/upciti/wheel2deb/releases/download/{{version}}/wheel2deb_linux_amd64
+install:
+  - wheel2deb_linux_amd64:/usr/bin/wheel2deb

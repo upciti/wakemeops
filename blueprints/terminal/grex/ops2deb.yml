@@ -1,0 +1,30 @@
+- name: grex
+  version: 1.3.0
+  homepage: https://github.com/pemistahl/grex
+  summary: command-line tool and library for generating regular expressions
+  description: |-
+    grex is a library as well as a command-line utility that is meant to simplify
+    the often complicated and tedious task of creating regular expressions. It does
+    so by automatically generating a single regular expression from user-provided
+    test cases. The resulting expression is guaranteed to match the test cases
+    which it was generated from.
+  fetch: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+  script:
+    - install -m 755 grex {{src}}/usr/bin/
+
+- name: grex
+  matrix:
+    versions:
+      - 1.4.0
+      - 1.4.1
+  homepage: https://github.com/pemistahl/grex
+  summary: command-line tool and library for generating regular expressions
+  description: |-
+    grex is a library as well as a command-line utility that is meant to simplify
+    the often complicated and tedious task of creating regular expressions. It does
+    so by automatically generating a single regular expression from user-provided
+    test cases. The resulting expression is guaranteed to match the test cases
+    which it was generated from.
+  fetch: https://github.com/pemistahl/grex/releases/download/v{{version}}/grex-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+  install:
+    - grex:/usr/bin/

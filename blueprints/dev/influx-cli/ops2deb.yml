@@ -1,0 +1,19 @@
+name: influx-cli
+matrix:
+  versions:
+    - 2.3.0
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0
+    - 2.6.1
+  architectures:
+    - amd64
+    - arm64
+homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
+summary: command line client for influxdb
+description: |-
+  Use the influx CLI to interact with and manage your InfluxDB instance. Write
+  and query data, generate InfluxDB templates, export data, and more.
+fetch: https://dl.influxdata.com/influxdb/releases/influxdb2-client-{{version}}-linux-{{goarch}}.tar.gz
+install:
+  - influxdb2-client-{{version}}-linux-{{goarch}}/influx:/usr/bin/

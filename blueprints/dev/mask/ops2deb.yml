@@ -1,0 +1,39 @@
+- name: mask
+  version: 0.11.0
+  revision: "2"
+  homepage: https://github.com/jakedeichert/mask
+  summary: command-line task runner defined by a simple markdown file
+  description: |-
+    mask is a CLI task runner which is defined by a simple markdown file. It
+    searches for a maskfile.md in the current directory which it then parses for
+    commands and arguments.
+  fetch: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
+  script:
+    - mv mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
+
+- name: mask
+  version: 0.11.1
+  homepage: https://github.com/jakedeichert/mask
+  summary: command-line task runner defined by a simple markdown file
+  description: |-
+    mask is a CLI task runner which is defined by a simple markdown file. It
+    searches for a maskfile.md in the current directory which it then parses for
+    commands and arguments.
+  fetch: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
+  script:
+    - mv mask-v{{version}}-x86_64-unknown-linux-gnu/mask {{src}}/usr/bin/
+
+- name: mask
+  matrix:
+    versions:
+      - 0.11.2
+      - 0.11.3
+  homepage: https://github.com/jakedeichert/mask
+  summary: command-line task runner defined by a simple markdown file
+  description: |-
+    mask is a CLI task runner which is defined by a simple markdown file. It
+    searches for a maskfile.md in the current directory which it then parses for
+    commands and arguments.
+  fetch: https://github.com/jakedeichert/mask/releases/download/v{{version}}/mask-v{{version}}-x86_64-unknown-linux-gnu.zip
+  install:
+    - mask-v{{version}}-x86_64-unknown-linux-gnu/mask:/usr/bin/

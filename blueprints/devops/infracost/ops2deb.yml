@@ -1,0 +1,25 @@
+name: infracost
+matrix:
+  versions:
+    - 0.10.8
+    - 0.10.9
+    - 0.10.10
+    - 0.10.11
+    - 0.10.12
+    - 0.10.13
+    - 0.10.14
+    - 0.10.15
+    - 0.10.16
+    - 0.10.17
+  architectures:
+    - amd64
+    - arm64
+homepage: https://www.infracost.io
+summary: cloud cost estimates for Terraform in pull requests
+description: |-
+  Infracost shows cloud cost estimates for Terraform. It lets DevOps, SRE and
+  engineers see a cost breakdown and understand costs before making changes,
+  either in the terminal or pull requests.
+fetch: https://github.com/infracost/infracost/releases/download/v{{version}}/infracost-linux-{{target}}.tar.gz
+install:
+  - infracost-linux-{{target}}:/usr/bin/infracost

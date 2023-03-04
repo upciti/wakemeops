@@ -1,0 +1,104 @@
+- name: trivy
+  version: 0.20.2
+  homepage: https://www.aquasec.com/products/trivy/
+  summary: vulnerability and misconfiguration scanner
+  description: |-
+    Scanner for vulnerabilities in container images, file systems, and Git
+    repositories, as well as for configuration issues
+  fetch: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
+  script:
+    - install -m 755 trivy {{src}}/usr/bin/trivy
+
+- name: trivy
+  matrix:
+    versions:
+      - 0.21.3
+      - 0.22.0
+      - 0.23.0
+  homepage: https://www.aquasec.com/products/trivy/
+  summary: vulnerability and misconfiguration scanner
+  description: |-
+    Scanner for vulnerabilities in container images, file systems, and Git
+    repositories, as well as for configuration issues
+  fetch: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-64bit.tar.gz
+  script:
+    - mv trivy {{src}}/usr/bin/trivy
+
+- name: trivy
+  matrix:
+    versions:
+      - 0.23.0
+      - 0.24.0
+      - 0.24.1
+      - 0.24.2
+      - 0.24.3
+      - 0.24.4
+      - 0.25.0
+      - 0.25.1
+      - 0.25.2
+      - 0.25.3
+      - 0.25.4
+      - 0.26.0
+    architectures:
+      - arm64
+      - armhf
+      - amd64
+  homepage: https://www.aquasec.com/products/trivy/
+  summary: vulnerability and misconfiguration scanner
+  description: |-
+    Scanner for vulnerabilities in container images, file systems, and Git
+    repositories, as well as for configuration issues
+  fetch:
+    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
+    targets:
+      amd64: 64bit
+      arm64: ARM64
+      armhf: ARM
+  script:
+    - mv trivy {{src}}/usr/bin/trivy
+
+- name: trivy
+  matrix:
+    versions:
+      - 0.27.0
+      - 0.27.1
+      - 0.28.0
+      - 0.28.1
+      - 0.29.0
+      - 0.29.1
+      - 0.29.2
+      - 0.30.4
+      - 0.31.0
+      - 0.31.1
+      - 0.31.2
+      - 0.31.3
+      - 0.32.0
+      - 0.32.1
+      - 0.33.0
+      - 0.34.0
+      - 0.35.0
+      - 0.36.0
+      - 0.36.1
+      - 0.37.0
+      - 0.37.1
+      - 0.37.2
+      - 0.37.3
+      - 0.38.0
+      - 0.38.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://www.aquasec.com/products/trivy/
+  summary: vulnerability and misconfiguration scanner
+  description: |-
+    Scanner for vulnerabilities in container images, file systems, and Git
+    repositories, as well as for configuration issues
+  fetch:
+    url: https://github.com/aquasecurity/trivy/releases/download/v{{version}}/trivy_{{version}}_Linux-{{target}}.tar.gz
+    targets:
+      amd64: 64bit
+      arm64: ARM64
+      armhf: ARM
+  install:
+    - trivy:/usr/bin/

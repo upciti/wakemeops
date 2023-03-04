@@ -1,0 +1,106 @@
+- name: istioctl
+  matrix:
+    versions:
+      - 1.12.2
+      - 1.11.6
+    architectures:
+      - arm64
+      - armhf
+      - amd64
+  homepage: https://istio.io
+  summary: command-line interface for Istio
+  description: Istio is an open platform to connect, manage, and secure microservices.
+  fetch:
+    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    targets:
+      armhf: armv7
+  script:
+    - install -d {{src}}/opt/istio
+    - mv * {{src}}/opt/istio/
+    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+
+- name: istioctl
+  version: 1.12.2
+  homepage: https://istio.io
+  summary: command-line interface for Istio
+  description: Istio is an open platform to connect, manage, and secure microservices.
+  fetch: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
+  script:
+    - install -d {{src}}/opt/istio
+    - mv * {{src}}/opt/istio/
+    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+
+- name: istioctl
+  matrix:
+    versions:
+      - 1.12.3
+      - 1.13.0
+      - 1.13.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://istio.io
+  summary: command-line interface for Istio
+  description: Istio is an open platform to connect, manage, and secure microservices.
+  fetch:
+    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    targets:
+      armhf: armv7
+  script:
+    - install -d {{src}}/opt/istio
+    - mv * {{src}}/opt/istio/
+    - ln -s /opt/istio/istio-{{version}}/bin/istioctl {{src}}/usr/bin/istioctl
+
+- name: istioctl
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 1.13.2
+  revision: "2"
+  homepage: https://istio.io
+  summary: command-line interface for Istio
+  description: Istio is an open platform to connect, manage, and secure microservices.
+  fetch:
+    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    targets:
+      armhf: armv7
+  install:
+    - istio-{{version}}:/opt/istio/
+  script:
+    - ln -s /opt/istio/bin/istioctl {{src}}/usr/bin/istioctl
+
+- name: istioctl
+  matrix:
+    versions:
+      - 1.13.3
+      - 1.13.4
+      - 1.14.0
+      - 1.14.1
+      - 1.14.3
+      - 1.15.0
+      - 1.15.1
+      - 1.15.2
+      - 1.15.3
+      - 1.16.0
+      - 1.16.1
+      - 1.16.2
+      - 1.17.0
+      - 1.17.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://istio.io
+  summary: command-line interface for Istio
+  description: Istio is an open platform to connect, manage, and secure microservices.
+  fetch:
+    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    targets:
+      armhf: armv7
+  install:
+    - istio-{{version}}:/opt/istio/
+  script:
+    - ln -s /opt/istio/bin/istioctl {{src}}/usr/bin/istioctl

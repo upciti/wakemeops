@@ -1,0 +1,28 @@
+- name: kubectx
+  version: 0.9.4
+  revision: "3"
+  homepage: https://github.com/ahmetb/kubectx
+  summary: kubectl plugin that helps you switch between clusters
+  description: Faster way to switch between clusters in kubectl.
+  fetch: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_x86_64.tar.gz
+  script:
+    - mv kubectx {{src}}/usr/bin/kubectx
+    - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx
+
+- name: kubectx
+  matrix:
+    architectures:
+      - arm64
+      - armhf
+  version: 0.9.4
+  revision: "3"
+  homepage: https://github.com/ahmetb/kubectx
+  summary: kubectl plugin that helps you switch between clusters
+  description: Faster way to switch between clusters in kubectl.
+  fetch:
+    url: https://github.com/ahmetb/kubectx/releases/download/v{{version}}/kubectx_v{{version}}_linux_{{target}}.tar.gz
+    targets:
+      amd64: x86_64
+  script:
+    - mv kubectx {{src}}/usr/bin/kubectx
+    - ln -s /usr/bin/kubectx {{src}}/usr/bin/kubectl-ctx

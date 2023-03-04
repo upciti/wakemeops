@@ -1,0 +1,16 @@
+name: mergestat
+matrix:
+  versions:
+    - 0.5.6
+    - 0.5.7
+    - 0.5.8
+    - 0.5.9
+    - 0.5.10
+homepage: https://docs.mergestat.com
+summary: enables SQL queries for data in git repositories
+description: |-
+  Treat your source code and development history as data. Use SQL to explore and
+  understand everything that goes into building and shipping software.
+fetch: https://github.com/mergestat/mergestat/releases/download/v{{version}}/mergestat-linux-amd64.tar.gz
+install:
+  - mergestat:/usr/bin/

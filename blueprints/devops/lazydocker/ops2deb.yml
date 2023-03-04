@@ -1,0 +1,24 @@
+name: lazydocker
+matrix:
+  versions:
+    - "0.12"
+    - 0.17.1
+    - 0.18.1
+    - 0.19.0
+    - 0.20.0
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+homepage: https://github.com/jesseduffield/lazydocker
+summary: a lazier way to manage everything docker
+description: |-
+  A simple terminal UI for both docker and docker-compose, written in Go with the
+  gocui library.
+fetch:
+  url: https://github.com/jesseduffield/lazydocker/releases/download/v{{version}}/lazydocker_{{version}}_Linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+    armhf: armv7
+install:
+  - lazydocker:/usr/bin

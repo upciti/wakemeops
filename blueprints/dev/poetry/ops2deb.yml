@@ -1,0 +1,146 @@
+- name: poetry
+  matrix:
+    versions:
+      - 1.1.12
+      - 1.1.13
+  homepage: https://python-poetry.org
+  summary: tool for dependency management and packaging in Python
+  description: |-
+    Poetry helps you declare, manage and install dependencies of Python projects,
+    ensuring you have the right stack everywhere.
+  fetch: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
+  script:
+    - rm -r poetry/_vendor/py2.7 poetry/_vendor/py3.5 poetry/_vendor/py3.6 poetry/_vendor/.gitignore
+    - mv poetry {{src}}/usr/lib/
+    - |-
+      cat << EOF >> {{src}}/usr/bin/poetry
+      #!/usr/bin/env python3
+      # -*- coding: utf-8 -*-
+      import glob
+      import sys
+      import os
+
+      lib = os.path.normpath(os.path.join(os.path.realpath(__file__), "../..", "lib"))
+      vendors = os.path.join(lib, "poetry", "_vendor")
+      current_vendors = os.path.join(
+          vendors, "py{}".format(".".join(str(v) for v in sys.version_info[:2]))
+      )
+
+      sys.path.insert(0, lib)
+      sys.path.insert(0, current_vendors)
+
+      if __name__ == "__main__":
+          from poetry.console import main
+
+          main()
+      EOF
+    - |-
+      cat << EOF >> {{src}}/../debian/postinst
+      #!/bin/sh
+      set -e
+      if which py3compile >/dev/null 2>&1; then
+        py3compile -p poetry
+      fi
+      EOF
+    - |-
+      cat << EOF >> {{src}}/../debian/prerm
+      #!/bin/sh
+      set -e
+      if which py3clean >/dev/null 2>&1; then
+        py3clean -p poetry
+      fi
+
+- name: poetry
+  matrix:
+    versions:
+      - 1.1.13
+      - 1.1.14
+      - 1.1.15
+  architecture: all
+  homepage: https://python-poetry.org
+  summary: tool for dependency management and packaging in Python
+  description: |-
+    Poetry helps you declare, manage and install dependencies of Python projects,
+    ensuring you have the right stack everywhere.
+  fetch: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
+  install:
+    - content: |-
+        #!/usr/bin/env python3
+        # -*- coding: utf-8 -*-
+        import glob
+        import sys
+        import os
+        lib = os.path.normpath(os.path.join(os.path.realpath(__file__), "../..", "lib"))
+        vendors = os.path.join(lib, "poetry", "_vendor")
+        current_vendors = os.path.join(
+            vendors, "py{}".format(".".join(str(v) for v in sys.version_info[:2]))
+        )
+        sys.path.insert(0, lib)
+        sys.path.insert(0, current_vendors)
+        if __name__ == "__main__":
+            from poetry.console import main
+            main()
+      path: /usr/bin/poetry
+    - content: |-
+        #!/bin/sh
+        set -e
+        if which py3compile >/dev/null 2>&1; then
+          py3compile -p poetry
+        fi
+      path: debian/postinst
+    - content: |-
+        #!/bin/sh
+        set -e
+        if which py3clean >/dev/null 2>&1; then
+          py3clean -p poetry
+        fi
+      path: debian/prerm
+  script:
+    - rm -r poetry/_vendor/py2.7 poetry/_vendor/py3.5 poetry/_vendor/py3.6 poetry/_vendor/.gitignore
+    - mv poetry {{src}}/usr/lib/
+
+- name: poetry
+  version: 1.1.15
+  revision: "2"
+  architecture: all
+  homepage: https://python-poetry.org
+  summary: tool for dependency management and packaging in Python
+  description: |-
+    Poetry helps you declare, manage and install dependencies of Python projects,
+    ensuring you have the right stack everywhere.
+  fetch: https://github.com/python-poetry/poetry/releases/download/{{version}}/poetry-{{version}}-linux.tar.gz
+  install:
+    - content: |-
+        #!/usr/bin/python3
+        # -*- coding: utf-8 -*-
+        import glob
+        import sys
+        import os
+        lib = os.path.normpath(os.path.join(os.path.realpath(__file__), "../..", "lib"))
+        vendors = os.path.join(lib, "poetry", "_vendor")
+        current_vendors = os.path.join(
+            vendors, "py{}".format(".".join(str(v) for v in sys.version_info[:2]))
+        )
+        sys.path.insert(0, lib)
+        sys.path.insert(0, current_vendors)
+        if __name__ == "__main__":
+            from poetry.console import main
+            main()
+      path: /usr/bin/poetry
+    - content: |-
+        #!/bin/sh
+        set -e
+        if which py3compile >/dev/null 2>&1; then
+          py3compile -p poetry
+        fi
+      path: debian/postinst
+    - content: |-
+        #!/bin/sh
+        set -e
+        if which py3clean >/dev/null 2>&1; then
+          py3clean -p poetry
+        fi
+      path: debian/prerm
+  script:
+    - rm -r poetry/_vendor/py2.7 poetry/_vendor/py3.5 poetry/_vendor/py3.6 poetry/_vendor/.gitignore
+    - mv poetry {{src}}/usr/lib/

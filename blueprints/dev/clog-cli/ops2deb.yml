@@ -1,0 +1,23 @@
+name: clog-cli
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+version: 0.9.3
+homepage: https://github.com/clog-tool/clog-cli
+summary: generate beautiful changelogs from your Git commit history
+description: |-
+  clog creates a changelog automatically from your local git metadata. The way
+  this works, is every time you make a commit, you ensure your commit subject
+  line follows the conventional format. Then when you wish to update your
+  changelog, you simply run clog inside your local repository with any options
+  you'd like to specify.
+fetch:
+  url: https://github.com/clog-tool/clog-cli/releases/download/v{{version}}/clog-v{{version}}-{{target}}.tar.gz
+  targets:
+    amd64: x86_64-unknown-linux-gnu
+    arm64: aarch64-unknown-linux-gnu
+    armhf: armv7-unknown-linux-gnueabihf
+script:
+  - install -m 755 clog {{src}}/usr/bin/

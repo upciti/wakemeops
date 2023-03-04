@@ -1,0 +1,57 @@
+- name: xh
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+  version: 0.15.0
+  homepage: https://github.com/ducaale/xh
+  summary: user-friendly and fast tool for sending HTTP requests
+  description: |-
+    xh reimplements as much as possible of HTTPie's excellent design, with a focus
+    on improved performance.
+  fetch:
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-musl
+      armhf: arm-unknown-linux-gnueabihf
+  script:
+    - mv xh-v{{version}}-*/xh {{src}}/usr/bin/xh
+
+- name: xh
+  matrix:
+    architectures:
+      - amd64
+      - armhf
+  version: 0.16.0
+  homepage: https://github.com/ducaale/xh
+  summary: user-friendly and fast tool for sending HTTP requests
+  description: |-
+    xh reimplements as much as possible of HTTPie's excellent design, with a focus
+    on improved performance.
+  fetch:
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target|rust_target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-musl
+  script:
+    - mv xh-v{{version}}-*/xh {{src}}/usr/bin/xh
+
+- name: xh
+  matrix:
+    versions:
+      - 0.16.1
+      - 0.17.0
+      - 0.18.0
+    architectures:
+      - amd64
+      - armhf
+  homepage: https://github.com/ducaale/xh
+  summary: user-friendly and fast tool for sending HTTP requests
+  description: |-
+    xh reimplements as much as possible of HTTPie's excellent design, with a focus
+    on improved performance.
+  fetch:
+    url: https://github.com/ducaale/xh/releases/download/v{{version}}/xh-v{{version}}-{{target|rust_target}}.tar.gz
+    targets:
+      amd64: x86_64-unknown-linux-musl
+  install:
+    - xh-v{{version}}-{{target|rust_target}}/xh:/usr/bin/

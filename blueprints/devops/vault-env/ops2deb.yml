@@ -1,0 +1,16 @@
+name: vault-env
+matrix:
+  versions:
+    - 1.15.1
+    - 1.15.2
+  architectures:
+    - amd64
+    - arm64
+homepage: https://banzaicloud.com/products/bank-vaults/
+summary: exec a process with Vault sourced env vars
+description: |-
+  Bank-Vaults tool inspired by vaultenv and envconsul to run a process with
+  environment variables from Vault.
+fetch: https://github.com/banzaicloud/bank-vaults/releases/download/{{version}}/vault-env-linux-{{goarch}}.tar.gz
+install:
+  - vault-env:/usr/bin/

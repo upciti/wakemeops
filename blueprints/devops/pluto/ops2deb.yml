@@ -1,0 +1,14 @@
+name: pluto
+matrix:
+  architectures:
+    - amd64
+    - arm64
+version: 5.15.1
+homepage: https://github.com/FairwindsOps/pluto/
+summary: discover deprecated apiversions in kubernetes
+description: |-
+  Pluto is a utility to help users find deprecated Kubernetes apiVersions in
+  their code repositories and their helm releases.
+fetch: https://github.com/FairwindsOps/pluto/releases/download/v{{version}}/pluto_{{version}}_linux_{{goarch}}.tar.gz
+install:
+  - pluto:/usr/bin/pluto

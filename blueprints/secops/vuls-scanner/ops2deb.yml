@@ -1,0 +1,52 @@
+- name: vuls-scanner
+  matrix:
+    versions:
+      - 0.19.4
+      - 0.19.5
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://vuls.io/
+  summary: agent-less vulnerability scanner
+  description: |-
+    Vuls is open-source, agent-less vulnerability scanner based on information from
+    NVD, OVAL, etc.
+  fetch:
+    url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  script:
+    - mv vuls-scanner {{src}}/usr/bin/vuls
+
+- name: vuls-scanner
+  matrix:
+    versions:
+      - 0.19.6
+      - 0.19.7
+      - 0.19.8
+      - 0.20.0
+      - 0.20.1
+      - 0.20.2
+      - 0.20.3
+      - 0.20.4
+      - 0.20.5
+      - 0.21.0
+      - 0.21.1
+      - 0.22.0
+      - 0.22.1
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://vuls.io/
+  summary: agent-less vulnerability scanner
+  description: |-
+    Vuls is open-source, agent-less vulnerability scanner based on information from
+    NVD, OVAL, etc.
+  fetch:
+    url: https://github.com/future-architect/vuls/releases/download/v{{version}}/vuls-scanner_{{version}}_linux_{{target}}.tar.gz
+    targets:
+      armhf: armv6
+  install:
+    - vuls-scanner:/usr/bin/vuls

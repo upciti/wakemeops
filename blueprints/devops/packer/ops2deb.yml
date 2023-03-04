@@ -1,0 +1,43 @@
+- name: packer
+  matrix:
+    versions:
+      - 1.7.10
+      - 1.8.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://www.packer.io
+  summary: create multi-platform machine images from a single source configuration
+  description: |-
+    Lightweight, runs on every major operating system, and is highly performant,
+    creating machine images for multiple platforms in parallel. Packer comes out of
+    the box with support for many platforms, the full list of which can be found at
+    https://www.packer.io/docs/builders.
+  fetch: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
+  script:
+    - mv packer {{src}}/usr/bin/packer
+
+- name: packer
+  matrix:
+    versions:
+      - 1.8.1
+      - 1.8.2
+      - 1.8.3
+      - 1.8.4
+      - 1.8.5
+      - 1.8.6
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://www.packer.io
+  summary: create multi-platform machine images from a single source configuration
+  description: |-
+    Lightweight, runs on every major operating system, and is highly performant,
+    creating machine images for multiple platforms in parallel. Packer comes out of
+    the box with support for many platforms, the full list of which can be found at
+    https://www.packer.io/docs/builders.
+  fetch: https://releases.hashicorp.com/packer/{{version}}/packer_{{version}}_linux_{{goarch}}.zip
+  install:
+    - packer:/usr/bin/

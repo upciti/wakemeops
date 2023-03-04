@@ -1,0 +1,103 @@
+- name: minikube
+  version: 1.23.2
+  homepage: https://minikube.sigs.k8s.io
+  summary: quickly set up a local Kubernetes cluster
+  description: |-
+    Focus on helping application developers and new Kubernetes users.
+    Supports the latest Kubernetes release (+6 previous minor versions)
+    Cross-platform (Linux, macOS, Windows)
+    Deploy as a VM, a container, or on bare-metal
+    Multiple container runtimes (CRI-O, containerd, docker)
+    Docker API endpoint for blazing fast image pushes
+    Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
+    Addons for easily installed Kubernetes applications
+  fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
+  script:
+    - install -m 755 minikube-linux-amd64 {{src}}/usr/bin/minikube
+
+- name: minikube
+  version: 1.24.0
+  revision: "3"
+  homepage: https://minikube.sigs.k8s.io
+  summary: quickly set up a local Kubernetes cluster
+  description: |-
+    Focus on helping application developers and new Kubernetes users.
+    Supports the latest Kubernetes release (+6 previous minor versions)
+    Cross-platform (Linux, macOS, Windows)
+    Deploy as a VM, a container, or on bare-metal
+    Multiple container runtimes (CRI-O, containerd, docker)
+    Docker API endpoint for blazing fast image pushes
+    Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
+    Addons for easily installed Kubernetes applications
+  fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
+  script:
+    - mv minikube-linux-amd64 {{src}}/usr/bin/minikube
+
+- name: minikube
+  version: 1.25.1
+  homepage: https://minikube.sigs.k8s.io
+  summary: quickly set up a local Kubernetes cluster
+  description: |-
+    Focus on helping application developers and new Kubernetes users.
+    Supports the latest Kubernetes release (+6 previous minor versions)
+    Cross-platform (Linux, macOS, Windows)
+    Deploy as a VM, a container, or on bare-metal
+    Multiple container runtimes (CRI-O, containerd, docker)
+    Docker API endpoint for blazing fast image pushes
+    Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
+    Addons for easily installed Kubernetes applications
+  fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-amd64
+  script:
+    - mv minikube-linux-amd64 {{src}}/usr/bin/minikube
+
+- name: minikube
+  matrix:
+    versions:
+      - 1.25.1
+      - 1.25.2
+    architectures:
+      - arm64
+      - armhf
+      - amd64
+  homepage: https://minikube.sigs.k8s.io
+  summary: quickly set up a local Kubernetes cluster
+  description: |-
+    Focus on helping application developers and new Kubernetes users.
+    Supports the latest Kubernetes release (+6 previous minor versions)
+    Cross-platform (Linux, macOS, Windows)
+    Deploy as a VM, a container, or on bare-metal
+    Multiple container runtimes (CRI-O, containerd, docker)
+    Docker API endpoint for blazing fast image pushes
+    Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
+    Addons for easily installed Kubernetes applications
+  fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
+  script:
+    - mv minikube-linux-{{goarch}} {{src}}/usr/bin/minikube
+
+- name: minikube
+  matrix:
+    versions:
+      - 1.26.0
+      - 1.26.1
+      - 1.27.0
+      - 1.27.1
+      - 1.28.0
+      - 1.29.0
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://minikube.sigs.k8s.io
+  summary: quickly set up a local Kubernetes cluster
+  description: |-
+    Focus on helping application developers and new Kubernetes users.
+    Supports the latest Kubernetes release (+6 previous minor versions)
+    Cross-platform (Linux, macOS, Windows)
+    Deploy as a VM, a container, or on bare-metal
+    Multiple container runtimes (CRI-O, containerd, docker)
+    Docker API endpoint for blazing fast image pushes
+    Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
+    Addons for easily installed Kubernetes applications
+  fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
+  install:
+    - minikube-linux-{{goarch}}:/usr/bin/minikube

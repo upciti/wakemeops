@@ -1,0 +1,49 @@
+- name: natscli
+  version: 0.0.26
+  revision: "3"
+  homepage: https://github.com/nats-io/natscli
+  summary: command-line interface for NATS
+  description: |-
+    A command line utility to interact with and manage NATS. This utility replaces
+    various past tools that were named in the form nats-sub and nats-pub, adds
+    several new capabilities and support full JetStream management.
+  fetch: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-amd64.zip
+  script:
+    - mv nats-{{version}}-linux-amd64/nats {{src}}/usr/bin/nats
+
+- name: natscli
+  version: 0.0.26
+  revision: "3"
+  architecture: arm64
+  homepage: https://github.com/nats-io/natscli
+  summary: command-line interface for NATS
+  description: |-
+    A command line utility to interact with and manage NATS. This utility replaces
+    various past tools that were named in the form nats-sub and nats-pub, adds
+    several new capabilities and support full JetStream management.
+  fetch: https://github.com/nats-io/natscli/releases/download/{{version}}/nats-{{version}}-linux-{{goarch}}.zip
+  script:
+    - mv nats-{{version}}-linux-{{goarch}}/nats {{src}}/usr/bin/nats
+
+- name: natscli
+  matrix:
+    versions:
+      - 0.0.33
+      - 0.0.34
+      - 0.0.35
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://github.com/nats-io/natscli
+  summary: command-line interface for NATS
+  description: |-
+    A command line utility to interact with and manage NATS. This utility replaces
+    various past tools that were named in the form nats-sub and nats-pub, adds
+    several new capabilities and support full JetStream management.
+  fetch:
+    url: https://github.com/nats-io/natscli/releases/download/v{{version}}/nats-{{version}}-linux-{{target|goarch}}.zip
+    targets:
+      armhf: arm7
+  install:
+    - nats-{{version}}-linux-{{target|goarch}}/nats:/usr/bin/

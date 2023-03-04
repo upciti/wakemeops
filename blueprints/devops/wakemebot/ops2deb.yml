@@ -1,0 +1,66 @@
+- name: wakemebot
+  matrix:
+    versions:
+      - 1.3.2
+      - 1.4.4
+  homepage: https://github.com/upciti/wakemebot
+  summary: bunch of tools used by our beloved wakemebot
+  description: |-
+    Don't mind this package, you probably don't need it unless you are working on
+    wakemeops itself. It contains the glue needed between aptly (APT repository
+    management), ops2deb (Debian package generation) and mkdocs (wakemeops
+    documentation).
+  fetch: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
+  script:
+    - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
+
+- name: wakemebot
+  version: 1.6.1
+  homepage: https://github.com/upciti/wakemebot
+  summary: bunch of tools used by our beloved wakemebot
+  description: |-
+    Don't mind this package, you probably don't need it unless you are working on
+    wakemeops itself. It contains the glue needed between aptly (APT repository
+    management), ops2deb (Debian package generation) and mkdocs (wakemeops
+    documentation).
+  fetch: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_{{goarch}}
+  script:
+    - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
+
+- name: wakemebot
+  matrix:
+    versions:
+      - 2.0.2
+      - 2.0.3
+      - 2.1.0
+      - 3.0.0
+      - 3.1.0
+  homepage: https://github.com/upciti/wakemebot
+  summary: bunch of tools used by our beloved wakemebot
+  description: |-
+    Don't mind this package, you probably don't need it unless you are working on
+    wakemeops itself. It contains the glue needed between aptly (APT repository
+    management), ops2deb (Debian package generation) and mkdocs (wakemeops
+    documentation).
+  fetch: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
+  script:
+    - mv wakemebot_linux_* {{src}}/usr/bin/wakemebot
+
+- name: wakemebot
+  matrix:
+    versions:
+      - 3.1.1
+      - 4.0.2
+      - 4.1.0
+      - 4.1.1
+      - 4.2.0
+  homepage: https://github.com/upciti/wakemebot
+  summary: bunch of tools used by our beloved wakemebot
+  description: |-
+    Don't mind this package, you probably don't need it unless you are working on
+    wakemeops itself. It contains the glue needed between aptly (APT repository
+    management), ops2deb (Debian package generation) and mkdocs (wakemeops
+    documentation).
+  fetch: https://github.com/upciti/wakemebot/releases/download/{{version}}/wakemebot_linux_amd64
+  install:
+    - wakemebot_linux_amd64:/usr/bin/wakemebot

@@ -1,0 +1,60 @@
+- name: waypoint
+  matrix:
+    versions:
+      - 0.6.3
+      - 0.7.1
+  homepage: https://www.waypointproject.io
+  summary: build, deploy, and release any application on any platform
+  description: |-
+    Allows developers to define their application build, deploy, and release
+    lifecycle as code, reducing the time to deliver deployments through a
+    consistent and repeatable workflow.
+  fetch: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_amd64.zip
+  script:
+    - mv waypoint {{src}}/usr/bin/waypoint
+
+- name: waypoint
+  matrix:
+    versions:
+      - 0.7.1
+      - 0.7.2
+    architectures:
+      - armhf
+      - amd64
+  homepage: https://www.waypointproject.io
+  summary: build, deploy, and release any application on any platform
+  description: |-
+    Allows developers to define their application build, deploy, and release
+    lifecycle as code, reducing the time to deliver deployments through a
+    consistent and repeatable workflow.
+  fetch: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
+  script:
+    - mv waypoint {{src}}/usr/bin/waypoint
+
+- name: waypoint
+  matrix:
+    versions:
+      - 0.8.0
+      - 0.8.1
+      - 0.8.2
+      - 0.9.0
+      - 0.9.1
+      - 0.10.0
+      - 0.10.1
+      - 0.10.2
+      - 0.10.3
+      - 0.10.4
+      - 0.10.5
+      - 0.11.0
+    architectures:
+      - amd64
+      - armhf
+  homepage: https://www.waypointproject.io
+  summary: build, deploy, and release any application on any platform
+  description: |-
+    Allows developers to define their application build, deploy, and release
+    lifecycle as code, reducing the time to deliver deployments through a
+    consistent and repeatable workflow.
+  fetch: https://releases.hashicorp.com/waypoint/{{version}}/waypoint_{{version}}_linux_{{goarch}}.zip
+  install:
+    - waypoint:/usr/bin/

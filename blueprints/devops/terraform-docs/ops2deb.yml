@@ -1,0 +1,25 @@
+- name: terraform-docs
+  version: 0.16.0
+  homepage: https://terraform-docs.io
+  summary: generate documentation from Terraform modules in various output formats
+  description: |-
+    Utility to generate documentation from Terraform modules in various output
+    formats.
+  fetch: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-amd64.tar.gz
+  script:
+    - mv terraform-docs {{src}}/usr/bin/terraform-docs
+
+- name: terraform-docs
+  matrix:
+    architectures:
+      - arm64
+      - armhf
+  version: 0.16.0
+  homepage: https://terraform-docs.io
+  summary: generate documentation from Terraform modules in various output formats
+  description: |-
+    Utility to generate documentation from Terraform modules in various output
+    formats.
+  fetch: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-{{goarch}}.tar.gz
+  script:
+    - mv terraform-docs {{src}}/usr/bin/terraform-docs

@@ -1,0 +1,61 @@
+- name: operator-sdk
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 1.18.0
+  homepage: https://sdk.operatorframework.io
+  summary: SDK for building Kubernetes applications
+  description: |-
+    The Operator SDK makes it easier to build Kubernetes native applications, a
+    process that can require deep, application-specific operational knowledge.
+  fetch: https://github.com/operator-framework/operator-sdk/releases/download/v1.18.0/operator-sdk_linux_{{goarch}}
+  script:
+    - mv operator-sdk_linux_{{goarch}} {{src}}/usr/bin/operator-sdk
+
+- name: operator-sdk
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+  version: 1.18.1
+  homepage: https://sdk.operatorframework.io
+  summary: SDK for building Kubernetes applications
+  description: |-
+    The Operator SDK makes it easier to build Kubernetes native applications, a
+    process that can require deep, application-specific operational knowledge.
+  fetch: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
+  script:
+    - mv operator-sdk_linux_{{goarch}} {{src}}/usr/bin/operator-sdk
+
+- name: operator-sdk
+  matrix:
+    versions:
+      - 1.19.0
+      - 1.19.1
+      - 1.20.0
+      - 1.20.1
+      - 1.21.0
+      - 1.22.0
+      - 1.22.1
+      - 1.22.2
+      - 1.23.0
+      - 1.24.0
+      - 1.24.1
+      - 1.25.0
+      - 1.25.1
+      - 1.25.2
+      - 1.25.3
+      - 1.26.0
+      - 1.27.0
+    architectures:
+      - amd64
+      - arm64
+  homepage: https://sdk.operatorframework.io
+  summary: SDK for building Kubernetes applications
+  description: |-
+    The Operator SDK makes it easier to build Kubernetes native applications, a
+    process that can require deep, application-specific operational knowledge.
+  fetch: https://github.com/operator-framework/operator-sdk/releases/download/v{{version}}/operator-sdk_linux_{{goarch}}
+  install:
+    - operator-sdk_linux_{{goarch}}:/usr/bin/operator-sdk

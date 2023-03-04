@@ -1,0 +1,134 @@
+- name: ops2deb
+  version: 0.15.1
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64.tar.gz
+  script:
+    - mv ops2deb {{src}}/usr/bin/
+
+- name: ops2deb
+  matrix:
+    versions:
+      - 0.16.1
+      - 0.17.2
+      - 0.18.1
+      - 0.19.1
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
+  script:
+    - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
+
+- name: ops2deb
+  version: 0.20.0
+  revision: "2"
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_{{goarch}}
+  script:
+    - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
+
+- name: ops2deb
+  matrix:
+    versions:
+      - 0.21.1
+      - 0.22.0
+      - 0.23.0
+      - 0.23.1
+      - 0.25.0
+      - 0.26.0
+      - 0.26.1
+      - 0.27.0
+      - 0.28.0
+      - 0.29.1
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
+  script:
+    - mv ops2deb_linux_* {{src}}/usr/bin/ops2deb
+
+- name: ops2deb
+  matrix:
+    versions:
+      - 0.30.0
+      - 0.31.0
+      - 0.31.1
+      - 0.31.2
+      - 0.33.0
+      - 0.34.0
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
+  install:
+    - ops2deb_linux_amd64:/usr/bin/ops2deb
+
+- name: ops2deb
+  version: 0.34.1
+  revision: "2"
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
+  install:
+    - ops2deb_linux_amd64:/usr/bin/ops2deb
+
+- name: ops2deb
+  matrix:
+    versions:
+      - 0.35.0
+      - 0.35.1
+      - 0.36.0
+      - 0.36.1
+      - 1.0.1
+      - 1.0.2
+      - 1.0.3
+      - 1.1.0
+      - 1.2.0
+      - 2.0.0
+      - 2.1.0
+  homepage: https://github.com/upciti/ops2deb
+  summary: debian packaging tool for portable applications
+  description: |-
+    Ops2deb is primarily designed to easily generate Debian packages for portable
+    applications such as single binary applications and scripts. Packages are
+    described using a simple configuration file format. Ops2deb can track new
+    releases of upstream applications and automatically bump application versions
+    in its configuration file.
+  fetch: https://github.com/upciti/ops2deb/releases/download/{{version}}/ops2deb_linux_amd64
+  install:
+    - ops2deb_linux_amd64:/usr/bin/ops2deb

@@ -1,0 +1,138 @@
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.16.0/kubeseal-linux-amd64
+  sha256: 0899c583053a7c242359985545d9c5c76899fb965dd9d1c46cbcc8b4dd2071ed
+  timestamp: 2021-12-14 15:37:09+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.3/kubeseal-0.17.3-linux-amd64.tar.gz
+  sha256: 5270b926c5689ba1587cdc8ea8dcc1283fc3c5863d663f5fe2b31372ed60c19e
+  timestamp: 2022-01-27 19:24:18+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.3/kubeseal-0.17.3-linux-arm.tar.gz
+  sha256: 330ac80406fdc5162069556d3a9205c7c1ffdd6f17f0bf38f3b5070a7235f76e
+  timestamp: 2022-01-27 19:24:18+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.3/kubeseal-0.17.3-linux-arm64.tar.gz
+  sha256: 28ba9d276e49e77813089bdc75e04b4935d998272b3c40b169b55e279520e418
+  timestamp: 2022-01-27 19:24:18+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/kubeseal-0.17.4-linux-amd64.tar.gz
+  sha256: a826158644323c75961e3d365a07f726a3319d48fc0fcdff06e3d3f9d19baa93
+  timestamp: 2022-03-31 17:23:25+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/kubeseal-0.17.4-linux-arm.tar.gz
+  sha256: 37ab509d386806224f649c4768c6886ef988ba01697c916160135c5bbaa21dc7
+  timestamp: 2022-03-31 17:23:25+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/kubeseal-0.17.4-linux-arm64.tar.gz
+  sha256: 600b3eabaf2fd47b204c6d46ac10141381c6f98e0b6d0f95f2aab0338f3fff63
+  timestamp: 2022-03-31 17:23:25+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.5/kubeseal-0.17.5-linux-amd64.tar.gz
+  sha256: 7a832db451c09a8bb2c49930b9248c23ddf151f30ff579615e4996317dac9d61
+  timestamp: 2022-04-20 23:19:30+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.5/kubeseal-0.17.5-linux-arm.tar.gz
+  sha256: be0aeab42f312ae67c02ee963c0a5f617f7e3a180555a0c2252c722ffa9371d1
+  timestamp: 2022-04-20 23:19:30+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.5/kubeseal-0.17.5-linux-arm64.tar.gz
+  sha256: fb328aa09ff7f94130699ff5759a30a44975343ed1eba0a400da431fa335300e
+  timestamp: 2022-04-20 23:19:30+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.0/kubeseal-0.18.0-linux-amd64.tar.gz
+  sha256: 51f3180d0e61d6b51b95f3c99f31d77f4417eb4945a03884afa55c20ce01c19a
+  timestamp: 2022-06-02 23:19:33+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.0/kubeseal-0.18.0-linux-arm.tar.gz
+  sha256: 3b663024f5b12083c35ffad84cd2e4b60af42d02294e2312a2d55171555e4013
+  timestamp: 2022-06-02 23:19:33+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.0/kubeseal-0.18.0-linux-arm64.tar.gz
+  sha256: 8a108df213f5b632bad281eb0c985552cefc1f2e40c3d0707df19f1f21ea05d2
+  timestamp: 2022-06-02 23:19:33+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.1/kubeseal-0.18.1-linux-amd64.tar.gz
+  sha256: 78875afdbfa958d06b4fe6e7ea63bdea8c7e944fda6425769e2a0394ac33899e
+  timestamp: 2022-07-14 14:44:47+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.1/kubeseal-0.18.1-linux-arm.tar.gz
+  sha256: a0786d48723595ed0600d4beb0a7ec7b630c6bc77e6bbb6343ae005b5e162180
+  timestamp: 2022-07-14 14:44:47+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.1/kubeseal-0.18.1-linux-arm64.tar.gz
+  sha256: 94e53be115f62ac4831ca2a025660bb611cfeca0768ab17b8530ef91fc6fbf4d
+  timestamp: 2022-07-14 14:44:47+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.2/kubeseal-0.18.2-linux-amd64.tar.gz
+  sha256: dd09381a65983c3617e00a41cce19ec37f7e4c5c23c9a048bd8812bf057727ca
+  timestamp: 2022-08-25 20:27:27+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.2/kubeseal-0.18.2-linux-arm.tar.gz
+  sha256: d365bbd3adabb2f7f97a6d95b2b6d36b2ca1f0d7d80c0c354ac66140515f7cfd
+  timestamp: 2022-08-25 20:27:27+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.2/kubeseal-0.18.2-linux-arm64.tar.gz
+  sha256: 7d2f62485595c6f2676d0533ff06d0585d25483f16cddec88b88e5adb8234166
+  timestamp: 2022-08-25 20:27:27+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.3/kubeseal-0.18.3-linux-amd64.tar.gz
+  sha256: b0c12b01599c4c40227f5c2413870c4358a7c8a1228f815822cd63c7ab9b7f1b
+  timestamp: 2022-09-22 14:50:52+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.3/kubeseal-0.18.3-linux-arm.tar.gz
+  sha256: 17559eeb0955cebaef31b321d2d50360d034ad141f3c6961c7aca4cadc8c58f6
+  timestamp: 2022-09-22 14:50:52+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.3/kubeseal-0.18.3-linux-arm64.tar.gz
+  sha256: 39a248313edf927738b31700d498a39bc4b5d63b35bc9cd16009a06f4e6d1077
+  timestamp: 2022-09-22 14:50:52+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.4/kubeseal-0.18.4-linux-amd64.tar.gz
+  sha256: 2e765b87889bfcf06a6249cde8e28507e3b7be29851e4fac651853f7638f12f3
+  timestamp: 2022-09-22 17:27:20+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.4/kubeseal-0.18.4-linux-arm.tar.gz
+  sha256: c8c9d1d8ee4adb829ca5476065a3e93aa7f0f1dcea422037f99ff69d6676cc74
+  timestamp: 2022-09-22 17:27:20+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.4/kubeseal-0.18.4-linux-arm64.tar.gz
+  sha256: 3b71db91bd98b56a7f713d7edf64ed38a2ecbd04205539a5e25129e40e6fde0f
+  timestamp: 2022-09-22 17:27:20+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/kubeseal-0.18.5-linux-amd64.tar.gz
+  sha256: cea4ee4fbedbd59c5f2dd6a26206de0677c7f7983181f1c47f0a938ed3d93432
+  timestamp: 2022-09-23 16:29:52+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/kubeseal-0.18.5-linux-arm.tar.gz
+  sha256: f80d42ed4b157d060714279ea828b3e78898b4f8223f6ed54ec3de4553d88642
+  timestamp: 2022-09-23 16:29:52+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/kubeseal-0.18.5-linux-arm64.tar.gz
+  sha256: da52279164fa9f020f21b795c7fcb84d901c08c67dc8a8f7b63015e640bf5483
+  timestamp: 2022-09-23 16:29:52+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.0/kubeseal-0.19.0-linux-amd64.tar.gz
+  sha256: edf008c525cdbe438de06ae2f9fba09ef2be1b6d6102e6ab5cd63b3758f4f024
+  timestamp: 2022-10-13 20:36:25+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.0/kubeseal-0.19.0-linux-arm.tar.gz
+  sha256: 34a3bd419b183063e41df955c97f4f432f8118203f9ccc74092df695573e1a7c
+  timestamp: 2022-10-13 20:36:25+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.0/kubeseal-0.19.0-linux-arm64.tar.gz
+  sha256: bdaf62d586b45bdb486ce53d140f46b579ebee05b9814fc5609940f8d429f27f
+  timestamp: 2022-10-13 20:36:25+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.1/kubeseal-0.19.1-linux-amd64.tar.gz
+  sha256: a78aa5c04b24bd3cbc72527a40bc13ae4d15f911e3053da510a68ddcd2cfd27a
+  timestamp: 2022-10-17 11:38:15+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.1/kubeseal-0.19.1-linux-arm.tar.gz
+  sha256: 44109a5b14f217521b019e49c35c167031089eac9c63844f2d5489ea4df3c1ab
+  timestamp: 2022-10-17 11:38:15+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.1/kubeseal-0.19.1-linux-arm64.tar.gz
+  sha256: eede3709300fa3db46a00833ab3e32a647f5f1c2a15f943056931ec40f8afaf9
+  timestamp: 2022-10-17 11:38:15+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.2/kubeseal-0.19.2-linux-amd64.tar.gz
+  sha256: f259f7d4754a882031f1ccfc6c004fa4646734e48f0e68c1adce72309ae16f03
+  timestamp: 2022-11-18 16:23:14+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.2/kubeseal-0.19.2-linux-arm.tar.gz
+  sha256: 2e1ba8cee5cafe86924b9176f32a8a441efbbc9e75d63b73be14dddf6b8d9e51
+  timestamp: 2022-11-18 16:23:14+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.2/kubeseal-0.19.2-linux-arm64.tar.gz
+  sha256: 6cfbcf76e7b7bb2cb9e808d6a13ec11f29e244e79ed077cbc77cb75ddf2241fe
+  timestamp: 2022-11-18 16:23:14+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.3/kubeseal-0.19.3-linux-amd64.tar.gz
+  sha256: f6c420d38f84008deffd040f0bbc527b08c2b70bdb373ab4e0598f64510af566
+  timestamp: 2022-12-15 16:20:32+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.3/kubeseal-0.19.3-linux-arm.tar.gz
+  sha256: e3fb4aa3cc181577190c29e28d1304d1bbb18ebc5cb603e3dac1299cc4930043
+  timestamp: 2022-12-15 16:20:32+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.3/kubeseal-0.19.3-linux-arm64.tar.gz
+  sha256: dfa1a9ccc5e21286394626c1a0dbde4bfb231d04a40c06fe1a95cefedea2f71a
+  timestamp: 2022-12-15 16:20:32+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-amd64.tar.gz
+  sha256: a0f8c81dcb9ca5c52bec80bb706bcfa0c06786650d3aa29a170fb768364d91f2
+  timestamp: 2023-01-16 16:20:17+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-arm.tar.gz
+  sha256: 2ec2f22559cfd1087890a6c239efa3c7bce6e5575f0e703ae44ed73aca2ceabc
+  timestamp: 2023-01-16 16:20:17+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-arm64.tar.gz
+  sha256: 770cd9c7a227ab26bc8a56d00bcbc1a05b345501ac7b4c79d5ca8eaa6f7c31c7
+  timestamp: 2023-01-16 16:20:17+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-amd64.tar.gz
+  sha256: 9f8de35b8272533cc687c909ce717d4340aea23a16a3e422a92a6105f23b835b
+  timestamp: 2023-02-15 16:20:58+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-arm.tar.gz
+  sha256: bd60686e066121df227efa28d2c2bd1b94881d73f909814bbca4062ffb47f86f
+  timestamp: 2023-02-15 16:20:58+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.5/kubeseal-0.19.5-linux-arm64.tar.gz
+  sha256: 65f99a7bbbe2d4d8cce333b0470fd7e01d2bed1af5588fddba330798f4c4cd1b
+  timestamp: 2023-02-15 16:20:58+00:00

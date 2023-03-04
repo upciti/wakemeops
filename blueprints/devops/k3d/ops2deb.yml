@@ -1,0 +1,71 @@
+- name: k3d
+  matrix:
+    versions:
+      - 5.0.3
+      - 5.1.0
+  homepage: https://k3d.io
+  summary: run Rancher Lab's k3s in Docker
+  description: |-
+    k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+    distribution) in docker. k3d makes it very easy to create single- and multi-
+    node k3s clusters in docker, e.g. for local development on Kubernetes.
+  fetch: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
+  script:
+    - install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d
+
+- name: k3d
+  version: 5.2.2
+  homepage: https://k3d.io
+  summary: run Rancher Lab's k3s in Docker
+  description: |-
+    k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+    distribution) in docker. k3d makes it very easy to create single- and multi-
+    node k3s clusters in docker, e.g. for local development on Kubernetes.
+  fetch: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64
+  script:
+    - mv k3d-linux-amd64 {{src}}/usr/bin/k3d
+
+- name: k3d
+  matrix:
+    versions:
+      - 5.2.2
+      - 5.3.0
+      - 5.4.0-dev.2
+      - 5.4.0
+      - 5.4.1
+    architectures:
+      - arm64
+      - armhf
+      - amd64
+  homepage: https://k3d.io
+  summary: run Rancher Lab's k3s in Docker
+  description: |-
+    k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+    distribution) in docker. k3d makes it very easy to create single- and multi-
+    node k3s clusters in docker, e.g. for local development on Kubernetes.
+  fetch: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}
+  script:
+    - mv k3d-linux-{{goarch}} {{src}}/usr/bin/k3d
+
+- name: k3d
+  matrix:
+    versions:
+      - 5.4.2
+      - 5.4.3
+      - 5.4.4
+      - 5.4.6
+      - 5.4.7
+      - 5.4.8
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  homepage: https://k3d.io
+  summary: run Rancher Lab's k3s in Docker
+  description: |-
+    k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+    distribution) in docker. k3d makes it very easy to create single- and multi-
+    node k3s clusters in docker, e.g. for local development on Kubernetes.
+  fetch: https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}
+  install:
+    - k3d-linux-{{goarch}}:/usr/bin/k3d
