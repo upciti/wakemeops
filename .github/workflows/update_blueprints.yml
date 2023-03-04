@@ -24,7 +24,7 @@ jobs:
         id: get-commit-content
         shell: bash
         run: |
-          changes="$(cat ops2deb-*.log)"
+          changes="$(cat ops2deb-summary.log)"
           if [[ $(echo "$changes" | wc -l) -gt 1 ]]; then
             title="chore(bot): update blueprints"
             body="$changes"
