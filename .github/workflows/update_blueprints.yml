@@ -18,6 +18,8 @@ jobs:
           packages: ops2deb
 
       - name: Bump blueprints
+        env:
+          OPS2DEB_GITHUB_TOKEN: ${{ secrets.OPS2DEB_GITHUB_TOKEN }}
         run: make update
 
       - name: Build commit content
