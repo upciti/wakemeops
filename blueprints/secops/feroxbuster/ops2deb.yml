@@ -3,27 +3,6 @@
     versions:
       - 2.4.1
       - 2.5.0
-  homepage: https://github.com/epi052/feroxbuster
-  summary: fast, simple, recursive content discovery tool
-  description: |-
-    Tool designed to perform Forced Browsing.
-    Forced browsing is an attack where the aim is to enumerate and access
-    resources that are not referenced by the web application, but are still
-    accessible by an attacker.
-    feroxbuster uses brute force combined with a wordlist to search for
-    unlinked content in target directories. These resources may store
-    sensitive information about web applications and operational systems,
-    such as source code, credentials, internal network addressing, etc...
-    This attack is also known as Predictable Resource Location,
-    File Enumeration, Directory Enumeration, and Resource Enumeration.
-  fetch: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/x86_64-linux-feroxbuster.tar.gz
-  script:
-    - mv feroxbuster {{src}}/usr/bin/
-
-- name: feroxbuster
-  matrix:
-    versions:
-      - 2.5.0
       - 2.6.0
       - 2.6.1
       - 2.6.2
@@ -77,6 +56,35 @@
     File Enumeration, Directory Enumeration, and Resource Enumeration.
   fetch:
     url: https://github.com/epi052/feroxbuster/releases/download/{{version}}/{{target}}-feroxbuster.zip
+    targets:
+      amd64: x86_64-linux
+      arm64: aarch64
+      armhf: armv7
+  install:
+    - feroxbuster:/usr/bin/
+
+- name: feroxbuster
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+  version: 2.8.0
+  homepage: https://github.com/epi052/feroxbuster
+  summary: fast, simple, recursive content discovery tool
+  description: |-
+    Tool designed to perform Forced Browsing.
+    Forced browsing is an attack where the aim is to enumerate and access
+    resources that are not referenced by the web application, but are still
+    accessible by an attacker.
+    feroxbuster uses brute force combined with a wordlist to search for
+    unlinked content in target directories. These resources may store
+    sensitive information about web applications and operational systems,
+    such as source code, credentials, internal network addressing, etc...
+    This attack is also known as Predictable Resource Location,
+    File Enumeration, Directory Enumeration, and Resource Enumeration.
+  fetch:
+    url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-feroxbuster.zip
     targets:
       amd64: x86_64-linux
       arm64: aarch64
