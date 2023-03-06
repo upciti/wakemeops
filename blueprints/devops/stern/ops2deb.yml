@@ -1,10 +1,15 @@
 name: stern
-version: 1.11.0
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+version: 1.23.0
 homepage: https://github.com/wercker/stern
 summary: multi pod and container log tailing for Kubernetes
 description: |-
   Allows you to tail multiple pods on Kubernetes and multiple containers within
   the pod. Each result is color coded for quicker debugging.
-fetch: https://github.com/wercker/stern/releases/download/{{version}}/stern_linux_amd64
-script:
-  - mv stern_linux_amd64 {{src}}/usr/bin/stern
+fetch: https://github.com/stern/stern/releases/download/v{{version}}/stern_{{version}}_linux_{{goarch}}.tar.gz
+install:
+  - stern:/usr/bin/stern
