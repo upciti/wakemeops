@@ -1,50 +1,21 @@
-- name: gitlab-release-cli
-  version: 0.10.0
-  homepage: https://gitlab.com/gitlab-org/release-cli/
-  summary: command-line interface for GitLab Release
-  description: |-
-    Consumes instructions in the :release node of the .gitlab-ci.yml to create a
-    Release object in GitLab Rails. GitLab Release is a CLI application written in
-    Golang.
-  fetch: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-amd64
-  script:
-    - mv release-cli-linux-amd64 {{src}}/usr/bin/release-cli
-
-- name: gitlab-release-cli
-  matrix:
-    versions:
-      - 0.10.0
-      - 0.11.0
-    architectures:
-      - arm64
-      - armhf
-      - amd64
-  homepage: https://gitlab.com/gitlab-org/release-cli/
-  summary: command-line interface for GitLab Release
-  description: |-
-    Consumes instructions in the :release node of the .gitlab-ci.yml to create a
-    Release object in GitLab Rails. GitLab Release is a CLI application written in
-    Golang.
-  fetch: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
-  script:
-    - mv release-cli-linux-{{goarch}} {{src}}/usr/bin/release-cli
-
-- name: gitlab-release-cli
-  matrix:
-    versions:
-      - 0.13.0
-      - 0.14.0
-      - 0.15.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
-  homepage: https://gitlab.com/gitlab-org/release-cli/
-  summary: command-line interface for GitLab Release
-  description: |-
-    Consumes instructions in the :release node of the .gitlab-ci.yml to create a
-    Release object in GitLab Rails. GitLab Release is a CLI application written in
-    Golang.
-  fetch: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
-  install:
-    - release-cli-linux-{{goarch}}:/usr/bin/release-cli
+name: gitlab-release-cli
+matrix:
+  versions:
+    - 0.10.0
+    - 0.11.0
+    - 0.13.0
+    - 0.14.0
+    - 0.15.0
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+homepage: https://gitlab.com/gitlab-org/release-cli/
+summary: command-line interface for GitLab Release
+description: |-
+  Consumes instructions in the :release node of the .gitlab-ci.yml to create a
+  Release object in GitLab Rails. GitLab Release is a CLI application written in
+  Golang.
+fetch: https://gitlab.com/gitlab-org/release-cli/-/releases/v{{version}}/downloads/bin/release-cli-linux-{{goarch}}
+install:
+  - release-cli-linux-{{goarch}}:/usr/bin/release-cli

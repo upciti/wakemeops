@@ -12,36 +12,9 @@
     - mv linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
 
 - name: linkerd
-  version: 21.12.4
-  homepage: https://linkerd.io
-  summary: ultralight service mesh for Kubernetes
-  description: |-
-    Linkerd is an ultralight, security-first service mesh for Kubernetes.
-    Linkerd adds critical security, observability, and reliability features
-    to your Kubernetes stack with no code change required.
-  fetch: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-amd64
-  script:
-    - mv linkerd2-cli-edge-{{version}}-linux-amd64 {{src}}/usr/bin/linkerd
-
-- name: linkerd
-  matrix:
-    architectures:
-      - arm64
-      - armhf
-  version: 21.12.4
-  homepage: https://linkerd.io
-  summary: ultralight service mesh for Kubernetes
-  description: |-
-    Linkerd is an ultralight, security-first service mesh for Kubernetes.
-    Linkerd adds critical security, observability, and reliability features
-    to your Kubernetes stack with no code change required.
-  fetch: https://github.com/linkerd/linkerd2/releases/download/edge-{{version}}/linkerd2-cli-edge-{{version}}-linux-{{goarch}}
-  script:
-    - mv linkerd2-cli-edge-{{version}}-linux-{{goarch}} {{src}}/usr/bin/linkerd
-
-- name: linkerd
   matrix:
     versions:
+      - 21.12.4
       - 22.8.2
       - 22.8.3
       - 22.9.1
