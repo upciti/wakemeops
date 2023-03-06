@@ -1,52 +1,23 @@
-- name: logcli
-  version: 2.3.0
-  homepage: https://github.com/grafana/loki
-  summary: command-line interface for loki
-  description: It facilitates running LogQL queries against a Loki instance.
-  fetch: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-  script:
-    - install -m 755 logcli-linux-amd64 {{src}}/usr/bin/logcli
-
-- name: logcli
-  version: 2.4.2
-  homepage: https://github.com/grafana/loki
-  summary: command-line interface for loki
-  description: It facilitates running LogQL queries against a Loki instance.
-  fetch: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-amd64.zip
-  script:
-    - mv logcli-linux-amd64 {{src}}/usr/bin/logcli
-
-- name: logcli
-  matrix:
-    architectures:
-      - arm64
-      - armhf
-  version: 2.4.2
-  homepage: https://github.com/grafana/loki
-  summary: command-line interface for loki
-  description: It facilitates running LogQL queries against a Loki instance.
-  fetch: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
-  script:
-    - mv logcli-linux-{{goarch}} {{src}}/usr/bin/logcli
-
-- name: logcli
-  matrix:
-    versions:
-      - 2.5.0
-      - 2.6.0
-      - 2.6.1
-      - 2.7.0
-      - 2.7.1
-      - 2.7.2
-      - 2.7.3
-      - 2.7.4
-    architectures:
-      - amd64
-      - arm64
-      - armhf
-  homepage: https://github.com/grafana/loki
-  summary: command-line interface for loki
-  description: It facilitates running LogQL queries against a Loki instance.
-  fetch: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
-  install:
-    - logcli-linux-{{goarch}}:/usr/bin/logcli
+name: logcli
+matrix:
+  versions:
+    - 2.3.0
+    - 2.4.2
+    - 2.5.0
+    - 2.6.0
+    - 2.6.1
+    - 2.7.0
+    - 2.7.1
+    - 2.7.2
+    - 2.7.3
+    - 2.7.4
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+homepage: https://github.com/grafana/loki
+summary: command-line interface for loki
+description: It facilitates running LogQL queries against a Loki instance.
+fetch: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
+install:
+  - logcli-linux-{{goarch}}:/usr/bin/logcli
