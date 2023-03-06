@@ -1,5 +1,6 @@
 {%- set package = repository.packages.get(title) -%}
 {%- set site_url = config.site_url -%}
+{%- set repo_url = config.repo_url -%}
 
 __{{ package.summary[0]|upper}}{{package.summary[1:] }}__
 
@@ -50,7 +51,7 @@ sudo apt install {{ package.name }}
     ```
 {% endif -%}
 
-## Download
+## Download URLs
 
 {% for arch, files in package.files.items() %}
 === "{{arch}}"
@@ -60,6 +61,22 @@ sudo apt install {{ package.name }}
     | [{{file.version}}]({{file.url}}) | `{{file.sha256}}` | {{file.size}} |
     {% endfor %}
 {% endfor %}
+
+## Blueprints
+
+Debian packages listed on this page are generated from [op2deb](https://github.com/upciti/ops2deb) YAML blueprints. Blueprints for {{package.name}} are versionned [here]({{repo_url}}/blob/main/blueprints/{{package.component}}/{{package.name}}/ops2deb.yml).
+
+??? abstract title "Click here to see {{package.name}} ops2deb blueprints"
+    ```yaml title="{{repo_url}}/blob/main/blueprints/{{package.component}}/{{package.name}}/ops2deb.yml"
+    --8<-- "./blueprints/{{package.component}}/{{package.name}}/ops2deb.yml"
+    ```
+
+The blueprint `fetch` keyword contains a URL template pointing to {{package.name}} releases. Downloaded files are locked in a lockfile versionned [here]({{repo_url}}/blob/main/blueprints/{{package.component}}/{{package.name}}/ops2deb.lock.yml).
+
+??? abstract title "Click here to see {{package.name}} releases hashes"
+    ```yaml title="{{repo_url}}/blob/main/blueprints/{{package.component}}/{{package.name}}/ops2deb.lock.yml"
+    --8<-- "./blueprints/{{package.component}}/{{package.name}}/ops2deb.lock.yml"
+    ```
 
 ## Badge
 
