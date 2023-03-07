@@ -3,7 +3,9 @@ matrix:
   architectures:
     - amd64
     - arm64
-version: 0.34.4
+  versions:
+    - 0.34.4
+    - 0.35.0
 homepage: https://zellij.dev
 summary: terminal workspace with batteries included
 description: |-
