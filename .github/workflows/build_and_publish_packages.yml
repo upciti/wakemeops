@@ -20,7 +20,6 @@ jobs:
 
       - name: Generate new Debian packages
         run: |
-          make generate
           make build
 
       - name: Upload Debian packages

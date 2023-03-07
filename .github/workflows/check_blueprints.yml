@@ -35,6 +35,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Print ops2deb version
         run: ops2deb version
@@ -43,8 +45,11 @@ jobs:
         run: make format
 
       - name: Generate new Debian packages
+        shell: bash
         run: |
-          make generate
+          MODIFIED=$(git diff --name-only HEAD~1 HEAD -- ./blueprints 2>/dev/null)
+          export COMPONENTS=$(echo $MODIFIED | cut -d"/" -f2 | uniq)
+          export OPS2DEB_ONLY_BLUEPRINTS=$(echo $MODIFIED | cut -d"/" -f3 | uniq)
           make build
 
       - name: Set build failed label on failure
