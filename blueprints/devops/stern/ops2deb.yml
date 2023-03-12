@@ -4,7 +4,9 @@ matrix:
     - amd64
     - arm64
     - armhf
-version: 1.23.0
+  versions:
+    - 1.23.0
+    - 1.24.0
 homepage: https://github.com/wercker/stern
 summary: multi pod and container log tailing for Kubernetes
 description: |-
