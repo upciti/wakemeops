@@ -33,9 +33,7 @@ install:
 build: $(foreach component,$(COMPONENTS),build-$(component))
 
 build-%:
-	mkdir -p $(OUTPUT_BASE_PATH)/$*
-	ops2deb generate -c "./blueprints/$*/*/ops2deb.yml" -o $(OUTPUT_BASE_PATH)/$*
-	ops2deb build -o $(OUTPUT_BASE_PATH)/$*
+	ops2deb -c "./blueprints/$*/*/ops2deb.yml" -o $(OUTPUT_BASE_PATH)/$*
 
 update:
 	ops2deb update --output-file ops2deb-summary.log -v --max-versions 100

@@ -1,4 +1,4 @@
-name: ✨ Publish packages
+name: ✨ Sync Debian repository
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate new Debian packages
         run: |
-          make build
+          OPS2DEB_EXIT_CODE=0 make build
 
       - name: Upload Debian packages
         uses: actions/upload-artifact@v3
@@ -28,12 +28,25 @@ jobs:
           path: build/**/*deb
           retention-days: 2
 
-  publish_packages:
+  sync_repository:
     needs: [build_packages]
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/upciti/wakemebot:4
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install ops2deb and wakemebot
+        uses: upciti/wakemeops-action@v1
+        with:
+          packages: |
+            ops2deb
+            wakemebot
+
+      - name: Print ops2deb version
+        run: ops2deb version
+
       - name: Print wakemebot version
         run: wakemebot version
 
@@ -48,6 +61,6 @@ jobs:
           WAKEMEBOT_APTLY_CLIENT_CERT: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_CERT }}
           WAKEMEBOT_APTLY_CLIENT_KEY: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_KEY }}
         run: |
-          ls -lah
-          for i in $(ls artifact); do wakemebot aptly push wakemeops-$i artifact/$i; done
-          wakemebot aptly publish s3:wakemeops-eu-west-3:wakemeops/stable
+          mkdir -p artifact
+          ops2deb delta -r "http://deb.wakemeops.com stable" --json > artifact/ops2deb-delta.json
+          wakemebot sync artifact
