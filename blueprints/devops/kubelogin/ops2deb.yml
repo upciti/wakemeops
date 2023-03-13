@@ -1,0 +1,16 @@
+name: kubelogin
+matrix:
+  architectures:
+    - amd64
+    - arm64
+version: 0.0.27
+homepage: https://github.com/Azure/kubelogin
+summary: Kubernetes credential (exec) plugin implementing azure authentication
+description: |-
+  This plugin provides features that are not available in kubectl.
+  In Azure Kubernetes Service since k8s version 1.24, this plugin is necessary to
+  query the kubernetes api in clusters with Azure Active Directory
+  authentication.
+fetch: https://github.com/Azure/kubelogin/releases/download/v{{version}}/kubelogin-linux-{{goarch}}.zip
+script:
+  - install -m 755 bin/linux_{{goarch}}/kubelogin {{src}}/usr/bin/kubelogin
