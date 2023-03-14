@@ -1,0 +1,20 @@
+name: python3.10-build-standalone
+matrix:
+  architectures:
+    - amd64
+    - arm64
+version: 3.10.9+20230116
+homepage: https://github.com/indygreg/python-build-standalone
+summary: self-contained and portable CPython build
+description: |-
+  Fully-usable, full-featured Python installation: most extension modules from
+  the Python standard library are present and their library dependencies are
+  either distributed with the distribution or are statically linked.
+  Python distributions form the python-build-standalone project are built in a
+  manner to minimize run-time dependencies. This includes limiting the CPU
+  instructions that can be used and limiting the set of shared libraries required
+  at run-time. The goal is for the produced distribution to work on any system
+  for the targeted architecture.
+fetch: https://github.com/indygreg/python-build-standalone/releases/download/{{version[-8:]}}/cpython-{{version}}-{{rust_target}}-install_only.tar.gz
+install:
+  - python:/usr/lib/python-build-standalone/3.10/
