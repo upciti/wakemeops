@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/upciti/ops2deb:latest
-      options: --user 1001
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@v3
