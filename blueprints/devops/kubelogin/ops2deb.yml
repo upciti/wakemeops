@@ -3,7 +3,9 @@ matrix:
   architectures:
     - amd64
     - arm64
-version: 0.0.27
+  versions:
+    - 0.0.27
+    - 0.0.28
 homepage: https://github.com/Azure/kubelogin
 summary: Kubernetes credential (exec) plugin implementing azure authentication
 description: |-
