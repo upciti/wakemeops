@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/upciti/ops2deb:latest
-      options: --user 1001
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -47,6 +47,7 @@ jobs:
       - name: Generate new Debian packages
         shell: bash
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           MODIFIED=$(git diff --name-only HEAD~1 HEAD -- ./blueprints 2>/dev/null)
           export COMPONENTS=$(echo $MODIFIED | cut -d"/" -f2 | uniq)
           export OPS2DEB_ONLY_BLUEPRINTS=$(echo $MODIFIED | cut -d"/" -f3 | uniq)
