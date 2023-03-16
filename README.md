@@ -6,11 +6,15 @@
 
 ## :star: What is it?
 
-WakeMeOps is an open source effort which aims at centralizing many portable applications - such as statically built applications - in a single Debian repository. WakeMeOps should be compatible with Debian, Ubuntu and other Debian based distributions.
+WakeMeOps is a Debian repository for portable applications.
 
-Our repository contains over 90 applications and is divided into five components: Desktop, DevOps, Dev, SecOps, and Terminal.
+* Old releases are kept for three years to let you write reproducible Dockerfiles and CI/CD pipelines.
+* Applications can easily be added through pull requests on Github using a simple YAML configuration file.
+* WakeMeOps is a <a href="https://www.gitops.tech/">GitOps</a> project: the state of the Debian repository is declared and managed using Git and CI/CD.
 
-For instance, you will find in WakeMeOps these widely used packages:
+Our repository contains over 100 applications and is divided into five components: Desktop, DevOps, Dev, SecOps, and Terminal.
+
+For instance, you will find in WakeMeOps these widely used applications:
 
 - Desktop: [mattermost-desktop](https://docs.wakemeops.com/packages/mattermost-desktop)
 - Dev: [poetry](https://docs.wakemeops.com/packages/poetry), [pyenv](https://docs.wakemeops.com/packages/pyenv), [github-cli](https://docs.wakemeops.com/packages/github-cli), [glab](https://docs.wakemeops.com/packages/glab)
@@ -65,15 +69,15 @@ USER 1001
 
 ## :monocle_face: How does it work?
 
-Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) blueprints versioned the `ops2deb-*.yml` configuration files. Those configuration files are automatically updated when new application releases are available.
+Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) `ops2deb.yml` configuration files. Those configuration files are automatically updated when new application releases are available.
 
 ## :wrench: How to add new packages?
 
-* Install [ops2deb](https://github.com/upciti/ops2deb)
-* Add the configuration for the new application
-* Run `make format` to format the configuration file
-* Run `make lock` to update the lock files
-* Create a new Pull Request using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+* Install [ops2deb](https://github.com/upciti/ops2deb).
+* Add the configuration for the new application in `./blueprints/{component}/{application_name}/ops2deb.yml`.
+* Run `make format` to format the configuration file.
+* Run `make lock` to update the lock files.
+* Create a new pull request using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ## :notebook_with_decorative_cover: Documentation
 

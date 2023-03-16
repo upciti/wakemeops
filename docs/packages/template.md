@@ -58,7 +58,7 @@ sudo apt install {{ package.name }}
     | Version | SHA256 | Size (KB) |
     | ------- | ------ | ---- |
     {% for file in files[:10] -%}
-    | [{{file.version}}]({{file.url}}) | `{{file.sha256}}` | {{file.size}} |
+    | [{{file.version}}]({{file.url}}) | `{{file.sha256}}` | {{(file.size/1000)|int}} |
     {% endfor %}
 {% endfor %}
 
@@ -73,7 +73,7 @@ Debian packages listed on this page are generated from [op2deb](https://github.c
 
 The blueprint `fetch` keyword contains a URL template pointing to {{package.name}} releases. Downloaded files are locked in a lockfile versionned [here]({{repo_url}}/blob/main/blueprints/{{package.component}}/{{package.name}}/ops2deb.lock.yml).
 
-??? abstract title "Click here to see {{package.name}} releases hashes"
+??? abstract title "Click here to see {{package.name}} release hashes"
     ```yaml title="{{repo_url}}/blob/main/blueprints/{{package.component}}/{{package.name}}/ops2deb.lock.yml"
     --8<-- "./blueprints/{{package.component}}/{{package.name}}/ops2deb.lock.yml"
     ```

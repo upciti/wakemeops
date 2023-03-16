@@ -28,7 +28,7 @@ sudo apt-get update
 
 ### Install packages
 
-**You're good to go, the list of packages available on wakemeops is [here](/components/dev).**
+**You're good to go, the list of packages available on wakemeops is [here](/packages/).**
 
 To get you started, here are a few terminal goodies that you will probably enjoy:
 

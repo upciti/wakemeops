@@ -6,13 +6,13 @@
 {% block scripts %}
 {{ super() }}
 <script
-  src="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"
-  integrity="sha384-WsK1dmF9Mn+ICF+uDdtvMkl5KXId4S+WV+lCpPYOIwKe+KLOa5ldMug/8WlgtnaE"
+  src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"
+  integrity="sha384-4l+9bhb7rakZ18megzl0/DWczL8ojbDl1jIEzBVffeMho9A6xB/lkqt1K0PC8Jin"
   crossorigin="anonymous"
 ></script>
 <script
-  src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dockerfile.min.js"
-  integrity="sha384-W28TUK27SJhMnSKG9JUi/7HmOPKXcRRaLBOfOVbFpgpfSegYF2S9iuQ1qMam6QC0"
+  src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0//languages/dockerfile.min.js"
+  integrity="sha384-5TrkTRj8EM07q4oPGiK8VM6JA9PBrW9wqhx6LOFdeNikSVzS1EPWbUlWLWL+R/9h"
   crossorigin="anonymous"
 ></script>
 <script>
@@ -25,7 +25,7 @@
 {{ super() }}
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/github-dark-dimmed.min.css"
+  href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/github-dark-dimmed.min.css"
   integrity="sha384-PiLidnnRuzFgp4qiN8oGNmktrV8ETL+6a8heAxljUX4A+3XWlocwaMn9duBUepfK"
   crossorigin="anonymous"
 />
@@ -77,12 +77,23 @@ USER 1001
         </div>
         <div>
           <h1>WakeMeOps</h1>
-          <p>
-            WakeMeOps is an open source effort which aims at centralizing many
-            portable applications - such as statically built applications - in a
-            single Debian repository. WakeMeOps should be compatible with
-            Debian, Ubuntu and other Debian based distributions.
-          </p>
+          <p>WakeMeOps is a Debian repository for portable applications.</p>
+          <ul>
+            <li>
+              Old releases are kept for three years to let you write
+              reproducible Dockerfiles and CI/CD pipelines.
+            </li>
+            <li>
+              Applications can easily be added through pull requests on Github
+              using a simple YAML configuration file.
+            </li>
+            <li>
+              WakeMeOps is a
+              <a href="https://www.gitops.tech/">GitOps</a> project: the state
+              of the Debian repository is declared and managed using Git and
+              CI/CD.
+            </li>
+          </ul>
           <a
             href="{{ page.next_page.url | url }}"
             title="{{ page.next_page.title | striptags }}"
@@ -143,8 +154,8 @@ USER 1001
         Updated every 2 hours
       </h4>
       <p>
-        New releases of supported applications are automatically updated within
-        two hours as long as they use semantic versioning.
+        New releases of supported applications are automatically added within
+        three hours as long as they use semantic versioning.
       </p>
     </div>
     <div class="feature-item">
