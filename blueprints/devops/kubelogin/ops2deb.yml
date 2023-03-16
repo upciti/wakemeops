@@ -14,5 +14,5 @@ description: |-
   query the kubernetes api in clusters with Azure Active Directory
   authentication.
 fetch: https://github.com/Azure/kubelogin/releases/download/v{{version}}/kubelogin-linux-{{goarch}}.zip
-script:
-  - install -m 755 bin/linux_{{goarch}}/kubelogin {{src}}/usr/bin/kubelogin
+install:
+  - bin/linux_{{goarch}}/kubelogin:/usr/bin/kubelogin
