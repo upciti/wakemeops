@@ -1,78 +1,29 @@
-- name: kustomize
-  version: 3.8.10
-  revision: "3"
-  homepage: https://kustomize.io
-  summary: Kubernetes native configuration management
-  description: |-
-    kustomize lets you customize raw, template-free YAML files for multiple
-    purposes, leaving the original YAML untouched and usable as is. kustomize
-    targets Kubernetes; it understands and can patch Kubernetes style API objects.
-    It's like make, in that what it does is declared in a file, and it's like sed,
-    in that it emits edited text.
-  fetch: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
-  script:
-    - mv kustomize {{src}}/usr/bin/
-
-- name: kustomize
-  matrix:
-    versions:
-      - 3.10.0
-      - 4.0.0
-      - 4.4.1
-  homepage: https://kustomize.io
-  summary: Kubernetes native configuration management
-  description: |-
-    kustomize lets you customize raw, template-free YAML files for multiple
-    purposes, leaving the original YAML untouched and usable as is. kustomize
-    targets Kubernetes; it understands and can patch Kubernetes style API objects.
-    It's like make, in that what it does is declared in a file, and it's like sed,
-    in that it emits edited text.
-  fetch: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_amd64.tar.gz
-  script:
-    - mv kustomize {{src}}/usr/bin/
-
-- name: kustomize
-  matrix:
-    versions:
-      - 4.4.1
-      - 4.5.1
-      - 4.5.2
-      - 4.5.3
-      - 4.5.4
-    architectures:
-      - arm64
-      - amd64
-  homepage: https://kustomize.io
-  summary: Kubernetes native configuration management
-  description: |-
-    kustomize lets you customize raw, template-free YAML files for multiple
-    purposes, leaving the original YAML untouched and usable as is. kustomize
-    targets Kubernetes; it understands and can patch Kubernetes style API objects.
-    It's like make, in that what it does is declared in a file, and it's like sed,
-    in that it emits edited text.
-  fetch: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
-  script:
-    - mv kustomize {{src}}/usr/bin/
-
-- name: kustomize
-  matrix:
-    versions:
-      - 4.5.5
-      - 4.5.6
-      - 4.5.7
-      - 5.0.0
-      - 5.0.1
-    architectures:
-      - amd64
-      - arm64
-  homepage: https://kustomize.io
-  summary: Kubernetes native configuration management
-  description: |-
-    kustomize lets you customize raw, template-free YAML files for multiple
-    purposes, leaving the original YAML untouched and usable as is. kustomize
-    targets Kubernetes; it understands and can patch Kubernetes style API objects.
-    It's like make, in that what it does is declared in a file, and it's like sed,
-    in that it emits edited text.
-  fetch: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
-  install:
-    - kustomize:/usr/bin/
+name: kustomize
+matrix:
+  versions:
+    - 3.10.0
+    - 4.0.0
+    - 4.4.1
+    - 4.5.1
+    - 4.5.2
+    - 4.5.3
+    - 4.5.4
+    - 4.5.5
+    - 4.5.6
+    - 4.5.7
+    - 5.0.0
+    - 5.0.1
+  architectures:
+    - amd64
+    - arm64
+homepage: https://kustomize.io
+summary: Kubernetes native configuration management
+description: |-
+  kustomize lets you customize raw, template-free YAML files for multiple
+  purposes, leaving the original YAML untouched and usable as is. kustomize
+  targets Kubernetes; it understands and can patch Kubernetes style API objects.
+  It's like make, in that what it does is declared in a file, and it's like sed,
+  in that it emits edited text.
+fetch: https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v{{version}}/kustomize_v{{version}}_linux_{{goarch}}.tar.gz
+install:
+  - kustomize:/usr/bin/
