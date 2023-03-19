@@ -49,7 +49,10 @@
     - mv poetry {{src}}/usr/lib/
 
 - name: poetry
-  version: 1.4.0
+  matrix:
+    versions:
+      - 1.4.0
+      - 1.4.1
   homepage: https://python-poetry.org
   summary: tool for dependency management and packaging in Python
   description: |-
