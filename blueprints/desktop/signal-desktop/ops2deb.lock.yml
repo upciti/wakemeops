@@ -1,12 +1,6 @@
 - url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.1.0_amd64.deb
   sha256: ef4210ff6ca31db7b3f12a59c6a64a6bf5d6204600ddc37b24020cf64823377d
   timestamp: 2022-12-24 20:46:54+00:00
-- url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.10.0_amd64.deb
-  sha256: 4046e144af62d6a8c4de850acf689a753cc934276010bf3f390c81a3688ae30a
-  timestamp: 2023-03-15 21:16:52+00:00
-- url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.10.1_amd64.deb
-  sha256: b96c1180ff62622ad953dc7742d4b9951188eef2ce3ad5f80787e056e631921a
-  timestamp: 2023-03-16 21:16:32+00:00
 - url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.2.0_amd64.deb
   sha256: 6ae39c325c0a3e3e6bb279612b7e2c61ee09c651c28dbddedb27bc0acd7642d7
   timestamp: 2023-01-12 02:39:05+00:00
@@ -37,3 +31,12 @@
 - url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.9.0_amd64.deb
   sha256: 56010616df0bbd5a485a2a85c988935d46af618d189a727e0b1acd84f3f48428
   timestamp: 2023-03-09 01:47:48+00:00
+- url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.10.0_amd64.deb
+  sha256: 4046e144af62d6a8c4de850acf689a753cc934276010bf3f390c81a3688ae30a
+  timestamp: 2023-03-15 21:16:52+00:00
+- url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.10.1_amd64.deb
+  sha256: b96c1180ff62622ad953dc7742d4b9951188eef2ce3ad5f80787e056e631921a
+  timestamp: 2023-03-16 21:16:32+00:00
+- url: https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.11.0_amd64.deb
+  sha256: 94e7395b75d8116c1327dfd4d9c3131fddf542fd9eeddfbdbe89a72bd0e3d52d
+  timestamp: 2023-03-23 01:25:37+00:00
