@@ -86,7 +86,7 @@ apt-cache madison kubectl
 
 ### Pin down package versions
 
-APT lets you select the version you wish to install with the following syntaxe:
+APT lets you select the version you wish to install with the following syntax:
 
 ```shell
 sudo apt install <package name>=<version>
