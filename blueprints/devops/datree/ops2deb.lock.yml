@@ -1,6 +1,12 @@
 - url: https://github.com/datreeio/datree/releases/download/0.14.49/datree-cli_0.14.49_Linux_x86_64.zip
   sha256: ea1c62f44b2dbbfa9fc66dd6577851717bc95561e9b2c5795a36245278bcd04b
   timestamp: 2021-12-14 15:37:09+00:00
+- url: https://github.com/datreeio/datree/releases/download/0.15.5/datree-cli_0.15.5_Linux_x86_64.zip
+  sha256: 710ae45d03c9345e21dd9bdf843f4efba09bf2711e7cff8477fb70ab92c0dcd7
+  timestamp: 2022-01-25 22:17:50+00:00
+- url: https://github.com/datreeio/datree/releases/download/0.15.5/datree-cli_0.15.5_Linux_arm64.zip
+  sha256: 5798b2692e091755a163e5c3402f3e4f073d1487c38450d73bc1f29954c6fc4e
+  timestamp: 2022-01-30 16:22:16+00:00
 - url: https://github.com/datreeio/datree/releases/download/0.15.16/datree-cli_0.15.16_Linux_arm64.zip
   sha256: 6dbba9a2b93e58f5126d916eb63ce12ab5374b7864ca950d1a53fb25e69fa10b
   timestamp: 2022-02-15 16:18:00+00:00
@@ -31,12 +37,6 @@
 - url: https://github.com/datreeio/datree/releases/download/0.15.22/datree-cli_0.15.22_Linux_x86_64.zip
   sha256: 3fbc8b76c3cbcaede1bacaba4c0387b4277a20fcdca274afac1421d4916c1fc1
   timestamp: 2022-02-22 13:34:41+00:00
-- url: https://github.com/datreeio/datree/releases/download/0.15.5/datree-cli_0.15.5_Linux_arm64.zip
-  sha256: 5798b2692e091755a163e5c3402f3e4f073d1487c38450d73bc1f29954c6fc4e
-  timestamp: 2022-01-30 16:22:16+00:00
-- url: https://github.com/datreeio/datree/releases/download/0.15.5/datree-cli_0.15.5_Linux_x86_64.zip
-  sha256: 710ae45d03c9345e21dd9bdf843f4efba09bf2711e7cff8477fb70ab92c0dcd7
-  timestamp: 2022-01-25 22:17:50+00:00
 - url: https://github.com/datreeio/datree/releases/download/0.15.52/datree-cli_0.15.52_Linux_arm64.zip
   sha256: e2665c7b18c50eac385a979dd90318213e9ef442bbf2ce087b71ae550e46c609
   timestamp: 2022-03-09 16:22:04+00:00
@@ -49,18 +49,36 @@
 - url: https://github.com/datreeio/datree/releases/download/1.0.1/datree-cli_1.0.1_Linux_x86_64.zip
   sha256: f35a912be92541b7abee5d7e5ecd9194fa4f213c46b20e8a0051aa2e4529fb6e
   timestamp: 2022-03-16 16:22:09+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.0.15/datree-cli_1.0.15_Linux_arm64.zip
-  sha256: 120b0e9227dc3dbbe3926aada24731a6ce991c8a45a3a62cc02ece74b88fee9f
-  timestamp: 2022-03-23 22:16:21+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.0.15/datree-cli_1.0.15_Linux_x86_64.zip
-  sha256: 53e5a042848b9f603cf43bc94154fd8230b4332d0b73ddba6e00ac67985e02d0
-  timestamp: 2022-03-23 22:16:21+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.0.6/datree-cli_1.0.6_Linux_arm64.zip
   sha256: d00eb5584c8b38342ea901134da559c72cede597ef2b381ea622a300044a994b
   timestamp: 2022-03-21 10:20:59+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.0.6/datree-cli_1.0.6_Linux_x86_64.zip
   sha256: 1b3a4f97ab1daa15a1e773a85856f3c98db80c433c4a2b3b1c8d51431a38070a
   timestamp: 2022-03-21 10:20:59+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.0.15/datree-cli_1.0.15_Linux_arm64.zip
+  sha256: 120b0e9227dc3dbbe3926aada24731a6ce991c8a45a3a62cc02ece74b88fee9f
+  timestamp: 2022-03-23 22:16:21+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.0.15/datree-cli_1.0.15_Linux_x86_64.zip
+  sha256: 53e5a042848b9f603cf43bc94154fd8230b4332d0b73ddba6e00ac67985e02d0
+  timestamp: 2022-03-23 22:16:21+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.1.4/datree-cli_1.1.4_Linux_arm64.zip
+  sha256: 0ec370cae0c9c880770ea213ba77dce3266cc37de9eab5472e8a5f21967ba30e
+  timestamp: 2022-03-29 14:39:26+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.1.4/datree-cli_1.1.4_Linux_x86_64.zip
+  sha256: 3d6bc1bf415ff19ca4f9195d0a9db9e4faa55927195dc48bf092dfa832733cd7
+  timestamp: 2022-03-29 14:39:26+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.1.5/datree-cli_1.1.5_Linux_arm64.zip
+  sha256: 0a3e143337832faaf72e9df26e338c3abf517119e81eccfb5e6b98d2f2e09715
+  timestamp: 2022-03-29 17:23:06+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.1.5/datree-cli_1.1.5_Linux_x86_64.zip
+  sha256: 988e16c2d30e7e35235fb52ff19ae39108964c3609fb67862387c67a4bdac7f1
+  timestamp: 2022-03-29 17:23:06+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.1.6/datree-cli_1.1.6_Linux_arm64.zip
+  sha256: 630cadd30ff6945bcae0fb5ac7fc9d236fb28adb801146b6ecddada9a0e3e052
+  timestamp: 2022-03-30 05:33:37+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.1.6/datree-cli_1.1.6_Linux_x86_64.zip
+  sha256: 77d79edf5186ff3a248951105c0f5d0e7164db297d10cb0f89611274aa4311d1
+  timestamp: 2022-03-30 05:33:37+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.1.10/datree-cli_1.1.10_Linux_arm64.zip
   sha256: db8b3f71b2a6ca5226f8361dc38ca9426589e4b3369492f9ad098c0ecbc05cf3
   timestamp: 2022-03-31 11:22:10+00:00
@@ -85,36 +103,12 @@
 - url: https://github.com/datreeio/datree/releases/download/1.1.22/datree-cli_1.1.22_Linux_x86_64.zip
   sha256: 8ee16e6165966dff41993d7b0dcd51c997c1fb7ff36ff1548ede8401d8ceec40
   timestamp: 2022-04-06 11:20:55+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.1.4/datree-cli_1.1.4_Linux_arm64.zip
-  sha256: 0ec370cae0c9c880770ea213ba77dce3266cc37de9eab5472e8a5f21967ba30e
-  timestamp: 2022-03-29 14:39:26+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.1.4/datree-cli_1.1.4_Linux_x86_64.zip
-  sha256: 3d6bc1bf415ff19ca4f9195d0a9db9e4faa55927195dc48bf092dfa832733cd7
-  timestamp: 2022-03-29 14:39:26+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.1.5/datree-cli_1.1.5_Linux_arm64.zip
-  sha256: 0a3e143337832faaf72e9df26e338c3abf517119e81eccfb5e6b98d2f2e09715
-  timestamp: 2022-03-29 17:23:06+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.1.5/datree-cli_1.1.5_Linux_x86_64.zip
-  sha256: 988e16c2d30e7e35235fb52ff19ae39108964c3609fb67862387c67a4bdac7f1
-  timestamp: 2022-03-29 17:23:06+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.1.6/datree-cli_1.1.6_Linux_arm64.zip
-  sha256: 630cadd30ff6945bcae0fb5ac7fc9d236fb28adb801146b6ecddada9a0e3e052
-  timestamp: 2022-03-30 05:33:37+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.1.6/datree-cli_1.1.6_Linux_x86_64.zip
-  sha256: 77d79edf5186ff3a248951105c0f5d0e7164db297d10cb0f89611274aa4311d1
-  timestamp: 2022-03-30 05:33:37+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.2.0/datree-cli_1.2.0_Linux_arm64.zip
   sha256: f2dff8a59e2a755405cbd6be369991070005ae253a5d2bce448202f5173226e1
   timestamp: 2022-04-10 14:34:26+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.2.0/datree-cli_1.2.0_Linux_x86_64.zip
   sha256: a3c78da1ca4269742b7b026c98bdc2f06ea4a2d8f23bfc62bb4e9df68d370f58
   timestamp: 2022-04-10 14:34:26+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.2.10/datree-cli_1.2.10_Linux_arm64.zip
-  sha256: 9a98fd044843ba25d3096f4c74e346e4ac5620ea804941ca6b49517f84cdc452
-  timestamp: 2022-04-17 17:22:25+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.2.10/datree-cli_1.2.10_Linux_x86_64.zip
-  sha256: 2583b396e485482de0e53438bfd0a7b905ecb1398952434f668b142e345a0030
-  timestamp: 2022-04-17 17:22:25+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.2.2/datree-cli_1.2.2_Linux_arm64.zip
   sha256: 4fb8ebd83fea651fa810e92d4cc62c7771f560e44257014b184643a17b355ae5
   timestamp: 2022-04-11 11:21:48+00:00
@@ -127,6 +121,12 @@
 - url: https://github.com/datreeio/datree/releases/download/1.2.9/datree-cli_1.2.9_Linux_x86_64.zip
   sha256: b9e493f12762d5ea9249f2ee3b9531390d0a520ddeb1f60affb7796d2e88b202
   timestamp: 2022-04-14 14:42:02+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.2.10/datree-cli_1.2.10_Linux_arm64.zip
+  sha256: 9a98fd044843ba25d3096f4c74e346e4ac5620ea804941ca6b49517f84cdc452
+  timestamp: 2022-04-17 17:22:25+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.2.10/datree-cli_1.2.10_Linux_x86_64.zip
+  sha256: 2583b396e485482de0e53438bfd0a7b905ecb1398952434f668b142e345a0030
+  timestamp: 2022-04-17 17:22:25+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.3.0/datree-cli_1.3.0_Linux_arm64.zip
   sha256: d2c21b90767d70589f0df653335c2459cf7cdb7b82857394133e2fb91d7f32bf
   timestamp: 2022-04-20 23:19:30+00:00
@@ -151,6 +151,18 @@
 - url: https://github.com/datreeio/datree/releases/download/1.4.0/datree-cli_1.4.0_Linux_x86_64.zip
   sha256: fb95ea14b0f7d32a0319ff078fbe59cea9a024023796417fdf8ef5beff1c3460
   timestamp: 2022-05-03 11:22:00+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.4.3/datree-cli_1.4.3_Linux_arm64.zip
+  sha256: c362edb38d2555b060794b5bf9958198618b25bc87e0002fe82bc91daf3a600d
+  timestamp: 2022-05-03 20:27:31+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.4.3/datree-cli_1.4.3_Linux_x86_64.zip
+  sha256: 78b676d9a5190844c5de9a5eb902124ea0bff6bc376c9f9778ae7b16cffebe57
+  timestamp: 2022-05-03 20:27:31+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.4.4/datree-cli_1.4.4_Linux_arm64.zip
+  sha256: 03c270ae7429b9ff344bd2f5272828083d4394d4298e8d926ba85e97102d6ab7
+  timestamp: 2022-05-04 14:46:52+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.4.4/datree-cli_1.4.4_Linux_x86_64.zip
+  sha256: 97efdbc6e3394e604f0ea4a2fd4c9c476e9a264ce00426aa1964356bbfa10cfd
+  timestamp: 2022-05-04 14:46:52+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.4.10/datree-cli_1.4.10_Linux_arm64.zip
   sha256: b623c4a000d5253004534b5df672415f4f0850986f1c0559aec4aaac8324fb8a
   timestamp: 2022-05-11 14:48:05+00:00
@@ -193,12 +205,6 @@
 - url: https://github.com/datreeio/datree/releases/download/1.4.28/datree-cli_1.4.28_Linux_x86_64.zip
   sha256: 5c2adf66fa4d0f1264db77e2111e922a827de5430774e701e421cc693baaf580
   timestamp: 2022-05-23 17:25:28+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.4.3/datree-cli_1.4.3_Linux_arm64.zip
-  sha256: c362edb38d2555b060794b5bf9958198618b25bc87e0002fe82bc91daf3a600d
-  timestamp: 2022-05-03 20:27:31+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.4.3/datree-cli_1.4.3_Linux_x86_64.zip
-  sha256: 78b676d9a5190844c5de9a5eb902124ea0bff6bc376c9f9778ae7b16cffebe57
-  timestamp: 2022-05-03 20:27:31+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.4.30/datree-cli_1.4.30_Linux_arm64.zip
   sha256: f3872998e64a6ae3f13ef5b50d4a536f3a932865a4abd5d658593ecb136fd09a
   timestamp: 2022-05-25 14:45:43+00:00
@@ -223,18 +229,36 @@
 - url: https://github.com/datreeio/datree/releases/download/1.4.37/datree-cli_1.4.37_Linux_x86_64.zip
   sha256: 993307ff458d82faa5ed803e493cec0bb7b3930910002fe23de0b1c9d191f930
   timestamp: 2022-05-31 17:34:20+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.4.4/datree-cli_1.4.4_Linux_arm64.zip
-  sha256: 03c270ae7429b9ff344bd2f5272828083d4394d4298e8d926ba85e97102d6ab7
-  timestamp: 2022-05-04 14:46:52+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.4.4/datree-cli_1.4.4_Linux_x86_64.zip
-  sha256: 97efdbc6e3394e604f0ea4a2fd4c9c476e9a264ce00426aa1964356bbfa10cfd
-  timestamp: 2022-05-04 14:46:52+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.5.0/datree-cli_1.5.0_Linux_arm64.zip
   sha256: ec072f58480bf5cb839603c2237b4d986a0fad2a01fe0b7d721d6bb752dfc01f
   timestamp: 2022-06-06 14:44:55+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.5.0/datree-cli_1.5.0_Linux_x86_64.zip
   sha256: 86cde96a1f6dd0d2afcf23eb005b4e2b846f0f508778d545bd074828de9e768d
   timestamp: 2022-06-06 14:44:55+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.2/datree-cli_1.5.2_Linux_arm64.zip
+  sha256: 5e343251a0c2593037c6f3a4a5b601cbf51429a79be3092d49897b69456cd316
+  timestamp: 2022-06-06 20:26:08+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.2/datree-cli_1.5.2_Linux_x86_64.zip
+  sha256: 15e8389fb7bd4b37dcca7de1fc6557b54fb0d28bb3a3611e531aab655d8c138b
+  timestamp: 2022-06-06 20:26:08+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.3/datree-cli_1.5.3_Linux_arm64.zip
+  sha256: cd95294e72b1dea8db6fadbce6381f2deb3a7dd5da7dd812dfb11da1e7d27a0e
+  timestamp: 2022-06-07 14:44:22+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.3/datree-cli_1.5.3_Linux_x86_64.zip
+  sha256: 4d948580aa7b3b9c999ad76fe3f86fe3cb61f4c6d1b4311adaa4635bcfe4475a
+  timestamp: 2022-06-07 14:44:22+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.7/datree-cli_1.5.7_Linux_arm64.zip
+  sha256: 6be1bf77cdfdd6512a85a1f6c2d5585e7cbbda3592ff6c2b2aadca99db07071b
+  timestamp: 2022-06-09 20:26:27+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.7/datree-cli_1.5.7_Linux_x86_64.zip
+  sha256: 9f7e47dfffbaa08f23a3b38429f85f8118d89872508ac9ca019d5a05310a65fc
+  timestamp: 2022-06-09 20:26:27+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.9/datree-cli_1.5.9_Linux_arm64.zip
+  sha256: 0da86628db53e97eb731fde6636abcf001e5c62e654bf96c813474887a376410
+  timestamp: 2022-06-12 17:21:07+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.5.9/datree-cli_1.5.9_Linux_x86_64.zip
+  sha256: 8a5f913648779b0fda2ea9b21bf2da4dc2af59d9fb5d11de9c939ab504753155
+  timestamp: 2022-06-12 17:21:07+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.5.15/datree-cli_1.5.15_Linux_arm64.zip
   sha256: e341d53ad871c411edff501f1482d1be7675a87bb701fa05bd382e3c068b5e70
   timestamp: 2022-06-15 14:43:26+00:00
@@ -259,12 +283,6 @@
 - url: https://github.com/datreeio/datree/releases/download/1.5.19/datree-cli_1.5.19_Linux_x86_64.zip
   sha256: 1ec23ebbe5a697c33de40d2f9ae5755d4e15def93af1a68668b9049e9221c247
   timestamp: 2022-06-26 14:36:42+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.2/datree-cli_1.5.2_Linux_arm64.zip
-  sha256: 5e343251a0c2593037c6f3a4a5b601cbf51429a79be3092d49897b69456cd316
-  timestamp: 2022-06-06 20:26:08+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.2/datree-cli_1.5.2_Linux_x86_64.zip
-  sha256: 15e8389fb7bd4b37dcca7de1fc6557b54fb0d28bb3a3611e531aab655d8c138b
-  timestamp: 2022-06-06 20:26:08+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.5.20/datree-cli_1.5.20_Linux_arm64.zip
   sha256: 6183d2779d9abbba9d23a927480bd9542622541832863673feb1d133eebf7372
   timestamp: 2022-06-27 11:21:56+00:00
@@ -283,36 +301,24 @@
 - url: https://github.com/datreeio/datree/releases/download/1.5.29/datree-cli_1.5.29_Linux_x86_64.zip
   sha256: fcd0d301dd63e60a5fa5f22cf03fc93d24e438b5fd50f298d83756c00f230e51
   timestamp: 2022-07-10 17:22:03+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.3/datree-cli_1.5.3_Linux_arm64.zip
-  sha256: cd95294e72b1dea8db6fadbce6381f2deb3a7dd5da7dd812dfb11da1e7d27a0e
-  timestamp: 2022-06-07 14:44:22+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.3/datree-cli_1.5.3_Linux_x86_64.zip
-  sha256: 4d948580aa7b3b9c999ad76fe3f86fe3cb61f4c6d1b4311adaa4635bcfe4475a
-  timestamp: 2022-06-07 14:44:22+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.5.30/datree-cli_1.5.30_Linux_arm64.zip
   sha256: 716ed89e5288a05b9d8fd7927afe33f6873f607ca71e062b5e6254e47206eb32
   timestamp: 2022-07-11 17:33:23+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.5.30/datree-cli_1.5.30_Linux_x86_64.zip
   sha256: 70ea2dac45609cfc0ee63f40de6c076a55f334f1dd6b6412071635fb1b0c46e2
   timestamp: 2022-07-11 17:33:23+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.7/datree-cli_1.5.7_Linux_arm64.zip
-  sha256: 6be1bf77cdfdd6512a85a1f6c2d5585e7cbbda3592ff6c2b2aadca99db07071b
-  timestamp: 2022-06-09 20:26:27+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.7/datree-cli_1.5.7_Linux_x86_64.zip
-  sha256: 9f7e47dfffbaa08f23a3b38429f85f8118d89872508ac9ca019d5a05310a65fc
-  timestamp: 2022-06-09 20:26:27+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.9/datree-cli_1.5.9_Linux_arm64.zip
-  sha256: 0da86628db53e97eb731fde6636abcf001e5c62e654bf96c813474887a376410
-  timestamp: 2022-06-12 17:21:07+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.5.9/datree-cli_1.5.9_Linux_x86_64.zip
-  sha256: 8a5f913648779b0fda2ea9b21bf2da4dc2af59d9fb5d11de9c939ab504753155
-  timestamp: 2022-06-12 17:21:07+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.6.0/datree-cli_1.6.0_Linux_arm64.zip
   sha256: faa12bc201a9612b656d2818c69135ea9937acb91befa0be8443d7f4ef5b7574
   timestamp: 2022-07-25 17:34:53+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.6.0/datree-cli_1.6.0_Linux_x86_64.zip
   sha256: 491ad4244d9b2fe99d3d58ee4024eb5904e1b7c9efb012178651c584f28a9929
   timestamp: 2022-07-25 17:34:53+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.6.6/datree-cli_1.6.6_Linux_arm64.zip
+  sha256: e7cd0c483250fd487b1d71e92994c4a8330793551c22f805f1360fea0c978c95
+  timestamp: 2022-08-04 11:21:29+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.6.6/datree-cli_1.6.6_Linux_x86_64.zip
+  sha256: 93bcab1824b1e64eda54544dec84b0d2246e05cacbf9c164b4e9386d68ecee33
+  timestamp: 2022-08-04 11:21:29+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.6.12/datree-cli_1.6.12_Linux_arm64.zip
   sha256: df77d10c4b25e4eb9f4dd09f0693af87b45e1b5acade6765c8f5ac412846c92e
   timestamp: 2022-08-24 11:22:46+00:00
@@ -427,12 +433,6 @@
 - url: https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Linux_x86_64.zip
   sha256: 1d8124399e548d4da8f990ed0283b4c90dcaba32cc4bb7cac707b642e3419e26
   timestamp: 2022-10-31 10:26:15+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.6.6/datree-cli_1.6.6_Linux_arm64.zip
-  sha256: e7cd0c483250fd487b1d71e92994c4a8330793551c22f805f1360fea0c978c95
-  timestamp: 2022-08-04 11:21:29+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.6.6/datree-cli_1.6.6_Linux_x86_64.zip
-  sha256: 93bcab1824b1e64eda54544dec84b0d2246e05cacbf9c164b4e9386d68ecee33
-  timestamp: 2022-08-04 11:21:29+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.7.1/datree-cli_1.7.1_Linux_arm64.zip
   sha256: de2fb6b9e2a7d3eca92f5da28437607a6fee3524621fa5470d26adb5e6811ca8
   timestamp: 2022-11-06 19:27:13+00:00
@@ -457,6 +457,12 @@
 - url: https://github.com/datreeio/datree/releases/download/1.8.1/datree-cli_1.8.1_Linux_x86_64.zip
   sha256: 7c9dd8621a31838eff696ab5c30363e2b4654a8174d0252ad8ca4aa434e7a9d0
   timestamp: 2022-11-20 16:21:24+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.8/datree-cli_1.8.8_Linux_arm64.zip
+  sha256: 02519d32c87f6920caccabd459360373e15450afce18e16a6fbc7e884eae9a0e
+  timestamp: 2022-12-01 13:43:13+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.8/datree-cli_1.8.8_Linux_x86_64.zip
+  sha256: 93718a745e00ca09124094440a8d5c67bc18929d08e9a9f14cd7d772d609d4f2
+  timestamp: 2022-12-01 13:43:13+00:00
 - url: https://github.com/datreeio/datree/releases/download/1.8.12/datree-cli_1.8.12_Linux_arm64.zip
   sha256: ff2092e2b98278f5bbae4cbdf3f0ef8d54ceab2572f5c0f84e55bd45c2efb852
   timestamp: 2022-12-29 16:18:58+00:00
@@ -547,9 +553,9 @@
 - url: https://github.com/datreeio/datree/releases/download/1.8.45/datree-cli_1.8.45_Linux_x86_64.zip
   sha256: 8366cc1b7201492c1a4c3a917c5d325e4b35d6421b0f148341297ca5003fe2c1
   timestamp: 2023-03-19 12:34:27+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.8.8/datree-cli_1.8.8_Linux_arm64.zip
-  sha256: 02519d32c87f6920caccabd459360373e15450afce18e16a6fbc7e884eae9a0e
-  timestamp: 2022-12-01 13:43:13+00:00
-- url: https://github.com/datreeio/datree/releases/download/1.8.8/datree-cli_1.8.8_Linux_x86_64.zip
-  sha256: 93718a745e00ca09124094440a8d5c67bc18929d08e9a9f14cd7d772d609d4f2
-  timestamp: 2022-12-01 13:43:13+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.46/datree-cli_1.8.46_Linux_arm64.zip
+  sha256: eff4e36533645c5fc0a4ac8626fdb218977418600a1234ced1582ffbe5fbe9e7
+  timestamp: 2023-03-26 12:32:33+00:00
+- url: https://github.com/datreeio/datree/releases/download/1.8.46/datree-cli_1.8.46_Linux_x86_64.zip
+  sha256: e985334d043b672b9b5886cc6ff75dc01db0f14467922017d0e486fe8a3304e1
+  timestamp: 2023-03-26 12:32:33+00:00
