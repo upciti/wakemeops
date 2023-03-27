@@ -16,7 +16,9 @@
     architectures:
       - arm64
       - armhf
-  version: 12.1.2
+    versions:
+      - 12.1.2
+      - 13.0.0-alpha.0
   revision: "2"
   homepage: https://github.com/XAMPPRocky/tokei
   summary: counts the lines of source code
