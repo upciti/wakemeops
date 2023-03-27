@@ -1,22 +1,40 @@
-name: lens
-matrix:
-  versions:
-    - 5.3.4-latest.20220120.1
-    - 5.4.6-latest.20220428.1
-    - 6.0.0-latest.20220728.2
-homepage: https://k8slens.dev/
-summary: powerful IDE for kubernetes
-description: |-
-  Lens provides the full situational awareness for everything that runs in
-  Kubernetes. It’s lowering the barrier of entry for people just getting started
-  and radically improving productivity for people with more experience.
+- name: lens
+  matrix:
+    versions:
+      - 5.4.6-latest.20220428.1
+      - 6.0.0-latest.20220728.2
+  homepage: https://k8slens.dev/
+  summary: powerful IDE for kubernetes
+  description: |-
+    Lens provides the full situational awareness for everything that runs in
+    Kubernetes. It’s lowering the barrier of entry for people just getting started
+    and radically improving productivity for people with more experience.
 
-  Lens is built on open source and backed by a number of Kubernetes and cloud
-  native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
-  it’s the largest and most advanced Kubernetes platform in the world.
-fetch: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
-install:
-  - data:/
-script:
-  - grep "^Depends. " control/control >> {{debian}}/control
-  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+    Lens is built on open source and backed by a number of Kubernetes and cloud
+    native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
+    it’s the largest and most advanced Kubernetes platform in the world.
+  fetch: https://api.k8slens.dev/binaries/Lens-{{version}}.amd64.deb
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+
+- name: lens
+  version: 2023.3.171731-latest
+  homepage: https://k8slens.dev/
+  summary: powerful IDE for kubernetes
+  description: |-
+    Lens provides the full situational awareness for everything that runs in
+    Kubernetes. It’s lowering the barrier of entry for people just getting started
+    and radically improving productivity for people with more experience.
+
+    Lens is built on open source and backed by a number of Kubernetes and cloud
+    native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
+    it’s the largest and most advanced Kubernetes platform in the world.
+  fetch: https://downloads.k8slens.dev/apt/debian/pool/main/Lens-2023.3.171731-latest_amd64.deb
+  install:
+    - data:/
+  script:
+    - grep "^Depends. " control/control >> {{debian}}/control
+    - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
