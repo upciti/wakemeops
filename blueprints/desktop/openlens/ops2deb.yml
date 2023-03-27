@@ -1,0 +1,20 @@
+name: openlens
+version: 6.4.10
+homepage: https://github.com/MuhammedKalkan/OpenLens
+summary: powerful IDE for kubernetes
+description: |-
+  OpenLens (aka Lens Desktop Core) is the open source project on which Lens
+  Desktop is built.
+  It provides the full situational awareness for everything that runs in
+  Kubernetes. It’s lowering the barrier of entry for people just getting started
+  and radically improving productivity for people with more experience.
+
+  Lens is built on open source and backed by a number of Kubernetes and cloud
+  native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
+  it’s the largest and most advanced Kubernetes platform in the world.
+fetch: https://github.com/MuhammedKalkan/OpenLens/releases/download/v{{version}}/OpenLens-{{version}}.amd64.deb
+install:
+  - data:/
+script:
+  - grep "^Depends. " control/control >> {{debian}}/control
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
