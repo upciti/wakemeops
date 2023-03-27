@@ -3,6 +3,9 @@ matrix:
   versions:
     - 6.4.10
     - 6.4.11
+  architectures:
+    - amd64
+    - arm64
 homepage: https://github.com/MuhammedKalkan/OpenLens
 summary: powerful IDE for kubernetes
 description: |-
@@ -15,7 +18,7 @@ description: |-
   Lens is built on open source and backed by a number of Kubernetes and cloud
   native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
   it’s the largest and most advanced Kubernetes platform in the world.
-fetch: https://github.com/MuhammedKalkan/OpenLens/releases/download/v{{version}}/OpenLens-{{version}}.amd64.deb
+fetch: https://github.com/MuhammedKalkan/OpenLens/releases/download/v{{version}}/OpenLens-{{version}}.{{arch}}.deb
 install:
   - data:/
 script:
