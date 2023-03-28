@@ -1,15 +1,3 @@
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-amd64
-  sha256: 26ffc4d9d4d942cc6d7d190fe48f8bcf2add8b656c091b31d9ad3b537b0b129b
-  timestamp: 2023-02-23 22:17:59+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-arm64
-  sha256: c02f04e24f0277d639d4eeecd9d024d5cfa5d4574b696dceeb55cb77f93c7a50
-  timestamp: 2023-02-23 22:17:59+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.1/devspace-linux-amd64
-  sha256: 044cc586a6ae17e50a5566e89383e145eff3844045898824e4d0a855468f9467
-  timestamp: 2023-03-10 18:22:51+00:00
-- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.1/devspace-linux-arm64
-  sha256: 44ac2156fe836f3f4311da9039719e9a41784a8f510b273f723a0a99444dc908
-  timestamp: 2023-03-10 18:22:51+00:00
 - url: https://github.com/loft-sh/devspace/releases/download/v5.16.2/devspace-linux-amd64
   sha256: 1fe53f7146cf635cc8765911716e878a053b02fc66344ab43342a8df99d23ffb
   timestamp: 2021-10-28 15:49:45+00:00
@@ -94,3 +82,21 @@
 - url: https://github.com/loft-sh/devspace/releases/download/v6.2.5/devspace-linux-arm64
   sha256: 7e2c476efa1eadf8df6ad1cb4b86ff2a795a63972d0a90234b44302b7ae6163c
   timestamp: 2023-01-27 22:16:50+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-amd64
+  sha256: 26ffc4d9d4d942cc6d7d190fe48f8bcf2add8b656c091b31d9ad3b537b0b129b
+  timestamp: 2023-02-23 22:17:59+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.0/devspace-linux-arm64
+  sha256: c02f04e24f0277d639d4eeecd9d024d5cfa5d4574b696dceeb55cb77f93c7a50
+  timestamp: 2023-02-23 22:17:59+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.1/devspace-linux-amd64
+  sha256: 044cc586a6ae17e50a5566e89383e145eff3844045898824e4d0a855468f9467
+  timestamp: 2023-03-10 18:22:51+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.1/devspace-linux-arm64
+  sha256: 44ac2156fe836f3f4311da9039719e9a41784a8f510b273f723a0a99444dc908
+  timestamp: 2023-03-10 18:22:51+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.2/devspace-linux-amd64
+  sha256: b715b4ba79588583983453059fd5ad5a8be2d21bd2c75faeab81ad72070b653a
+  timestamp: 2023-03-28 15:20:19+00:00
+- url: https://github.com/devspace-sh/devspace/releases/download/v6.3.2/devspace-linux-arm64
+  sha256: c801b5455ed57c71ec631b8299ed953054cadb7ffdb07f6a72ae7a5f9aea60ab
+  timestamp: 2023-03-28 15:20:19+00:00

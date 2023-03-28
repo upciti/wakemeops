@@ -1,12 +1,6 @@
 - url: https://github.com/grafana/loki/releases/download/v2.3.0/logcli-linux-amd64.zip
   sha256: af0d748ac29da9f7d43d5e7675996ab331112024fa06d65e82996925f5882658
   timestamp: 2021-10-11 11:32:19+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.3.0/logcli-linux-arm.zip
-  sha256: 4197493bff88789a6ad623fedecf5fab0f075c325c4a1c6ca640a0fc068efd21
-  timestamp: 2023-03-06 12:16:10+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.3.0/logcli-linux-arm64.zip
-  sha256: 4659f99e10924e4c5e2a4567f80806967c61000cc56ea67ce2b7984c3b8e6e83
-  timestamp: 2023-03-06 12:16:10+00:00
 - url: https://github.com/grafana/loki/releases/download/v2.4.2/logcli-linux-amd64.zip
   sha256: 68e5e281b4488ad49303cce972e194fe4e186cd519ed8a14db0c28316ad01e05
   timestamp: 2022-01-12 19:25:43+00:00
@@ -88,3 +82,18 @@
 - url: https://github.com/grafana/loki/releases/download/v2.7.4/logcli-linux-arm64.zip
   sha256: a17401becad1195bd31186b52fad95681cefba78f5538a7ec309da4d39680077
   timestamp: 2023-02-24 22:16:01+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.3.0/logcli-linux-arm.zip
+  sha256: 4197493bff88789a6ad623fedecf5fab0f075c325c4a1c6ca640a0fc068efd21
+  timestamp: 2023-03-06 12:16:10+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.3.0/logcli-linux-arm64.zip
+  sha256: 4659f99e10924e4c5e2a4567f80806967c61000cc56ea67ce2b7984c3b8e6e83
+  timestamp: 2023-03-06 12:16:10+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.5/logcli-linux-amd64.zip
+  sha256: c5043dbfbd77e62ab9eace49cb05b9fa308f0224c478c26c55e62c32490b4e51
+  timestamp: 2023-03-28 15:20:19+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.5/logcli-linux-arm.zip
+  sha256: 699df293fe44db06fe8f13bb7af332a4edbf26c29f804d1fd92b9987ba6a82cf
+  timestamp: 2023-03-28 15:20:19+00:00
+- url: https://github.com/grafana/loki/releases/download/v2.7.5/logcli-linux-arm64.zip
+  sha256: 4ace3d45c0d6d55fb5259bf8082719477437e813579f0b5d3d6dc3f2d978f66c
+  timestamp: 2023-03-28 15:20:19+00:00
