@@ -3,7 +3,9 @@ matrix:
   architectures:
     - amd64
     - arm64
-version: 5.15.1
+  versions:
+    - 5.15.1
+    - 5.16.0
 homepage: https://github.com/FairwindsOps/pluto/
 summary: discover deprecated apiversions in kubernetes
 description: |-
