@@ -32,7 +32,9 @@
       - amd64
       - arm64
       - armhf
-  version: 0.2.43
+    versions:
+      - 0.2.43
+      - 0.2.44
   homepage: https://github.com/nektos/act/
   summary: run your GitHub Actions locally
   description: |-
