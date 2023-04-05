@@ -62,5 +62,5 @@ jobs:
           WAKEMEBOT_APTLY_CLIENT_KEY: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_KEY }}
         run: |
           mkdir -p artifact
-          ops2deb delta -r "http://deb.wakemeops.com stable" --json > artifact/ops2deb-delta.json
+          ops2deb delta -r "http://deb.wakemeops.com stable" --json 1> artifact/ops2deb-delta.json
           wakemebot sync artifact
