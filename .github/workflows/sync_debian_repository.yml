@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_packages:
+  sync_repository:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/upciti/ops2deb:latest
@@ -14,34 +14,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Print ops2deb version
-        run: ops2deb version
-
-      - name: Generate new Debian packages
-        run: |
-          OPS2DEB_EXIT_CODE=0 make build
-
-      - name: Upload Debian packages
-        uses: actions/upload-artifact@v3
-        with:
-          path: build/**/*deb
-          retention-days: 2
-
-  sync_repository:
-    needs: [build_packages]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Install ops2deb and wakemebot
+      - name: Install wakemebot
         uses: upciti/wakemeops-action@v1
         with:
           packages: |
-            ops2deb
             wakemebot
 
       - name: Print ops2deb version
@@ -50,10 +29,12 @@ jobs:
       - name: Print wakemebot version
         run: wakemebot version
 
-      - name: Download Debian packages
-        uses: actions/download-artifact@v3
+      - name: Generate new Debian packages
+        run: |
+          mkdir -p build
+          OPS2DEB_EXIT_CODE=0 make build
 
-      - name: Upload Debian packages
+      - name: Sync WakeMeOps Debian repository
         shell: bash
         env:
           WAKEMEBOT_APTLY_SERVER_URL: ${{ secrets.WAKEMEBOT_APTLY_SERVER_URL }}
@@ -61,6 +42,5 @@ jobs:
           WAKEMEBOT_APTLY_CLIENT_CERT: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_CERT }}
           WAKEMEBOT_APTLY_CLIENT_KEY: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_KEY }}
         run: |
-          mkdir -p artifact
-          ops2deb delta -r "http://deb.wakemeops.com stable" --json 1> artifact/ops2deb-delta.json
-          wakemebot sync artifact
+          ops2deb delta -r "http://deb.wakemeops.com/wakemeops stable" --json 1> build/ops2deb-delta.json
+          wakemebot sync build
