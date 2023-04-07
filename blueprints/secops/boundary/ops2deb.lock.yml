@@ -1,3 +1,66 @@
+- url: https://releases.hashicorp.com/boundary/0.7.4/boundary_0.7.4_linux_amd64.zip
+  sha256: 35885c509ebdf7905886d61ad7adcf3f4929d60fc058b29b453a734598c39e2a
+  timestamp: 2022-01-18 22:31:36+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.4/boundary_0.7.4_linux_arm.zip
+  sha256: f3e25637f728763f9890de9baff44eca9298390df0e80a95e82c05ff76c43056
+  timestamp: 2022-01-28 19:15:46+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.4/boundary_0.7.4_linux_arm64.zip
+  sha256: 248daf8b263473f886100ccc9cf83bf20c1fb982588b633401e78f0b5e8267f7
+  timestamp: 2022-01-28 19:15:46+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.5/boundary_0.7.5_linux_amd64.zip
+  sha256: f5eb5fe62aaeeded91448c1cffd9442ea4f6f79c2820a387bcb2d6d72e982eac
+  timestamp: 2022-02-17 22:18:54+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.5/boundary_0.7.5_linux_arm.zip
+  sha256: c633ed23b2a5ad1c6891d6f20aae380d51da94258dcf0f07356274d89e3319d2
+  timestamp: 2022-02-17 22:18:54+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.5/boundary_0.7.5_linux_arm64.zip
+  sha256: a604d80b596d8b05ad903cd6b869a10422667211dab13c6d34cd4179b11f9230
+  timestamp: 2022-02-17 22:18:54+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.6/boundary_0.7.6_linux_amd64.zip
+  sha256: 28cf7425e6763dda3406d5ae0cf416cf1b1f7d1b938e5913c8a8fd2bd22e64ed
+  timestamp: 2022-03-16 22:19:10+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.6/boundary_0.7.6_linux_arm.zip
+  sha256: 2f30d4cf11dd2508d1af87c4ba155827a8035e64b57f1d447689819109051ea2
+  timestamp: 2022-03-16 22:19:10+00:00
+- url: https://releases.hashicorp.com/boundary/0.7.6/boundary_0.7.6_linux_arm64.zip
+  sha256: b2cf95af472383cbf552f9d3a19345a3e774d9f67b41c646f5503b48bdc85d93
+  timestamp: 2022-03-16 22:19:10+00:00
+- url: https://releases.hashicorp.com/boundary/0.8.0/boundary_0.8.0_linux_amd64.zip
+  sha256: 5690606abcfe3405ffda3d264b8aa1eaeafcbdb7e5cd9e98b1a11e2f75681d47
+  timestamp: 2022-05-03 23:20:55+00:00
+- url: https://releases.hashicorp.com/boundary/0.8.0/boundary_0.8.0_linux_arm.zip
+  sha256: 42485a4e9b40abb953f98a75434d6dea4d1befa0133b0fb1200486c85dfc6d35
+  timestamp: 2022-05-03 23:20:55+00:00
+- url: https://releases.hashicorp.com/boundary/0.8.0/boundary_0.8.0_linux_arm64.zip
+  sha256: 04ad9308977df4310429970370d7ef7da6c06511d39e7f7f642e4c30e82d3b77
+  timestamp: 2022-05-03 23:20:55+00:00
+- url: https://releases.hashicorp.com/boundary/0.8.1/boundary_0.8.1_linux_amd64.zip
+  sha256: d50e8f0483e39e596b3ff5f37316bffe33ae78a07bed51c9b6ccdb0e3d3230cc
+  timestamp: 2022-05-16 23:20:21+00:00
+- url: https://releases.hashicorp.com/boundary/0.8.1/boundary_0.8.1_linux_arm.zip
+  sha256: b6d1fcdead971b3d1882b36f82f24713b694ad47749d2c393ebea2c2ba757377
+  timestamp: 2022-05-16 23:20:21+00:00
+- url: https://releases.hashicorp.com/boundary/0.8.1/boundary_0.8.1_linux_arm64.zip
+  sha256: a5235d8fe7c08bdb52acbd7a4e4b33dad1fabe0769576cc69d2fc5cb848e3b72
+  timestamp: 2022-05-16 23:20:21+00:00
+- url: https://releases.hashicorp.com/boundary/0.9.0/boundary_0.9.0_linux_amd64.zip
+  sha256: e97c8b93e23326c5cd0cf0a65cc79790d80dcafd175d577175698b0c091da992
+  timestamp: 2022-06-20 23:19:40+00:00
+- url: https://releases.hashicorp.com/boundary/0.9.0/boundary_0.9.0_linux_arm.zip
+  sha256: f611d8ddceb85c1f01bf350978be5a781f626b703e8f26b6dc41e75fdf3070f8
+  timestamp: 2022-06-20 23:19:40+00:00
+- url: https://releases.hashicorp.com/boundary/0.9.0/boundary_0.9.0_linux_arm64.zip
+  sha256: 216755bd18cbcbe9627caadbf8060e6d4f73659797415e013a78c1898dae702f
+  timestamp: 2022-06-20 23:19:40+00:00
+- url: https://releases.hashicorp.com/boundary/0.9.1/boundary_0.9.1_linux_amd64.zip
+  sha256: cbe308791f917a02430ac3eb7fa651a3031dd74000e7eea3f932db61b366baa0
+  timestamp: 2022-07-06 23:19:24+00:00
+- url: https://releases.hashicorp.com/boundary/0.9.1/boundary_0.9.1_linux_arm.zip
+  sha256: 97d0acd30b59bb0f5a320f7d888863ffe7f4afc1ef1c877c30a10818aee4697e
+  timestamp: 2022-07-06 23:19:24+00:00
+- url: https://releases.hashicorp.com/boundary/0.9.1/boundary_0.9.1_linux_arm64.zip
+  sha256: 7f8d063fe07addeab3c5155317f955d53513215f16348b546e7651d1aa2f83e5
+  timestamp: 2022-07-06 23:19:24+00:00
 - url: https://releases.hashicorp.com/boundary/0.10.0/boundary_0.10.0_linux_amd64.zip
   sha256: 88dc146eb452b3ef29ca79752a4b08c49ab99da8463bbd89af722ce3c48a3ce3
   timestamp: 2022-08-10 23:19:52+00:00
@@ -88,66 +151,12 @@
 - url: https://releases.hashicorp.com/boundary/0.12.1/boundary_0.12.1_linux_arm64.zip
   sha256: 2d59ee8a66078840059b5cdde58e87c1bf4f8f49d1974936b256aabe0f1e95fa
   timestamp: 2023-03-14 01:20:09+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.4/boundary_0.7.4_linux_amd64.zip
-  sha256: 35885c509ebdf7905886d61ad7adcf3f4929d60fc058b29b453a734598c39e2a
-  timestamp: 2022-01-18 22:31:36+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.4/boundary_0.7.4_linux_arm.zip
-  sha256: f3e25637f728763f9890de9baff44eca9298390df0e80a95e82c05ff76c43056
-  timestamp: 2022-01-28 19:15:46+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.4/boundary_0.7.4_linux_arm64.zip
-  sha256: 248daf8b263473f886100ccc9cf83bf20c1fb982588b633401e78f0b5e8267f7
-  timestamp: 2022-01-28 19:15:46+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.5/boundary_0.7.5_linux_amd64.zip
-  sha256: f5eb5fe62aaeeded91448c1cffd9442ea4f6f79c2820a387bcb2d6d72e982eac
-  timestamp: 2022-02-17 22:18:54+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.5/boundary_0.7.5_linux_arm.zip
-  sha256: c633ed23b2a5ad1c6891d6f20aae380d51da94258dcf0f07356274d89e3319d2
-  timestamp: 2022-02-17 22:18:54+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.5/boundary_0.7.5_linux_arm64.zip
-  sha256: a604d80b596d8b05ad903cd6b869a10422667211dab13c6d34cd4179b11f9230
-  timestamp: 2022-02-17 22:18:54+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.6/boundary_0.7.6_linux_amd64.zip
-  sha256: 28cf7425e6763dda3406d5ae0cf416cf1b1f7d1b938e5913c8a8fd2bd22e64ed
-  timestamp: 2022-03-16 22:19:10+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.6/boundary_0.7.6_linux_arm.zip
-  sha256: 2f30d4cf11dd2508d1af87c4ba155827a8035e64b57f1d447689819109051ea2
-  timestamp: 2022-03-16 22:19:10+00:00
-- url: https://releases.hashicorp.com/boundary/0.7.6/boundary_0.7.6_linux_arm64.zip
-  sha256: b2cf95af472383cbf552f9d3a19345a3e774d9f67b41c646f5503b48bdc85d93
-  timestamp: 2022-03-16 22:19:10+00:00
-- url: https://releases.hashicorp.com/boundary/0.8.0/boundary_0.8.0_linux_amd64.zip
-  sha256: 5690606abcfe3405ffda3d264b8aa1eaeafcbdb7e5cd9e98b1a11e2f75681d47
-  timestamp: 2022-05-03 23:20:55+00:00
-- url: https://releases.hashicorp.com/boundary/0.8.0/boundary_0.8.0_linux_arm.zip
-  sha256: 42485a4e9b40abb953f98a75434d6dea4d1befa0133b0fb1200486c85dfc6d35
-  timestamp: 2022-05-03 23:20:55+00:00
-- url: https://releases.hashicorp.com/boundary/0.8.0/boundary_0.8.0_linux_arm64.zip
-  sha256: 04ad9308977df4310429970370d7ef7da6c06511d39e7f7f642e4c30e82d3b77
-  timestamp: 2022-05-03 23:20:55+00:00
-- url: https://releases.hashicorp.com/boundary/0.8.1/boundary_0.8.1_linux_amd64.zip
-  sha256: d50e8f0483e39e596b3ff5f37316bffe33ae78a07bed51c9b6ccdb0e3d3230cc
-  timestamp: 2022-05-16 23:20:21+00:00
-- url: https://releases.hashicorp.com/boundary/0.8.1/boundary_0.8.1_linux_arm.zip
-  sha256: b6d1fcdead971b3d1882b36f82f24713b694ad47749d2c393ebea2c2ba757377
-  timestamp: 2022-05-16 23:20:21+00:00
-- url: https://releases.hashicorp.com/boundary/0.8.1/boundary_0.8.1_linux_arm64.zip
-  sha256: a5235d8fe7c08bdb52acbd7a4e4b33dad1fabe0769576cc69d2fc5cb848e3b72
-  timestamp: 2022-05-16 23:20:21+00:00
-- url: https://releases.hashicorp.com/boundary/0.9.0/boundary_0.9.0_linux_amd64.zip
-  sha256: e97c8b93e23326c5cd0cf0a65cc79790d80dcafd175d577175698b0c091da992
-  timestamp: 2022-06-20 23:19:40+00:00
-- url: https://releases.hashicorp.com/boundary/0.9.0/boundary_0.9.0_linux_arm.zip
-  sha256: f611d8ddceb85c1f01bf350978be5a781f626b703e8f26b6dc41e75fdf3070f8
-  timestamp: 2022-06-20 23:19:40+00:00
-- url: https://releases.hashicorp.com/boundary/0.9.0/boundary_0.9.0_linux_arm64.zip
-  sha256: 216755bd18cbcbe9627caadbf8060e6d4f73659797415e013a78c1898dae702f
-  timestamp: 2022-06-20 23:19:40+00:00
-- url: https://releases.hashicorp.com/boundary/0.9.1/boundary_0.9.1_linux_amd64.zip
-  sha256: cbe308791f917a02430ac3eb7fa651a3031dd74000e7eea3f932db61b366baa0
-  timestamp: 2022-07-06 23:19:24+00:00
-- url: https://releases.hashicorp.com/boundary/0.9.1/boundary_0.9.1_linux_arm.zip
-  sha256: 97d0acd30b59bb0f5a320f7d888863ffe7f4afc1ef1c877c30a10818aee4697e
-  timestamp: 2022-07-06 23:19:24+00:00
-- url: https://releases.hashicorp.com/boundary/0.9.1/boundary_0.9.1_linux_arm64.zip
-  sha256: 7f8d063fe07addeab3c5155317f955d53513215f16348b546e7651d1aa2f83e5
-  timestamp: 2022-07-06 23:19:24+00:00
+- url: https://releases.hashicorp.com/boundary/0.12.2/boundary_0.12.2_linux_amd64.zip
+  sha256: 7c3db27111d8622061b1fc667ab4b1bb0d6af04f8a8ae3e0f6dfd58dfb086d41
+  timestamp: 2023-04-07 21:14:28+00:00
+- url: https://releases.hashicorp.com/boundary/0.12.2/boundary_0.12.2_linux_arm.zip
+  sha256: a7e94e075313097e191ab0d654e7c617b5c5ced52e53abf826c17578701765be
+  timestamp: 2023-04-07 21:14:28+00:00
+- url: https://releases.hashicorp.com/boundary/0.12.2/boundary_0.12.2_linux_arm64.zip
+  sha256: 08a7d655874d828428e8c0a7aeec6b34ea37b8cfc7bdff05062102b013fff58e
+  timestamp: 2023-04-07 21:14:28+00:00
