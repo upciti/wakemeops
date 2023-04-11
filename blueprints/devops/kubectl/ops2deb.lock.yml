@@ -172,3 +172,12 @@
 - url: https://storage.googleapis.com/kubernetes-release/release/v1.26.3/bin/linux/arm64/kubectl
   sha256: 0f62cbb6fafa109f235a08348d74499a57bb294c2a2e6ee34be1fa83432fec1d
   timestamp: 2023-03-17 21:16:26+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.27.0/bin/linux/amd64/kubectl
+  sha256: 71a78259d70da9c5540c4cf4cff121f443e863376f68f89a759d90cef3f51e87
+  timestamp: 2023-04-11 21:14:51+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.27.0/bin/linux/arm/kubectl
+  sha256: 288470e3eb89a2f55273d753ce6674dfb00e732f2971428acb964810aa726188
+  timestamp: 2023-04-11 21:14:51+00:00
+- url: https://storage.googleapis.com/kubernetes-release/release/v1.27.0/bin/linux/arm64/kubectl
+  sha256: f8e09630211f2b7c6a8cc38835e7dea94708d401f5c84b23a37c70c604602ddc
+  timestamp: 2023-04-11 21:14:51+00:00
