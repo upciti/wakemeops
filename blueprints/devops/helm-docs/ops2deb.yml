@@ -1,0 +1,23 @@
+name: helm-docs
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 1.11.0
+homepage: https://github.com/norwoodj/helm-docs
+summary: tool for automatically generating markdown documentation for helm charts
+description: |-
+  auto-generates documentation from helm charts into markdown files.
+  the resulting files contain metadata about their respective chart and a table
+  with each of the chart's values, their defaults, and an optional description
+  parsed from comments.
+fetch:
+  url: https://github.com/norwoodj/helm-docs/releases/download/v{{version}}/helm-docs_{{version}}_Linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+    arm64: arm64
+    armhf: armv7
+script:
+  - install -m 755 helm-docs {{src}}/usr/bin/helm-docs
