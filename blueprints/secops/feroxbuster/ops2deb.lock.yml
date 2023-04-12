@@ -1,36 +1,15 @@
-- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/aarch64-feroxbuster.zip
-  sha256: bf7478e33140bd12a0480e2f19cdf0943cf7d7bf20bfcb02953642966843ec36
-  timestamp: 2022-08-22 11:18:51+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/armv7-feroxbuster.zip
-  sha256: f6395cbbd282c3dcba404c6155ca4f721075e510945af9c6766ce7e7f1e74e4b
-  timestamp: 2022-08-22 11:18:51+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/x86_64-linux-feroxbuster.zip
-  sha256: 4f78e276db5c6db290fc27fead807c5c961f1374acacd655f906be54a78429b0
-  timestamp: 2022-08-22 11:18:51+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/aarch64-feroxbuster.zip
-  sha256: bd54d4efafcc6f9a1517d0e292134062cca9e46523e2d19d803803e3c2fb30dd
-  timestamp: 2023-03-06 10:07:08+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/armv7-feroxbuster.zip
-  sha256: 782ab2af6eed694e4e18f3f720fc04ef698e81efb49c754aeb84858f05496da2
-  timestamp: 2023-03-06 10:07:08+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/x86_64-linux-feroxbuster.tar.gz
   sha256: adad86bbf732103c05854e3d8a039ef3c1d18a0d37a26d08c4ff56e2ea3cbf1f
   timestamp: 2021-12-19 22:02:45+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/x86_64-linux-feroxbuster.zip
-  sha256: d17c198a0a8e868dbc827308c9bad67b231fbfc1274cf2663e6e78adc910ee27
-  timestamp: 2023-03-06 10:07:08+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.5.0/x86_64-linux-feroxbuster.tar.gz
+  sha256: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
+  timestamp: 2022-01-17 16:22:48+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.5.0/aarch64-feroxbuster.zip
   sha256: 89c4f90fb7fea9536925309f233f35e6d40655f8b20da51c7725e897bbf41307
   timestamp: 2022-02-02 22:29:37+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.5.0/armv7-feroxbuster.zip
   sha256: ed211ef7f763b2a396e76408061c020ab01493b0929af476ff0a7eec4710d0b3
   timestamp: 2022-02-02 22:29:37+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/v2.5.0/x86_64-linux-feroxbuster.tar.gz
-  sha256: cd590c6532a5158312bf5f97943708b5b3aa292a357c2d8ed4bfcad4ed90290d
-  timestamp: 2022-01-17 16:22:48+00:00
-- url: https://github.com/epi052/feroxbuster/releases/download/v2.5.0/x86_64-linux-feroxbuster.zip
-  sha256: cd175e7f70e55703583a4da478b981f8da1ad7aa8cbab4faa6872cd0e1a858c7
-  timestamp: 2023-03-06 10:05:33+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.6.0/aarch64-feroxbuster.zip
   sha256: debfb1f7527b4e1112bb64f4c97083886613616c79774a507ccf3111e4aec110
   timestamp: 2022-03-05 16:20:37+00:00
@@ -76,6 +55,18 @@
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.6.4/x86_64-linux-feroxbuster.zip
   sha256: 2922500afdace1ad5c2b326fb065434b01df72f9ed44f10370b01129fd8cc257
   timestamp: 2022-04-09 20:25:04+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/aarch64-feroxbuster.zip
+  sha256: bf7478e33140bd12a0480e2f19cdf0943cf7d7bf20bfcb02953642966843ec36
+  timestamp: 2022-08-22 11:18:51+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/armv7-feroxbuster.zip
+  sha256: f6395cbbd282c3dcba404c6155ca4f721075e510945af9c6766ce7e7f1e74e4b
+  timestamp: 2022-08-22 11:18:51+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/2.7.1/x86_64-linux-feroxbuster.zip
+  sha256: 4f78e276db5c6db290fc27fead807c5c961f1374acacd655f906be54a78429b0
+  timestamp: 2022-08-22 11:18:51+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.5.0/x86_64-linux-feroxbuster.zip
+  sha256: cd175e7f70e55703583a4da478b981f8da1ad7aa8cbab4faa6872cd0e1a858c7
+  timestamp: 2023-03-06 10:05:33+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.8.0/aarch64-feroxbuster.zip
   sha256: 6a7212e615740127dac9e19226efdd55a1a9e07f4c2c5397088216a191ef997a
   timestamp: 2023-03-06 10:06:20+00:00
@@ -85,6 +76,15 @@
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.8.0/x86_64-linux-feroxbuster.zip
   sha256: 656eaab7d879a85fbd1574953411ef271e70e4e987a866f1a5cbfc23354a8922
   timestamp: 2023-03-06 10:06:20+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/aarch64-feroxbuster.zip
+  sha256: bd54d4efafcc6f9a1517d0e292134062cca9e46523e2d19d803803e3c2fb30dd
+  timestamp: 2023-03-06 10:07:08+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/armv7-feroxbuster.zip
+  sha256: 782ab2af6eed694e4e18f3f720fc04ef698e81efb49c754aeb84858f05496da2
+  timestamp: 2023-03-06 10:07:08+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.4.1/x86_64-linux-feroxbuster.zip
+  sha256: d17c198a0a8e868dbc827308c9bad67b231fbfc1274cf2663e6e78adc910ee27
+  timestamp: 2023-03-06 10:07:08+00:00
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.9.0/aarch64-feroxbuster.zip
   sha256: 42ca8815cba890b8612c1d3c9e3a4c830353ca5a03096c7e065c6280031161f0
   timestamp: 2023-03-08 15:21:17+00:00
@@ -112,3 +112,12 @@
 - url: https://github.com/epi052/feroxbuster/releases/download/v2.9.2/x86_64-linux-feroxbuster.zip
   sha256: c123542f066809311ec933253fc9b6f2541bee93883ef77614b79eb2d3aea273
   timestamp: 2023-03-18 18:21:37+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.9.3/aarch64-feroxbuster.zip
+  sha256: 586ff7bd2d5e4c2941bd750a7345c78466f5d57159ca0808c8f1f901883de591
+  timestamp: 2023-04-12 01:23:04+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.9.3/armv7-feroxbuster.zip
+  sha256: 93725b47d8d90d4c1754c686d29128caab56de29551bdc9ce68d51959fd766f2
+  timestamp: 2023-04-12 01:23:04+00:00
+- url: https://github.com/epi052/feroxbuster/releases/download/v2.9.3/x86_64-linux-feroxbuster.zip
+  sha256: 8474eb94c852a14fdec6360f665ab919947e3dc7a1ba91f2fab55a9bd5bcb31f
+  timestamp: 2023-04-12 01:23:04+00:00
