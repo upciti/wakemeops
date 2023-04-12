@@ -1,45 +1,3 @@
-- url: https://get.helm.sh/helm-v3.10.0-linux-amd64.tar.gz
-  sha256: bf56beb418bb529b5e0d6d43d56654c5a03f89c98400b409d1013a33d9586474
-  timestamp: 2022-09-21 20:34:04+00:00
-- url: https://get.helm.sh/helm-v3.10.0-linux-arm.tar.gz
-  sha256: 1f756a2ea800dafb92fb77acc016220fdedee2be07630befd5ffd1410062b39c
-  timestamp: 2022-09-21 20:34:04+00:00
-- url: https://get.helm.sh/helm-v3.10.1-linux-amd64.tar.gz
-  sha256: c12d2cd638f2d066fec123d0bd7f010f32c643afdf288d39a4610b1f9cb32af3
-  timestamp: 2022-10-12 23:25:25+00:00
-- url: https://get.helm.sh/helm-v3.10.1-linux-arm.tar.gz
-  sha256: 309f56a35185023262b4f20f7315d4e60854b517243444b34f5a458c81b33009
-  timestamp: 2022-10-12 23:25:25+00:00
-- url: https://get.helm.sh/helm-v3.10.2-linux-amd64.tar.gz
-  sha256: 2315941a13291c277dac9f65e75ead56386440d3907e0540bf157ae70f188347
-  timestamp: 2022-11-10 16:24:26+00:00
-- url: https://get.helm.sh/helm-v3.10.2-linux-arm.tar.gz
-  sha256: 25af344f46348958baa1c758cdf3b204ede3ddc483be1171ed3738d47efd0aae
-  timestamp: 2022-11-10 16:24:26+00:00
-- url: https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
-  sha256: 950439759ece902157cf915b209b8d694e6f675eaab5099fb7894f30eeaee9a2
-  timestamp: 2022-12-14 19:23:42+00:00
-- url: https://get.helm.sh/helm-v3.10.3-linux-arm.tar.gz
-  sha256: dca718eb68c72c51fc7157c4c2ebc8ce7ac79b95fc9355c5427ded99e913ec4c
-  timestamp: 2022-12-14 19:23:42+00:00
-- url: https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
-  sha256: 6c3440d829a56071a4386dd3ce6254eab113bc9b1fe924a6ee99f7ff869b9e0b
-  timestamp: 2023-01-18 19:22:55+00:00
-- url: https://get.helm.sh/helm-v3.11.0-linux-arm.tar.gz
-  sha256: cddbef72886c82a123038883f32b04e739cc4bd7b9e5f869740d51e50a38be01
-  timestamp: 2023-01-18 19:22:55+00:00
-- url: https://get.helm.sh/helm-v3.11.1-linux-amd64.tar.gz
-  sha256: 0b1be96b66fab4770526f136f5f1a385a47c41923d33aab0dcb500e0f6c1bf7c
-  timestamp: 2023-02-08 19:24:44+00:00
-- url: https://get.helm.sh/helm-v3.11.1-linux-arm.tar.gz
-  sha256: 77b797134ea9a121f2ede9d159a43a8b3895a9ff92cc24b71b77fb726d9eba6d
-  timestamp: 2023-02-08 19:24:44+00:00
-- url: https://get.helm.sh/helm-v3.11.2-linux-amd64.tar.gz
-  sha256: 781d826daec584f9d50a01f0f7dadfd25a3312217a14aa2fbb85107b014ac8ca
-  timestamp: 2023-03-09 01:47:48+00:00
-- url: https://get.helm.sh/helm-v3.11.2-linux-arm.tar.gz
-  sha256: 444b65100e224beee0a3a3a54cb19dad37388fa9217ab2782ba63551c4a2e128
-  timestamp: 2023-03-09 01:47:48+00:00
 - url: https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz
   sha256: 4ae30e48966aba5f807a4e140dad6736ee1a392940101e4d79ffb4ee86200a9e
   timestamp: 2021-12-14 15:37:09+00:00
@@ -112,3 +70,51 @@
 - url: https://get.helm.sh/helm-v3.9.4-linux-arm.tar.gz
   sha256: 18ce0f79dcd927fea5b714ca03299929dad05266192d4cde3de6b4c4d4544249
   timestamp: 2022-08-24 23:20:08+00:00
+- url: https://get.helm.sh/helm-v3.10.0-linux-amd64.tar.gz
+  sha256: bf56beb418bb529b5e0d6d43d56654c5a03f89c98400b409d1013a33d9586474
+  timestamp: 2022-09-21 20:34:04+00:00
+- url: https://get.helm.sh/helm-v3.10.0-linux-arm.tar.gz
+  sha256: 1f756a2ea800dafb92fb77acc016220fdedee2be07630befd5ffd1410062b39c
+  timestamp: 2022-09-21 20:34:04+00:00
+- url: https://get.helm.sh/helm-v3.10.1-linux-amd64.tar.gz
+  sha256: c12d2cd638f2d066fec123d0bd7f010f32c643afdf288d39a4610b1f9cb32af3
+  timestamp: 2022-10-12 23:25:25+00:00
+- url: https://get.helm.sh/helm-v3.10.1-linux-arm.tar.gz
+  sha256: 309f56a35185023262b4f20f7315d4e60854b517243444b34f5a458c81b33009
+  timestamp: 2022-10-12 23:25:25+00:00
+- url: https://get.helm.sh/helm-v3.10.2-linux-amd64.tar.gz
+  sha256: 2315941a13291c277dac9f65e75ead56386440d3907e0540bf157ae70f188347
+  timestamp: 2022-11-10 16:24:26+00:00
+- url: https://get.helm.sh/helm-v3.10.2-linux-arm.tar.gz
+  sha256: 25af344f46348958baa1c758cdf3b204ede3ddc483be1171ed3738d47efd0aae
+  timestamp: 2022-11-10 16:24:26+00:00
+- url: https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
+  sha256: 950439759ece902157cf915b209b8d694e6f675eaab5099fb7894f30eeaee9a2
+  timestamp: 2022-12-14 19:23:42+00:00
+- url: https://get.helm.sh/helm-v3.10.3-linux-arm.tar.gz
+  sha256: dca718eb68c72c51fc7157c4c2ebc8ce7ac79b95fc9355c5427ded99e913ec4c
+  timestamp: 2022-12-14 19:23:42+00:00
+- url: https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
+  sha256: 6c3440d829a56071a4386dd3ce6254eab113bc9b1fe924a6ee99f7ff869b9e0b
+  timestamp: 2023-01-18 19:22:55+00:00
+- url: https://get.helm.sh/helm-v3.11.0-linux-arm.tar.gz
+  sha256: cddbef72886c82a123038883f32b04e739cc4bd7b9e5f869740d51e50a38be01
+  timestamp: 2023-01-18 19:22:55+00:00
+- url: https://get.helm.sh/helm-v3.11.1-linux-amd64.tar.gz
+  sha256: 0b1be96b66fab4770526f136f5f1a385a47c41923d33aab0dcb500e0f6c1bf7c
+  timestamp: 2023-02-08 19:24:44+00:00
+- url: https://get.helm.sh/helm-v3.11.1-linux-arm.tar.gz
+  sha256: 77b797134ea9a121f2ede9d159a43a8b3895a9ff92cc24b71b77fb726d9eba6d
+  timestamp: 2023-02-08 19:24:44+00:00
+- url: https://get.helm.sh/helm-v3.11.2-linux-amd64.tar.gz
+  sha256: 781d826daec584f9d50a01f0f7dadfd25a3312217a14aa2fbb85107b014ac8ca
+  timestamp: 2023-03-09 01:47:48+00:00
+- url: https://get.helm.sh/helm-v3.11.2-linux-arm.tar.gz
+  sha256: 444b65100e224beee0a3a3a54cb19dad37388fa9217ab2782ba63551c4a2e128
+  timestamp: 2023-03-09 01:47:48+00:00
+- url: https://get.helm.sh/helm-v3.11.3-linux-amd64.tar.gz
+  sha256: ca2d5d40d4cdfb9a3a6205dd803b5bc8def00bd2f13e5526c127e9b667974a89
+  timestamp: 2023-04-12 18:21:55+00:00
+- url: https://get.helm.sh/helm-v3.11.3-linux-arm.tar.gz
+  sha256: 0816db0efd033c78c3cc1c37506967947b01965b9c0739fe13ec2b1eea08f601
+  timestamp: 2023-04-12 18:21:55+00:00
