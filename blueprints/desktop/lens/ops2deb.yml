@@ -32,7 +32,7 @@
     Lens is built on open source and backed by a number of Kubernetes and cloud
     native ecosystem pioneers. With over 350,000 users and 16,000 stars on GitHub,
     it’s the largest and most advanced Kubernetes platform in the world.
-  fetch: https://downloads.k8slens.dev/apt/debian/pool/main/Lens-2023.3.171731-latest_amd64.deb
+  fetch: https://downloads.k8slens.dev/apt/debian/pool/main/Lens-{{version}}_amd64.deb
   install:
     - data:/
   script:
