@@ -1,0 +1,9 @@
+name: gotop
+version: 4.2.0
+homepage: https://github.com/xxxserxxx/gotop
+summary: terminal based graphical activity monitor
+fetch: https://github.com/xxxserxxx/gotop/releases/download/v{{version}}/gotop_v{{version}}_linux_amd64.deb
+install:
+  - data:/
+script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
