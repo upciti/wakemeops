@@ -1,15 +1,15 @@
 - url: https://github.com/derailed/k9s/releases/download/v0.24.15/k9s_Linux_x86_64.tar.gz
   sha256: 0590c32c20cd22416f2a06fad9155257c156e32c60e8757bf96d5a28cb1720dd
   timestamp: 2021-09-25 20:20:59+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz
+  sha256: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
+  timestamp: 2022-01-25 22:17:50+00:00
 - url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_arm.tar.gz
   sha256: 2fb19caefec78c1a478a52940e51f625d80468a1fcb9033f092193611a2bd00a
   timestamp: 2022-01-30 16:22:16+00:00
 - url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_arm64.tar.gz
   sha256: f4a15b07633bbbecd3c775867ddcede880c62f8a6294ae6dc45ede43a6d0437c
   timestamp: 2022-01-30 16:22:16+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz
-  sha256: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
-  timestamp: 2022-01-25 22:17:50+00:00
 - url: https://github.com/derailed/k9s/releases/download/v0.25.19/k9s_Linux_arm.tar.gz
   sha256: c8e7dc4c8165399c8e771c1d09259d084f9cf9a19d8a7c8d7f6c5f7ff5840523
   timestamp: 2022-06-28 04:04:32+00:00
@@ -91,3 +91,12 @@
 - url: https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_arm64.tar.gz
   sha256: c2b2e8ccd05cea311600ed47d2a72df835a93fd5b9b470c42f7b248398f45592
   timestamp: 2023-03-04 01:29:23+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_amd64.tar.gz
+  sha256: e507831ebd5f9b8c0380f212669f352c6e34cb760c916b498babae8be83c4392
+  timestamp: 2023-05-07 18:19:41+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_arm.tar.gz
+  sha256: 9ebae81b7e93f5b438fd666a789f8554e5e576e2c7d7f5529f3770a4439ff9b4
+  timestamp: 2023-05-07 18:19:41+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_arm64.tar.gz
+  sha256: 05f7b054b2f41a69f13893ec819a8aca43662a4bad61951e9887a6f92ecbf2d8
+  timestamp: 2023-05-07 18:19:41+00:00
