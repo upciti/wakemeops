@@ -1,9 +1,3 @@
-- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.37.1/ytt-linux-amd64
-  sha256: 53b2c25d212e51f9fdfb9f083f484e6ac94e9756e39166a55f875114c6ef306c
-  timestamp: 2022-03-01 02:27:03+00:00
-- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.37.1/ytt-linux-arm64
-  sha256: dc16331f5f73dee4a0cca3ab2c5ca53509a4b29ce52a0368981d6973ac273204
-  timestamp: 2022-03-01 02:27:03+00:00
 - url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.39.0/ytt-linux-amd64
   sha256: 7a472b8c62bfec5c12586bb39065beda42c6fe43cf24271275e4dbc0a04acb8b
   timestamp: 2022-02-03 00:05:26+00:00
@@ -16,6 +10,12 @@
 - url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.40.0/ytt-linux-arm64
   sha256: 04ab81f008300ca386c037a3d1c8be5a63b040c5de16ad691cc9ce8b1f9dc364
   timestamp: 2022-02-17 22:18:54+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.37.1/ytt-linux-amd64
+  sha256: 53b2c25d212e51f9fdfb9f083f484e6ac94e9756e39166a55f875114c6ef306c
+  timestamp: 2022-03-01 02:27:03+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.37.1/ytt-linux-arm64
+  sha256: dc16331f5f73dee4a0cca3ab2c5ca53509a4b29ce52a0368981d6973ac273204
+  timestamp: 2022-03-01 02:27:03+00:00
 - url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.40.1/ytt-linux-amd64
   sha256: 11222665c627b8f0a1443534a3dde3c9b3aac08b322d28e91f0e011e3aeb7df5
   timestamp: 2022-03-02 19:24:45+00:00
@@ -70,3 +70,9 @@
 - url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.45.0/ytt-linux-arm64
   sha256: 54e228823e851320b848d854218004299d2ff362e0fe9e287d5a52df502baaaf
   timestamp: 2023-03-07 12:39:00+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.45.1/ytt-linux-amd64
+  sha256: 01606d885cdbce02340faadc29a83b5415280bc610e7cff3f639385d8f504aea
+  timestamp: 2023-05-08 06:22:15+00:00
+- url: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.45.1/ytt-linux-arm64
+  sha256: e5112e7c69c4e664d245a5482fad95f07b49b04c77c7b2c86f1eab86d294817a
+  timestamp: 2023-05-08 06:22:15+00:00
