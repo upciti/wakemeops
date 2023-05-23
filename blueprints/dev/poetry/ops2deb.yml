@@ -89,10 +89,10 @@
       # install bootstrap poetry
       /usr/lib/python-build-standalone/3.11/bin/python3 -m venv bootstrap
       . bootstrap/bin/activate
-      pip install poetry 'poetry-plugin-bundle @ git+https://github.com/python-poetry/poetry-plugin-bundle@9773b698657023ec7d71747e64525e0d6d171248'
+      pip install poetry 'poetry-plugin-bundle @ git+https://github.com/upciti/poetry-plugin-bundle@fix/support-poetry-1.5.0'
     - |
       # install poetry with poetry own poetry.lock
       cd poetry-{{version}}
-      ../bootstrap/bin/poetry bundle venv ../poetry --python /usr/lib/python-build-standalone/3.11/bin/python3
+      ../bootstrap/bin/poetry -v bundle venv ../poetry --python /usr/lib/python-build-standalone/3.11/bin/python3
     - find poetry -name '__pycache__' -exec rm -r {} +
     - cp -r -n poetry {{src}}/usr/lib/
