@@ -1,48 +1,25 @@
-- name: iamlive
-  version: 0.44.0
-  homepage: https://github.com/iann0036/iamlive
-  summary: generate policies from AWS calls
-  description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
-    IAM policy.
-  fetch: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-amd64.tar.gz
-  script:
-    - mv iamlive {{src}}/usr/bin/iamlive
-
-- name: iamlive
-  matrix:
-    versions:
-      - 0.44.0
-      - 0.45.0
-      - 0.46.0
-    architectures:
-      - arm64
-      - amd64
-  homepage: https://github.com/iann0036/iamlive
-  summary: generate policies from AWS calls
-  description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
-    IAM policy.
-  fetch: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
-  script:
-    - mv iamlive {{src}}/usr/bin/iamlive
-
-- name: iamlive
-  matrix:
-    versions:
-      - 0.47.3
-      - 0.48.0
-      - 0.49.0
-      - 0.50.0
-      - 0.51.0
-      - 0.51.1
-      - 0.51.2
-      - 0.52.0
-    architectures:
-      - amd64
-      - arm64
-  homepage: https://github.com/iann0036/iamlive
-  summary: generate policies from AWS calls
-  description: Use client-side monitoring (CSM) or embedded proxy to generate AWS
-    IAM policy.
-  fetch: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
-  install:
-    - iamlive:/usr/bin/iamlive
+name: iamlive
+matrix:
+  versions:
+    - 0.44.0
+    - 0.45.0
+    - 0.46.0
+    - 0.47.3
+    - 0.48.0
+    - 0.49.0
+    - 0.50.0
+    - 0.51.0
+    - 0.51.1
+    - 0.51.2
+    - 0.52.0
+  architectures:
+    - amd64
+    - arm64
+homepage: https://github.com/iann0036/iamlive
+summary: generate policies from AWS calls
+description: |-
+  Generate an IAM policy from AWS calls using client-side monitoring (CSM) or
+  embedded proxy policy.
+fetch: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
+install:
+  - iamlive:/usr/bin/iamlive

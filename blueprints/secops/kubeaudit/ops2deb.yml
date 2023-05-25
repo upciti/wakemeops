@@ -9,8 +9,7 @@ matrix:
     - amd64
     - arm64
 homepage: https://github.com/Shopify/kubeaudit
-summary: kubeaudit helps you audit your Kubernetes clusters against common security
-  controls
+summary: audit your Kubernetes clusters against common security controls
 description: |-
   Kubeaudit is a command line tool and a Go package to audit Kubernetes clusters
   for various different security concerns
