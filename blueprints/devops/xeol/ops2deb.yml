@@ -1,0 +1,9 @@
+name: xeol
+version: 0.2.8
+homepage: https://www.xeol.io/
+summary: end-of-life (EOL) package scanner for container images, systems, and SBOMs
+description: An end-of-life (EOL) package scanner for container images, systems, and
+  SBOMs
+fetch: https://github.com/xeol-io/xeol/releases/download/v{{version}}/xeol_{{version}}_linux_amd64.deb
+install:
+  - data:/
