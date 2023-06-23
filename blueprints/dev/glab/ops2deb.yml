@@ -5,7 +5,8 @@
       - arm64
       - armhf
   version: 1.22.0
-  homepage: https://glab.readthedocs.io/
+  revision: 2
+  homepage: https://gitlab.com/gitlab-org/cli
   summary: Gitlab on the command line
   description: |-
     Bring GitLab to your terminal right next to where you're already working with
@@ -42,7 +43,7 @@
     architectures:
       - amd64
       - arm64
-  homepage: https://glab.readthedocs.io/
+  homepage: https://gitlab.com/gitlab-org/cli
   summary: Gitlab on the command line
   description: |-
     Bring GitLab to your terminal right next to where you're already working with
