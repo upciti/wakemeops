@@ -1,7 +1,6 @@
 name: datree
 matrix:
   versions:
-    - 1.1.4
     - 1.1.5
     - 1.1.6
     - 1.1.10
@@ -101,6 +100,7 @@ matrix:
     - 1.9.7
     - 1.9.8
     - 1.9.10
+    - 1.9.17
   architectures:
     - amd64
     - arm64
