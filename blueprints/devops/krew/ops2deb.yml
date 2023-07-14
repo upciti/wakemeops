@@ -4,7 +4,9 @@ matrix:
     - amd64
     - arm64
     - armhf
-version: 0.4.3
+  versions:
+    - 0.4.3
+    - 0.4.4
 homepage: https://krew.sigs.k8s.io
 summary: find and install kubectl plugins
 description: Krew is the package manager for kubectl plugins.
