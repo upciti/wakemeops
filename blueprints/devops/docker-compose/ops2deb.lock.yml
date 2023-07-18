@@ -361,3 +361,12 @@
 - url: https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-linux-x86_64
   sha256: b49e358d11c198fa228fb7eca2a177affd8e1e33e06d29940668668482f797cd
   timestamp: 2023-07-11 15:20:18+00:00
+- url: https://github.com/docker/compose/releases/download/v2.20.1/docker-compose-linux-aarch64
+  sha256: d6edfe561d64a6948a087ff20a29ce9abfca0f1df11ef1b79dfe4910c9f88e4b
+  timestamp: 2023-07-18 21:13:52+00:00
+- url: https://github.com/docker/compose/releases/download/v2.20.1/docker-compose-linux-armv7
+  sha256: 6e6deec5284d56f38c927269ea79db947445ec262b3494f96f267951f37f70ef
+  timestamp: 2023-07-18 21:13:52+00:00
+- url: https://github.com/docker/compose/releases/download/v2.20.1/docker-compose-linux-x86_64
+  sha256: 804aa825c58b375901ba9dc9d0aa1648ce305d903a58f2a5c42bb5c6873b02bf
+  timestamp: 2023-07-18 21:13:52+00:00
