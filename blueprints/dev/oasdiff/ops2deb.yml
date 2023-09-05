@@ -1,0 +1,25 @@
+name: oasdiff
+matrix:
+  architectures:
+    - amd64
+    - arm64
+version: 1.7.9
+homepage: https://github.com/tufin/oasdiff
+summary: compare and detect breaking changes in OpenAPI specs
+description: |-
+  Handy tool that lets you:
+
+  - Do OpenAPI diffs in YAML, JSON, Text/Markdown or HTML
+  - Do OpenAPI diffs of local files system or remote files over http/s
+  - Display a user-friendly changelog of all important API changes
+
+  The following changes are detected in specifications:
+
+  - Breaking changes
+  - API deprecation
+  - Multiple versions of the same endpoint
+  - Path prefix modification
+  - Path parameter renaming
+fetch: https://github.com/Tufin/oasdiff/releases/download/v{{version}}/oasdiff_{{version}}_linux_{{arch}}.tar.gz
+script:
+  - install -m 755 oasdiff {{src}}/usr/bin/
