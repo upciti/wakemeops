@@ -1,0 +1,11 @@
+name: go-task
+matrix:
+  architectures:
+    - amd64
+    - arm64
+version: 3.29.1
+homepage: https://taskfile.dev/
+summary: task runner / simpler Make alternative written in Go
+fetch: https://github.com/go-task/task/releases/download/v{{version}}/task_linux_{{arch}}.tar.gz
+install:
+  - task:/usr/bin/go-task
