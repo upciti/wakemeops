@@ -4,7 +4,9 @@ matrix:
     - amd64
     - arm64
     - armhf
-version: 0.11.0
+  versions:
+    - 0.11.0
+    - 0.11.1
 homepage: https://github.com/eza-community/eza
 summary: modern, maintained replacement for ls, built on exa
 description: |-
