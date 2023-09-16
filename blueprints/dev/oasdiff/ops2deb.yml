@@ -3,7 +3,9 @@ matrix:
   architectures:
     - amd64
     - arm64
-version: 1.7.9
+  versions:
+    - 1.7.9
+    - 1.7.10
 homepage: https://github.com/tufin/oasdiff
 summary: compare and detect breaking changes in OpenAPI specs
 description: |-
