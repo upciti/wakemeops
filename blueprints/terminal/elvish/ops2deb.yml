@@ -1,0 +1,19 @@
+name: elvish
+matrix:
+  versions:
+    - 0.19.2
+    - 0.19.1
+    - 0.18.0
+  architectures:
+    - amd64
+    - arm64
+homepage: https://elv.sh/
+summary: expressive programming language + versatile interactive shell
+description: |-
+  Elvish is a cross-platform shell, supporting Linux, BSDs and Windows. It
+  features an expressive programming language, with features like namespace and
+  anonymous functions, and a fully programmable user interface with friendly
+  defaults. It is suitable for both interactive use and scripting.
+fetch: https://dl.elv.sh/linux-{{goarch}}/elvish-v{{version}}.tar.gz
+install:
+  - elvish-v{{version}}:/usr/bin/elvish
