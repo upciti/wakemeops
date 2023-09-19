@@ -1,0 +1,20 @@
+name: age
+matrix:
+  versions:
+    - 1.0.0
+    - 1.1.0
+    - 1.1.1
+  architectures:
+    - amd64
+    - arm64
+homepage: https://age-encryption.org/
+summary: age is a simple, modern and secure file encryption tool, format, and Go library
+description: |-
+  A simple, modern and secure encryption tool (and Go library) with small
+  explicit keys,
+  no config options, and UNIX-style composability.
+fetch: https://github.com/FiloSottile/age/releases/download/v{{version}}/age-v{{version}}-linux-{{goarch}}.tar.gz
+script:
+  - install -m 0755 ./age/age {{src}}/usr/bin/age
+  - install -m 0755 ./age/age-keygen {{src}}/usr/bin/age-keygen
+  - install -D -m 0644 ./age/LICENSE {{src}}/usr/share/doc/age/LICENSE
