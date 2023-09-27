@@ -1,0 +1,18 @@
+name: gomplate
+matrix:
+  versions:
+    - 3.11.5
+    - 3.11.4
+    - 3.11.3
+  architectures:
+    - amd64
+    - arm64
+homepage: https://age-encryption.org/
+summary: flexible commandline tool for template rendering
+description: |-
+  cli template renderer which supports a growing list of datasources, such as
+  JSON, EJSON, YAML, AWS EC2 metadata, Hashicorp Consul and Hashicorp Vault
+  secrets.
+fetch: https://github.com/hairyhenderson/gomplate/releases/download/v{{version}}/gomplate_linux-{{goarch}}
+install:
+  - gomplate_linux-{{goarch}}:/usr/bin/gomplate
