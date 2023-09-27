@@ -1,9 +1,9 @@
 name: elvish
 matrix:
   versions:
-    - 0.19.2
-    - 0.19.1
     - 0.18.0
+    - 0.19.1
+    - 0.19.2
   architectures:
     - amd64
     - arm64

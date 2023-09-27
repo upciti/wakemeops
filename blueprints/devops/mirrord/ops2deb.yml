@@ -1,0 +1,21 @@
+name: mirrord
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 3.68.0
+    - 3.69.0
+homepage: https://mirrord.dev/
+summary: develop locally with your kubernetes environment
+description: |-
+  Run your local code in the real-time context of your cloud environment, with
+  access to other microservices, databases, queues, and managed services, all
+  without leaving the local setup you know and love.
+fetch:
+  url: https://github.com/metalbear-co/mirrord/releases/download/{{version}}/mirrord_linux_{{target}}.zip
+  targets:
+    amd64: x86_64
+    arm64: aarch64
+install:
+  - mirrord:/usr/bin/mirrord
