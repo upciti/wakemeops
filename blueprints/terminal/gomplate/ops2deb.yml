@@ -1,13 +1,13 @@
 name: gomplate
 matrix:
   versions:
-    - 3.11.5
-    - 3.11.4
     - 3.11.3
+    - 3.11.4
+    - 3.11.5
   architectures:
     - amd64
     - arm64
-homepage: https://age-encryption.org/
+homepage: https://docs.gomplate.ca
 summary: flexible commandline tool for template rendering
 description: |-
   cli template renderer which supports a growing list of datasources, such as
