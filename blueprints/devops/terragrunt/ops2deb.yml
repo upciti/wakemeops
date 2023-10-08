@@ -22,7 +22,6 @@
 - name: terragrunt
   matrix:
     versions:
-      - 0.37.0
       - 0.37.1
       - 0.37.2
       - 0.37.3
@@ -122,6 +121,7 @@
       - 0.51.8
       - 0.51.9
       - 0.52.0
+      - 0.52.1
     architectures:
       - amd64
       - arm64
