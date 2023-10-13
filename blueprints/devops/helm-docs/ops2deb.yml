@@ -5,7 +5,7 @@ matrix:
     - arm64
     - armhf
   versions:
-    - 1.11.0
+    - 1.11.3
 homepage: https://github.com/norwoodj/helm-docs
 summary: tool for automatically generating markdown documentation for helm charts
 description: |-
@@ -17,6 +17,6 @@ fetch:
   url: https://github.com/norwoodj/helm-docs/releases/download/v{{version}}/helm-docs_{{version}}_Linux_{{target}}.tar.gz
   targets:
     amd64: x86_64
-    armhf: armv7
+    armhf: arm7
 install:
   - helm-docs:/usr/bin/helm-docs
