@@ -1,5 +1,8 @@
 name: pipx
-version: 1.2.0
+matrix:
+  versions:
+    - 1.2.0
+    - 1.2.1
 architecture: all
 homepage: https://github.com/pypa/pipx
 summary: execute binaries from Python packages in isolated environments
