@@ -2,6 +2,7 @@ name: restic
 matrix:
   versions:
     - 0.16.0
+    - 0.16.1
   architectures:
     - amd64
     - arm64
