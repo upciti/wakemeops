@@ -1,0 +1,25 @@
+name: restic
+matrix:
+  versions:
+    - 0.16.0
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+homepage: https://restic.net/
+summary: fast, secure, efficient backup program
+description: |-
+  Modern backup program that can back up your files:
+
+  - To many different storage types, including self-hosted and online services
+  - easily, being a single executable that you can run without a server or
+  complex setup
+  - Effectively, only transferring the parts that actually changed in the files
+  you back up
+  - Securely, by careful use of cryptography in every part of the process
+  - Verifiably, enabling you to make sure that your files can be restored when
+  needed
+  - Freely - restic is entirely free to use and completely open source
+fetch: https://github.com/restic/restic/releases/download/v{{version}}/restic_{{version}}_linux_{{goarch}}.bz2
+install:
+  - restic_{{version}}_linux_{{goarch}}:/usr/bin/restic
