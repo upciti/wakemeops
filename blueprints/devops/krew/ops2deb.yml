@@ -11,5 +11,5 @@ homepage: https://krew.sigs.k8s.io
 summary: find and install kubectl plugins
 description: Krew is the package manager for kubectl plugins.
 fetch: https://github.com/kubernetes-sigs/krew/releases/download/v{{version}}/krew-linux_{{goarch}}.tar.gz
-script:
-  - mv krew-linux_{{goarch}} {{src}}/usr/bin/krew
+install:
+  - krew-linux_{{goarch}}:/usr/bin/krew
