@@ -1,5 +1,8 @@
 name: iamlive
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 0.44.0
     - 0.45.0
@@ -19,9 +22,6 @@ matrix:
     - 1.1.3
     - 1.1.4
     - 1.1.5
-  architectures:
-    - amd64
-    - arm64
 homepage: https://github.com/iann0036/iamlive
 summary: generate policies from AWS calls
 description: |-

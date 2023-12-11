@@ -1,13 +1,13 @@
 name: restic
 matrix:
-  versions:
-    - 0.16.0
-    - 0.16.1
-    - 0.16.2
   architectures:
     - amd64
     - arm64
     - armhf
+  versions:
+    - 0.16.0
+    - 0.16.1
+    - 0.16.2
 homepage: https://restic.net/
 summary: fast, secure, efficient backup program
 description: |-

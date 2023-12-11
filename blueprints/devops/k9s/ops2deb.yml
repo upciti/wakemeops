@@ -1,5 +1,9 @@
 - name: k9s
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 0.25.19
       - 0.25.20
@@ -9,10 +13,6 @@
       - 0.26.5
       - 0.26.6
       - 0.26.7
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://k9scli.io
   summary: manage your Kubernetes clusters with style
   description: |-

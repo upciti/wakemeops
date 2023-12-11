@@ -1,5 +1,9 @@
 - name: feroxbuster
   matrix:
+    architectures:
+      - arm64
+      - armhf
+      - amd64
     versions:
       - 2.4.1
       - 2.5.0
@@ -8,10 +12,6 @@
       - 2.6.2
       - 2.6.3
       - 2.6.4
-    architectures:
-      - arm64
-      - armhf
-      - amd64
   homepage: https://github.com/epi052/feroxbuster
   summary: fast, simple, recursive content discovery tool
   description: |-
@@ -29,8 +29,8 @@
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-feroxbuster.zip
     targets:
       amd64: x86_64-linux
-      arm64: aarch64
       armhf: armv7
+      arm64: aarch64
   script:
     - mv feroxbuster {{src}}/usr/bin/
 
@@ -58,8 +58,8 @@
     url: https://github.com/epi052/feroxbuster/releases/download/{{version}}/{{target}}-feroxbuster.zip
     targets:
       amd64: x86_64-linux
-      arm64: aarch64
       armhf: armv7
+      arm64: aarch64
   install:
     - feroxbuster:/usr/bin/
 
@@ -92,8 +92,8 @@
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-feroxbuster.zip
     targets:
       amd64: x86_64-linux
-      arm64: aarch64
       armhf: armv7
+      arm64: aarch64
   install:
     - feroxbuster:/usr/bin/
 
@@ -125,7 +125,7 @@
     url: https://github.com/epi052/feroxbuster/releases/download/v{{version}}/{{target}}-linux-feroxbuster.zip
     targets:
       amd64: x86_64
-      arm64: aarch64
       armhf: armv7
+      arm64: aarch64
   install:
     - feroxbuster:/usr/bin/

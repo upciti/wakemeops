@@ -28,14 +28,14 @@
 
 - name: velero
   matrix:
-    versions:
-      - 1.8.0
-      - 1.7.2
-      - 1.8.1
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 1.8.0
+      - 1.7.2
+      - 1.8.1
   homepage: https://velero.io
   summary: backup and migrate Kubernetes applications and their persistent volumes
   description: |-
@@ -47,6 +47,10 @@
 
 - name: velero
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.9.0
       - 1.9.1
@@ -60,10 +64,6 @@
       - 1.12.0
       - 1.12.1
       - 1.12.2
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://velero.io
   summary: backup and migrate Kubernetes applications and their persistent volumes
   description: |-

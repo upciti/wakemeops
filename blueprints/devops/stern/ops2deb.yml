@@ -10,7 +10,7 @@ matrix:
     - 1.25.0
     - 1.26.0
     - 1.27.0
-revision: 2
+revision: "2"
 homepage: https://github.com/stern/stern
 summary: multi pod and container log tailing for Kubernetes
 description: |-

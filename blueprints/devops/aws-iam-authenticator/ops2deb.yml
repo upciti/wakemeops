@@ -1,5 +1,8 @@
 name: aws-iam-authenticator
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 0.5.7
     - 0.5.9
@@ -8,9 +11,6 @@ matrix:
     - 0.6.2
     - 0.6.10
     - 0.6.11
-  architectures:
-    - amd64
-    - arm64
 homepage: https://github.com/kubernetes-sigs/aws-iam-authenticator
 summary: Kubernetes authentication using AWS IAM
 description: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster.

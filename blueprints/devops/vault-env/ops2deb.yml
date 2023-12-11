@@ -1,11 +1,11 @@
 name: vault-env
 matrix:
-  versions:
-    - 1.15.1
-    - 1.15.2
   architectures:
     - amd64
     - arm64
+  versions:
+    - 1.15.1
+    - 1.15.2
 homepage: https://banzaicloud.com/products/bank-vaults/
 summary: exec a process with Vault sourced env vars
 description: |-

@@ -65,15 +65,15 @@
 
 - name: kube-score
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.15.0
       - 1.16.0
       - 1.16.1
       - 1.17.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://github.com/zegl/kube-score
   summary: Kubernetes object analysis for improved reliability and security
   description: |-

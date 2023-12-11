@@ -29,14 +29,14 @@
 
 - name: container-structure-test
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 1.13.0
       - 1.14.0
       - 1.15.0
       - 1.16.0
-    architectures:
-      - amd64
-      - arm64
   homepage: https://github.com/GoogleContainerTools/container-structure-test
   summary: validate the structure of your container images
   description: |-

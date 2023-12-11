@@ -13,6 +13,10 @@
 
 - name: linkerd
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 21.12.4
       - 22.8.2
@@ -56,10 +60,6 @@
       - 23.11.3
       - 23.11.4
       - 23.12.1
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://linkerd.io
   summary: ultralight service mesh for Kubernetes
   description: |-

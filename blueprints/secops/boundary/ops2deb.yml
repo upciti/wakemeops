@@ -17,14 +17,14 @@
 
 - name: boundary
   matrix:
-    versions:
-      - 0.7.4
-      - 0.7.5
-      - 0.7.6
     architectures:
       - arm64
       - armhf
       - amd64
+    versions:
+      - 0.7.4
+      - 0.7.5
+      - 0.7.6
   homepage: https://www.boundaryproject.io
   summary: provide simple and secure access to hosts and services
   description: |-
@@ -42,6 +42,10 @@
 
 - name: boundary
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 0.8.0
       - 0.8.1
@@ -63,10 +67,6 @@
       - 0.14.0
       - 0.14.1
       - 0.14.2
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://www.boundaryproject.io
   summary: provide simple and secure access to hosts and services
   description: |-

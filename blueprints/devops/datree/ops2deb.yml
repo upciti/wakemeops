@@ -1,5 +1,8 @@
 name: datree
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 1.1.6
     - 1.1.10
@@ -101,9 +104,6 @@ matrix:
     - 1.9.10
     - 1.9.17
     - 1.9.19
-  architectures:
-    - amd64
-    - arm64
 homepage: https://github.com/datreeio/datree
 summary: prevent Kubernetes misconfigurations from reaching production
 description: |-

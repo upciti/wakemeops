@@ -20,6 +20,9 @@
 
 - name: bottom
   matrix:
+    architectures:
+      - amd64
+      - armhf
     versions:
       - 0.7.0
       - 0.7.1
@@ -31,9 +34,6 @@
       - 0.9.4
       - 0.9.5
       - 0.9.6
-    architectures:
-      - amd64
-      - armhf
   homepage: https://clementtsang.github.io/bottom
   summary: cross-platform graphical process/system monitor
   description: |-

@@ -1,5 +1,9 @@
 name: chezmoi
 matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   versions:
     - 2.18.0
     - 2.18.1
@@ -55,10 +59,6 @@ matrix:
     - 2.42.0
     - 2.42.1
     - 2.42.2
-  architectures:
-    - amd64
-    - arm64
-    - armhf
 homepage: https://github.com/twpayne/chezmoi
 summary: manage your dotfiles across multiple diverse machines
 description: |-

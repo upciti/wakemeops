@@ -1,11 +1,11 @@
 - name: hostctl
   matrix:
-    versions:
-      - 1.1.1
-      - 1.1.2
     architectures:
       - amd64
       - arm64
+    versions:
+      - 1.1.1
+      - 1.1.2
   homepage: http://guumaster.github.io/hostctl
   summary: manage /etc/hosts from cli
   description: |-

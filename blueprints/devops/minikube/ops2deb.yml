@@ -52,13 +52,13 @@
 
 - name: minikube
   matrix:
-    versions:
-      - 1.25.1
-      - 1.25.2
     architectures:
       - arm64
       - armhf
       - amd64
+    versions:
+      - 1.25.1
+      - 1.25.2
   homepage: https://minikube.sigs.k8s.io
   summary: quickly set up a local Kubernetes cluster
   description: |-
@@ -76,6 +76,10 @@
 
 - name: minikube
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.26.0
       - 1.26.1
@@ -89,10 +93,6 @@
       - 1.31.1
       - 1.31.2
       - 1.32.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://minikube.sigs.k8s.io
   summary: quickly set up a local Kubernetes cluster
   description: |-

@@ -12,15 +12,15 @@
 
 - name: kubectl
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.23.3
       - 1.23.4
       - 1.23.5
       - 1.23.6
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-
@@ -32,6 +32,10 @@
 
 - name: kubectl
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.24.0
       - 1.24.1
@@ -58,10 +62,6 @@
       - 1.28.2
       - 1.28.3
       - 1.28.4
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://github.com/kubernetes/kubectl
   summary: command line client for controlling a Kubernetes cluster
   description: |-

@@ -1,12 +1,12 @@
 - name: vuls-scanner
   matrix:
-    versions:
-      - 0.19.4
-      - 0.19.5
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 0.19.4
+      - 0.19.5
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-
@@ -21,6 +21,10 @@
 
 - name: vuls-scanner
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 0.19.6
       - 0.19.7
@@ -47,10 +51,6 @@
       - 0.24.3
       - 0.24.4
       - 0.24.6
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://vuls.io/
   summary: agent-less vulnerability scanner
   description: |-

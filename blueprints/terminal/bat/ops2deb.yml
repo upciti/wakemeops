@@ -1,5 +1,9 @@
 name: bat
 matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   versions:
     - 0.19.0
     - 0.20.0
@@ -8,10 +12,6 @@ matrix:
     - 0.22.1
     - 0.23.0
     - 0.24.0
-  architectures:
-    - amd64
-    - arm64
-    - armhf
 homepage: https://github.com/sharkdp/bat
 summary: cat replacement with syntax highlighting
 description: |-

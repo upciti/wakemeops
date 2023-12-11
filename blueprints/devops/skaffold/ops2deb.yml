@@ -18,15 +18,15 @@
 
 - name: skaffold
   matrix:
+    architectures:
+      - arm64
+      - amd64
     versions:
       - 1.35.2
       - 1.35.0
       - 1.36.0
       - 1.37.0
       - 1.37.1
-    architectures:
-      - arm64
-      - amd64
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-
@@ -42,6 +42,9 @@
 
 - name: skaffold
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 1.38.0
       - 1.39.0
@@ -69,9 +72,6 @@
       - 2.7.1
       - 2.8.0
       - 2.9.0
-    architectures:
-      - amd64
-      - arm64
   homepage: https://skaffold.dev/
   summary: easy and repeatable Kubernetes development
   description: |-

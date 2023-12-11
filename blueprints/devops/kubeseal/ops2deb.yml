@@ -12,13 +12,13 @@
 
 - name: kubeseal
   matrix:
-    versions:
-      - 0.17.3
-      - 0.17.4
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 0.17.3
+      - 0.17.4
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-
@@ -30,6 +30,10 @@
 
 - name: kubeseal
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 0.17.5
       - 0.18.0
@@ -58,10 +62,6 @@
       - 0.24.2
       - 0.24.3
       - 0.24.4
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-

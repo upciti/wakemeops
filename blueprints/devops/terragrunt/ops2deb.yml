@@ -1,14 +1,14 @@
 - name: terragrunt
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 0.36.2
       - 0.36.3
       - 0.36.5
       - 0.36.6
       - 0.36.7
-    architectures:
-      - amd64
-      - arm64
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
@@ -21,6 +21,9 @@
 
 - name: terragrunt
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 0.38.12
       - 0.39.0
@@ -122,9 +125,6 @@
       - 0.53.6
       - 0.53.7
       - 0.53.8
-    architectures:
-      - amd64
-      - arm64
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-

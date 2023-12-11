@@ -27,16 +27,16 @@
 
 - name: k3d
   matrix:
+    architectures:
+      - arm64
+      - armhf
+      - amd64
     versions:
       - 5.2.2
       - 5.3.0
       - 5.4.0-dev.2
       - 5.4.0
       - 5.4.1
-    architectures:
-      - arm64
-      - armhf
-      - amd64
   homepage: https://k3d.io
   summary: run Rancher Lab's k3s in Docker
   description: |-
@@ -49,6 +49,10 @@
 
 - name: k3d
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 5.4.2
       - 5.4.3
@@ -61,10 +65,6 @@
       - 5.5.1
       - 5.5.2
       - 5.6.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://k3d.io
   summary: run Rancher Lab's k3s in Docker
   description: |-

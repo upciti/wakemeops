@@ -1,13 +1,13 @@
 name: gomplate
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 3.11.3
     - 3.11.4
     - 3.11.5
     - 3.11.6
-  architectures:
-    - amd64
-    - arm64
 homepage: https://docs.gomplate.ca
 summary: flexible commandline tool for template rendering
 description: |-

@@ -1,12 +1,12 @@
 - name: rclone
   matrix:
-    versions:
-      - 1.57.0
-      - 1.58.0
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 1.57.0
+      - 1.58.0
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-
@@ -18,6 +18,10 @@
 
 - name: rclone
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.58.1
       - 1.59.0
@@ -26,10 +30,6 @@
       - 1.60.0
       - 1.60.1
       - 1.61.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://rclone.org/
   summary: rsync for cloud storage
   description: |-

@@ -4,7 +4,7 @@
       - 1.1.13
       - 1.1.14
       - 1.1.15
-  revision: 2
+  revision: "2"
   architecture: all
   homepage: https://python-poetry.org
   summary: tool for dependency management and packaging in Python
@@ -69,8 +69,7 @@
     - python3.11-build-standalone
   fetch: https://github.com/python-poetry/poetry/archive/refs/tags/{{version}}.tar.gz
   install:
-    - path: /usr/bin/poetry
-      content: |
+    - content: |-
         #!/usr/lib/poetry/bin/python3
         import os
         import sys
@@ -78,6 +77,7 @@
         from poetry.console.application import main
         if __name__ == '__main__':
             sys.exit(main())
+      path: /usr/bin/poetry
     - content: |-
         #!/bin/sh
         set -e
@@ -90,12 +90,12 @@
       path: debian/prerm
   script:
     - install_packages python3.11-build-standalone
-    - |
+    - |-
       # install bootstrap poetry
       /usr/lib/python-build-standalone/3.11/bin/python3 -m venv bootstrap
       . bootstrap/bin/activate
       pip install poetry 'poetry-plugin-bundle @ git+https://github.com/upciti/poetry-plugin-bundle@fix/support-poetry-1.5.0'
-    - |
+    - |-
       # install poetry with poetry own poetry.lock
       cd poetry-{{version}}
       ../bootstrap/bin/poetry -v bundle venv ../poetry --python /usr/lib/python-build-standalone/3.11/bin/python3

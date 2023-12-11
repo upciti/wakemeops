@@ -1,14 +1,14 @@
 - name: influx-cli
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 2.3.0
       - 2.4.0
       - 2.5.0
       - 2.6.0
       - 2.6.1
-    architectures:
-      - amd64
-      - arm64
   homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
   summary: command line client for influxdb
   description: |-
@@ -20,11 +20,11 @@
 
 - name: influx-cli
   matrix:
-    versions:
-      - 2.7.1
     architectures:
       - amd64
       - arm64
+    versions:
+      - 2.7.1
   homepage: https://docs.influxdata.com/influxdb/latest/tools/influx-cli/?t=Linux
   summary: command line client for influxdb
   description: |-
