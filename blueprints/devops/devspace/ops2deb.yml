@@ -23,6 +23,9 @@
 
 - name: devspace
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 5.18.3
       - 5.18.4
@@ -37,9 +40,6 @@
       - 6.2.3
       - 6.2.4
       - 6.2.5
-    architectures:
-      - amd64
-      - arm64
   homepage: https://devspace.sh
   summary: developer tool for Kubernetes
   description: |-

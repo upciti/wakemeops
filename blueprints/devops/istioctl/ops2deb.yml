@@ -1,12 +1,12 @@
 - name: istioctl
   matrix:
-    versions:
-      - 1.12.2
-      - 1.11.6
     architectures:
       - arm64
       - armhf
       - amd64
+    versions:
+      - 1.12.2
+      - 1.11.6
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -32,14 +32,14 @@
 
 - name: istioctl
   matrix:
-    versions:
-      - 1.12.3
-      - 1.13.0
-      - 1.13.1
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 1.12.3
+      - 1.13.0
+      - 1.13.1
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
@@ -74,6 +74,10 @@
 
 - name: istioctl
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.13.3
       - 1.13.4
@@ -99,10 +103,6 @@
       - 1.19.3
       - 1.19.4
       - 1.20.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.

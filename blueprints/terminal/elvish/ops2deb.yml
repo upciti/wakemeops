@@ -1,12 +1,12 @@
 name: elvish
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 0.18.0
     - 0.19.1
     - 0.19.2
-  architectures:
-    - amd64
-    - arm64
 homepage: https://elv.sh/
 summary: expressive programming language + versatile interactive shell
 description: |-

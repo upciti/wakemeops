@@ -31,6 +31,10 @@
 
 - name: fd
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 8.4.0
       - 8.5.2
@@ -38,10 +42,6 @@
       - 8.6.0
       - 8.7.0
       - 8.7.1
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://github.com/sharkdp/fd
   summary: human-friendly and fast alternative to 'find'
   description: |-

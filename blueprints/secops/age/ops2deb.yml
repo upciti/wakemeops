@@ -1,12 +1,12 @@
 name: age
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 1.0.0
     - 1.1.0
     - 1.1.1
-  architectures:
-    - amd64
-    - arm64
 homepage: https://age-encryption.org/
 summary: simple, modern and secure file encryption tool, format, and Go library
 description: |-

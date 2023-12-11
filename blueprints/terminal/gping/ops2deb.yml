@@ -1,5 +1,9 @@
 name: gping
 matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   versions:
     - 1.3.0
     - 1.3.1
@@ -20,10 +24,6 @@ matrix:
     - 1.15.0
     - 1.15.1
     - 1.16.0
-  architectures:
-    - amd64
-    - arm64
-    - armhf
 homepage: https://github.com/orf/gping
 summary: ping, but with a graph
 description: tool to visualize ping speed over time.

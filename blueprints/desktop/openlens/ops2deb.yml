@@ -1,11 +1,11 @@
 name: openlens
 matrix:
-  versions:
-    - 6.4.15
-    - 6.5.2-366
   architectures:
     - amd64
     - arm64
+  versions:
+    - 6.4.15
+    - 6.5.2-366
 homepage: https://github.com/MuhammedKalkan/OpenLens
 summary: powerful IDE for kubernetes
 description: |-

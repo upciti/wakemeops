@@ -33,6 +33,10 @@
 
 - name: github-cli
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 2.5.1
       - 2.5.2
@@ -95,10 +99,6 @@
       - 2.39.0
       - 2.39.1
       - 2.39.2
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
   description: |-

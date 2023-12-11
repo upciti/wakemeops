@@ -24,13 +24,13 @@
 
 - name: minio-server
   matrix:
-    versions:
-      - 2022-01-28T02-28-16Z
-      - 2022-02-26T02-54-46Z
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 2022-01-28T02-28-16Z
+      - 2022-02-26T02-54-46Z
   homepage: https://min.io
   summary: high performance, Kubernetes native object storage
   description: |-
@@ -43,6 +43,10 @@
 
 - name: minio-server
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 2022-04-16T04-26-02Z
       - 2022-06-11T19-55-32Z
@@ -52,10 +56,6 @@
       - 2023-03-13T19-46-17Z
       - 2023-05-27T05-56-19Z
       - 2023-08-16T20-17-30Z
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://min.io
   summary: high performance, Kubernetes native object storage
   description: |-

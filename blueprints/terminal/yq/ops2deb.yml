@@ -1,5 +1,9 @@
 name: yq
 matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   versions:
     - 4.25.3
     - 4.26.1
@@ -30,10 +34,6 @@ matrix:
     - 4.40.2
     - 4.40.3
     - 4.40.4
-  architectures:
-    - amd64
-    - arm64
-    - armhf
 homepage: https://github.com/mikefarah/yq
 summary: portable command-line YAML processor
 description: |-

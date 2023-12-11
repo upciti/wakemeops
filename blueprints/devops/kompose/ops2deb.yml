@@ -17,6 +17,10 @@
 
 - name: kompose
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.27.0
       - 1.28.0
@@ -25,10 +29,6 @@
       - 1.31.0
       - 1.31.1
       - 1.31.2
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://kompose.io
   summary: convert docker-compose.yaml into k8s deployments and services
   description: |-

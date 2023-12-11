@@ -1,5 +1,8 @@
 name: hugo
 matrix:
+  architectures:
+    - amd64
+    - arm64
   versions:
     - 0.103.0
     - 0.103.1
@@ -42,10 +45,7 @@ matrix:
     - 0.120.3
     - 0.120.4
     - 0.121.0
-  architectures:
-    - amd64
-    - arm64
-revision: 2
+revision: "2"
 homepage: https://gohugo.io/
 summary: fast and flexible Static Site Generator
 description: |-

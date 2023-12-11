@@ -1,5 +1,9 @@
 name: gitlab-release-cli
 matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   versions:
     - 0.10.0
     - 0.11.0
@@ -7,10 +11,6 @@ matrix:
     - 0.14.0
     - 0.15.0
     - 0.16.0
-  architectures:
-    - amd64
-    - arm64
-    - armhf
 homepage: https://gitlab.com/gitlab-org/release-cli/
 summary: command-line interface for GitLab Release
 description: |-

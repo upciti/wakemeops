@@ -11,12 +11,12 @@
 
 - name: rancher
   matrix:
-    versions:
-      - 2.4.14
-      - 2.6.4
     architectures:
       - armhf
       - amd64
+    versions:
+      - 2.4.14
+      - 2.6.4
   homepage: https://github.com/rancher/cli
   summary: command-line interface for rancher
   description: |-
@@ -28,6 +28,9 @@
 
 - name: rancher
   matrix:
+    architectures:
+      - amd64
+      - armhf
     versions:
       - 2.6.5
       - 2.6.7
@@ -35,9 +38,6 @@
       - 2.7.0
       - 2.7.7
       - 2.8.0
-    architectures:
-      - amd64
-      - armhf
   homepage: https://github.com/rancher/cli
   summary: command-line interface for rancher
   description: |-

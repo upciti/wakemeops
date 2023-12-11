@@ -15,12 +15,12 @@
 
 - name: waypoint
   matrix:
-    versions:
-      - 0.7.1
-      - 0.7.2
     architectures:
       - armhf
       - amd64
+    versions:
+      - 0.7.1
+      - 0.7.2
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-
@@ -33,6 +33,9 @@
 
 - name: waypoint
   matrix:
+    architectures:
+      - amd64
+      - armhf
     versions:
       - 0.8.0
       - 0.8.1
@@ -50,9 +53,6 @@
       - 0.11.2
       - 0.11.3
       - 0.11.4
-    architectures:
-      - amd64
-      - armhf
   homepage: https://www.waypointproject.io
   summary: build, deploy, and release any application on any platform
   description: |-

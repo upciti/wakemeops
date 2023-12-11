@@ -32,15 +32,15 @@
 
 - name: nushell
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 0.67.0
       - 0.68.0
       - 0.68.1
       - 0.69.1
       - 0.70.0
-    architectures:
-      - amd64
-      - arm64
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
@@ -68,6 +68,9 @@
 
 - name: nushell
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 0.71.0
       - 0.72.0
@@ -90,9 +93,6 @@
       - 0.86.0
       - 0.87.0
       - 0.87.1
-    architectures:
-      - amd64
-      - arm64
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-

@@ -27,7 +27,7 @@ depends:
 fetch: https://github.com/pypa/pipx/releases/download/{{version}}/pipx.pyz
 install:
   - pipx.pyz:/usr/lib/pipx/pipx.pyz
-  - path: /usr/bin/pipx
-    content: |
+  - content: |-
       #!/usr/bin/env sh
       exec /usr/lib/python-build-standalone/3.11/bin/python3 /usr/lib/pipx/pipx.pyz $@
+    path: /usr/bin/pipx

@@ -17,23 +17,23 @@
     url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
     targets:
       amd64: x86_64-unknown-linux-gnu
-      arm64: aarch64-unknown-linux-gnu
       armhf: arm-unknown-linux-gnueabihf
+      arm64: aarch64-unknown-linux-gnu
   install:
     - delta-{{version}}-{{target}}/delta:/usr/bin/delta
 
 - name: git-delta
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 0.13.0
       - 0.14.0
       - 0.15.0
       - 0.15.1
       - 0.16.5
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://dandavison.github.io/delta/
   summary: syntax-highlighting pager for git, diff, and grep output
   description: |-
@@ -45,7 +45,7 @@
     url: https://github.com/dandavison/delta/releases/download/{{version}}/delta-{{version}}-{{target}}.tar.gz
     targets:
       amd64: x86_64-unknown-linux-gnu
-      arm64: aarch64-unknown-linux-gnu
       armhf: arm-unknown-linux-gnueabihf
+      arm64: aarch64-unknown-linux-gnu
   install:
     - delta-{{version}}-{{target}}/delta:/usr/bin/delta

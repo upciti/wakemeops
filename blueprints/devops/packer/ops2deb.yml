@@ -1,12 +1,12 @@
 - name: packer
   matrix:
-    versions:
-      - 1.7.10
-      - 1.8.0
     architectures:
       - amd64
       - arm64
       - armhf
+    versions:
+      - 1.7.10
+      - 1.8.0
   homepage: https://www.packer.io
   summary: create multi-platform machine images from a single source configuration
   description: |-
@@ -20,6 +20,10 @@
 
 - name: packer
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.8.1
       - 1.8.2
@@ -35,10 +39,6 @@
       - 1.9.4
       - 1.9.5
       - 1.10.0
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://www.packer.io
   summary: create multi-platform machine images from a single source configuration
   description: |-

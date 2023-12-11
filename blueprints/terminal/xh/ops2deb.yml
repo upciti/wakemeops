@@ -37,6 +37,9 @@
 
 - name: xh
   matrix:
+    architectures:
+      - amd64
+      - armhf
     versions:
       - 0.16.1
       - 0.17.0
@@ -45,9 +48,6 @@
       - 0.19.3
       - 0.19.4
       - 0.20.1
-    architectures:
-      - amd64
-      - armhf
   homepage: https://github.com/ducaale/xh
   summary: user-friendly and fast tool for sending HTTP requests
   description: |-

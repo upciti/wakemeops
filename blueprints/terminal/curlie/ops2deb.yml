@@ -1,13 +1,13 @@
 name: curlie
 matrix:
+  architectures:
+    - arm64
+    - amd64
   versions:
     - 1.6.7
     - 1.6.9
     - 1.7.1
     - 1.7.2
-  architectures:
-    - arm64
-    - amd64
 homepage: https://github.com/rs/curlie
 summary: the power of 'curl', the ease of use of 'httpie'
 description: |-

@@ -5,7 +5,7 @@
       - arm64
       - armhf
   version: 1.22.0
-  revision: 2
+  revision: "2"
   homepage: https://gitlab.com/gitlab-org/cli
   summary: Gitlab on the command line
   description: |-
@@ -23,6 +23,9 @@
 
 - name: glab
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 1.23.1
       - 1.24.0
@@ -44,9 +47,6 @@
       - 1.33.0
       - 1.34.0
       - 1.35.0
-    architectures:
-      - amd64
-      - arm64
   homepage: https://gitlab.com/gitlab-org/cli
   summary: Gitlab on the command line
   description: |-

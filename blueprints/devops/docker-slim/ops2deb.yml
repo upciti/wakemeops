@@ -1,14 +1,14 @@
 - name: docker-slim
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.37.3
       - 1.37.4
       - 1.37.5
       - 1.37.6
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://dockersl.im
   summary: minify docker images by up to 30x
   description: |-
@@ -19,13 +19,17 @@
     url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
     targets:
       amd64: linux
-      arm64: linux_arm64
       armhf: linux_arm
+      arm64: linux_arm64
   script:
     - mv dist_linux*/docker-slim* {{src}}/usr/bin/
 
 - name: docker-slim
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 1.38.0
       - 1.39.0
@@ -37,10 +41,6 @@
       - 1.40.4
       - 1.40.5
       - 1.40.6
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://dockersl.im
   summary: minify docker images by up to 30x
   description: |-
@@ -51,7 +51,7 @@
     url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
     targets:
       amd64: linux
-      arm64: linux_arm64
       armhf: linux_arm
+      arm64: linux_arm64
   install:
     - dist_{{target}}/docker-slim:/usr/bin/

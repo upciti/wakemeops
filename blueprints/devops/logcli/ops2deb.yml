@@ -1,5 +1,9 @@
 name: logcli
 matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
   versions:
     - 2.3.0
     - 2.4.2
@@ -20,10 +24,6 @@ matrix:
     - 2.9.0
     - 2.9.1
     - 2.9.2
-  architectures:
-    - amd64
-    - arm64
-    - armhf
 homepage: https://github.com/grafana/loki
 summary: command-line interface for loki
 description: It facilitates running LogQL queries against a Loki instance.

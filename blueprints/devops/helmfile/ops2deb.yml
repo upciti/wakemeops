@@ -51,15 +51,15 @@
 
 - name: helmfile
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 0.143.1
       - 0.143.3
       - 0.143.4
       - 0.143.5
       - 0.144.0
-    architectures:
-      - amd64
-      - arm64
   homepage: https://helmfile.readthedocs.io/
   summary: deploy Kubernetes Helm Charts
   description: |-
@@ -75,6 +75,9 @@
 
 - name: helmfile
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
       - 0.145.0
       - 0.145.3
@@ -97,9 +100,6 @@
       - 0.158.0
       - 0.158.1
       - 0.159.0
-    architectures:
-      - amd64
-      - arm64
   homepage: https://helmfile.readthedocs.io/
   summary: deploy Kubernetes Helm Charts
   description: |-

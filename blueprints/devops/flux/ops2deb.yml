@@ -31,6 +31,10 @@
 
 - name: flux
   matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
     versions:
       - 0.25.3
       - 0.26.1
@@ -86,10 +90,6 @@
       - 2.1.0
       - 2.1.1
       - 2.1.2
-    architectures:
-      - amd64
-      - arm64
-      - armhf
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
