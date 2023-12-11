@@ -1,15 +1,3 @@
-- url: https://github.com/derailed/k9s/releases/download/v0.24.15/k9s_Linux_x86_64.tar.gz
-  sha256: 0590c32c20cd22416f2a06fad9155257c156e32c60e8757bf96d5a28cb1720dd
-  timestamp: 2021-09-25 20:20:59+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz
-  sha256: d288aacc368ab6b243fc9e7ecd17b53fa34a813509c2dc3023171085db83cf9d
-  timestamp: 2022-01-25 22:17:50+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_arm.tar.gz
-  sha256: 2fb19caefec78c1a478a52940e51f625d80468a1fcb9033f092193611a2bd00a
-  timestamp: 2022-01-30 16:22:16+00:00
-- url: https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_arm64.tar.gz
-  sha256: f4a15b07633bbbecd3c775867ddcede880c62f8a6294ae6dc45ede43a6d0437c
-  timestamp: 2022-01-30 16:22:16+00:00
 - url: https://github.com/derailed/k9s/releases/download/v0.25.19/k9s_Linux_arm.tar.gz
   sha256: c8e7dc4c8165399c8e771c1d09259d084f9cf9a19d8a7c8d7f6c5f7ff5840523
   timestamp: 2022-06-28 04:04:32+00:00
@@ -127,3 +115,12 @@
 - url: https://github.com/derailed/k9s/releases/download/v0.28.2/k9s_Linux_arm64.tar.gz
   sha256: 2afd34b3ce36807c97d67b84075fc76c07b5ef6e89c7bdbd70c0ce2d5144aa2e
   timestamp: 2023-11-12 09:14:56+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.29.1/k9s_Linux_amd64.tar.gz
+  sha256: b7ed81a8952a5520a1a6978c3cf68b1fd555d928a444c63d4b826ae6fbb6d9ff
+  timestamp: 2023-12-11 11:17:47+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.29.1/k9s_Linux_arm64.tar.gz
+  sha256: f9dbd1ff1cd26d851c8ac695decbc4ceea97f2a87ccfa16ff805ab5f49ae9b81
+  timestamp: 2023-12-11 11:17:47+00:00
+- url: https://github.com/derailed/k9s/releases/download/v0.29.1/k9s_Linux_armv7.tar.gz
+  sha256: 64f0f51ff87b37dc16523b053a4f34699265f6718f50e4a273aaeccfa1577816
+  timestamp: 2023-12-11 11:17:47+00:00
