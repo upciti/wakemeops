@@ -1,48 +1,4 @@
 - name: k9s
-  version: 0.24.15
-  homepage: https://k9scli.io
-  summary: manage your Kubernetes clusters with style
-  description: |-
-    K9s provides a terminal UI to interact with your Kubernetes clusters.
-    The aim of this project is to make it easier to navigate,
-    observe and manage your applications in the wild.
-  fetch: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-  script:
-    - install -m 755 k9s {{src}}/usr/bin/k9s
-
-- name: k9s
-  version: 0.25.18
-  homepage: https://k9scli.io
-  summary: manage your Kubernetes clusters with style
-  description: |-
-    K9s provides a terminal UI to interact with your Kubernetes clusters.
-    The aim of this project is to make it easier to navigate,
-    observe and manage your applications in the wild.
-  fetch: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_x86_64.tar.gz
-  script:
-    - mv k9s {{src}}/usr/bin/k9s
-
-- name: k9s
-  matrix:
-    architectures:
-      - arm64
-      - armhf
-  version: 0.25.18
-  homepage: https://k9scli.io
-  summary: manage your Kubernetes clusters with style
-  description: |-
-    K9s provides a terminal UI to interact with your Kubernetes clusters.
-    The aim of this project is to make it easier to navigate,
-    observe and manage your applications in the wild.
-  fetch:
-    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
-    targets:
-      amd64: x86_64
-      armhf: arm
-  script:
-    - mv k9s {{src}}/usr/bin/k9s
-
-- name: k9s
   matrix:
     versions:
       - 0.25.19
@@ -90,5 +46,26 @@
     The aim of this project is to make it easier to navigate,
     observe and manage your applications in the wild.
   fetch: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{goarch}}.tar.gz
+  install:
+    - k9s:/usr/bin/
+
+- name: k9s
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+    versions:
+      - 0.29.1
+  homepage: https://k9scli.io
+  summary: manage your Kubernetes clusters with style
+  description: |-
+    K9s provides a terminal UI to interact with your Kubernetes clusters.
+    The aim of this project is to make it easier to navigate,
+    observe and manage your applications in the wild.
+  fetch:
+    url: https://github.com/derailed/k9s/releases/download/v{{version}}/k9s_Linux_{{target}}.tar.gz
+    targets:
+      armhf: armv7
   install:
     - k9s:/usr/bin/
