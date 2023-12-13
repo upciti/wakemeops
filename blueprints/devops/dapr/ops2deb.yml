@@ -1,0 +1,15 @@
+name: dapr
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.12.0
+homepage: https://dapr.io/
+summary: command-line tools for Dapr.
+description: |-
+  Allows you to setup Dapr on your local dev machine or on a Kubernetes cluster,
+  provides debugging support, launches and manages Dapr instances.
+fetch: https://github.com/dapr/cli/releases/download/v{{version}}/dapr_linux_{{goarch}}.tar.gz
+install:
+  - dapr:/usr/bin/dapr
