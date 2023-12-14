@@ -1,0 +1,16 @@
+name: gitoxide
+version: 0.32.0
+homepage: https://github.com/Byron/gitoxide
+summary: idiomatic, lean, fast & safe pure Rust implementation of Git
+description: |-
+  gitoxide is an implementation of git written in Rust for developing future-
+  proof applications which strive for correctness and performance while providing
+  a pleasant and unsurprising developer experience. It provides the gix and
+  ein binaries for use on the command-line to allow experimentation with key
+  features like fetch and clone. It aspires to be a production-grade server
+  implementation and the ein binary aspires to become the default way to interact
+  with git repositories.
+fetch: https://github.com/Byron/gitoxide/releases/download/v{{version}}/gitoxide-max-pure-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+install:
+  - gitoxide-max-pure-v{{version}}-x86_64-unknown-linux-musl/gix:/usr/bin/gix
+  - gitoxide-max-pure-v{{version}}-x86_64-unknown-linux-musl/ein:/usr/bin/ein
