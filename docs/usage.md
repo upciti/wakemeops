@@ -144,19 +144,6 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/debian:latest
         ```
 
-
-    === "buster"
-
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=buster'>https://hub.docker.com/r/wakemeops/debian/tags?name=buster</a>"
-        docker pull wakemeops/debian:buster
-        ```
-
-    === "buster-slim"
-
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=buster-slim'>https://hub.docker.com/r/wakemeops/debian/tags?name=buster-slim</a>"
-        docker pull wakemeops/debian:buster-slim
-        ```
-
     === "bullseye"
 
         ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye'>https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye</a>"
@@ -168,7 +155,6 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye-slim'>https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye-slim</a>"
         docker pull wakemeops/debian:bullseye-slim
         ```
-
 
     === "bookworm"
 
@@ -196,12 +182,6 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/ubuntu:rolling
         ```
 
-    === "18.04"
-
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/ubuntu/tags?name=18.04'>https://hub.docker.com/r/wakemeops/ubuntu/tags?name=18.04</a>"
-        docker pull wakemeops/ubuntu:18.04
-        ```
-
     === "20.04"
 
         ```bash title="<a href='https://hub.docker.com/r/wakemeops/ubuntu/tags?name=20.04'>https://hub.docker.com/r/wakemeops/ubuntu/tags?name=20.04</a>"
@@ -222,18 +202,17 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/minideb:latest
         ```
 
-    === "buster"
-
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=buster'>https://hub.docker.com/r/wakemeops/minideb/tags?name=buster</a>"
-        docker pull wakemeops/minideb:buster
-        ```
-
     === "bullseye"
 
         ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=bullseye'>https://hub.docker.com/r/wakemeops/minideb/tags?name=bullseye</a>"
         docker pull wakemeops/minideb:bullseye
         ```
 
+    === "bookworm"
+
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=bookworm'>https://hub.docker.com/r/wakemeops/minideb/tags?name=bookworm</a>"
+        docker pull wakemeops/minideb:bookworm
+        ```
 
 !!! info
     WakeMeOps images are rebuilt every day [from this Dockerfile](https://github.com/upciti/wakemeops/blob/main/Dockerfile)

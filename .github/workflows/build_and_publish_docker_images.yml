@@ -57,6 +57,9 @@ jobs:
             tag: latest
           - image: bitnami/minideb
             registry_name: minideb
+            tag: bookworm
+          - image: bitnami/minideb
+            registry_name: minideb
             tag: bullseye
           - image: bitnami/minideb
             registry_name: minideb
