@@ -14,7 +14,9 @@
     architectures:
       - arm64
       - armhf
-  version: 0.16.0
+    versions:
+      - 0.16.0
+      - 0.17.0
   homepage: https://terraform-docs.io
   summary: generate documentation from Terraform modules in various output formats
   description: |-
