@@ -1,25 +1,11 @@
 name: pdm
 matrix:
   versions:
-    - 2.6.1
-    - 2.7.0
-    - 2.7.1
-    - 2.7.2
-    - 2.7.4
-    - 2.8.0
-    - 2.8.1
     - 2.8.2
-    - 2.9.0
-    - 2.9.1
-    - 2.9.2
     - 2.9.3
-    - 2.10.0
-    - 2.10.1
-    - 2.10.2
-    - 2.10.3
     - 2.10.4
     - 2.11.0
-    - 2.11.1
+revision: "2"
 homepage: https://pdm.fming.dev/
 summary: modern Python package and dependency manager supporting the latest PEP standards
 description: |-
@@ -69,5 +55,6 @@ script:
   - |-
     # install pdm with pdm own pdm.lock
     /usr/lib/python-build-standalone/3.11/bin/python3 -m venv pdm-{{version}}/.venv
+    sed -i 's/dynamic = \["version"\]/version = "{{version}}"/' pdm-{{version}}/pyproject.toml
     bootstrap/bin/pdm install -p pdm-{{version}} --no-editable
     mv pdm-{{version}}/.venv {{src}}/usr/lib/pdm
