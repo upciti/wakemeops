@@ -1,0 +1,23 @@
+name: orca-slicer
+version: 1.8.1
+homepage: https://github.com/SoftFever/OrcaSlicer
+summary: G-code generator for 3D printers
+description: |-
+  OrcaSlicer is fork of Bambu Studio. It was previously known as BambuStudio-
+  SoftFever. Bambu Studio is forked from PrusaSlicer by Prusa Research, which is
+  from Slic3r by Alessandro Ranellucci and the RepRap community. Orca Slicer
+  incorporates a lot of features from SuperSlicer by @supermerill Orca Slicer's
+  logo is designed by community member Justin Levine(@freejstnalxndr).
+fetch: https://github.com/SoftFever/OrcaSlicer/releases/download/v{{version}}/OrcaSlicer_Linux_V{{version}}.AppImage
+install:
+  - OrcaSlicer_Linux_V{{version}}.AppImage:/usr/bin/OrcaSlicer.AppImage
+  - content: |-
+      [Desktop Entry]
+      Name=OrcaSlicer
+      Comment=G-code generator for 3D printers
+      Exec="/usr/bin/OrcaSlicer.AppImage"
+      Terminal=false
+      Type=Application
+    path: /usr/share/applications/orca-slicer.desktop
+script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
