@@ -6,6 +6,7 @@ matrix:
     - armhf
   versions:
     - 1.11.3
+    - 1.12.0
 homepage: https://github.com/norwoodj/helm-docs
 summary: tool for automatically generating markdown documentation for helm charts
 description: |-
