@@ -1,0 +1,18 @@
+name: dasel
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.5.0
+homepage: https://daseldocs.tomwright.me
+summary: allows to query and modify data structures using selector strings
+description: |-
+  Say good bye to learning new tools just to work with a different data format.
+  Dasel uses a standard selector syntax no matter the data format.
+  This means that once you learn how to use dasel you immediately have the
+  ability to query/modify any of the supported data types without any additional
+  tools or effort.
+fetch: https://github.com/TomWright/dasel/releases/download/v{{version}}/dasel_linux_{{goarch}}
+install:
+  - dasel_linux_{{goarch}}:/usr/bin/dasel
