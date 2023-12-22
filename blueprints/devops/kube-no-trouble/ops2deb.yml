@@ -3,7 +3,9 @@ matrix:
   architectures:
     - amd64
     - arm64
-version: 0.7.0
+  versions:
+    - 0.7.0
+    - 0.7.1
 homepage: https://github.com/doitintl/kube-no-trouble/
 summary: easily check your clusters for use of deprecated apis
 description: |-
