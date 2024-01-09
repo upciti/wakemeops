@@ -3,6 +3,7 @@ matrix:
   architectures:
     - amd64
     - arm64
+    - armhf
   versions:
     - 2.5.0
 homepage: https://daseldocs.tomwright.me
@@ -13,6 +14,9 @@ description: |-
   This means that once you learn how to use dasel you immediately have the
   ability to query/modify any of the supported data types without any additional
   tools or effort.
-fetch: https://github.com/TomWright/dasel/releases/download/v{{version}}/dasel_linux_{{goarch}}
+fetch:
+  url: https://github.com/TomWright/dasel/releases/download/v{{version}}/dasel_linux_{{target}}
+  targets:
+    armhf: arm32
 install:
-  - dasel_linux_{{goarch}}:/usr/bin/dasel
+  - dasel_linux_{{target}}:/usr/bin/dasel
