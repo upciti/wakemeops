@@ -1,0 +1,13 @@
+name: vagrant-go
+matrix:
+  versions:
+    - 2.4.0
+homepage: https://developer.hashicorp.com/vagrant
+summary: tool for building and distributing development environments
+description: |-
+  Vagrant is the command line utility for managing the lifecycle of virtual
+  machines. Isolate dependencies and their configuration within a single
+  disposable and consistent environment.
+fetch: https://github.com/hashicorp/vagrant/releases/download/v{{version}}/vagrant-go_linux_amd64
+install:
+  - vagrant-go_linux_amd64:/usr/bin/vagrant-go
