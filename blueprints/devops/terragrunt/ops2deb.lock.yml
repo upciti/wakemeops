@@ -28,12 +28,6 @@
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.7/terragrunt_linux_arm64
   sha256: fd52f5113ef9ba0e54bfbc8a2b82a9532814ceeafe505ecba2de76d5b19f105a
   timestamp: 2022-04-15 14:36:34+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.42.7/terragrunt_linux_amd64
-  sha256: 6e7ce3f0c72df54ce364e1d799bf286d1ea0846e1e01569f88dd8a46e95dea18
-  timestamp: 2023-01-06 13:35:41+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.42.7/terragrunt_linux_arm64
-  sha256: 304c9c354a9fea66f130e79652eec255ed400feed029f9695ef993e28022f7b0
-  timestamp: 2023-01-06 13:35:41+00:00
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.42.8/terragrunt_linux_amd64
   sha256: 1d4055e14e50a6376458fdede74ccad7238f8966f7102259e8101771b7fc658a
   timestamp: 2023-01-13 16:20:58+00:00
@@ -628,3 +622,9 @@
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.18/terragrunt_linux_arm64
   sha256: 279fda3c2eb55b98334a3d221dba05340d6179b6eaddd07ec6a9bec5283baa99
   timestamp: 2024-01-16 18:22:08+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.19/terragrunt_linux_amd64
+  sha256: d0e7a31971fb9bb98a97c6c21e5937849a5a6e8d5c37f6cae09f71bbabc04457
+  timestamp: 2024-01-18 12:33:22+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.19/terragrunt_linux_arm64
+  sha256: 9c228257db846f658eb14c5bd077e3f40db006220d3b0ff17276d422af9973e3
+  timestamp: 2024-01-18 12:33:22+00:00
