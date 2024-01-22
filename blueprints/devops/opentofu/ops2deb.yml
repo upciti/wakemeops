@@ -1,0 +1,17 @@
+name: opentofu
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.6.0
+homepage: https://opentofu.org
+summary: lets you declaratively manage your cloud infrastructure
+description: |-
+  OpenTofu is a fork of Terraform that is open-source, community-driven, and
+  managed by the Linux Foundation. This is a tool for building, changing, and
+  versioning infrastructure safely and efficiently. OpenTofu can manage
+  existing and popular service providers as well as custom in-house solutions.
+fetch: https://github.com/opentofu/opentofu/releases/download/v{{version}}/tofu_{{version}}_linux_{{goarch}}.zip
+install:
+  - tofu:/usr/bin/
