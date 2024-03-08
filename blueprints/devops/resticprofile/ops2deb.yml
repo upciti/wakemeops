@@ -1,0 +1,25 @@
+name: resticprofile
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 0.26.0
+homepage: https://creativeprojects.github.io/resticprofile/
+summary: configuration profiles manager for restic backup
+description: |-
+  The missing link between a configuration file and restic backup:
+
+  - You no longer need to remember command parameters and environment variables
+  - You can create multiple profiles inside one configuration file
+  - You can easily schedule backups, retentions and checks (works for systemd,
+  crond, launchd and windows task scheduler)
+depends:
+  - restic
+fetch:
+  url: https://github.com/creativeprojects/resticprofile/releases/download/v{{version}}/resticprofile_{{version}}_linux_{{target}}.tar.gz
+  targets:
+    armhf: armv7
+install:
+  - resticprofile:/usr/bin/
