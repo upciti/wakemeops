@@ -1,120 +1,3 @@
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.18.0/chezmoi_2.18.0_linux_amd64.tar.gz
-  sha256: d6611fcab4a68a46b8f76afe4c80e4d1b560774189189ebfa4ca3d198e890463
-  timestamp: 2022-06-20 14:42:56+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.18.0/chezmoi_2.18.0_linux_arm.tar.gz
-  sha256: 994c2e2a632da2998dc66b42553e1d7070fd096386d769b245538c37af89bc43
-  timestamp: 2022-06-20 14:42:56+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.18.0/chezmoi_2.18.0_linux_arm64.tar.gz
-  sha256: c328456b33725c3ccf5ae707352f1aac7937bec35c7febda89cc55a98f1fc66c
-  timestamp: 2022-06-20 14:42:56+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.18.1/chezmoi_2.18.1_linux_amd64.tar.gz
-  sha256: 8282776b077357a2ab363016b98387efc6a0db08a837e62e5b347a3286885fe5
-  timestamp: 2022-06-23 20:28:19+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.18.1/chezmoi_2.18.1_linux_arm.tar.gz
-  sha256: ae61c211411ba470dde235c7cadded6ea9f0d8ff59f471d2e8bb1c5cd4c91660
-  timestamp: 2022-06-23 20:28:19+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.18.1/chezmoi_2.18.1_linux_arm64.tar.gz
-  sha256: 00b265cf07139b8912aab3dbb31614f5c086030a1488414454774328e5b06efd
-  timestamp: 2022-06-23 20:28:19+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.20.0/chezmoi_2.20.0_linux_amd64.tar.gz
-  sha256: 1a5f916b1934ffb7989a5824b705bc8d9c00f98e368807bf5183a55d5d77e22c
-  timestamp: 2022-07-29 04:22:22+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.20.0/chezmoi_2.20.0_linux_arm.tar.gz
-  sha256: b7ca76fb0ee36dd9487baabfb7c17b245695cab03ce0bfb9658699dad22bdd23
-  timestamp: 2022-07-29 04:22:22+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.20.0/chezmoi_2.20.0_linux_arm64.tar.gz
-  sha256: cb4e8ae3fe067cc7079acba0f726e9e13fed62102b0534accc1fb81b32742994
-  timestamp: 2022-07-29 04:22:22+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.21.0/chezmoi_2.21.0_linux_amd64.tar.gz
-  sha256: 25ff98f5e9a18a0733f521d227d5797c9139aa4cf2da2e2e45a65cb7fdab22cd
-  timestamp: 2022-08-24 04:23:26+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.21.0/chezmoi_2.21.0_linux_arm.tar.gz
-  sha256: b0fd1d557956b72b820b946f6648a1077ae6b92fd4d1eb685a9a7f05e39662d5
-  timestamp: 2022-08-24 04:23:26+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.21.0/chezmoi_2.21.0_linux_arm64.tar.gz
-  sha256: 26acc842ae414ab63339e0455df0d52ba6e61d1a41d3e1da597d4fcd77fc658b
-  timestamp: 2022-08-24 04:23:26+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.21.1/chezmoi_2.21.1_linux_amd64.tar.gz
-  sha256: b2229ec5b9e8a72ed25ea44754bdbace05a8d869a6ec04f46db765e70fb94961
-  timestamp: 2022-08-30 08:55:12+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.21.1/chezmoi_2.21.1_linux_arm.tar.gz
-  sha256: 409e0005073ef1d5f497aa33526ce18e1b983f315279b3bb7fa4bfb6add6684e
-  timestamp: 2022-08-30 08:55:12+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.21.1/chezmoi_2.21.1_linux_arm64.tar.gz
-  sha256: f376ae829edce03ea3f97ac5d5484a68ccb254ffb1ddc08e371a3f93a335a386
-  timestamp: 2022-08-30 08:55:12+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.22.0/chezmoi_2.22.0_linux_amd64.tar.gz
-  sha256: 60c0a8fccbf5f40faeb5ec17a2eb6a25f9a856c9f2d7126a1897f77228736343
-  timestamp: 2022-09-01 20:30:08+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.22.0/chezmoi_2.22.0_linux_arm.tar.gz
-  sha256: 3a375b1f7acfa0656dd8037a9a5a29b3a3e3870ff922c1f460241f40e7ca4863
-  timestamp: 2022-09-01 20:30:08+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.22.0/chezmoi_2.22.0_linux_arm64.tar.gz
-  sha256: e441a2461258a8c4f3dae875c6dbbaa6fdc53dd3be82aaccea864377e92d001d
-  timestamp: 2022-09-01 20:30:08+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.22.1/chezmoi_2.22.1_linux_amd64.tar.gz
-  sha256: 6ab4593b807e9c2db7536540b00537d61aff00726ff7a6a79e449285f3480b52
-  timestamp: 2022-09-05 04:31:14+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.22.1/chezmoi_2.22.1_linux_arm.tar.gz
-  sha256: 1de1bd4c9d3869782bb4e02131960b9b1a95fa0d21166c7600a5431c7671c4d8
-  timestamp: 2022-09-05 04:31:14+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.22.1/chezmoi_2.22.1_linux_arm64.tar.gz
-  sha256: 08d900c34ccee627c12bd83164971920e34a00d41f85136a4661bd5fcf9dafb1
-  timestamp: 2022-09-05 04:31:14+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.23.0/chezmoi_2.23.0_linux_amd64.tar.gz
-  sha256: 32dfa7ba6c42fb4e37476d8ce32b2433efacc07a9f0ce2ac04bc5ba8fd2189c2
-  timestamp: 2022-09-19 04:41:03+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.23.0/chezmoi_2.23.0_linux_arm.tar.gz
-  sha256: 5c1be353bd13ca0ab78f98fcb264e046f26a31f98053f0100446a21fd0e07e38
-  timestamp: 2022-09-19 04:41:03+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.23.0/chezmoi_2.23.0_linux_arm64.tar.gz
-  sha256: 6f53633bcda4d00ad40b05442c716beb5359c713483956db1ce07f3efc1dbf1e
-  timestamp: 2022-09-19 04:41:03+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.24.0/chezmoi_2.24.0_linux_amd64.tar.gz
-  sha256: f055b2f4c0dfb79315bd2df2a27c2755be29c0df16c0351fc6ec7b544c829466
-  timestamp: 2022-09-25 23:22:02+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.24.0/chezmoi_2.24.0_linux_arm.tar.gz
-  sha256: 628e17a4bc6155e9e23338e5c90fc93ed314b5a4e7bda8b2979b46fd4e029aa4
-  timestamp: 2022-09-25 23:22:02+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.24.0/chezmoi_2.24.0_linux_arm64.tar.gz
-  sha256: ebad6c0552c93f9dd20dd73942ee854a0dde800d92b9d4fde8672438cfee3a4d
-  timestamp: 2022-09-25 23:22:02+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.25.0/chezmoi_2.25.0_linux_amd64.tar.gz
-  sha256: f90f427e8542cf2e5bba88a62268b330b117dfe2449650eabbcea48c8c7933f8
-  timestamp: 2022-10-13 17:29:45+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.25.0/chezmoi_2.25.0_linux_arm.tar.gz
-  sha256: 945c978583232d1af17d51a3c77816f8dca6340c755efa0327d7cce6aa7403ff
-  timestamp: 2022-10-13 17:29:45+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.25.0/chezmoi_2.25.0_linux_arm64.tar.gz
-  sha256: 90d275913286b2f6b9b4383c5613da8b58e06e611a50e9d0eea8c7db422fe8df
-  timestamp: 2022-10-13 17:29:45+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.26.0/chezmoi_2.26.0_linux_amd64.tar.gz
-  sha256: afb25c4032672fcd1b813b62ea33dc731822e1088e42c10be809e019f21255c5
-  timestamp: 2022-11-03 10:23:36+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.26.0/chezmoi_2.26.0_linux_arm.tar.gz
-  sha256: b52618687d7dd77fa247d8c2eacdf0ba1402caf8c4f7c9bdda2b6a4174a41448
-  timestamp: 2022-11-03 10:23:36+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.26.0/chezmoi_2.26.0_linux_arm64.tar.gz
-  sha256: 7cb76584265634c1962a4396f55e753edf5a0ac70944e0b6478d49ed9c6d65dc
-  timestamp: 2022-11-03 10:23:36+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.27.0/chezmoi_2.27.0_linux_amd64.tar.gz
-  sha256: 2af97eee1362017ce75198f7458daeeead393fb8635c94cacdfdc74a4c81b822
-  timestamp: 2022-11-09 13:52:38+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.27.0/chezmoi_2.27.0_linux_arm.tar.gz
-  sha256: 39c4979abd986e320bd6d19084db7ebafcd6e140c66b3c3c956ce13d9afd7220
-  timestamp: 2022-11-09 13:52:38+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.27.0/chezmoi_2.27.0_linux_arm64.tar.gz
-  sha256: e048df6c23a711eb72fa8429584f5cf802640ad50e2bacbc2b054e1c59f1079c
-  timestamp: 2022-11-09 13:52:38+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.27.1/chezmoi_2.27.1_linux_amd64.tar.gz
-  sha256: 9cdb3b8f352feb2f84a5ef4b48d2fc0d4577824d010c5ff07ab4dd7893d76021
-  timestamp: 2022-11-13 22:19:58+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.27.1/chezmoi_2.27.1_linux_arm.tar.gz
-  sha256: 3061464f7dff9c1fb4c89599b3281ea0bf2a7ae4092514f34d7268d77d50b1fa
-  timestamp: 2022-11-13 22:19:58+00:00
-- url: https://github.com/twpayne/chezmoi/releases/download/v2.27.1/chezmoi_2.27.1_linux_arm64.tar.gz
-  sha256: 20578ab1f404303933b75a19253bccbb146488acb600578e1c745295a14ac74b
-  timestamp: 2022-11-13 22:19:58+00:00
 - url: https://github.com/twpayne/chezmoi/releases/download/v2.27.2/chezmoi_2.27.2_linux_amd64.tar.gz
   sha256: 4b1e63c073e4b31fd491ae0ddde153a793b67fb99cb1f0cd85d0f43777f6a274
   timestamp: 2022-11-25 02:46:33+00:00
@@ -556,3 +439,12 @@
 - url: https://github.com/twpayne/chezmoi/releases/download/v2.47.1/chezmoi_2.47.1_linux_arm64.tar.gz
   sha256: bf1d042f62f8d80b238f20d135b5e413981089f429668ff7039128ee32b957a6
   timestamp: 2024-03-03 21:05:20+00:00
+- url: https://github.com/twpayne/chezmoi/releases/download/v2.47.2/chezmoi_2.47.2_linux_amd64.tar.gz
+  sha256: acb821727b50d189304ffdfa86a102a6ae8bdb83efda1829f8a3b9a848749218
+  timestamp: 2024-03-17 21:07:23+00:00
+- url: https://github.com/twpayne/chezmoi/releases/download/v2.47.2/chezmoi_2.47.2_linux_arm.tar.gz
+  sha256: 20013719af0f97821064c7fbb7aac479f4ad34dd019fb5bc7e193609b577acfc
+  timestamp: 2024-03-17 21:07:23+00:00
+- url: https://github.com/twpayne/chezmoi/releases/download/v2.47.2/chezmoi_2.47.2_linux_arm64.tar.gz
+  sha256: e57b0163cf8cc52afe3b6c79b0028c96e09deff505da8ec985ddcb3ccb508f9a
+  timestamp: 2024-03-17 21:07:23+00:00
