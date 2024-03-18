@@ -1,0 +1,16 @@
+name: neovim
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 0.9.5
+homepage: https://github.com/neovim/neovim
+summary: Neovim text editor
+description: |-
+  Neovim is a project that seeks to aggressively refactor the Vim text editor.
+  Visit https://github.com/neovim/neovim for more informations.
+fetch: https://github.com/neovim/neovim/releases/download/v{{version}}/nvim.appimage
+install:
+  - nvim.appimage:/usr/bin/nvim
+script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
