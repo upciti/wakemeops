@@ -1,10 +1,7 @@
 name: orca-slicer
 matrix:
   versions:
-    - 1.8.1
-    - 1.9.0
     - 1.9.1
-    - 2.0.0-beta
     - 2.0.0
 homepage: https://github.com/SoftFever/OrcaSlicer
 summary: G-code generator for 3D printers
