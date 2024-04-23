@@ -23,16 +23,10 @@ jobs:
           packages: |
             wakemebot
 
-      - name: Print ops2deb version
-        run: ops2deb version
-
-      - name: Print wakemebot version
-        run: wakemebot version
-
-      - name: Generate new Debian packages
+      - name: Print ops2deb and wakemebot versions
         run: |
-          mkdir -p build
-          OPS2DEB_EXIT_CODE=0 make build
+          ops2deb version
+          wakemebot version
 
       - name: Sync WakeMeOps Debian repository
         shell: bash
@@ -41,6 +35,12 @@ jobs:
           WAKEMEBOT_APTLY_CA_CERT: ${{ secrets.WAKEMEBOT_APTLY_CA_CERT }}
           WAKEMEBOT_APTLY_CLIENT_CERT: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_CERT }}
           WAKEMEBOT_APTLY_CLIENT_KEY: ${{ secrets.WAKEMEBOT_APTLY_CLIENT_KEY }}
+          OPS2DEB_EXIT_CODE: 0
         run: |
+          mkdir -p build
           ops2deb delta -r "http://deb.wakemeops.com/wakemeops stable" --json 1> build/ops2deb-delta.json
-          wakemebot sync build
+          for component in desktop dev devops secops terminal; do
+            make "build-${component}"
+            wakemebot sync build
+            rm -rf "build/${component}"
+          done
