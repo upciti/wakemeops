@@ -32,7 +32,7 @@ jobs:
       - name: Generate new Debian packages
         run: |
           mkdir -p build
-          OPS2DEB_EXIT_CODE=0 make build
+          OPS2DEB_EXIT_CODE=0 make build-desktop
 
       - name: Sync WakeMeOps Debian repository
         shell: bash
