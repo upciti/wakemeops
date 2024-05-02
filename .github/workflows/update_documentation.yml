@@ -20,7 +20,7 @@ jobs:
           mkdocs build
 
       - name: Deploy to Github pages
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           branch: gh-pages
           folder: site
