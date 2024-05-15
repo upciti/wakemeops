@@ -31,7 +31,6 @@
       - amd64
       - arm64
     versions:
-      - 2.6.8
       - 2.7.0
       - 2.7.1
       - 2.7.2
@@ -81,6 +80,7 @@
       - 2.19.2
       - 2.19.3
       - 2.19.4
+      - 2.19.5
   homepage: https://www.telepresence.io/
   summary: fast, local development for kubernetes and openshift microservices
   description: |-
