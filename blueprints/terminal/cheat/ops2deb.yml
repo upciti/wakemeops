@@ -1,0 +1,18 @@
+name: cheat
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 4.4.0
+    - 4.4.1
+    - 4.4.2
+homepage: https://github.com/cheat/cheat
+summary: Create and view interactive cheat sheets
+description: |-
+  Cheat allows you to create and view interactive cheatsheets on the command-
+  line. It was designed to help remind *nix system administrators of options for
+  commands that they use frequently, but not frequently enough to remember.
+fetch: https://github.com/cheat/cheat/releases/download/{{version}}/cheat-linux-{{arch}}.gz
+install:
+  - cheat-linux-{{arch}}:/usr/bin/cheat
