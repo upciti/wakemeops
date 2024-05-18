@@ -79,6 +79,13 @@ Debian packages are generated from [ops2deb](https://github.com/upciti/ops2deb) 
 * Run `make lock` to update the lock files.
 * Create a new pull request using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+> [!TIP]
+> If you are running on Apple `arm64` based system you can use this command to format and generate lock files:
+> ```sh
+> docker run --platform linux/amd64 --workdir /home/ops2deb --volume ./:/home/ops2deb --rm \
+>   docker.io/wakemeops/debian /bin/bash -c "apt update && apt install -y make ops2deb && make format && make lock"
+> ```
+
 ## :notebook_with_decorative_cover: Documentation
 
 Please refer to our documentation at https://docs.wakemeops.com for more information.
