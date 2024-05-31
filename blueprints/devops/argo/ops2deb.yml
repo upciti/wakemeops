@@ -1,0 +1,23 @@
+name: argo
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 3.5.0
+    - 3.5.1
+    - 3.5.2
+    - 3.5.3
+    - 3.5.4
+    - 3.5.5
+    - 3.5.6
+    - 3.5.7
+homepage: https://argo-workflows.readthedocs.io
+summary: Workflow Engine for Kubernetes
+description: |-
+  Argo Workflows is an open source container-native workflow engine for
+  orchestrating parallel jobs on Kubernetes. Argo Workflows is implemented as a
+  Kubernetes CRD (Custom Resource Definition).
+fetch: https://github.com/argoproj/argo-workflows/releases/download/v{{version}}/argo-linux-{{arch}}.gz
+install:
+  - argo-linux-{{arch}}:/usr/bin/argo
