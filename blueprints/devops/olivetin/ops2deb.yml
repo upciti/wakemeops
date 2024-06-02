@@ -5,9 +5,8 @@ matrix:
     - arm64
     - armhf
   versions:
-    - 2024.03.24
-    - 2024.05.13
     - 2024.06.01
+revision: "2"
 summary: safe and simple access to predefined shell commands from a web interface
 description: |-
   Safely give access to commands, for less technical people:
@@ -37,7 +36,9 @@ install:
   - content: |-
       #!/bin/sh
       set -e
-      useradd --system --no-create-home --home /nonexistent --user-group --shell /bin/false olivetin
+      if ! id -u olivetin >/dev/null 2>&1; then
+        useradd --system --no-create-home --user-group --shell /bin/false olivetin
+      fi
     path: "{{debian}}/postinst"
   - content: |-
       [Unit]
