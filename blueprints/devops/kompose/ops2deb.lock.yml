@@ -88,3 +88,12 @@
 - url: https://github.com/kubernetes/kompose/releases/download/v1.33.0/kompose-linux-arm64
   sha256: 9d50f00d3f55dde247d60fab9a2bf9403807054d0928ecc3e5027a7b97b17e0f
   timestamp: 2024-04-26 00:21:20+00:00
+- url: https://github.com/kubernetes/kompose/releases/download/v1.34.0/kompose-linux-amd64
+  sha256: c58d0e63ef6bf8a98fc9840025b943f50f2d0ad807b2f8d55db92cea869ee171
+  timestamp: 2024-06-03 00:23:50+00:00
+- url: https://github.com/kubernetes/kompose/releases/download/v1.34.0/kompose-linux-arm
+  sha256: 2f2367bc37a31df926605b92ae12d4eb10cc09b2a0ece72fdccf1d7e2863cb16
+  timestamp: 2024-06-03 00:23:50+00:00
+- url: https://github.com/kubernetes/kompose/releases/download/v1.34.0/kompose-linux-arm64
+  sha256: 76fa45cbdb3ee32bb925db932abb5ca50c020781f8a121d0cabedfa5d31cc8e6
+  timestamp: 2024-06-03 00:23:50+00:00
