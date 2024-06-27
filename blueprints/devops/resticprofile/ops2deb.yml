@@ -6,6 +6,7 @@ matrix:
     - armhf
   versions:
     - 0.26.0
+    - 0.27.0
 homepage: https://creativeprojects.github.io/resticprofile/
 summary: configuration profiles manager for restic backup
 description: |-
