@@ -1,0 +1,15 @@
+name: clusterctl
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.7.3
+homepage: https://github.com/kubernetes-sigs/cluster-api
+summary: CLI for Cluster API management cluster
+description: |-
+  The clusterctl CLI tool handles the lifecycle of a Cluster API management
+  cluster.
+fetch: https://github.com/kubernetes-sigs/cluster-api/releases/download/v{{version}}/clusterctl-linux-{{arch}}
+install:
+  - clusterctl-linux-{{arch}}:/usr/bin/clusterctl
