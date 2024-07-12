@@ -9,7 +9,10 @@
     - mv kubectl-neat {{src}}/usr/bin/kubectl-neat
 
 - name: kubectl-neat
-  version: 2.0.3
+  matrix:
+    versions:
+      - 2.0.3
+      - 2.0.4
   revision: "3"
   architecture: arm64
   homepage: https://github.com/itaysk/kubectl-neat
