@@ -1,0 +1,29 @@
+name: kubescape
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 3.0.10
+    - 3.0.11
+    - 3.0.12
+    - 3.0.13
+    - 3.0.14
+homepage: https://kubescape.io
+summary: kubernetes security platform for your IDE, CI/CD pipelines, and clusters
+description: |-
+  Kubescape is an open-source Kubernetes security platform. It includes risk
+  analysis, security compliance, and misconfiguration scanning. Targeted at the
+  DevSecOps practitioner or platform engineer, it offers an easy-to-use CLI
+  interface, flexible output formats, and automated scanning capabilities. It
+  saves Kubernetes users and admins precious time, effort, and resources.
+
+  Kubescape scans clusters, YAML files, and Helm charts. It detects
+  misconfigurations according to multiple frameworks (including NSA-CISA, MITRE
+  ATT&CK® and the CIS Benchmark).
+fetch:
+  url: https://github.com/kubescape/kubescape/releases/download/v{{version}}/kubescape-{{target}}-latest.tar.gz
+  targets:
+    amd64: ubuntu
+    arm64: arm64-ubuntu
+install:
+  - kubescape-{{target}}-latest:/usr/bin/kubescape
