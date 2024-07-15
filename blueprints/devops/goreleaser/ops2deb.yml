@@ -1,0 +1,20 @@
+name: goreleaser
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.0.1
+homepage: https://goreleaser.com
+summary: release Go projects as fast and easily as possible
+description: |-
+  GoReleaser is an open-source tool that simplifies the process of releasing your
+  Go projects to multiple platforms, ensuring a consistent and reliable
+  deployment experience.
+fetch:
+  url: https://github.com/goreleaser/goreleaser/releases/download/v{{version}}/goreleaser_Linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+    arm64: arm64
+install:
+  - goreleaser:/usr/bin/
