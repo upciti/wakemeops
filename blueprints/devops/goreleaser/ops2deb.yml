@@ -5,6 +5,7 @@ matrix:
     - arm64
   versions:
     - 2.0.1
+    - 2.1.0
 homepage: https://goreleaser.com
 summary: release Go projects as fast and easily as possible
 description: |-
