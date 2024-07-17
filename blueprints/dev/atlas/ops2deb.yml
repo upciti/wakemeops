@@ -1,0 +1,15 @@
+name: atlas
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.25.0
+homepage: https://atlasgo.io
+summary: manage your database schema as code
+description: |-
+  Atlas is a language-agnostic tool for managing and migrating database schemas
+  using modern DevOps principles.
+fetch: https://release.ariga.io/atlas/atlas-linux-{{goarch}}-latest
+install:
+  - atlas-linux-{{goarch}}-latest:/usr/bin/atlas
