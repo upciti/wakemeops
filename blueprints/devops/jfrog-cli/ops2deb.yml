@@ -1,0 +1,18 @@
+name: jfrog-cli
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.59.1
+homepage: https://docs.jfrog-applications.jfrog.io/jfrog-applications/jfrog-cli
+summary: client that provides a simple interface that automates access to the JFrog
+  products
+description: |-
+  JFrog CLI is a compact and smart client that provides a simple interface that
+  automates access to Artifactory and Mission Control through their respective
+  REST APIs. By using the JFrog CLI, you can greatly simplify your automation
+  scripts making them more readable and easier to maintain.
+fetch: https://releases.jfrog.io/artifactory/jfrog-cli/v2-jf/{{version}}/jfrog-cli-linux-{{arch}}/jf
+install:
+  - jf:/usr/bin/
