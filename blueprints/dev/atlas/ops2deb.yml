@@ -10,6 +10,6 @@ summary: manage your database schema as code
 description: |-
   Atlas is a language-agnostic tool for managing and migrating database schemas
   using modern DevOps principles.
-fetch: https://release.ariga.io/atlas/atlas-linux-{{goarch}}-latest
+fetch: https://release.ariga.io/atlas/atlas-community-linux-{{goarch}}-v{{version}}
 install:
-  - atlas-linux-{{goarch}}-latest:/usr/bin/atlas
+  - atlas-community-linux-{{goarch}}-v{{version}}:/usr/bin/atlas
