@@ -2,6 +2,7 @@ name: kubescape
 matrix:
   architectures:
     - amd64
+    - arm64
   versions:
     - 3.0.10
     - 3.0.11
