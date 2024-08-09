@@ -1,0 +1,3533 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WakeMeOps documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.wakemeops.com/packages/uv/">
+      
+      
+        <link rel="prev" href="../typos-cli/">
+      
+      
+        <link rel="next" href="../vault/">
+      
+      <link rel="icon" href="../../images/pink-logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>uv - WakeMeOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0.2.34" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WakeMeOps" class="md-header__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WakeMeOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              uv
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../usage/" class="md-tabs__link">
+      Usage
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Packages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WakeMeOps" class="md-nav__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    WakeMeOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act/" class="md-nav__link">
+        act
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../age/" class="md-nav__link">
+        age
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aptly/" class="md-nav__link">
+        aptly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo/" class="md-nav__link">
+        argo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        argocd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-iam-authenticator/" class="md-nav__link">
+        aws-iam-authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../balena-etcher/" class="md-nav__link">
+        balena-etcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank-vaults/" class="md-nav__link">
+        bank-vaults
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bat/" class="md-nav__link">
+        bat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bottom/" class="md-nav__link">
+        bottom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary/" class="md-nav__link">
+        boundary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-kapp/" class="md-nav__link">
+        carvel-kapp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-ytt/" class="md-nav__link">
+        carvel-ytt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat/" class="md-nav__link">
+        cheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chezmoi/" class="md-nav__link">
+        chezmoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose/" class="md-nav__link">
+        choose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clog-cli/" class="md-nav__link">
+        clog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clusterctl/" class="md-nav__link">
+        clusterctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-diff/" class="md-nav__link">
+        container-diff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-structure-test/" class="md-nav__link">
+        container-structure-test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coursier/" class="md-nav__link">
+        coursier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curlie/" class="md-nav__link">
+        curlie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapr/" class="md-nav__link">
+        dapr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dasel/" class="md-nav__link">
+        dasel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datanymizer/" class="md-nav__link">
+        datanymizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datree/" class="md-nav__link">
+        datree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devspace/" class="md-nav__link">
+        devspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskonaut/" class="md-nav__link">
+        diskonaut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dive/" class="md-nav__link">
+        dive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        docker-compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-slim/" class="md-nav__link">
+        docker-slim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dog/" class="md-nav__link">
+        dog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dust/" class="md-nav__link">
+        dust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exa/" class="md-nav__link">
+        exa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eza/" class="md-nav__link">
+        eza
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd/" class="md-nav__link">
+        fd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feroxbuster/" class="md-nav__link">
+        feroxbuster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flux/" class="md-nav__link">
+        flux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghorg/" class="md-nav__link">
+        ghorg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-delta/" class="md-nav__link">
+        git-delta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-cli/" class="md-nav__link">
+        github-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-hub/" class="md-nav__link">
+        github-hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitlab-release-cli/" class="md-nav__link">
+        gitlab-release-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitoxide/" class="md-nav__link">
+        gitoxide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glab/" class="md-nav__link">
+        glab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go-task/" class="md-nav__link">
+        go-task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gomplate/" class="md-nav__link">
+        gomplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goreleaser/" class="md-nav__link">
+        goreleaser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gotop/" class="md-nav__link">
+        gotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gping/" class="md-nav__link">
+        gping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grex/" class="md-nav__link">
+        grex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm/" class="md-nav__link">
+        helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm-docs/" class="md-nav__link">
+        helm-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helmfile/" class="md-nav__link">
+        helmfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../himalaya/" class="md-nav__link">
+        himalaya
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hostctl/" class="md-nav__link">
+        hostctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hugo/" class="md-nav__link">
+        hugo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iamlive/" class="md-nav__link">
+        iamlive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influx-cli/" class="md-nav__link">
+        influx-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infracost/" class="md-nav__link">
+        infracost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insomnia/" class="md-nav__link">
+        insomnia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istioctl/" class="md-nav__link">
+        istioctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jfrog-cli/" class="md-nav__link">
+        jfrog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k3d/" class="md-nav__link">
+        k3d
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k9s/" class="md-nav__link">
+        k9s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kind/" class="md-nav__link">
+        kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kompose/" class="md-nav__link">
+        kompose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krew/" class="md-nav__link">
+        krew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krr/" class="md-nav__link">
+        krr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-linter/" class="md-nav__link">
+        kube-linter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-no-trouble/" class="md-nav__link">
+        kube-no-trouble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-score/" class="md-nav__link">
+        kube-score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeaudit/" class="md-nav__link">
+        kubeaudit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubebuilder/" class="md-nav__link">
+        kubebuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl/" class="md-nav__link">
+        kubectl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-kudo/" class="md-nav__link">
+        kubectl-kudo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-neat/" class="md-nav__link">
+        kubectl-neat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectx/" class="md-nav__link">
+        kubectx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubelogin/" class="md-nav__link">
+        kubelogin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubens/" class="md-nav__link">
+        kubens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubescape/" class="md-nav__link">
+        kubescape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeseal/" class="md-nav__link">
+        kubeseal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kustomize/" class="md-nav__link">
+        kustomize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazydocker/" class="md-nav__link">
+        lazydocker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lens/" class="md-nav__link">
+        lens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkerd/" class="md-nav__link">
+        linkerd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logcli/" class="md-nav__link">
+        logcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mask/" class="md-nav__link">
+        mask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattermost-desktop/" class="md-nav__link">
+        mattermost-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdbook/" class="md-nav__link">
+        mdbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mergestat/" class="md-nav__link">
+        mergestat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-client/" class="md-nav__link">
+        minio-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-server/" class="md-nav__link">
+        minio-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirrord/" class="md-nav__link">
+        mirrord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natscli/" class="md-nav__link">
+        natscli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nushell/" class="md-nav__link">
+        nushell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oasdiff/" class="md-nav__link">
+        oasdiff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../olivetin/" class="md-nav__link">
+        olivetin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openlens/" class="md-nav__link">
+        openlens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opentofu/" class="md-nav__link">
+        opentofu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-sdk/" class="md-nav__link">
+        operator-sdk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ops2deb/" class="md-nav__link">
+        ops2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-slicer/" class="md-nav__link">
+        orca-slicer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packer/" class="md-nav__link">
+        packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdm/" class="md-nav__link">
+        pdm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipx/" class="md-nav__link">
+        pipx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pluto/" class="md-nav__link">
+        pluto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poetry/" class="md-nav__link">
+        poetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procs/" class="md-nav__link">
+        procs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyenv/" class="md-nav__link">
+        pyenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyoxidizer/" class="md-nav__link">
+        pyoxidizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.10-build-standalone/" class="md-nav__link">
+        python3.10-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.11-build-standalone/" class="md-nav__link">
+        python3.11-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rancher/" class="md-nav__link">
+        rancher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rclone/" class="md-nav__link">
+        rclone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restic/" class="md-nav__link">
+        restic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resticprofile/" class="md-nav__link">
+        resticprofile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ripgrep/" class="md-nav__link">
+        ripgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpk/" class="md-nav__link">
+        rpk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rye/" class="md-nav__link">
+        rye
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scala-cli/" class="md-nav__link">
+        scala-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scw/" class="md-nav__link">
+        scw
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell2http/" class="md-nav__link">
+        shell2http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signal-desktop/" class="md-nav__link">
+        signal-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skaffold/" class="md-nav__link">
+        skaffold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skim/" class="md-nav__link">
+        skim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops/" class="md-nav__link">
+        sops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stern/" class="md-nav__link">
+        stern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams-for-linux/" class="md-nav__link">
+        teams-for-linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telepresence/" class="md-nav__link">
+        telepresence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-docs/" class="md-nav__link">
+        terraform-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-switcher/" class="md-nav__link">
+        terraform-switcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terragrunt/" class="md-nav__link">
+        terragrunt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrascan/" class="md-nav__link">
+        terrascan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokei/" class="md-nav__link">
+        tokei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trivy/" class="md-nav__link">
+        trivy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typos-cli/" class="md-nav__link">
+        typos-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          uv
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        uv
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.34" class="md-nav__link">
+    0.2.34
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.33" class="md-nav__link">
+    0.2.33
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.32" class="md-nav__link">
+    0.2.32
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.31" class="md-nav__link">
+    0.2.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.30" class="md-nav__link">
+    0.2.30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.29" class="md-nav__link">
+    0.2.29
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.28" class="md-nav__link">
+    0.2.28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.27" class="md-nav__link">
+    0.2.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.26" class="md-nav__link">
+    0.2.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.25" class="md-nav__link">
+    0.2.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.24" class="md-nav__link">
+    0.2.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.23" class="md-nav__link">
+    0.2.23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.17" class="md-nav__link">
+    0.2.17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.15" class="md-nav__link">
+    0.2.15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.14" class="md-nav__link">
+    0.2.14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.13" class="md-nav__link">
+    0.2.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.12" class="md-nav__link">
+    0.2.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.11" class="md-nav__link">
+    0.2.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.10" class="md-nav__link">
+    0.2.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.9" class="md-nav__link">
+    0.2.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.8" class="md-nav__link">
+    0.2.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.7" class="md-nav__link">
+    0.2.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.6" class="md-nav__link">
+    0.2.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.5" class="md-nav__link">
+    0.2.5
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault/" class="md-nav__link">
+        vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault-env/" class="md-nav__link">
+        vault-env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../velero/" class="md-nav__link">
+        velero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuls-scanner/" class="md-nav__link">
+        vuls-scanner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wakemebot/" class="md-nav__link">
+        wakemebot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waypoint/" class="md-nav__link">
+        waypoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wheel2deb/" class="md-nav__link">
+        wheel2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xeol/" class="md-nav__link">
+        xeol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xh/" class="md-nav__link">
+        xh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xsv/" class="md-nav__link">
+        xsv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yq/" class="md-nav__link">
+        yq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zellij/" class="md-nav__link">
+        zellij
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.34" class="md-nav__link">
+    0.2.34
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.33" class="md-nav__link">
+    0.2.33
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.32" class="md-nav__link">
+    0.2.32
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.31" class="md-nav__link">
+    0.2.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.30" class="md-nav__link">
+    0.2.30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.29" class="md-nav__link">
+    0.2.29
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.28" class="md-nav__link">
+    0.2.28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.27" class="md-nav__link">
+    0.2.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.26" class="md-nav__link">
+    0.2.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.25" class="md-nav__link">
+    0.2.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.24" class="md-nav__link">
+    0.2.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.23" class="md-nav__link">
+    0.2.23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.17" class="md-nav__link">
+    0.2.17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.15" class="md-nav__link">
+    0.2.15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.14" class="md-nav__link">
+    0.2.14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.13" class="md-nav__link">
+    0.2.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.12" class="md-nav__link">
+    0.2.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.11" class="md-nav__link">
+    0.2.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.10" class="md-nav__link">
+    0.2.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.9" class="md-nav__link">
+    0.2.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.8" class="md-nav__link">
+    0.2.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.7" class="md-nav__link">
+    0.2.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.6" class="md-nav__link">
+    0.2.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.2.5" class="md-nav__link">
+    0.2.5
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>uv</h1>
+
+<p><strong>Extremely fast Python package installer and resolver</strong></p>
+<p>Designed as a drop-in replacement for pip and pip-compile.</p>
+<ul>
+<li>Drop-in replacement for common pip, pip-tools, and virtualenv commands.</li>
+<li>10-100x faster than pip and pip-tools (pip-compile and pip-sync).</li>
+<li>Disk-space efficient, with a global cache for dependency deduplication.</li>
+<li>Installable via curl, pip, pipx, etc. uv is a static binary that can be
+installed without Rust or Python.</li>
+<li>Tested at-scale against the top 10,000 PyPI packages.</li>
+<li>Advanced features such as dependency version overrides and alternative
+resolution strategies.</li>
+<li>Best-in-class error messages with a conflict-tracking resolver.</li>
+<li>Support for a wide range of advanced pip features, including editable
+installs, Git dependencies, direct URL dependencies, local dependencies,
+constraints, source distributions, HTML and JSON indexes, and more.</li>
+</ul>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.67 4.42a6.08 6.08 0 0 0-3.22-.86c-1.58 0-2.79.78-2.79 2 0 1.4 1.34 1.91 3.34 2.58 2.5.81 4.4 1.83 4.4 4.24a4.01 4.01 0 0 1-1.8 3.23c.65.61 1.01 1.47 1 2.36 0 2.82-2.6 4-5.1 4-1.46.06-2.91-.33-4.15-1.1L8 19.34c1.04.71 2.27 1.09 3.53 1.1 1.72 0 3-.78 3-2.2 0-1.24-.78-1.93-3.28-2.79C8.5 14.5 6.6 13.5 6.6 11.21c.07-1.32.83-2.52 2-3.14-.63-.57-.99-1.4-1-2.26C7.6 3.45 9.77 2 12.53 2c1.29 0 2.56.29 3.7.89l-.56 1.53m-4.32 9c1.06.33 2.09.76 3.06 1.29.65-.49 1.02-1.26 1-2.07 0-1-.64-1.88-2.41-2.5-1.11-.37-2.22-.83-3.28-1.37-.75.45-1.22 1.26-1.22 2.14 0 .97.73 1.77 2.85 2.51Z"/></svg></span> <a href="/packages/#dev"><code>dev</code></a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span> <a href="https://github.com/astral-sh/uv">https://github.com/astral-sh/uv</a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3V4m5 11v3h1v-3h-1m2 0v3h1v-3h-1m2 0v3h1v-3h-1Z"/></svg></span> <span class="badge arch">arm64</span> <span class="badge arch">armhf</span> <span class="badge arch">amd64</span> </p>
+<h2 id="installation">Installation</h2>
+<p>1. Add WakeMeOps repository</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</code></pre></div>
+<p>2. Install uv</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>uv
+</code></pre></div>
+<h2 id="snippets">Snippets</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dockerfile</label><label for="__tabbed_1_2">Github Action</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">wakemeops/minideb:bullseye</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">RUN</span><span class="w"> </span>install_packages<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">uv</span><span class="o">=</span><span class="m">0</span>.2.34*
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">USER</span><span class="w"> </span><span class="s">1001</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upciti/wakemeops-action@v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="no">uv=0.2.34*</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="download-urls">Download URLs</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">amd64</label><label for="__tabbed_2_2">arm64</label><label for="__tabbed_2_3">armhf</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.34-1~ops2deb_amd64.deb">0.2.34</a></td>
+<td><code>0a71acf0665c6f32b732f31c59bbe90ae6613d8ebc5a44f29b2ca0ce9a2b0710</code></td>
+<td>7412</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.33-1~ops2deb_amd64.deb">0.2.33</a></td>
+<td><code>dff320aa2999c12ba0367c2e97b3f973631696190f9bbc09b2c20a1ecfed2c03</code></td>
+<td>7523</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.32-1~ops2deb_amd64.deb">0.2.32</a></td>
+<td><code>b4c1a82fe4070ff893c3aa97de4c00b344482c3ec39142caff08ec8dc5767a32</code></td>
+<td>7480</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.31-1~ops2deb_amd64.deb">0.2.31</a></td>
+<td><code>fec76fa0b555b99c8abacae7a1dbe089aaf2a49d38b57d043369f770c826099b</code></td>
+<td>7453</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.30-1~ops2deb_amd64.deb">0.2.30</a></td>
+<td><code>b0ee642423413d2f218f6b65f80a067607d3836674a6063473c7bcf8e44d672d</code></td>
+<td>7435</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.29-1~ops2deb_amd64.deb">0.2.29</a></td>
+<td><code>945279c2ab61b0456a60980152b90255f9d91b9b93c49e2c13b76884fc6b9cd4</code></td>
+<td>7420</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.28-1~ops2deb_amd64.deb">0.2.28</a></td>
+<td><code>6d9043e7c8fab96f8e1f268dadc6f37fe0c3dda8d94852085620a5c6d9429a0d</code></td>
+<td>7346</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.27-1~ops2deb_amd64.deb">0.2.27</a></td>
+<td><code>3a40836bf4183d14f9aa855265c5471c5152666523f4fcca27a55a1c103d56c6</code></td>
+<td>7348</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.26-1~ops2deb_amd64.deb">0.2.26</a></td>
+<td><code>f3f538cc959adaa91d42571d8f0c86ccc4d5a0abeb7abac961f99fd6400863da</code></td>
+<td>7285</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.25-1~ops2deb_amd64.deb">0.2.25</a></td>
+<td><code>51c41d6a60065adb8a38fa794c91a85feb9bb3a1fa243f573d62dccfd911372a</code></td>
+<td>7314</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.34-1~ops2deb_arm64.deb">0.2.34</a></td>
+<td><code>f35d6500362d2f346efe570b35d7d8c3b1ae79c1c491fef159228b2a65204d39</code></td>
+<td>6380</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.33-1~ops2deb_arm64.deb">0.2.33</a></td>
+<td><code>4d019bce22a2f754ea8ac2b91730ffd58b4c6840f9f6170fd852a7d4ce3b96a3</code></td>
+<td>6450</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.32-1~ops2deb_arm64.deb">0.2.32</a></td>
+<td><code>e381a51fe5632792b8a5dba08de7e0217f0f1802c6f7da105f994616077db808</code></td>
+<td>6394</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.31-1~ops2deb_arm64.deb">0.2.31</a></td>
+<td><code>ed513c65bea2ae489c47b8fcc2f7dadf3d55f495f10bfefe36b1a1b91470b52c</code></td>
+<td>6399</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.30-1~ops2deb_arm64.deb">0.2.30</a></td>
+<td><code>0315a294a1009913d5f021fba268b8123f5ecf157f59185adfb3740e2d54b6c4</code></td>
+<td>6321</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.29-1~ops2deb_arm64.deb">0.2.29</a></td>
+<td><code>f856363a745adf5b9d074b44b7669557df1c09073bd59ffc2a5ad38f840055d3</code></td>
+<td>6316</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.28-1~ops2deb_arm64.deb">0.2.28</a></td>
+<td><code>6aaaa606c0a71ef982eab5ec039df04bbcdb4b46bb7dc485f8d1e94c4eb8498f</code></td>
+<td>6296</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.27-1~ops2deb_arm64.deb">0.2.27</a></td>
+<td><code>218b1306c2b670841687d647e0f50831a7d5777daca94c3ef1de2d07a8e7f0ee</code></td>
+<td>6285</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.26-1~ops2deb_arm64.deb">0.2.26</a></td>
+<td><code>676b999f425490f02ce4562c40f7938a0a8f7b97b01592bb464935b1b646e2f2</code></td>
+<td>6228</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.25-1~ops2deb_arm64.deb">0.2.25</a></td>
+<td><code>14a9e4fe6c9e5b6a24b500b891a152166b956bfe7378b407b94857d0536c87dd</code></td>
+<td>6248</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.34-1~ops2deb_armhf.deb">0.2.34</a></td>
+<td><code>1e0e595e9def70eea8a8d0ea82f6e0043b3d034f667698427b73845b11428d8a</code></td>
+<td>6007</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.33-1~ops2deb_armhf.deb">0.2.33</a></td>
+<td><code>31bc6f921e792e87395fd9477cae2a5bed9253cf8af6d58498de613fd04f2713</code></td>
+<td>6067</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.32-1~ops2deb_armhf.deb">0.2.32</a></td>
+<td><code>cfadd1b39243a980da64eb64f27f8ad68cdcbd365372dfbc3730c4ee49a1bee7</code></td>
+<td>6071</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.31-1~ops2deb_armhf.deb">0.2.31</a></td>
+<td><code>867b51c92b19053f37ea18d96aeb2e5414af02419de5f9a6d77cae3d97a24342</code></td>
+<td>6037</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.30-1~ops2deb_armhf.deb">0.2.30</a></td>
+<td><code>faddc1992ee4e9113614d8a9bd1b68b71b44da61e119028ac8dd2805ea4a3450</code></td>
+<td>5973</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.29-1~ops2deb_armhf.deb">0.2.29</a></td>
+<td><code>f830468939a5902cf63d2ab7b1c177c46b2f9b64d62511c6ee0fc6b5f964cfad</code></td>
+<td>5965</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.28-1~ops2deb_armhf.deb">0.2.28</a></td>
+<td><code>c357309aeb30f8b5a528f85ea1466a2bec13ec5c248213dd762c1029bdd84ca2</code></td>
+<td>5938</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.27-1~ops2deb_armhf.deb">0.2.27</a></td>
+<td><code>959412d759349c202531a2db1438c6003b00deb74c4f4fc68303f6eb1bfff4ad</code></td>
+<td>5920</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.26-1~ops2deb_armhf.deb">0.2.26</a></td>
+<td><code>1514edb844fd223ace17d6672a1f10a08a4b52cf80d34c32c9f895d1476826c5</code></td>
+<td>5890</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/u/uv/uv_0.2.25-1~ops2deb_armhf.deb">0.2.25</a></td>
+<td><code>5ed5699e71d92cdf05749a509f701cbe9f8ab93be976d7971aac78976dadcaec</code></td>
+<td>5896</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="blueprints">Blueprints</h2>
+<p>Debian packages listed on this page are generated from <a href="https://github.com/upciti/ops2deb">op2deb</a> YAML blueprints. Blueprints for uv are versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/dev/uv/ops2deb.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see uv ops2deb blueprints</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/dev/uv/ops2deb.yml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uv</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">armhf</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.5</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.6</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.7</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.8</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.9</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.10</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.11</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.12</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.13</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.14</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.15</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.17</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.23</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.24</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.25</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.26</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.27</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.28</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.29</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.30</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.31</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.32</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.33</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.34</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extremely fast Python package installer and resolver</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">  </span><span class="no">Designed as a drop-in replacement for pip and pip-compile.</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">  </span><span class="no">- Drop-in replacement for common pip, pip-tools, and virtualenv commands.</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">  </span><span class="no">- 10-100x faster than pip and pip-tools (pip-compile and pip-sync).</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">  </span><span class="no">- Disk-space efficient, with a global cache for dependency deduplication.</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">  </span><span class="no">- Installable via curl, pip, pipx, etc. uv is a static binary that can be</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">  </span><span class="no">installed without Rust or Python.</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">  </span><span class="no">- Tested at-scale against the top 10,000 PyPI packages.</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">  </span><span class="no">- Advanced features such as dependency version overrides and alternative</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">  </span><span class="no">resolution strategies.</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">  </span><span class="no">- Best-in-class error messages with a conflict-tracking resolver.</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">  </span><span class="no">- Support for a wide range of advanced pip features, including editable</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="w">  </span><span class="no">installs, Git dependencies, direct URL dependencies, local dependencies,</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="w">  </span><span class="no">constraints, source distributions, HTML and JSON indexes, and more.</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="nt">fetch</span><span class="p">:</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/{{version}}/uv-{{target|rust_target}}.tar.gz</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">  </span><span class="nt">targets</span><span class="p">:</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="w">    </span><span class="nt">armhf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">armv7-unknown-linux-gnueabihf</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w">    </span><span class="nt">arm64</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aarch64-unknown-linux-musl</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="nt">install</span><span class="p">:</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uv-{{target|rust_target}}/uv:/usr/bin/uv</span>
+</code></pre></div>
+</details>
+<p>The blueprint <code>fetch</code> keyword contains a URL template pointing to uv releases. Downloaded files are locked in a lockfile versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/dev/uv/ops2deb.lock.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see uv release hashes</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/dev/uv/ops2deb.lock.yml</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.5/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f465b75f0129bfb1e47902a14731460aec5cc71d9586a19ad19a644fd2fa7a5e</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-02 14:52:52+00:00</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.5/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3341aa26179eb68f6b6c7bcdf44a0c3f5dbea3f43905920f4c018410fb3d46eb</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-02 14:52:52+00:00</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.5/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5eb13622b4450b3756f2395c261315562c48f405208cd1a160fe47e43fc85da1</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-02 14:52:52+00:00</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.6/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">41606b5c24e40ae2bcf71d9f8fc28b1f3e1399950ee324aa9925621d5bf1bc0e</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-03 21:05:57+00:00</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.6/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f1194ec0b18cda58537698c5b417f9464d8258334d69049fc32c40c3b8dd173c</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-03 21:05:57+00:00</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.6/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">02c7803b6209a80cdc8a4867a02ca6cb6a622f0d83f5276770a8d5636a89a396</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-03 21:05:57+00:00</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.7/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40e4fba3abcc76d5f69dc420cbc457ccc7bd7003a07e6caa0a2a8a803b339e31</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-05 21:06:17+00:00</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.7/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a960192da71ba05438d1ab3632ee5a22c8b02dea087f9c054c224803870c9571</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-05 21:06:17+00:00</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.7/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">080bedb35224afca73cb424629e3512b529398f96353c4cdf59fe6cdceac5034</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-05 21:06:17+00:00</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.8/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8f4bc88fbb7c498224122047f3f559b93e145753032d59782037ccf2969360b0</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-06 00:22:24+00:00</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.8/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c88b3f63ea7b3727500545edf0a6c1581a34ab5328fa2503e7c40911dce9e26d</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-06 00:22:24+00:00</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.8/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ce9f8fca5faef55af4fb83343143bb403ecef518f9118e97a37ccfbf1ccadfc3</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-06 00:22:24+00:00</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.9/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b8d055a0279c52021238a92e41bd6076813fac3ae77f4a3235b8aa4e2d398c0a</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-06 21:06:41+00:00</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.9/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9c43a432b9e02b126e2a1e42262b8ecc7d5715e9183c0fdccfdb6a98911067ae</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-06 21:06:41+00:00</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.9/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">83438964a0be35ddded2099ea64599706e7c7a7de575429ce4df78e20d57774d</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-06 21:06:41+00:00</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.10/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fffdf595dd2a231b372b685a2e25589bd8d537fea252b28678565f01e5b8bddc</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-10 18:06:56+00:00</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.10/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">38c30fa3c5e3c97db50396609619c17741c860c36e13ee210e387c94c59ce1ff</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-10 18:06:56+00:00</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.10/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99b25a80e170fde54b299c05f4c071c7130ed85db45fe8e7663cef44f09aac5f</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-10 18:06:56+00:00</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.11/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f4f5b8f496d655206a4bfd28c54192a225da1274d04fa3ff6ff74df1e756c400</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-12 03:06:17+00:00</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.11/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f76c811a073bd0feea69555270fd0437e7b4c085d604a3949d2dd98b418b1597</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-12 03:06:17+00:00</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.11/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4a6188b172cb8d43e59c91dad8cdc4418ed0b395b09e4198ba4661cbcdbb40eb</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-12 03:06:17+00:00</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.12/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">74981df43332e9ca6abd2855d73e0d1f5565d3f724c60f4a67bf0c09d84902a9</span>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-18 00:23:09+00:00</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.12/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cdcda5bef68ecb96c593a1389349b19d6a52a2c235308e6aaade522f67def730</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-18 00:23:09+00:00</span>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.12/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7a0c67d32844afadd2d964d9d6ecb769a56e122e1423efce53e7554a33fb5c6f</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-18 00:23:09+00:00</span>
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.13/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">56151690ccd6a12205478212dd16013d1969e3ef808a66f99809da850a49ed29</span>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-18 18:07:36+00:00</span>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.13/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20f96f8a6b2dee8a6013bc12b243b718027e5a34c9fceb4baef7e85e530f9da8</span>
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-18 18:07:36+00:00</span>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.13/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3f96048fa1b82eca14d45bbcc86714cd0dee19a73ef9311da6707faa308ec25f</span>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-18 18:07:36+00:00</span>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.14/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3b315856284f2d4c2a6e3b19fd6c5eae87334c37f1a7dfdaad3f696b976dae72</span>
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 15:06:19+00:00</span>
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.14/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bf7ceff49dd3ceb384316c6bd85b037a9b5c830074166f57d6ad6fc8b42fbb75</span>
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 15:06:19+00:00</span>
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.14/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">79b2582675bd93c7d632e71a667478a3b1eed101669944e64c848f7240ab4725</span>
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 15:06:19+00:00</span>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.15/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3f5c7c25e4099854330b3a21bb9670d3cdcf3ec3c0eb9f8bee7e42c5098cc5a1</span>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 18:06:53+00:00</span>
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.15/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1f8712bd2b6c11533d4defea1f2e7e3972b9db887ef26a4c33f452a8492891ea</span>
+<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 18:06:53+00:00</span>
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.15/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f9c06177f2153336c3a96f9ab54d881126447cde1cb5d00ed771223427692e9c</span>
+<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 18:06:53+00:00</span>
+<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.17/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">910edd0a8db6ff39baaad0f7f77b2ce74e0111b6b83a4439e2e02d5b82404e1d</span>
+<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-27 00:22:33+00:00</span>
+<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.17/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a5f18a5f739402e9c2a6b5a4dafe0ead37125bedc7c03a74a9a92e4682a0f49c</span>
+<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-27 00:22:33+00:00</span>
+<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.17/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d49537780cd9cd5621bbc34e6864356487155cd4a7540035e1b0acb0d1017def</span>
+<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-27 00:22:33+00:00</span>
+<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.23/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60a122ac03b4187ddf716995f5f87838ff0edf9bfac372202c5c05269a32537d</span>
+<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.23/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2e284e7718176306b0d042a65143ff5b2c6453f33cadc1ebb19aedbb4f70ec95</span>
+<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.23/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4384db514959beb4de1dcdf7f1f2d5faf664f7180820b0e7a521ef2147e33d1d</span>
+<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.24/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">56bd0db80905d0f5eeba51aa33872727aa40e3dda65c86a584c095ac05609509</span>
+<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-10 21:05:40+00:00</span>
+<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.24/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c2650b42b0211cca495cbb8ccadd200256876cd02f70ce5ccb03e4eb6782c16d</span>
+<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-10 21:05:40+00:00</span>
+<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.24/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24a0c6758a4f533c37193592fd0a9a37a61fb583a4b6abd0bb81b83127d86336</span>
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-10 21:05:40+00:00</span>
+<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.25/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">34fe01cb0ed953aab2584231875b7f112d306955a92d674edcae4632c475bd2f</span>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-16 00:23:26+00:00</span>
+<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.25/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a107c831168cd40131be62193cc9ee8516868542e14d08c649d7767bf74077f8</span>
+<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-16 00:23:26+00:00</span>
+<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.25/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7f3396784a504ffb3d2190312b4a7c5330f08906ef22bcf544fe20ecde30081c</span>
+<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-16 00:23:26+00:00</span>
+<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.26/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">824c3a1e4eba63370232998dfb34964afcebd00fc79b4c7b4e9a1c5d749cf08f</span>
+<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-17 18:07:22+00:00</span>
+<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.26/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d42cd9db133bb16faa844f46baba52184a3cba5ad6f428bdfb0f3a5d85d01951</span>
+<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-17 18:07:22+00:00</span>
+<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.26/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f70997db1acf979b626e23236c289bfbf418e17ffd18a7956d8cf44e6f3f5522</span>
+<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-17 18:07:22+00:00</span>
+<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.27/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f7ad07f32e01dfdbd6b217c7f6acd7822eb6600d9992d204b93bfa0749bc6b29</span>
+<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-20 00:22:47+00:00</span>
+<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.27/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0316c82068bd34faee8a26bff0b85c25951a10fc54bc2ec5bfae64dc00e4a58d</span>
+<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-20 00:22:47+00:00</span>
+<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.27/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">224cdff5d82ff7053d1a9bf61e5ae89961d536eb2da8a4a13b93a49a0ab434bf</span>
+<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-20 00:22:47+00:00</span>
+<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.28/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bf23111a512596da533ad21ef94ea1758957f0f12ca9a306b298617affa4db8d</span>
+<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-23 21:06:20+00:00</span>
+<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.28/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6e50f4f5690f0135b30d0f6e4cbbceec1909bdef10b1996abb42042b6b28c64b</span>
+<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-23 21:06:20+00:00</span>
+<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.28/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9c6cbe9f7d7b2abcb45e028d82a5986b951af76a587c93c99922ba0e71c7f21c</span>
+<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-23 21:06:20+00:00</span>
+<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.29/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">77607a17959e650fa085a28f74b120db065833957a8306ee458a06e331433a21</span>
+<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-25 00:23:29+00:00</span>
+<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.29/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9ddfcbac00d7594e3c99ea4a97fe3a63895266a5993ae458e70e05e6834e3247</span>
+<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-25 00:23:29+00:00</span>
+<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.29/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1199ddcaba212d1909d934b7edfe24ee39f6ac60cfce1a558d74d082f9763937</span>
+<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-25 00:23:29+00:00</span>
+<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.30/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4b4e5fb2ca63fee674a32ed99e1c371d4dcfe194787c3bddc7bef37b4ae3fd24</span>
+<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-26 18:07:03+00:00</span>
+<a id="__codelineno-5-175" name="__codelineno-5-175" href="#__codelineno-5-175"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.30/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">355672634f530981171c67c7d99bda999bfd66b4273d0d292ce3f5db25118213</span>
+<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-26 18:07:03+00:00</span>
+<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.30/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">572a09703b40680191f4da33ffad2ae57cee93f0007f1eb25b84d241b0b418f2</span>
+<a id="__codelineno-5-180" name="__codelineno-5-180" href="#__codelineno-5-180"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-26 18:07:03+00:00</span>
+<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.31/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f2bdf2132993b1dfe50ee610e9df2a56cd89f0346d9d8a5cc3275b47c4c5e7a0</span>
+<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-29 21:06:55+00:00</span>
+<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.31/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8e7879750c682fbd3619ced0770a43afa902865a839cc84fe361bf5a9f55154a</span>
+<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-29 21:06:55+00:00</span>
+<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.31/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">351278978126eb9a74c4d735d3ee2191de5cd492fcc1615cc4c1107ad3e632ff</span>
+<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-29 21:06:55+00:00</span>
+<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.32/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b3fff6bb0ae62154c5d17256b40f3d568a7bd7037e4839cb672545b16cd8622f</span>
+<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-31 00:19:50+00:00</span>
+<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.32/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c3afbf787fa9b2cc8fcfaa74cf0fc723d224d56b514b0851dc0901747b03fbc4</span>
+<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-31 00:19:50+00:00</span>
+<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.32/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c676266d23c8dbe7832c44f37832c4e4ecf21781b7b0560bf27b270bedb14462</span>
+<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-31 00:19:50+00:00</span>
+<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.33/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9d4ba96eee49b9483fd55ab1b376ed4b9f88f0f9d155c0e48e7280d3cc388d4e</span>
+<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 00:23:23+00:00</span>
+<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.33/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">08b9a84370acc5ea1631a8fff94bf7522305612da3c24c612fc1d4fb5ecd3839</span>
+<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 00:23:23+00:00</span>
+<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.33/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e62a4123e6b77c9dd22f133212f7bac638077ebde73daa20fea3bef3ac51c84c</span>
+<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 00:23:23+00:00</span>
+<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.34/uv-aarch64-unknown-linux-musl.tar.gz</span>
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">227cd1dabb4ebb98e51c1b7735fa94dea96e14db7efb2d3d76b48c87a61a3d28</span>
+<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-07 21:06:21+00:00</span>
+<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.34/uv-armv7-unknown-linux-gnueabihf.tar.gz</span>
+<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5e3ff5bbb4159b7a2f9768caab5bcb692756509566ef52fd5eca129b2e0949b6</span>
+<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-07 21:06:21+00:00</span>
+<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/uv/releases/download/0.2.34/uv-x86_64-unknown-linux-gnu.tar.gz</span>
+<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cee114bb3c73a4be5066660d71eea1ac996378f567ba69fb7f29c688289245cd</span>
+<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-07 21:06:21+00:00</span>
+</code></pre></div>
+</details>
+<h2 id="badge">Badge</h2>
+<p><a href="/packages/uv"><img alt="WakeMeOps" src="/badges/uv.svg" /></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Markdown</label><label for="__tabbed_3_2">HTML</label><label for="__tabbed_3_3">RST</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">![WakeMeOps</span>](<span class="na">https://docs.wakemeops.com/badges/uv.svg</span>)](https://docs.wakemeops.com/packages/uv)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/packages/uv&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/badges/uv.svg&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> https://docs.wakemeops.com/badges/uv.svg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nc">:target:</span> https://docs.wakemeops.com/packages/uv
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>
