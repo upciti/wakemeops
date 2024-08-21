@@ -4,7 +4,6 @@ matrix:
     - amd64
     - arm64
   versions:
-    - 3.81.0
     - 3.82.0
     - 3.83.0
     - 3.84.0
@@ -54,6 +53,7 @@ matrix:
     - 3.114.0
     - 3.114.1
     - 3.115.0
+    - 3.115.1
 homepage: https://mirrord.dev/
 summary: develop locally with your kubernetes environment
 description: |-
