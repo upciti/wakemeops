@@ -1,5 +1,8 @@
 name: bitwarden-cli
-version: 2024.6.1
+matrix:
+  versions:
+    - 2024.6.1
+    - 2024.8.0
 homepage: https://bitwarden.com/help/cli/
 summary: CLI to access and manage a bitwarden vault
 description: |-
