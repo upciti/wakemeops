@@ -1,7 +1,6 @@
 name: typos-cli
 matrix:
   versions:
-    - 1.16.10
     - 1.16.11
     - 1.16.12
     - 1.16.13
@@ -51,6 +50,7 @@ matrix:
     - 1.23.5
     - 1.23.6
     - 1.23.7
+    - 1.24.1
 homepage: https://github.com/crate-ci/typos/
 summary: source code spell checker
 description: |-
