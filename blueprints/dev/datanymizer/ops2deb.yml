@@ -12,7 +12,10 @@
     - mv pg_datanymizer {{src}}/usr/bin/
 
 - name: datanymizer
-  version: 0.6.0
+  matrix:
+    versions:
+      - 0.6.0
+      - 0.7.1
   homepage: https://github.com/datanymizer/datanymizer
   summary: powerful postgres database anonymizer with flexible rules
   description: |-
