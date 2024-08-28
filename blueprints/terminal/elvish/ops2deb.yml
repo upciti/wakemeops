@@ -1,22 +1,39 @@
-name: elvish
-matrix:
-  architectures:
-    - amd64
-    - arm64
-  versions:
-    - 0.18.0
-    - 0.19.1
-    - 0.19.2
-    - 0.20.0
-    - 0.20.1
-    - 0.21.0
-homepage: https://elv.sh/
-summary: expressive programming language + versatile interactive shell
-description: |-
-  Elvish is a cross-platform shell, supporting Linux, BSDs and Windows. It
-  features an expressive programming language, with features like namespace and
-  anonymous functions, and a fully programmable user interface with friendly
-  defaults. It is suitable for both interactive use and scripting.
-fetch: https://dl.elv.sh/linux-{{goarch}}/elvish-v{{version}}.tar.gz
-install:
-  - elvish-v{{version}}:/usr/bin/elvish
+- name: elvish
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+    versions:
+      - 0.18.0
+      - 0.19.1
+      - 0.19.2
+      - 0.20.0
+      - 0.20.1
+  homepage: https://elv.sh/
+  summary: expressive programming language + versatile interactive shell
+  description: |-
+    Elvish is a cross-platform shell, supporting Linux, BSDs and Windows. It
+    features an expressive programming language, with features like namespace and
+    anonymous functions, and a fully programmable user interface with friendly
+    defaults. It is suitable for both interactive use and scripting.
+  fetch: https://dl.elv.sh/linux-{{goarch}}/elvish-v{{version}}.tar.gz
+  install:
+    - elvish-v{{version}}:/usr/bin/elvish
+
+- name: elvish
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+    versions:
+      - 0.21.0
+  homepage: https://elv.sh/
+  summary: expressive programming language + versatile interactive shell
+  description: |-
+    Elvish is a cross-platform shell, supporting Linux, BSDs and Windows. It
+    features an expressive programming language, with features like namespace and
+    anonymous functions, and a fully programmable user interface with friendly
+    defaults. It is suitable for both interactive use and scripting.
+  fetch: https://dl.elv.sh/linux-{{goarch}}/elvish-v{{version}}.tar.gz
+  install:
+    - elvish:/usr/bin/elvish
