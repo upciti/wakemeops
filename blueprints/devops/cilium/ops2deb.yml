@@ -1,0 +1,14 @@
+name: cilium
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.15.23
+    - 0.16.18
+homepage: https://github.com/cilium/cilium-cli
+summary: CLI for interacting with the local Cilium Agent
+description: CLI to install, manage & troubleshoot Kubernetes clusters running Cilium.
+fetch: https://github.com/cilium/cilium-cli/releases/download/v{{version}}/cilium-linux-{{goarch}}.tar.gz
+install:
+  - cilium:/usr/bin/cilium
