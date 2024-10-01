@@ -1,6 +1,3 @@
-- url: https://github.com/crate-ci/typos/releases/download/v1.16.16/typos-v1.16.16-x86_64-unknown-linux-musl.tar.gz
-  sha256: 0645ba7799529fe3edd9638e43b7dfc8021504e8f8d6e85c9bc39f4413218ca3
-  timestamp: 2023-10-02 18:22:13+00:00
 - url: https://github.com/crate-ci/typos/releases/download/v1.16.17/typos-v1.16.17-x86_64-unknown-linux-musl.tar.gz
   sha256: 9b6f8716c245d713bfa1f7492d52b676dcb44b5a5ba8cdaafb3e5ae390050e50
   timestamp: 2023-10-02 21:14:30+00:00
@@ -148,3 +145,6 @@
 - url: https://github.com/crate-ci/typos/releases/download/v1.24.6/typos-v1.24.6-x86_64-unknown-linux-musl.tar.gz
   sha256: c21e8e26ed9343d633c01c76551e741f05ce4e26005804259e04b25ef0c80e20
   timestamp: 2024-09-16 21:05:58+00:00
+- url: https://github.com/crate-ci/typos/releases/download/v1.25.0/typos-v1.25.0-x86_64-unknown-linux-musl.tar.gz
+  sha256: 39f231d15dd4012328e412194e344fa9475462abee375192d4bd16ea18f1dcc6
+  timestamp: 2024-10-01 03:17:37+00:00
