@@ -2,7 +2,9 @@ name: neovim
 matrix:
   architectures:
     - amd64
-version: 0.10.1
+  versions:
+    - 0.10.1
+    - 0.10.2
 homepage: https://github.com/neovim/neovim
 summary: Heavily refactored vim fork
 description: |-

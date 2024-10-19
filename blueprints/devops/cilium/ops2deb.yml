@@ -6,6 +6,7 @@ matrix:
   versions:
     - 0.15.23
     - 0.16.18
+    - 0.16.19
 homepage: https://github.com/cilium/cilium-cli
 summary: CLI for interacting with the local Cilium Agent
 description: CLI to install, manage & troubleshoot Kubernetes clusters running Cilium.
