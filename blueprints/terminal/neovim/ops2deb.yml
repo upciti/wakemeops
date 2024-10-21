@@ -1,0 +1,23 @@
+name: neovim
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 0.10.1
+    - 0.10.2
+revision: "2"
+homepage: https://github.com/neovim/neovim
+summary: heavily refactored vim fork
+description: |-
+  Neovim is a fork of Vim focused on modern code and features, rather than
+  running in legacy environments.
+
+  msgpack API enables structured communication to/from any programming language.
+  Remote plugins run as co-processes that communicate with Neovim safely and
+  asynchronously.
+
+  GUIs (or TUIs) can easily embed Neovim or communicate via TCP sockets using
+  the discoverable msgpack API.
+fetch: https://github.com/neovim/neovim/releases/download/v{{version}}/nvim-linux64.tar.gz
+install:
+  - nvim-linux64/:/usr/
