@@ -4,7 +4,6 @@ matrix:
     - amd64
     - arm64
   versions:
-    - 0.120.1
     - 0.120.2
     - 0.120.3
     - 0.120.4
@@ -54,6 +53,7 @@ matrix:
     - 0.136.1
     - 0.136.2
     - 0.136.3
+    - 0.136.4
 revision: "2"
 homepage: https://gohugo.io/
 summary: fast and flexible Static Site Generator
