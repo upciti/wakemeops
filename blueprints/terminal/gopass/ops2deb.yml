@@ -1,0 +1,15 @@
+name: gopass
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 1.15.13
+    - 1.15.14
+homepage: https://github.com/gopasspw/gopass
+summary: password manager for teams
+description: |-
+  Manage your credentials with ease. In a globally distributed team, on multiple
+  devices or fully offline on an air gapped machine.
+fetch: https://github.com/gopasspw/gopass/releases/download/v{{version}}/gopass-{{version}}-linux-{{goarch}}.tar.gz
+install:
+  - gopass:/usr/bin/gopass
