@@ -1,0 +1,18 @@
+name: kubectl-oidc-login
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.30.0
+    - 1.30.1
+homepage: https://github.com/int128/kubelogin
+summary: Kubectl plugin for Kubernetes OpenID Connect authentication (kubectl oidc-login)
+description: |-
+  This is a kubectl plugin for Kubernetes OpenID Connect (OIDC) authentication.
+  When you run kubectl, kubelogin opens the browser and you can log in to the
+  provider. Then kubelogin gets a token from the provider and kubectl access
+  Kubernetes APIs with the token.
+fetch: https://github.com/int128/kubelogin/releases/download/v{{version}}/kubelogin_linux_{{goarch}}.zip
+install:
+  - kubelogin:/usr/bin/kubectl-oidc_login
