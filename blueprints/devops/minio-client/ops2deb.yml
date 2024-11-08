@@ -1,44 +1,4 @@
 - name: minio-client
-  version: 2021-09-23T05-44-03Z
-  homepage: https://min.io
-  summary: command-line interface for MinIO (mc)
-  description: |-
-    MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
-    for filesystems and object storage.
-  fetch: https://dl.min.io/client/mc/release/linux-amd64/mc.RELEASE.{{version}}
-  script:
-    - install -m 755 mc.RELEASE.{{version}} {{src}}/usr/bin/mc
-
-- name: minio-client
-  version: 2022-01-07T06-01-38Z
-  homepage: https://min.io
-  summary: command-line interface for MinIO (mc)
-  description: |-
-    MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
-    for filesystems and object storage.
-  fetch: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
-  script:
-    - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
-
-- name: minio-client
-  matrix:
-    architectures:
-      - amd64
-      - arm64
-      - armhf
-    versions:
-      - 2022-01-25T21-02-01Z
-      - 2022-02-26T03-58-31Z
-  homepage: https://min.io
-  summary: command-line interface for MinIO (mc)
-  description: |-
-    MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
-    for filesystems and object storage.
-  fetch: https://dl.min.io/client/mc/release/linux-{{goarch}}/archive/mc.RELEASE.{{version}}
-  script:
-    - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
-
-- name: minio-client
   matrix:
     architectures:
       - amd64
@@ -53,6 +13,7 @@
       - 2023-03-20T17-17-53Z
       - 2023-05-30T22-41-38Z
       - 2023-08-15T23-03-09Z
+      - 2024-10-29T15-34-59Z
   homepage: https://min.io
   summary: command-line interface for MinIO (mc)
   description: |-
@@ -64,15 +25,16 @@
 
 - name: minio-client
   matrix:
+    architectures:
+      - amd64
+      - arm64
     versions:
-      - 2021-11-16T20-37-36Z
-      - 2021-12-10T00-14-28Z
-  revision: "3"
+      - 2024-11-05T11-29-45Z
   homepage: https://min.io
   summary: command-line interface for MinIO (mc)
   description: |-
     MinIO Client (mc) is a replacement for ls, cp, mkdir, diff and rsync commands
     for filesystems and object storage.
-  fetch: https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.{{version}}
-  script:
-    - mv mc.RELEASE.{{version}} {{src}}/usr/bin/mc
+  fetch: https://dl.min.io/client/mc/release/linux-{{goarch}}/archive/mc.RELEASE.{{version}}
+  install:
+    - mc.RELEASE.{{version}}:/usr/bin/mc

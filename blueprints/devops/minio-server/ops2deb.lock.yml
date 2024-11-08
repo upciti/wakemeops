@@ -1,33 +1,3 @@
-- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2021-10-08T23-58-24Z
-  sha256: 6036a2c121c4727b7db89b7419fcb069b00b853c240029b9caf8ddb140c91d76
-  timestamp: 2021-10-10 17:15:17+00:00
-- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2021-11-24T23-19-33Z
-  sha256: dc00c6b32cfe756dd91e891e77187315736b24d6f12671b98a9ce27bd8fef195
-  timestamp: 2021-12-14 15:37:09+00:00
-- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2021-12-10T23-03-39Z
-  sha256: 20efabe6cc76e487dc5cd367d744bf344eb28075d0772046b00a1a5e220ccf55
-  timestamp: 2021-12-16 13:25:06+00:00
-- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-01-08T03-11-54Z
-  sha256: e2b9bf780974862b85dfecb416c468f15d374ace1efe230f0ffbccd9fd6c81e5
-  timestamp: 2022-01-10 09:50:26+00:00
-- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-01-28T02-28-16Z
-  sha256: d81f52faf6f0626fa4b23964c403bae60ff840577f4d75ec3e208ceb78f19ee2
-  timestamp: 2022-01-28 18:33:46+00:00
-- url: https://dl.min.io/server/minio/release/linux-arm/archive/minio.RELEASE.2022-01-28T02-28-16Z
-  sha256: 2053ecb6b166f8dad5330307672741ccdf7ef44a61eca67feb1eb6d8a991341e
-  timestamp: 2022-01-28 18:33:46+00:00
-- url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2022-01-28T02-28-16Z
-  sha256: 45779efe444b55c9e88bb061f5f0f2a825e081f98ba09a53659d1f40a7c5e4dd
-  timestamp: 2022-01-28 18:33:46+00:00
-- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-02-26T02-54-46Z
-  sha256: b87f0179626e9d7b17875ea0dedc6566cb5ea568bd037fd3a8a9714798c48714
-  timestamp: 2022-02-28 22:09:29+00:00
-- url: https://dl.min.io/server/minio/release/linux-arm/archive/minio.RELEASE.2022-02-26T02-54-46Z
-  sha256: 05725661e1f10916227f5b794d399bf870bc237ae0581a4423cdeaac2a0cd1e3
-  timestamp: 2022-02-28 22:09:29+00:00
-- url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2022-02-26T02-54-46Z
-  sha256: e180cf58b38129816d2bedfbf873bc727d214c7f920a9bfec86ac92073bd3d14
-  timestamp: 2022-02-28 22:09:29+00:00
 - url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-04-16T04-26-02Z
   sha256: cd27696aaa3fc8fdc63f15d84a8ada4efee3b345c35ad2c6a5cc3cc1bc411844
   timestamp: 2022-04-21 22:44:37+00:00
@@ -100,3 +70,18 @@
 - url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2023-08-16T20-17-30Z
   sha256: ca483c34600a96fcdd1a9c35130828d207eb30bd4fff8d7c4d2db9977213e244
   timestamp: 2023-08-21 09:31:32+00:00
+- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2024-11-07T00-52-20Z
+  sha256: c27873d791b56d33518de11f12c5bfae4be88ebac00e12c6dd0027b08123fd80
+  timestamp: 2024-11-08 09:19:30+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2024-11-07T00-52-20Z
+  sha256: 4c5ed5a8563b92a15c41a1cb9b382c448a72dc09026faecb4afb3eb44f10375b
+  timestamp: 2024-11-08 09:19:30+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm/archive/minio.RELEASE.2024-10-02T17-50-41Z
+  sha256: ddd37370d6f710258bde2e3455c4ddc1e101bb01668febbffa852f3db44d4379
+  timestamp: 2024-11-08 09:20:27+00:00
+- url: https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2024-10-02T17-50-41Z
+  sha256: 8e623d82cb851686f973840ad0ff014915a50f3c248cb984683c1c0e06095d79
+  timestamp: 2024-11-14 15:35:27+00:00
+- url: https://dl.min.io/server/minio/release/linux-arm64/archive/minio.RELEASE.2024-10-02T17-50-41Z
+  sha256: 9656ca130d1b9617fdaf63dbd10b744f1441cc0aa88364b3e9592ee7dacf67bd
+  timestamp: 2024-11-14 15:35:27+00:00
