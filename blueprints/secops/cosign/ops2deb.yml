@@ -1,0 +1,19 @@
+name: cosign
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.4.1
+homepage: https://www.sigstore.dev
+summary: code signing and transparency for containers and binaries
+description: |-
+  Cosign is a command line utility that is used to sign software artifacts and
+  verify signatures using Sigstore.
+
+  Sigstore has a number of language specific clients that you can use to build
+  custom tooling. Although a number of the clients include a basic CLI, Cosign is
+  the recommended tool for signing and verifying.
+fetch: https://github.com/sigstore/cosign/releases/download/v{{version}}/cosign-linux-{{target}}
+install:
+  - cosign-linux-{{target}}:/usr/bin/cosign
