@@ -1,0 +1,15 @@
+name: zli
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.1.0
+homepage: https://zotregistry.dev
+summary: tool for OCI-native container image registry, simplified
+description: |-
+  zli is a binary that implements a set of command line commands for interacting
+  with the zot registry server
+fetch: https://github.com/project-zot/zot/releases/download/v{{version}}/zli-linux-{{arch}}
+install:
+  - zli-linux-{{arch}}:/usr/bin/zli
