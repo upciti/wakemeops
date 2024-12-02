@@ -1,0 +1,15 @@
+name: zot
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.1.1
+homepage: https://zotregistry.dev
+summary: OCI-native container image registry, simplified
+description: |-
+  zot is an OCI image registry that allows you to store, manage, and share
+  container images.
+fetch: https://github.com/project-zot/zot/releases/download/v{{version}}/zot-linux-{{arch}}
+install:
+  - zot-linux-{{arch}}:/usr/bin/zot
