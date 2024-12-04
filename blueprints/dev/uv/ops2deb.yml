@@ -5,7 +5,6 @@ matrix:
     - arm64
     - armhf
   versions:
-    - 0.2.31
     - 0.2.32
     - 0.2.33
     - 0.2.34
@@ -55,6 +54,7 @@ matrix:
     - 0.5.3
     - 0.5.4
     - 0.5.5
+    - 0.5.6
 homepage: https://github.com/astral-sh/uv
 summary: extremely fast Python package installer and resolver
 description: |-
