@@ -1,0 +1,25 @@
+name: oc
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 4.17.5
+    - 4.17.6
+    - 4.17.7
+    - 4.17.8
+homepage: https://openshift.com
+summary: command line client for controlling an Openshift cluster
+description: |-
+  The OpenShift command-line interface (CLI), allows you to create applications
+  and manage OpenShift Container Platform projects from a terminal. The OpenShift
+  CLI is ideal for working directly with project source code, scripting OpenShift
+  Container Platform operations or managing projects while restricted by
+  bandwidth resources and the web console is unavailable.
+fetch:
+  url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{version}}/openshift-client-{{target}}.tar.gz
+  targets:
+    amd64: linux
+    arm64: linux-arm64
+install:
+  - oc:/usr/bin/oc
