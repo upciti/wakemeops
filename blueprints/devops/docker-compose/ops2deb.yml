@@ -18,7 +18,6 @@
       - arm64
       - armhf
     versions:
-      - 2.16.0
       - 2.17.0
       - 2.17.1
       - 2.17.2
@@ -68,6 +67,7 @@
       - 2.30.3
       - 2.31.0
       - 2.32.0
+      - 2.32.1
   homepage: https://docs.docker.com/compose
   summary: lightweight development environments using Docker
   description: |-
