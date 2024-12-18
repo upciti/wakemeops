@@ -1,56 +1,88 @@
-name: yq
-matrix:
-  architectures:
-    - amd64
-    - arm64
-    - armhf
-  versions:
-    - 4.25.3
-    - 4.26.1
-    - 4.27.2
-    - 4.27.3
-    - 4.28.1
-    - 4.28.2
-    - 4.29.1
-    - 4.29.2
-    - 4.30.1
-    - 4.30.2
-    - 4.30.3
-    - 4.30.5
-    - 4.30.6
-    - 4.30.7
-    - 4.30.8
-    - 4.31.1
-    - 4.31.2
-    - 4.32.1
-    - 4.32.2
-    - 4.33.1
-    - 4.33.2
-    - 4.33.3
-    - 4.34.1
-    - 4.34.2
-    - 4.35.1
-    - 4.35.2
-    - 4.40.2
-    - 4.40.3
-    - 4.40.4
-    - 4.40.5
-    - 4.40.7
-    - 4.41.1
-    - 4.42.1
-    - 4.43.1
-    - 4.44.1
-    - 4.44.2
-    - 4.44.3
-    - 4.44.5
-    - 4.44.6
-homepage: https://github.com/mikefarah/yq
-summary: portable command-line YAML processor
-description: |-
-  Lightweight and portable command-line YAML processor. yq uses jq like syntax
-  but works with yaml files as well as json. It doesn't yet support everything jq
-  does - but it does support the most common operations and functions, and more
-  is being added continuously.
-fetch: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
-install:
-  - yq_linux_{{goarch}}:/usr/bin/yq
+- name: yq
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+    versions:
+      - 4.25.3
+      - 4.26.1
+      - 4.27.2
+      - 4.27.3
+      - 4.28.1
+      - 4.28.2
+      - 4.29.1
+      - 4.29.2
+      - 4.30.1
+      - 4.30.2
+      - 4.30.3
+      - 4.30.5
+      - 4.30.6
+      - 4.30.7
+      - 4.30.8
+      - 4.31.1
+      - 4.31.2
+      - 4.32.1
+      - 4.32.2
+      - 4.33.1
+      - 4.33.2
+      - 4.33.3
+      - 4.34.1
+      - 4.34.2
+      - 4.35.1
+      - 4.35.2
+      - 4.40.2
+      - 4.40.3
+      - 4.40.4
+      - 4.40.5
+      - 4.40.7
+      - 4.41.1
+      - 4.42.1
+      - 4.43.1
+      - 4.44.1
+      - 4.44.2
+      - 4.44.3
+      - 4.44.5
+  homepage: https://github.com/mikefarah/yq
+  summary: portable command-line YAML processor
+  description: |-
+    Lightweight and portable command-line YAML processor. yq uses jq like syntax
+    but works with yaml files as well as json. It doesn't yet support everything jq
+    does - but it does support the most common operations and functions, and more
+    is being added continuously.
+  fetch: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
+  install:
+    - yq_linux_{{goarch}}:/usr/bin/yq
+
+- name: yq
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+    versions:
+      - 4.44.6
+  revision: "2"
+  homepage: https://github.com/mikefarah/yq
+  summary: portable command-line YAML processor
+  description: |-
+    Lightweight and portable command-line YAML processor. yq uses jq like syntax
+    but works with yaml files as well as json. It doesn't yet support everything jq
+    does - but it does support the most common operations and functions, and more
+    is being added continuously.
+  fetch: https://github.com/mikefarah/yq/releases/download/v{{version}}/yq_linux_{{goarch}}
+  install:
+    - yq_linux_{{goarch}}:/usr/bin/yq
+  script:
+    - |-
+      set -eu
+      if [ "$(dpkg --print-architecture)" = '{{arch}}' ]; then
+        yq='{{src}}/usr/bin/yq'
+        chmod 755 "$yq"
+        mkdir -p {{src}}/usr/share/bash-completion/completions
+        "$yq" completion bash > {{src}}/usr/share/bash-completion/completions/yq
+        mkdir -p {{src}}/usr/share/zsh/vendor-completions
+        "$yq" completion zsh > {{src}}/usr/share/zsh/vendor-completions/_yq
+        mkdir -p {{src}}/usr/share/fish/vendor_completions.d
+        "$yq" completion fish > {{src}}/usr/share/fish/vendor_completions.d/yq.fish
+      fi
