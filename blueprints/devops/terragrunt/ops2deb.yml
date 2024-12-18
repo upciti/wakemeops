@@ -25,7 +25,6 @@
       - amd64
       - arm64
     versions:
-      - 0.66.7
       - 0.66.8
       - 0.66.9
       - 0.67.0
@@ -75,6 +74,7 @@
       - 0.69.13
       - 0.70.0
       - 0.70.1
+      - 0.70.2
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
