@@ -1,0 +1,17 @@
+name: vhs
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.8.0
+homepage: https://github.com/charmbracelet/vhs
+summary: your CLI home video recorder
+description: write terminal GIFs as code for integration testing and demoing your
+  CLI tools.
+fetch:
+  url: https://github.com/charmbracelet/vhs/releases/download/v{{version}}/vhs_{{version}}_Linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+install:
+  - vhs_{{version}}_Linux_{{target}}/vhs:/usr/bin/
