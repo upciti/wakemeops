@@ -1,0 +1,17 @@
+name: ttyd
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.7.7
+homepage: https://github.com/tsl0922/ttyd
+summary: share your terminal over the web
+description: ttyd is a simple command-line tool for sharing terminal over the web.
+fetch:
+  url: https://github.com/tsl0922/ttyd/releases/download/{{version}}/ttyd.{{target}}
+  targets:
+    amd64: x86_64
+    arm64: aarch64
+install:
+  - ttyd.{{target}}:/usr/bin/ttyd
