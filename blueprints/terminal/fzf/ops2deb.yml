@@ -15,4 +15,4 @@ description: |-
   with omitted characters and still get the results you want.
 fetch: https://github.com/junegunn/fzf/releases/download/v{{version}}/fzf-{{version}}-linux_{{arch}}.tar.gz
 install:
-  - fzf-{{version}}-linux_{{arch}}/fzf:/usr/bin/
+  - fzf:/usr/bin/
