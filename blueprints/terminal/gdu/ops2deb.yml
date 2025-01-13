@@ -5,6 +5,8 @@ matrix:
     - arm64
   versions:
     - 5.29.0
+    - 5.30.0
+    - 5.30.1
 homepage: https://github.com/dundee/gdu
 summary: Fast disk usage analyzer with console interface written in Go
 description: |-
@@ -14,4 +16,4 @@ description: |-
   However HDDs work as well, but the performance gain is not so huge.
 fetch: https://github.com/dundee/gdu/releases/download/v{{version}}/gdu_linux_{{arch}}.tgz
 install:
-  - gdu_linux_{{arch}}/*:/usr/bin/
+  - gdu_linux_{{arch}}/gdu_linux_{{arch}}:/usr/bin/gdu
