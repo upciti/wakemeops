@@ -16,4 +16,4 @@ description: |-
   However HDDs work as well, but the performance gain is not so huge.
 fetch: https://github.com/dundee/gdu/releases/download/v{{version}}/gdu_linux_{{arch}}.tgz
 install:
-  - gdu_linux_{{arch}}/gdu_linux_{{arch}}:/usr/bin/gdu
+  - gdu_linux_{{arch}}:/usr/bin/gdu
