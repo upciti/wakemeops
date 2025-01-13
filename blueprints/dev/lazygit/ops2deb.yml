@@ -1,0 +1,18 @@
+name: lazygit
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.44.0
+    - 0.44.1
+    - 0.45.0
+homepage: https://github.com/jesseduffield/lazygit
+summary: a lazier way to manage everything git
+description: A simple terminal UI for git, written in Go with the gocui library.
+fetch:
+  url: https://github.com/jesseduffield/lazygit/releases/download/v{{version}}/lazygit_{{version}}_Linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+install:
+  - lazygit:/usr/bin
