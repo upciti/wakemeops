@@ -1,0 +1,18 @@
+name: fzf
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.57.0
+homepage: https://junegunn.github.io/fzf/
+summary: A command-line fuzzy finder in Go
+description: |-
+  fzf is a general-purpose command-line fuzzy finder.
+  It’s an interactive filter program for any kind of list; files, command
+  history, processes, hostnames, bookmarks, git commits, etc.
+  With its novel “fuzzy” matching algorithm, you can quickly type in patterns
+  with omitted characters and still get the results you want.
+fetch: https://github.com/junegunn/fzf/releases/download/v{{version}}/fzf-{{version}}-linux_{{arch}}.tar.gz
+install:
+  - fzf:/usr/bin/
