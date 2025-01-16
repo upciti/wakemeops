@@ -1,0 +1,29 @@
+name: just
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.38.0
+homepage: https://just.systems/
+summary: Just a command runner - Make alternative written in Rust
+description: |-
+  just is a handy way to save and run project-specific commands.
+
+  Commands, called recipes, are stored in a file called 'justfile' with a syntax
+  that is inspired by make. You can then run them with 'just RECIPE'.
+
+  Key features:
+  - Simple, intuitive syntax
+  - Support for aliases and positional arguments
+  - Cross-platform shell support
+  - .env file integration
+  - String interpolation and conditionals
+  - Recipe dependencies and parameters
+fetch:
+  url: https://github.com/casey/just/releases/download/{{version}}/just-{{version}}-{{target}}.tar.gz
+  targets:
+    amd64: x86_64-unknown-linux-musl
+    arm64: aarch64-unknown-linux-musl
+install:
+  - just:/usr/bin/
