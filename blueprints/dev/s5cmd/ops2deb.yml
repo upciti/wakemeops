@@ -1,0 +1,18 @@
+name: s5cmd
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.3.0
+homepage: https://github.com/peak/s5cmd
+summary: Parallel S3 and local filesystem execution tool
+description: |-
+  s5cmd is a very fast S3 and local filesystem execution tool.
+  It comes with support for a multitude of operations including tab completion
+  and wildcard support for files,
+  which can be very handy for your object storage workflow while working with
+  large number of files.
+fetch: https://github.com/peak/s5cmd/releases/download/v{{version}}/s5cmd_{{version}}_linux_{{arch}}.deb
+install:
+  - data:/
