@@ -10,12 +10,6 @@
 - url: https://app.getambassador.io/download/tel2/linux/arm64/2.5.4/telepresence
   sha256: 9d82f8eff85bad0cf269264fe3b0ecf4c85410d437bd63fc6b3527c55aa7ebaa
   timestamp: 2022-03-29 23:19:14+00:00
-- url: https://app.getambassador.io/download/tel2/linux/amd64/2.7.3/telepresence
-  sha256: 140c34a01da17e3c77a65347b0620db6eb098f2864ad279438f95712f0e2172c
-  timestamp: 2022-09-07 20:30:20+00:00
-- url: https://app.getambassador.io/download/tel2/linux/arm64/2.7.3/telepresence
-  sha256: 0da44a7d48984b0d4dbf4df6ebae9a038e691c790bdf8586fdc57c73cac29c5c
-  timestamp: 2022-09-07 20:30:20+00:00
 - url: https://app.getambassador.io/download/tel2/linux/amd64/2.7.4/telepresence
   sha256: b642822b4e5817b6d488b1461537d0572194072bfe00ead2810832d821b32f9a
   timestamp: 2022-09-14 20:31:09+00:00
@@ -310,3 +304,9 @@
 - url: https://app.getambassador.io/download/tel2/linux/arm64/2.20.1/telepresence
   sha256: cd5b262055e7ece04ee630dc692301690f25ae038a7b1eb6564515504169a3cb
   timestamp: 2024-12-06 18:08:40+00:00
+- url: https://app.getambassador.io/download/tel2/linux/amd64/2.20.2/telepresence
+  sha256: 6ee330bf651b4f2abc9f6683c847a580a2f04c5a16f5629e11f4e7ebcad17927
+  timestamp: 2025-01-28 09:07:23+00:00
+- url: https://app.getambassador.io/download/tel2/linux/arm64/2.20.2/telepresence
+  sha256: dd1ee36701e915e5906e1c105bfad194644c92a1ecc4caf9f86f21936322d368
+  timestamp: 2025-01-28 09:07:23+00:00
