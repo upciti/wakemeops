@@ -5,6 +5,7 @@ matrix:
     - arm64
   versions:
     - 2.4.1
+    - 2.4.2
 homepage: https://www.sigstore.dev
 summary: code signing and transparency for containers and binaries
 description: |-
