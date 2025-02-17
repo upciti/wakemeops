@@ -67,7 +67,6 @@
       - 1.8.4
       - 1.8.5
       - 2.0.0
-      - 2.0.1
   homepage: https://python-poetry.org
   summary: tool for dependency management and packaging in Python
   description: |-
@@ -102,10 +101,60 @@
       # install bootstrap poetry
       /usr/lib/python-build-standalone/3.11/bin/python3 -m venv bootstrap
       . bootstrap/bin/activate
-      pip install poetry 'poetry-plugin-bundle @ git+https://github.com/upciti/poetry-plugin-bundle@fix/support-poetry-1.5.0'
+      pip install poetry=={{version}} 'poetry-plugin-bundle @ git+https://github.com/upciti/poetry-plugin-bundle@fix/support-poetry-1.5.0'
     - |-
       # install poetry with poetry own poetry.lock
       cd poetry-{{version}}
       ../bootstrap/bin/poetry -v bundle venv ../poetry --python /usr/lib/python-build-standalone/3.11/bin/python3
     - find poetry -name '__pycache__' -exec rm -r {} +
     - cp -r -n poetry {{src}}/usr/lib/
+
+- name: poetry
+  matrix:
+    versions:
+      - 2.0.1
+      - 2.1.1
+  homepage: https://python-poetry.org
+  summary: tool for dependency management and packaging in Python
+  description: |-
+    Poetry helps you declare, manage and install dependencies of Python projects,
+    ensuring you have the right stack everywhere.
+  depends:
+    - python3.11-build-standalone
+  fetch: https://github.com/python-poetry/poetry/archive/refs/tags/{{version}}.tar.gz
+  install:
+    - content: |-
+        #!/usr/lib/poetry/bin/python3
+        import os
+        import sys
+        os.environ["POETRY_VIRTUALENVS_PREFER_ACTIVE_PYTHON"]="1"
+        from poetry.console.application import main
+        if __name__ == '__main__':
+            sys.exit(main())
+      path: /usr/bin/poetry
+    - content: |-
+        #!/bin/sh
+        set -e
+        find /usr/lib/poetry -name '*.py' -exec /usr/lib/poetry/bin/python3 -m py_compile {} +
+      path: debian/postinst
+    - content: |-
+        #!/bin/sh
+        set -e
+        find /usr/lib/poetry -name '__pycache__' -exec rm -r {} +
+      path: debian/prerm
+  script:
+    - install_packages python3.11-build-standalone unzip
+    - |-
+      # install bootstrap poetry
+      /usr/lib/python-build-standalone/3.11/bin/python3 -m venv bootstrap
+      . bootstrap/bin/activate
+      pip install poetry=={{version}}
+    - |-
+      # install poetry with poetry own poetry.lock
+      /usr/lib/python-build-standalone/3.11/bin/python3 -m venv poetry-{{version}}/.venv
+      cd poetry-{{version}}
+      ../bootstrap/bin/poetry install --no-root --without dev
+      ../bootstrap/bin/poetry build
+      unzip -o dist/{{name}}-{{version}}-py3-none-any.whl -d .venv/lib/python3.11/site-packages
+    - find poetry-{{version}} -name '__pycache__' -exec rm -r {} +
+    - mv poetry-{{version}}/.venv {{src}}/usr/lib/poetry
