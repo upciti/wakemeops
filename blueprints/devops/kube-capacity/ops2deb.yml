@@ -1,0 +1,19 @@
+name: kube-capacity
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.8.0
+homepage: https://github.com/robscott/kube-capacity
+summary: provides an overview of the resource requests, limits, and utilization in
+  a Kubernetes cluster
+description: |-
+  It attempts to combine the best parts of the output from kubectl top and
+  kubectl describe into an easy to use CLI focused on cluster resources.
+fetch:
+  url: https://github.com/robscott/kube-capacity/releases/download/v{{version}}/kube-capacity_v{{version}}_linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+install:
+  - kube-capacity:/usr/bin/
