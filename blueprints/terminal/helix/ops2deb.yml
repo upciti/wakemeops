@@ -1,0 +1,19 @@
+name: helix
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 25.01.1
+homepage: https://helix-editor.com/
+summary: A post-modern modal text editor
+description: |-
+  A Kakoune / Neovim inspired editor, written in Rust. The editing model is very
+  heavily based on Kakoune
+fetch:
+  url: https://github.com/helix-editor/helix/releases/download/{{version}}/helix-{{version}}-{{target}}.tar.xz
+  targets:
+    amd64: x86_64-linux
+    arm64: aarch64-linux
+install:
+  - helix-{{version}}-{{target}}:/usr/bin/hx
