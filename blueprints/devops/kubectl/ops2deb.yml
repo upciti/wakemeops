@@ -80,3 +80,22 @@
   fetch: https://storage.googleapis.com/kubernetes-release/release/v{{version}}/bin/linux/{{goarch}}/kubectl
   install:
     - kubectl:/usr/bin/
+
+- name: kubectl
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+    versions:
+      - 1.31.1
+      - 1.32.1
+      - 1.32.2
+  homepage: https://github.com/kubernetes/kubectl
+  summary: command line client for controlling a Kubernetes cluster
+  description: |-
+    kubectl is a command line client for running commands against Kubernetes
+    clusters.
+  fetch: https://dl.k8s.io/release/v{{version}}/bin/linux/{{goarch}}/kubectl
+  install:
+    - kubectl:/usr/bin/

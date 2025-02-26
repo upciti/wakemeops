@@ -11,6 +11,8 @@ matrix:
     - 0.16.21
     - 0.16.22
     - 0.16.23
+    - 0.16.24
+    - 0.17.0
 homepage: https://github.com/cilium/cilium-cli
 summary: CLI for interacting with the local Cilium Agent
 description: CLI to install, manage & troubleshoot Kubernetes clusters running Cilium.
