@@ -1,0 +1,15 @@
+name: kubeconform
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.6.7
+homepage: https://github.com/yannh/kubeconform
+summary: Kubernetes manifest validation tool
+description: |-
+  Kubeconform is a Kubernetes manifest validation tool. Incorporate it into your
+  CI, or use it locally to validate your Kubernetes configuration!
+fetch: https://github.com/yannh/kubeconform/releases/download/v{{version}}/kubeconform-linux-{{target}}.tar.gz
+script:
+  - install -m 755 kubeconform {{src}}/usr/bin/kubeconform
