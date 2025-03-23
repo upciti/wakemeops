@@ -5,7 +5,6 @@ matrix:
     - arm64
     - armhf
   versions:
-    - 2.35.1
     - 2.35.2
     - 2.36.0
     - 2.36.1
@@ -55,6 +54,7 @@ matrix:
     - 2.59.0
     - 2.59.1
     - 2.60.1
+    - 2.61.0
 homepage: https://github.com/twpayne/chezmoi
 summary: manage your dotfiles across multiple diverse machines
 description: |-

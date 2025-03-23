@@ -7,6 +7,7 @@ matrix:
   versions:
     - 0.4.3
     - 0.4.4
+    - 0.4.5
 homepage: https://krew.sigs.k8s.io
 summary: find and install kubectl plugins
 description: Krew is the package manager for kubectl plugins.
