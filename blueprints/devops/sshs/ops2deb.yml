@@ -1,0 +1,16 @@
+name: sshs
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 4.5.0
+    - 4.5.1
+homepage: https://github.com/quantumsheep/sshs
+summary: a terminal user interface for SSH
+description: |-
+  A simple terminal user interface using SSH config file to list and connect to
+  hosts.
+fetch: https://github.com/quantumsheep/sshs/releases/download/{{version}}/sshs-linux-{{target}}
+install:
+  - sshs-linux-{{target}}:/usr/bin
