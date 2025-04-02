@@ -7,13 +7,14 @@ matrix:
     - 0.11.0
     - 0.12.0
     - 0.13.0
+    - 0.13.1
 homepage: https://github.com/wagoodman/dive
 summary: tool for exploring each layer in a docker image
 description: |-
   Dive is a tool used for exploring a docker image, layer contents, and
   discovering ways to shrink the size of your Docker/OCI image. It shows Docker
   image contents broken down by layer, indicates what's changed in each layer,
-  estimates "image efficiency", quick build/analysis cycles ans is ready to use
+  estimates "image efficiency", quick build/analysis cycles and is ready to use
   with CI integration.
 fetch: https://github.com/wagoodman/dive/releases/download/v{{version}}/dive_{{version}}_linux_{{arch}}.tar.gz
 install:
