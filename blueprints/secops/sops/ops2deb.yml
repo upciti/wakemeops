@@ -13,12 +13,14 @@ matrix:
     - 3.9.2
     - 3.9.3
     - 3.9.4
+    - 3.10.1
 homepage: https://age-encryption.org/
 summary: simple and flexible tool for managing secrets
 description: |-
   sops is an editor of encrypted files that supports YAML, JSON, ENV, INI and
   BINARY formats and encrypts with AWS KMS, GCP KMS, Azure Key Vault, age, and
   PGP.
-fetch: https://github.com/getsops/sops/releases/download/v{{version}}/sops-v{{version}}.linux.{{goarch}}
+fetch: 
+  https://github.com/getsops/sops/releases/download/v{{version}}/sops-v{{version}}.linux.{{goarch}}
 install:
   - sops-v{{version}}.linux.{{goarch}}:/usr/bin/sops

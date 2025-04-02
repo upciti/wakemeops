@@ -11,7 +11,8 @@
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
-    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    url: 
+      https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     targets:
       armhf: armv7
   script:
@@ -24,7 +25,8 @@
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
-  fetch: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
+  fetch: 
+    https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-amd64.tar.gz
   script:
     - install -d {{src}}/opt/istio
     - mv * {{src}}/opt/istio/
@@ -44,7 +46,8 @@
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
-    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    url: 
+      https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     targets:
       armhf: armv7
   script:
@@ -64,7 +67,8 @@
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
-    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    url: 
+      https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     targets:
       armhf: armv7
   install:
@@ -122,11 +126,13 @@
       - 1.24.2
       - 1.24.3
       - 1.25.0
+      - 1.25.1
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
   fetch:
-    url: https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
+    url: 
+      https://github.com/istio/istio/releases/download/{{version}}/istio-{{version}}-linux-{{target}}.tar.gz
     targets:
       armhf: armv7
   install:

@@ -31,6 +31,7 @@ matrix:
     - 0.50.0
     - 0.51.0
     - 0.51.1
+    - 0.51.2
 homepage: https://carvel.dev/ytt/
 summary: YAML templating tool that works on YAML structure instead of text
 description: |-
@@ -38,6 +39,7 @@ description: |-
   Template and patch as needed to easily make your configuration reusable and
   extensible.
   Works with your own and third-party YAML configuration.
-fetch: https://github.com/vmware-tanzu/carvel-ytt/releases/download/v{{version}}/ytt-linux-{{goarch}}
+fetch: 
+  https://github.com/vmware-tanzu/carvel-ytt/releases/download/v{{version}}/ytt-linux-{{goarch}}
 install:
   - ytt-linux-{{goarch}}:/usr/bin/ytt

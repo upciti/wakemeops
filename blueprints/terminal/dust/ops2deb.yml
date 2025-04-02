@@ -4,7 +4,8 @@
   homepage: https://github.com/bootandy/dust
   summary: human-friendly and fast alternative to 'du'
   description: du + rust = dust. Like du but more intuitive.
-  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+  fetch: 
+    https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
   script:
     - mv dust-v{{version}}-x86_64-unknown-linux-gnu/dust {{src}}/usr/bin/dust
 
@@ -15,7 +16,8 @@
   homepage: https://github.com/bootandy/dust
   summary: human-friendly and fast alternative to 'du'
   description: du + rust = dust. Like du but more intuitive.
-  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+  fetch: 
+    https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
   script:
     - mv dust-v{{version}}-*/dust {{src}}/usr/bin/dust
 
@@ -30,7 +32,8 @@
   homepage: https://github.com/bootandy/dust
   summary: human-friendly and fast alternative to 'du'
   description: du + rust = dust. Like du but more intuitive.
-  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+  fetch: 
+    https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
   script:
     - mv dust-v{{version}}-*/dust {{src}}/usr/bin/dust
 
@@ -51,9 +54,11 @@
       - 1.1.0
       - 1.1.1
       - 1.1.2
+      - 1.2.0
   homepage: https://github.com/bootandy/dust
   summary: human-friendly and fast alternative to 'du'
   description: du + rust = dust. Like du but more intuitive.
-  fetch: https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
+  fetch: 
+    https://github.com/bootandy/dust/releases/download/v{{version}}/dust-v{{version}}-{{rust_target}}.tar.gz
   install:
     - dust-v{{version}}-{{rust_target}}/dust:/usr/bin/

@@ -8,7 +8,8 @@
     a consistent CLI workflow to manage hundreds of cloud services. Terraform
     codifies cloud APIs into declarative configuration files. Terraform can manage
     existing and popular service providers as well as custom in-house solutions.
-  fetch: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
+  fetch: 
+    https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_amd64.zip
   script:
     - install -m 755 terraform {{src}}/usr/bin/terraform
 
@@ -29,7 +30,8 @@
     a consistent CLI workflow to manage hundreds of cloud services. Terraform
     codifies cloud APIs into declarative configuration files. Terraform can manage
     existing and popular service providers as well as custom in-house solutions.
-  fetch: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
+  fetch: 
+    https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
   script:
     - mv terraform {{src}}/usr/bin/terraform
 
@@ -40,7 +42,6 @@
       - arm64
       - armhf
     versions:
-      - 1.4.0
       - 1.4.1
       - 1.4.2
       - 1.4.3
@@ -90,6 +91,7 @@
       - 1.10.4
       - 1.10.5
       - 1.11.2
+      - 1.11.3
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
@@ -97,6 +99,7 @@
     a consistent CLI workflow to manage hundreds of cloud services. Terraform
     codifies cloud APIs into declarative configuration files. Terraform can manage
     existing and popular service providers as well as custom in-house solutions.
-  fetch: https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
+  fetch: 
+    https://releases.hashicorp.com/terraform/{{version}}/terraform_{{version}}_linux_{{goarch}}.zip
   install:
     - terraform:/usr/bin/

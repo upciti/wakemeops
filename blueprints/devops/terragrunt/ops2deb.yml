@@ -15,7 +15,8 @@
     Terragrunt is a thin wrapper for Terraform that provides extra tools for
     keeping your Terraform configurations DRY, working with multiple Terraform
     modules, and managing remote state.
-  fetch: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
+  fetch: 
+    https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
   script:
     - mv terragrunt_linux_{{goarch}} {{src}}/usr/bin/terragrunt
 
@@ -25,7 +26,6 @@
       - amd64
       - arm64
     versions:
-      - 0.68.3
       - 0.68.4
       - 0.68.5
       - 0.68.6
@@ -75,12 +75,14 @@
       - 0.75.6
       - 0.76.1
       - 0.76.6
+      - 0.77.6
   homepage: https://terragrunt.gruntwork.io/
   summary: provides extra tools for working with multiple Terraform modules
   description: |-
     Terragrunt is a thin wrapper for Terraform that provides extra tools for
     keeping your Terraform configurations DRY, working with multiple Terraform
     modules, and managing remote state.
-  fetch: https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
+  fetch: 
+    https://github.com/gruntwork-io/terragrunt/releases/download/v{{version}}/terragrunt_linux_{{goarch}}
   install:
     - terragrunt_linux_{{goarch}}:/usr/bin/terragrunt

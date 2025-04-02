@@ -9,6 +9,7 @@ matrix:
     - 0.59.0
     - 0.60.0
     - 0.60.3
+    - 0.61.0
 homepage: https://junegunn.github.io/fzf/
 summary: A command-line fuzzy finder in Go
 description: |-
@@ -17,6 +18,7 @@ description: |-
   history, processes, hostnames, bookmarks, git commits, etc.
   With its novel “fuzzy” matching algorithm, you can quickly type in patterns
   with omitted characters and still get the results you want.
-fetch: https://github.com/junegunn/fzf/releases/download/v{{version}}/fzf-{{version}}-linux_{{arch}}.tar.gz
+fetch: 
+  https://github.com/junegunn/fzf/releases/download/v{{version}}/fzf-{{version}}-linux_{{arch}}.tar.gz
 install:
   - fzf:/usr/bin/

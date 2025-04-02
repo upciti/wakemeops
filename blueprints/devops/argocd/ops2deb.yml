@@ -34,9 +34,11 @@ matrix:
     - 2.14.2
     - 2.14.5
     - 2.14.7
+    - 2.14.8
 homepage: https://github.com/argoproj/argo-cd
 summary: continuous delivery tool for Kubernetes
 description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
-fetch: https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{arch}}
+fetch: 
+  https://github.com/argoproj/argo-cd/releases/download/v{{version}}/argocd-linux-{{arch}}
 install:
   - argocd-linux-{{arch}}:/usr/bin/argocd

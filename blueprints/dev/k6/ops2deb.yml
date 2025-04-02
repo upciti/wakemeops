@@ -11,12 +11,14 @@ matrix:
     - 0.55.2
     - 0.56.0
     - 0.57.0
+    - 0.58.0
 homepage: https://k6.io
 summary: modern load testing tool, using Go and JavaScript
 description: |-
   k6 is a modern load-testing tool, built on our years of experience in the
   performance and testing industries. It's built to be powerful, extensible, and
   full-featured. The key design goal is to provide the best developer experience.
-fetch: https://github.com/grafana/k6/releases/download/v{{version}}/k6-v{{version}}-linux-{{target}}.tar.gz
+fetch: 
+  https://github.com/grafana/k6/releases/download/v{{version}}/k6-v{{version}}-linux-{{target}}.tar.gz
 install:
   - k6-v{{version}}-linux-{{target}}/k6:/usr/bin/k6

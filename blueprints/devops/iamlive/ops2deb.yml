@@ -36,11 +36,13 @@ matrix:
     - 1.1.18
     - 1.1.19
     - 1.1.22
+    - 1.1.23
 homepage: https://github.com/iann0036/iamlive
 summary: generate policies from AWS calls
 description: |-
   Generate an IAM policy from AWS calls using client-side monitoring (CSM) or
   embedded proxy policy.
-fetch: https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
+fetch: 
+  https://github.com/iann0036/iamlive/releases/download/v{{version}}/iamlive-v{{version}}-linux-{{goarch}}.tar.gz
 install:
   - iamlive:/usr/bin/iamlive

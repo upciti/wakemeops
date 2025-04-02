@@ -19,7 +19,8 @@
     - Local Task Runner: With act, you can use the GitHub Actions defined in your
     .github/workflows/ to replace your Makefile!
   fetch:
-    url: https://github.com/nektos/act/releases/download/v{{version}}/act_Linux_{{target}}.tar.gz
+    url: 
+      https://github.com/nektos/act/releases/download/v{{version}}/act_Linux_{{target}}.tar.gz
     targets:
       amd64: x86_64
       armhf: armv7
@@ -64,6 +65,7 @@
       - 0.2.73
       - 0.2.74
       - 0.2.75
+      - 0.2.76
   homepage: https://github.com/nektos/act/
   summary: run your GitHub Actions locally
   description: |-
@@ -77,7 +79,8 @@
     - Local Task Runner: With act, you can use the GitHub Actions defined in your
     .github/workflows/ to replace your Makefile!
   fetch:
-    url: https://github.com/nektos/act/releases/download/v{{version}}/act_Linux_{{target}}.tar.gz
+    url: 
+      https://github.com/nektos/act/releases/download/v{{version}}/act_Linux_{{target}}.tar.gz
     targets:
       amd64: x86_64
       armhf: armv7

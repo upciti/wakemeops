@@ -15,6 +15,7 @@ matrix:
     - 0.17.1
     - 0.17.2
     - 0.17.3
+    - 0.18.0
 homepage: https://restic.net/
 summary: fast, secure, efficient backup program
 description: |-
@@ -29,6 +30,7 @@ description: |-
   - Verifiably, enabling you to make sure that your files can be restored when
   needed
   - Freely - restic is entirely free to use and completely open source
-fetch: https://github.com/restic/restic/releases/download/v{{version}}/restic_{{version}}_linux_{{goarch}}.bz2
+fetch: 
+  https://github.com/restic/restic/releases/download/v{{version}}/restic_{{version}}_linux_{{goarch}}.bz2
 install:
   - restic_{{version}}_linux_{{goarch}}:/usr/bin/restic

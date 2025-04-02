@@ -1,7 +1,6 @@
 name: typos-cli
 matrix:
   versions:
-    - 1.20.5
     - 1.20.6
     - 1.20.7
     - 1.20.8
@@ -51,6 +50,7 @@ matrix:
     - 1.29.7
     - 1.29.9
     - 1.30.2
+    - 1.31.1
 homepage: https://github.com/crate-ci/typos/
 summary: source code spell checker
 description: |-
@@ -58,6 +58,7 @@ description: |-
 
   - Fast enough to run on monorepos
   - Low false positives so you can run on PRs
-fetch: https://github.com/crate-ci/typos/releases/download/v{{version}}/typos-v{{version}}-x86_64-unknown-linux-musl.tar.gz
+fetch: 
+  https://github.com/crate-ci/typos/releases/download/v{{version}}/typos-v{{version}}-x86_64-unknown-linux-musl.tar.gz
 install:
   - typos:{{src}}/usr/bin/

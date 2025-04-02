@@ -44,7 +44,8 @@
     issues, merge requests, look at running pipelines directly from your CLI, among
     other features.
   fetch:
-    url: https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_Linux_{{target}}.deb
+    url: 
+      https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_Linux_{{target}}.deb
     targets:
       amd64: x86_64
   install:
@@ -64,6 +65,7 @@
       - 1.52.0
       - 1.53.0
       - 1.54.0
+      - 1.55.0
   homepage: https://gitlab.com/gitlab-org/cli
   summary: Gitlab on the command line
   description: |-
@@ -71,6 +73,7 @@
     git and your code without switching between browser windows or tabs. Work with
     issues, merge requests, look at running pipelines directly from your CLI, among
     other features.
-  fetch: https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_linux_{{arch}}.deb
+  fetch: 
+    https://gitlab.com/gitlab-org/cli/-/releases/v{{version}}/downloads/glab_{{version}}_linux_{{arch}}.deb
   install:
     - data/usr/bin/glab:/usr/bin/

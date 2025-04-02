@@ -9,7 +9,8 @@
     Procs has a colored and human-readable output, multi-column keyword search,
     additional information which are not supported by ps, a tree view, a watch mode
     and more...
-  fetch: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
+  fetch: 
+    https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-lnx.zip
   script:
     - mv procs {{src}}/usr/bin/procs
 
@@ -31,12 +32,14 @@
       - 0.14.7
       - 0.14.8
       - 0.14.9
+      - 0.14.10
   homepage: https://github.com/dalance/procs
   summary: alternative in rust to 'ps'
   description: |-
     Procs has a colored and human-readable output, multi-column keyword search,
     additional information which are not supported by ps, a tree view, a watch mode
     and more...
-  fetch: https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-linux.zip
+  fetch: 
+    https://github.com/dalance/procs/releases/download/v{{version}}/procs-v{{version}}-x86_64-linux.zip
   install:
     - procs:/usr/bin/

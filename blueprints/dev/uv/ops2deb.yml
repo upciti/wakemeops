@@ -73,7 +73,8 @@
     installs, Git dependencies, direct URL dependencies, local dependencies,
     constraints, source distributions, HTML and JSON indexes, and more.
   fetch:
-    url: https://github.com/astral-sh/uv/releases/download/{{version}}/uv-{{target|rust_target}}.tar.gz
+    url: 
+      https://github.com/astral-sh/uv/releases/download/{{version}}/uv-{{target|rust_target}}.tar.gz
     targets:
       armhf: armv7-unknown-linux-gnueabihf
       arm64: aarch64-unknown-linux-musl
@@ -89,6 +90,7 @@
     versions:
       - 0.6.8
       - 0.6.9
+      - 0.6.11
   homepage: https://github.com/astral-sh/uv
   summary: extremely fast Python package installer and resolver
   description: |-
@@ -107,7 +109,8 @@
     installs, Git dependencies, direct URL dependencies, local dependencies,
     constraints, source distributions, HTML and JSON indexes, and more.
   fetch:
-    url: https://github.com/astral-sh/uv/releases/download/{{version}}/uv-{{target|rust_target}}.tar.gz
+    url: 
+      https://github.com/astral-sh/uv/releases/download/{{version}}/uv-{{target|rust_target}}.tar.gz
     targets:
       armhf: armv7-unknown-linux-gnueabihf
       arm64: aarch64-unknown-linux-musl

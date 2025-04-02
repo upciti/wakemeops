@@ -35,6 +35,7 @@ matrix:
     - 4.4.0
     - 4.5.0
     - 4.5.1
+    - 4.5.2
 homepage: https://book.kubebuilder.io
 summary: SDK for building Kubernetes APIs using CRDs
 description: |-
@@ -51,6 +52,7 @@ description: |-
   powerful libraries and tools to simplify building and publishing Kubernetes
   APIs from scratch. It provides a plugin architecture allowing users to take
   advantage of optional helpers and features.
-fetch: https://github.com/kubernetes-sigs/kubebuilder/releases/download/v{{version}}/kubebuilder_linux_{{arch}}
+fetch: 
+  https://github.com/kubernetes-sigs/kubebuilder/releases/download/v{{version}}/kubebuilder_linux_{{arch}}
 install:
   - kubebuilder_linux_{{arch}}:/usr/bin/kubebuilder

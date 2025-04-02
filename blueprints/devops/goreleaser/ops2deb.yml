@@ -24,6 +24,7 @@ matrix:
     - 2.7.0
     - 2.8.0
     - 2.8.1
+    - 2.8.2
 homepage: https://goreleaser.com
 summary: release Go projects as fast and easily as possible
 description: |-
@@ -31,7 +32,8 @@ description: |-
   Go projects to multiple platforms, ensuring a consistent and reliable
   deployment experience.
 fetch:
-  url: https://github.com/goreleaser/goreleaser/releases/download/v{{version}}/goreleaser_Linux_{{target}}.tar.gz
+  url: 
+    https://github.com/goreleaser/goreleaser/releases/download/v{{version}}/goreleaser_Linux_{{target}}.tar.gz
   targets:
     amd64: x86_64
     arm64: arm64

@@ -26,6 +26,7 @@ matrix:
     - 0.4.43
     - 0.4.44
     - 0.4.47
+    - 0.4.48
 homepage: https://rust-lang.github.io/mdBook/
 summary: create book from markdown files
 description: |-
@@ -38,6 +39,7 @@ description: |-
   * Theme files allow customizing the formatting of the output
   * Preprocessors that provide extensions for custom syntax and modifying content
   * Backends that can render the output to multiple formats
-fetch: https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
+fetch: 
+  https://github.com/rust-lang/mdBook/releases/download/v{{version}}/mdbook-v{{version}}-x86_64-unknown-linux-gnu.tar.gz
 install:
   - mdbook:/usr/bin/

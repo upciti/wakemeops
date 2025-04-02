@@ -24,6 +24,7 @@ matrix:
     - 3.0.28
     - 3.0.31
     - 3.0.32
+    - 3.0.34
 homepage: https://kubescape.io
 summary: kubernetes security platform for your IDE, CI/CD pipelines, and clusters
 description: |-
@@ -37,7 +38,8 @@ description: |-
   misconfigurations according to multiple frameworks (including NSA-CISA, MITRE
   ATT&CK® and the CIS Benchmark).
 fetch:
-  url: https://github.com/kubescape/kubescape/releases/download/v{{version}}/kubescape-{{target}}-latest.tar.gz
+  url: 
+    https://github.com/kubescape/kubescape/releases/download/v{{version}}/kubescape-{{target}}-latest.tar.gz
   targets:
     amd64: ubuntu
     arm64: arm64-ubuntu

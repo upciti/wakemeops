@@ -52,11 +52,13 @@ matrix:
     - 24.3.6
     - 24.3.7
     - 24.3.8
+    - 24.3.9
 homepage: https://redpanda.com/
 summary: interact with your Redpanda clusters
 description: |-
   Redpanda is a streaming data platform for developers. Kafka API compatible. 10x
   faster. No ZooKeeper. No JVM!
-fetch: https://github.com/redpanda-data/redpanda/releases/download/v{{version}}/rpk-linux-{{arch}}.zip
+fetch: 
+  https://github.com/redpanda-data/redpanda/releases/download/v{{version}}/rpk-linux-{{arch}}.zip
 install:
   - rpk:/usr/bin/rpk

@@ -12,11 +12,13 @@ matrix:
     - 1.16.6
     - 1.17.0
     - 1.17.1
+    - 1.17.2
 homepage: https://github.com/cilium/hubble
 summary: Network, Service & Security Observability for Kubernetes using eBPF
 description: |-
   Fully distributed networking and security observability platform for cloud
   native workloads. It is built on top of Cilium and eBPF.
-fetch: https://github.com/cilium/hubble/releases/download/v{{version}}/hubble-linux-{{goarch}}.tar.gz
+fetch: 
+  https://github.com/cilium/hubble/releases/download/v{{version}}/hubble-linux-{{goarch}}.tar.gz
 install:
   - hubble:/usr/bin/hubble

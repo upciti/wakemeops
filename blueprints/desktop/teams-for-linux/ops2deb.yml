@@ -39,12 +39,14 @@ matrix:
     - 1.12.7
     - 1.13.0
     - 1.13.1
+    - 1.14.2
 homepage: https://github.com/IsmaelMartinez/teams-for-linux/
 summary: unofficial Microsoft Teams for Linux client
 description: |-
   Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App
   and wraps it as a standalone application using Electron.
-fetch: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
+fetch: 
+  https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v{{version}}/teams-for-linux_{{version}}_amd64.deb
 install:
   - data:/
 script:
