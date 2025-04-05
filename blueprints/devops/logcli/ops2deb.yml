@@ -38,9 +38,11 @@ matrix:
     - 3.4.0
     - 3.4.1
     - 3.4.2
+    - 3.4.3
 homepage: https://github.com/grafana/loki
 summary: command-line interface for loki
 description: It facilitates running LogQL queries against a Loki instance.
-fetch: https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
+fetch: 
+  https://github.com/grafana/loki/releases/download/v{{version}}/logcli-linux-{{goarch}}.zip
 install:
   - logcli-linux-{{goarch}}:/usr/bin/logcli

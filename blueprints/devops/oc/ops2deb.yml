@@ -22,6 +22,7 @@ matrix:
     - 4.18.5
     - 4.18.6
     - 4.18.7
+    - 4.18.8
 homepage: https://openshift.com
 summary: command line client for controlling an Openshift cluster
 description: |-
@@ -31,7 +32,8 @@ description: |-
   Container Platform operations or managing projects while restricted by
   bandwidth resources and the web console is unavailable.
 fetch:
-  url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{version}}/openshift-client-{{target}}.tar.gz
+  url: 
+    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/{{version}}/openshift-client-{{target}}.tar.gz
   targets:
     amd64: linux
     arm64: linux-arm64
