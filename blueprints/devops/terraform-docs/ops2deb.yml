@@ -5,7 +5,8 @@
   description: |-
     Utility to generate documentation from Terraform modules in various output
     formats.
-  fetch: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-amd64.tar.gz
+  fetch: 
+    https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-amd64.tar.gz
   script:
     - mv terraform-docs {{src}}/usr/bin/terraform-docs
 
@@ -19,11 +20,13 @@
       - 0.17.0
       - 0.18.0
       - 0.19.0
+      - 0.20.0
   homepage: https://terraform-docs.io
   summary: generate documentation from Terraform modules in various output formats
   description: |-
     Utility to generate documentation from Terraform modules in various output
     formats.
-  fetch: https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-{{goarch}}.tar.gz
+  fetch: 
+    https://github.com/terraform-docs/terraform-docs/releases/download/v{{version}}/terraform-docs-v{{version}}-linux-{{goarch}}.tar.gz
   script:
     - mv terraform-docs {{src}}/usr/bin/terraform-docs

@@ -7,7 +7,8 @@
     keys, passwords, or certificates. Vault provides a unified interface to any
     secret, while providing tight access control and recording a detailed audit
     log.
-  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
+  fetch: 
+    https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
   script:
     - install -m 755 vault {{src}}/usr/bin/vault
 
@@ -20,7 +21,8 @@
     keys, passwords, or certificates. Vault provides a unified interface to any
     secret, while providing tight access control and recording a detailed audit
     log.
-  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
+  fetch: 
+    https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_amd64.zip
   script:
     - mv vault {{src}}/usr/bin/vault
 
@@ -41,7 +43,8 @@
     keys, passwords, or certificates. Vault provides a unified interface to any
     secret, while providing tight access control and recording a detailed audit
     log.
-  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
+  fetch: 
+    https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
   script:
     - mv vault {{src}}/usr/bin/vault
 
@@ -98,6 +101,7 @@
       - 1.18.3
       - 1.18.4
       - 1.19.0
+      - 1.19.1
   homepage: https://www.hashicorp.com/products/vault
   summary: tool to create, manage and store secrets
   description: |-
@@ -105,6 +109,7 @@
     keys, passwords, or certificates. Vault provides a unified interface to any
     secret, while providing tight access control and recording a detailed audit
     log.
-  fetch: https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
+  fetch: 
+    https://releases.hashicorp.com/vault/{{version}}/vault_{{version}}_linux_{{goarch}}.zip
   install:
     - vault:/usr/bin/

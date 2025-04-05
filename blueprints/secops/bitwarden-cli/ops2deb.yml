@@ -2,13 +2,15 @@ name: bitwarden-cli
 matrix:
   versions:
     - 2025.2.0
+    - 2025.3.0
 homepage: https://bitwarden.com/help/cli/
 summary: CLI to access and manage a bitwarden vault
 description: |-
   Powerful, fully-featured tool for accessing and managing your bitwarden vault.
   Most features that you find in other Bitwarden client applications (desktop,
   browser extension, etc.) are available from the CLI.
-fetch: https://github.com/bitwarden/clients/releases/download/cli-v{{version}}/bw-linux-{{version}}.zip
+fetch: 
+  https://github.com/bitwarden/clients/releases/download/cli-v{{version}}/bw-linux-{{version}}.zip
 install:
   - bw:/usr/bin/bw
 script:
