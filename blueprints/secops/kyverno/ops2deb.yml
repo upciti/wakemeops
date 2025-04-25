@@ -1,0 +1,36 @@
+name: kyverno
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.12.6
+    - 1.12.7
+    - 1.13.0
+    - 1.13.1
+    - 1.13.2
+    - 1.13.3
+    - 1.13.4
+homepage: https://kyverno.io
+summary: set of tools to manage the complete Policy-as-Code (PaC) lifecycle for Kubernetes
+  and other cloud native environments
+description: |-
+  Kyverno policies are declarative YAML resources and no new language is
+  required. Kyverno enables use of familiar tools such as kubectl, git, and
+  kustomize to manage policies. Kyverno supports JMESPath and the Common
+  Expressions Language (CEL) for efficient handling of complex logic.
+
+  In Kubernetes environments, Kyverno policies can validate, mutate, generate,
+  and cleanup any Kubernetes resource, including custom resources. To help secure
+  the software supply chain Kyverno policies can verify OCI container image
+  signatures and artifacts. Kyverno policy reports and policy exceptions are also
+  Kubernetes API resources.
+
+  The Kyverno CLI can be used to apply and test policies off-cluster e.g., as
+  part of an IaC and CI/CD pipelines.
+fetch:
+  url: https://github.com/kyverno/kyverno/releases/download/v{{version}}/kyverno-cli_v{{version}}_linux_{{target}}.tar.gz
+  targets:
+    amd64: x86_64
+install:
+  - kyverno:/usr/bin/kyverno

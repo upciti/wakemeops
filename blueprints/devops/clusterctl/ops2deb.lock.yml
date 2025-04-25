@@ -70,3 +70,21 @@
 - url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.3/clusterctl-linux-arm64
   sha256: 1f35b3e008bc87bbc34a043aa801ea3d3e894054a47a99ab770eee97c6e038d2
   timestamp: 2024-12-23 15:06:34+00:00
+- url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.4/clusterctl-linux-amd64
+  sha256: 0c80a58f6158cd76075fcc9a5d860978720fa88860c2608bb00944f6af1e5752
+  timestamp: 2025-01-28 09:07:22+00:00
+- url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.4/clusterctl-linux-arm64
+  sha256: ab27a92ad5433d0eb78d4549c64bd44bb7e6b763998e8983063ac2e4b8b736ec
+  timestamp: 2025-01-28 09:07:22+00:00
+- url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.5/clusterctl-linux-amd64
+  sha256: 4643cf5570879cb3dc6d55f47651f785bcee9b6f34fefb987797509875c8bbe1
+  timestamp: 2025-02-20 16:11:59+00:00
+- url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.5/clusterctl-linux-arm64
+  sha256: e7d8de987372221891772d526846149bdf42e871700ebf7f8e6f65cfc24d027a
+  timestamp: 2025-02-20 16:11:59+00:00
+- url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.6/clusterctl-linux-amd64
+  sha256: e6a8843b3464eea3c5f98432128a914c5d8e44c2be1f308cf40a72aa98155d8c
+  timestamp: 2025-03-23 18:08:35+00:00
+- url: https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.6/clusterctl-linux-arm64
+  sha256: 49e80b6d6ac8ec4cf916ad434b12e703cd87b3edd3ee853b80da2510e6839d34
+  timestamp: 2025-03-23 18:08:35+00:00
