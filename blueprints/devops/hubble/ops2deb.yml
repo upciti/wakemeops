@@ -9,6 +9,10 @@ matrix:
     - 1.16.3
     - 1.16.4
     - 1.16.5
+    - 1.16.6
+    - 1.17.0
+    - 1.17.1
+    - 1.17.2
 homepage: https://github.com/cilium/hubble
 summary: Network, Service & Security Observability for Kubernetes using eBPF
 description: |-
