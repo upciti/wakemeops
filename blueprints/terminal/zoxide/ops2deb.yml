@@ -1,0 +1,19 @@
+name: zoxide
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 0.9.5
+    - 0.9.6
+    - 0.9.7
+homepage: https://crates.io/crates/zoxide
+summary: smarter cd command for your terminal
+description: |-
+  Inspired by z and autojump, zoxide remembers which directories you use most
+  frequently, so you can "jump" to them in just a few keystrokes. All major
+  shells are supported.
+fetch: https://github.com/ajeetdsouza/zoxide/releases/download/v{{version}}/zoxide_{{version}}-1_{{arch}}.deb
+install:
+  - data:/

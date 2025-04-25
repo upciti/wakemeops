@@ -1,0 +1,16 @@
+name: upterm
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.14.3
+homepage: https://github.com/owenthereal/upterm
+summary: share terminal sessions securely over the web
+description: |-
+  Upterm is an open-source tool enabling developers to share terminal sessions
+  securely over the web. It’s perfect for remote pair programming, accessing
+  computers behind NATs/firewalls, remote debugging, and more.
+fetch: https://github.com/owenthereal/upterm/releases/download/v{{version}}/upterm_linux_{{target}}.deb
+install:
+  - data:/

@@ -45,8 +45,8 @@ jobs:
           commit-message: |
             ${{ steps.get-commit-content.outputs.title }}
             ${{ steps.get-commit-content.outputs.body }}
-          committer: wakemebot <wakemebot@protonmail.com>
-          author: wakemebot <wakemebot@users.noreply.github.com>
+          committer: wakemebot <simon@upciti.com>
+          author: wakemebot <simon@upciti.com>
           branch: chore/update-blueprints
           delete-branch: true
           title: ${{ steps.get-commit-content.outputs.title }}
