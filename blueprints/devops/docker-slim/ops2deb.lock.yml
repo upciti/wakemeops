@@ -160,12 +160,12 @@
 - url: https://downloads.dockerslim.com/releases/1.40.10/dist_linux_arm64.tar.gz
   sha256: 203e3661eb196580a0457b3046bd9e8743f8fffc2daab1666f2cadd79cfb4427
   timestamp: 2024-01-18 06:23:24+00:00
-- url: https://downloads.dockerslim.com/releases/1.40.11/dist_linux.tar.gz
-  sha256: 5c83bfddbb130709a21dd6f4d02bb8d82b4347c0e9dce25a8eece98eb34763bc
-  timestamp: 2024-02-04 15:05:42+00:00
-- url: https://downloads.dockerslim.com/releases/1.40.11/dist_linux_arm.tar.gz
-  sha256: 898f5296e0442e4c958cb0e280da3b37255c6be1f79f09c64ea8da3741fb7e3a
-  timestamp: 2024-02-04 15:05:42+00:00
-- url: https://downloads.dockerslim.com/releases/1.40.11/dist_linux_arm64.tar.gz
-  sha256: 2e2c849740865da461df1c59d00eee348abcda751e8cf6ab2b890a6ed07080d7
-  timestamp: 2024-02-04 15:05:42+00:00
+- url: https://github.com/slimtoolkit/slim/releases/download/1.40.11/dist_linux.tar.gz
+  sha256: cb481010e1dfaf3ad465f89f7a6b05b1dfa5165ed4c4370bed7778c6324ad341
+  timestamp: 2025-03-31 07:54:51+00:00
+- url: https://github.com/slimtoolkit/slim/releases/download/1.40.11/dist_linux_arm.tar.gz
+  sha256: e19215a1079054119660dc8814b699b373190f3cedc33f10577614928de1ddad
+  timestamp: 2025-03-31 07:54:51+00:00
+- url: https://github.com/slimtoolkit/slim/releases/download/1.40.11/dist_linux_arm64.tar.gz
+  sha256: 4a45e676d00e17dfd6eb64ea0d963a465d91002dfd39b5fccb0ec9ff04368edc
+  timestamp: 2025-03-31 07:54:51+00:00

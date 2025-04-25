@@ -5,32 +5,6 @@
       - arm64
       - armhf
     versions:
-      - 1.37.3
-      - 1.37.4
-      - 1.37.5
-      - 1.37.6
-  homepage: https://dockersl.im
-  summary: minify docker images by up to 30x
-  description: |-
-    Provides a set of commands (build, xray, lint and others) to simplify and
-    optimize your developer experience with containers. It makes your containers
-    betters, smaller and more secure.
-  fetch:
-    url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
-    targets:
-      amd64: linux
-      armhf: linux_arm
-      arm64: linux_arm64
-  script:
-    - mv dist_linux*/docker-slim* {{src}}/usr/bin/
-
-- name: docker-slim
-  matrix:
-    architectures:
-      - amd64
-      - arm64
-      - armhf
-    versions:
       - 1.38.0
       - 1.39.0
       - 1.39.1
@@ -45,7 +19,6 @@
       - 1.40.8
       - 1.40.9
       - 1.40.10
-      - 1.40.11
   homepage: https://dockersl.im
   summary: minify docker images by up to 30x
   description: |-
@@ -54,6 +27,29 @@
     betters, smaller and more secure.
   fetch:
     url: https://downloads.dockerslim.com/releases/{{version}}/dist_{{target}}.tar.gz
+    targets:
+      amd64: linux
+      armhf: linux_arm
+      arm64: linux_arm64
+  install:
+    - dist_{{target}}/docker-slim:/usr/bin/
+
+- name: docker-slim
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+      - armhf
+    versions:
+      - 1.40.11
+  homepage: https://dockersl.im
+  summary: minify docker images by up to 30x
+  description: |-
+    Provides a set of commands (build, xray, lint and others) to simplify and
+    optimize your developer experience with containers. It makes your containers
+    betters, smaller and more secure.
+  fetch:
+    url: https://github.com/slimtoolkit/slim/releases/download/{{version}}/dist_{{target}}.tar.gz
     targets:
       amd64: linux
       armhf: linux_arm
