@@ -388,3 +388,12 @@
 - url: https://dl.k8s.io/release/v1.32.3/bin/linux/arm64/kubectl
   sha256: 6c2c91e760efbf3fa111a5f0b99ba8975fb1c58bb3974eca88b6134bcf3717e2
   timestamp: 2025-03-13 09:08:24+00:00
+- url: https://dl.k8s.io/release/v1.33.0/bin/linux/amd64/kubectl
+  sha256: 9efe8d3facb23e1618cba36fb1c4e15ac9dc3ed5a2c2e18109e4a66b2bac12dc
+  timestamp: 2025-04-29 18:10:09+00:00
+- url: https://dl.k8s.io/release/v1.33.0/bin/linux/arm/kubectl
+  sha256: bbb4b4906d483f62b0fc3a0aea3ddac942820984679ad11635b81ee881d69ab3
+  timestamp: 2025-04-29 18:10:09+00:00
+- url: https://dl.k8s.io/release/v1.33.0/bin/linux/arm64/kubectl
+  sha256: 48541d119455ac5bcc5043275ccda792371e0b112483aa0b29378439cf6322b9
+  timestamp: 2025-04-29 18:10:09+00:00
