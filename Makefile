@@ -37,6 +37,7 @@ build-%:
 
 update:
 	ops2deb update --output-file ops2deb-summary.log -v --max-versions 50
+	ops2deb format
 
 format:
 	ops2deb format
