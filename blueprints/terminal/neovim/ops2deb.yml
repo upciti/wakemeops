@@ -3,10 +3,9 @@ matrix:
   architectures:
     - amd64
   versions:
-    - 0.10.1
-    - 0.10.2
-    - 0.10.3
-revision: "2"
+    - 0.10.4
+    - 0.11.0
+    - 0.11.1
 homepage: https://github.com/neovim/neovim
 summary: heavily refactored vim fork
 description: |-
@@ -19,6 +18,6 @@ description: |-
 
   GUIs (or TUIs) can easily embed Neovim or communicate via TCP sockets using
   the discoverable msgpack API.
-fetch: https://github.com/neovim/neovim/releases/download/v{{version}}/nvim-linux64.tar.gz
+fetch: https://github.com/neovim/neovim/releases/download/v{{version}}/nvim-linux-x86_64.tar.gz
 install:
-  - nvim-linux64/:/usr/
+  - nvim-linux-x86_64/:/usr/
