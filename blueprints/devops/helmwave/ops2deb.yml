@@ -1,0 +1,23 @@
+name: helmwave
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.41.8
+homepage: https://docs.helmwave.app/
+summary: Helmwave is helm3-native tool for deploying your Helm Charts
+description: |-
+  With Helmwave you will become a superhero:
+  Deploy multiple environments by one step
+  Separate values for different environments
+  Common values for apps
+  Keep a directory of chart value files
+  Maintain changes in version control
+  Template values
+  Step-by-step deployment (depends_on, allow_failure)
+  Live tracking of Kubernetes resources with kubedog
+  Fetch data from external data sources like Vault, AWS Secrets Manager and SOPS
+fetch: https://github.com/helmwave/helmwave/releases/download/v{{version}}/helmwave_{{version}}_linux_{{arch}}.tar.gz
+install:
+  - helmwave:/usr/bin/
