@@ -1,0 +1,22 @@
+name: freelens
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.2.1
+homepage: https://github.com/freelensapp/freelens
+summary: Free IDE for Kubernetes
+description: |-
+  Freelens is a free and open-source user interface designed for managing
+  Kubernetes clusters. It provides a standalone
+  application compatible with macOS, Windows, and Linux operating systems, making
+  it accessible to a wide range of users.
+  The application aims to simplify the complexities of Kubernetes management by
+  offering an intuitive and user-friendly interface.
+fetch: https://github.com/freelensapp/freelens/releases/download/v{{version}}/Freelens-{{version}}-linux-{{arch}}.deb
+install:
+  - data:/
+script:
+  - grep "^Depends. " control/control >> {{debian}}/control
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
