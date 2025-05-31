@@ -52,7 +52,6 @@
       - arm64
       - armhf
     versions:
-      - 1.10.1
       - 1.10.2
       - 1.10.3
       - 1.10.4
@@ -99,6 +98,10 @@
       - 1.18.4
       - 1.19.0
       - 1.19.1
+      - 1.19.2
+      - 1.19.3
+      - 1.19.4
+      - 1.19.5
   homepage: https://www.hashicorp.com/products/vault
   summary: tool to create, manage and store secrets
   description: |-

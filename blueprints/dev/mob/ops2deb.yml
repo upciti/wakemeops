@@ -1,0 +1,15 @@
+name: mob
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 5.4.0
+homepage: https://mob.sh/
+summary: Fast git handover for remote pair/mob programming
+description: |-
+  Switch to a separate branch with mob start and handover to the next person with
+  mob next. Repeat. When you’re done, get your changes into the staging area of
+  the main branch with mob done and commit them.
+fetch: https://github.com/remotemobprogramming/mob/releases/download/v{{version}}/mob_v{{version}}_linux_{{arch}}.tar.gz
+install:
+  - mob:/usr/bin
