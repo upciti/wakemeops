@@ -1,0 +1,24 @@
+name: kubeconform
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.7.0
+homepage: https://github.com/yannh/kubeconform
+summary: Kubernetes manifests validator with Custom Resource support
+description: |-
+  Incorporate it into your CI, or use it locally to validate your Kubernetes
+  configuration!
+
+  Inspired by and designed to stay close to Kubeval, but with these improvements:
+  • High performance: validates & downloads manifests over multiple routines,
+    caching downloaded files in memory
+  • Configurable list of remote or local schemas locations, enabling validating
+    Kubernetes custom resources (CRDs) and offline validation capabilities
+  • Uses by default a self-updating fork of the schemas registry maintained by
+    the kubernetes-json-schema project - guaranteeing up-to-date schemas for
+    all recent versions of Kubernetes
+fetch: https://github.com/yannh/kubeconform/releases/download/v{{version}}/kubeconform-linux-{{arch}}.tar.gz
+install:
+  - kubeconform:/usr/bin/kubeconform
