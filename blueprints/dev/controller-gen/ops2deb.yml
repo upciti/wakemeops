@@ -1,0 +1,20 @@
+name: controller-gen
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.18.0
+homepage: https://book.kubebuilder.io
+summary: code generator for Kubernetes controllers and CRDs
+description: |-
+  Kubebuilder makes use of this tool for generating utility code and Kubernetes
+  YAML. This code and config generation is controlled by the presence of special
+  "marker comments" in Go code.
+
+  Controller-gen is built out of different "generators" (which specify what to
+  generate) and "output rules" (which specify how and where to write the
+  results).
+fetch: https://github.com/kubernetes-sigs/controller-tools/releases/download/v{{version}}/controller-gen-linux-{{arch}}
+install:
+  - controller-gen-linux-{{arch}}:/usr/bin/controller-gen
