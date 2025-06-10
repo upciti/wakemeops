@@ -18,8 +18,7 @@ matrix:
     - 8.23.1
     - 8.23.0
 homepage: https://github.com/gitleaks/gitleaks
-summary: Gitleaks is a tool for detecting secrets like passwords, API keys, and tokens
-  in git repos, files, and whatever else you wanna throw at it via stdin.
+summary: Find secrets with Gitleaks
 description: |-
   Gitleaks is an open source (MIT licensed) secret scanner for git repositories,
   files, directories, and stdin.
