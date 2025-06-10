@@ -1,0 +1,38 @@
+name: gitleaks
+matrix:
+  architectures:
+    - arm64
+    - amd64
+  versions:
+    - 8.27.2
+    - 8.27.1
+    - 8.27.0
+    - 8.26.0
+    - 8.25.1
+    - 8.25.0
+    - 8.24.3
+    - 8.24.2
+    - 8.24.0
+    - 8.23.3
+    - 8.23.2
+    - 8.23.1
+    - 8.23.0
+homepage: https://github.com/gitleaks/gitleaks
+summary: Gitleaks is a tool for detecting secrets like passwords, API keys, and tokens
+  in git repos, files, and whatever else you wanna throw at it via stdin.
+description: |-
+  Gitleaks is an open source (MIT licensed) secret scanner for git repositories,
+  files, directories, and stdin.
+  With over 20 million docker downloads, 19k GitHub stars, 14 million GitHub
+  downloads,
+  thousands of weekly clones, and over 850k homebrew installs, gitleaks is the
+  most trusted open source secret scanner among security professionals,
+  enterprises, and developers.
+  Gitleaks is maintained by Zach Rice.
+fetch:
+  url: https://github.com/gitleaks/gitleaks/releases/download/v{{version}}/gitleaks_{{version}}_linux_{{target}}.tar.gz
+  targets:
+    amd64: x64
+    arm64: arm64
+install:
+  - gitleaks:/usr/bin
