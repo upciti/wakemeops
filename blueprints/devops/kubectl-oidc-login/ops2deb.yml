@@ -12,6 +12,7 @@ matrix:
     - 1.32.2
     - 1.32.3
     - 1.32.4
+    - 1.33.0
 homepage: https://github.com/int128/kubelogin
 summary: Kubectl plugin for Kubernetes OpenID Connect authentication (kubectl oidc-login)
 description: |-

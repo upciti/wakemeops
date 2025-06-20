@@ -28,30 +28,6 @@
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.7/terragrunt_linux_arm64
   sha256: fd52f5113ef9ba0e54bfbc8a2b82a9532814ceeafe505ecba2de76d5b19f105a
   timestamp: 2022-04-15 14:36:34+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.1/terragrunt_linux_amd64
-  sha256: eb0e3558bb453241301126a15a9eeee3592817d8013ddd44793aeac168da9ad1
-  timestamp: 2024-11-22 21:06:48+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.1/terragrunt_linux_arm64
-  sha256: 99c4c5ddbd6facc6dcd735c1b09f3a06b429ed56a8ff59e9c51f56d32f30df49
-  timestamp: 2024-11-22 21:06:48+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.2/terragrunt_linux_amd64
-  sha256: 19ebbdddafd5fa88849bbfb3f831f62a40e371d3dcc50301c65c383edf8f3a44
-  timestamp: 2024-11-27 18:08:29+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.2/terragrunt_linux_arm64
-  sha256: c76c7a90445aa10c758761483da4a1f39b1e7d04b408cd7731c56cc039908f17
-  timestamp: 2024-11-27 18:08:29+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.3/terragrunt_linux_amd64
-  sha256: 55d5d887733c4c222e6ee856f45cd1cc7877984abfe7626b0a76f954c9ed437e
-  timestamp: 2024-11-29 00:28:46+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.3/terragrunt_linux_arm64
-  sha256: 8eab4e4a9b5fd3559e25e6cb4d66ab4aee8826df2308f0ac7c4bbf99a2ad4447
-  timestamp: 2024-11-29 00:28:46+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.5/terragrunt_linux_amd64
-  sha256: 96b78537e2d71bd079b28dcaefd24ecfe5f1f53300819bdd0d159d20a6f93158
-  timestamp: 2024-12-03 18:08:23+00:00
-- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.5/terragrunt_linux_arm64
-  sha256: dbe21e2ed8af418e85dd393af2819438386273e6765b68774d01f6a5919b1ac8
-  timestamp: 2024-12-03 18:08:23+00:00
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.69.6/terragrunt_linux_amd64
   sha256: 20528e8ec47070688dc5ed55e8c707810ae50ca1348d0d33d47d502842a78e48
   timestamp: 2024-12-03 21:06:17+00:00
@@ -328,3 +304,27 @@
 - url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.6/terragrunt_linux_arm64
   sha256: 085708a111725e7f2213a0e350ca94f2a75e92d9c95f34beecad09f96498a88d
   timestamp: 2025-06-13 21:06:17+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.7/terragrunt_linux_amd64
+  sha256: 8edffe0ead94c14360180698b47f28667f57bd3835627587fa7b86a99e62cc75
+  timestamp: 2025-06-16 18:09:40+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.7/terragrunt_linux_arm64
+  sha256: 1c51256ad0f6734f81600be000aaab943fe25114317d64127951d028c545d73b
+  timestamp: 2025-06-16 18:09:40+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.8/terragrunt_linux_amd64
+  sha256: c0ccd20a8fe114f51dc0cb9def3c6a114112b59e3207c7e231db015f7e7a03fb
+  timestamp: 2025-06-19 18:09:16+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.8/terragrunt_linux_arm64
+  sha256: 82091180bb114c70690aee3d847e2825a4fd2e2d7f1deddaad87d98ec3791690
+  timestamp: 2025-06-19 18:09:16+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.9/terragrunt_linux_amd64
+  sha256: 5170039780d944f839c36dba7617eccb1564b0f819fad57829ed9a77ff2687ec
+  timestamp: 2025-06-20 15:07:19+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.9/terragrunt_linux_arm64
+  sha256: 39aa9d4949fe468cec21016b0cdeee97f6c9cf0a3343bf057d6009ec8aa70956
+  timestamp: 2025-06-20 15:07:19+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.10/terragrunt_linux_amd64
+  sha256: 1821248830c887d40a74a8d6916024b6de660aa61d35443101857a24a2f3bdb1
+  timestamp: 2025-06-20 18:09:16+00:00
+- url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.81.10/terragrunt_linux_arm64
+  sha256: a69b40723cc5210943eff6e22354105f129812f6817ea0d021af9c58ec61f38b
+  timestamp: 2025-06-20 18:09:16+00:00

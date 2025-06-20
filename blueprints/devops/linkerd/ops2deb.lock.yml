@@ -1,15 +1,6 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-21.10.3/linkerd2-cli-edge-21.10.3-linux-amd64
   sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
   timestamp: 2021-12-14 15:37:09+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.1/linkerd2-cli-edge-22.9.1-linux-amd64
-  sha256: 019266363a1e7f5f9b057decb32c78fb1b8c3feff44b3da3abd2d09b0a94e6b2
-  timestamp: 2022-09-16 04:42:47+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.1/linkerd2-cli-edge-22.9.1-linux-arm
-  sha256: 5f7bc84781c140811ce5ced31016f29ff92a15dc6892a78ee318434bb2bf6486
-  timestamp: 2022-09-16 04:42:47+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.1/linkerd2-cli-edge-22.9.1-linux-arm64
-  sha256: 488d5e9afef5f1e2c5ed4d0b5be748f2ec16aebfd8629d394bbdf7839e7cfdd8
-  timestamp: 2022-09-16 04:42:47+00:00
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-amd64
   sha256: 8790ffe184f78a73737b1734918b82d61fed86b60f8c3456411ef860e70340cd
   timestamp: 2022-09-20 23:23:29+00:00
@@ -451,3 +442,12 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.2/linkerd2-cli-edge-25.6.2-linux-arm64
   sha256: 305a1989bbc659d47f40c77e92617334a8c33b32b6e5191193e8cfaf4c1586e4
   timestamp: 2025-06-13 03:29:17+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.3/linkerd2-cli-edge-25.6.3-linux-amd64
+  sha256: a4454270a62413b06fe858b8b9e94723d58498a30d778cb2712b8644e94b00d1
+  timestamp: 2025-06-18 18:09:36+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.3/linkerd2-cli-edge-25.6.3-linux-arm
+  sha256: c142e1ecb21997d32184ce3f6f8b5855ff58eca35b9c6b4268c53691ae973b6f
+  timestamp: 2025-06-18 18:09:36+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.3/linkerd2-cli-edge-25.6.3-linux-arm64
+  sha256: ebc9e9563b6b738fc42e6b461bd8d45be09148e6eedc6368ec46ac8841f30c09
+  timestamp: 2025-06-18 18:09:36+00:00
