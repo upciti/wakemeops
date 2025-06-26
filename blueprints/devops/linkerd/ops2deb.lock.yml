@@ -1,15 +1,6 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-21.10.3/linkerd2-cli-edge-21.10.3-linux-amd64
   sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
   timestamp: 2021-12-14 15:37:09+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-amd64
-  sha256: 8790ffe184f78a73737b1734918b82d61fed86b60f8c3456411ef860e70340cd
-  timestamp: 2022-09-20 23:23:29+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-arm
-  sha256: 279675a0ca0d842bcc66065528f79513030af7a799cfe5c4f7c7ed61a10642a2
-  timestamp: 2022-09-20 23:23:29+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-arm64
-  sha256: 4f8a9beb1d360e08ce239da6b9c037d5e82ddcd4c93378a92e4f167314c5411f
-  timestamp: 2022-09-20 23:23:29+00:00
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-amd64
   sha256: 306def31e47fb383e398dc59d4ed84c75731e3c82d1c50e71fd8701b4c0dda5d
   timestamp: 2022-10-05 14:57:49+00:00
@@ -451,3 +442,12 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.3/linkerd2-cli-edge-25.6.3-linux-arm64
   sha256: ebc9e9563b6b738fc42e6b461bd8d45be09148e6eedc6368ec46ac8841f30c09
   timestamp: 2025-06-18 18:09:36+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-amd64
+  sha256: dca04848a559542c74934cd97c8ddda72c0dafd72756d0221ed3acc6c45e8ccb
+  timestamp: 2025-06-26 21:06:50+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-arm
+  sha256: 4899401ad330c540e26d682d84f246e05b26457d17d191e0cd953c67ae952331
+  timestamp: 2025-06-26 21:06:50+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-arm64
+  sha256: 25a1c611500a38b58e78a6271f9acd159206c7c5b7a4dcb42da189a4f50a6767
+  timestamp: 2025-06-26 21:06:50+00:00
