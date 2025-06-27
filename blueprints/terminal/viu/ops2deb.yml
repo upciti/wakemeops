@@ -1,0 +1,20 @@
+name: viu
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 1.5.1
+homepage: https://github.com/atanunq/viu
+summary: terminal image viewer with native support for iTerm and Kitty
+description: |-
+  Small command-line application to view images from the terminal written in Rust
+
+  - Native iTerm and Kitty support
+  - Animated GIF support
+  - Accept media through stdin
+  - Custom dimensions
+  - Transparency
+  - Experimental Sixel support (behind the sixel feature flag)
+fetch: https://github.com/atanunq/viu/releases/download/v{{version}}/viu-x86_64-unknown-linux-musl
+install:
+  - viu-x86_64-unknown-linux-musl:/usr/bin/viu
