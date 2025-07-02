@@ -1,15 +1,6 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-21.10.3/linkerd2-cli-edge-21.10.3-linux-amd64
   sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
   timestamp: 2021-12-14 15:37:09+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-amd64
-  sha256: 306def31e47fb383e398dc59d4ed84c75731e3c82d1c50e71fd8701b4c0dda5d
-  timestamp: 2022-10-05 14:57:49+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-arm
-  sha256: 865e6ff4a9a042706dfb6c9c89bb869dc7908f7348e3574f13da4f1bc1424ecb
-  timestamp: 2022-10-05 14:57:49+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-arm64
-  sha256: 90ed108ab155b891e2dc89f2a634d68e3c7fe90d554a47829cb0f4d1dd8a9b52
-  timestamp: 2022-10-05 14:57:49+00:00
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.2/linkerd2-cli-edge-22.10.2-linux-amd64
   sha256: 65d6baf844de66755903ad55ce737b5fed2abe3d67d8ced2ce8cb5f2f7ba9316
   timestamp: 2022-10-12 04:39:34+00:00
@@ -451,3 +442,12 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-arm64
   sha256: 25a1c611500a38b58e78a6271f9acd159206c7c5b7a4dcb42da189a4f50a6767
   timestamp: 2025-06-26 21:06:50+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.1/linkerd2-cli-edge-25.7.1-linux-amd64
+  sha256: 667375600d917cec5ee68e081491c45bd0401d96b5aaf75c9c8391b6338785fa
+  timestamp: 2025-07-02 21:07:08+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.1/linkerd2-cli-edge-25.7.1-linux-arm
+  sha256: 1f7f7f80d9e54982760ba7e761fe75cdf67d65ca739e38814ea0bede638ab721
+  timestamp: 2025-07-02 21:07:08+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.1/linkerd2-cli-edge-25.7.1-linux-arm64
+  sha256: 70810fe9e17cea5804400a58b21b8e8ccafb924666941bddc72073851cde4eac
+  timestamp: 2025-07-02 21:07:08+00:00
