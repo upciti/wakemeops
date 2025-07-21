@@ -1,0 +1,27 @@
+name: void
+matrix:
+  versions:
+    - 1.99.30044
+homepage: https://voideditor.com
+summary: the Cursor alternative AI code editor
+fetch: https://github.com/voideditor/binaries/releases/download/{{version}}/Void-linux-x64-{{version}}.tar.gz
+install:
+  - .:/usr/lib/void
+  - content: |-
+      [Desktop Entry]
+      Name=Void
+      Comment=The Cursor alternative AI code editor
+      Exec=/usr/bin/void
+      Terminal=false
+      Type=Application
+      Icon=/usr/lib/void/resources/app/out/media/void-icon-sm.png
+      Categories=Network;WebBrowser;
+    path: /usr/share/applications/void.desktop
+  - content: |-
+      #!/bin/sh
+      set -e
+      chmod 4755 /usr/lib/void/chrome-sandbox
+    path: debian/postinst
+script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+  - ln -s /usr/lib/void/void {{src}}/usr/bin/void
