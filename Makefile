@@ -36,7 +36,7 @@ build-%:
 	ops2deb -c "./blueprints/$*/*/ops2deb.yml" -o $(OUTPUT_BASE_PATH)/$*
 
 update:
-	ops2deb update --output-file ops2deb-summary.log -v --max-versions 50
+	ops2deb update --output-file ops2deb-summary.log -v --max-versions 50 --exit-code 0
 	ops2deb format --exit-code 0
 
 format:

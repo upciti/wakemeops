@@ -1,0 +1,22 @@
+name: nsc
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 2.11.0
+homepage: https://github.com/nats-io/nsc
+summary: tool for creating nkey/jwt based configurations
+description: |-
+  Command-line tool for creating and managing NATS configurations using NKEYs and
+  JWTs. It simplifies the generation, organization, and handling of secure
+  credentials and account structures for NATS deployments, enabling operators to
+  efficiently configure authentication, authorization, and permissions across
+  users and services in a secure, scalable way.
+fetch:
+  url: https://github.com/nats-io/nsc/releases/download/v{{version}}/nsc-linux-{{target}}.zip
+  targets:
+    armhf: armv7
+install:
+  - nsc:/usr/bin/
