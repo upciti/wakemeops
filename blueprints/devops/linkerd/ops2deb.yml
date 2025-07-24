@@ -18,7 +18,6 @@
       - arm64
       - armhf
     versions:
-      - 22.10.3
       - 22.11.1
       - 22.11.2
       - 22.11.3
@@ -68,6 +67,7 @@
       - 25.6.4
       - 25.7.1
       - 25.7.4
+      - 25.7.5
   homepage: https://linkerd.io
   summary: ultralight service mesh for Kubernetes
   description: |-
