@@ -6,6 +6,7 @@ matrix:
     - armhf
   versions:
     - 2.11.6
+    - 2.11.7
 homepage: https://github.com/nats-io/nats-server
 summary: NATS server implementation
 description: |-
