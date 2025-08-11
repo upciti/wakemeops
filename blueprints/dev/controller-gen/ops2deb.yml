@@ -1,0 +1,18 @@
+name: controller-gen
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.18.0
+homepage: https://book.kubebuilder.io
+summary: Set of go libraries for building Kubernetes controllers.
+description: |-
+  Kubebuilder is a framework for building Kubernetes APIs using custom resource
+  definitions (CRDs).
+
+  Kubebuilder makes use of controller-gen for generating utility code and
+  Kubernetes YAML.
+fetch: https://github.com/kubernetes-sigs/controller-tools/releases/download/v{{version}}/controller-gen-linux-{{arch}}
+install:
+  - controller-gen-linux-{{arch}}:/usr/bin/controller-gen
