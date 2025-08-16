@@ -1,0 +1,208 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+<!-- prettier-ignore -->
+{% extends "main.html" %}
+
+{% block scripts %}
+{{ super() }}
+<script
+  src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"
+  integrity="sha384-4l+9bhb7rakZ18megzl0/DWczL8ojbDl1jIEzBVffeMho9A6xB/lkqt1K0PC8Jin"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0//languages/dockerfile.min.js"
+  integrity="sha384-5TrkTRj8EM07q4oPGiK8VM6JA9PBrW9wqhx6LOFdeNikSVzS1EPWbUlWLWL+R/9h"
+  crossorigin="anonymous"
+></script>
+<script>
+  hljs.highlightAll();
+</script>
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block styles %}
+{{ super() }}
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/github-dark-dimmed.min.css"
+  integrity="sha384-PiLidnnRuzFgp4qiN8oGNmktrV8ETL+6a8heAxljUX4A+3XWlocwaMn9duBUepfK"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet" type="text/css" href="./home.css" />
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block tabs %}
+{{ super() }}
+
+<!-- prettier-ignore -->
+{% set action_example = "\
+- name: Install dependencies
+  uses: upciti/wakemeops-action@v1
+  with:
+    packages: |
+      helm=3.7.2*
+      kustomize=4.4.1*
+      kubectl=1.22.4*
+" %}
+
+<!-- prettier-ignore -->
+{% set docker_example = "\
+FROM wakemeops/debian:bullseye
+
+RUN install_packages \\
+    helm=3.7.2* \\
+    kustomize=4.4.1* \\
+    kubectl=1.22.4*
+
+USER 1001
+" %}
+
+{% set devops = repository.components.devops %}
+{% set terminal = repository.components.terminal %}
+
+<!-- Main site Entry button descriptions -->
+<section class="tx-container">
+  <div class="md-grid md-typeset">
+    <div class="tx-hero">
+      <div class="tx-hero__content">
+        <div>
+          <img
+            width="600"
+            height="600"
+            alt="WakeMeOps"
+            src="images/white-logo.png"
+          />
+        </div>
+        <div>
+          <h1>WakeMeOps</h1>
+          <p>WakeMeOps is a Debian repository for portable applications.</p>
+          <ul>
+            <li>
+              Old releases are kept for three years to let you write
+              reproducible Dockerfiles and CI/CD pipelines.
+            </li>
+            <li>
+              Applications can easily be added through pull requests on Github
+              using a simple YAML configuration file.
+            </li>
+            <li>
+              WakeMeOps is a
+              <a href="https://www.gitops.tech/">GitOps</a> project: the state
+              of the Debian repository is declared and managed using Git and
+              CI/CD.
+            </li>
+          </ul>
+          <a
+            href="{{ page.next_page.url | url }}"
+            title="{{ page.next_page.title | striptags }}"
+            class="md-button md-button--primary"
+          >
+            Get started
+          </a>
+          <a
+            href="{{ config.repo_url }}"
+            title="{{ lang.t('source.link.title') }}"
+            class="md-button"
+          >
+            Go to Github
+          </a>
+        </div>
+      </div>
+      <div class="tx-hero__examples">
+        <div class="feature-item">
+          <h4>
+            <span class="twemoji">
+              {% include ".icons/fontawesome/solid/terminal.svg" %}
+            </span>
+            Install and update tools for your terminal
+          </h4>
+          <pre><code class="language-bash">sudo apt install {{ repository.components.terminal.packages|sample(4)|map(attribute="name")|join(" ") }}</code></pre>
+        </div>
+        <div class="feature-item">
+          <h4>
+            <span class="twemoji">
+              {% include ".icons/fontawesome/brands/docker.svg" %}
+            </span>
+            Write concise and readable Dockerfiles
+          </h4>
+          <pre><code class="language-dockerfile">{{ docker_example}}</code></pre>
+        </div>
+        <div class="feature-item">
+          <h4>
+            <span class="twemoji">
+              {% include ".icons/fontawesome/brands/github.svg" %}
+            </span>
+            Install DevOps tools in your Github pipelines
+          </h4>
+          <pre><code class="language-yaml">{{ action_example }}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main site box descriptions -->
+<div class="md-grid md-typeset">
+  <div class="top-hr">
+    <div class="feature-item">
+      <h4>
+        <span class="twemoji">
+          {% include ".icons/fontawesome/solid/clock.svg" %}
+        </span>
+        Updated every 2 hours
+      </h4>
+      <p>
+        New releases of supported applications are automatically added within
+        three hours as long as they use semantic versioning.
+      </p>
+    </div>
+    <div class="feature-item">
+      <h4>
+        <span class="twemoji">
+          {% include ".icons/fontawesome/solid/comment.svg" %}
+        </span>
+        Community driven
+      </h4>
+      <p>
+        Is your favorite application missing? Open an
+        <a href="https://github.com/upciti/wakemeops/issues/new">issue</a> to
+        add it to our repository.
+      </p>
+    </div>
+    <div class="feature-item">
+      <h4>
+        <span class="twemoji">
+          {% include ".icons/fontawesome/solid/chart-area.svg" %}
+        </span>
+        {{ repository.package_count }} debian packages
+      </h4>
+      <p>
+        WakeMeOps contains many devops tools such as
+        {{devops.packages|sample(4)|map(attribute="name")|join(", ")}} and
+        terminal goodies such as
+        {{terminal.packages|sample(4)|map(attribute="name")|join(", ")}}.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Custom narrow footer -->
+<div class="md-typeset">
+  <div class="md-grid">
+    <hr />
+    <div class="copyright">
+      This project is based on
+      <a href="https://github.com/upciti/ops2deb">ops2deb</a>,
+      <a href="https://github.com/upciti/wakemebot">wakemebot</a> and
+      <a href="https://www.aptly.info/">aptly</a>. Provided by
+      <a href="https://www.upciti.com">Upciti</a>.
+    </div>
+  </div>
+</div>
+
+<!-- prettier-ignore -->
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
