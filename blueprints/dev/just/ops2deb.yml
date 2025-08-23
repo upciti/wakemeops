@@ -1,0 +1,22 @@
+name: just
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.38.0
+homepage: https://just.systems/
+summary: Just a command runner. Make alternative written in rust
+description: |-
+  just is similar to make but with some nice additions.
+  It let's you group your projects commands together into recopies,
+  which can be easily listed and run. Supports aliases, positional arguments,
+  different shells, dot env integration,
+  string interprulation, and pretty much everything else you could need
+fetch:
+  url: https://github.com/casey/just/releases/download/{{version}}/just-{{version}}-{{target}}.tar.gz
+  targets:
+    amd64: x86_64-unknown-linux-musl
+    arm64: aarch64-unknown-linux-musl
+install:
+  - just:/usr/bin/
