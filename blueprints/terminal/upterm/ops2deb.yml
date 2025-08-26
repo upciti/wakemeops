@@ -5,6 +5,8 @@ matrix:
     - arm64
   versions:
     - 0.14.3
+    - 0.15.0
+    - 0.15.2
 homepage: https://github.com/owenthereal/upterm
 summary: share terminal sessions securely over the web
 description: |-

@@ -1,0 +1,26 @@
+name: zen-browser
+matrix:
+  versions:
+    - 1.14.2b
+homepage: https://zen-browser.app/
+summary: firefox-based browser pushing your productivity to a new level
+description: |-
+  Zen is packed with features that help you stay productive and focused. Browsers
+  should be tools that help you get things done, not distractions that keep you
+  from your work.
+fetch: https://github.com/zen-browser/desktop/releases/download/{{version}}/zen.linux-x86_64.tar.xz
+install:
+  - zen:/usr/lib/zen
+  - content: |-
+      [Desktop Entry]
+      Name=Zen
+      Comment=Firefox-based browser pushing your productivity to a new level
+      Exec=/usr/bin/zen
+      Terminal=false
+      Type=Application
+      Icon=/usr/lib/zen/browser/chrome/icons/default/default128.png
+      Categories=Network;WebBrowser;
+    path: /usr/share/applications/zen.desktop
+script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
+  - ln -s /usr/lib/zen/zen {{src}}/usr/bin/zen

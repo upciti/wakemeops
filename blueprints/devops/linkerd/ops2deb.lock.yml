@@ -1,51 +1,6 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-21.10.3/linkerd2-cli-edge-21.10.3-linux-amd64
   sha256: ad308ef6515e60f6be1ceec6212296c80108f625686736b1fbeaa4a1d3cb7d51
   timestamp: 2021-12-14 15:37:09+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-amd64
-  sha256: 8790ffe184f78a73737b1734918b82d61fed86b60f8c3456411ef860e70340cd
-  timestamp: 2022-09-20 23:23:29+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-arm
-  sha256: 279675a0ca0d842bcc66065528f79513030af7a799cfe5c4f7c7ed61a10642a2
-  timestamp: 2022-09-20 23:23:29+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.9.2/linkerd2-cli-edge-22.9.2-linux-arm64
-  sha256: 4f8a9beb1d360e08ce239da6b9c037d5e82ddcd4c93378a92e4f167314c5411f
-  timestamp: 2022-09-20 23:23:29+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-amd64
-  sha256: 306def31e47fb383e398dc59d4ed84c75731e3c82d1c50e71fd8701b4c0dda5d
-  timestamp: 2022-10-05 14:57:49+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-arm
-  sha256: 865e6ff4a9a042706dfb6c9c89bb869dc7908f7348e3574f13da4f1bc1424ecb
-  timestamp: 2022-10-05 14:57:49+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.1/linkerd2-cli-edge-22.10.1-linux-arm64
-  sha256: 90ed108ab155b891e2dc89f2a634d68e3c7fe90d554a47829cb0f4d1dd8a9b52
-  timestamp: 2022-10-05 14:57:49+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.2/linkerd2-cli-edge-22.10.2-linux-amd64
-  sha256: 65d6baf844de66755903ad55ce737b5fed2abe3d67d8ced2ce8cb5f2f7ba9316
-  timestamp: 2022-10-12 04:39:34+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.2/linkerd2-cli-edge-22.10.2-linux-arm
-  sha256: 6dfacdd6060f9c9786a608f9fde3e4b98c8013675fa3f120c380c50cbc6c8c02
-  timestamp: 2022-10-12 04:39:34+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.2/linkerd2-cli-edge-22.10.2-linux-arm64
-  sha256: 15608eb8b310fd8905a3e18e5f3771f9cc6b05a56f49616114c861779bf2bb67
-  timestamp: 2022-10-12 04:39:34+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.3/linkerd2-cli-edge-22.10.3-linux-amd64
-  sha256: 9a1b902ea0b95b6c6a145e144080bd299a8ef364057ccc17b6fc6b3b9458d453
-  timestamp: 2022-10-28 06:06:14+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.3/linkerd2-cli-edge-22.10.3-linux-arm
-  sha256: 8b18e625e280380bc4997b8c5e1120d1705ea66a4626a8b72c6fc88340dfcab4
-  timestamp: 2022-10-28 06:06:14+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.10.3/linkerd2-cli-edge-22.10.3-linux-arm64
-  sha256: b8f1db2676264f753450e0762262daaa864d53aa2cac697405b5cbf513234bf3
-  timestamp: 2022-10-28 06:06:14+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.11.1/linkerd2-cli-edge-22.11.1-linux-amd64
-  sha256: 5e559d370ccf21e4e4ce5ed85a58022f1ad64c86d32ffc32dc194fe74e6dd481
-  timestamp: 2022-11-11 22:21:00+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.11.1/linkerd2-cli-edge-22.11.1-linux-arm
-  sha256: 4f48391bdba05ba74c156a2b9e9776bfabe42568ca663c5cd6034fa1c0c7fda0
-  timestamp: 2022-11-11 22:21:00+00:00
-- url: https://github.com/linkerd/linkerd2/releases/download/edge-22.11.1/linkerd2-cli-edge-22.11.1-linux-arm64
-  sha256: 205daf039d65151b411d4839523f6f0449f8eec23b3e68c8e5d4afc28a7f1962
-  timestamp: 2022-11-11 22:21:00+00:00
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-22.11.2/linkerd2-cli-edge-22.11.2-linux-amd64
   sha256: db0e26c79c5aef8f81dbf9b1ef071bf74feac11d462f33c27c2191764666f62d
   timestamp: 2022-11-18 03:01:11+00:00
@@ -451,3 +406,48 @@
 - url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.3/linkerd2-cli-edge-25.6.3-linux-arm64
   sha256: ebc9e9563b6b738fc42e6b461bd8d45be09148e6eedc6368ec46ac8841f30c09
   timestamp: 2025-06-18 18:09:36+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-amd64
+  sha256: dca04848a559542c74934cd97c8ddda72c0dafd72756d0221ed3acc6c45e8ccb
+  timestamp: 2025-06-26 21:06:50+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-arm
+  sha256: 4899401ad330c540e26d682d84f246e05b26457d17d191e0cd953c67ae952331
+  timestamp: 2025-06-26 21:06:50+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.6.4/linkerd2-cli-edge-25.6.4-linux-arm64
+  sha256: 25a1c611500a38b58e78a6271f9acd159206c7c5b7a4dcb42da189a4f50a6767
+  timestamp: 2025-06-26 21:06:50+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.1/linkerd2-cli-edge-25.7.1-linux-amd64
+  sha256: 667375600d917cec5ee68e081491c45bd0401d96b5aaf75c9c8391b6338785fa
+  timestamp: 2025-07-02 21:07:08+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.1/linkerd2-cli-edge-25.7.1-linux-arm
+  sha256: 1f7f7f80d9e54982760ba7e761fe75cdf67d65ca739e38814ea0bede638ab721
+  timestamp: 2025-07-02 21:07:08+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.1/linkerd2-cli-edge-25.7.1-linux-arm64
+  sha256: 70810fe9e17cea5804400a58b21b8e8ccafb924666941bddc72073851cde4eac
+  timestamp: 2025-07-02 21:07:08+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.4/linkerd2-cli-edge-25.7.4-linux-amd64
+  sha256: b5c0c639c01f8e58ae88dbce1608d2af2c118405073e8e32187ad68a24ddbdf4
+  timestamp: 2025-07-18 12:04:47+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.4/linkerd2-cli-edge-25.7.4-linux-arm
+  sha256: 440e06824f5ff64b2ac6c1484393af059b72410daf0bcf6abfda4a706e8e19cf
+  timestamp: 2025-07-18 12:04:47+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.4/linkerd2-cli-edge-25.7.4-linux-arm64
+  sha256: 8ebd95b05898b23cff452c4a842c19e61755a0ff0290e4aa60f926703fb327a6
+  timestamp: 2025-07-18 12:04:47+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.5/linkerd2-cli-edge-25.7.5-linux-amd64
+  sha256: d11f4e22402b7bc38c525aaa0cdf37cb3e0f8bc4f532262825331be145845f83
+  timestamp: 2025-07-24 00:08:49+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.5/linkerd2-cli-edge-25.7.5-linux-arm
+  sha256: 6501f11c9dba91420f3316a650e18549ebf1dd9cc8b9421220fead4afdf49aee
+  timestamp: 2025-07-24 00:08:49+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.5/linkerd2-cli-edge-25.7.5-linux-arm64
+  sha256: 00129c1c2ed8ffd3d71803df67ac8366655b53901188d69e5819e71fdefed9d9
+  timestamp: 2025-07-24 00:08:49+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.6/linkerd2-cli-edge-25.7.6-linux-amd64
+  sha256: ac3fb1a09f54ea9fcc8f4f6a29deaf3f270113c3e04805bf6ce27af2953bdf36
+  timestamp: 2025-07-31 06:03:37+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.6/linkerd2-cli-edge-25.7.6-linux-arm
+  sha256: dac943ad14a3466e4db118707db74e2f4bc6eee624e4906d4a1572fe0f77a67b
+  timestamp: 2025-07-31 06:03:37+00:00
+- url: https://github.com/linkerd/linkerd2/releases/download/edge-25.7.6/linkerd2-cli-edge-25.7.6-linux-arm64
+  sha256: 29b3b2492491e0044c2f3aa6ff9652f1040484827e29d9d0729792a1932ca163
+  timestamp: 2025-07-31 06:03:37+00:00

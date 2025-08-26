@@ -1,11 +1,6 @@
 name: pdm
 matrix:
   versions:
-    - 2.9.3
-    - 2.10.4
-    - 2.11.0
-    - 2.11.1
-    - 2.11.2
     - 2.12.0
     - 2.12.1
     - 2.12.2
@@ -51,6 +46,11 @@ matrix:
     - 2.25.1
     - 2.25.2
     - 2.25.3
+    - 2.25.4
+    - 2.25.5
+    - 2.25.6
+    - 2.25.7
+    - 2.25.9
 homepage: https://pdm.fming.dev/
 summary: modern Python package and dependency manager supporting the latest PEP standards
 description: |-
