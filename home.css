@@ -1,0 +1,120 @@
+.tx-container {
+  padding-top: 0rem;
+  background: linear-gradient(
+    to bottom,
+    var(--md-primary-fg-color),
+    #a63fd9 99%,
+    var(--md-default-bg-color) 99%
+  );
+}
+
+.top-hr {
+  margin: 32px 1rem;
+}
+
+.tx-hero {
+  margin: 32px 1rem;
+  color: var(--md-primary-bg-color);
+  justify-content: center;
+}
+
+.tx-hero h1 {
+  margin-bottom: 1rem;
+  color: currentColor;
+  font-weight: 700;
+}
+
+.tx-hero__content {
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tx-hero__content img {
+  max-width: 15rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.feature-item {
+  margin: 0rem 0.5rem 2rem 0.5rem;
+  flex: 1;
+}
+
+.tx-hero .md-button {
+  margin-top: 0.5rem;
+  color: var(--md-primary-bg-color);
+}
+
+.tx-hero .md-button--primary {
+  background-color: var(--md-primary-bg-color);
+  margin-right: 0.4rem;
+  color: hsla(280deg, 37%, 48%, 1);
+  border-color: var(--md-primary-bg-color);
+}
+
+.tx-hero .md-button:focus,
+.tx-hero .md-button:hover {
+  background-color: white;
+  color: var(--md-default-bg-color);
+  border-color: white;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.64rem;
+  margin: 0 1.5rem 0 1.5rem;
+}
+
+@media screen and (max-width: 30em) {
+  .tx-hero h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 45em) {
+  .tx-hero__content {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+
+  .tx-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tx-hero__content div {
+    max-width: 30rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .tx-hero__content img {
+    padding-bottom: 0rem;
+  }
+
+  .tx-hero__examples {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .md-sidebar--primary {
+    display: none;
+  }
+
+  .top-hr {
+    display: flex;
+  }
+}
