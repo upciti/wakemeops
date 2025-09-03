@@ -79,7 +79,6 @@
       - arm64
       - armhf
     versions:
-      - 1.13.3
       - 1.13.4
       - 1.14.0
       - 1.14.1
@@ -129,6 +128,7 @@
       - 1.26.2
       - 1.26.3
       - 1.27.0
+      - 1.27.1
   homepage: https://istio.io
   summary: command-line interface for Istio
   description: Istio is an open platform to connect, manage, and secure microservices.
