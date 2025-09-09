@@ -40,8 +40,6 @@
       - arm64
       - armhf
     versions:
-      - 1.4.4
-      - 1.4.5
       - 1.4.6
       - 1.5.0
       - 1.5.1
@@ -90,6 +88,8 @@
       - 1.11.4
       - 1.12.1
       - 1.12.2
+      - 1.13.0
+      - 1.13.1
   homepage: https://www.terraform.io
   summary: tool for building, changing, and versioning infrastructure safely
   description: |-
