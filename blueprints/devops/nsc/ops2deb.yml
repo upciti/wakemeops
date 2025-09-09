@@ -6,6 +6,7 @@ matrix:
     - armhf
   versions:
     - 2.11.0
+    - 2.11.1
 homepage: https://github.com/nats-io/nsc
 summary: tool for creating nkey/jwt based configurations
 description: |-
