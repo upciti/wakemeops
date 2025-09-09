@@ -1,0 +1,23 @@
+name: nats-server
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 2.11.6
+    - 2.11.7
+    - 2.11.8
+    - 2.11.9
+homepage: https://github.com/nats-io/nats-server
+summary: NATS server implementation
+description: |-
+  The NATS Server is a high performance messaging system for cloud native
+  applications, microservices, and IoT. It offers secure, scalable, and simple
+  pub/sub and request/reply.
+fetch:
+  url: https://github.com/nats-io/nats-server/releases/download/v{{version}}/nats-server-v{{version}}-linux-{{target}}.tar.gz
+  targets:
+    armhf: arm7
+install:
+  - nats-server-v{{version}}-linux-{{target}}/nats-server:/usr/bin/

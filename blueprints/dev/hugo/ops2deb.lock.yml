@@ -1,27 +1,3 @@
-- url: https://github.com/gohugoio/hugo/releases/download/v0.126.1/hugo_extended_0.126.1_linux-amd64.tar.gz
-  sha256: fb97fc338fca83f2472e0d008c39d6e2b9a062553f2ac96ada6b087538d832f7
-  timestamp: 2024-05-15 12:09:33+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.126.1/hugo_extended_0.126.1_linux-arm64.tar.gz
-  sha256: 558e807d43ecb3a5b0930f51d552e4f46c93a84fd168dd041b3812c34f8a28fa
-  timestamp: 2024-05-15 12:09:33+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.126.3/hugo_extended_0.126.3_linux-amd64.tar.gz
-  sha256: afff5697b95b3aee7b5fde33bb176028f0e61dcc1694bf5320bdc241f52af1d4
-  timestamp: 2024-06-02 18:07:29+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.126.3/hugo_extended_0.126.3_linux-arm64.tar.gz
-  sha256: 2e4e97ba55bfc49ea1c525e3e98b87dd1ab273b0c0652a1dbceee487ca1f7a73
-  timestamp: 2024-06-02 18:07:29+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-amd64.tar.gz
-  sha256: b23fa856027adb502010d372c222b3a5becd61a61296ea7a7b9283c02009dfb9
-  timestamp: 2024-06-05 12:08:45+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_extended_0.127.0_linux-arm64.tar.gz
-  sha256: aa1fcca1422df1ba239c506f8da2eaeb9e4c73bc7c8e599929dc1369b8a6a97a
-  timestamp: 2024-06-05 12:08:45+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.128.0/hugo_extended_0.128.0_linux-amd64.tar.gz
-  sha256: a39cd72eff188f8596f09f3a7db9195477c4ce21072d286832f9fde15ba5d336
-  timestamp: 2024-06-25 18:07:47+00:00
-- url: https://github.com/gohugoio/hugo/releases/download/v0.128.0/hugo_extended_0.128.0_linux-arm64.tar.gz
-  sha256: 509dad59c3b9e0ce6c63aaacb814b75b836bac882935ec86e946a53ec617e1c8
-  timestamp: 2024-06-25 18:07:47+00:00
 - url: https://github.com/gohugoio/hugo/releases/download/v0.128.2/hugo_extended_0.128.2_linux-amd64.tar.gz
   sha256: a83253c155d76c197f1bee375662e3a2bc8c2335d2ffdfa7ec43e59c38c412c5
   timestamp: 2024-07-09 09:06:44+00:00
@@ -298,3 +274,27 @@
 - url: https://github.com/gohugoio/hugo/releases/download/v0.148.1/hugo_extended_0.148.1_linux-arm64.tar.gz
   sha256: 40697173a737d5760fc7d2691ca36f0d71be2b2f33ef179ccd2545908d03fc5f
   timestamp: 2025-07-18 12:04:46+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_extended_0.148.2_linux-amd64.tar.gz
+  sha256: dff500ade0d4b999ab0c680f4c6123756bb86904b5924d68c0e8ffb260195277
+  timestamp: 2025-07-27 18:02:54+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_extended_0.148.2_linux-arm64.tar.gz
+  sha256: ee9f0cb1e1902137a3d740e046e237e44f8a74afd21332d7ee746640a2deeb29
+  timestamp: 2025-07-27 18:02:54+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.149.0/hugo_extended_0.149.0_linux-amd64.tar.gz
+  sha256: 7c03691171736055addb9ed50733207b1c9c082206c4a9da2d4c29893ef9f3a1
+  timestamp: 2025-08-27 18:02:55+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.149.0/hugo_extended_0.149.0_linux-arm64.tar.gz
+  sha256: 91d9663b417e8b38693cb4f097095a96a62bd1fb8cba9f0b989c3dd1170bdf5d
+  timestamp: 2025-08-27 18:02:55+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.149.1/hugo_extended_0.149.1_linux-amd64.tar.gz
+  sha256: 8e61340fb84cd031097d2cfd4233ad9077576975a4ce0189e5ba1120e3cad553
+  timestamp: 2025-09-04 18:02:58+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.149.1/hugo_extended_0.149.1_linux-arm64.tar.gz
+  sha256: f800b933687354a462dc9f69e4e3fac28c9d754455556ea911d77f456616d92b
+  timestamp: 2025-09-04 18:02:58+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.150.0/hugo_extended_0.150.0_linux-amd64.tar.gz
+  sha256: d7348b78e8bbaf41a5ead308d3d4108bf18f2fb3fa203d3f0d99afa1c00bd096
+  timestamp: 2025-09-08 18:02:59+00:00
+- url: https://github.com/gohugoio/hugo/releases/download/v0.150.0/hugo_extended_0.150.0_linux-arm64.tar.gz
+  sha256: 9416d465021a683f0365c2e7e6cc6235508fb4ae541c74bf3bd7663af62d8e15
+  timestamp: 2025-09-08 18:02:59+00:00
