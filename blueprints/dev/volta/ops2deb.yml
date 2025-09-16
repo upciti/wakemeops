@@ -1,0 +1,18 @@
+name: volta
+matrix:
+  architectures:
+    - amd64
+  versions:
+    - 2.0.2
+homepage: https://volta.sh/
+summary: hassle-free way to manage your JavaScript command-line tools
+description: |-
+  With Volta, you can select a Node engine once and then stop worrying about it.
+  You can switch between projects and stop having to manually switch between
+  Nodes. You can install npm package binaries in your toolchain without having to
+  periodically reinstall them or figure out why they’ve stopped working.
+fetch: https://github.com/volta-cli/volta/releases/download/v{{version}}/volta-{{version}}-linux.tar.gz
+install:
+  - volta:/usr/bin/
+  - volta-migrate:/usr/bin/
+  - volta-shim:/usr/bin/
