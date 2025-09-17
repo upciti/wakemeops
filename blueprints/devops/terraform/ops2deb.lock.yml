@@ -28,15 +28,6 @@
 - url: https://releases.hashicorp.com/terraform/1.1.7/terraform_1.1.7_linux_arm64.zip
   sha256: 2f72982008c52d2d57294ea50794d7c6ae45d2948e08598bfec3e492bce8d96e
   timestamp: 2022-03-02 22:16:55+00:00
-- url: https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_amd64.zip
-  sha256: 9ae1bcfef088e9aaabeaf6fdc6cce01187dc4936f1564899ee6fa6baec5ad19c
-  timestamp: 2023-06-12 12:33:12+00:00
-- url: https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_arm.zip
-  sha256: 833559af90ff54f2ebcf9f70f9043e2d3fb54c1a0c38711f2522a16f909dc852
-  timestamp: 2023-06-12 12:33:12+00:00
-- url: https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_arm64.zip
-  sha256: 7d0bb120dc90dc05011f7a6c7c027f2ac1b13c0d5721b8c935f2f440e539a968
-  timestamp: 2023-06-12 12:33:12+00:00
 - url: https://releases.hashicorp.com/terraform/1.5.1/terraform_1.5.1_linux_amd64.zip
   sha256: 31754361a9b16564454104bfae8dd40fc6b0c754401c51c58a1023b5e193aa29
   timestamp: 2023-06-21 12:34:20+00:00
@@ -478,3 +469,12 @@
 - url: https://releases.hashicorp.com/terraform/1.13.2/terraform_1.13.2_linux_arm64.zip
   sha256: 9b3814d36b5b22d9bc7a2856a676770c7b2597b8df025004054354226865ced6
   timestamp: 2025-09-10 18:03:12+00:00
+- url: https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_linux_amd64.zip
+  sha256: 71fc43d92ea09907be5d416d2405a6a9c2d1ceaed633f5e175c0af26e8c4b365
+  timestamp: 2025-09-17 18:03:18+00:00
+- url: https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_linux_arm.zip
+  sha256: cb4a434b83a11d159c8c172b08e9b11b47458befb4e021f5ce20a894dd50c777
+  timestamp: 2025-09-17 18:03:18+00:00
+- url: https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_linux_arm64.zip
+  sha256: fa82fb1b08354573467557f33e6a15e7f9e1bba74eb15492f151ca27525d2acc
+  timestamp: 2025-09-17 18:03:18+00:00
