@@ -1,7 +1,6 @@
 name: scala-cli
 matrix:
   versions:
-    - 0.1.9
     - 0.1.10
     - 0.1.11
     - 0.1.12
@@ -51,6 +50,7 @@ matrix:
     - 1.8.4
     - 1.8.5
     - 1.9.0
+    - 1.9.1
 homepage: https://scala-cli.virtuslab.org/
 summary: command-line tool to interact with the Scala language
 description: |-
