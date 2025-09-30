@@ -16,15 +16,6 @@
 - url: https://github.com/fluxcd/flux2/releases/download/v0.24.1/flux_0.24.1_linux_amd64.tar.gz
   sha256: 3373a272ff888772e40647e90ba41dfa232e7482df62b10735cdd86a25e42178
   timestamp: 2021-12-14 15:37:09+00:00
-- url: https://github.com/fluxcd/flux2/releases/download/v0.29.3/flux_0.29.3_linux_amd64.tar.gz
-  sha256: 612a7ee0a96a8214bc85a8e7ba1b1d816a0121bab73e1e03be7f32a1a25f29ee
-  timestamp: 2022-04-22 14:42:06+00:00
-- url: https://github.com/fluxcd/flux2/releases/download/v0.29.3/flux_0.29.3_linux_arm.tar.gz
-  sha256: 694729943db21719a65c833a97826220055e62a9a02fe1b21707e9a38555dc39
-  timestamp: 2022-04-22 14:42:06+00:00
-- url: https://github.com/fluxcd/flux2/releases/download/v0.29.3/flux_0.29.3_linux_arm64.tar.gz
-  sha256: 083cfccea7b549d7740a505ce5d23fddb940048e4c0074c835ff7232f1b8d386
-  timestamp: 2022-04-22 14:42:06+00:00
 - url: https://github.com/fluxcd/flux2/releases/download/v0.29.4/flux_0.29.4_linux_amd64.tar.gz
   sha256: 4f3d4c0dec3dc0f456e362e8ce1f495c1b35adb65091b49e68d861f612b7d908
   timestamp: 2022-04-26 11:13:46+00:00
@@ -466,3 +457,12 @@
 - url: https://github.com/fluxcd/flux2/releases/download/v2.6.4/flux_2.6.4_linux_arm64.tar.gz
   sha256: 674e605f527841bb9b50a692b3ce497752cfc81438f85b4d1523d86aca637353
   timestamp: 2025-07-18 12:04:46+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v2.7.0/flux_2.7.0_linux_amd64.tar.gz
+  sha256: 81ee173d47fd6df1015a1c82d083f6242c95e67badc0a33c00cb9d8a64233d14
+  timestamp: 2025-09-30 12:03:31+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v2.7.0/flux_2.7.0_linux_arm.tar.gz
+  sha256: 2e85e9c4634886027348fed7d84da72b6962b634196da5309995cfabe7d9c011
+  timestamp: 2025-09-30 12:03:31+00:00
+- url: https://github.com/fluxcd/flux2/releases/download/v2.7.0/flux_2.7.0_linux_arm64.tar.gz
+  sha256: 758703b8cd96be98f1ea23b7bd3ff2ae13d90a23467d8aba8b83adbe335c6854
+  timestamp: 2025-09-30 12:03:31+00:00
