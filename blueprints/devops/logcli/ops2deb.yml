@@ -45,6 +45,7 @@ matrix:
     - 3.5.3
     - 3.5.4
     - 3.5.5
+    - 3.5.6
 homepage: https://github.com/grafana/loki
 summary: command-line interface for loki
 description: It facilitates running LogQL queries against a Loki instance.

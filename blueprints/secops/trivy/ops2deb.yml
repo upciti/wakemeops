@@ -70,7 +70,6 @@
       - amd64
       - arm64
     versions:
-      - 0.45.0
       - 0.45.1
       - 0.46.0
       - 0.46.1
@@ -120,6 +119,7 @@
       - 0.66.0
       - 0.67.0
       - 0.67.1
+      - 0.67.2
   homepage: https://www.aquasec.com/products/trivy/
   summary: vulnerability and misconfiguration scanner
   description: |-
