@@ -1,0 +1,24 @@
+name: mutagen
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 0.18.1
+homepage: https://mutagen.io/
+summary: fast file synchronization and network forwarding for remote development
+description: |-
+  Mutagen is a new kind of remote development tool that enables your existing
+  local tools to work with code in remote environments like cloud servers and
+  containers. It does this by providing high-performance real-time file
+  synchronization and flexible network forwarding. It supports synchronization
+  and forwarding between local systems, SSH-accessible locations, and Docker
+  containers.
+fetch:
+  url: https://github.com/mutagen-io/mutagen/releases/download/v{{version}}/mutagen_linux_{{target}}_v{{version}}.tar.gz
+  targets:
+    armhf: arm
+install:
+  - mutagen:/usr/bin/mutagen
+  - mutagen-agents.tar.gz:/usr/libexec/mutagen-agents.tar.gz
