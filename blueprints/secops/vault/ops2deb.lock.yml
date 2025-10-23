@@ -28,15 +28,6 @@
 - url: https://releases.hashicorp.com/vault/1.10.0/vault_1.10.0_linux_arm64.zip
   sha256: e4f963616ed0c4a4a03d541fb531d692014357f2fb53b3c64e75dfe35b96d7be
   timestamp: 2022-03-23 22:16:21+00:00
-- url: https://releases.hashicorp.com/vault/1.11.2/vault_1.11.2_linux_amd64.zip
-  sha256: ace4138269cb7214c73529f984b793d66074e3a3ad373eaa77bc9b39490d9ef9
-  timestamp: 2022-08-01 23:20:08+00:00
-- url: https://releases.hashicorp.com/vault/1.11.2/vault_1.11.2_linux_arm.zip
-  sha256: ae882482e5cff9cf702305cf37334c249ab704b9c36d43490ec000135e2e0935
-  timestamp: 2022-08-01 23:20:08+00:00
-- url: https://releases.hashicorp.com/vault/1.11.2/vault_1.11.2_linux_arm64.zip
-  sha256: 111db187b28c0dd29aa91636278132d42b5b18717531d5a34de26b90c86ea02c
-  timestamp: 2022-08-01 23:20:08+00:00
 - url: https://releases.hashicorp.com/vault/1.11.3/vault_1.11.3_linux_amd64.zip
   sha256: b433413ce524f26abe6292f7fc95f267e809daeacdf7ba92b68dead322f92deb
   timestamp: 2022-08-31 20:29:16+00:00
@@ -478,3 +469,12 @@
 - url: https://releases.hashicorp.com/vault/1.20.4/vault_1.20.4_linux_arm64.zip
   sha256: d1e9548efd89e772b6be9dc37914579cabd86362779b7239d2d769cfb601d835
   timestamp: 2025-09-25 06:04:02+00:00
+- url: https://releases.hashicorp.com/vault/1.21.0/vault_1.21.0_linux_amd64.zip
+  sha256: 5a91c93a9949ed8863ee4b91cfc30640bc49ab04225f0b1c5a0650c4d6e10171
+  timestamp: 2025-10-23 00:08:12+00:00
+- url: https://releases.hashicorp.com/vault/1.21.0/vault_1.21.0_linux_arm.zip
+  sha256: bbccbb8c6b8f12e778a3eafcc02610943614880b9524732f1549ecf0020c2fe7
+  timestamp: 2025-10-23 00:08:12+00:00
+- url: https://releases.hashicorp.com/vault/1.21.0/vault_1.21.0_linux_arm64.zip
+  sha256: 0083b02005ad89f6a01773866c6a892194ba27867b5f26ee374a0dfbbfb84c07
+  timestamp: 2025-10-23 00:08:12+00:00
