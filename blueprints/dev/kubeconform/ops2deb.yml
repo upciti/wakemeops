@@ -1,0 +1,15 @@
+name: kubeconform
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.7.0
+homepage: https://github.com/yannh/kubeconform
+summary: Kubernetes manifest validation tool.
+description: |-
+  Kubeconform validates kubernetes manifests using
+  https://github.com/yannh/kubernetes-json-schema/
+fetch: https://github.com/yannh/kubeconform/releases/download/v{{version}}/kubeconform-linux-{{arch}}.tar.gz
+install:
+  - kubeconform:/usr/bin/kubeconform
