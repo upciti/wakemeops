@@ -1,7 +1,6 @@
 name: signal-desktop
 matrix:
   versions:
-    - 7.28.0
     - 7.29.0
     - 7.30.0
     - 7.31.0
@@ -51,6 +50,7 @@ matrix:
     - 7.75.0
     - 7.75.1
     - 7.76.0
+    - 7.77.1
 homepage: https://github.com/signalapp/signal-desktop
 summary: private messaging from your desktop
 description: |-
