@@ -1,5 +1,8 @@
 name: cloud-provider-kind
-version: 0.8.0
+matrix:
+  versions:
+    - 0.8.0
+    - 0.9.0
 homepage: https://github.com/kubernetes-sigs/cloud-provider-kind
 summary: Kubernetes Cloud Provider for KIND
 description: |-
