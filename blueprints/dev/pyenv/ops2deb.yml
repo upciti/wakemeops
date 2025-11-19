@@ -23,7 +23,6 @@
 - name: pyenv
   matrix:
     versions:
-      - 2.3.27
       - 2.3.28
       - 2.3.29
       - 2.3.31
@@ -73,6 +72,7 @@
       - 2.6.10
       - 2.6.11
       - 2.6.12
+      - 2.6.13
   architecture: all
   homepage: https://github.com/pyenv/pyenv
   summary: simple Python version management
