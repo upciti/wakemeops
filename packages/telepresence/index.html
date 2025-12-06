@@ -1,0 +1,4464 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WakeMeOps documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.wakemeops.com/packages/telepresence/">
+      
+      
+        <link rel="prev" href="../teams-for-linux/">
+      
+      
+        <link rel="next" href="../terraform/">
+      
+      <link rel="icon" href="../../images/pink-logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>telepresence - WakeMeOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2.20.2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WakeMeOps" class="md-header__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WakeMeOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              telepresence
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../usage/" class="md-tabs__link">
+      Usage
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Packages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WakeMeOps" class="md-nav__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    WakeMeOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act/" class="md-nav__link">
+        act
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../age/" class="md-nav__link">
+        age
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aptly/" class="md-nav__link">
+        aptly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo/" class="md-nav__link">
+        argo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        argocd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-iam-authenticator/" class="md-nav__link">
+        aws-iam-authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../balena-etcher/" class="md-nav__link">
+        balena-etcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank-vaults/" class="md-nav__link">
+        bank-vaults
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bat/" class="md-nav__link">
+        bat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bitwarden-cli/" class="md-nav__link">
+        bitwarden-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bottom/" class="md-nav__link">
+        bottom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary/" class="md-nav__link">
+        boundary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-kapp/" class="md-nav__link">
+        carvel-kapp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-ytt/" class="md-nav__link">
+        carvel-ytt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat/" class="md-nav__link">
+        cheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chezmoi/" class="md-nav__link">
+        chezmoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose/" class="md-nav__link">
+        choose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cilium/" class="md-nav__link">
+        cilium
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clog-cli/" class="md-nav__link">
+        clog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-provider-kind/" class="md-nav__link">
+        cloud-provider-kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clusterctl/" class="md-nav__link">
+        clusterctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-diff/" class="md-nav__link">
+        container-diff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-structure-test/" class="md-nav__link">
+        container-structure-test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller-gen/" class="md-nav__link">
+        controller-gen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cosign/" class="md-nav__link">
+        cosign
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coursier/" class="md-nav__link">
+        coursier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curlie/" class="md-nav__link">
+        curlie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapr/" class="md-nav__link">
+        dapr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dasel/" class="md-nav__link">
+        dasel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datanymizer/" class="md-nav__link">
+        datanymizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datree/" class="md-nav__link">
+        datree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devspace/" class="md-nav__link">
+        devspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskonaut/" class="md-nav__link">
+        diskonaut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dive/" class="md-nav__link">
+        dive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        docker-compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-slim/" class="md-nav__link">
+        docker-slim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dog/" class="md-nav__link">
+        dog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dust/" class="md-nav__link">
+        dust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exa/" class="md-nav__link">
+        exa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eza/" class="md-nav__link">
+        eza
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd/" class="md-nav__link">
+        fd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feroxbuster/" class="md-nav__link">
+        feroxbuster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flux/" class="md-nav__link">
+        flux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fzf/" class="md-nav__link">
+        fzf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghorg/" class="md-nav__link">
+        ghorg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-delta/" class="md-nav__link">
+        git-delta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-cli/" class="md-nav__link">
+        github-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-hub/" class="md-nav__link">
+        github-hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitlab-release-cli/" class="md-nav__link">
+        gitlab-release-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitoxide/" class="md-nav__link">
+        gitoxide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glab/" class="md-nav__link">
+        glab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glow/" class="md-nav__link">
+        glow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go-task/" class="md-nav__link">
+        go-task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gomplate/" class="md-nav__link">
+        gomplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopass/" class="md-nav__link">
+        gopass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goreleaser/" class="md-nav__link">
+        goreleaser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gotop/" class="md-nav__link">
+        gotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gping/" class="md-nav__link">
+        gping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grex/" class="md-nav__link">
+        grex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm/" class="md-nav__link">
+        helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm-docs/" class="md-nav__link">
+        helm-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helmfile/" class="md-nav__link">
+        helmfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../himalaya/" class="md-nav__link">
+        himalaya
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hostctl/" class="md-nav__link">
+        hostctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hubble/" class="md-nav__link">
+        hubble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hugo/" class="md-nav__link">
+        hugo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iamlive/" class="md-nav__link">
+        iamlive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influx-cli/" class="md-nav__link">
+        influx-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infracost/" class="md-nav__link">
+        infracost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insomnia/" class="md-nav__link">
+        insomnia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istioctl/" class="md-nav__link">
+        istioctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jfrog-cli/" class="md-nav__link">
+        jfrog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k3d/" class="md-nav__link">
+        k3d
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k6/" class="md-nav__link">
+        k6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k9s/" class="md-nav__link">
+        k9s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kind/" class="md-nav__link">
+        kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kompose/" class="md-nav__link">
+        kompose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krew/" class="md-nav__link">
+        krew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krr/" class="md-nav__link">
+        krr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-capacity/" class="md-nav__link">
+        kube-capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-linter/" class="md-nav__link">
+        kube-linter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-no-trouble/" class="md-nav__link">
+        kube-no-trouble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-score/" class="md-nav__link">
+        kube-score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeaudit/" class="md-nav__link">
+        kubeaudit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubebuilder/" class="md-nav__link">
+        kubebuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeconform/" class="md-nav__link">
+        kubeconform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl/" class="md-nav__link">
+        kubectl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-kudo/" class="md-nav__link">
+        kubectl-kudo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-neat/" class="md-nav__link">
+        kubectl-neat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-oidc-login/" class="md-nav__link">
+        kubectl-oidc-login
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectx/" class="md-nav__link">
+        kubectx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubelogin/" class="md-nav__link">
+        kubelogin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubens/" class="md-nav__link">
+        kubens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubescape/" class="md-nav__link">
+        kubescape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeseal/" class="md-nav__link">
+        kubeseal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kustomize/" class="md-nav__link">
+        kustomize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kyverno/" class="md-nav__link">
+        kyverno
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazydocker/" class="md-nav__link">
+        lazydocker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazygit/" class="md-nav__link">
+        lazygit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lens/" class="md-nav__link">
+        lens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkerd/" class="md-nav__link">
+        linkerd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logcli/" class="md-nav__link">
+        logcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mask/" class="md-nav__link">
+        mask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattermost-desktop/" class="md-nav__link">
+        mattermost-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdbook/" class="md-nav__link">
+        mdbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mergestat/" class="md-nav__link">
+        mergestat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-client/" class="md-nav__link">
+        minio-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-server/" class="md-nav__link">
+        minio-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirrord/" class="md-nav__link">
+        mirrord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mob/" class="md-nav__link">
+        mob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mutagen/" class="md-nav__link">
+        mutagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nats-server/" class="md-nav__link">
+        nats-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natscli/" class="md-nav__link">
+        natscli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neovim/" class="md-nav__link">
+        neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nsc/" class="md-nav__link">
+        nsc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nushell/" class="md-nav__link">
+        nushell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oasdiff/" class="md-nav__link">
+        oasdiff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oc/" class="md-nav__link">
+        oc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../olivetin/" class="md-nav__link">
+        olivetin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openlens/" class="md-nav__link">
+        openlens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opentofu/" class="md-nav__link">
+        opentofu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-sdk/" class="md-nav__link">
+        operator-sdk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ops2deb/" class="md-nav__link">
+        ops2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-slicer/" class="md-nav__link">
+        orca-slicer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packer/" class="md-nav__link">
+        packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdm/" class="md-nav__link">
+        pdm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipx/" class="md-nav__link">
+        pipx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pluto/" class="md-nav__link">
+        pluto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poetry/" class="md-nav__link">
+        poetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procs/" class="md-nav__link">
+        procs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyenv/" class="md-nav__link">
+        pyenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyoxidizer/" class="md-nav__link">
+        pyoxidizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.10-build-standalone/" class="md-nav__link">
+        python3.10-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.11-build-standalone/" class="md-nav__link">
+        python3.11-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qq/" class="md-nav__link">
+        qq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rancher/" class="md-nav__link">
+        rancher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rclone/" class="md-nav__link">
+        rclone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restic/" class="md-nav__link">
+        restic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resticprofile/" class="md-nav__link">
+        resticprofile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ripgrep/" class="md-nav__link">
+        ripgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpk/" class="md-nav__link">
+        rpk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rye/" class="md-nav__link">
+        rye
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scala-cli/" class="md-nav__link">
+        scala-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scw/" class="md-nav__link">
+        scw
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell2http/" class="md-nav__link">
+        shell2http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signal-desktop/" class="md-nav__link">
+        signal-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skaffold/" class="md-nav__link">
+        skaffold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skim/" class="md-nav__link">
+        skim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops/" class="md-nav__link">
+        sops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stern/" class="md-nav__link">
+        stern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams-for-linux/" class="md-nav__link">
+        teams-for-linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          telepresence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        telepresence
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2.20.2" class="md-nav__link">
+    2.20.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.20.1" class="md-nav__link">
+    2.20.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.20.0" class="md-nav__link">
+    2.20.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.6" class="md-nav__link">
+    2.19.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.5" class="md-nav__link">
+    2.19.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.4" class="md-nav__link">
+    2.19.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.3" class="md-nav__link">
+    2.19.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.2" class="md-nav__link">
+    2.19.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.1" class="md-nav__link">
+    2.19.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.0" class="md-nav__link">
+    2.19.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.18.1" class="md-nav__link">
+    2.18.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.18.0" class="md-nav__link">
+    2.18.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.17.1" class="md-nav__link">
+    2.17.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.17.0" class="md-nav__link">
+    2.17.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.16.1" class="md-nav__link">
+    2.16.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.16.0" class="md-nav__link">
+    2.16.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.15.1" class="md-nav__link">
+    2.15.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.15.0" class="md-nav__link">
+    2.15.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.14.2" class="md-nav__link">
+    2.14.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.14.1" class="md-nav__link">
+    2.14.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.14.0" class="md-nav__link">
+    2.14.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.3" class="md-nav__link">
+    2.13.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.2" class="md-nav__link">
+    2.13.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.1" class="md-nav__link">
+    2.13.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.0" class="md-nav__link">
+    2.13.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.12.2" class="md-nav__link">
+    2.12.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.12.1" class="md-nav__link">
+    2.12.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.12.0" class="md-nav__link">
+    2.12.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.11.1" class="md-nav__link">
+    2.11.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.11.0" class="md-nav__link">
+    2.11.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.6" class="md-nav__link">
+    2.10.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.5" class="md-nav__link">
+    2.10.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.4" class="md-nav__link">
+    2.10.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.3" class="md-nav__link">
+    2.10.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.2" class="md-nav__link">
+    2.10.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.1" class="md-nav__link">
+    2.10.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.0" class="md-nav__link">
+    2.10.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.5" class="md-nav__link">
+    2.9.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.4" class="md-nav__link">
+    2.9.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.3" class="md-nav__link">
+    2.9.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.2" class="md-nav__link">
+    2.9.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.1" class="md-nav__link">
+    2.9.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.5" class="md-nav__link">
+    2.8.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.3" class="md-nav__link">
+    2.8.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.2" class="md-nav__link">
+    2.8.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.1" class="md-nav__link">
+    2.8.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.0" class="md-nav__link">
+    2.8.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.7.6" class="md-nav__link">
+    2.7.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.7.5" class="md-nav__link">
+    2.7.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.7.4" class="md-nav__link">
+    2.7.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.5.4" class="md-nav__link">
+    2.5.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.5.3" class="md-nav__link">
+    2.5.3
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-docs/" class="md-nav__link">
+        terraform-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-switcher/" class="md-nav__link">
+        terraform-switcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terragrunt/" class="md-nav__link">
+        terragrunt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrascan/" class="md-nav__link">
+        terrascan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokei/" class="md-nav__link">
+        tokei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trivy/" class="md-nav__link">
+        trivy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ttyd/" class="md-nav__link">
+        ttyd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typos-cli/" class="md-nav__link">
+        typos-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../undock/" class="md-nav__link">
+        undock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upterm/" class="md-nav__link">
+        upterm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uv/" class="md-nav__link">
+        uv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault/" class="md-nav__link">
+        vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault-env/" class="md-nav__link">
+        vault-env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../velero/" class="md-nav__link">
+        velero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vhs/" class="md-nav__link">
+        vhs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viu/" class="md-nav__link">
+        viu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../void/" class="md-nav__link">
+        void
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volta/" class="md-nav__link">
+        volta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuls-scanner/" class="md-nav__link">
+        vuls-scanner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wakemebot/" class="md-nav__link">
+        wakemebot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waypoint/" class="md-nav__link">
+        waypoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wheel2deb/" class="md-nav__link">
+        wheel2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xeol/" class="md-nav__link">
+        xeol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xh/" class="md-nav__link">
+        xh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xsv/" class="md-nav__link">
+        xsv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yq/" class="md-nav__link">
+        yq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zellij/" class="md-nav__link">
+        zellij
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen-browser/" class="md-nav__link">
+        zen-browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zli/" class="md-nav__link">
+        zli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zot/" class="md-nav__link">
+        zot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zoxide/" class="md-nav__link">
+        zoxide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2.20.2" class="md-nav__link">
+    2.20.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.20.1" class="md-nav__link">
+    2.20.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.20.0" class="md-nav__link">
+    2.20.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.6" class="md-nav__link">
+    2.19.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.5" class="md-nav__link">
+    2.19.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.4" class="md-nav__link">
+    2.19.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.3" class="md-nav__link">
+    2.19.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.2" class="md-nav__link">
+    2.19.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.1" class="md-nav__link">
+    2.19.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.19.0" class="md-nav__link">
+    2.19.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.18.1" class="md-nav__link">
+    2.18.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.18.0" class="md-nav__link">
+    2.18.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.17.1" class="md-nav__link">
+    2.17.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.17.0" class="md-nav__link">
+    2.17.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.16.1" class="md-nav__link">
+    2.16.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.16.0" class="md-nav__link">
+    2.16.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.15.1" class="md-nav__link">
+    2.15.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.15.0" class="md-nav__link">
+    2.15.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.14.2" class="md-nav__link">
+    2.14.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.14.1" class="md-nav__link">
+    2.14.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.14.0" class="md-nav__link">
+    2.14.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.3" class="md-nav__link">
+    2.13.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.2" class="md-nav__link">
+    2.13.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.1" class="md-nav__link">
+    2.13.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.13.0" class="md-nav__link">
+    2.13.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.12.2" class="md-nav__link">
+    2.12.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.12.1" class="md-nav__link">
+    2.12.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.12.0" class="md-nav__link">
+    2.12.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.11.1" class="md-nav__link">
+    2.11.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.11.0" class="md-nav__link">
+    2.11.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.6" class="md-nav__link">
+    2.10.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.5" class="md-nav__link">
+    2.10.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.4" class="md-nav__link">
+    2.10.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.3" class="md-nav__link">
+    2.10.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.2" class="md-nav__link">
+    2.10.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.1" class="md-nav__link">
+    2.10.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.10.0" class="md-nav__link">
+    2.10.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.5" class="md-nav__link">
+    2.9.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.4" class="md-nav__link">
+    2.9.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.3" class="md-nav__link">
+    2.9.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.2" class="md-nav__link">
+    2.9.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.9.1" class="md-nav__link">
+    2.9.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.5" class="md-nav__link">
+    2.8.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.3" class="md-nav__link">
+    2.8.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.2" class="md-nav__link">
+    2.8.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.1" class="md-nav__link">
+    2.8.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.8.0" class="md-nav__link">
+    2.8.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.7.6" class="md-nav__link">
+    2.7.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.7.5" class="md-nav__link">
+    2.7.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.7.4" class="md-nav__link">
+    2.7.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.5.4" class="md-nav__link">
+    2.5.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2.5.3" class="md-nav__link">
+    2.5.3
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>telepresence</h1>
+
+<p><strong>Fast, local development for kubernetes and openshift microservices</strong></p>
+<p>Open source tool that lets you run a single service locally, while connecting
+that service to a remote Kubernetes cluster. This lets developers working on
+multi-service applications to:</p>
+<ul>
+<li>Do fast local development of a single service, even if that service depends
+on other services in your cluster. Make a change to your service, save, and you
+can immediately see the new service in action.</li>
+<li>Use any tool installed locally to test/debug/edit your service. For example,
+you can use a debugger or IDE!</li>
+<li>Make your local development machine operate as if it's part of your
+Kubernetes cluster. If you've got an application on your machine that you want
+to run against a service in the cluster -- it's easy to do.</li>
+</ul>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.67 4.42a6.08 6.08 0 0 0-3.22-.86c-1.58 0-2.79.78-2.79 2 0 1.4 1.34 1.91 3.34 2.58 2.5.81 4.4 1.83 4.4 4.24a4.01 4.01 0 0 1-1.8 3.23c.65.61 1.01 1.47 1 2.36 0 2.82-2.6 4-5.1 4-1.46.06-2.91-.33-4.15-1.1L8 19.34c1.04.71 2.27 1.09 3.53 1.1 1.72 0 3-.78 3-2.2 0-1.24-.78-1.93-3.28-2.79C8.5 14.5 6.6 13.5 6.6 11.21c.07-1.32.83-2.52 2-3.14-.63-.57-.99-1.4-1-2.26C7.6 3.45 9.77 2 12.53 2c1.29 0 2.56.29 3.7.89l-.56 1.53m-4.32 9c1.06.33 2.09.76 3.06 1.29.65-.49 1.02-1.26 1-2.07 0-1-.64-1.88-2.41-2.5-1.11-.37-2.22-.83-3.28-1.37-.75.45-1.22 1.26-1.22 2.14 0 .97.73 1.77 2.85 2.51Z"/></svg></span> <a href="/packages/#devops"><code>devops</code></a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span> <a href="https://www.telepresence.io/">https://www.telepresence.io/</a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3V4m5 11v3h1v-3h-1m2 0v3h1v-3h-1m2 0v3h1v-3h-1Z"/></svg></span> <span class="badge arch">arm64</span> <span class="badge arch">amd64</span> </p>
+<h2 id="installation">Installation</h2>
+<p>1. Add WakeMeOps repository</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</code></pre></div>
+<p>2. Install telepresence</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>telepresence
+</code></pre></div>
+<h2 id="snippets">Snippets</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dockerfile</label><label for="__tabbed_1_2">Github Action</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">wakemeops/minideb:bullseye</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">RUN</span><span class="w"> </span>install_packages<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">telepresence</span><span class="o">=</span><span class="m">2</span>.20.2*
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">USER</span><span class="w"> </span><span class="s">1001</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upciti/wakemeops-action@v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="no">telepresence=2.20.2*</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="download-urls">Download URLs</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">amd64</label><label for="__tabbed_2_2">arm64</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.20.2-1~ops2deb_amd64.deb">2.20.2</a></td>
+<td><code>b45f47d16e5c9289fed21acdf53c304357bd27c78b779035d19b26b56e28dc18</code></td>
+<td>16299</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.20.1-1~ops2deb_amd64.deb">2.20.1</a></td>
+<td><code>f1e84ec2e6a9bdb113fd3d308edad17ed0b97051a14b25a9283cd5f1e488efbc</code></td>
+<td>16082</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.20.0-1~ops2deb_amd64.deb">2.20.0</a></td>
+<td><code>6684d2b4ef66d8c7c21322b84120d5ca0d44daded6c8af774c5f05bd5c1a66a0</code></td>
+<td>16077</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.6-1~ops2deb_amd64.deb">2.19.6</a></td>
+<td><code>d0926f8bd32876ecb6148f4d86a0a314a8381c734fc5cee1192c7511624775a5</code></td>
+<td>21150</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.5-1~ops2deb_amd64.deb">2.19.5</a></td>
+<td><code>1ea251f9655e8f74156a73acc05db515a03b9bc9dfd85efa25c1425c4f2503af</code></td>
+<td>20944</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.4-1~ops2deb_amd64.deb">2.19.4</a></td>
+<td><code>2400f5fe5d86e9e6c62890706334e87fb9235d6bbd69fa1226d1f8f27e9598e6</code></td>
+<td>20952</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.3-1~ops2deb_amd64.deb">2.19.3</a></td>
+<td><code>007fe2dfc6d9421115e644421ee29f5a9fb918b1cce30676a59c81f49fd44f85</code></td>
+<td>20943</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.2-1~ops2deb_amd64.deb">2.19.2</a></td>
+<td><code>93439a7eed44646a395d610138f789cf680400c9f4e14001a348cb07efaa3de3</code></td>
+<td>20946</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.1-1~ops2deb_amd64.deb">2.19.1</a></td>
+<td><code>6b41fee9b02e86ec765a41bd1f5fe8ae73e12e7f3d96918518baa43ea48fc2d8</code></td>
+<td>20945</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.0-1~ops2deb_amd64.deb">2.19.0</a></td>
+<td><code>91445e8a7b7ed7a4dcd70ae3e31689b7bd300d36402264885aa9c7c93d3fdd25</code></td>
+<td>20972</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.20.2-1~ops2deb_arm64.deb">2.20.2</a></td>
+<td><code>7e5d6176813d69092f67b677909dbb97ed988803e7cac4a47d40767a47cc07c2</code></td>
+<td>14179</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.20.1-1~ops2deb_arm64.deb">2.20.1</a></td>
+<td><code>d7c98df8f20bdc131d197d7ecc9b8f9b199cebfa6c799c142e7b5e14079781c9</code></td>
+<td>14011</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.20.0-1~ops2deb_arm64.deb">2.20.0</a></td>
+<td><code>b2dbbbaf07c66c91eadf5bfc5340a80d339db1b4692c9d87e37cccf2ecb6b9e7</code></td>
+<td>14005</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.6-1~ops2deb_arm64.deb">2.19.6</a></td>
+<td><code>9226dbb7ca00f85e1559b5daa990010ce4b5db601437888657c8c79635803c12</code></td>
+<td>18546</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.5-1~ops2deb_arm64.deb">2.19.5</a></td>
+<td><code>5ce9c03ceab76e897e5a7ac19b06422d7e53e68df8cb9607fcc18c3690f1f5e8</code></td>
+<td>18410</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.4-1~ops2deb_arm64.deb">2.19.4</a></td>
+<td><code>62624de81e7247b51731b4c295fbef78dc47c9b1c12c042e4b0daf6f0baa0e3d</code></td>
+<td>18409</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.3-1~ops2deb_arm64.deb">2.19.3</a></td>
+<td><code>0c9b2ae69c9c0839065100b87c24ca2396d58ee2817670fd343c8178db1356b3</code></td>
+<td>18399</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.2-1~ops2deb_arm64.deb">2.19.2</a></td>
+<td><code>8c8845937e9d4b7869696506402c3498560ae92ff0c9bf0a3a1a8fad044697cb</code></td>
+<td>18405</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.1-1~ops2deb_arm64.deb">2.19.1</a></td>
+<td><code>0bbaf55a6601e10a40a189f853d3d00b00d7ad8d77f4e88c7d65ca10bb188b14</code></td>
+<td>18399</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/t/telepresence/telepresence_2.19.0-1~ops2deb_arm64.deb">2.19.0</a></td>
+<td><code>0663e3a06c7e4b0f6388be1eada5a57537d275fd1110c0036f3f7a045a2a6c6d</code></td>
+<td>18434</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="blueprints">Blueprints</h2>
+<p>Debian packages listed on this page are generated from <a href="https://github.com/upciti/ops2deb">op2deb</a> YAML blueprints. Blueprints for telepresence are versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/devops/telepresence/ops2deb.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see telepresence ops2deb blueprints</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/devops/telepresence/ops2deb.yml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">telepresence</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.5.3</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.5.4</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.telepresence.io/</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast, local development for kubernetes and openshift microservices</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="no">Open source tool that lets you run a single service locally, while connecting</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="no">that service to a remote Kubernetes cluster. This lets developers working on</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="no">multi-service applications to:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="no">- Do fast local development of a single service, even if that service depends</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="no">on other services in your cluster. Make a change to your service, save, and you</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="no">can immediately see the new service in action.</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="no">- Use any tool installed locally to test/debug/edit your service. For example,</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="no">you can use a debugger or IDE!</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="no">- Make your local development machine operate as if it&#39;s part of your</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="no">Kubernetes cluster. If you&#39;ve got an application on your machine that you want</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="no">to run against a service in the cluster -- it&#39;s easy to do.</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">  </span><span class="nt">fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mv telepresence {{src}}/usr/bin/telepresence</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">telepresence</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">    </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">    </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.7.4</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.7.5</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.7.6</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.8.0</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.8.1</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.8.2</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.8.3</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.8.5</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.9.1</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.9.2</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.9.3</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.9.4</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.9.5</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.0</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.1</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.2</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.3</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.4</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.5</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.10.6</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.11.0</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.11.1</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.12.0</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.12.1</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.12.2</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.13.0</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.13.1</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.13.2</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.13.3</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.14.0</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.14.1</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.14.2</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.15.0</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.15.1</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.16.0</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.16.1</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.17.0</span>
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.17.1</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.18.0</span>
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.18.1</span>
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.0</span>
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.1</span>
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.2</span>
+<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.3</span>
+<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.4</span>
+<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.5</span>
+<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.19.6</span>
+<a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.20.0</span>
+<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.20.1</span>
+<a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.20.2</span>
+<a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a><span class="w">  </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.telepresence.io/</span>
+<a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a><span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast, local development for kubernetes and openshift microservices</span>
+<a id="__codelineno-4-86" name="__codelineno-4-86" href="#__codelineno-4-86"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-87" name="__codelineno-4-87" href="#__codelineno-4-87"></a><span class="w">    </span><span class="no">Open source tool that lets you run a single service locally, while connecting</span>
+<a id="__codelineno-4-88" name="__codelineno-4-88" href="#__codelineno-4-88"></a><span class="w">    </span><span class="no">that service to a remote Kubernetes cluster. This lets developers working on</span>
+<a id="__codelineno-4-89" name="__codelineno-4-89" href="#__codelineno-4-89"></a><span class="w">    </span><span class="no">multi-service applications to:</span>
+<a id="__codelineno-4-90" name="__codelineno-4-90" href="#__codelineno-4-90"></a>
+<a id="__codelineno-4-91" name="__codelineno-4-91" href="#__codelineno-4-91"></a><span class="w">    </span><span class="no">- Do fast local development of a single service, even if that service depends</span>
+<a id="__codelineno-4-92" name="__codelineno-4-92" href="#__codelineno-4-92"></a><span class="w">    </span><span class="no">on other services in your cluster. Make a change to your service, save, and you</span>
+<a id="__codelineno-4-93" name="__codelineno-4-93" href="#__codelineno-4-93"></a><span class="w">    </span><span class="no">can immediately see the new service in action.</span>
+<a id="__codelineno-4-94" name="__codelineno-4-94" href="#__codelineno-4-94"></a><span class="w">    </span><span class="no">- Use any tool installed locally to test/debug/edit your service. For example,</span>
+<a id="__codelineno-4-95" name="__codelineno-4-95" href="#__codelineno-4-95"></a><span class="w">    </span><span class="no">you can use a debugger or IDE!</span>
+<a id="__codelineno-4-96" name="__codelineno-4-96" href="#__codelineno-4-96"></a><span class="w">    </span><span class="no">- Make your local development machine operate as if it&#39;s part of your</span>
+<a id="__codelineno-4-97" name="__codelineno-4-97" href="#__codelineno-4-97"></a><span class="w">    </span><span class="no">Kubernetes cluster. If you&#39;ve got an application on your machine that you want</span>
+<a id="__codelineno-4-98" name="__codelineno-4-98" href="#__codelineno-4-98"></a><span class="w">    </span><span class="no">to run against a service in the cluster -- it&#39;s easy to do.</span>
+<a id="__codelineno-4-99" name="__codelineno-4-99" href="#__codelineno-4-99"></a><span class="w">  </span><span class="nt">fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/{{arch}}/{{version}}/telepresence</span>
+<a id="__codelineno-4-100" name="__codelineno-4-100" href="#__codelineno-4-100"></a><span class="w">  </span><span class="nt">install</span><span class="p">:</span>
+<a id="__codelineno-4-101" name="__codelineno-4-101" href="#__codelineno-4-101"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">telepresence:/usr/bin/</span>
+</code></pre></div>
+</details>
+<p>The blueprint <code>fetch</code> keyword contains a URL template pointing to telepresence releases. Downloaded files are locked in a lockfile versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/devops/telepresence/ops2deb.lock.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see telepresence release hashes</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/devops/telepresence/ops2deb.lock.yml</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.5.3/telepresence</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bc5e5495ec8e0b0d82a367a7060d7bd63c9f9483c0debc34c5eaf065185f40db</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-20 22:10:18+00:00</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.5.3/telepresence</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7a8a7f6e08acdde747d2894d5a046e54c051f691b39a787a22a3881ac2bdf46e</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-20 22:10:18+00:00</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.5.4/telepresence</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cec763538391e999f0531f1aad7382ddfb5a2feab2186b1261a4c69ede719ff0</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-29 23:19:14+00:00</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.5.4/telepresence</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9d82f8eff85bad0cf269264fe3b0ecf4c85410d437bd63fc6b3527c55aa7ebaa</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-29 23:19:14+00:00</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.7.4/telepresence</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b642822b4e5817b6d488b1461537d0572194072bfe00ead2810832d821b32f9a</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-09-14 20:31:09+00:00</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.7.4/telepresence</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">de96cd7624f0864995d138c17d80a0df595cba6374c49bfa81a33a4188d3503f</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-09-14 20:31:09+00:00</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.7.5/telepresence</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3454d9fb83558921c9a164ce8da37a62f88446b73ebe5efc4e90d1f50d93ab42</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-09-15 04:47:09+00:00</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.7.5/telepresence</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fe4e568a11bd9f140b7f582856d2173982756ec22cb49bb5443fe3e4d6a93b81</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-09-15 04:47:09+00:00</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.7.6/telepresence</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">57167a203b6d9070dd5f8fdfb001ffb80c3d00e5d62440843fee07d316b213b2</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-09-16 23:21:31+00:00</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.7.6/telepresence</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c7455480412d0f57db877bad55036a2ee06bb00d4e9aff113df1575f20dc8b74</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-09-16 23:21:31+00:00</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.8.0/telepresence</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">34335269f98821bbfc362628cc93e4900fd0ffb1f0bcc6b45e41f275f8e12b1b</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-14 17:31:15+00:00</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.8.0/telepresence</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">74ccf5d559ff8bbc0d307fc02cc170c4ae16ece80b7d707bc821fedd62a344d2</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-14 17:31:15+00:00</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.8.1/telepresence</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192f1f69772eba476ead6942fade6fe149fe3d5dc1844b79ce7afbdad1f40887</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-14 23:26:01+00:00</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.8.1/telepresence</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b4729ea5ebeec4fec547a6dda9cdb0737571e945e5f7f6bffc815a1224080197</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-14 23:26:01+00:00</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.8.2/telepresence</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bda24cc0bc38d6c771c99434a0f3fef942297810135bb555dd03b5684dda851f</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-15 04:39:13+00:00</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.8.2/telepresence</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">21ffacffb6b0bcbfcca86d23ecaa4b85dff12c2f1c8c022d50886ac12275218f</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-15 04:39:13+00:00</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.8.3/telepresence</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">328680e560ce10899638b47c21f7e5f83485e4cf1b644f16c25c8c2fe4e975e5</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-27 20:33:49+00:00</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.8.3/telepresence</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d0fb164e100c3c40891e0adb27b99a96305eef9305049ba77f71e22023cfd4b</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-27 20:33:49+00:00</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.8.5/telepresence</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f6eec5b7f77a63a7a49baccc33aab4b62a01f2b6bbd071dc40c195573747d723</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-03 10:23:36+00:00</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.8.5/telepresence</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1081c058226bf93a289b7e12ba2170ab7c4c6ee3fe1efc98124dab34d8799033</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-03 10:23:36+00:00</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.9.1/telepresence</span>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c07cbbe820bd5e8a40e903127ac02bf1a3197e181243016a927335ef1381e6cd</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-16 13:43:52+00:00</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.9.1/telepresence</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7d064466960fa715b2fbd520f93d149c72a5631f5f00fa4c9ff034ce93714171</span>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-16 13:43:52+00:00</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.9.2/telepresence</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c1c2b7cf84f752790c828ffa8a51a297ca81263cda4c14d49e84f2959e04a98d</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-16 22:19:26+00:00</span>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.9.2/telepresence</span>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">36f400ff6942cf57092b484e8269b3d6178c7fe264ffaf1c8ec5bfd0b1b5133a</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-16 22:19:26+00:00</span>
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.9.3/telepresence</span>
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">61328a51737f25d5d522fdc8b8784c24dd9b5e27aac9e25300aaf829af1c2068</span>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-24 19:26:02+00:00</span>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.9.3/telepresence</span>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0f5f012827cfda31eb0eca2541f1decafa14bb15c1e048361e7d4b639304049c</span>
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-11-24 19:26:02+00:00</span>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.9.4/telepresence</span>
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">31c922f51c269726b8424a4f143bacdf7f4b2ca85361ec78628f849fa3a02702</span>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-12-05 13:37:21+00:00</span>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.9.4/telepresence</span>
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14b584e541aac0c506c9b3eccfda0c35e0955245aa1d0c9474f183f679639c5d</span>
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-12-05 13:37:21+00:00</span>
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.9.5/telepresence</span>
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f297d49f6da3b7548d3a150c561f6e47f42d5d00bf0558c296158b7ec7f7923d</span>
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-12-09 02:41:54+00:00</span>
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.9.5/telepresence</span>
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fab7bc2700a6508d7c7efd2edf61fad1e4e7fbef843ee8827a717cb88c4b20a2</span>
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-12-09 02:41:54+00:00</span>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.0/telepresence</span>
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8983a3b82279345cb2d56fbba9d849931459f343c41500cf4e1de18c520402e6</span>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-11 19:27:53+00:00</span>
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.0/telepresence</span>
+<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7be5ba2a8d054edf9bf9cbd33687738ba32705fd6eb3a146d1b689f22d430df7</span>
+<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-11 19:27:53+00:00</span>
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.1/telepresence</span>
+<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f567b5616f1123be3ce8953b2aa91a23d2bc3c9d2a0d3f58584a4ac2fedc7afa</span>
+<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-11 22:17:57+00:00</span>
+<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.1/telepresence</span>
+<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14b9747b482f0670b9091c6a88bec0415e474e167374c7352693ed7d63ab9b17</span>
+<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-11 22:17:57+00:00</span>
+<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.2/telepresence</span>
+<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6455b224cdcce793caab0d27e08c404298879c5b173302e8107973b64d7cb48d</span>
+<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-16 22:16:13+00:00</span>
+<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.2/telepresence</span>
+<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c2310c6072aa05f8c8cc1a764f22161aff316f520af08969e31a0f8ad84b9d6b</span>
+<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-16 22:16:13+00:00</span>
+<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.3/telepresence</span>
+<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3c8313e0cec4fc37b40879831065b05d86cdec62e4333c386630dd299e5b4b7f</span>
+<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-18 04:21:26+00:00</span>
+<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.3/telepresence</span>
+<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3f20b5217cdd006ad34543bf0e5ec644590badcd6cbb081c071c6f9eab13aa24</span>
+<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-18 04:21:26+00:00</span>
+<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.4/telepresence</span>
+<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3e056378eead4b57609e71c41afaf7e27b9ccadc5aacb9413b38b267c6ff6b6b</span>
+<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-20 13:37:17+00:00</span>
+<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.4/telepresence</span>
+<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c43ec8914ed4d8e36348371a6053b1586556696b1756c53bead5abc74680c138</span>
+<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-20 13:37:17+00:00</span>
+<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.5/telepresence</span>
+<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">105366fbebf17db4a76074323e6c621ceaba4896a883d97fac4149dfd60e4407</span>
+<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-06 19:23:35+00:00</span>
+<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.5/telepresence</span>
+<a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">efe909358dc9826d968e635a167d8c5b77cf30b0e958e9dcd3b07809afdd2019</span>
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-06 19:23:35+00:00</span>
+<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.10.6/telepresence</span>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b8e32c848b057272ad70c08a4608f9ade9a683bdc51ddfe93827b1741be9c65f</span>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-14 22:17:37+00:00</span>
+<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.10.6/telepresence</span>
+<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6cb256584a26c01643b55574bdd7c9da67f1cd53b64367b18210021f97a267a1</span>
+<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-14 22:17:37+00:00</span>
+<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.11.0/telepresence</span>
+<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f3f377404af9004ea3345a535da631df04e3fc7cd2e92344f6f4cae3ba6b6595</span>
+<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-22 22:17:33+00:00</span>
+<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.11.0/telepresence</span>
+<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ba093ab545254caeb9b612f3dae6545fd94d1e4c2645233809689c527341bdc7</span>
+<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-22 22:17:33+00:00</span>
+<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.11.1/telepresence</span>
+<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1478e62133fea54e48b06ffcb7001544a77697f0ed9b13c29d9cb1aaf15a0220</span>
+<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-27 22:18:04+00:00</span>
+<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.11.1/telepresence</span>
+<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fd262e05237600d2077c81ea02e7d716a13e5affb7713b218b75c9bde8cc6f21</span>
+<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-27 22:18:04+00:00</span>
+<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.12.0/telepresence</span>
+<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8281230bfc60f12b0dbdf05b06bbf90e8870056b61105ad6504670fcb44f0766</span>
+<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-20 15:21:07+00:00</span>
+<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.12.0/telepresence</span>
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18ee2762b0fb684ecbca64d46b8788bf2e3243aa14c868bd427b9bac3ade8a3f</span>
+<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-20 15:21:07+00:00</span>
+<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.12.1/telepresence</span>
+<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2f616a705bc56ae1a847ca4467a9ad01b681231f9ee0264ff1373b3476d4798f</span>
+<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-22 21:14:59+00:00</span>
+<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.12.1/telepresence</span>
+<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">932877cafa62bf59ee0c7af3c174312d448d03d68640c78ecbe6f6f164602eb6</span>
+<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-22 21:14:59+00:00</span>
+<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.12.2/telepresence</span>
+<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fb89fdae62203e8cd7ddb137d8924a4de482dda083f661365f823ddc89b725b4</span>
+<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-04-05 01:11:50+00:00</span>
+<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.12.2/telepresence</span>
+<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e982a5af2d82db435e45915ae513786dc8238e273818dd7091f35950e73da95f</span>
+<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-04-05 01:11:50+00:00</span>
+<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.13.0/telepresence</span>
+<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">649a209fe6d7926d403f2362cb60d80a3e84095b037dd25dd086f0955329d56b</span>
+<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-04-18 18:22:20+00:00</span>
+<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.13.0/telepresence</span>
+<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c0987d0ca51caaef39f8bdfff15950b988c60aa4cda16e87e480e666ca76b0ea</span>
+<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-04-18 18:22:20+00:00</span>
+<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.13.1/telepresence</span>
+<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">94987e90c9d2041c80275f48c39bc1d64fa5020b905a4675d9e8df68227a7771</span>
+<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-04-25 10:50:55+00:00</span>
+<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.13.1/telepresence</span>
+<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">02ecd45a5709d7d16e970e3207dcde31fbdbf1597aa382d2f6dd9f6af74a0be1</span>
+<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-04-25 10:50:55+00:00</span>
+<a id="__codelineno-5-175" name="__codelineno-5-175" href="#__codelineno-5-175"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.13.2/telepresence</span>
+<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7f628fd894df1b5a23bc5f97a2985b4ba24414713a54fd8935d0d059c6837544</span>
+<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-12 21:14:03+00:00</span>
+<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.13.2/telepresence</span>
+<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ba80cbbff00d2ca4f8e25cef3f6052854d2fbe7ac2ba47f8a840e3eea7907d28</span>
+<a id="__codelineno-5-180" name="__codelineno-5-180" href="#__codelineno-5-180"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-12 21:14:03+00:00</span>
+<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.13.3/telepresence</span>
+<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f37f2738e288afbe4451566727b51a0de911fdcab1eab38be68dcee34705ace3</span>
+<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-26 01:25:38+00:00</span>
+<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.13.3/telepresence</span>
+<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bd251beb5aa51c5c599a548a86b5cf69d0d73a1e97e463c9ce2fd41d67d4f365</span>
+<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-26 01:25:38+00:00</span>
+<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.14.0/telepresence</span>
+<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1cd59fb514e0bdeb89802c2d362a2614f45cf2e74f210cd716e99e04350cf449</span>
+<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-06-13 01:42:23+00:00</span>
+<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.14.0/telepresence</span>
+<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4985f88bff35a8c34507c950ba2c68a4f77272387b3c0da48f83cd373269e219</span>
+<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-06-13 01:42:23+00:00</span>
+<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.14.1/telepresence</span>
+<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3968e7f0a2a21431934e827b2eeac113350e24cea6be7912082655469916e2b8</span>
+<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-07 21:16:04+00:00</span>
+<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.14.1/telepresence</span>
+<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3f3868beb69678be9cdb71646bd577450f988d56c974d22cd103891492817579</span>
+<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-07 21:16:04+00:00</span>
+<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.14.2/telepresence</span>
+<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">49a21a7230c69aeeaf11e679738d356e8b5e655f4083ea7f1fa0c1ca551fbce0</span>
+<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-27 09:16:48+00:00</span>
+<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.14.2/telepresence</span>
+<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6018e7ce82cdf3a59a3a611f33c18b29dfbdd25731cdbaba93add82bf69fdd85</span>
+<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-27 09:16:48+00:00</span>
+<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.15.0/telepresence</span>
+<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fd9a1480c5670f962762514f828fe8813cca0aef37e0213ff7114689e72ffd09</span>
+<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-30 01:10:45+00:00</span>
+<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.15.0/telepresence</span>
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">116cf657c136fb37f12c7d5548b70153bcd92c8066cb7302871906f836707069</span>
+<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-30 01:10:45+00:00</span>
+<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.15.1/telepresence</span>
+<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">83b695ff12cbc682f53ab662da0457bbb190f8e64ab163eb04057ecef16b6cde</span>
+<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-08 01:11:47+00:00</span>
+<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.15.1/telepresence</span>
+<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">588bea65f36e21d46fbf3adedc32d6f9045b8a2929f8b736fd3fe056f60b7064</span>
+<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-08 01:11:47+00:00</span>
+<a id="__codelineno-5-217" name="__codelineno-5-217" href="#__codelineno-5-217"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.16.0/telepresence</span>
+<a id="__codelineno-5-218" name="__codelineno-5-218" href="#__codelineno-5-218"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a7efbecc7a0d2488c0a4d5148bf9acd81fa535c63ff551cfe1d97b045d9d17e4</span>
+<a id="__codelineno-5-219" name="__codelineno-5-219" href="#__codelineno-5-219"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-10-02 18:22:13+00:00</span>
+<a id="__codelineno-5-220" name="__codelineno-5-220" href="#__codelineno-5-220"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.16.0/telepresence</span>
+<a id="__codelineno-5-221" name="__codelineno-5-221" href="#__codelineno-5-221"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">601689a8cc1bc878a6c9649bb03f393d452b904738670f7a0fc5975a03e5be63</span>
+<a id="__codelineno-5-222" name="__codelineno-5-222" href="#__codelineno-5-222"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-10-02 18:22:13+00:00</span>
+<a id="__codelineno-5-223" name="__codelineno-5-223" href="#__codelineno-5-223"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.16.1/telepresence</span>
+<a id="__codelineno-5-224" name="__codelineno-5-224" href="#__codelineno-5-224"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7aaa27a681f8017b600abb00f769d94ecda57b6fbb4ab399546b32f50d9ff1df</span>
+<a id="__codelineno-5-225" name="__codelineno-5-225" href="#__codelineno-5-225"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-10-13 12:33:59+00:00</span>
+<a id="__codelineno-5-226" name="__codelineno-5-226" href="#__codelineno-5-226"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.16.1/telepresence</span>
+<a id="__codelineno-5-227" name="__codelineno-5-227" href="#__codelineno-5-227"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f06b617bffd2a5b962292b7b44067ef6d3358b9442b49bfcf23738f0fb174452</span>
+<a id="__codelineno-5-228" name="__codelineno-5-228" href="#__codelineno-5-228"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-10-13 12:33:59+00:00</span>
+<a id="__codelineno-5-229" name="__codelineno-5-229" href="#__codelineno-5-229"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.17.0/telepresence</span>
+<a id="__codelineno-5-230" name="__codelineno-5-230" href="#__codelineno-5-230"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">29a946d7466cc73568c98c085541111175d793b00d4753932fd486758ed51d53</span>
+<a id="__codelineno-5-231" name="__codelineno-5-231" href="#__codelineno-5-231"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-11-14 18:18:44+00:00</span>
+<a id="__codelineno-5-232" name="__codelineno-5-232" href="#__codelineno-5-232"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.17.0/telepresence</span>
+<a id="__codelineno-5-233" name="__codelineno-5-233" href="#__codelineno-5-233"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ee32230fba69c0246d6565660444cb2a34d9faf0f85162780e3e64a9e5c40491</span>
+<a id="__codelineno-5-234" name="__codelineno-5-234" href="#__codelineno-5-234"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-11-14 18:18:44+00:00</span>
+<a id="__codelineno-5-235" name="__codelineno-5-235" href="#__codelineno-5-235"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.17.1/telepresence</span>
+<a id="__codelineno-5-236" name="__codelineno-5-236" href="#__codelineno-5-236"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">13979e2d8639271ae83d54131c8d7adfed2a73fc0ea70b3174d0b890cba0a658</span>
+<a id="__codelineno-5-237" name="__codelineno-5-237" href="#__codelineno-5-237"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-11-29 18:22:06+00:00</span>
+<a id="__codelineno-5-238" name="__codelineno-5-238" href="#__codelineno-5-238"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.17.1/telepresence</span>
+<a id="__codelineno-5-239" name="__codelineno-5-239" href="#__codelineno-5-239"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3f5354f668cc1be62eb6d1d38c686e0d21c0f0434852c4a83e7e56d9ecc97fc6</span>
+<a id="__codelineno-5-240" name="__codelineno-5-240" href="#__codelineno-5-240"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-11-29 18:22:06+00:00</span>
+<a id="__codelineno-5-241" name="__codelineno-5-241" href="#__codelineno-5-241"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.18.0/telepresence</span>
+<a id="__codelineno-5-242" name="__codelineno-5-242" href="#__codelineno-5-242"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8f7a23063835799cae4252d3148c45ba1417d64d2940157d264cc2b336097337</span>
+<a id="__codelineno-5-243" name="__codelineno-5-243" href="#__codelineno-5-243"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-12-15 18:22:01+00:00</span>
+<a id="__codelineno-5-244" name="__codelineno-5-244" href="#__codelineno-5-244"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.18.0/telepresence</span>
+<a id="__codelineno-5-245" name="__codelineno-5-245" href="#__codelineno-5-245"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">204f747bb6ea0dd4f6bd06d5019fbef89098b666a84537eac034c1d37b0be6eb</span>
+<a id="__codelineno-5-246" name="__codelineno-5-246" href="#__codelineno-5-246"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-12-15 18:22:01+00:00</span>
+<a id="__codelineno-5-247" name="__codelineno-5-247" href="#__codelineno-5-247"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.18.1/telepresence</span>
+<a id="__codelineno-5-248" name="__codelineno-5-248" href="#__codelineno-5-248"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c8405a7053d0fb082f517a19236cec35bdc2493abc107d0ae6289610dfa0bc98</span>
+<a id="__codelineno-5-249" name="__codelineno-5-249" href="#__codelineno-5-249"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-12-27 18:20:48+00:00</span>
+<a id="__codelineno-5-250" name="__codelineno-5-250" href="#__codelineno-5-250"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.18.1/telepresence</span>
+<a id="__codelineno-5-251" name="__codelineno-5-251" href="#__codelineno-5-251"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16b5482b39f430eccf00ab39bbd1d6d676b70a542413dd652b7d6895c417a4b7</span>
+<a id="__codelineno-5-252" name="__codelineno-5-252" href="#__codelineno-5-252"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-12-27 18:20:48+00:00</span>
+<a id="__codelineno-5-253" name="__codelineno-5-253" href="#__codelineno-5-253"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.0/telepresence</span>
+<a id="__codelineno-5-254" name="__codelineno-5-254" href="#__codelineno-5-254"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5ef62b6397357badcea81a098b491f4f42046fc312d3365b21c470717ee1131c</span>
+<a id="__codelineno-5-255" name="__codelineno-5-255" href="#__codelineno-5-255"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-02-12 21:05:40+00:00</span>
+<a id="__codelineno-5-256" name="__codelineno-5-256" href="#__codelineno-5-256"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.0/telepresence</span>
+<a id="__codelineno-5-257" name="__codelineno-5-257" href="#__codelineno-5-257"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1a0f59ec9aa1c93bbe9548acbce9aa5a595c7bdf223b590cf9f2fa3a27f513ff</span>
+<a id="__codelineno-5-258" name="__codelineno-5-258" href="#__codelineno-5-258"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-02-12 21:05:40+00:00</span>
+<a id="__codelineno-5-259" name="__codelineno-5-259" href="#__codelineno-5-259"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.1/telepresence</span>
+<a id="__codelineno-5-260" name="__codelineno-5-260" href="#__codelineno-5-260"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">93e776a892ce53a62ee86f7ae73fd958b94721e656bd57a0e9b5aa9721aabe7e</span>
+<a id="__codelineno-5-261" name="__codelineno-5-261" href="#__codelineno-5-261"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-04 09:06:18+00:00</span>
+<a id="__codelineno-5-262" name="__codelineno-5-262" href="#__codelineno-5-262"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.1/telepresence</span>
+<a id="__codelineno-5-263" name="__codelineno-5-263" href="#__codelineno-5-263"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0fb770b2800fec04853b2e0017fd88a20c581a51d588337f19089b7b37c0a202</span>
+<a id="__codelineno-5-264" name="__codelineno-5-264" href="#__codelineno-5-264"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-04 09:06:18+00:00</span>
+<a id="__codelineno-5-265" name="__codelineno-5-265" href="#__codelineno-5-265"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.2/telepresence</span>
+<a id="__codelineno-5-266" name="__codelineno-5-266" href="#__codelineno-5-266"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ef9b5eb42b1a748df4fd4c50e97897e2c8362caa6d149a0447def2a3ff404c52</span>
+<a id="__codelineno-5-267" name="__codelineno-5-267" href="#__codelineno-5-267"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-05 18:06:27+00:00</span>
+<a id="__codelineno-5-268" name="__codelineno-5-268" href="#__codelineno-5-268"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.2/telepresence</span>
+<a id="__codelineno-5-269" name="__codelineno-5-269" href="#__codelineno-5-269"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a3aaa52c315d2db0e567c10fbb76edb01533fa8d0ad1bcca03f638cdca55a796</span>
+<a id="__codelineno-5-270" name="__codelineno-5-270" href="#__codelineno-5-270"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-05 18:06:27+00:00</span>
+<a id="__codelineno-5-271" name="__codelineno-5-271" href="#__codelineno-5-271"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.3/telepresence</span>
+<a id="__codelineno-5-272" name="__codelineno-5-272" href="#__codelineno-5-272"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">49fa6e75794c644c0886c4cd298176149e6d58bf2b7233bc714006a44adccf5d</span>
+<a id="__codelineno-5-273" name="__codelineno-5-273" href="#__codelineno-5-273"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-11 18:06:12+00:00</span>
+<a id="__codelineno-5-274" name="__codelineno-5-274" href="#__codelineno-5-274"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.3/telepresence</span>
+<a id="__codelineno-5-275" name="__codelineno-5-275" href="#__codelineno-5-275"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">63cd986e1786ffff65a87a2684441f22ea23b9263dc61344a8130d5b32ebf899</span>
+<a id="__codelineno-5-276" name="__codelineno-5-276" href="#__codelineno-5-276"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-11 18:06:12+00:00</span>
+<a id="__codelineno-5-277" name="__codelineno-5-277" href="#__codelineno-5-277"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.4/telepresence</span>
+<a id="__codelineno-5-278" name="__codelineno-5-278" href="#__codelineno-5-278"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd89530fd1c6327e36ec767bbace571bd245f4ee9843de37b5c4eee11fb5dbdf</span>
+<a id="__codelineno-5-279" name="__codelineno-5-279" href="#__codelineno-5-279"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-23 18:06:32+00:00</span>
+<a id="__codelineno-5-280" name="__codelineno-5-280" href="#__codelineno-5-280"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.4/telepresence</span>
+<a id="__codelineno-5-281" name="__codelineno-5-281" href="#__codelineno-5-281"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edf3911cf229224b05b1897ad07aaa7eb0fa556435b17e3a46a39b062e8cbe60</span>
+<a id="__codelineno-5-282" name="__codelineno-5-282" href="#__codelineno-5-282"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-23 18:06:32+00:00</span>
+<a id="__codelineno-5-283" name="__codelineno-5-283" href="#__codelineno-5-283"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.5/telepresence</span>
+<a id="__codelineno-5-284" name="__codelineno-5-284" href="#__codelineno-5-284"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d73636d949143869279cc09b5575988e97721cd5354053e0335c05b4390ebfe7</span>
+<a id="__codelineno-5-285" name="__codelineno-5-285" href="#__codelineno-5-285"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-05-15 15:06:01+00:00</span>
+<a id="__codelineno-5-286" name="__codelineno-5-286" href="#__codelineno-5-286"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.5/telepresence</span>
+<a id="__codelineno-5-287" name="__codelineno-5-287" href="#__codelineno-5-287"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">882a0fdec54273789fce75e9004ff2dabb80d086204f8a9601411e7f246fc791</span>
+<a id="__codelineno-5-288" name="__codelineno-5-288" href="#__codelineno-5-288"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-05-15 15:06:01+00:00</span>
+<a id="__codelineno-5-289" name="__codelineno-5-289" href="#__codelineno-5-289"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.19.6/telepresence</span>
+<a id="__codelineno-5-290" name="__codelineno-5-290" href="#__codelineno-5-290"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0887cae79c378adcb00e82d678d18c662367a99277a38594cf84cecf82982344</span>
+<a id="__codelineno-5-291" name="__codelineno-5-291" href="#__codelineno-5-291"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-12 18:07:17+00:00</span>
+<a id="__codelineno-5-292" name="__codelineno-5-292" href="#__codelineno-5-292"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.19.6/telepresence</span>
+<a id="__codelineno-5-293" name="__codelineno-5-293" href="#__codelineno-5-293"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">da02b410ac063b6b8688ef4f0f5c3a3bd2683e81e7de9d7616fc901ba2b63fb8</span>
+<a id="__codelineno-5-294" name="__codelineno-5-294" href="#__codelineno-5-294"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-12 18:07:17+00:00</span>
+<a id="__codelineno-5-295" name="__codelineno-5-295" href="#__codelineno-5-295"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.20.0/telepresence</span>
+<a id="__codelineno-5-296" name="__codelineno-5-296" href="#__codelineno-5-296"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dc1c3a1bb1d20bd4eb56eda17095a575a5e8a77e68f9da607c7319f657ac1337</span>
+<a id="__codelineno-5-297" name="__codelineno-5-297" href="#__codelineno-5-297"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-11-15 18:08:27+00:00</span>
+<a id="__codelineno-5-298" name="__codelineno-5-298" href="#__codelineno-5-298"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.20.0/telepresence</span>
+<a id="__codelineno-5-299" name="__codelineno-5-299" href="#__codelineno-5-299"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dd5c0469768fe4f58fd212ea6ac375bf6dbbdc3b8334516deb7c1e1df0f425d2</span>
+<a id="__codelineno-5-300" name="__codelineno-5-300" href="#__codelineno-5-300"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-11-15 18:08:27+00:00</span>
+<a id="__codelineno-5-301" name="__codelineno-5-301" href="#__codelineno-5-301"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.20.1/telepresence</span>
+<a id="__codelineno-5-302" name="__codelineno-5-302" href="#__codelineno-5-302"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ea35cde65bb7faa2122be81d9bff9161ee279170faf54af52e2abf4344dc25ba</span>
+<a id="__codelineno-5-303" name="__codelineno-5-303" href="#__codelineno-5-303"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-06 18:08:40+00:00</span>
+<a id="__codelineno-5-304" name="__codelineno-5-304" href="#__codelineno-5-304"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.20.1/telepresence</span>
+<a id="__codelineno-5-305" name="__codelineno-5-305" href="#__codelineno-5-305"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd5b262055e7ece04ee630dc692301690f25ae038a7b1eb6564515504169a3cb</span>
+<a id="__codelineno-5-306" name="__codelineno-5-306" href="#__codelineno-5-306"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-06 18:08:40+00:00</span>
+<a id="__codelineno-5-307" name="__codelineno-5-307" href="#__codelineno-5-307"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/amd64/2.20.2/telepresence</span>
+<a id="__codelineno-5-308" name="__codelineno-5-308" href="#__codelineno-5-308"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6ee330bf651b4f2abc9f6683c847a580a2f04c5a16f5629e11f4e7ebcad17927</span>
+<a id="__codelineno-5-309" name="__codelineno-5-309" href="#__codelineno-5-309"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-01-28 09:07:23+00:00</span>
+<a id="__codelineno-5-310" name="__codelineno-5-310" href="#__codelineno-5-310"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.getambassador.io/download/tel2/linux/arm64/2.20.2/telepresence</span>
+<a id="__codelineno-5-311" name="__codelineno-5-311" href="#__codelineno-5-311"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dd1ee36701e915e5906e1c105bfad194644c92a1ecc4caf9f86f21936322d368</span>
+<a id="__codelineno-5-312" name="__codelineno-5-312" href="#__codelineno-5-312"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-01-28 09:07:23+00:00</span>
+</code></pre></div>
+</details>
+<h2 id="badge">Badge</h2>
+<p><a href="/packages/telepresence"><img alt="WakeMeOps" src="/badges/telepresence.svg" /></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Markdown</label><label for="__tabbed_3_2">HTML</label><label for="__tabbed_3_3">RST</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">![WakeMeOps</span>](<span class="na">https://docs.wakemeops.com/badges/telepresence.svg</span>)](https://docs.wakemeops.com/packages/telepresence)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/packages/telepresence&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/badges/telepresence.svg&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> https://docs.wakemeops.com/badges/telepresence.svg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nc">:target:</span> https://docs.wakemeops.com/packages/telepresence
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>
