@@ -448,78 +448,6 @@
 - url: https://github.com/astral-sh/uv/releases/download/0.6.7/uv-x86_64-unknown-linux-gnu.tar.gz
   sha256: 601c2b1147117c4471a154b4cebbdb31c818105f796d5f8115fe42d2526689c8
   timestamp: 2025-03-18 03:17:18+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.6.14/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: 94e22c4be44d205def456427639ca5ca1c1a9e29acc31808a7b28fdd5dcf7f17
-  timestamp: 2025-04-16 15:08:51+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.6.14/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: d73b09f23c7056b3b5318edf670ebc8d2eac5adfdd4f4ee46796723298f21e18
-  timestamp: 2025-04-16 15:08:51+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.6.14/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: 0aaf451c391d3913823bfb8ed354b446dcfd0553a32ed8266611e4181c61fd51
-  timestamp: 2025-04-16 15:08:51+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.6.17/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: 98750f5c0cd9eb520799d10649efb18441b616150f07e6c1125f616a3fd137e8
-  timestamp: 2025-04-29 18:10:09+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.6.17/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: efc12955d7a6120ea0be2de5ee03dbb33d0d7d9de9dbe0dce560514f2ee129d3
-  timestamp: 2025-04-29 18:10:09+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.6.17/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: 720ec28f7a94aa8cd91d3d57dec1434d64b9ae13d1dd6a25f4c0cdb837ba9cf6
-  timestamp: 2025-04-29 18:10:09+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.2/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: d5b31df40da794dab943c55e67d14fc111146e185b14a6de6eb749ee264a641c
-  timestamp: 2025-05-02 00:31:12+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.2/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: b69999c29c759f5a47f71c1f328d6e7c489229efa5ce0e84afce026201730abb
-  timestamp: 2025-05-02 00:31:12+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.2/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: cfaab1b5166a6439ff66f020333d3a12bbdf622deee3b510718283e8f06c9de7
-  timestamp: 2025-05-02 00:31:12+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.3/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: a3f01c3c993b57fa8d13855c5ba60e3847bda4f8e795a52d52879e242e886604
-  timestamp: 2025-05-07 21:06:31+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.3/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: 69f285d861cd1809a4bad0f08c2ea8a77ec17cbe20524a4ebbee4c5a7c868520
-  timestamp: 2025-05-07 21:06:31+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.3/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: 17fc118ba4d7e9303f84fcabdc0a593fc3480ba76eb6980668fdbbb96fe88562
-  timestamp: 2025-05-07 21:06:31+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.8/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: 4d18efb46f93fa942dc4c212dea3b6b07e3db62fe57d0c3d08de6bf5d9f9bb51
-  timestamp: 2025-05-25 09:07:55+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.8/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: 7d61c6e18e81447482dc80c090c65a6615a1232512899943566baf2808ca37bb
-  timestamp: 2025-05-25 09:07:55+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.8/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: 285981409c746508c1fd125f66a1ea654e487bf1e4d9f45371a062338f788adb
-  timestamp: 2025-05-25 09:07:55+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.9/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: 60f30508c9002b2b7af55d70db2741cf7ea24c066ced710ad09681a6d2d19b3a
-  timestamp: 2025-05-30 21:06:21+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.9/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: 83353ee7e1724083ea94d7f488fa34c9159995a3996f87017fdf72e422c93242
-  timestamp: 2025-05-30 21:06:21+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.9/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: b8450a419c0bcc85841bbed8511eb59e2a5683ddd3f813f2b98b97babf6b1b8b
-  timestamp: 2025-05-30 21:06:21+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.10/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: f9000f08850a5c575d5fe1ddc2ec928ecc9f287ecdcd9fa1ea4e3f405b23d4a3
-  timestamp: 2025-06-03 18:09:33+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.10/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: 1cf4a8f40abbd802a7b44fe9695da356701100d267eb3567c17db27e0a24cf69
-  timestamp: 2025-06-03 18:09:33+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.10/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: ff2ef46298963fee8104ccb3c0a4ecbc97c057ac6a0bc5fec7636c855384252e
-  timestamp: 2025-06-03 18:09:33+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.11/uv-aarch64-unknown-linux-musl.tar.gz
-  sha256: 2ad20d143c74d7f63d1c99db3999f239f045b7be041e23f6ac8b269c99fa54fe
-  timestamp: 2025-06-04 21:05:59+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.11/uv-armv7-unknown-linux-gnueabihf.tar.gz
-  sha256: 1a75aaff4695c07151d5b9abb50232ea9fb6f5ccc82d4b319abd8796605d9db8
-  timestamp: 2025-06-04 21:05:59+00:00
-- url: https://github.com/astral-sh/uv/releases/download/0.7.11/uv-x86_64-unknown-linux-gnu.tar.gz
-  sha256: df54b274e99b7ef26030dc21d105ce115bc21a644fc6a321bde9222cb1616de6
-  timestamp: 2025-06-04 21:05:59+00:00
 - url: https://github.com/astral-sh/uv/releases/download/0.7.12/uv-aarch64-unknown-linux-musl.tar.gz
   sha256: 0589f6d27bbbe2e205aa6fc25e4cd28ab97e984cdba20842de8d3a00714e13e9
   timestamp: 2025-06-06 21:06:24+00:00
@@ -898,3 +826,75 @@
 - url: https://github.com/astral-sh/uv/releases/download/0.9.8/uv-x86_64-unknown-linux-gnu.tar.gz
   sha256: 950bad4899800ab158db97081b30a601a3ff4237d705756fda8695342cfcc20a
   timestamp: 2025-11-08 00:07:52+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.9/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: 84675e9f81c7ec45b11761db4e1f047c64e772d96a7d99201507a10279f7f835
+  timestamp: 2025-11-13 00:08:19+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.9/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: 0390a683afc68c10c3cef45d80678015c6d097260a612ab6bca006ec68f75918
+  timestamp: 2025-11-13 00:08:19+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.9/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: 9ec303873e00deed44d1b2b52b85ab7aa55d849588d7242298748390eaea07ef
+  timestamp: 2025-11-13 00:08:19+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.10/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: 9dda17fe2261a16ce0d267617e5898b9678ba6c5f1c8528b7fe48d32d839f427
+  timestamp: 2025-11-17 18:03:04+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.10/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: cc2ecd5c5093de3d591f4b856ded66a73af3e18eca48eafb65bd3a0b650adcd4
+  timestamp: 2025-11-17 18:03:04+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.10/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: 440c4215b171e64061d65d16a23753dd25c29a7f7b1b0446c9e9aed0fa372f27
+  timestamp: 2025-11-17 18:03:04+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.11/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: 26b33bb65714247dd865216e71c5528030c85c6de9ce06172152158ed7add70c
+  timestamp: 2025-11-21 00:08:20+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.11/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: 2212adfff866e062dcea7d1ef99935043a49e3d77a18c9258851b7d23c5c3f90
+  timestamp: 2025-11-21 00:08:20+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.11/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: 817c0722b437b4b45b9a7e0231616a09db76bab1b8d178ba7a9680c690db19f0
+  timestamp: 2025-11-21 00:08:20+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.12/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: e953307caacdcf8a5bbac510423b2e64840428244a542ae2d7a6ca79c2931c24
+  timestamp: 2025-11-26 00:08:04+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.12/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: 2f06cb797ba7c4f5f1774331d4e15f912b1e8035e49c9ad5f510378fd2d129dc
+  timestamp: 2025-11-26 00:08:04+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.12/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: 4e43dac0c82b12b66564d91d5649350377b771d1df84374d9be1b9e6c8dd8152
+  timestamp: 2025-11-26 00:08:04+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.13/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: 5a81540af68e28df324d01d79900e7b86c659e8167cb236528b8e6050d74f94e
+  timestamp: 2025-11-26 18:03:14+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.13/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: a6c99ae8fdd21e58b8908ecf4f521d2045e297572d899fdd6b59e14d1095600c
+  timestamp: 2025-11-26 18:03:14+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.13/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: c45a44144bf23a2182e143227b4ad0bbe41a2bb7161a637c02e968906af53fd1
+  timestamp: 2025-11-26 18:03:14+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.14/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: 631ac3b88a77ec1af35297fdecc0b60b3eef16482617e3a2a5805bd667166437
+  timestamp: 2025-12-01 18:03:19+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.14/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: 09449988d71401c37e8a7db2eb381e4a931c6394b7c1c9db7e444c2948f16677
+  timestamp: 2025-12-01 18:03:19+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.14/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: e72024e390fed178072e0c9b262c052d89ccff32a5522504f4991d6265aff411
+  timestamp: 2025-12-01 18:03:19+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.15/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: 41f6ef4f86e9f8015bc31e9ca4fd44a6e2c80fc0b75d6eb74063f64ca15177c7
+  timestamp: 2025-12-03 06:03:11+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.15/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: d30d648e4c1c76110ee78953b43ecb8c356cda438a071a60c97308f9a7d2cf27
+  timestamp: 2025-12-03 06:03:11+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.15/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: 2053df0089327569cddd6afea920c2285b482d9b123f5db9f658273e96ab792c
+  timestamp: 2025-12-03 06:03:11+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.16/uv-aarch64-unknown-linux-musl.tar.gz
+  sha256: cb6730e083f17b38aea88c2bdfc3d4c834a832444087d30d7914bd460ae15b79
+  timestamp: 2025-12-06 18:02:51+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.16/uv-armv7-unknown-linux-gnueabihf.tar.gz
+  sha256: 5a09476442563f6ee32d864d89a87490bf5a850c987898c648ef57608c5899cb
+  timestamp: 2025-12-06 18:02:51+00:00
+- url: https://github.com/astral-sh/uv/releases/download/0.9.16/uv-x86_64-unknown-linux-gnu.tar.gz
+  sha256: 3adbf5322471b53a61483b4a5d091e70c32231ebc63fd327fae7b844cbcd3e01
+  timestamp: 2025-12-06 18:02:51+00:00

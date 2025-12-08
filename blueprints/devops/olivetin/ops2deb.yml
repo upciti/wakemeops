@@ -5,8 +5,6 @@ matrix:
     - arm64
     - armhf
   versions:
-    - 2024.06.01
-    - 2024.06.02
     - 2024.06.04
     - 2024.07.07
     - 2024.07.13
@@ -53,6 +51,10 @@ matrix:
     - 2025.10.30
     - 3000.3.1
     - 3000.3.2
+    - 3000.4.0
+    - 3000.5.0
+    - 3000.6.0
+    - 3000.7.0
 revision: "2"
 summary: safe and simple access to predefined shell commands from a web interface
 description: |-
