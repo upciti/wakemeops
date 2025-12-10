@@ -38,7 +38,6 @@
       - arm64
       - armhf
     versions:
-      - 2.44.1
       - 2.45.0
       - 2.46.0
       - 2.47.0
@@ -88,6 +87,7 @@
       - 2.82.1
       - 2.83.0
       - 2.83.1
+      - 2.83.2
   homepage: https://github.com/cli/cli
   summary: GitHub on the command line
   description: |-
