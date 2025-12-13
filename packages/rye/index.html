@@ -1,0 +1,3693 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WakeMeOps documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.wakemeops.com/packages/rye/">
+      
+      
+        <link rel="prev" href="../rpk/">
+      
+      
+        <link rel="next" href="../scala-cli/">
+      
+      <link rel="icon" href="../../images/pink-logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>rye - WakeMeOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0.44.0" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WakeMeOps" class="md-header__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WakeMeOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              rye
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../usage/" class="md-tabs__link">
+      Usage
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Packages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WakeMeOps" class="md-nav__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    WakeMeOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act/" class="md-nav__link">
+        act
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../age/" class="md-nav__link">
+        age
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aptly/" class="md-nav__link">
+        aptly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo/" class="md-nav__link">
+        argo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        argocd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-iam-authenticator/" class="md-nav__link">
+        aws-iam-authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../balena-etcher/" class="md-nav__link">
+        balena-etcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank-vaults/" class="md-nav__link">
+        bank-vaults
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bat/" class="md-nav__link">
+        bat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bitwarden-cli/" class="md-nav__link">
+        bitwarden-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bottom/" class="md-nav__link">
+        bottom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary/" class="md-nav__link">
+        boundary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-kapp/" class="md-nav__link">
+        carvel-kapp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-ytt/" class="md-nav__link">
+        carvel-ytt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat/" class="md-nav__link">
+        cheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chezmoi/" class="md-nav__link">
+        chezmoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose/" class="md-nav__link">
+        choose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cilium/" class="md-nav__link">
+        cilium
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clog-cli/" class="md-nav__link">
+        clog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-provider-kind/" class="md-nav__link">
+        cloud-provider-kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clusterctl/" class="md-nav__link">
+        clusterctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-diff/" class="md-nav__link">
+        container-diff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-structure-test/" class="md-nav__link">
+        container-structure-test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller-gen/" class="md-nav__link">
+        controller-gen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cosign/" class="md-nav__link">
+        cosign
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coursier/" class="md-nav__link">
+        coursier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curlie/" class="md-nav__link">
+        curlie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapr/" class="md-nav__link">
+        dapr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dasel/" class="md-nav__link">
+        dasel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datanymizer/" class="md-nav__link">
+        datanymizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datree/" class="md-nav__link">
+        datree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devspace/" class="md-nav__link">
+        devspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskonaut/" class="md-nav__link">
+        diskonaut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dive/" class="md-nav__link">
+        dive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        docker-compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-slim/" class="md-nav__link">
+        docker-slim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dog/" class="md-nav__link">
+        dog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dust/" class="md-nav__link">
+        dust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exa/" class="md-nav__link">
+        exa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eza/" class="md-nav__link">
+        eza
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd/" class="md-nav__link">
+        fd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feroxbuster/" class="md-nav__link">
+        feroxbuster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flux/" class="md-nav__link">
+        flux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fzf/" class="md-nav__link">
+        fzf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghorg/" class="md-nav__link">
+        ghorg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-delta/" class="md-nav__link">
+        git-delta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-cli/" class="md-nav__link">
+        github-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-hub/" class="md-nav__link">
+        github-hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitlab-release-cli/" class="md-nav__link">
+        gitlab-release-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitoxide/" class="md-nav__link">
+        gitoxide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glab/" class="md-nav__link">
+        glab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glow/" class="md-nav__link">
+        glow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go-task/" class="md-nav__link">
+        go-task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gomplate/" class="md-nav__link">
+        gomplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopass/" class="md-nav__link">
+        gopass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goreleaser/" class="md-nav__link">
+        goreleaser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gotop/" class="md-nav__link">
+        gotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gping/" class="md-nav__link">
+        gping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grex/" class="md-nav__link">
+        grex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm/" class="md-nav__link">
+        helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm-docs/" class="md-nav__link">
+        helm-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helmfile/" class="md-nav__link">
+        helmfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../himalaya/" class="md-nav__link">
+        himalaya
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hostctl/" class="md-nav__link">
+        hostctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hubble/" class="md-nav__link">
+        hubble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hugo/" class="md-nav__link">
+        hugo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iamlive/" class="md-nav__link">
+        iamlive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influx-cli/" class="md-nav__link">
+        influx-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infracost/" class="md-nav__link">
+        infracost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insomnia/" class="md-nav__link">
+        insomnia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istioctl/" class="md-nav__link">
+        istioctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jfrog-cli/" class="md-nav__link">
+        jfrog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k3d/" class="md-nav__link">
+        k3d
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k6/" class="md-nav__link">
+        k6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k9s/" class="md-nav__link">
+        k9s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kind/" class="md-nav__link">
+        kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kompose/" class="md-nav__link">
+        kompose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krew/" class="md-nav__link">
+        krew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krr/" class="md-nav__link">
+        krr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-capacity/" class="md-nav__link">
+        kube-capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-linter/" class="md-nav__link">
+        kube-linter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-no-trouble/" class="md-nav__link">
+        kube-no-trouble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-score/" class="md-nav__link">
+        kube-score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeaudit/" class="md-nav__link">
+        kubeaudit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubebuilder/" class="md-nav__link">
+        kubebuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeconform/" class="md-nav__link">
+        kubeconform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl/" class="md-nav__link">
+        kubectl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-kudo/" class="md-nav__link">
+        kubectl-kudo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-neat/" class="md-nav__link">
+        kubectl-neat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-oidc-login/" class="md-nav__link">
+        kubectl-oidc-login
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectx/" class="md-nav__link">
+        kubectx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubelogin/" class="md-nav__link">
+        kubelogin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubens/" class="md-nav__link">
+        kubens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubescape/" class="md-nav__link">
+        kubescape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeseal/" class="md-nav__link">
+        kubeseal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kustomize/" class="md-nav__link">
+        kustomize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kyverno/" class="md-nav__link">
+        kyverno
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazydocker/" class="md-nav__link">
+        lazydocker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazygit/" class="md-nav__link">
+        lazygit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lens/" class="md-nav__link">
+        lens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkerd/" class="md-nav__link">
+        linkerd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logcli/" class="md-nav__link">
+        logcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mask/" class="md-nav__link">
+        mask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattermost-desktop/" class="md-nav__link">
+        mattermost-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdbook/" class="md-nav__link">
+        mdbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mergestat/" class="md-nav__link">
+        mergestat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-client/" class="md-nav__link">
+        minio-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-server/" class="md-nav__link">
+        minio-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirrord/" class="md-nav__link">
+        mirrord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mob/" class="md-nav__link">
+        mob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mutagen/" class="md-nav__link">
+        mutagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nats-server/" class="md-nav__link">
+        nats-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natscli/" class="md-nav__link">
+        natscli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neovim/" class="md-nav__link">
+        neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nsc/" class="md-nav__link">
+        nsc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nushell/" class="md-nav__link">
+        nushell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oasdiff/" class="md-nav__link">
+        oasdiff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oc/" class="md-nav__link">
+        oc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../olivetin/" class="md-nav__link">
+        olivetin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openlens/" class="md-nav__link">
+        openlens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opentofu/" class="md-nav__link">
+        opentofu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-sdk/" class="md-nav__link">
+        operator-sdk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ops2deb/" class="md-nav__link">
+        ops2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-slicer/" class="md-nav__link">
+        orca-slicer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packer/" class="md-nav__link">
+        packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdm/" class="md-nav__link">
+        pdm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipx/" class="md-nav__link">
+        pipx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pluto/" class="md-nav__link">
+        pluto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poetry/" class="md-nav__link">
+        poetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procs/" class="md-nav__link">
+        procs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyenv/" class="md-nav__link">
+        pyenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyoxidizer/" class="md-nav__link">
+        pyoxidizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.10-build-standalone/" class="md-nav__link">
+        python3.10-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.11-build-standalone/" class="md-nav__link">
+        python3.11-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qq/" class="md-nav__link">
+        qq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rancher/" class="md-nav__link">
+        rancher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rclone/" class="md-nav__link">
+        rclone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restic/" class="md-nav__link">
+        restic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resticprofile/" class="md-nav__link">
+        resticprofile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ripgrep/" class="md-nav__link">
+        ripgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpk/" class="md-nav__link">
+        rpk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          rye
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        rye
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0.44.0" class="md-nav__link">
+    0.44.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.43.0" class="md-nav__link">
+    0.43.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.42.0" class="md-nav__link">
+    0.42.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.41.0" class="md-nav__link">
+    0.41.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.40.0" class="md-nav__link">
+    0.40.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.39.0" class="md-nav__link">
+    0.39.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.38.0" class="md-nav__link">
+    0.38.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.37.0" class="md-nav__link">
+    0.37.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.36.0" class="md-nav__link">
+    0.36.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.35.0" class="md-nav__link">
+    0.35.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.34.0" class="md-nav__link">
+    0.34.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.33.0" class="md-nav__link">
+    0.33.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.32.0" class="md-nav__link">
+    0.32.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.31.0" class="md-nav__link">
+    0.31.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.30.0" class="md-nav__link">
+    0.30.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.29.0" class="md-nav__link">
+    0.29.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.28.0" class="md-nav__link">
+    0.28.0
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scala-cli/" class="md-nav__link">
+        scala-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scw/" class="md-nav__link">
+        scw
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell2http/" class="md-nav__link">
+        shell2http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signal-desktop/" class="md-nav__link">
+        signal-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skaffold/" class="md-nav__link">
+        skaffold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skim/" class="md-nav__link">
+        skim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops/" class="md-nav__link">
+        sops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stern/" class="md-nav__link">
+        stern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams-for-linux/" class="md-nav__link">
+        teams-for-linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telepresence/" class="md-nav__link">
+        telepresence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-docs/" class="md-nav__link">
+        terraform-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-switcher/" class="md-nav__link">
+        terraform-switcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terragrunt/" class="md-nav__link">
+        terragrunt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrascan/" class="md-nav__link">
+        terrascan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokei/" class="md-nav__link">
+        tokei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trivy/" class="md-nav__link">
+        trivy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ttyd/" class="md-nav__link">
+        ttyd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typos-cli/" class="md-nav__link">
+        typos-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../undock/" class="md-nav__link">
+        undock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upterm/" class="md-nav__link">
+        upterm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uv/" class="md-nav__link">
+        uv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault/" class="md-nav__link">
+        vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault-env/" class="md-nav__link">
+        vault-env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../velero/" class="md-nav__link">
+        velero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vhs/" class="md-nav__link">
+        vhs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viu/" class="md-nav__link">
+        viu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../void/" class="md-nav__link">
+        void
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volta/" class="md-nav__link">
+        volta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuls-scanner/" class="md-nav__link">
+        vuls-scanner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wakemebot/" class="md-nav__link">
+        wakemebot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waypoint/" class="md-nav__link">
+        waypoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wheel2deb/" class="md-nav__link">
+        wheel2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xeol/" class="md-nav__link">
+        xeol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xh/" class="md-nav__link">
+        xh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xsv/" class="md-nav__link">
+        xsv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yq/" class="md-nav__link">
+        yq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zellij/" class="md-nav__link">
+        zellij
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen-browser/" class="md-nav__link">
+        zen-browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zli/" class="md-nav__link">
+        zli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zot/" class="md-nav__link">
+        zot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zoxide/" class="md-nav__link">
+        zoxide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0.44.0" class="md-nav__link">
+    0.44.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.43.0" class="md-nav__link">
+    0.43.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.42.0" class="md-nav__link">
+    0.42.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.41.0" class="md-nav__link">
+    0.41.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.40.0" class="md-nav__link">
+    0.40.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.39.0" class="md-nav__link">
+    0.39.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.38.0" class="md-nav__link">
+    0.38.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.37.0" class="md-nav__link">
+    0.37.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.36.0" class="md-nav__link">
+    0.36.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.35.0" class="md-nav__link">
+    0.35.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.34.0" class="md-nav__link">
+    0.34.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.33.0" class="md-nav__link">
+    0.33.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.32.0" class="md-nav__link">
+    0.32.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.31.0" class="md-nav__link">
+    0.31.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.30.0" class="md-nav__link">
+    0.30.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.29.0" class="md-nav__link">
+    0.29.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0.28.0" class="md-nav__link">
+    0.28.0
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>rye</h1>
+
+<p><strong>Comprehensive project and package management solution for Python</strong></p>
+<p>Born from its creator's desire to establish a one-stop-shop for all Python
+users, Rye provides a unified experience to install and manages Python
+installations, pyproject.toml based projects, dependencies and virtualenvs
+seamlessly. It's designed to accommodate complex projects, monorepos and to
+facilitate global tool installations.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.67 4.42a6.08 6.08 0 0 0-3.22-.86c-1.58 0-2.79.78-2.79 2 0 1.4 1.34 1.91 3.34 2.58 2.5.81 4.4 1.83 4.4 4.24a4.01 4.01 0 0 1-1.8 3.23c.65.61 1.01 1.47 1 2.36 0 2.82-2.6 4-5.1 4-1.46.06-2.91-.33-4.15-1.1L8 19.34c1.04.71 2.27 1.09 3.53 1.1 1.72 0 3-.78 3-2.2 0-1.24-.78-1.93-3.28-2.79C8.5 14.5 6.6 13.5 6.6 11.21c.07-1.32.83-2.52 2-3.14-.63-.57-.99-1.4-1-2.26C7.6 3.45 9.77 2 12.53 2c1.29 0 2.56.29 3.7.89l-.56 1.53m-4.32 9c1.06.33 2.09.76 3.06 1.29.65-.49 1.02-1.26 1-2.07 0-1-.64-1.88-2.41-2.5-1.11-.37-2.22-.83-3.28-1.37-.75.45-1.22 1.26-1.22 2.14 0 .97.73 1.77 2.85 2.51Z"/></svg></span> <a href="/packages/#dev"><code>dev</code></a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span> <a href="https://rye-up.com/">https://rye-up.com/</a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3V4m5 11v3h1v-3h-1m2 0v3h1v-3h-1m2 0v3h1v-3h-1Z"/></svg></span> <span class="badge arch">arm64</span> <span class="badge arch">amd64</span> </p>
+<h2 id="installation">Installation</h2>
+<p>1. Add WakeMeOps repository</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</code></pre></div>
+<p>2. Install rye</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rye
+</code></pre></div>
+<h2 id="snippets">Snippets</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dockerfile</label><label for="__tabbed_1_2">Github Action</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">wakemeops/minideb:bullseye</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">RUN</span><span class="w"> </span>install_packages<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">rye</span><span class="o">=</span><span class="m">0</span>.44.0*
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">USER</span><span class="w"> </span><span class="s">1001</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upciti/wakemeops-action@v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="no">rye=0.44.0*</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="download-urls">Download URLs</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">amd64</label><label for="__tabbed_2_2">arm64</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.44.0-1~ops2deb_amd64.deb">0.44.0</a></td>
+<td><code>946faab53096b0ee8273f381fe19b6d1c2ff9f597d0a572f8e248248538b487e</code></td>
+<td>4616</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.43.0-1~ops2deb_amd64.deb">0.43.0</a></td>
+<td><code>9774e59c57f848071656a55e2f77d1608cdfa58fb36a10ea2eeb257f64944f1e</code></td>
+<td>4579</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.42.0-1~ops2deb_amd64.deb">0.42.0</a></td>
+<td><code>a867b216f535b3786b15f3af7aaa350e29afca3bd4099ecb6b6c614ab776492b</code></td>
+<td>4566</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.41.0-1~ops2deb_amd64.deb">0.41.0</a></td>
+<td><code>53678c0b1461ecde10273221171d3259d0c1057e1dddb6d66cb4ae3e970ae2ee</code></td>
+<td>4557</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.40.0-1~ops2deb_amd64.deb">0.40.0</a></td>
+<td><code>17b0eed04ef8421c8b58bf77061fba066318a441356da5af6b437e02b4a373be</code></td>
+<td>4560</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.39.0-1~ops2deb_amd64.deb">0.39.0</a></td>
+<td><code>4cbdff59eb89d274754b3c03a4317d57ac301887a4121052e7a4ee9dfc895a0e</code></td>
+<td>4515</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.38.0-1~ops2deb_amd64.deb">0.38.0</a></td>
+<td><code>29bc4dfc3f271a8eddb7dabe863443d91b643512b4bf9b484669e299b4426ebc</code></td>
+<td>4470</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.37.0-1~ops2deb_amd64.deb">0.37.0</a></td>
+<td><code>5bdc1819c3a25f922da3218d2d76c24d1c4da43ff2fcb632020c802864ab03e7</code></td>
+<td>4483</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.36.0-1~ops2deb_amd64.deb">0.36.0</a></td>
+<td><code>40b11b013fc7021d940dddae4d1052396930aab58428be0ea7edd7b9c97c1058</code></td>
+<td>4483</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.35.0-1~ops2deb_amd64.deb">0.35.0</a></td>
+<td><code>3ef1a98df8bb231e2b8f1e0b1e81a7b6cd08b39fe49b6ea5261e1ab46606796d</code></td>
+<td>4487</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.44.0-1~ops2deb_arm64.deb">0.44.0</a></td>
+<td><code>4b265786581bf674ca1247aaf27afdeb8950546bbe6a55f6cb73643b760474f9</code></td>
+<td>4508</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.43.0-1~ops2deb_arm64.deb">0.43.0</a></td>
+<td><code>40d49a0c0e43c67a223fa4d73243c15fc76cc425ded5839bce8d063833b02a5d</code></td>
+<td>4478</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.42.0-1~ops2deb_arm64.deb">0.42.0</a></td>
+<td><code>cd28b0f4b467b073d3789eb68481d489bea2697375066627daffccf765ffb170</code></td>
+<td>4478</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.41.0-1~ops2deb_arm64.deb">0.41.0</a></td>
+<td><code>6f35e5a84c4a3415b27bcf4bf8b54e04b336090338876759a22098e7b2b2d612</code></td>
+<td>4471</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.40.0-1~ops2deb_arm64.deb">0.40.0</a></td>
+<td><code>54d2434e9bce2d54f055601f17f5b7db85f7d668895c985c88ed1a94b732116a</code></td>
+<td>4471</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.39.0-1~ops2deb_arm64.deb">0.39.0</a></td>
+<td><code>3c8a2983b7a2d3e1d8e5b5885fbcb9f93a5accfd6ad0b82bc8346d73993c0ab0</code></td>
+<td>4432</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.38.0-1~ops2deb_arm64.deb">0.38.0</a></td>
+<td><code>03467db4afdccf0de92129e236e46b718db9ab19e9065b0b0282f27a9e33f4d9</code></td>
+<td>4397</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.37.0-1~ops2deb_arm64.deb">0.37.0</a></td>
+<td><code>e4fd602cd595460abdc2073ae4c1d25dc20ddb022318bd9e4c713b850d217a24</code></td>
+<td>4399</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.36.0-1~ops2deb_arm64.deb">0.36.0</a></td>
+<td><code>b0c7bff1606335e140f46796fcd536b3d6497915cb6e3f376425025db8428537</code></td>
+<td>4402</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/dev/r/rye/rye_0.35.0-1~ops2deb_arm64.deb">0.35.0</a></td>
+<td><code>bc26ab395059704abc2b0438eb99b6b3d72623bc4f18c28a8c65a27ad94e8e48</code></td>
+<td>4399</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="blueprints">Blueprints</h2>
+<p>Debian packages listed on this page are generated from <a href="https://github.com/upciti/ops2deb">op2deb</a> YAML blueprints. Blueprints for rye are versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/dev/rye/ops2deb.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see rye ops2deb blueprints</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/dev/rye/ops2deb.yml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rye</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.28.0</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.29.0</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.30.0</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.31.0</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.32.0</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.33.0</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.34.0</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.35.0</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.36.0</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.37.0</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.38.0</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.39.0</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.40.0</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.41.0</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.42.0</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.43.0</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.44.0</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://rye-up.com/</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comprehensive project and package management solution for Python</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">  </span><span class="no">Born from its creator&#39;s desire to establish a one-stop-shop for all Python</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">  </span><span class="no">users, Rye provides a unified experience to install and manages Python</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">  </span><span class="no">installations, pyproject.toml based projects, dependencies and virtualenvs</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">  </span><span class="no">seamlessly. It&#39;s designed to accommodate complex projects, monorepos and to</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">  </span><span class="no">facilitate global tool installations.</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="nt">fetch</span><span class="p">:</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/{{version}}/rye-{{target}}-linux.gz</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">  </span><span class="nt">targets</span><span class="p">:</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">    </span><span class="nt">amd64</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x86_64</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">    </span><span class="nt">arm64</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aarch64</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="nt">install</span><span class="p">:</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rye-{{target}}-linux:/usr/bin/rye</span>
+</code></pre></div>
+</details>
+<p>The blueprint <code>fetch</code> keyword contains a URL template pointing to rye releases. Downloaded files are locked in a lockfile versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/dev/rye/ops2deb.lock.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see rye release hashes</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/dev/rye/ops2deb.lock.yml</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.28.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">00c3805b1986ae79787388917964bbeee0a1c4adc3dea1ba0060bd9756f0b405</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-08 16:14:39+00:00</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.28.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7dc1145925cd47d4afc425d61557031e194f3f2b2a4f8921dccb927a962652e2</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-08 16:14:39+00:00</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.29.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5d743d91525c773d8ee148e2e6f1f16770dae539e39568bad3b03ccd69e5abc7</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-11 12:07:55+00:00</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.29.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a950db192c8e814f5889f45bd926c6a9ea6f7323f7bc18a469036c666f6db815</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-11 12:07:55+00:00</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.30.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">daf3f91b780f1405f828e601a28596ad7d177eee4f460eba32d5fe737cd7680f</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-20 00:20:17+00:00</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.30.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9b7038c7f30ddd62a9df887f9bb9da660eb6b200b22e1774529629ce50f04e36</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-20 00:20:17+00:00</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.31.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15c177641e39e018503fa5b45dc008ad66cd558262cd914d8c3ccd08043d9312</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-22 12:09:17+00:00</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.31.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1cc7f7a644234729e598b44de34d489e1713b87286257464f565b2522de7fadf</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-22 12:09:17+00:00</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.32.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6e367f96ac2f2468b6a846ab9bae486fcdf914e5b7093bbca7218f34fcdadb31</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-29 12:08:21+00:00</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.32.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c917daac1bbdda4115838116f548236ed3c603d1aef649e72f0cd8078aa1097a</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-03-29 12:08:21+00:00</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.33.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad01f0b4543fa5a0d95cb968b49c675feec4c030e49d2652d7c66bb71ef9b04b</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-24 18:06:29+00:00</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.33.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">77188fa863bc746e2d4f2613603eeeb6ebb774045028c4dd52c01600a9f91344</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-24 18:06:29+00:00</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.34.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a36e4a51f789c1c78e32ee22527ca59682bbac0b74b7c572b81f028498ff56cf</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-05-20 21:05:48+00:00</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.34.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ea78a7776733a5d7b91e65101f96bc8eb3026b7b1a4570ef2266cd4a054fd531</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-05-20 21:05:48+00:00</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.35.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cf50fe527c37a925cfa3831a114b2148e30d4a01c43db58e0db92f0311ea173f</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 15:06:19+00:00</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.35.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">446cc0e56f1e34823c5eaf2be9e48bc28106ff748a97cd259fcbb01235fcdaf5</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-06-24 15:06:19+00:00</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.36.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4a26b4aa4eb774fec378f8b1c8eda1cc98fcb8c0347cf557540b73aeb0ec740f</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.36.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9be13e1ac28d9ddc602b33ff3e73e9ffd983918538a6195bcdc696a401fa941c</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.37.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dccd60a5e1c52aab2c0861c8cd8ca3f43ca3de14e6255062b59498c6c692da5a</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-20 21:05:39+00:00</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.37.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fc7c150acc844fd86d709de1428ca96b585f8340edebc5b537ee9fa231f40884</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-20 21:05:39+00:00</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.38.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5717ecd90d5639886a2d19c1db1eef1b0fb8470109dce55a875c316d098e74e8</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 03:06:05+00:00</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.38.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a3cc08ae1dc20881dab290b776a7061b3e6d391f4a80926452556d8e66692ec7</span>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 03:06:05+00:00</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.39.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b0a14141f0e24f7138040291bb7151babd1feabbc86c8d4470d5f87f28cbbb1e</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-21 03:06:16+00:00</span>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.39.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">027b4c8170b347986d431d7d960403527f4972d50dcebd64c8d7a3ca6fba7572</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-21 03:06:16+00:00</span>
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.40.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14dd41b1112ab73819333bc5bd51e67eeb5d45fa5b1fa924ce18ef8502dd4530</span>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-25 18:07:40+00:00</span>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.40.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">93c34835187659e1a18f636e9440d47bee7c45b8e6aef5fd95ef6099c20d804e</span>
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-25 18:07:40+00:00</span>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.41.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2e552844646428120919e6cc698cdeb28f5fe17903f6b4e963bae98474c24d63</span>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-29 21:05:50+00:00</span>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.41.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db3b57fe48c0704b537c0d1e7028d15d06d5357271d96c8cd8b5fa98cffc7b46</span>
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-29 21:05:50+00:00</span>
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.42.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6a57fdcbe2ce946d841b7262652b16be62384efa53b9ef11b8d4c1d1d2e288f4</span>
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-10-22 00:27:20+00:00</span>
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.42.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1233f41f951d1122c1ffed3dbe7b0b101793ddf0d3df635adcf7bd757ac7ccbc</span>
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-10-22 00:27:20+00:00</span>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.43.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">72db8238de446f300a1a9eb9d76caa05a8429aeb3315ae5de606462b9da20c5a</span>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-10 00:30:01+00:00</span>
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.43.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ca702c3d93fd6ec76a1a0efaaa605e10736ee79a0674d241aad1bc0fe26f7d80</span>
+<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-10 00:30:01+00:00</span>
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.44.0/rye-aarch64-linux.gz</span>
+<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c422682e3cbfd78435e1d188cc07453e6f70cd7251222fb0ec23ed63cb0f6957</span>
+<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-03-13 09:08:24+00:00</span>
+<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/astral-sh/rye/releases/download/0.44.0/rye-x86_64-linux.gz</span>
+<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e55e8b844c44820b540c3df46c8d4a3cee43a42ce5302e92bcd99b21d194a9bc</span>
+<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-03-13 09:08:24+00:00</span>
+</code></pre></div>
+</details>
+<h2 id="badge">Badge</h2>
+<p><a href="/packages/rye"><img alt="WakeMeOps" src="/badges/rye.svg" /></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Markdown</label><label for="__tabbed_3_2">HTML</label><label for="__tabbed_3_3">RST</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">![WakeMeOps</span>](<span class="na">https://docs.wakemeops.com/badges/rye.svg</span>)](https://docs.wakemeops.com/packages/rye)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/packages/rye&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/badges/rye.svg&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> https://docs.wakemeops.com/badges/rye.svg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nc">:target:</span> https://docs.wakemeops.com/packages/rye
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>

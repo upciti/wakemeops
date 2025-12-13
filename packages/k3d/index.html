@@ -1,0 +1,4094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WakeMeOps documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.wakemeops.com/packages/k3d/">
+      
+      
+        <link rel="prev" href="../jfrog-cli/">
+      
+      
+        <link rel="next" href="../k6/">
+      
+      <link rel="icon" href="../../images/pink-logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>k3d - WakeMeOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5.8.3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WakeMeOps" class="md-header__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WakeMeOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              k3d
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../usage/" class="md-tabs__link">
+      Usage
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Packages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WakeMeOps" class="md-nav__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    WakeMeOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act/" class="md-nav__link">
+        act
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../age/" class="md-nav__link">
+        age
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aptly/" class="md-nav__link">
+        aptly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo/" class="md-nav__link">
+        argo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        argocd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-iam-authenticator/" class="md-nav__link">
+        aws-iam-authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../balena-etcher/" class="md-nav__link">
+        balena-etcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank-vaults/" class="md-nav__link">
+        bank-vaults
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bat/" class="md-nav__link">
+        bat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bitwarden-cli/" class="md-nav__link">
+        bitwarden-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bottom/" class="md-nav__link">
+        bottom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary/" class="md-nav__link">
+        boundary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-kapp/" class="md-nav__link">
+        carvel-kapp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-ytt/" class="md-nav__link">
+        carvel-ytt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat/" class="md-nav__link">
+        cheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chezmoi/" class="md-nav__link">
+        chezmoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose/" class="md-nav__link">
+        choose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cilium/" class="md-nav__link">
+        cilium
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clog-cli/" class="md-nav__link">
+        clog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-provider-kind/" class="md-nav__link">
+        cloud-provider-kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clusterctl/" class="md-nav__link">
+        clusterctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-diff/" class="md-nav__link">
+        container-diff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-structure-test/" class="md-nav__link">
+        container-structure-test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller-gen/" class="md-nav__link">
+        controller-gen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cosign/" class="md-nav__link">
+        cosign
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coursier/" class="md-nav__link">
+        coursier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curlie/" class="md-nav__link">
+        curlie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapr/" class="md-nav__link">
+        dapr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dasel/" class="md-nav__link">
+        dasel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datanymizer/" class="md-nav__link">
+        datanymizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datree/" class="md-nav__link">
+        datree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devspace/" class="md-nav__link">
+        devspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskonaut/" class="md-nav__link">
+        diskonaut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dive/" class="md-nav__link">
+        dive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        docker-compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-slim/" class="md-nav__link">
+        docker-slim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dog/" class="md-nav__link">
+        dog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dust/" class="md-nav__link">
+        dust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exa/" class="md-nav__link">
+        exa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eza/" class="md-nav__link">
+        eza
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd/" class="md-nav__link">
+        fd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feroxbuster/" class="md-nav__link">
+        feroxbuster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flux/" class="md-nav__link">
+        flux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fzf/" class="md-nav__link">
+        fzf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghorg/" class="md-nav__link">
+        ghorg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-delta/" class="md-nav__link">
+        git-delta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-cli/" class="md-nav__link">
+        github-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-hub/" class="md-nav__link">
+        github-hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitlab-release-cli/" class="md-nav__link">
+        gitlab-release-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitoxide/" class="md-nav__link">
+        gitoxide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glab/" class="md-nav__link">
+        glab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glow/" class="md-nav__link">
+        glow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go-task/" class="md-nav__link">
+        go-task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gomplate/" class="md-nav__link">
+        gomplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopass/" class="md-nav__link">
+        gopass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goreleaser/" class="md-nav__link">
+        goreleaser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gotop/" class="md-nav__link">
+        gotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gping/" class="md-nav__link">
+        gping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grex/" class="md-nav__link">
+        grex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm/" class="md-nav__link">
+        helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm-docs/" class="md-nav__link">
+        helm-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helmfile/" class="md-nav__link">
+        helmfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../himalaya/" class="md-nav__link">
+        himalaya
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hostctl/" class="md-nav__link">
+        hostctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hubble/" class="md-nav__link">
+        hubble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hugo/" class="md-nav__link">
+        hugo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iamlive/" class="md-nav__link">
+        iamlive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influx-cli/" class="md-nav__link">
+        influx-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infracost/" class="md-nav__link">
+        infracost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insomnia/" class="md-nav__link">
+        insomnia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istioctl/" class="md-nav__link">
+        istioctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jfrog-cli/" class="md-nav__link">
+        jfrog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          k3d
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        k3d
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#5.8.3" class="md-nav__link">
+    5.8.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.8.2" class="md-nav__link">
+    5.8.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.8.1" class="md-nav__link">
+    5.8.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.5" class="md-nav__link">
+    5.7.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.4" class="md-nav__link">
+    5.7.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.3" class="md-nav__link">
+    5.7.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.2" class="md-nav__link">
+    5.7.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.1" class="md-nav__link">
+    5.7.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.6.3" class="md-nav__link">
+    5.6.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.6.2" class="md-nav__link">
+    5.6.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.6.0" class="md-nav__link">
+    5.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.5.2" class="md-nav__link">
+    5.5.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.5.1" class="md-nav__link">
+    5.5.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.5.0" class="md-nav__link">
+    5.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.9" class="md-nav__link">
+    5.4.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.8" class="md-nav__link">
+    5.4.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.7" class="md-nav__link">
+    5.4.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.6" class="md-nav__link">
+    5.4.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.4" class="md-nav__link">
+    5.4.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.3" class="md-nav__link">
+    5.4.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.2" class="md-nav__link">
+    5.4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.1" class="md-nav__link">
+    5.4.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.0-dev.2" class="md-nav__link">
+    5.4.0-dev.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.0" class="md-nav__link">
+    5.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.3.0" class="md-nav__link">
+    5.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.2.2" class="md-nav__link">
+    5.2.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.1.0" class="md-nav__link">
+    5.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.0.3" class="md-nav__link">
+    5.0.3
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k6/" class="md-nav__link">
+        k6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k9s/" class="md-nav__link">
+        k9s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kind/" class="md-nav__link">
+        kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kompose/" class="md-nav__link">
+        kompose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krew/" class="md-nav__link">
+        krew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krr/" class="md-nav__link">
+        krr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-capacity/" class="md-nav__link">
+        kube-capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-linter/" class="md-nav__link">
+        kube-linter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-no-trouble/" class="md-nav__link">
+        kube-no-trouble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-score/" class="md-nav__link">
+        kube-score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeaudit/" class="md-nav__link">
+        kubeaudit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubebuilder/" class="md-nav__link">
+        kubebuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeconform/" class="md-nav__link">
+        kubeconform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl/" class="md-nav__link">
+        kubectl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-kudo/" class="md-nav__link">
+        kubectl-kudo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-neat/" class="md-nav__link">
+        kubectl-neat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-oidc-login/" class="md-nav__link">
+        kubectl-oidc-login
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectx/" class="md-nav__link">
+        kubectx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubelogin/" class="md-nav__link">
+        kubelogin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubens/" class="md-nav__link">
+        kubens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubescape/" class="md-nav__link">
+        kubescape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeseal/" class="md-nav__link">
+        kubeseal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kustomize/" class="md-nav__link">
+        kustomize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kyverno/" class="md-nav__link">
+        kyverno
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazydocker/" class="md-nav__link">
+        lazydocker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazygit/" class="md-nav__link">
+        lazygit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lens/" class="md-nav__link">
+        lens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkerd/" class="md-nav__link">
+        linkerd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logcli/" class="md-nav__link">
+        logcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mask/" class="md-nav__link">
+        mask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattermost-desktop/" class="md-nav__link">
+        mattermost-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdbook/" class="md-nav__link">
+        mdbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mergestat/" class="md-nav__link">
+        mergestat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-client/" class="md-nav__link">
+        minio-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-server/" class="md-nav__link">
+        minio-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirrord/" class="md-nav__link">
+        mirrord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mob/" class="md-nav__link">
+        mob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mutagen/" class="md-nav__link">
+        mutagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nats-server/" class="md-nav__link">
+        nats-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natscli/" class="md-nav__link">
+        natscli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neovim/" class="md-nav__link">
+        neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nsc/" class="md-nav__link">
+        nsc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nushell/" class="md-nav__link">
+        nushell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oasdiff/" class="md-nav__link">
+        oasdiff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oc/" class="md-nav__link">
+        oc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../olivetin/" class="md-nav__link">
+        olivetin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openlens/" class="md-nav__link">
+        openlens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opentofu/" class="md-nav__link">
+        opentofu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-sdk/" class="md-nav__link">
+        operator-sdk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ops2deb/" class="md-nav__link">
+        ops2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-slicer/" class="md-nav__link">
+        orca-slicer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packer/" class="md-nav__link">
+        packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdm/" class="md-nav__link">
+        pdm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipx/" class="md-nav__link">
+        pipx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pluto/" class="md-nav__link">
+        pluto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poetry/" class="md-nav__link">
+        poetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procs/" class="md-nav__link">
+        procs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyenv/" class="md-nav__link">
+        pyenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyoxidizer/" class="md-nav__link">
+        pyoxidizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.10-build-standalone/" class="md-nav__link">
+        python3.10-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.11-build-standalone/" class="md-nav__link">
+        python3.11-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qq/" class="md-nav__link">
+        qq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rancher/" class="md-nav__link">
+        rancher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rclone/" class="md-nav__link">
+        rclone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restic/" class="md-nav__link">
+        restic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resticprofile/" class="md-nav__link">
+        resticprofile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ripgrep/" class="md-nav__link">
+        ripgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpk/" class="md-nav__link">
+        rpk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rye/" class="md-nav__link">
+        rye
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scala-cli/" class="md-nav__link">
+        scala-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scw/" class="md-nav__link">
+        scw
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell2http/" class="md-nav__link">
+        shell2http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signal-desktop/" class="md-nav__link">
+        signal-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skaffold/" class="md-nav__link">
+        skaffold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skim/" class="md-nav__link">
+        skim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops/" class="md-nav__link">
+        sops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stern/" class="md-nav__link">
+        stern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams-for-linux/" class="md-nav__link">
+        teams-for-linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telepresence/" class="md-nav__link">
+        telepresence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-docs/" class="md-nav__link">
+        terraform-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-switcher/" class="md-nav__link">
+        terraform-switcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terragrunt/" class="md-nav__link">
+        terragrunt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrascan/" class="md-nav__link">
+        terrascan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokei/" class="md-nav__link">
+        tokei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trivy/" class="md-nav__link">
+        trivy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ttyd/" class="md-nav__link">
+        ttyd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typos-cli/" class="md-nav__link">
+        typos-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../undock/" class="md-nav__link">
+        undock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upterm/" class="md-nav__link">
+        upterm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uv/" class="md-nav__link">
+        uv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault/" class="md-nav__link">
+        vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault-env/" class="md-nav__link">
+        vault-env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../velero/" class="md-nav__link">
+        velero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vhs/" class="md-nav__link">
+        vhs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viu/" class="md-nav__link">
+        viu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../void/" class="md-nav__link">
+        void
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volta/" class="md-nav__link">
+        volta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuls-scanner/" class="md-nav__link">
+        vuls-scanner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wakemebot/" class="md-nav__link">
+        wakemebot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waypoint/" class="md-nav__link">
+        waypoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wheel2deb/" class="md-nav__link">
+        wheel2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xeol/" class="md-nav__link">
+        xeol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xh/" class="md-nav__link">
+        xh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xsv/" class="md-nav__link">
+        xsv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yq/" class="md-nav__link">
+        yq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zellij/" class="md-nav__link">
+        zellij
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen-browser/" class="md-nav__link">
+        zen-browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zli/" class="md-nav__link">
+        zli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zot/" class="md-nav__link">
+        zot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zoxide/" class="md-nav__link">
+        zoxide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#5.8.3" class="md-nav__link">
+    5.8.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.8.2" class="md-nav__link">
+    5.8.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.8.1" class="md-nav__link">
+    5.8.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.5" class="md-nav__link">
+    5.7.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.4" class="md-nav__link">
+    5.7.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.3" class="md-nav__link">
+    5.7.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.2" class="md-nav__link">
+    5.7.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.7.1" class="md-nav__link">
+    5.7.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.6.3" class="md-nav__link">
+    5.6.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.6.2" class="md-nav__link">
+    5.6.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.6.0" class="md-nav__link">
+    5.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.5.2" class="md-nav__link">
+    5.5.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.5.1" class="md-nav__link">
+    5.5.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.5.0" class="md-nav__link">
+    5.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.9" class="md-nav__link">
+    5.4.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.8" class="md-nav__link">
+    5.4.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.7" class="md-nav__link">
+    5.4.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.6" class="md-nav__link">
+    5.4.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.4" class="md-nav__link">
+    5.4.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.3" class="md-nav__link">
+    5.4.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.2" class="md-nav__link">
+    5.4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.1" class="md-nav__link">
+    5.4.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.0-dev.2" class="md-nav__link">
+    5.4.0-dev.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.4.0" class="md-nav__link">
+    5.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.3.0" class="md-nav__link">
+    5.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.2.2" class="md-nav__link">
+    5.2.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.1.0" class="md-nav__link">
+    5.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5.0.3" class="md-nav__link">
+    5.0.3
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>k3d</h1>
+
+<p><strong>Run Rancher Lab's k3s in Docker</strong></p>
+<p>k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes
+distribution) in docker. k3d makes it very easy to create single- and multi-
+node k3s clusters in docker, e.g. for local development on Kubernetes.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.67 4.42a6.08 6.08 0 0 0-3.22-.86c-1.58 0-2.79.78-2.79 2 0 1.4 1.34 1.91 3.34 2.58 2.5.81 4.4 1.83 4.4 4.24a4.01 4.01 0 0 1-1.8 3.23c.65.61 1.01 1.47 1 2.36 0 2.82-2.6 4-5.1 4-1.46.06-2.91-.33-4.15-1.1L8 19.34c1.04.71 2.27 1.09 3.53 1.1 1.72 0 3-.78 3-2.2 0-1.24-.78-1.93-3.28-2.79C8.5 14.5 6.6 13.5 6.6 11.21c.07-1.32.83-2.52 2-3.14-.63-.57-.99-1.4-1-2.26C7.6 3.45 9.77 2 12.53 2c1.29 0 2.56.29 3.7.89l-.56 1.53m-4.32 9c1.06.33 2.09.76 3.06 1.29.65-.49 1.02-1.26 1-2.07 0-1-.64-1.88-2.41-2.5-1.11-.37-2.22-.83-3.28-1.37-.75.45-1.22 1.26-1.22 2.14 0 .97.73 1.77 2.85 2.51Z"/></svg></span> <a href="/packages/#devops"><code>devops</code></a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span> <a href="https://k3d.io">https://k3d.io</a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3V4m5 11v3h1v-3h-1m2 0v3h1v-3h-1m2 0v3h1v-3h-1Z"/></svg></span> <span class="badge arch">armhf</span> <span class="badge arch">arm64</span> <span class="badge arch">amd64</span> </p>
+<h2 id="installation">Installation</h2>
+<p>1. Add WakeMeOps repository</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</code></pre></div>
+<p>2. Install k3d</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>k3d
+</code></pre></div>
+<h2 id="snippets">Snippets</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dockerfile</label><label for="__tabbed_1_2">Github Action</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">wakemeops/minideb:bullseye</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">RUN</span><span class="w"> </span>install_packages<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">k3d</span><span class="o">=</span><span class="m">5</span>.8.3*
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">USER</span><span class="w"> </span><span class="s">1001</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upciti/wakemeops-action@v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="no">k3d=5.8.3*</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="download-urls">Download URLs</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">amd64</label><label for="__tabbed_2_2">arm64</label><label for="__tabbed_2_3">armhf</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.3-1~ops2deb_amd64.deb">5.8.3</a></td>
+<td><code>cdb57148885e7177d5ce1925fc63a94a1b4780729f9db460555bad7ea46976b5</code></td>
+<td>6481</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.2-1~ops2deb_amd64.deb">5.8.2</a></td>
+<td><code>7885c08828c44e5b087eb0e7d086d66ab63e1b3ed55810b4b3cb7010bd48df97</code></td>
+<td>6474</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.1-1~ops2deb_amd64.deb">5.8.1</a></td>
+<td><code>8f246fb16440d552f5273be3e8207f59c7e0051edc8d8224f23441a01f7827d1</code></td>
+<td>6477</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.5-1~ops2deb_amd64.deb">5.7.5</a></td>
+<td><code>079ecc0788bb64dc555fba36df4267338d955e87038f798b12ad22c35bd75cdd</code></td>
+<td>6478</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.4-1~ops2deb_amd64.deb">5.7.4</a></td>
+<td><code>d1689e0fd925a7872d8b21272bb95ae7c14edeff70dc8857319e0048cbd64410</code></td>
+<td>6478</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.3-1~ops2deb_amd64.deb">5.7.3</a></td>
+<td><code>0f8cabf439d57decca4303bdb1fb194ffa23af40abf1045c1ac6bce00c64b7c7</code></td>
+<td>6481</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.2-1~ops2deb_amd64.deb">5.7.2</a></td>
+<td><code>eb9dcd15c721fcba627046d78d5d42c2b4bbd91c64f9d440c9c85aaa88c3bba0</code></td>
+<td>6476</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.1-1~ops2deb_amd64.deb">5.7.1</a></td>
+<td><code>9521a73a870873ec5d96b7c9fdc6d15e63a0c75e7a31147cb8caf6374fff9e92</code></td>
+<td>6475</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.6.3-1~ops2deb_amd64.deb">5.6.3</a></td>
+<td><code>94604481a3e3747bd08f98d720010d03bc474bcfda65031746ade675cb4932b4</code></td>
+<td>5326</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.6.2-1~ops2deb_amd64.deb">5.6.2</a></td>
+<td><code>c8ca1e9d6aacaac3e75e14c91993e2a579b1888f9b13cc7f1f020c2bf7289e2a</code></td>
+<td>5315</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.3-1~ops2deb_arm64.deb">5.8.3</a></td>
+<td><code>c27ae634f5faf212896f34518a363df3becd263dfcffd1afadd3a2c55c05532a</code></td>
+<td>5565</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.2-1~ops2deb_arm64.deb">5.8.2</a></td>
+<td><code>2816cf68962c125498e04c50e8599dfbe9618215d264aaf49215c10df47e0c5c</code></td>
+<td>5558</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.1-1~ops2deb_arm64.deb">5.8.1</a></td>
+<td><code>54ef1d7b0a14cd779a175a10929ff70c12bc2710177f098c77d7e29a98ad3ab9</code></td>
+<td>5565</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.5-1~ops2deb_arm64.deb">5.7.5</a></td>
+<td><code>fea0cb6491e9873fd107a1808080d73280b3f9c5caafe2cb0c7caad9ccfdbb47</code></td>
+<td>5564</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.4-1~ops2deb_arm64.deb">5.7.4</a></td>
+<td><code>133155a161cddbb7d61fc0c53652ad72b124ce834d9fab7e57db3ad11e2437d6</code></td>
+<td>5563</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.3-1~ops2deb_arm64.deb">5.7.3</a></td>
+<td><code>85f65a56e9b129c41847e198b995d5f196093bc766bc0c6c842310ada20c7a09</code></td>
+<td>5562</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.2-1~ops2deb_arm64.deb">5.7.2</a></td>
+<td><code>48b21adf3f71f1459c67e83c1ccffa78ac4ecf0938cb35f69214bc5ab0f0e49e</code></td>
+<td>5563</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.1-1~ops2deb_arm64.deb">5.7.1</a></td>
+<td><code>6df18a5c74506195c026b28e801dc065daa603493b88b6b8b411ba0c33c6cf57</code></td>
+<td>5567</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.6.3-1~ops2deb_arm64.deb">5.6.3</a></td>
+<td><code>8e1d1239483dbf85c4cc81809b51a6ae27b06e783900024cedef9647302cf847</code></td>
+<td>4553</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.6.2-1~ops2deb_arm64.deb">5.6.2</a></td>
+<td><code>c4bca9a7db8b6c9b501d6eeec3123c9354d5aee1e2d046ba28e112d936ec5a41</code></td>
+<td>4545</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.3-1~ops2deb_armhf.deb">5.8.3</a></td>
+<td><code>a43a4c9f78dcbf8594682923603a2607bcd02d51ebab9ccbc8439f64f10ad99b</code></td>
+<td>5517</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.2-1~ops2deb_armhf.deb">5.8.2</a></td>
+<td><code>b3af8353a09e1ff5986425a1e11fb3eb2ee927ceb2a5fc151111f629c9d66d41</code></td>
+<td>5513</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.8.1-1~ops2deb_armhf.deb">5.8.1</a></td>
+<td><code>bc12051b84e5373edd942bbc09094e760cda88a9fa2bae2e2e864b01a824b562</code></td>
+<td>5516</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.5-1~ops2deb_armhf.deb">5.7.5</a></td>
+<td><code>806baef763d521cd39b426e2e2a64fc3bf7b0a3357350ce8d38e7b586f068b22</code></td>
+<td>5516</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.4-1~ops2deb_armhf.deb">5.7.4</a></td>
+<td><code>e24cbcef409d0e9aca0dc9307c2364412b7c6fd8269a77cf7ec895019afacc56</code></td>
+<td>5516</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.3-1~ops2deb_armhf.deb">5.7.3</a></td>
+<td><code>90194081fb5b35e7a77d9beffc59645d987facde16d5ff99b26d371e72b971dc</code></td>
+<td>5518</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.2-1~ops2deb_armhf.deb">5.7.2</a></td>
+<td><code>99358f532c1cd23edfe36afbc47bf7ede3fd898ddc0025a6ec13e718cbed39cf</code></td>
+<td>5516</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.7.1-1~ops2deb_armhf.deb">5.7.1</a></td>
+<td><code>3ccde97fc96064b457905c69510ef43ae0cf9eff7a9dd1c468b389140b90ea63</code></td>
+<td>5513</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.6.3-1~ops2deb_armhf.deb">5.6.3</a></td>
+<td><code>53185589c2eb39f68b3326d8931703c1fe03e5b4465930660aaa10a75bb99018</code></td>
+<td>4534</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/k/k3d/k3d_5.6.2-1~ops2deb_armhf.deb">5.6.2</a></td>
+<td><code>33a8e9469eb870448c78a9dcf71574e263ecc403e7ed9203987b138f2583d4f1</code></td>
+<td>4525</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="blueprints">Blueprints</h2>
+<p>Debian packages listed on this page are generated from <a href="https://github.com/upciti/ops2deb">op2deb</a> YAML blueprints. Blueprints for k3d are versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/devops/k3d/ops2deb.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see k3d ops2deb blueprints</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/devops/k3d/ops2deb.yml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k3d</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0.3</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.1.0</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://k3d.io</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run Rancher Lab&#39;s k3s in Docker</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="no">k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="no">distribution) in docker. k3d makes it very easy to create single- and multi-</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="no">node k3s clusters in docker, e.g. for local development on Kubernetes.</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install -m 755 k3d-linux-amd64 {{src}}/usr/bin/k3d</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k3d</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.2.2</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://k3d.io</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run Rancher Lab&#39;s k3s in Docker</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="no">k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="no">distribution) in docker. k3d makes it very easy to create single- and multi-</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="no">node k3s clusters in docker, e.g. for local development on Kubernetes.</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">  </span><span class="nt">fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-amd64</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mv k3d-linux-amd64 {{src}}/usr/bin/k3d</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k3d</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">    </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">armhf</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.2.2</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.3.0</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.0-dev.2</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.0</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.1</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">  </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://k3d.io</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run Rancher Lab&#39;s k3s in Docker</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">    </span><span class="no">k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">    </span><span class="no">distribution) in docker. k3d makes it very easy to create single- and multi-</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">    </span><span class="no">node k3s clusters in docker, e.g. for local development on Kubernetes.</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">  </span><span class="nt">fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mv k3d-linux-{{goarch}} {{src}}/usr/bin/k3d</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k3d</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="w">    </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">armhf</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="w">    </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.2</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.3</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.4</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.6</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.7</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.8</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4.9</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5.0</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5.1</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5.2</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.6.0</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.6.2</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.6.3</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.7.1</span>
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.7.2</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.7.3</span>
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.7.4</span>
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.7.5</span>
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.8.1</span>
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.8.2</span>
+<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.8.3</span>
+<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a><span class="w">  </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://k3d.io</span>
+<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a><span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run Rancher Lab&#39;s k3s in Docker</span>
+<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a><span class="w">    </span><span class="no">k3d is a lightweight wrapper to run k3s (Rancher Lab’s minimal Kubernetes</span>
+<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a><span class="w">    </span><span class="no">distribution) in docker. k3d makes it very easy to create single- and multi-</span>
+<a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a><span class="w">    </span><span class="no">node k3s clusters in docker, e.g. for local development on Kubernetes.</span>
+<a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a><span class="w">  </span><span class="nt">fetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v{{version}}/k3d-linux-{{goarch}}</span>
+<a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a><span class="w">  </span><span class="nt">install</span><span class="p">:</span>
+<a id="__codelineno-4-86" name="__codelineno-4-86" href="#__codelineno-4-86"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k3d-linux-{{goarch}}:/usr/bin/k3d</span>
+</code></pre></div>
+</details>
+<p>The blueprint <code>fetch</code> keyword contains a URL template pointing to k3d releases. Downloaded files are locked in a lockfile versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/devops/k3d/ops2deb.lock.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see k3d release hashes</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/devops/k3d/ops2deb.lock.yml</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.0.3/k3d-linux-amd64</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">018421fdff567df5df3840e75501a40199501ce6bf25e1f2dd259f74e13519f3</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2021-10-29 22:17:26+00:00</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.1.0/k3d-linux-amd64</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e04cfb3cc04de17c9d4272d0b5506ee5ca1070e36e07519fbe6c00153b993195</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2021-11-10 06:15:40+00:00</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.2.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7ddb900e6e50120b65d61568f6af007a82331bf83918608a6a7be8910792faef</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2021-12-17 16:02:55+00:00</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.2.2/k3d-linux-arm</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e3e0c87d419c77295112ff7ccbc8d6228c8738f01b6ec458d76dceeff7710c5c</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-01-30 16:22:16+00:00</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.2.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ccf1dafc1eddfef083375377a52ef0ca269a41c5bc4f0f4d7e11a7c56da08833</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-01-30 16:22:16+00:00</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.3.0/k3d-linux-amd64</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b609bf296acb0f0fa5c79f2ff4bdd5901b385833cf469ac503468989e64eb01c</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-02-03 16:19:56+00:00</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.3.0/k3d-linux-arm</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">240c1bbd2f7d86653c033d04bb0dd7e1b6f51e1e8e16ead16bafde4106a3ea64</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-02-03 16:19:56+00:00</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.3.0/k3d-linux-arm64</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">efdeb3ebba60155e21099324012338b076591ec3802a5628d16c66622194ac38</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-02-03 16:19:56+00:00</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.0-dev.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4f10f5ded204dcfe849d131555e40dab340f62c1b0b4159f82d756e5dab2b8e1</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-24 13:36:26+00:00</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.0-dev.2/k3d-linux-arm</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2b5518c7e9cf7de7e3614cf0ae4006271066e38eed420357c90902a5cf7d0898</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-24 13:36:26+00:00</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.0-dev.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e52f01614f1ad61befc794c5349d743fce3dfb0d7fa531db8389692d2e26121b</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-24 13:36:26+00:00</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.0/k3d-linux-amd64</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">96c0a1f7aa65dbdc78121b1e6ad24c117fc4128f3c240003366d5e35079d9597</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-26 13:33:10+00:00</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.0/k3d-linux-arm</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">51fe7ea801604791421a64443ec2cb04ee985d025c1cc668e7248e4de1b61f76</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-26 13:33:10+00:00</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.0/k3d-linux-arm64</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0321e06c51324b9bb6ea2ab823665289f27d4732606ed3a468b0fafc4051541b</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-26 13:33:10+00:00</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.1/k3d-linux-amd64</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50f64747989dc1fcde5db5cb82f8ac132a174b607ca7dfdb13da2f0e509fda11</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-29 11:20:42+00:00</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.1/k3d-linux-arm</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">68a3db44493b121e8f48a88ce1976fda78f200a5740ca0fcd7a828cf21a5264a</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-29 11:20:42+00:00</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.1/k3d-linux-arm64</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">712ffb338ec1fed6f7c1c8691b79bc80967cc17fef256cd620190d0d7e502052</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-29 11:20:42+00:00</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2dc41edaa43a0149c4d510e5ce074303a09e0c66d106a3e7512887bd1a005a41</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-06-05 14:35:27+00:00</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.2/k3d-linux-arm</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a64fd91f302430d3495609716dd5b2d3c8c79c564eb2c8fdf4170a6b65d938cd</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-06-05 14:35:27+00:00</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2dd85b253dd598057f52efd5f6009a60c925c2f974314eb8d98a745bbff580e6</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-06-05 14:35:27+00:00</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.3/k3d-linux-amd64</span>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8360b69f5f86b3fedfd632ac67b6e8f70af731d4c64df6dbb3d3c67eb723421b</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-06-07 20:25:34+00:00</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.3/k3d-linux-arm</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">979ef6f6e1a42701405cbe9440d6fb65ab86599697f136f7f85ba25373d23d53</span>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-06-07 20:25:34+00:00</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.3/k3d-linux-arm64</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f604723614cc2a0a0cdbb69b927320b1634365cd36cd2fefb7375995f947559b</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-06-07 20:25:34+00:00</span>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.4/k3d-linux-amd64</span>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">786151745379e511bd4dd95d1593241bb2b0a1d91e088573a1a1cb104732a3bd</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-07-11 14:47:21+00:00</span>
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.4/k3d-linux-arm</span>
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c1468a8db2737bf9a481926a40076de93cac341ede4d4104df78c830ecdc451e</span>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-07-11 14:47:21+00:00</span>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.4/k3d-linux-arm64</span>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9feb8067e89702947ed17d1e18fd3e445046f4114fbae6f491df8463a72fedfa</span>
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-07-11 14:47:21+00:00</span>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-amd64</span>
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8075d40c74c97d2642f15f535cb48d6d6e82df143f528833a193d87caac6a176</span>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-08-30 08:55:12+00:00</span>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-arm</span>
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a807aecef48f32da81b0c65b7269f3f60dea7734385a05d3577425e8cbd72863</span>
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-08-30 08:55:12+00:00</span>
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.6/k3d-linux-arm64</span>
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">36db97dfb3f5b56c7cd048924d87abfa5f499c62f524e00e2500fe75f88056ae</span>
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-08-30 08:55:12+00:00</span>
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-amd64</span>
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c54218d5bf6cb6e74987bf21f7820483f581b00c49fee11dbdb8c17c7829a025</span>
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-02 16:20:44+00:00</span>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-arm</span>
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0f9c8a313d306e3667f6c716bad6e4e8b28e913af89e153fb184e91cde84f9ee</span>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-02 16:20:44+00:00</span>
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.7/k3d-linux-arm64</span>
+<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c8ceb55ed2ffe2015b915848d0b6eaa72dbc1358270dee4e0c12358c16231d40</span>
+<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-02-02 16:20:44+00:00</span>
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.8/k3d-linux-amd64</span>
+<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d58bd1b056b88ba4c4cc52b9437c8789209f78ac7c007c441c417f2ccdf3f136</span>
+<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-04 22:04:36+00:00</span>
+<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.8/k3d-linux-arm</span>
+<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">01f89c300769fe941dd4e77a5e6af457ffe600b371cf9519dd1b09a9420782ac</span>
+<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-04 22:04:36+00:00</span>
+<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.8/k3d-linux-arm64</span>
+<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">992f3eb4dd7b35cd0991a538d6feb14ec20f364c36d83a1570a823aab0c1f42d</span>
+<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-04 22:04:36+00:00</span>
+<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.9/k3d-linux-amd64</span>
+<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5fd6597668e7b09c126eddbafa79f8e0c33695f2974e35f8c9463ef3462f3113</span>
+<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-17 09:19:31+00:00</span>
+<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.9/k3d-linux-arm</span>
+<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">57c58567ab3aa05ff3e25648846c44452d0e7aee507cbbb610503ef92eb40673</span>
+<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-17 09:19:31+00:00</span>
+<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.4.9/k3d-linux-arm64</span>
+<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7d4d9272ee7fa294ecd817e32566fccf514489d5d9556f0cc471decf5ecefa15</span>
+<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-03-17 09:19:31+00:00</span>
+<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.0/k3d-linux-amd64</span>
+<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad7e7ec9a2ca2f1126425760a6102e64167b153bc81566e00d1438e15e084418</span>
+<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-17 18:20:46+00:00</span>
+<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.0/k3d-linux-arm</span>
+<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">39a6fb7d13995fc2ae1c29a2a3072a24f8cd5d12b8860de30c0e02053da98732</span>
+<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-17 18:20:46+00:00</span>
+<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.0/k3d-linux-arm64</span>
+<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50bb6add19c934bb6e91690138448a7f3127059fe301f4ae82aa4d91dd9fb528</span>
+<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-17 18:20:46+00:00</span>
+<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.1/k3d-linux-amd64</span>
+<a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4849027dc5e835bcce49070af3f4eeeaada81d96bce49a8b89904832a0c3c2c0</span>
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-20 01:22:42+00:00</span>
+<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.1/k3d-linux-arm</span>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b882af7c10ed2321490676763fdcffebda134b44ae0a71741dc13abc4b8c7013</span>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-20 01:22:42+00:00</span>
+<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.1/k3d-linux-arm64</span>
+<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4a3740fb2bc61fda32b2437c270a5f7dc321ade5e9cb6d932b4b97397538042d</span>
+<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-05-20 01:22:42+00:00</span>
+<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bd0fac44fd5c6e6962b14d259a2e13229effb6625e4d433aaad6ff76ed2f07b9</span>
+<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-03 06:21:19+00:00</span>
+<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.2/k3d-linux-arm</span>
+<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1b538da69b324facdc4f9f5ccbe4a0005c2f9f82d221a14a1a421a564efdbd5c</span>
+<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-03 06:21:19+00:00</span>
+<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.5.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2456f2b7db892ae8fb33929543c0a9d672755b8f57b133ea32c83b3aae2f76d5</span>
+<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-03 06:21:19+00:00</span>
+<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.0/k3d-linux-amd64</span>
+<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c2ca4b90c0c064cd56ae674d586e2003712fe5841748223552e2f8536f741366</span>
+<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-21 12:31:38+00:00</span>
+<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.0/k3d-linux-arm</span>
+<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">31c40950252cc77a55ca8e771f77b6958adb986a13c40e35f3fbc099a0c5536a</span>
+<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-21 12:31:38+00:00</span>
+<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.0/k3d-linux-arm64</span>
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">00cdc046f51545ef460fd983773cd053f3d4fb9d2d2c916824e7a819b46791a7</span>
+<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-08-21 12:31:38+00:00</span>
+<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99b31f7a0244c381e85d18400d62a8e9358ebebe6c65319dbfb94690f2f654db</span>
+<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-09 18:06:15+00:00</span>
+<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.2/k3d-linux-arm</span>
+<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">92568c05057c63c906203362e1392ee201010bccb7ad6458f5361451d0adf537</span>
+<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-09 18:06:15+00:00</span>
+<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">93fb1f6000f20296f5e6ae8aa8a05b06f1f13adb59ff419ee5bb25db4cbef01f</span>
+<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-09 18:06:15+00:00</span>
+<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.3/k3d-linux-amd64</span>
+<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">69f434b5a326eddafff6062a1b439d1c7a78a1ee93a91a9f79872cf8e516327d</span>
+<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-10 15:05:52+00:00</span>
+<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.3/k3d-linux-arm</span>
+<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4133b1beaca09a07e4ffd42a45a3e314465ea27d1ca3cbc4eb15ea2785b79fa7</span>
+<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-10 15:05:52+00:00</span>
+<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.6.3/k3d-linux-arm64</span>
+<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5d2e556e26681474a4aa09b40e2e9880084e0caf63a049b045cb22cc3188de68</span>
+<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-10 15:05:52+00:00</span>
+<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.1/k3d-linux-amd64</span>
+<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24441b1ed9796f519e3fdaa9f076df1a92fd7b38c90d68717b1cdd0915ba6673</span>
+<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.1/k3d-linux-arm</span>
+<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7ec9a4fdcdcbdf6e676eff112bc27d4c618c9c88ccc6cb0ed07b969b4cb5f382</span>
+<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-175" name="__codelineno-5-175" href="#__codelineno-5-175"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.1/k3d-linux-arm64</span>
+<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12320bd26fbce2e9314934a6be688274ca9f138227a5f5fb6830538ab4f8b567</span>
+<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-09 09:06:44+00:00</span>
+<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3c5aaf09bea85bb9b756e83eedc9b3db37a0e4e9d844952cd2a986d39c0f1d4b</span>
+<a id="__codelineno-5-180" name="__codelineno-5-180" href="#__codelineno-5-180"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-15 12:09:59+00:00</span>
+<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.2/k3d-linux-arm</span>
+<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d2accb1b873bf0f9bad157c8d87e2f7c4710ee192a31b87f537c8b715fc6aca6</span>
+<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-15 12:09:59+00:00</span>
+<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">07cb12a554d9ff5eb6fcf7d54b625e1bd5f9d88886a83d8d1ffadb305db9f42f</span>
+<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-07-15 12:09:59+00:00</span>
+<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.3/k3d-linux-amd64</span>
+<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0fe23b8c0a151e9c41d16f9d861be26df65e5ab7f35115424220aad5a83c566b</span>
+<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 12:08:59+00:00</span>
+<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.3/k3d-linux-arm</span>
+<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cbca05ebc23ad840e8fce22db628b092311161ff6f5eeae37a25b72ff4eb4444</span>
+<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 12:08:59+00:00</span>
+<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.3/k3d-linux-arm64</span>
+<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5773151a37af65c41eb901297df37b47bb73a7804a1794dcb0527bc39fc2e9df</span>
+<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-08-02 12:08:59+00:00</span>
+<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.4/k3d-linux-amd64</span>
+<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1ac1da365236736a8df8c32107b54aca208384ab1d9a06771443c85ad698a5eb</span>
+<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-12 12:10:09+00:00</span>
+<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.4/k3d-linux-arm</span>
+<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90df4693284772a19bff8677520c124367a3fbe81463e7f156b9b692479428f1</span>
+<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-12 12:10:09+00:00</span>
+<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.4/k3d-linux-arm64</span>
+<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bc580e0ca907156acd495d42975ed1687ab3a9ac0392af3919afc62a8a8b6670</span>
+<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-09-12 12:10:09+00:00</span>
+<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.5/k3d-linux-amd64</span>
+<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5d3f22817d9e163ab6ed43572189dd49fe724d7a6948075b570067747eca8d3f</span>
+<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-11-26 21:06:17+00:00</span>
+<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.5/k3d-linux-arm</span>
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0ac4ff33dec85939cd1b08b7ae0dac174c0bfa80f499e84a3a67d700c02da9a3</span>
+<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-11-26 21:06:17+00:00</span>
+<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.7.5/k3d-linux-arm64</span>
+<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ac12fcf8e35481769e173c96d3fa70dc581826482d927b94a560a3375df2621e</span>
+<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-11-26 21:06:17+00:00</span>
+<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.1/k3d-linux-amd64</span>
+<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b900911e5943fecbc341f21a628d9c425d19b629bad8df13d60ba28d1f8e2e6e</span>
+<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-01-28 09:07:22+00:00</span>
+<a id="__codelineno-5-217" name="__codelineno-5-217" href="#__codelineno-5-217"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.1/k3d-linux-arm</span>
+<a id="__codelineno-5-218" name="__codelineno-5-218" href="#__codelineno-5-218"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90074c38e9fe2f7bc39318a05e88d88de6f56a094ce3e13f0ec4513ba92a64ea</span>
+<a id="__codelineno-5-219" name="__codelineno-5-219" href="#__codelineno-5-219"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-01-28 09:07:22+00:00</span>
+<a id="__codelineno-5-220" name="__codelineno-5-220" href="#__codelineno-5-220"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.1/k3d-linux-arm64</span>
+<a id="__codelineno-5-221" name="__codelineno-5-221" href="#__codelineno-5-221"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a0b73a2ca6a85688e53eb17b5d7dc5bab97280317668d81e6511b1b73e33a79d</span>
+<a id="__codelineno-5-222" name="__codelineno-5-222" href="#__codelineno-5-222"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-01-28 09:07:22+00:00</span>
+<a id="__codelineno-5-223" name="__codelineno-5-223" href="#__codelineno-5-223"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.2/k3d-linux-amd64</span>
+<a id="__codelineno-5-224" name="__codelineno-5-224" href="#__codelineno-5-224"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7e92e883f2457aa8702f9f504a772fadec3ef3f9d678f929b2b8e05f3910a30c</span>
+<a id="__codelineno-5-225" name="__codelineno-5-225" href="#__codelineno-5-225"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-12 12:10:49+00:00</span>
+<a id="__codelineno-5-226" name="__codelineno-5-226" href="#__codelineno-5-226"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.2/k3d-linux-arm</span>
+<a id="__codelineno-5-227" name="__codelineno-5-227" href="#__codelineno-5-227"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">62dc7eb8bcfe499d7163226668577c56ed8b85659ce3bcdecca686ee68c990ba</span>
+<a id="__codelineno-5-228" name="__codelineno-5-228" href="#__codelineno-5-228"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-12 12:10:49+00:00</span>
+<a id="__codelineno-5-229" name="__codelineno-5-229" href="#__codelineno-5-229"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.2/k3d-linux-arm64</span>
+<a id="__codelineno-5-230" name="__codelineno-5-230" href="#__codelineno-5-230"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8134a7047afb3ed7aa32b7a967bc299dbe3abe640bab27fc9d2c9328b2361bbf</span>
+<a id="__codelineno-5-231" name="__codelineno-5-231" href="#__codelineno-5-231"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-12 12:10:49+00:00</span>
+<a id="__codelineno-5-232" name="__codelineno-5-232" href="#__codelineno-5-232"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.3/k3d-linux-amd64</span>
+<a id="__codelineno-5-233" name="__codelineno-5-233" href="#__codelineno-5-233"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dbaa79a76ace7f4ca230a1ff41dc7d8a5036a8ad0309e9c54f9bf3836dbe853e</span>
+<a id="__codelineno-5-234" name="__codelineno-5-234" href="#__codelineno-5-234"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-20 16:11:59+00:00</span>
+<a id="__codelineno-5-235" name="__codelineno-5-235" href="#__codelineno-5-235"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.3/k3d-linux-arm</span>
+<a id="__codelineno-5-236" name="__codelineno-5-236" href="#__codelineno-5-236"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c4ef4e8008edb55cf347d846a7fc70af319883f9a474167689bd8af04693401d</span>
+<a id="__codelineno-5-237" name="__codelineno-5-237" href="#__codelineno-5-237"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-20 16:11:59+00:00</span>
+<a id="__codelineno-5-238" name="__codelineno-5-238" href="#__codelineno-5-238"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/rancher/k3d/releases/download/v5.8.3/k3d-linux-arm64</span>
+<a id="__codelineno-5-239" name="__codelineno-5-239" href="#__codelineno-5-239"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0b8110f2229631af7402fb828259330985918b08fefd38b7f1b788a1c8687216</span>
+<a id="__codelineno-5-240" name="__codelineno-5-240" href="#__codelineno-5-240"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-20 16:11:59+00:00</span>
+</code></pre></div>
+</details>
+<h2 id="badge">Badge</h2>
+<p><a href="/packages/k3d"><img alt="WakeMeOps" src="/badges/k3d.svg" /></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Markdown</label><label for="__tabbed_3_2">HTML</label><label for="__tabbed_3_3">RST</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">![WakeMeOps</span>](<span class="na">https://docs.wakemeops.com/badges/k3d.svg</span>)](https://docs.wakemeops.com/packages/k3d)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/packages/k3d&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/badges/k3d.svg&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> https://docs.wakemeops.com/badges/k3d.svg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nc">:target:</span> https://docs.wakemeops.com/packages/k3d
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>
