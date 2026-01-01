@@ -1,0 +1,20 @@
+name: yazi
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 25.12.29
+homepage: https://yazi-rs.github.io/
+summary: fast terminal file manager
+description: |-
+  Yazi is a blazing-fast terminal file manager in Rust with non-blocking
+  async I/O, concurrent plugins, image/code previews, virtual filesystem,
+  package manager, and Git integration.
+fetch:
+  url: https://github.com/sxyazi/yazi/releases/download/v{{version}}/yazi-{{target}}.deb
+  targets:
+    amd64: x86_64-unknown-linux-musl
+    arm64: aarch64-unknown-linux-musl
+install:
+  - data:/
