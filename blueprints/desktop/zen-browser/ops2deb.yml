@@ -1,11 +1,9 @@
 name: zen-browser
 matrix:
   versions:
-    - 1.14.2b
-    - 1.15b
-    - 1.16b
     - 1.16.4b
     - 1.17b
+    - 1.17.15b
 homepage: https://zen-browser.app/
 summary: firefox-based browser pushing your productivity to a new level
 description: |-
