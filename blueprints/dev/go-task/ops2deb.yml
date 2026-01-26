@@ -38,6 +38,7 @@ matrix:
     - 3.46.3
     - 3.46.4
     - 3.47.0
+    - 3.48.0
 homepage: https://taskfile.dev/
 summary: task runner / simpler Make alternative written in Go
 fetch: https://github.com/go-task/task/releases/download/v{{version}}/task_linux_{{arch}}.tar.gz
