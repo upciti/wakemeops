@@ -4,9 +4,6 @@
 - url: https://github.com/pyenv/pyenv/archive/refs/tags/v2.2.4-1.zip
   sha256: 6e5e8223de00c28b8ab5de89bf8a7a12e944d0d1a1570682a7bc102538833da2
   timestamp: 2022-01-27 19:24:18+00:00
-- url: https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.36.zip
-  sha256: 866be92826942e28accccd68df0747dc85aecb87e5519db5a8d65148b781019f
-  timestamp: 2024-02-14 00:20:29+00:00
 - url: https://github.com/pyenv/pyenv/archive/refs/tags/v2.4.0.zip
   sha256: 57ffdc547a6f2b4141f974734ec255eb869bbd9ad40892a5c7ee6db7a5044812
   timestamp: 2024-04-07 21:05:47+00:00
@@ -154,3 +151,6 @@
 - url: https://github.com/pyenv/pyenv/archive/refs/tags/v2.6.20.zip
   sha256: 0a1aabbbe0efe3a35c3a6a02573a0ae123bf2978201fb2b369e0944cfc895f31
   timestamp: 2026-01-15 06:04:15+00:00
+- url: https://github.com/pyenv/pyenv/archive/refs/tags/v2.6.21.zip
+  sha256: f855965711cbad2d98c4211e91f247f72639d73902836f5e116f25b5a3455b5b
+  timestamp: 2026-02-04 00:10:19+00:00
