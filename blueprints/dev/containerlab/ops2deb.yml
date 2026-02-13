@@ -1,0 +1,16 @@
+name: containerlab
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.72.0
+homepage: https://containerlab.dev/
+summary: tool for orchestrating and managing container-based networking labs
+description: |-
+  Containerlab provides a CLI for orchestrating and managing container-based
+  networking labs. It starts the containers, builds a virtual wiring between them
+  to create lab topologies of users choice and manages labs lifecycle.
+fetch: https://github.com/srl-labs/containerlab/releases/download/v{{version}}/containerlab_{{version}}_linux_{{arch}}.pkg.tar.zst
+install:
+  - usr/bin/containerlab:/usr/bin/containerlab
