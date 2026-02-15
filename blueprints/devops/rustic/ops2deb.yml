@@ -1,0 +1,23 @@
+name: rustic
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 0.10.3
+    - 0.11.0
+homepage: https://github.com/rustic-rs/rustic
+summary: fast, encrypted, and deduplicated backup tool
+description: |-
+  rustic is a fast, encrypted, and deduplicated backup tool.
+  It reads and writes the restic repository format and supports local
+  and cloud backends for secure and efficient backups.
+fetch:
+  url: https://github.com/rustic-rs/rustic/releases/download/v{{version}}/rustic-v{{version}}-{{target}}.tar.gz
+  targets:
+    amd64: x86_64-unknown-linux-gnu
+    armhf: armv7-unknown-linux-gnueabihf
+    arm64: aarch64-unknown-linux-gnu
+install:
+  - rustic:/usr/bin/rustic
