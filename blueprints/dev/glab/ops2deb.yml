@@ -56,7 +56,6 @@
       - amd64
       - arm64
     versions:
-      - 1.47.0
       - 1.48.0
       - 1.49.0
       - 1.50.0
@@ -106,6 +105,7 @@
       - 1.85.1
       - 1.85.2
       - 1.85.3
+      - 1.86.0
   homepage: https://gitlab.com/gitlab-org/cli
   summary: Gitlab on the command line
   description: |-
