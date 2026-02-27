@@ -36,7 +36,6 @@
       - arm64
       - armhf
     versions:
-      - 0.31.2
       - 0.31.3
       - 0.31.5
       - 0.32.0
@@ -86,6 +85,7 @@
       - 2.7.4
       - 2.7.5
       - 2.8.0
+      - 2.8.1
   homepage: https://fluxcd.io
   summary: open and extensible continuous delivery solution for Kubernetes
   description: |-
