@@ -60,7 +60,7 @@ jobs:
           labels: build failed
 
       - name: Upload Debian packages
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           path: build/**/*deb
           retention-days: 2
@@ -83,7 +83,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download Debian packages
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: build
 
