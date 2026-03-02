@@ -1,0 +1,4382 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WakeMeOps documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.wakemeops.com/packages/mirrord/">
+      
+      
+        <link rel="prev" href="../minio-server/">
+      
+      
+        <link rel="next" href="../mob/">
+      
+      <link rel="icon" href="../../images/pink-logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>mirrord - WakeMeOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3.191.0" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WakeMeOps" class="md-header__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WakeMeOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              mirrord
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../usage/" class="md-tabs__link">
+      Usage
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Packages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WakeMeOps" class="md-nav__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../../images/white-logo.png" alt="logo">
+
+    </a>
+    WakeMeOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act/" class="md-nav__link">
+        act
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../age/" class="md-nav__link">
+        age
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aptly/" class="md-nav__link">
+        aptly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo/" class="md-nav__link">
+        argo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        argocd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-iam-authenticator/" class="md-nav__link">
+        aws-iam-authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../balena-etcher/" class="md-nav__link">
+        balena-etcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank-vaults/" class="md-nav__link">
+        bank-vaults
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bat/" class="md-nav__link">
+        bat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bitwarden-cli/" class="md-nav__link">
+        bitwarden-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bottom/" class="md-nav__link">
+        bottom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary/" class="md-nav__link">
+        boundary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-kapp/" class="md-nav__link">
+        carvel-kapp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carvel-ytt/" class="md-nav__link">
+        carvel-ytt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat/" class="md-nav__link">
+        cheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chezmoi/" class="md-nav__link">
+        chezmoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose/" class="md-nav__link">
+        choose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cilium/" class="md-nav__link">
+        cilium
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clog-cli/" class="md-nav__link">
+        clog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-provider-kind/" class="md-nav__link">
+        cloud-provider-kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clusterctl/" class="md-nav__link">
+        clusterctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-diff/" class="md-nav__link">
+        container-diff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-structure-test/" class="md-nav__link">
+        container-structure-test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller-gen/" class="md-nav__link">
+        controller-gen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cosign/" class="md-nav__link">
+        cosign
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coursier/" class="md-nav__link">
+        coursier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curlie/" class="md-nav__link">
+        curlie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapr/" class="md-nav__link">
+        dapr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dasel/" class="md-nav__link">
+        dasel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datanymizer/" class="md-nav__link">
+        datanymizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datree/" class="md-nav__link">
+        datree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devspace/" class="md-nav__link">
+        devspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskonaut/" class="md-nav__link">
+        diskonaut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dive/" class="md-nav__link">
+        dive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        docker-compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-slim/" class="md-nav__link">
+        docker-slim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dog/" class="md-nav__link">
+        dog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dust/" class="md-nav__link">
+        dust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exa/" class="md-nav__link">
+        exa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eza/" class="md-nav__link">
+        eza
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd/" class="md-nav__link">
+        fd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feroxbuster/" class="md-nav__link">
+        feroxbuster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flux/" class="md-nav__link">
+        flux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fzf/" class="md-nav__link">
+        fzf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghorg/" class="md-nav__link">
+        ghorg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-delta/" class="md-nav__link">
+        git-delta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-cli/" class="md-nav__link">
+        github-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-hub/" class="md-nav__link">
+        github-hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitlab-release-cli/" class="md-nav__link">
+        gitlab-release-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitoxide/" class="md-nav__link">
+        gitoxide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glab/" class="md-nav__link">
+        glab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glow/" class="md-nav__link">
+        glow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go-task/" class="md-nav__link">
+        go-task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gomplate/" class="md-nav__link">
+        gomplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopass/" class="md-nav__link">
+        gopass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goreleaser/" class="md-nav__link">
+        goreleaser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gotop/" class="md-nav__link">
+        gotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gping/" class="md-nav__link">
+        gping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grex/" class="md-nav__link">
+        grex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm/" class="md-nav__link">
+        helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm-docs/" class="md-nav__link">
+        helm-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helmfile/" class="md-nav__link">
+        helmfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../himalaya/" class="md-nav__link">
+        himalaya
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hostctl/" class="md-nav__link">
+        hostctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hubble/" class="md-nav__link">
+        hubble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hugo/" class="md-nav__link">
+        hugo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iamlive/" class="md-nav__link">
+        iamlive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influx-cli/" class="md-nav__link">
+        influx-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infracost/" class="md-nav__link">
+        infracost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insomnia/" class="md-nav__link">
+        insomnia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istioctl/" class="md-nav__link">
+        istioctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jfrog-cli/" class="md-nav__link">
+        jfrog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k3d/" class="md-nav__link">
+        k3d
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k6/" class="md-nav__link">
+        k6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k9s/" class="md-nav__link">
+        k9s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kind/" class="md-nav__link">
+        kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kompose/" class="md-nav__link">
+        kompose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krew/" class="md-nav__link">
+        krew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../krr/" class="md-nav__link">
+        krr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-capacity/" class="md-nav__link">
+        kube-capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-linter/" class="md-nav__link">
+        kube-linter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-no-trouble/" class="md-nav__link">
+        kube-no-trouble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kube-score/" class="md-nav__link">
+        kube-score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeaudit/" class="md-nav__link">
+        kubeaudit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubebuilder/" class="md-nav__link">
+        kubebuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeconform/" class="md-nav__link">
+        kubeconform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl/" class="md-nav__link">
+        kubectl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-kudo/" class="md-nav__link">
+        kubectl-kudo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-neat/" class="md-nav__link">
+        kubectl-neat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-oidc-login/" class="md-nav__link">
+        kubectl-oidc-login
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectx/" class="md-nav__link">
+        kubectx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubelogin/" class="md-nav__link">
+        kubelogin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubens/" class="md-nav__link">
+        kubens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubescape/" class="md-nav__link">
+        kubescape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeseal/" class="md-nav__link">
+        kubeseal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kustomize/" class="md-nav__link">
+        kustomize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kyverno/" class="md-nav__link">
+        kyverno
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazydocker/" class="md-nav__link">
+        lazydocker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lazygit/" class="md-nav__link">
+        lazygit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lens/" class="md-nav__link">
+        lens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkerd/" class="md-nav__link">
+        linkerd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logcli/" class="md-nav__link">
+        logcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mask/" class="md-nav__link">
+        mask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattermost-desktop/" class="md-nav__link">
+        mattermost-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdbook/" class="md-nav__link">
+        mdbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mergestat/" class="md-nav__link">
+        mergestat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-client/" class="md-nav__link">
+        minio-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio-server/" class="md-nav__link">
+        minio-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          mirrord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        mirrord
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3.191.0" class="md-nav__link">
+    3.191.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.190.0" class="md-nav__link">
+    3.190.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.189.0" class="md-nav__link">
+    3.189.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.188.2" class="md-nav__link">
+    3.188.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.188.1" class="md-nav__link">
+    3.188.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.187.0" class="md-nav__link">
+    3.187.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.186.0" class="md-nav__link">
+    3.186.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.185.1" class="md-nav__link">
+    3.185.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.185.0" class="md-nav__link">
+    3.185.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.184.0" class="md-nav__link">
+    3.184.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.183.0" class="md-nav__link">
+    3.183.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.182.0" class="md-nav__link">
+    3.182.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.181.0" class="md-nav__link">
+    3.181.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.180.0" class="md-nav__link">
+    3.180.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.179.0" class="md-nav__link">
+    3.179.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.178.0" class="md-nav__link">
+    3.178.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.177.0" class="md-nav__link">
+    3.177.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.176.0" class="md-nav__link">
+    3.176.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.175.0" class="md-nav__link">
+    3.175.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.174.0" class="md-nav__link">
+    3.174.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.173.2" class="md-nav__link">
+    3.173.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.173.1" class="md-nav__link">
+    3.173.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.172.0" class="md-nav__link">
+    3.172.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.171.0" class="md-nav__link">
+    3.171.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.170.0" class="md-nav__link">
+    3.170.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.169.0" class="md-nav__link">
+    3.169.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.168.1" class="md-nav__link">
+    3.168.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.168.0" class="md-nav__link">
+    3.168.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.167.0" class="md-nav__link">
+    3.167.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.166.0" class="md-nav__link">
+    3.166.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.165.0" class="md-nav__link">
+    3.165.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.164.0" class="md-nav__link">
+    3.164.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.163.0" class="md-nav__link">
+    3.163.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.162.0" class="md-nav__link">
+    3.162.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.161.0" class="md-nav__link">
+    3.161.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.160.0" class="md-nav__link">
+    3.160.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.159.2" class="md-nav__link">
+    3.159.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.159.1" class="md-nav__link">
+    3.159.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.159.0" class="md-nav__link">
+    3.159.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.158.0" class="md-nav__link">
+    3.158.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.157.2" class="md-nav__link">
+    3.157.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.157.1" class="md-nav__link">
+    3.157.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.157.0" class="md-nav__link">
+    3.157.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.156.0" class="md-nav__link">
+    3.156.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.155.0" class="md-nav__link">
+    3.155.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.154.1" class="md-nav__link">
+    3.154.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.154.0" class="md-nav__link">
+    3.154.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.153.0" class="md-nav__link">
+    3.153.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.152.1" class="md-nav__link">
+    3.152.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.152.0" class="md-nav__link">
+    3.152.0
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mob/" class="md-nav__link">
+        mob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mutagen/" class="md-nav__link">
+        mutagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nats-server/" class="md-nav__link">
+        nats-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natscli/" class="md-nav__link">
+        natscli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neovim/" class="md-nav__link">
+        neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nsc/" class="md-nav__link">
+        nsc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nushell/" class="md-nav__link">
+        nushell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oasdiff/" class="md-nav__link">
+        oasdiff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oc/" class="md-nav__link">
+        oc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../olivetin/" class="md-nav__link">
+        olivetin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openlens/" class="md-nav__link">
+        openlens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opentofu/" class="md-nav__link">
+        opentofu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-sdk/" class="md-nav__link">
+        operator-sdk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ops2deb/" class="md-nav__link">
+        ops2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-slicer/" class="md-nav__link">
+        orca-slicer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packer/" class="md-nav__link">
+        packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdm/" class="md-nav__link">
+        pdm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipx/" class="md-nav__link">
+        pipx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pluto/" class="md-nav__link">
+        pluto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poetry/" class="md-nav__link">
+        poetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procs/" class="md-nav__link">
+        procs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyenv/" class="md-nav__link">
+        pyenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyoxidizer/" class="md-nav__link">
+        pyoxidizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.10-build-standalone/" class="md-nav__link">
+        python3.10-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python3.11-build-standalone/" class="md-nav__link">
+        python3.11-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qq/" class="md-nav__link">
+        qq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rancher/" class="md-nav__link">
+        rancher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rclone/" class="md-nav__link">
+        rclone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restic/" class="md-nav__link">
+        restic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resticprofile/" class="md-nav__link">
+        resticprofile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ripgrep/" class="md-nav__link">
+        ripgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpk/" class="md-nav__link">
+        rpk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rye/" class="md-nav__link">
+        rye
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scala-cli/" class="md-nav__link">
+        scala-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scw/" class="md-nav__link">
+        scw
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell2http/" class="md-nav__link">
+        shell2http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signal-desktop/" class="md-nav__link">
+        signal-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skaffold/" class="md-nav__link">
+        skaffold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skim/" class="md-nav__link">
+        skim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops/" class="md-nav__link">
+        sops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stern/" class="md-nav__link">
+        stern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams-for-linux/" class="md-nav__link">
+        teams-for-linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telepresence/" class="md-nav__link">
+        telepresence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-docs/" class="md-nav__link">
+        terraform-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-switcher/" class="md-nav__link">
+        terraform-switcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terragrunt/" class="md-nav__link">
+        terragrunt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrascan/" class="md-nav__link">
+        terrascan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokei/" class="md-nav__link">
+        tokei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trivy/" class="md-nav__link">
+        trivy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ttyd/" class="md-nav__link">
+        ttyd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typos-cli/" class="md-nav__link">
+        typos-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../undock/" class="md-nav__link">
+        undock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upterm/" class="md-nav__link">
+        upterm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uv/" class="md-nav__link">
+        uv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault/" class="md-nav__link">
+        vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vault-env/" class="md-nav__link">
+        vault-env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../velero/" class="md-nav__link">
+        velero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vhs/" class="md-nav__link">
+        vhs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viu/" class="md-nav__link">
+        viu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../void/" class="md-nav__link">
+        void
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volta/" class="md-nav__link">
+        volta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuls-scanner/" class="md-nav__link">
+        vuls-scanner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wakemebot/" class="md-nav__link">
+        wakemebot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waypoint/" class="md-nav__link">
+        waypoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wheel2deb/" class="md-nav__link">
+        wheel2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xeol/" class="md-nav__link">
+        xeol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xh/" class="md-nav__link">
+        xh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xsv/" class="md-nav__link">
+        xsv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yq/" class="md-nav__link">
+        yq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zellij/" class="md-nav__link">
+        zellij
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen-browser/" class="md-nav__link">
+        zen-browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zli/" class="md-nav__link">
+        zli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zot/" class="md-nav__link">
+        zot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zoxide/" class="md-nav__link">
+        zoxide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Versions">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Versions
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3.191.0" class="md-nav__link">
+    3.191.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.190.0" class="md-nav__link">
+    3.190.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.189.0" class="md-nav__link">
+    3.189.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.188.2" class="md-nav__link">
+    3.188.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.188.1" class="md-nav__link">
+    3.188.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.187.0" class="md-nav__link">
+    3.187.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.186.0" class="md-nav__link">
+    3.186.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.185.1" class="md-nav__link">
+    3.185.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.185.0" class="md-nav__link">
+    3.185.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.184.0" class="md-nav__link">
+    3.184.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.183.0" class="md-nav__link">
+    3.183.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.182.0" class="md-nav__link">
+    3.182.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.181.0" class="md-nav__link">
+    3.181.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.180.0" class="md-nav__link">
+    3.180.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.179.0" class="md-nav__link">
+    3.179.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.178.0" class="md-nav__link">
+    3.178.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.177.0" class="md-nav__link">
+    3.177.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.176.0" class="md-nav__link">
+    3.176.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.175.0" class="md-nav__link">
+    3.175.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.174.0" class="md-nav__link">
+    3.174.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.173.2" class="md-nav__link">
+    3.173.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.173.1" class="md-nav__link">
+    3.173.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.172.0" class="md-nav__link">
+    3.172.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.171.0" class="md-nav__link">
+    3.171.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.170.0" class="md-nav__link">
+    3.170.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.169.0" class="md-nav__link">
+    3.169.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.168.1" class="md-nav__link">
+    3.168.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.168.0" class="md-nav__link">
+    3.168.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.167.0" class="md-nav__link">
+    3.167.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.166.0" class="md-nav__link">
+    3.166.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.165.0" class="md-nav__link">
+    3.165.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.164.0" class="md-nav__link">
+    3.164.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.163.0" class="md-nav__link">
+    3.163.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.162.0" class="md-nav__link">
+    3.162.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.161.0" class="md-nav__link">
+    3.161.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.160.0" class="md-nav__link">
+    3.160.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.159.2" class="md-nav__link">
+    3.159.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.159.1" class="md-nav__link">
+    3.159.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.159.0" class="md-nav__link">
+    3.159.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.158.0" class="md-nav__link">
+    3.158.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.157.2" class="md-nav__link">
+    3.157.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.157.1" class="md-nav__link">
+    3.157.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.157.0" class="md-nav__link">
+    3.157.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.156.0" class="md-nav__link">
+    3.156.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.155.0" class="md-nav__link">
+    3.155.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.154.1" class="md-nav__link">
+    3.154.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.154.0" class="md-nav__link">
+    3.154.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.153.0" class="md-nav__link">
+    3.153.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.152.1" class="md-nav__link">
+    3.152.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3.152.0" class="md-nav__link">
+    3.152.0
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>mirrord</h1>
+
+<p><strong>Develop locally with your kubernetes environment</strong></p>
+<p>Run your local code in the real-time context of your cloud environment, with
+access to other microservices, databases, queues, and managed services, all
+without leaving the local setup you know and love.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.67 4.42a6.08 6.08 0 0 0-3.22-.86c-1.58 0-2.79.78-2.79 2 0 1.4 1.34 1.91 3.34 2.58 2.5.81 4.4 1.83 4.4 4.24a4.01 4.01 0 0 1-1.8 3.23c.65.61 1.01 1.47 1 2.36 0 2.82-2.6 4-5.1 4-1.46.06-2.91-.33-4.15-1.1L8 19.34c1.04.71 2.27 1.09 3.53 1.1 1.72 0 3-.78 3-2.2 0-1.24-.78-1.93-3.28-2.79C8.5 14.5 6.6 13.5 6.6 11.21c.07-1.32.83-2.52 2-3.14-.63-.57-.99-1.4-1-2.26C7.6 3.45 9.77 2 12.53 2c1.29 0 2.56.29 3.7.89l-.56 1.53m-4.32 9c1.06.33 2.09.76 3.06 1.29.65-.49 1.02-1.26 1-2.07 0-1-.64-1.88-2.41-2.5-1.11-.37-2.22-.83-3.28-1.37-.75.45-1.22 1.26-1.22 2.14 0 .97.73 1.77 2.85 2.51Z"/></svg></span> <a href="/packages/#devops"><code>devops</code></a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span> <a href="https://mirrord.dev/">https://mirrord.dev/</a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3V4m5 11v3h1v-3h-1m2 0v3h1v-3h-1m2 0v3h1v-3h-1Z"/></svg></span> <span class="badge arch">arm64</span> <span class="badge arch">amd64</span> </p>
+<h2 id="installation">Installation</h2>
+<p>1. Add WakeMeOps repository</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</code></pre></div>
+<p>2. Install mirrord</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mirrord
+</code></pre></div>
+<h2 id="snippets">Snippets</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dockerfile</label><label for="__tabbed_1_2">Github Action</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">wakemeops/minideb:bullseye</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">RUN</span><span class="w"> </span>install_packages<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">mirrord</span><span class="o">=</span><span class="m">3</span>.191.0*
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">USER</span><span class="w"> </span><span class="s">1001</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upciti/wakemeops-action@v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="no">mirrord=3.191.0*</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="download-urls">Download URLs</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">amd64</label><label for="__tabbed_2_2">arm64</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.191.0-1~ops2deb_amd64.deb">3.191.0</a></td>
+<td><code>20aa35a8fe808959e7f1a146ccde0ca144a99375582f78f7046934b63d33aa20</code></td>
+<td>14933</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.190.0-1~ops2deb_amd64.deb">3.190.0</a></td>
+<td><code>852d3ad89bee920f84a1d6ae3f3e78e00668c5892ea7b30d1947e2a4b9915c02</code></td>
+<td>14420</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.189.0-1~ops2deb_amd64.deb">3.189.0</a></td>
+<td><code>1c6044112dd8e10cebc587d8b61bf44a5bcb53e96a331124d23014777b5173fb</code></td>
+<td>14442</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.188.2-1~ops2deb_amd64.deb">3.188.2</a></td>
+<td><code>a3ec5051301e2c1343eba70877442abccc916493a51103128ea4d6418d80a261</code></td>
+<td>14326</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.188.1-1~ops2deb_amd64.deb">3.188.1</a></td>
+<td><code>cf85c2872a3121e81b709c59297164a69780e66449a1284cc4e7905850e63638</code></td>
+<td>14317</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.187.0-1~ops2deb_amd64.deb">3.187.0</a></td>
+<td><code>b650e6a3db343fb5351aad222240897a4b565ab5b933a54b789702105180b193</code></td>
+<td>14267</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.186.0-1~ops2deb_amd64.deb">3.186.0</a></td>
+<td><code>097816bd7e0bfe1055635b2e9da91d9fbef571492b855dbf0b15a9dd7e8256f2</code></td>
+<td>14252</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.185.1-1~ops2deb_amd64.deb">3.185.1</a></td>
+<td><code>293aef564f5bcc68147a1ec8380874be96c6e76ef9a694baf6a6d8977fd01cce</code></td>
+<td>14275</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.185.0-1~ops2deb_amd64.deb">3.185.0</a></td>
+<td><code>48450a8244148b0661c98c2f6c8194fb49ab78f5e617d11a54f3d21c6001dc2b</code></td>
+<td>14249</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.184.0-1~ops2deb_amd64.deb">3.184.0</a></td>
+<td><code>dee2f2569419715c172bb1c4e5822ee8368e0d907ffe381637de0e45e29da321</code></td>
+<td>14580</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>SHA256</th>
+<th>Size (KB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.191.0-1~ops2deb_arm64.deb">3.191.0</a></td>
+<td><code>a96b80b539de98b3d169293d46e3e1bea1874692ede18844ffec6c6ab38094c1</code></td>
+<td>12437</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.190.0-1~ops2deb_arm64.deb">3.190.0</a></td>
+<td><code>db7975e5157779386add70251a624c4c1dea7f130ac606fe33b2e9abb87415b3</code></td>
+<td>11975</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.189.0-1~ops2deb_arm64.deb">3.189.0</a></td>
+<td><code>12fbd66410f44cf8e2fd2b0793cd615c5711a754cf8565cb6314c6ec9530fa71</code></td>
+<td>11983</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.188.2-1~ops2deb_arm64.deb">3.188.2</a></td>
+<td><code>d31e5d9a49815bd275988050d7277683fec7bfcec516b1c10d0c953b8d66f89b</code></td>
+<td>11878</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.188.1-1~ops2deb_arm64.deb">3.188.1</a></td>
+<td><code>be286eeff69231e9ae95f68f51e6ee68ad9674247458ae9ed07e0ee72246ea18</code></td>
+<td>11852</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.187.0-1~ops2deb_arm64.deb">3.187.0</a></td>
+<td><code>27b863179afbef2a43313d07f2feaf7edba0a280421689d77cdccb950fae7518</code></td>
+<td>11856</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.186.0-1~ops2deb_arm64.deb">3.186.0</a></td>
+<td><code>294749d96494173c8ccfb56d80abde10c3ed4278d002fc9745ccb477feb4a43f</code></td>
+<td>11842</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.185.1-1~ops2deb_arm64.deb">3.185.1</a></td>
+<td><code>5d1afa51758678e34c3f8f545c36881f67e2ed12dd7aabb562764965220a9ead</code></td>
+<td>11780</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.185.0-1~ops2deb_arm64.deb">3.185.0</a></td>
+<td><code>903648873a7921ff5e17380768e5a5f361baf70660aa8fcd2c4feba7486e6395</code></td>
+<td>11802</td>
+</tr>
+<tr>
+<td><a href="http://deb.wakemeops.com/wakemeops/pool/devops/m/mirrord/mirrord_3.184.0-1~ops2deb_arm64.deb">3.184.0</a></td>
+<td><code>64312f1b8cc9a02c689f404cce82bea48efdf04b7345b56e7ff2a3f301da69a1</code></td>
+<td>12118</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="blueprints">Blueprints</h2>
+<p>Debian packages listed on this page are generated from <a href="https://github.com/upciti/ops2deb">op2deb</a> YAML blueprints. Blueprints for mirrord are versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/devops/mirrord/ops2deb.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see mirrord ops2deb blueprints</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/devops/mirrord/ops2deb.yml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mirrord</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">architectures</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.152.0</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.152.1</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.153.0</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.154.0</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.154.1</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.155.0</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.156.0</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.157.0</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.157.1</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.157.2</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.158.0</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.159.0</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.159.1</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.159.2</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.160.0</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.161.0</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.162.0</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.163.0</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.164.0</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.165.0</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.166.0</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.167.0</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.168.0</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.168.1</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.169.0</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.170.0</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.171.0</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.172.0</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.173.1</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.173.2</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.174.0</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.175.0</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.176.0</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.177.0</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.178.0</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.179.0</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.180.0</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.181.0</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.182.0</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.183.0</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.184.0</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.185.0</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.185.1</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.186.0</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.187.0</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.188.1</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.188.2</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.189.0</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.190.0</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.191.0</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://mirrord.dev/</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">develop locally with your kubernetes environment</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="w">  </span><span class="no">Run your local code in the real-time context of your cloud environment, with</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="w">  </span><span class="no">access to other microservices, databases, queues, and managed services, all</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="w">  </span><span class="no">without leaving the local setup you know and love.</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="nt">fetch</span><span class="p">:</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/{{version}}/mirrord_linux_{{target}}.zip</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="w">  </span><span class="nt">targets</span><span class="p">:</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="w">    </span><span class="nt">amd64</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x86_64</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="w">    </span><span class="nt">arm64</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aarch64</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="nt">install</span><span class="p">:</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mirrord:/usr/bin/mirrord</span>
+</code></pre></div>
+</details>
+<p>The blueprint <code>fetch</code> keyword contains a URL template pointing to mirrord releases. Downloaded files are locked in a lockfile versioned <a href="https://github.com/upciti/wakemeops/blob/main/blueprints/devops/mirrord/ops2deb.lock.yml">here</a>.</p>
+<details class="abstract title">
+<summary>Click here to see mirrord release hashes</summary>
+<div class="highlight"><span class="filename">https://github.com/upciti/wakemeops/blob/main/blueprints/devops/mirrord/ops2deb.lock.yml</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.152.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e73b357d59ef5352a93bdceede506ee8f7e446b840dbd14fec6b74adada80b5a</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-18 18:03:03+00:00</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.152.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7aab90b414d76523ea83604ba6c821a8adbc7b84a56fceb0f9021f5e231457d1</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-18 18:03:03+00:00</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.152.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1816228e1bd276a6871b3c6a76413b5c970044b5af43fed19e86a1bc2870c07c</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-22 12:03:40+00:00</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.152.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">21a48e1a25dee6e667d90c0b841a4888bac82eddf7180069b1332efc2dbd0e7c</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-22 12:03:40+00:00</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.153.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ef8ec744ce8fdf42c19e6a9b10fc0cec1451bbc2a73766cab650c8fa3135d26b</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-28 18:03:02+00:00</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.153.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">89c2597908bd973cb7e3745ccadfa199475ecbc75da477825b456b869388bf7a</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-28 18:03:02+00:00</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.154.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">93c097cfb391877e9258d64589534039b1804401e24fed9fc9d872070ee75663</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-31 12:04:04+00:00</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.154.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ae378405b3e9f170c5d884f75fe05989db5457c3152a29ae814524afc9d51659</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-07-31 12:04:04+00:00</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.154.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">09c2cd23a23420c1089311751916b412747e084fb108e6b30f694b3bb56bf7c8</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-04 12:03:51+00:00</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.154.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4b0412782d164bf1379f9ab766ecaad5b58b53197b1e2e8a33c728635baa776d</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-04 12:03:51+00:00</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.155.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2a8d690ecd2ec588e93290e5e29157af8aa9f790e6d2f186f88900ef7a2e6780</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-06 00:08:55+00:00</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.155.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2bd38e7bb5513d0c5ab6d8ec28cab9b95fff04702aef367f3b28484b995995e7</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-06 00:08:55+00:00</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.156.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">78724f13733274c74126b69eedf189984a655130e68b817008e48281eba78be8</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-06 18:02:57+00:00</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.156.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fdcb2365f1cb72d87144403aa5b265c7193c7c90deb48d578de790a3497ff950</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-06 18:02:57+00:00</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.157.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">95ac87eb8033b4d781b9b2a6dccd7d8c987ba42b61910896195ec0b4ab5fedba</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-08 18:03:04+00:00</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.157.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25b606674bbf7bb2b8560d2a30ee40becbcf9e22125e6315eeea3008801169cb</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-08 18:03:04+00:00</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.157.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dd6f60c32161ba9ec21623b642a3a81f7e60b95ec2cc05f1a94817041f280b81</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-13 18:03:41+00:00</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.157.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7cbbeca54676eff9ceb93c6a8b7e7cca6534f9ab87983fc340ecff3df26f4de7</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-13 18:03:41+00:00</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.157.2/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a7262b7273d9bba1a7649ee0f9db5510a8f7b3c059485865cb9e14090f060c52</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-14 18:03:09+00:00</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.157.2/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9478939300869de99b3bcdf4be4cc1f4676834a84c80009ef9cacac62a1d7050</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-14 18:03:09+00:00</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.158.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f8ab14cfd267debb129d5ad40642a0c5671308efe4c4af7ee325d632bd40f1c3</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-21 00:07:18+00:00</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.158.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad071374b918cb9883ee4903c1fa854afeba39c45395f0049411b0cf251a8b22</span>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-21 00:07:18+00:00</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.159.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9c6f868f198af0bdf29a3cb016a2b2ea292ae37dc525e867db60da1d56d58412</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-25 00:08:33+00:00</span>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.159.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c4ffb89bf37247ca4109d73344ff3e04a161c89fb200ae57bff506e691eec864</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-25 00:08:33+00:00</span>
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.159.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8d7263b4f22df82da6ec8b0be7699da4ce11f13d82aa82ad83bb8a276215d7ae</span>
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-27 18:02:55+00:00</span>
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.159.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec3673db5f4b3e72714cd2b2799015d9e3b3ad771f92553234fc26243d8901ea</span>
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-08-27 18:02:55+00:00</span>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.159.2/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">13b2c1bf6822eb7fa2afbfea1091bcf7a4573ce1040b134363b28ede753910a0</span>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-01 12:03:55+00:00</span>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.159.2/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f3f7ae5e12e5e2fed5252eca49ad0b9648290fe6be4075498f010e52b4189fc0</span>
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-01 12:03:55+00:00</span>
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.160.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8bfd08e3859f8ea1345c4322a548d1770bc3f1dbe195f85aa7d40208f70aafad</span>
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-02 18:02:50+00:00</span>
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.160.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">715f863d56b48ee2ff17a0e33e39ad5a5b7acb2f6748cf0eabc9a5e282f91150</span>
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-02 18:02:50+00:00</span>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.161.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">181988bd3fe0b346340cfea9d51567ec60aa8b05d09c10fb5210ccc1de7a73e4</span>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-04 18:02:58+00:00</span>
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.161.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6a0430392ea57c533d653c44550de49de31042ca646370db5dfebd9f370bc8e3</span>
+<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-04 18:02:58+00:00</span>
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.162.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">19e19c2edd69d53127ce05caeb12738cfaedf33617697c97e847dde20d8f0a38</span>
+<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-17 00:07:52+00:00</span>
+<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.162.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e94aae78f8e4e5568ad4e57296a302e712000999828946e3102c65e443984406</span>
+<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-17 00:07:52+00:00</span>
+<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.163.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4a866f45b4174f7ea5429087ed7bf61ba19fa46ef2d2a8aa59560f475667283c</span>
+<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-19 18:03:19+00:00</span>
+<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.163.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8d532b0663b8b0aa2a91408fad73c41ee7e64353fcfb1760d9375405e173a6ac</span>
+<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-09-19 18:03:19+00:00</span>
+<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.164.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8eb3850b8a3de2969b8058a269c072c64e55321197b21b74d2ecc713a7c9fb8a</span>
+<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-07 00:08:03+00:00</span>
+<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.164.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7edee8db4f62c762249097f7b29eca37f1d31d15630db89b068f793d1cf8ead8</span>
+<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-07 00:08:03+00:00</span>
+<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.165.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8e0796b2010b5711a43d9c27380288aea4c1031696d91d34d90d493adb8c9975</span>
+<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-09 18:03:09+00:00</span>
+<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.165.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7b92985da67f8f47ef95bc9411bd5794bbbc5953b611b110b17557b95589ac49</span>
+<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-09 18:03:09+00:00</span>
+<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.166.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52c87a81d77b2c9683675676a07491bd904de18f3a2f43cc2918a87bd655806b</span>
+<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-16 00:07:52+00:00</span>
+<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.166.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db7f6fada8666efc00e1fa542a8000aefa51b8f56480119413bea95c31d0343a</span>
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-16 00:07:52+00:00</span>
+<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.167.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b19d891b719ff689060033e127a3cf787858dfd36e5b721c03405730bdcd98cd</span>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-17 12:03:45+00:00</span>
+<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.167.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eafefdded5183f5b07aff9152571a16931d400b4de03b3c4d1db4a2191737847</span>
+<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-17 12:03:45+00:00</span>
+<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.168.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20857ff6d9333d19143f12b104edd32758dad3844c435fb93cb5f10c5445603e</span>
+<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-23 12:03:39+00:00</span>
+<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.168.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cf0afed5c633760309c3aff5677cf8450af0cd8e717afab65ed3ae8b908a7258</span>
+<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-23 12:03:39+00:00</span>
+<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.168.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">254f35d3ebcf18b1ce243e410a0c03cf368efb7911d942d1e2a248f199da8e31</span>
+<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-25 00:07:50+00:00</span>
+<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.168.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ccd1ff24d6ebf004ddc1514f2fc3f8a62da8d2edb6bd2c9d589c0704a3d46dd0</span>
+<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-25 00:07:50+00:00</span>
+<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.169.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">546ce8e4afacfbe09ce4ce1d927d30440147cde44807f2d97ff42606b3cd9b33</span>
+<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-28 00:07:48+00:00</span>
+<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.169.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">34f305e5ff68c4c05239f2fc40530a94fd5439275faa8e0b717a91589eb1a2e7</span>
+<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-28 00:07:48+00:00</span>
+<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.170.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fbb9ae600be819e930b156d40135afe58cdaee30a08e59e3654a9f839bc6ae46</span>
+<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-29 12:03:53+00:00</span>
+<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.170.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">690bb3bb4a2befa17cdbdfb2cada06d81b83e9ad01fb004531f1f945175d16d3</span>
+<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-29 12:03:53+00:00</span>
+<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.171.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a8379ccc7611a685deec646936387c9988e2f8902584d83a9da324886063f849</span>
+<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-05 00:08:27+00:00</span>
+<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.171.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">71579e0caec8cbc3ecf7c57d0f2f070f67547d392d128fda99b100db0a90240d</span>
+<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-05 00:08:27+00:00</span>
+<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.172.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">437c3643ee490070d23aec9d4e7c4f14e9705ff2e7299a16f8adbe3a566d616e</span>
+<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-07 18:03:05+00:00</span>
+<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.172.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a1b54a3fbb535341f9859180efd23a5dc4817e6c2e323666ba3ce2575a84ac59</span>
+<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-07 18:03:05+00:00</span>
+<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.173.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">79264b1a97f11b6f0c0753776aef70a0ba7085833ff2a1bbf9ed2b0e52013a27</span>
+<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-17 00:08:47+00:00</span>
+<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.173.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">607e38a7bc78b70a4293991654d03e11efabdf9d681f9642352640d4b869e1dc</span>
+<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-17 00:08:47+00:00</span>
+<a id="__codelineno-5-175" name="__codelineno-5-175" href="#__codelineno-5-175"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.173.2/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">19eb80ba7ccf26f118188b4c94bdcd98b351ad6607de9d76a556885630cbd1eb</span>
+<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-19 00:08:24+00:00</span>
+<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.173.2/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2faebdbf3d664c51a545f4e4529b207e0c49ee7571ddc0307874249528b1c968</span>
+<a id="__codelineno-5-180" name="__codelineno-5-180" href="#__codelineno-5-180"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-19 00:08:24+00:00</span>
+<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.174.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">346259513fa0ae76f4847220253345a2ba77b463179fea3f657d3808dc95db51</span>
+<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-21 06:03:17+00:00</span>
+<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.174.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">53573bc73c7a31b30bebc10ba3b5a560ee07ee5f321397b52a5e5f537dca4d74</span>
+<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-11-21 06:03:17+00:00</span>
+<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.175.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6dcc1d5ba690ed2d05296ad74e21e50bd1bdb91fbdbf9f1a8a9709a73b7b5b77</span>
+<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-04 00:08:27+00:00</span>
+<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.175.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b9db1e638c3fcac0fe3940d5d03aa1536ce73c5784d79060755b562703119814</span>
+<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-04 00:08:27+00:00</span>
+<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.176.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d2f72ef08745037ed1be762798914feb72d923c705c5c738954294cc5db69d8f</span>
+<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-08 06:04:09+00:00</span>
+<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.176.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ebd5b9c5c16fd0e4d853842d05f29dbaf613bf9987f1508557b142b8aeabae36</span>
+<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-08 06:04:09+00:00</span>
+<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.177.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a5efebd573ff0497c81cc670f34782d4b6fc94dfd43b4eab61745c3d80963a9b</span>
+<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-19 00:09:36+00:00</span>
+<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.177.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">21585dc918e7c4f30c964f38a32d0605f75b3a66c2630a941710c7992f0f3372</span>
+<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-19 00:09:36+00:00</span>
+<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.178.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">780d4f26eb9b18b08c87e36197f6498f2d636106e10678ef2adb43b3f54d2a02</span>
+<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-21 12:04:00+00:00</span>
+<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.178.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8690d3513ce3b3c9dd35ae23eb9a0bc009ba6e4e2f82ae5320a4aa9cd750e21d</span>
+<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-21 12:04:00+00:00</span>
+<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.179.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d1a4ec8e8aaf3922e21075843286ce318bd72d25f48a64177ca002f91d698bba</span>
+<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-24 12:04:08+00:00</span>
+<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.179.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">91cc575f9e7c803c257e3e1681fe0ef3013358c93866d2f082a4fcb60aa08e3b</span>
+<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-12-24 12:04:08+00:00</span>
+<a id="__codelineno-5-217" name="__codelineno-5-217" href="#__codelineno-5-217"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.180.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-218" name="__codelineno-5-218" href="#__codelineno-5-218"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">396b4211a6c3a78eb45dae369068ad025272befb275126954ec98f409f520d60</span>
+<a id="__codelineno-5-219" name="__codelineno-5-219" href="#__codelineno-5-219"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-07 00:08:06+00:00</span>
+<a id="__codelineno-5-220" name="__codelineno-5-220" href="#__codelineno-5-220"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.180.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-221" name="__codelineno-5-221" href="#__codelineno-5-221"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bf7ae7cbf991387b54d47d98237c4d6088a97d720ff6c031e5d308a087f6cb67</span>
+<a id="__codelineno-5-222" name="__codelineno-5-222" href="#__codelineno-5-222"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-07 00:08:06+00:00</span>
+<a id="__codelineno-5-223" name="__codelineno-5-223" href="#__codelineno-5-223"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.181.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-224" name="__codelineno-5-224" href="#__codelineno-5-224"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">28bdb4bf009e82f50aa808035153b9dcecd3d0bb447cd1141f0521a3f8d6d6bf</span>
+<a id="__codelineno-5-225" name="__codelineno-5-225" href="#__codelineno-5-225"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-13 00:08:01+00:00</span>
+<a id="__codelineno-5-226" name="__codelineno-5-226" href="#__codelineno-5-226"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.181.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-227" name="__codelineno-5-227" href="#__codelineno-5-227"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f7e4d3c7b861831873582889a09556170a323003b7f93a93d9e6900b12674eab</span>
+<a id="__codelineno-5-228" name="__codelineno-5-228" href="#__codelineno-5-228"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-13 00:08:01+00:00</span>
+<a id="__codelineno-5-229" name="__codelineno-5-229" href="#__codelineno-5-229"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.182.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-230" name="__codelineno-5-230" href="#__codelineno-5-230"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">76d4a04242dcb20e4d059a9848b93a24cf61cd502eb61a58a9b0b7d181a65200</span>
+<a id="__codelineno-5-231" name="__codelineno-5-231" href="#__codelineno-5-231"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-18 00:09:40+00:00</span>
+<a id="__codelineno-5-232" name="__codelineno-5-232" href="#__codelineno-5-232"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.182.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-233" name="__codelineno-5-233" href="#__codelineno-5-233"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">76c539abc242951a8af7d4f52987c2e5f98ed17cf02f07fae90898d1142b7806</span>
+<a id="__codelineno-5-234" name="__codelineno-5-234" href="#__codelineno-5-234"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-18 00:09:40+00:00</span>
+<a id="__codelineno-5-235" name="__codelineno-5-235" href="#__codelineno-5-235"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.183.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-236" name="__codelineno-5-236" href="#__codelineno-5-236"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4120ddc7ca7264bba00fdc38852627948fba13ed61024b9f3c7bba6d22082906</span>
+<a id="__codelineno-5-237" name="__codelineno-5-237" href="#__codelineno-5-237"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-23 12:04:24+00:00</span>
+<a id="__codelineno-5-238" name="__codelineno-5-238" href="#__codelineno-5-238"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.183.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-239" name="__codelineno-5-239" href="#__codelineno-5-239"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">02c9d2fbbf3bd874ff4dca0ff38587c356a866aa696d3287c93a4a5ae8b0cfc0</span>
+<a id="__codelineno-5-240" name="__codelineno-5-240" href="#__codelineno-5-240"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-23 12:04:24+00:00</span>
+<a id="__codelineno-5-241" name="__codelineno-5-241" href="#__codelineno-5-241"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.184.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-242" name="__codelineno-5-242" href="#__codelineno-5-242"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">36a9d469196f21cbedcdd6c81a2571950c7ad4d0b64bddb2b3ddc82131a33207</span>
+<a id="__codelineno-5-243" name="__codelineno-5-243" href="#__codelineno-5-243"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-28 18:05:25+00:00</span>
+<a id="__codelineno-5-244" name="__codelineno-5-244" href="#__codelineno-5-244"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.184.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-245" name="__codelineno-5-245" href="#__codelineno-5-245"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2260263333184f11971deb98c5099708ec6e7b7abf54bd50b44d1f44ec3669e6</span>
+<a id="__codelineno-5-246" name="__codelineno-5-246" href="#__codelineno-5-246"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-01-28 18:05:25+00:00</span>
+<a id="__codelineno-5-247" name="__codelineno-5-247" href="#__codelineno-5-247"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.185.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-248" name="__codelineno-5-248" href="#__codelineno-5-248"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d121e1cfe27a3734ea75a02c949c9a9b031b5e3edcafb9988b1555a02b737606</span>
+<a id="__codelineno-5-249" name="__codelineno-5-249" href="#__codelineno-5-249"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-04 12:07:17+00:00</span>
+<a id="__codelineno-5-250" name="__codelineno-5-250" href="#__codelineno-5-250"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.185.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-251" name="__codelineno-5-251" href="#__codelineno-5-251"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">819cc02314266eef4e8f10277c5a1c0d1dc9465ce603fcf1a5c6486db9ca974f</span>
+<a id="__codelineno-5-252" name="__codelineno-5-252" href="#__codelineno-5-252"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-04 12:07:17+00:00</span>
+<a id="__codelineno-5-253" name="__codelineno-5-253" href="#__codelineno-5-253"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.185.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-254" name="__codelineno-5-254" href="#__codelineno-5-254"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">06fddd045d4ca631dde46c8bf26cab10a070b752f05413ff6dd45377bf1390b7</span>
+<a id="__codelineno-5-255" name="__codelineno-5-255" href="#__codelineno-5-255"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-04 18:13:28+00:00</span>
+<a id="__codelineno-5-256" name="__codelineno-5-256" href="#__codelineno-5-256"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.185.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-257" name="__codelineno-5-257" href="#__codelineno-5-257"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1be8f1d6bd30d826f34ff55ec19ec8747591ff136aedaf0d6190e9a4e39837a9</span>
+<a id="__codelineno-5-258" name="__codelineno-5-258" href="#__codelineno-5-258"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-04 18:13:28+00:00</span>
+<a id="__codelineno-5-259" name="__codelineno-5-259" href="#__codelineno-5-259"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.186.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-260" name="__codelineno-5-260" href="#__codelineno-5-260"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eafcfc9936bc85ad2bd44763368a490ec5e18d91d12f059c62ad4e5ece667c68</span>
+<a id="__codelineno-5-261" name="__codelineno-5-261" href="#__codelineno-5-261"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-06 18:12:11+00:00</span>
+<a id="__codelineno-5-262" name="__codelineno-5-262" href="#__codelineno-5-262"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.186.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-263" name="__codelineno-5-263" href="#__codelineno-5-263"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3a552a8d706065f7229eaef2f02d927a05d24e9e825515d585e9652efbef6e7e</span>
+<a id="__codelineno-5-264" name="__codelineno-5-264" href="#__codelineno-5-264"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-06 18:12:11+00:00</span>
+<a id="__codelineno-5-265" name="__codelineno-5-265" href="#__codelineno-5-265"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.187.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-266" name="__codelineno-5-266" href="#__codelineno-5-266"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e23769c0cfe41258bb8b10773117b8fcfb367b0954c1dafda4de71b6021b4eee</span>
+<a id="__codelineno-5-267" name="__codelineno-5-267" href="#__codelineno-5-267"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-09 18:15:16+00:00</span>
+<a id="__codelineno-5-268" name="__codelineno-5-268" href="#__codelineno-5-268"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.187.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-269" name="__codelineno-5-269" href="#__codelineno-5-269"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4914e79ff5c2d59f49187ace1a0e495a94b5e014bfc8bbf06c959d9a3a0bf16c</span>
+<a id="__codelineno-5-270" name="__codelineno-5-270" href="#__codelineno-5-270"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-09 18:15:16+00:00</span>
+<a id="__codelineno-5-271" name="__codelineno-5-271" href="#__codelineno-5-271"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.188.1/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-272" name="__codelineno-5-272" href="#__codelineno-5-272"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a94bd05a3efe3e7bb9e7868a97b7c3192e7c91b4412d4b81b7b6cfe9bf7750ae</span>
+<a id="__codelineno-5-273" name="__codelineno-5-273" href="#__codelineno-5-273"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-13 00:13:38+00:00</span>
+<a id="__codelineno-5-274" name="__codelineno-5-274" href="#__codelineno-5-274"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.188.1/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-275" name="__codelineno-5-275" href="#__codelineno-5-275"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c2817642038e95ba86eac49df191b33a3cd23f25b2005029a0e658287721c8c8</span>
+<a id="__codelineno-5-276" name="__codelineno-5-276" href="#__codelineno-5-276"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-13 00:13:38+00:00</span>
+<a id="__codelineno-5-277" name="__codelineno-5-277" href="#__codelineno-5-277"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.188.2/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-278" name="__codelineno-5-278" href="#__codelineno-5-278"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6b06f8998fd34a517681b821202c3f5f641d207144871d344235a4e317ab812f</span>
+<a id="__codelineno-5-279" name="__codelineno-5-279" href="#__codelineno-5-279"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-13 18:11:18+00:00</span>
+<a id="__codelineno-5-280" name="__codelineno-5-280" href="#__codelineno-5-280"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.188.2/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-281" name="__codelineno-5-281" href="#__codelineno-5-281"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bbf91cfc2d0d4d2106e70a6c3e4f426c5d8dfbb5bde648536ccb57a60fa229e2</span>
+<a id="__codelineno-5-282" name="__codelineno-5-282" href="#__codelineno-5-282"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-13 18:11:18+00:00</span>
+<a id="__codelineno-5-283" name="__codelineno-5-283" href="#__codelineno-5-283"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.189.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-284" name="__codelineno-5-284" href="#__codelineno-5-284"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90fbc149e4e9ff956558bcb9317beded5649ddc97deb01293f654fc1ff07daa2</span>
+<a id="__codelineno-5-285" name="__codelineno-5-285" href="#__codelineno-5-285"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-19 18:15:31+00:00</span>
+<a id="__codelineno-5-286" name="__codelineno-5-286" href="#__codelineno-5-286"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.189.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-287" name="__codelineno-5-287" href="#__codelineno-5-287"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db00579c832ba1164558ebe7adc9731a9c5b1c9c510ef512e43fea65b17d0652</span>
+<a id="__codelineno-5-288" name="__codelineno-5-288" href="#__codelineno-5-288"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-19 18:15:31+00:00</span>
+<a id="__codelineno-5-289" name="__codelineno-5-289" href="#__codelineno-5-289"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.190.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-290" name="__codelineno-5-290" href="#__codelineno-5-290"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f5a9824eef5316c07ce8e8b39015ee9846271677f306482d402d2b3417f0d6de</span>
+<a id="__codelineno-5-291" name="__codelineno-5-291" href="#__codelineno-5-291"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-24 00:12:39+00:00</span>
+<a id="__codelineno-5-292" name="__codelineno-5-292" href="#__codelineno-5-292"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.190.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-293" name="__codelineno-5-293" href="#__codelineno-5-293"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">004dd21827f268268620668d4145e2b7662e8d5716247d7327b5751a10f3b02f</span>
+<a id="__codelineno-5-294" name="__codelineno-5-294" href="#__codelineno-5-294"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-24 00:12:39+00:00</span>
+<a id="__codelineno-5-295" name="__codelineno-5-295" href="#__codelineno-5-295"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.191.0/mirrord_linux_aarch64.zip</span>
+<a id="__codelineno-5-296" name="__codelineno-5-296" href="#__codelineno-5-296"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90dea7df35d45cd46a3c446bc94e5a884221ad31d50f55f61b624858c60ef080</span>
+<a id="__codelineno-5-297" name="__codelineno-5-297" href="#__codelineno-5-297"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-26 12:10:39+00:00</span>
+<a id="__codelineno-5-298" name="__codelineno-5-298" href="#__codelineno-5-298"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/metalbear-co/mirrord/releases/download/3.191.0/mirrord_linux_x86_64.zip</span>
+<a id="__codelineno-5-299" name="__codelineno-5-299" href="#__codelineno-5-299"></a><span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8ec2e439963234762881730365358a5f6cce2b3bc1ca998fa048d49225cd93cc</span>
+<a id="__codelineno-5-300" name="__codelineno-5-300" href="#__codelineno-5-300"></a><span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-02-26 12:10:39+00:00</span>
+</code></pre></div>
+</details>
+<h2 id="badge">Badge</h2>
+<p><a href="/packages/mirrord"><img alt="WakeMeOps" src="/badges/mirrord.svg" /></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Markdown</label><label for="__tabbed_3_2">HTML</label><label for="__tabbed_3_3">RST</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">![WakeMeOps</span>](<span class="na">https://docs.wakemeops.com/badges/mirrord.svg</span>)](https://docs.wakemeops.com/packages/mirrord)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/packages/mirrord&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://docs.wakemeops.com/badges/mirrord.svg&quot;</span><span class="p">/&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> https://docs.wakemeops.com/badges/mirrord.svg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nc">:target:</span> https://docs.wakemeops.com/packages/mirrord
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>

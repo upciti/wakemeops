@@ -1,0 +1,4218 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WakeMeOps documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.wakemeops.com/packages/">
+      
+      
+        <link rel="prev" href="../usage/">
+      
+      
+        <link rel="next" href="act/">
+      
+      <link rel="icon" href="../images/pink-logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>Overview - WakeMeOps</title>
+      
+    
+    
+<style>
+  .md-typeset__table thead {
+    display: none !important;
+  }
+  .md-typeset__table td,
+  table {
+    border-width: 0 !important;
+  }
+  .md-typeset__table td,
+  table {
+    border-width: 0 !important;
+  }
+  .md-typeset__table td {
+    padding-top: 0 !important;
+  }
+  .md-typeset__table td:last-child {
+    padding-right: 0 !important;
+  }
+  .md-typeset__table td:first-child {
+    padding-left: 0 !important;
+  }
+</style>
+
+      <link rel="stylesheet" href="../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+     
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#189-packages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="WakeMeOps" class="md-header__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../images/white-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WakeMeOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../usage/" class="md-tabs__link">
+      Usage
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Packages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="WakeMeOps" class="md-nav__button md-logo" aria-label="WakeMeOps" data-md-component="logo">
+      
+  <img src="../images/white-logo.png" alt="logo">
+
+    </a>
+    WakeMeOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/upciti/wakemeops" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#desktop" class="md-nav__link">
+    Desktop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev" class="md-nav__link">
+    Dev
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    Devops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secops" class="md-nav__link">
+    Secops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="act/" class="md-nav__link">
+        act
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="age/" class="md-nav__link">
+        age
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aptly/" class="md-nav__link">
+        aptly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="argo/" class="md-nav__link">
+        argo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="argocd/" class="md-nav__link">
+        argocd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="atlas/" class="md-nav__link">
+        atlas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aws-iam-authenticator/" class="md-nav__link">
+        aws-iam-authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="balena-etcher/" class="md-nav__link">
+        balena-etcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bank-vaults/" class="md-nav__link">
+        bank-vaults
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bat/" class="md-nav__link">
+        bat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bitwarden-cli/" class="md-nav__link">
+        bitwarden-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bottom/" class="md-nav__link">
+        bottom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="boundary/" class="md-nav__link">
+        boundary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="carvel-kapp/" class="md-nav__link">
+        carvel-kapp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="carvel-ytt/" class="md-nav__link">
+        carvel-ytt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheat/" class="md-nav__link">
+        cheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chezmoi/" class="md-nav__link">
+        chezmoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="choose/" class="md-nav__link">
+        choose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cilium/" class="md-nav__link">
+        cilium
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clog-cli/" class="md-nav__link">
+        clog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-provider-kind/" class="md-nav__link">
+        cloud-provider-kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clusterctl/" class="md-nav__link">
+        clusterctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="container-diff/" class="md-nav__link">
+        container-diff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="container-structure-test/" class="md-nav__link">
+        container-structure-test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="controller-gen/" class="md-nav__link">
+        controller-gen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cosign/" class="md-nav__link">
+        cosign
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coursier/" class="md-nav__link">
+        coursier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="curlie/" class="md-nav__link">
+        curlie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dapr/" class="md-nav__link">
+        dapr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dasel/" class="md-nav__link">
+        dasel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="datanymizer/" class="md-nav__link">
+        datanymizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="datree/" class="md-nav__link">
+        datree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devspace/" class="md-nav__link">
+        devspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="diskonaut/" class="md-nav__link">
+        diskonaut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dive/" class="md-nav__link">
+        dive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docker-compose/" class="md-nav__link">
+        docker-compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docker-slim/" class="md-nav__link">
+        docker-slim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dog/" class="md-nav__link">
+        dog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dust/" class="md-nav__link">
+        dust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exa/" class="md-nav__link">
+        exa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eza/" class="md-nav__link">
+        eza
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fd/" class="md-nav__link">
+        fd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="feroxbuster/" class="md-nav__link">
+        feroxbuster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flux/" class="md-nav__link">
+        flux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fzf/" class="md-nav__link">
+        fzf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ghorg/" class="md-nav__link">
+        ghorg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="git-delta/" class="md-nav__link">
+        git-delta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="github-cli/" class="md-nav__link">
+        github-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="github-hub/" class="md-nav__link">
+        github-hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gitlab-release-cli/" class="md-nav__link">
+        gitlab-release-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gitoxide/" class="md-nav__link">
+        gitoxide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="glab/" class="md-nav__link">
+        glab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="glow/" class="md-nav__link">
+        glow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="go-task/" class="md-nav__link">
+        go-task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gomplate/" class="md-nav__link">
+        gomplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gopass/" class="md-nav__link">
+        gopass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="goreleaser/" class="md-nav__link">
+        goreleaser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gotop/" class="md-nav__link">
+        gotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gping/" class="md-nav__link">
+        gping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="grex/" class="md-nav__link">
+        grex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="helm/" class="md-nav__link">
+        helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="helm-docs/" class="md-nav__link">
+        helm-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="helmfile/" class="md-nav__link">
+        helmfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="himalaya/" class="md-nav__link">
+        himalaya
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hostctl/" class="md-nav__link">
+        hostctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hubble/" class="md-nav__link">
+        hubble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hugo/" class="md-nav__link">
+        hugo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="iamlive/" class="md-nav__link">
+        iamlive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="influx-cli/" class="md-nav__link">
+        influx-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="infracost/" class="md-nav__link">
+        infracost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="insomnia/" class="md-nav__link">
+        insomnia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="istioctl/" class="md-nav__link">
+        istioctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jfrog-cli/" class="md-nav__link">
+        jfrog-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="k3d/" class="md-nav__link">
+        k3d
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="k6/" class="md-nav__link">
+        k6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="k9s/" class="md-nav__link">
+        k9s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kind/" class="md-nav__link">
+        kind
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kompose/" class="md-nav__link">
+        kompose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="krew/" class="md-nav__link">
+        krew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="krr/" class="md-nav__link">
+        krr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kube-capacity/" class="md-nav__link">
+        kube-capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kube-linter/" class="md-nav__link">
+        kube-linter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kube-no-trouble/" class="md-nav__link">
+        kube-no-trouble
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kube-score/" class="md-nav__link">
+        kube-score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubeaudit/" class="md-nav__link">
+        kubeaudit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubebuilder/" class="md-nav__link">
+        kubebuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubeconform/" class="md-nav__link">
+        kubeconform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubectl/" class="md-nav__link">
+        kubectl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubectl-kudo/" class="md-nav__link">
+        kubectl-kudo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubectl-neat/" class="md-nav__link">
+        kubectl-neat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubectl-oidc-login/" class="md-nav__link">
+        kubectl-oidc-login
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubectx/" class="md-nav__link">
+        kubectx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubelogin/" class="md-nav__link">
+        kubelogin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubens/" class="md-nav__link">
+        kubens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubescape/" class="md-nav__link">
+        kubescape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kubeseal/" class="md-nav__link">
+        kubeseal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kustomize/" class="md-nav__link">
+        kustomize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kyverno/" class="md-nav__link">
+        kyverno
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lazydocker/" class="md-nav__link">
+        lazydocker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lazygit/" class="md-nav__link">
+        lazygit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lens/" class="md-nav__link">
+        lens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linkerd/" class="md-nav__link">
+        linkerd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="logcli/" class="md-nav__link">
+        logcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mask/" class="md-nav__link">
+        mask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mattermost-desktop/" class="md-nav__link">
+        mattermost-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mdbook/" class="md-nav__link">
+        mdbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mergestat/" class="md-nav__link">
+        mergestat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="minio-client/" class="md-nav__link">
+        minio-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="minio-server/" class="md-nav__link">
+        minio-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirrord/" class="md-nav__link">
+        mirrord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mob/" class="md-nav__link">
+        mob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mutagen/" class="md-nav__link">
+        mutagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nats-server/" class="md-nav__link">
+        nats-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="natscli/" class="md-nav__link">
+        natscli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="neovim/" class="md-nav__link">
+        neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nsc/" class="md-nav__link">
+        nsc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nushell/" class="md-nav__link">
+        nushell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oasdiff/" class="md-nav__link">
+        oasdiff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oc/" class="md-nav__link">
+        oc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="olivetin/" class="md-nav__link">
+        olivetin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="openlens/" class="md-nav__link">
+        openlens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opentofu/" class="md-nav__link">
+        opentofu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operator-sdk/" class="md-nav__link">
+        operator-sdk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ops2deb/" class="md-nav__link">
+        ops2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="orca-slicer/" class="md-nav__link">
+        orca-slicer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="packer/" class="md-nav__link">
+        packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pdm/" class="md-nav__link">
+        pdm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pipx/" class="md-nav__link">
+        pipx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pluto/" class="md-nav__link">
+        pluto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="poetry/" class="md-nav__link">
+        poetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pre-commit/" class="md-nav__link">
+        pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procs/" class="md-nav__link">
+        procs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pyenv/" class="md-nav__link">
+        pyenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pyoxidizer/" class="md-nav__link">
+        pyoxidizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python3.10-build-standalone/" class="md-nav__link">
+        python3.10-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python3.11-build-standalone/" class="md-nav__link">
+        python3.11-build-standalone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="qq/" class="md-nav__link">
+        qq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rancher/" class="md-nav__link">
+        rancher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rclone/" class="md-nav__link">
+        rclone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="restic/" class="md-nav__link">
+        restic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resticprofile/" class="md-nav__link">
+        resticprofile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ripgrep/" class="md-nav__link">
+        ripgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rpk/" class="md-nav__link">
+        rpk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rye/" class="md-nav__link">
+        rye
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scala-cli/" class="md-nav__link">
+        scala-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scw/" class="md-nav__link">
+        scw
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shell2http/" class="md-nav__link">
+        shell2http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="signal-desktop/" class="md-nav__link">
+        signal-desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="skaffold/" class="md-nav__link">
+        skaffold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="skim/" class="md-nav__link">
+        skim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sops/" class="md-nav__link">
+        sops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stern/" class="md-nav__link">
+        stern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="teams-for-linux/" class="md-nav__link">
+        teams-for-linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="telepresence/" class="md-nav__link">
+        telepresence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terraform-docs/" class="md-nav__link">
+        terraform-docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terraform-switcher/" class="md-nav__link">
+        terraform-switcher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terragrunt/" class="md-nav__link">
+        terragrunt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terrascan/" class="md-nav__link">
+        terrascan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tokei/" class="md-nav__link">
+        tokei
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trivy/" class="md-nav__link">
+        trivy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ttyd/" class="md-nav__link">
+        ttyd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="typos-cli/" class="md-nav__link">
+        typos-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="undock/" class="md-nav__link">
+        undock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="upterm/" class="md-nav__link">
+        upterm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uv/" class="md-nav__link">
+        uv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vault/" class="md-nav__link">
+        vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vault-env/" class="md-nav__link">
+        vault-env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="velero/" class="md-nav__link">
+        velero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vhs/" class="md-nav__link">
+        vhs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="viu/" class="md-nav__link">
+        viu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="void/" class="md-nav__link">
+        void
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="volta/" class="md-nav__link">
+        volta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuls-scanner/" class="md-nav__link">
+        vuls-scanner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wakemebot/" class="md-nav__link">
+        wakemebot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="waypoint/" class="md-nav__link">
+        waypoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wheel2deb/" class="md-nav__link">
+        wheel2deb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xeol/" class="md-nav__link">
+        xeol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xh/" class="md-nav__link">
+        xh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xsv/" class="md-nav__link">
+        xsv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="yq/" class="md-nav__link">
+        yq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="zellij/" class="md-nav__link">
+        zellij
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="zen-browser/" class="md-nav__link">
+        zen-browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="zli/" class="md-nav__link">
+        zli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="zot/" class="md-nav__link">
+        zot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="zoxide/" class="md-nav__link">
+        zoxide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#desktop" class="md-nav__link">
+    Desktop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev" class="md-nav__link">
+    Dev
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    Devops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secops" class="md-nav__link">
+    Secops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="189-packages">189 packages</h1>
+<h2 id="desktop">Desktop</h2>
+<p>10 packages.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/packages/balena-etcher">balena-etcher</a></td>
+<td>Flash os images to sd cards and usb drives, safely and easily</td>
+<td>2.1.4</td>
+</tr>
+<tr>
+<td><a href="/packages/insomnia">insomnia</a></td>
+<td>Collaborative api client and design tool</td>
+<td>2023.5.8</td>
+</tr>
+<tr>
+<td><a href="/packages/lens">lens</a></td>
+<td>Powerful ide for kubernetes</td>
+<td>2024.5.271333</td>
+</tr>
+<tr>
+<td><a href="/packages/mattermost-desktop">mattermost-desktop</a></td>
+<td>Desktop application for mattermost</td>
+<td>6.0.4</td>
+</tr>
+<tr>
+<td><a href="/packages/openlens">openlens</a></td>
+<td>Powerful ide for kubernetes</td>
+<td>6.5.2-366</td>
+</tr>
+<tr>
+<td><a href="/packages/orca-slicer">orca-slicer</a></td>
+<td>G-code generator for 3d printers</td>
+<td>2.2.0</td>
+</tr>
+<tr>
+<td><a href="/packages/signal-desktop">signal-desktop</a></td>
+<td>Private messaging from your desktop</td>
+<td>8.0.0</td>
+</tr>
+<tr>
+<td><a href="/packages/teams-for-linux">teams-for-linux</a></td>
+<td>Unofficial microsoft teams for linux client</td>
+<td>2.7.8</td>
+</tr>
+<tr>
+<td><a href="/packages/void">void</a></td>
+<td>The cursor alternative ai code editor</td>
+<td>1.99.30044</td>
+</tr>
+<tr>
+<td><a href="/packages/zen-browser">zen-browser</a></td>
+<td>Firefox-based browser pushing your productivity to a new level</td>
+<td>1.19b</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dev">Dev</h2>
+<p>32 packages.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/packages/atlas">atlas</a></td>
+<td>Manage your database schema as code</td>
+<td>1.1.5</td>
+</tr>
+<tr>
+<td><a href="/packages/clog-cli">clog-cli</a></td>
+<td>Generate beautiful changelogs from your git commit history</td>
+<td>0.9.3</td>
+</tr>
+<tr>
+<td><a href="/packages/controller-gen">controller-gen</a></td>
+<td>Code generator for kubernetes controllers and crds</td>
+<td>0.20.1</td>
+</tr>
+<tr>
+<td><a href="/packages/coursier">coursier</a></td>
+<td>Scala application and artifact manager</td>
+<td>2.1.24</td>
+</tr>
+<tr>
+<td><a href="/packages/datanymizer">datanymizer</a></td>
+<td>Powerful postgres database anonymizer with flexible rules</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="/packages/github-cli">github-cli</a></td>
+<td>Github on the command line</td>
+<td>2.87.3</td>
+</tr>
+<tr>
+<td><a href="/packages/github-hub">github-hub</a></td>
+<td>Do everyday github tasks without ever leaving the terminal</td>
+<td>2.14.2</td>
+</tr>
+<tr>
+<td><a href="/packages/gitoxide">gitoxide</a></td>
+<td>Idiomatic, lean, fast &amp; safe pure rust implementation of git</td>
+<td>0.51.0</td>
+</tr>
+<tr>
+<td><a href="/packages/glab">glab</a></td>
+<td>Gitlab on the command line</td>
+<td>1.86.0</td>
+</tr>
+<tr>
+<td><a href="/packages/go-task">go-task</a></td>
+<td>Task runner / simpler make alternative written in go</td>
+<td>3.48.0</td>
+</tr>
+<tr>
+<td><a href="/packages/hugo">hugo</a></td>
+<td>Fast and flexible static site generator</td>
+<td>0.157.0</td>
+</tr>
+<tr>
+<td><a href="/packages/influx-cli">influx-cli</a></td>
+<td>Command line client for influxdb</td>
+<td>2.7.1</td>
+</tr>
+<tr>
+<td><a href="/packages/k6">k6</a></td>
+<td>Modern load testing tool, using go and javascript</td>
+<td>1.6.1</td>
+</tr>
+<tr>
+<td><a href="/packages/kubebuilder">kubebuilder</a></td>
+<td>Sdk for building kubernetes apis using crds</td>
+<td>4.13.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kubeconform">kubeconform</a></td>
+<td>Kubernetes manifests validator with custom resource support</td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td><a href="/packages/lazygit">lazygit</a></td>
+<td>A lazier way to manage everything git</td>
+<td>0.59.0</td>
+</tr>
+<tr>
+<td><a href="/packages/mask">mask</a></td>
+<td>Command-line task runner defined by a simple markdown file</td>
+<td>0.11.3</td>
+</tr>
+<tr>
+<td><a href="/packages/mob">mob</a></td>
+<td>Fast git handover for remote pair/mob programming</td>
+<td>5.4.0</td>
+</tr>
+<tr>
+<td><a href="/packages/oasdiff">oasdiff</a></td>
+<td>Compare and detect breaking changes in openapi specs</td>
+<td>2.1.2</td>
+</tr>
+<tr>
+<td><a href="/packages/pdm">pdm</a></td>
+<td>Modern python package and dependency manager supporting the latest pep standards</td>
+<td>2.26.6</td>
+</tr>
+<tr>
+<td><a href="/packages/pipx">pipx</a></td>
+<td>Execute binaries from python packages in isolated environments</td>
+<td>1.8.0</td>
+</tr>
+<tr>
+<td><a href="/packages/poetry">poetry</a></td>
+<td>Tool for dependency management and packaging in python</td>
+<td>2.3.2</td>
+</tr>
+<tr>
+<td><a href="/packages/pre-commit">pre-commit</a></td>
+<td>Framework for managing and maintaining multi-language pre-commit hooks</td>
+<td>4.5.1</td>
+</tr>
+<tr>
+<td><a href="/packages/pyenv">pyenv</a></td>
+<td>Simple python version management</td>
+<td>2.6.23</td>
+</tr>
+<tr>
+<td><a href="/packages/pyoxidizer">pyoxidizer</a></td>
+<td>Utility for producing binaries that embed python</td>
+<td>0.24.0</td>
+</tr>
+<tr>
+<td><a href="/packages/python3.10-build-standalone">python3.10-build-standalone</a></td>
+<td>Self-contained and portable cpython build</td>
+<td>3.10.9+20230116</td>
+</tr>
+<tr>
+<td><a href="/packages/python3.11-build-standalone">python3.11-build-standalone</a></td>
+<td>Self-contained and portable cpython build</td>
+<td>3.11.1+20230116</td>
+</tr>
+<tr>
+<td><a href="/packages/rye">rye</a></td>
+<td>Comprehensive project and package management solution for python</td>
+<td>0.44.0</td>
+</tr>
+<tr>
+<td><a href="/packages/scala-cli">scala-cli</a></td>
+<td>Command-line tool to interact with the scala language</td>
+<td>1.12.3</td>
+</tr>
+<tr>
+<td><a href="/packages/typos-cli">typos-cli</a></td>
+<td>Source code spell checker</td>
+<td>1.44.0</td>
+</tr>
+<tr>
+<td><a href="/packages/uv">uv</a></td>
+<td>Extremely fast python package installer and resolver</td>
+<td>0.10.7</td>
+</tr>
+<tr>
+<td><a href="/packages/volta">volta</a></td>
+<td>Hassle-free way to manage your javascript command-line tools</td>
+<td>2.0.2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="devops">Devops</h2>
+<p>87 packages.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/packages/act">act</a></td>
+<td>Run your github actions locally</td>
+<td>0.2.84</td>
+</tr>
+<tr>
+<td><a href="/packages/aptly">aptly</a></td>
+<td>Swiss army knife for debian repository management</td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td><a href="/packages/argo">argo</a></td>
+<td>Workflow engine for kubernetes</td>
+<td>4.0.1</td>
+</tr>
+<tr>
+<td><a href="/packages/argocd">argocd</a></td>
+<td>Continuous delivery tool for kubernetes</td>
+<td>3.3.2</td>
+</tr>
+<tr>
+<td><a href="/packages/aws-iam-authenticator">aws-iam-authenticator</a></td>
+<td>Kubernetes authentication using aws iam</td>
+<td>0.7.11</td>
+</tr>
+<tr>
+<td><a href="/packages/bank-vaults">bank-vaults</a></td>
+<td>Make using and operating hashicorp vault easier on kubernetes.</td>
+<td>1.15.2</td>
+</tr>
+<tr>
+<td><a href="/packages/carvel-kapp">carvel-kapp</a></td>
+<td>Simple deployment tool focused on the concept of "kubernetes application"</td>
+<td>0.65.1</td>
+</tr>
+<tr>
+<td><a href="/packages/carvel-ytt">carvel-ytt</a></td>
+<td>Yaml templating tool that works on yaml structure instead of text</td>
+<td>0.53.2</td>
+</tr>
+<tr>
+<td><a href="/packages/cilium">cilium</a></td>
+<td>Cli for interacting with the local cilium agent</td>
+<td>0.19.2</td>
+</tr>
+<tr>
+<td><a href="/packages/cloud-provider-kind">cloud-provider-kind</a></td>
+<td>Kubernetes cloud provider for kind</td>
+<td>0.10.0</td>
+</tr>
+<tr>
+<td><a href="/packages/clusterctl">clusterctl</a></td>
+<td>Kubernetes project offering declarative apis for managing multiple clusters</td>
+<td>1.12.3</td>
+</tr>
+<tr>
+<td><a href="/packages/container-diff">container-diff</a></td>
+<td>Diff your docker containers</td>
+<td>0.17.0</td>
+</tr>
+<tr>
+<td><a href="/packages/container-structure-test">container-structure-test</a></td>
+<td>Validate the structure of your container images</td>
+<td>1.22.1</td>
+</tr>
+<tr>
+<td><a href="/packages/dapr">dapr</a></td>
+<td>Command-line tools for dapr.</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td><a href="/packages/datree">datree</a></td>
+<td>Prevent kubernetes misconfigurations from reaching production</td>
+<td>1.9.19</td>
+</tr>
+<tr>
+<td><a href="/packages/devspace">devspace</a></td>
+<td>Developer tool for kubernetes</td>
+<td>6.3.20</td>
+</tr>
+<tr>
+<td><a href="/packages/docker-compose">docker-compose</a></td>
+<td>Lightweight development environments using docker</td>
+<td>5.1.0</td>
+</tr>
+<tr>
+<td><a href="/packages/docker-slim">docker-slim</a></td>
+<td>Minify docker images by up to 30x</td>
+<td>1.40.11</td>
+</tr>
+<tr>
+<td><a href="/packages/flux">flux</a></td>
+<td>Open and extensible continuous delivery solution for kubernetes</td>
+<td>2.8.1</td>
+</tr>
+<tr>
+<td><a href="/packages/gitlab-release-cli">gitlab-release-cli</a></td>
+<td>Command-line interface for gitlab release</td>
+<td>0.24.0</td>
+</tr>
+<tr>
+<td><a href="/packages/goreleaser">goreleaser</a></td>
+<td>Release go projects as fast and easily as possible</td>
+<td>2.14.1</td>
+</tr>
+<tr>
+<td><a href="/packages/helm">helm</a></td>
+<td>Kubernetes package manager</td>
+<td>4.1.1</td>
+</tr>
+<tr>
+<td><a href="/packages/helm-docs">helm-docs</a></td>
+<td>Tool for automatically generating markdown documentation for helm charts</td>
+<td>1.14.2</td>
+</tr>
+<tr>
+<td><a href="/packages/helmfile">helmfile</a></td>
+<td>Deploy kubernetes helm charts</td>
+<td>1.3.2</td>
+</tr>
+<tr>
+<td><a href="/packages/hubble">hubble</a></td>
+<td>Network, service &amp; security observability for kubernetes using ebpf</td>
+<td>1.18.6</td>
+</tr>
+<tr>
+<td><a href="/packages/iamlive">iamlive</a></td>
+<td>Generate policies from aws calls</td>
+<td>1.1.27</td>
+</tr>
+<tr>
+<td><a href="/packages/infracost">infracost</a></td>
+<td>Cloud cost estimates for terraform in pull requests</td>
+<td>0.10.43</td>
+</tr>
+<tr>
+<td><a href="/packages/istioctl">istioctl</a></td>
+<td>Command-line interface for istio</td>
+<td>1.29.0</td>
+</tr>
+<tr>
+<td><a href="/packages/jfrog-cli">jfrog-cli</a></td>
+<td>Client that provides a simple interface that automates access to the jfrog products</td>
+<td>2.93.0</td>
+</tr>
+<tr>
+<td><a href="/packages/k3d">k3d</a></td>
+<td>Run rancher lab's k3s in docker</td>
+<td>5.8.3</td>
+</tr>
+<tr>
+<td><a href="/packages/k9s">k9s</a></td>
+<td>Manage your kubernetes clusters with style</td>
+<td>0.50.18</td>
+</tr>
+<tr>
+<td><a href="/packages/kind">kind</a></td>
+<td>Deploy kubernetes cluster in docker</td>
+<td>0.31.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kompose">kompose</a></td>
+<td>Convert docker-compose.yaml into k8s deployments and services</td>
+<td>1.38.0</td>
+</tr>
+<tr>
+<td><a href="/packages/krew">krew</a></td>
+<td>Find and install kubectl plugins</td>
+<td>0.5.0</td>
+</tr>
+<tr>
+<td><a href="/packages/krr">krr</a></td>
+<td>Prometheus-based kubernetes resource recommendations</td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kube-capacity">kube-capacity</a></td>
+<td>Provides an overview of the resource requests, limits, and utilization in a kubernetes cluster</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kube-no-trouble">kube-no-trouble</a></td>
+<td>Easily check your clusters for use of deprecated apis</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="/packages/kube-score">kube-score</a></td>
+<td>Kubernetes object analysis for improved reliability and security</td>
+<td>1.20.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kubectl">kubectl</a></td>
+<td>Command line client for controlling a kubernetes cluster</td>
+<td>1.35.2</td>
+</tr>
+<tr>
+<td><a href="/packages/kubectl-kudo">kubectl-kudo</a></td>
+<td>Kubernetes universal declarative operator</td>
+<td>0.19.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kubectl-neat">kubectl-neat</a></td>
+<td>Clean up kubernetes yaml and json output to make it readable</td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td><a href="/packages/kubectl-oidc-login">kubectl-oidc-login</a></td>
+<td>Kubectl plugin for kubernetes openid connect authentication (kubectl oidc-login)</td>
+<td>1.36.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kubectx">kubectx</a></td>
+<td>Kubectl plugin that helps you switch between clusters</td>
+<td>0.9.4</td>
+</tr>
+<tr>
+<td><a href="/packages/kubelogin">kubelogin</a></td>
+<td>Kubernetes credential (exec) plugin implementing azure authentication</td>
+<td>0.2.15</td>
+</tr>
+<tr>
+<td><a href="/packages/kubens">kubens</a></td>
+<td>Kubectl plugin that helps you switch between namespaces</td>
+<td>0.9.4</td>
+</tr>
+<tr>
+<td><a href="/packages/kubeseal">kubeseal</a></td>
+<td>Secret management solution for kubernetes</td>
+<td>0.36.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kustomize">kustomize</a></td>
+<td>Kubernetes native configuration management</td>
+<td>5.8.1</td>
+</tr>
+<tr>
+<td><a href="/packages/lazydocker">lazydocker</a></td>
+<td>A lazier way to manage everything docker</td>
+<td>0.24.4</td>
+</tr>
+<tr>
+<td><a href="/packages/linkerd">linkerd</a></td>
+<td>Ultralight service mesh for kubernetes</td>
+<td>25.7.6</td>
+</tr>
+<tr>
+<td><a href="/packages/logcli">logcli</a></td>
+<td>Command-line interface for loki</td>
+<td>3.6.7</td>
+</tr>
+<tr>
+<td><a href="/packages/minikube">minikube</a></td>
+<td>Quickly set up a local kubernetes cluster</td>
+<td>1.37.0</td>
+</tr>
+<tr>
+<td><a href="/packages/minio-client">minio-client</a></td>
+<td>Command-line interface for minio (mc)</td>
+<td>2024-11...</td>
+</tr>
+<tr>
+<td><a href="/packages/minio-server">minio-server</a></td>
+<td>High performance, kubernetes native object storage</td>
+<td>2024-11...</td>
+</tr>
+<tr>
+<td><a href="/packages/mirrord">mirrord</a></td>
+<td>Develop locally with your kubernetes environment</td>
+<td>3.191.0</td>
+</tr>
+<tr>
+<td><a href="/packages/mutagen">mutagen</a></td>
+<td>Fast file synchronization and network forwarding for remote development</td>
+<td>0.18.1</td>
+</tr>
+<tr>
+<td><a href="/packages/nats-server">nats-server</a></td>
+<td>Nats server implementation</td>
+<td>2.12.4</td>
+</tr>
+<tr>
+<td><a href="/packages/natscli">natscli</a></td>
+<td>Command-line interface for nats</td>
+<td>0.3.1</td>
+</tr>
+<tr>
+<td><a href="/packages/nsc">nsc</a></td>
+<td>Tool for creating nkey/jwt based configurations</td>
+<td>2.12.0</td>
+</tr>
+<tr>
+<td><a href="/packages/oc">oc</a></td>
+<td>Command line client for controlling an openshift cluster</td>
+<td>4.21.4</td>
+</tr>
+<tr>
+<td><a href="/packages/olivetin">olivetin</a></td>
+<td>Safe and simple access to predefined shell commands from a web interface</td>
+<td>3000.11.0</td>
+</tr>
+<tr>
+<td><a href="/packages/opentofu">opentofu</a></td>
+<td>Lets you declaratively manage your cloud infrastructure</td>
+<td>1.11.5</td>
+</tr>
+<tr>
+<td><a href="/packages/operator-sdk">operator-sdk</a></td>
+<td>Sdk for building kubernetes applications</td>
+<td>1.42.0</td>
+</tr>
+<tr>
+<td><a href="/packages/ops2deb">ops2deb</a></td>
+<td>Debian packaging tool for portable applications</td>
+<td>2.7.0</td>
+</tr>
+<tr>
+<td><a href="/packages/packer">packer</a></td>
+<td>Create multi-platform machine images from a single source configuration</td>
+<td>1.15.0</td>
+</tr>
+<tr>
+<td><a href="/packages/pluto">pluto</a></td>
+<td>Discover deprecated apiversions in kubernetes</td>
+<td>5.22.8</td>
+</tr>
+<tr>
+<td><a href="/packages/rancher">rancher</a></td>
+<td>Command-line interface for rancher</td>
+<td>2.13.3</td>
+</tr>
+<tr>
+<td><a href="/packages/rclone">rclone</a></td>
+<td>Rsync for cloud storage</td>
+<td>1.73.1</td>
+</tr>
+<tr>
+<td><a href="/packages/restic">restic</a></td>
+<td>Fast, secure, efficient backup program</td>
+<td>0.18.1</td>
+</tr>
+<tr>
+<td><a href="/packages/resticprofile">resticprofile</a></td>
+<td>Configuration profiles manager for restic backup</td>
+<td>0.32.0</td>
+</tr>
+<tr>
+<td><a href="/packages/rpk">rpk</a></td>
+<td>Interact with your redpanda clusters</td>
+<td>25.3.9</td>
+</tr>
+<tr>
+<td><a href="/packages/scw">scw</a></td>
+<td>Command-line interface for scaleway</td>
+<td>2.52.0</td>
+</tr>
+<tr>
+<td><a href="/packages/skaffold">skaffold</a></td>
+<td>Easy and repeatable kubernetes development</td>
+<td>2.17.2</td>
+</tr>
+<tr>
+<td><a href="/packages/stern">stern</a></td>
+<td>Multi pod and container log tailing for kubernetes</td>
+<td>1.33.1</td>
+</tr>
+<tr>
+<td><a href="/packages/telepresence">telepresence</a></td>
+<td>Fast, local development for kubernetes and openshift microservices</td>
+<td>2.20.2</td>
+</tr>
+<tr>
+<td><a href="/packages/terraform">terraform</a></td>
+<td>Tool for building, changing, and versioning infrastructure safely</td>
+<td>1.14.6</td>
+</tr>
+<tr>
+<td><a href="/packages/terraform-docs">terraform-docs</a></td>
+<td>Generate documentation from terraform modules in various output formats</td>
+<td>0.16.0</td>
+</tr>
+<tr>
+<td><a href="/packages/terraform-switcher">terraform-switcher</a></td>
+<td>Switch between different versions of terraform</td>
+<td>1.0.2</td>
+</tr>
+<tr>
+<td><a href="/packages/terragrunt">terragrunt</a></td>
+<td>Provides extra tools for working with multiple terraform modules</td>
+<td>0.99.4</td>
+</tr>
+<tr>
+<td><a href="/packages/tflint">tflint</a></td>
+<td>Pluggable terraform linter</td>
+<td>0.61.0</td>
+</tr>
+<tr>
+<td><a href="/packages/undock">undock</a></td>
+<td>Extracting files from container images</td>
+<td>0.11.0</td>
+</tr>
+<tr>
+<td><a href="/packages/vault-env">vault-env</a></td>
+<td>Exec a process with vault sourced env vars</td>
+<td>1.15.2</td>
+</tr>
+<tr>
+<td><a href="/packages/velero">velero</a></td>
+<td>Backup and migrate kubernetes applications and their persistent volumes</td>
+<td>1.17.2</td>
+</tr>
+<tr>
+<td><a href="/packages/wakemebot">wakemebot</a></td>
+<td>Bunch of tools used by our beloved wakemebot</td>
+<td>5.0.1</td>
+</tr>
+<tr>
+<td><a href="/packages/waypoint">waypoint</a></td>
+<td>Build, deploy, and release any application on any platform</td>
+<td>0.11.4</td>
+</tr>
+<tr>
+<td><a href="/packages/wheel2deb">wheel2deb</a></td>
+<td>Python wheel to debian package converter</td>
+<td>0.9.5</td>
+</tr>
+<tr>
+<td><a href="/packages/zli">zli</a></td>
+<td>Tool for oci-native container image registry, simplified</td>
+<td>2.1.14</td>
+</tr>
+<tr>
+<td><a href="/packages/zot">zot</a></td>
+<td>Oci-native container image registry, simplified</td>
+<td>2.1.14</td>
+</tr>
+</tbody>
+</table>
+<h2 id="secops">Secops</h2>
+<p>16 packages.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/packages/age">age</a></td>
+<td>Simple, modern and secure file encryption tool, format, and go library</td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td><a href="/packages/bitwarden-cli">bitwarden-cli</a></td>
+<td>Cli to access and manage a bitwarden vault</td>
+<td>2026.1.0</td>
+</tr>
+<tr>
+<td><a href="/packages/boundary">boundary</a></td>
+<td>Provide simple and secure access to hosts and services</td>
+<td>0.21.1</td>
+</tr>
+<tr>
+<td><a href="/packages/cosign">cosign</a></td>
+<td>Code signing and transparency for containers and binaries</td>
+<td>3.0.5</td>
+</tr>
+<tr>
+<td><a href="/packages/dive">dive</a></td>
+<td>Tool for exploring each layer in a docker image</td>
+<td>0.13.1</td>
+</tr>
+<tr>
+<td><a href="/packages/feroxbuster">feroxbuster</a></td>
+<td>Fast, simple, recursive content discovery tool</td>
+<td>2.13.1</td>
+</tr>
+<tr>
+<td><a href="/packages/kube-linter">kube-linter</a></td>
+<td>Checks kubernetes yaml files and helm charts</td>
+<td>0.6.0</td>
+</tr>
+<tr>
+<td><a href="/packages/kubeaudit">kubeaudit</a></td>
+<td>Audit your kubernetes clusters against common security controls</td>
+<td>0.22.2</td>
+</tr>
+<tr>
+<td><a href="/packages/kubescape">kubescape</a></td>
+<td>Kubernetes security platform for your ide, ci/cd pipelines, and clusters</td>
+<td>3.0.46</td>
+</tr>
+<tr>
+<td><a href="/packages/kyverno">kyverno</a></td>
+<td>Set of tools to manage the complete policy-as-code (pac) lifecycle for kubernetes and other cloud native environments</td>
+<td>1.17.1</td>
+</tr>
+<tr>
+<td><a href="/packages/sops">sops</a></td>
+<td>Simple and flexible tool for managing secrets</td>
+<td>3.12.1</td>
+</tr>
+<tr>
+<td><a href="/packages/terrascan">terrascan</a></td>
+<td>Policy as code for secure cloud infrastructure</td>
+<td>1.19.9</td>
+</tr>
+<tr>
+<td><a href="/packages/trivy">trivy</a></td>
+<td>Vulnerability and misconfiguration scanner</td>
+<td>0.69.2</td>
+</tr>
+<tr>
+<td><a href="/packages/vault">vault</a></td>
+<td>Tool to create, manage and store secrets</td>
+<td>1.21.1</td>
+</tr>
+<tr>
+<td><a href="/packages/vuls-scanner">vuls-scanner</a></td>
+<td>Agent-less vulnerability scanner</td>
+<td>0.38.3</td>
+</tr>
+<tr>
+<td><a href="/packages/xeol">xeol</a></td>
+<td>End-of-life (eol) package scanner for container images, systems, and sboms</td>
+<td>0.10.8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="terminal">Terminal</h2>
+<p>44 packages.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/packages/bat">bat</a></td>
+<td>Cat replacement with syntax highlighting</td>
+<td>0.26.1</td>
+</tr>
+<tr>
+<td><a href="/packages/bottom">bottom</a></td>
+<td>Cross-platform graphical process/system monitor</td>
+<td>0.12.3</td>
+</tr>
+<tr>
+<td><a href="/packages/cheat">cheat</a></td>
+<td>Create and view interactive cheat sheets</td>
+<td>5.1.0</td>
+</tr>
+<tr>
+<td><a href="/packages/chezmoi">chezmoi</a></td>
+<td>Manage your dotfiles across multiple diverse machines</td>
+<td>2.69.4</td>
+</tr>
+<tr>
+<td><a href="/packages/choose">choose</a></td>
+<td>Human-friendly and fast alternative to cut and sometimes awk</td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><a href="/packages/curlie">curlie</a></td>
+<td>The power of 'curl', the ease of use of 'httpie'</td>
+<td>1.8.2</td>
+</tr>
+<tr>
+<td><a href="/packages/dasel">dasel</a></td>
+<td>Allows to query and modify data structures using selector strings</td>
+<td>3.3.1</td>
+</tr>
+<tr>
+<td><a href="/packages/diskonaut">diskonaut</a></td>
+<td>Terminal disk space navigator</td>
+<td>0.11.0</td>
+</tr>
+<tr>
+<td><a href="/packages/dog">dog</a></td>
+<td>Command-line dns client</td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td><a href="/packages/dust">dust</a></td>
+<td>Human-friendly and fast alternative to 'du'</td>
+<td>1.2.4</td>
+</tr>
+<tr>
+<td><a href="/packages/elvish">elvish</a></td>
+<td>Expressive programming language + versatile interactive shell</td>
+<td>0.21.0</td>
+</tr>
+<tr>
+<td><a href="/packages/exa">exa</a></td>
+<td>Modern replacement for 'ls'</td>
+<td>0.10.1</td>
+</tr>
+<tr>
+<td><a href="/packages/eza">eza</a></td>
+<td>Modern, maintained replacement for ls, built on exa</td>
+<td>0.23.4</td>
+</tr>
+<tr>
+<td><a href="/packages/fd">fd</a></td>
+<td>Human-friendly and fast alternative to 'find'</td>
+<td>10.3.0</td>
+</tr>
+<tr>
+<td><a href="/packages/fzf">fzf</a></td>
+<td>A command-line fuzzy finder in go</td>
+<td>0.68.0</td>
+</tr>
+<tr>
+<td><a href="/packages/ghorg">ghorg</a></td>
+<td>Quickly clone an entire org/users repositories into one directory</td>
+<td>1.11.9</td>
+</tr>
+<tr>
+<td><a href="/packages/git-delta">git-delta</a></td>
+<td>Syntax-highlighting pager for git, diff, and grep output</td>
+<td>0.18.2</td>
+</tr>
+<tr>
+<td><a href="/packages/glow">glow</a></td>
+<td>Render markdown on the cli</td>
+<td>2.1.1</td>
+</tr>
+<tr>
+<td><a href="/packages/gomplate">gomplate</a></td>
+<td>Flexible commandline tool for template rendering</td>
+<td>5.0.0</td>
+</tr>
+<tr>
+<td><a href="/packages/gopass">gopass</a></td>
+<td>Password manager for teams</td>
+<td>1.16.1</td>
+</tr>
+<tr>
+<td><a href="/packages/gotop">gotop</a></td>
+<td>Terminal based graphical activity monitor</td>
+<td>4.2.0</td>
+</tr>
+<tr>
+<td><a href="/packages/gping">gping</a></td>
+<td>Ping, but with a graph</td>
+<td>1.18.0</td>
+</tr>
+<tr>
+<td><a href="/packages/grex">grex</a></td>
+<td>Command-line tool and library for generating regular expressions</td>
+<td>1.4.6</td>
+</tr>
+<tr>
+<td><a href="/packages/himalaya">himalaya</a></td>
+<td>Command-line interface for email management</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="/packages/hostctl">hostctl</a></td>
+<td>Manage /etc/hosts from cli</td>
+<td>1.1.4</td>
+</tr>
+<tr>
+<td><a href="/packages/mdbook">mdbook</a></td>
+<td>Create book from markdown files</td>
+<td>0.5.2</td>
+</tr>
+<tr>
+<td><a href="/packages/mergestat">mergestat</a></td>
+<td>Enables sql queries for data in git repositories</td>
+<td>0.5.10</td>
+</tr>
+<tr>
+<td><a href="/packages/neovim">neovim</a></td>
+<td>Heavily refactored vim fork</td>
+<td>0.11.6</td>
+</tr>
+<tr>
+<td><a href="/packages/nushell">nushell</a></td>
+<td>New type of shell written in rust</td>
+<td>0.111.0</td>
+</tr>
+<tr>
+<td><a href="/packages/procs">procs</a></td>
+<td>Alternative in rust to 'ps'</td>
+<td>0.14.11</td>
+</tr>
+<tr>
+<td><a href="/packages/qq">qq</a></td>
+<td>Jq inspired config format transcoder with interactive querying</td>
+<td>0.3.3</td>
+</tr>
+<tr>
+<td><a href="/packages/ripgrep">ripgrep</a></td>
+<td>Recursively searches directories for a regex pattern</td>
+<td>15.1.0</td>
+</tr>
+<tr>
+<td><a href="/packages/shell2http">shell2http</a></td>
+<td>Http server to execute shell commands</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td><a href="/packages/skim">skim</a></td>
+<td>Fuzzy finder in rust</td>
+<td>0.9.4</td>
+</tr>
+<tr>
+<td><a href="/packages/tokei">tokei</a></td>
+<td>Count your code, quickly</td>
+<td>12.1.2</td>
+</tr>
+<tr>
+<td><a href="/packages/ttyd">ttyd</a></td>
+<td>Share your terminal over the web</td>
+<td>1.7.7</td>
+</tr>
+<tr>
+<td><a href="/packages/upterm">upterm</a></td>
+<td>Share terminal sessions securely over the web</td>
+<td>0.22.0</td>
+</tr>
+<tr>
+<td><a href="/packages/vhs">vhs</a></td>
+<td>Your cli home video recorder</td>
+<td>0.10.0</td>
+</tr>
+<tr>
+<td><a href="/packages/viu">viu</a></td>
+<td>Terminal image viewer with native support for iterm and kitty</td>
+<td>1.6.1</td>
+</tr>
+<tr>
+<td><a href="/packages/xh">xh</a></td>
+<td>User-friendly and fast tool for sending http requests</td>
+<td>0.25.3</td>
+</tr>
+<tr>
+<td><a href="/packages/xsv">xsv</a></td>
+<td>A fast csv command line toolkit</td>
+<td>0.13.0</td>
+</tr>
+<tr>
+<td><a href="/packages/yq">yq</a></td>
+<td>Portable command-line yaml processor</td>
+<td>4.52.4</td>
+</tr>
+<tr>
+<td><a href="/packages/zellij">zellij</a></td>
+<td>Terminal workspace with batteries included</td>
+<td>0.43.1</td>
+</tr>
+<tr>
+<td><a href="/packages/zoxide">zoxide</a></td>
+<td>Smarter cd command for your terminal</td>
+<td>0.9.9</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>
