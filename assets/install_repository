@@ -3,10 +3,10 @@
 set -e
 
 if ! which gpg; then
-  apt-get update -yq && apt-get install -yq --no-install-recommends gnupg2
+    apt-get update -yq && apt-get install -yq --no-install-recommends gnupg2
 fi
 
-cat << EOF | gpg --dearmor > /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg
+cat >/etc/apt/keyrings/wakemeops-keyring.asc <<EOF
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGGzicYBEADnBgApTxF3fFiAkSJuzfz2qKVXXSuouxCUkOV9owKqIWJ2pYoE
@@ -119,8 +119,19 @@ M1isGcqM+C+T2AMf+LSoI18ao7+aDUlvojZwJyVEwkiJ3SyoD5P/cBxVH5mVNXUS
 -----END PGP PUBLIC KEY BLOCK-----
 EOF
 
-cat <<EOF > /etc/apt/sources.list.d/wakemeops.list
-deb http://deb.wakemeops.com/wakemeops/ stable ${@-"dev devops secops terminal desktop"}
+cat >/etc/apt/sources.list.d/wakemeops.sources <<EOF
+Architectures: $(dpkg --print-architecture)
+Components: ${@-"dev devops secops terminal desktop"}
+Enabled: yes
+X-Repolib-Name: wakemeops
+Signed-By: /etc/apt/keyrings/wakemeops-keyring.asc
+Suites: stable
+Types: deb
+URIs: http://deb.wakemeops.com/wakemeops/
 EOF
+
+# delete old wakemeops-keyring.gpg and wakemeops.list files
+[[ -f /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg ]] && rm -f /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg
+[[ -f /etc/apt/sources.list.d/wakemeops.list ]] && rm -f /etc/apt/sources.list.d/wakemeops.list
 
 apt-get update -yq
