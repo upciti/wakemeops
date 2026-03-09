@@ -1,0 +1,22 @@
+name: bun
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.3.10
+homepage: https://bun.sh/
+summary: all-in-one JavaScript runtime, bundler, and package manager
+description: |-
+  Bun is a drop-in replacement for Node.js with significantly improved
+  performance. Built in Zig and powered by JavaScriptCore, it dramatically
+  reduces startup times and memory usage. The single bun executable provides
+  a JavaScript/TypeScript runtime, a Node.js-compatible package manager, a
+  bundler, and a test runner.
+fetch:
+  url: https://github.com/oven-sh/bun/releases/download/bun-v{{version}}/bun-linux-{{target}}.zip
+  targets:
+    amd64: x64
+    arm64: aarch64
+install:
+  - bun-linux-{{target}}/bun:/usr/bin/bun
