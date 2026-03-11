@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Set up Docker buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
       - name: Set up QEMU (for multi platform build)
         uses: docker/setup-qemu-action@v3
       - name: Login to DockerHub
