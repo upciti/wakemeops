@@ -1,0 +1,15 @@
+name: kubectl-cert-manager
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.4.1
+homepage: https://cert-manager.io/docs/reference/cmctl/
+summary: The cert-manager Command Line Tool (cmctl)
+description: |-
+  This is a kubectl plugin that can help you manage cert-manager and its
+  resources inside your cluster.
+fetch: https://github.com/cert-manager/cmctl/releases/download/v{{version}}/cmctl_linux_{{goarch}}
+install:
+  - cmctl_linux_{{goarch}}:/usr/bin/kubectl-cert_manager
