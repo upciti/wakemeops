@@ -71,12 +71,13 @@ jobs:
     strategy:
       matrix:
         distribution:
+          - debian:trixie-slim
           - debian:bookworm-slim
+          - minideb:trixie
           - minideb:bookworm
-          - minideb:bullseye
           - ubuntu:rolling
+          - ubuntu:24.04
           - ubuntu:22.04
-          - ubuntu:20.04
     container: wakemeops/${{ matrix.distribution }}
     steps:
       - name: Checkout

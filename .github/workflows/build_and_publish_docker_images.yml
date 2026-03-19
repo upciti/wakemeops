@@ -22,17 +22,23 @@ jobs:
             tag: rolling
           - image: ubuntu
             registry_name: ubuntu
+            tag: 24.04
+          - image: ubuntu
+            registry_name: ubuntu
             tag: 22.04
           - image: ubuntu
             registry_name: ubuntu
             tag: 20.04
-          - image: ubuntu
-            registry_name: ubuntu
-            tag: 18.04
 
           - image: debian
             registry_name: debian
             tag: latest
+          - image: debian
+            registry_name: debian
+            tag: trixie
+          - image: debian
+            registry_name: debian
+            tag: trixie-slim
           - image: debian
             registry_name: debian
             tag: bookworm
@@ -45,25 +51,19 @@ jobs:
           - image: debian
             registry_name: debian
             tag: bullseye-slim
-          - image: debian
-            registry_name: debian
-            tag: buster
-          - image: debian
-            registry_name: debian
-            tag: buster-slim
 
           - image: bitnami/minideb
             registry_name: minideb
             tag: latest
           - image: bitnami/minideb
             registry_name: minideb
+            tag: trixie
+          - image: bitnami/minideb
+            registry_name: minideb
             tag: bookworm
           - image: bitnami/minideb
             registry_name: minideb
             tag: bullseye
-          - image: bitnami/minideb
-            registry_name: minideb
-            tag: buster
 
     steps:
       - name: Set up Docker buildx

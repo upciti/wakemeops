@@ -19,7 +19,7 @@ RUN install_repository ${COMPONENTS}
 
 ## Final image
 FROM base_image as runner
-COPY --from=builder /etc/apt/sources.list.d/wakemeops.list /etc/apt/sources.list.d/wakemeops.list
-COPY --from=builder /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg /etc/apt/trusted.gpg.d/wakemeops-keyring.gpg
+COPY --from=builder /etc/apt/sources.list.d/wakemeops.sources /etc/apt/sources.list.d/wakemeops.sources
+COPY --from=builder /etc/apt/keyrings/wakemeops-keyring.asc /etc/apt/keyrings/wakemeops-keyring.asc
 ARG FINAL_USER=0
 USER ${FINAL_USER}
