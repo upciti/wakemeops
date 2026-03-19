@@ -26,9 +26,6 @@ jobs:
           - image: ubuntu
             registry_name: ubuntu
             tag: 22.04
-          - image: ubuntu
-            registry_name: ubuntu
-            tag: 20.04
 
           - image: debian
             registry_name: debian
@@ -45,13 +42,6 @@ jobs:
           - image: debian
             registry_name: debian
             tag: bookworm-slim
-          - image: debian
-            registry_name: debian
-            tag: bullseye
-          - image: debian
-            registry_name: debian
-            tag: bullseye-slim
-
           - image: bitnami/minideb
             registry_name: minideb
             tag: latest
@@ -61,9 +51,6 @@ jobs:
           - image: bitnami/minideb
             registry_name: minideb
             tag: bookworm
-          - image: bitnami/minideb
-            registry_name: minideb
-            tag: bullseye
 
     steps:
       - name: Set up Docker buildx

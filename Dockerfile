@@ -1,6 +1,6 @@
 ARG REGISTRY="docker.io"
 ARG IMAGE="debian"
-ARG TAG="bullseye-slim"
+ARG TAG="bookworm-slim"
 
 ## Base image for builder and runner stages
 FROM ${REGISTRY}/${IMAGE}:${TAG} as base_image
