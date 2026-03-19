@@ -32,7 +32,7 @@ sudo apt install {{ package.name }}
 === "Dockerfile"
 
     ```docker
-    FROM wakemeops/minideb:bullseye
+    FROM wakemeops/minideb:bookworm
 
     RUN install_packages \
         {{ package.name }}={{ package.latest_version }}*

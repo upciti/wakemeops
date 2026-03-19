@@ -144,16 +144,16 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/debian:latest
         ```
 
-    === "bullseye"
+    === "trixie"
 
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye'>https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye</a>"
-        docker pull wakemeops/debian:bullseye
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=trixie'>https://hub.docker.com/r/wakemeops/debian/tags?name=trixie</a>"
+        docker pull wakemeops/debian:trixie
         ```
 
-    === "bullseye-slim"
+    === "trixie-slim"
 
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye-slim'>https://hub.docker.com/r/wakemeops/debian/tags?name=bullseye-slim</a>"
-        docker pull wakemeops/debian:bullseye-slim
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/debian/tags?name=trixie-slim'>https://hub.docker.com/r/wakemeops/debian/tags?name=trixie-slim</a>"
+        docker pull wakemeops/debian:trixie-slim
         ```
 
     === "bookworm"
@@ -182,10 +182,10 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/ubuntu:rolling
         ```
 
-    === "20.04"
+    === "24.04"
 
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/ubuntu/tags?name=20.04'>https://hub.docker.com/r/wakemeops/ubuntu/tags?name=20.04</a>"
-        docker pull wakemeops/ubuntu:20.04
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/ubuntu/tags?name=24.04'>https://hub.docker.com/r/wakemeops/ubuntu/tags?name=24.04</a>"
+        docker pull wakemeops/ubuntu:24.04
         ```
 
     === "22.04"
@@ -202,10 +202,10 @@ We provide docker images based on Debian and Ubuntu that come pre-configured wit
         docker pull wakemeops/minideb:latest
         ```
 
-    === "bullseye"
+    === "trixie"
 
-        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=bullseye'>https://hub.docker.com/r/wakemeops/minideb/tags?name=bullseye</a>"
-        docker pull wakemeops/minideb:bullseye
+        ```bash title="<a href='https://hub.docker.com/r/wakemeops/minideb/tags?name=trixie'>https://hub.docker.com/r/wakemeops/minideb/tags?name=trixie</a>"
+        docker pull wakemeops/minideb:trixie
         ```
 
     === "bookworm"
@@ -234,7 +234,7 @@ You can leverage this script to write very short dockerfiles for your CI:
 === "I'm careful"
 
     ```dockerfile
-    FROM wakemeops/debian:bullseye
+    FROM wakemeops/debian:bookworm
 
     RUN install_packages \
         helm=3.7.2* \
