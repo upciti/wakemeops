@@ -1,7 +1,6 @@
 name: teams-for-linux
 matrix:
   versions:
-    - 1.10.1
     - 1.10.2
     - 1.11.0
     - 1.11.1
@@ -51,6 +50,7 @@ matrix:
     - 2.7.8
     - 2.7.9
     - 2.7.12
+    - 2.8.0
 homepage: https://github.com/IsmaelMartinez/teams-for-linux/
 summary: unofficial Microsoft Teams for Linux client
 description: |-
