@@ -5,6 +5,7 @@ matrix:
     - arm64
   versions:
     - 2.4.1
+    - 2.5.0
 homepage: https://cert-manager.io/docs/reference/cmctl/
 summary: The cert-manager Command Line Tool (cmctl)
 description: |-
