@@ -4,7 +4,6 @@ matrix:
     - amd64
     - arm64
   versions:
-    - 4.17.15
     - 4.17.16
     - 4.17.17
     - 4.17.18
@@ -54,6 +53,7 @@ matrix:
     - 4.21.13
     - 4.21.14
     - 4.21.15
+    - 4.21.16
 homepage: https://openshift.com
 summary: command line client for controlling an Openshift cluster
 description: |-
