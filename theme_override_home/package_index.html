@@ -1,0 +1,24 @@
+{% extends "main.html" %} {% block styles %}
+<style>
+  .md-typeset__table thead {
+    display: none !important;
+  }
+  .md-typeset__table td,
+  table {
+    border-width: 0 !important;
+  }
+  .md-typeset__table td,
+  table {
+    border-width: 0 !important;
+  }
+  .md-typeset__table td {
+    padding-top: 0 !important;
+  }
+  .md-typeset__table td:last-child {
+    padding-right: 0 !important;
+  }
+  .md-typeset__table td:first-child {
+    padding-left: 0 !important;
+  }
+</style>
+{{ super() }} {% endblock %}
