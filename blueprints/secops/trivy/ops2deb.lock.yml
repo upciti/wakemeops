@@ -412,12 +412,6 @@
 - url: https://github.com/aquasecurity/trivy/releases/download/v0.42.1/trivy_0.42.1_Linux-ARM64.tar.gz
   sha256: cad74fc7c0a6a96ad0721987acda2e529b0b77db754c67e65bec8667b50d9ca5
   timestamp: 2023-06-08 15:17:30+00:00
-- url: https://github.com/aquasecurity/trivy/releases/download/v0.48.3/trivy_0.48.3_Linux-64bit.tar.gz
-  sha256: 61f6d5c0fb6ed451c8bab8b13acb5d701f1b532bd6b629f3163f8f57bb10e564
-  timestamp: 2024-01-11 12:33:27+00:00
-- url: https://github.com/aquasecurity/trivy/releases/download/v0.48.3/trivy_0.48.3_Linux-ARM64.tar.gz
-  sha256: 01e814fbb0b2aaaa4510b6c29e9a37103fe9818f70be816c3ecbb39e836a61b5
-  timestamp: 2024-01-11 12:33:27+00:00
 - url: https://github.com/aquasecurity/trivy/releases/download/v0.49.0/trivy_0.49.0_Linux-64bit.tar.gz
   sha256: 576d63055be621bf44830714c7c889634d1c22fe274464a603272fae3ce89740
   timestamp: 2024-02-04 15:05:42+00:00
@@ -712,3 +706,9 @@
 - url: https://github.com/aquasecurity/trivy/releases/download/v0.70.0/trivy_0.70.0_Linux-ARM64.tar.gz
   sha256: 2f6bb988b553a1bbac6bdd1ce890f5e412439564e17522b88a4541b4f364fc8d
   timestamp: 2026-04-24 06:37:36+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_Linux-64bit.tar.gz
+  sha256: 30a3d22b23f88c233f1658f562fb477cae3b3e8b4761109d515b7698daf85814
+  timestamp: 2026-06-01 13:55:08+00:00
+- url: https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_Linux-ARM64.tar.gz
+  sha256: 2561be394a3199c911f82fced606cbc05e1cb23eb6ce1da6935540adb76f4252
+  timestamp: 2026-06-01 13:55:08+00:00
