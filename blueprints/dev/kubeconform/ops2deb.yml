@@ -5,6 +5,7 @@ matrix:
     - arm64
   versions:
     - 0.7.0
+    - 0.8.0
 homepage: https://github.com/yannh/kubeconform
 summary: Kubernetes manifests validator with Custom Resource support
 description: |-
