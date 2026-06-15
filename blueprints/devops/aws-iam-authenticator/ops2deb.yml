@@ -40,6 +40,7 @@ matrix:
     - 0.7.15
     - 0.7.16
     - 0.7.17
+    - 0.7.18
 homepage: https://github.com/kubernetes-sigs/aws-iam-authenticator
 summary: Kubernetes authentication using AWS IAM
 description: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster.
