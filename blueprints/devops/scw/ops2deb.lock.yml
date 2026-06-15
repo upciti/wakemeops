@@ -4,12 +4,6 @@
 - url: https://github.com/scaleway/scaleway-cli/releases/download/v2.4.0/scw-2.4.0-linux-x86_64
   sha256: 5e5f28412fa57f445f13c8b88ab488a948bba7c68b5da853c645f3716d5307d1
   timestamp: 2021-12-14 15:37:09+00:00
-- url: https://github.com/scaleway/scaleway-cli/releases/download/v2.10.0/scaleway-cli_2.10.0_linux_amd64
-  sha256: 0baded7be04e723b6b7b21ab48802ad7e674ac2ed3d1fd314be92f894c9e9c54
-  timestamp: 2023-01-24 16:19:30+00:00
-- url: https://github.com/scaleway/scaleway-cli/releases/download/v2.10.0/scaleway-cli_2.10.0_linux_arm64
-  sha256: ca59cf5d3061228f5465cf32c9bfa1398e3f88aecd1e60294ad1c8728029c1c6
-  timestamp: 2023-01-24 16:19:30+00:00
 - url: https://github.com/scaleway/scaleway-cli/releases/download/v2.11.0/scaleway-cli_2.11.0_linux_amd64
   sha256: 73ac5e3617ff2a9b21c8354f6086c917fa2604df730d9628cb0ec7677b1c24f9
   timestamp: 2023-02-21 22:17:35+00:00
@@ -304,3 +298,9 @@
 - url: https://github.com/scaleway/scaleway-cli/releases/download/v2.56.3/scaleway-cli_2.56.3_linux_arm64
   sha256: ade4c684bbce34ad9d8ad4d7867c82899e1026ff0b23f1bfdc86401c9e9fad10
   timestamp: 2026-06-10 13:03:44+00:00
+- url: https://github.com/scaleway/scaleway-cli/releases/download/v2.57.0/scaleway-cli_2.57.0_linux_amd64
+  sha256: cda706f207e114772d86854c0c188f798bd730eedd7ccf44142dca212e603fa2
+  timestamp: 2026-06-15 14:02:37+00:00
+- url: https://github.com/scaleway/scaleway-cli/releases/download/v2.57.0/scaleway-cli_2.57.0_linux_arm64
+  sha256: c50fc071f6750cdb14791e6db6d2f7c8d9d34d9b733cf8f9ae0056504f4e01ae
+  timestamp: 2026-06-15 14:02:37+00:00
