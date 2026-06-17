@@ -4,7 +4,6 @@ matrix:
     - amd64
     - arm64
   versions:
-    - 2.72.5
     - 2.73.0
     - 2.73.2
     - 2.73.3
@@ -54,6 +53,7 @@ matrix:
     - 2.106.0
     - 2.107.0
     - 2.108.0
+    - 2.109.0
 homepage: https://docs.jfrog-applications.jfrog.io/jfrog-applications/jfrog-cli
 summary: client that provides a simple interface that automates access to the JFrog
   products
