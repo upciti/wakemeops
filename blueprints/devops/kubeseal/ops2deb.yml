@@ -35,7 +35,6 @@
       - arm64
       - armhf
     versions:
-      - 0.18.2
       - 0.18.3
       - 0.18.4
       - 0.18.5
@@ -85,6 +84,7 @@
       - 0.36.6
       - 0.37.0
       - 0.38.0
+      - 0.38.1
   homepage: https://github.com/bitnami-labs/sealed-secrets
   summary: secret management solution for Kubernetes
   description: |-
