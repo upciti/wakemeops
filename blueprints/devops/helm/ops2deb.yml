@@ -42,7 +42,6 @@
       - amd64
       - armhf
     versions:
-      - 3.11.2
       - 3.11.3
       - 3.12.0
       - 3.12.1
@@ -92,6 +91,7 @@
       - 4.1.4
       - 4.2.0
       - 4.2.1
+      - 4.2.2
   homepage: https://helm.sh
   summary: Kubernetes package manager
   description: |-
