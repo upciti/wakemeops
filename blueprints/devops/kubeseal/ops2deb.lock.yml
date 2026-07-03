@@ -19,15 +19,6 @@
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/kubeseal-0.17.4-linux-arm64.tar.gz
   sha256: 600b3eabaf2fd47b204c6d46ac10141381c6f98e0b6d0f95f2aab0338f3fff63
   timestamp: 2022-03-31 17:23:25+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.3/kubeseal-0.18.3-linux-amd64.tar.gz
-  sha256: b0c12b01599c4c40227f5c2413870c4358a7c8a1228f815822cd63c7ab9b7f1b
-  timestamp: 2022-09-22 14:50:52+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.3/kubeseal-0.18.3-linux-arm.tar.gz
-  sha256: 17559eeb0955cebaef31b321d2d50360d034ad141f3c6961c7aca4cadc8c58f6
-  timestamp: 2022-09-22 14:50:52+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.3/kubeseal-0.18.3-linux-arm64.tar.gz
-  sha256: 39a248313edf927738b31700d498a39bc4b5d63b35bc9cd16009a06f4e6d1077
-  timestamp: 2022-09-22 14:50:52+00:00
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.4/kubeseal-0.18.4-linux-amd64.tar.gz
   sha256: 2e765b87889bfcf06a6249cde8e28507e3b7be29851e4fac651853f7638f12f3
   timestamp: 2022-09-22 17:27:20+00:00
@@ -469,3 +460,12 @@
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.38.1/kubeseal-0.38.1-linux-arm64.tar.gz
   sha256: 4637aac2ee095d6555242cc1ad51f13b9dfcfee7db6b0a4cf4f5a1443309d05e
   timestamp: 2026-06-18 18:45:01+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.38.3/kubeseal-0.38.3-linux-amd64.tar.gz
+  sha256: aa8bd25dac43963ee92278b269be2ec65172b8f5eeed5bd531322d33767ed3c2
+  timestamp: 2026-07-03 12:35:21+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.38.3/kubeseal-0.38.3-linux-arm.tar.gz
+  sha256: 05b1b6d14657a682e3be3fd9600f8fe1f75f0cbd8a22585dd5532059c7ff0552
+  timestamp: 2026-07-03 12:35:21+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.38.3/kubeseal-0.38.3-linux-arm64.tar.gz
+  sha256: a760ec5128859e3b5c318086656cf8d02ab5e9fee10c94d78d8f59d8bdba997f
+  timestamp: 2026-07-03 12:35:21+00:00
