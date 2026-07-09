@@ -1,9 +1,3 @@
-- url: https://github.com/argoproj/argo-cd/releases/download/v2.12.4/argocd-linux-amd64
-  sha256: a0ee9ef688dbb8561a1bce866c0eb5f3fe872515fbcf575949711c4997b07015
-  timestamp: 2024-10-04 15:06:15+00:00
-- url: https://github.com/argoproj/argo-cd/releases/download/v2.12.4/argocd-linux-arm64
-  sha256: aea22c482fd5a3964c79c88faff1cf234eaf55106e09d8b99c67f10ae4c7d9c6
-  timestamp: 2024-10-04 15:06:15+00:00
 - url: https://github.com/argoproj/argo-cd/releases/download/v2.12.5/argocd-linux-amd64
   sha256: 1363085878540aeacddbf87771d7175cf0aa5b2ae06f0ed6482d387af974c1e0
   timestamp: 2024-10-18 00:26:47+00:00
@@ -298,3 +292,9 @@
 - url: https://github.com/argoproj/argo-cd/releases/download/v3.4.4/argocd-linux-arm64
   sha256: ade7e2eff37230b9d19ea864f3ad51af4596416426244be8cb350a05cd4a0182
   timestamp: 2026-06-18 13:03:43+00:00
+- url: https://github.com/argoproj/argo-cd/releases/download/v3.4.5/argocd-linux-amd64
+  sha256: 23303f05a58c1e041324d5645b0f9d6ea338b16bbf32f4a24508f388fcf9f9c0
+  timestamp: 2026-07-09 18:34:35+00:00
+- url: https://github.com/argoproj/argo-cd/releases/download/v3.4.5/argocd-linux-arm64
+  sha256: f6c1baa8f10d12d8a7c61b81c8e8632a84cba0def0dcbc5082d8a45efa241168
+  timestamp: 2026-07-09 18:34:35+00:00
