@@ -113,3 +113,26 @@
   fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
   install:
     - minikube-linux-{{goarch}}:/usr/bin/minikube
+
+- name: minikube
+  matrix:
+    architectures:
+      - amd64
+      - arm64
+    versions:
+      - 1.38.0
+      - 1.38.1
+  homepage: https://minikube.sigs.k8s.io
+  summary: quickly set up a local Kubernetes cluster
+  description: |-
+    Focus on helping application developers and new Kubernetes users.
+    Supports the latest Kubernetes release (+6 previous minor versions)
+    Cross-platform (Linux, macOS, Windows)
+    Deploy as a VM, a container, or on bare-metal
+    Multiple container runtimes (CRI-O, containerd, docker)
+    Docker API endpoint for blazing fast image pushes
+    Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates
+    Addons for easily installed Kubernetes applications
+  fetch: https://storage.googleapis.com/minikube/releases/v{{version}}/minikube-linux-{{goarch}}
+  install:
+    - minikube-linux-{{goarch}}:/usr/bin/minikube
