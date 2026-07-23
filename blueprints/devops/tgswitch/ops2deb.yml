@@ -1,0 +1,23 @@
+name: tgswitch
+matrix:
+  architectures:
+    - amd64
+    - arm64
+    - armhf
+  versions:
+    - 0.6.0
+homepage: https://tgswitch.warrensbox.com/
+summary: command line tool lets you switch between different versions of terragrunt
+description: |-
+  The tgswitch command line tool lets you switch between different versions of
+  terragrunt.
+  If you do not have a particular version of terragrunt installed, tgswitch will
+  download the version you desire.
+  Once installed, simply select the version you require from the dropdown and
+  start using terragrunt.
+fetch:
+  url: https://github.com/warrensbox/tgswitch/releases/download/{{version}}/tgswitch_{{version}}_linux_{{target}}.tar.gz
+  targets:
+    armhf: armv6
+install:
+  - tgswitch:/usr/bin/tgswitch
