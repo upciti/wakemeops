@@ -1,9 +1,3 @@
-- url: https://github.com/redpanda-data/redpanda/releases/download/v24.2.7/rpk-linux-amd64.zip
-  sha256: 31ccfa9a788e5ce1acbe6cea4a38d1441f1b588935fa543d61cd82440ae828e0
-  timestamp: 2024-10-12 00:25:58+00:00
-- url: https://github.com/redpanda-data/redpanda/releases/download/v24.2.7/rpk-linux-arm64.zip
-  sha256: 9b79b131de9c93a656ac7a96c06ed6408c933f9c64baa79a4896680a6cef7fd6
-  timestamp: 2024-10-12 00:25:58+00:00
 - url: https://github.com/redpanda-data/redpanda/releases/download/v24.2.8/rpk-linux-amd64.zip
   sha256: bc9a3478836db7599cb04a331c1b54f1b38a027e5aa195f38749fe66e5544497
   timestamp: 2024-11-01 21:06:01+00:00
@@ -298,3 +292,9 @@
 - url: https://github.com/redpanda-data/redpanda/releases/download/v26.1.13/rpk-linux-arm64.zip
   sha256: 68301d2ce125152107bdf5f24ce02377c925db76b9b34b74de1c6660f633cbbe
   timestamp: 2026-07-17 06:45:02+00:00
+- url: https://github.com/redpanda-data/redpanda/releases/download/v26.1.14/rpk-linux-amd64.zip
+  sha256: f51c493f2dc944655492008d855fede4ba3b6fdb1b76f825f3c697b189f90e71
+  timestamp: 2026-07-24 12:28:13+00:00
+- url: https://github.com/redpanda-data/redpanda/releases/download/v26.1.14/rpk-linux-arm64.zip
+  sha256: 427086988964a36bcfed1dc7dc758a8b83205803037b3a0f4c8eeeeb84680616
+  timestamp: 2026-07-24 12:28:13+00:00
