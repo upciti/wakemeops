@@ -28,6 +28,9 @@ matrix:
     - 1.16.0
     - 1.16.1
     - 1.16.2
+    - 1.16.3
+    - 1.16.4
+    - 1.16.5
 architecture: all
 homepage: https://github.com/pypa/pipx
 summary: execute binaries from Python packages in isolated environments
