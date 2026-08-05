@@ -79,7 +79,6 @@
       - amd64
       - arm64
     versions:
-      - 0.153.1
       - 0.154.0
       - 0.155.0
       - 0.155.1
@@ -129,6 +128,7 @@
       - 1.7.0
       - 1.7.1
       - 1.7.2
+      - 1.7.3
   homepage: https://helmfile.readthedocs.io/
   summary: deploy Kubernetes Helm Charts
   description: |-
