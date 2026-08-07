@@ -87,7 +87,6 @@
       - arm64
       - armhf
     versions:
-      - 0.9.20
       - 0.9.21
       - 0.9.22
       - 0.9.24
@@ -137,6 +136,7 @@
       - 0.12.0
       - 0.12.1
       - 0.12.2
+      - 0.12.3
   homepage: https://github.com/astral-sh/uv
   summary: extremely fast Python package installer and resolver
   description: |-
