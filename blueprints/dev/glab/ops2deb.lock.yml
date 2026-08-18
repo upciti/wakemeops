@@ -199,42 +199,6 @@
 - url: https://gitlab.com/gitlab-org/cli/-/releases/v1.46.1/downloads/glab_1.46.1_Linux_x86_64.deb
   sha256: bf8c53df12d23bf204cba7ae499c4721009e64b2a39277c814759000ac4d3fdd
   timestamp: 2024-09-10 21:06:11+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.60.1/downloads/glab_1.60.1_linux_amd64.deb
-  sha256: bc15aa8b0cb78f4c15574eafc671ef89a1927144478d3ec0efb227665497de8d
-  timestamp: 2025-06-18 06:10:35+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.60.1/downloads/glab_1.60.1_linux_arm64.deb
-  sha256: 74c2d7f971a7c9fe2ff88c6a27f83c015945a0b45474644fd847961d879bf9e8
-  timestamp: 2025-06-18 06:10:35+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.60.2/downloads/glab_1.60.2_linux_amd64.deb
-  sha256: 74360ef7f090b93e213ba3f1adb8cb00fca459e26cbf15bca78a7bfea18f85fe
-  timestamp: 2025-06-19 00:32:23+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.60.2/downloads/glab_1.60.2_linux_arm64.deb
-  sha256: 56bee7ff82331ad31913514abee98aec68dce915c3b4690c6392ea1a5a01db6a
-  timestamp: 2025-06-19 00:32:23+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.61.0/downloads/glab_1.61.0_linux_amd64.deb
-  sha256: 341464cd7f0dd2193743eace085b67abe2344174515c0f9c8bdba20539cf1f5d
-  timestamp: 2025-06-25 12:12:40+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.61.0/downloads/glab_1.61.0_linux_arm64.deb
-  sha256: f628a54bda37506829922a06e0b77ba9bc8d7d91a1ad0237014ca201e20a0664
-  timestamp: 2025-06-25 12:12:40+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.63.0/downloads/glab_1.63.0_linux_amd64.deb
-  sha256: a4157876e839744ed5d0d1de5541e6cd1196f74110b97fd613297842224a0b01
-  timestamp: 2025-07-18 12:04:46+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.63.0/downloads/glab_1.63.0_linux_arm64.deb
-  sha256: 57867d2b00fec6f61a58efdb20666edb2481ada995d7870f588e4e68f133d901
-  timestamp: 2025-07-18 12:04:46+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.64.0/downloads/glab_1.64.0_linux_amd64.deb
-  sha256: 661ece4ca14d956dd8e2e3b28e9f59c6fc3ccdc0999b154aa56025e386509c38
-  timestamp: 2025-07-23 12:03:47+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.64.0/downloads/glab_1.64.0_linux_arm64.deb
-  sha256: 9709623e2a17f0ece077feb28c0be152fc14bab7f4178d9ea8342f137a250430
-  timestamp: 2025-07-23 12:03:47+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.65.0/downloads/glab_1.65.0_linux_amd64.deb
-  sha256: 0e97aae7fbac441e1c7a1793c8535603bbc758cce2f5e9c3ab7b181a4edc78d6
-  timestamp: 2025-07-29 18:03:22+00:00
-- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.65.0/downloads/glab_1.65.0_linux_arm64.deb
-  sha256: 42ac9b6e5086ed9ebededa790d740c3ec1423c1d5985ed3ea41e05a14f728c51
-  timestamp: 2025-07-29 18:03:22+00:00
 - url: https://gitlab.com/gitlab-org/cli/-/releases/v1.66.0/downloads/glab_1.66.0_linux_amd64.deb
   sha256: 1a3ece2493eebf4f5ad3aae2bf824f5a1a4ad526589d7ab546de41c3f4e0bbda
   timestamp: 2025-08-13 18:03:41+00:00
@@ -499,3 +463,39 @@
 - url: https://gitlab.com/gitlab-org/cli/-/releases/v1.107.0/downloads/glab_1.107.0_linux_arm64.deb
   sha256: d121d7e887cca320d357f1dbee9ae1875cc232afcaeb9bf153919bacf941295c
   timestamp: 2026-07-07 18:38:35+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.108.0/downloads/glab_1.108.0_linux_amd64.deb
+  sha256: 29dbb584aa639ea8d7f02f6d0177fcc1f8e20f1e405c4d395a5c1687ad49363b
+  timestamp: 2026-07-14 12:25:02+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.108.0/downloads/glab_1.108.0_linux_arm64.deb
+  sha256: a69276bc1ed5549c583123ffd1e91b6325ad806b0ebb1257e95a8973a56b2279
+  timestamp: 2026-07-14 12:25:02+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.109.0/downloads/glab_1.109.0_linux_amd64.deb
+  sha256: 827d2bb5dfd96758d423e6e5559f6265bce7a18558d11436145484c62aff1965
+  timestamp: 2026-07-21 18:25:55+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.109.0/downloads/glab_1.109.0_linux_arm64.deb
+  sha256: 1098d846686da5774adb6c8a038ad57329067833d06af2e2ca8ad8bc2acca07f
+  timestamp: 2026-07-21 18:25:55+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.110.0/downloads/glab_1.110.0_linux_amd64.deb
+  sha256: 02e921891ada03d6681f9377eaf84081b5eaa2ba0bca058c28ca184d22f13518
+  timestamp: 2026-07-28 12:33:28+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.110.0/downloads/glab_1.110.0_linux_arm64.deb
+  sha256: 371d9688e803a82e00928cc1e3390960eaeb98bea55b3c7095f912ee03afa175
+  timestamp: 2026-07-28 12:33:28+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.111.0/downloads/glab_1.111.0_linux_amd64.deb
+  sha256: 4bc923123f72ee47251095191fb8c3f50baa9811b35f8b00bded47c8706377c9
+  timestamp: 2026-07-31 00:25:22+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.111.0/downloads/glab_1.111.0_linux_arm64.deb
+  sha256: 40b02a5433f2056d0d6d414479a8a8b1ccf2a4637a468d55d41305bc03648340
+  timestamp: 2026-07-31 00:25:22+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.112.0/downloads/glab_1.112.0_linux_amd64.deb
+  sha256: 71eb77a13dd57f3add103e979b20dbd9f4730bcaf9501ae2e8ac14cb4585c707
+  timestamp: 2026-08-04 12:35:10+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.112.0/downloads/glab_1.112.0_linux_arm64.deb
+  sha256: 3ee7cab44d6fa57037b506e8898e176560ff6de6088adfc8c16e8baf6c81b281
+  timestamp: 2026-08-04 12:35:10+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.113.0/downloads/glab_1.113.0_linux_amd64.deb
+  sha256: 80928175a2d66c6262c8303aeee9dd5c5a67dafc03668c8b073a495110f9af02
+  timestamp: 2026-08-11 18:16:20+00:00
+- url: https://gitlab.com/gitlab-org/cli/-/releases/v1.113.0/downloads/glab_1.113.0_linux_arm64.deb
+  sha256: 5a3f3d3211e2de1a7cff6884345509ac569d7b4e627749d162b8aa559ab0a0de
+  timestamp: 2026-08-11 18:16:20+00:00
