@@ -1,0 +1,21 @@
+name: kratos
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 26.2.0
+homepage: https://github.com/ory/kratos
+summary: headless identity and user management server
+description: |-
+  Ory Kratos handles self-service registration and login, multi-factor
+  authentication, account verification and recovery, profile management and
+  session handling through an API-first server that comes without a user
+  interface, letting applications keep their own look and feel. Identities are
+  stored in PostgreSQL, MySQL or CockroachDB.
+fetch:
+  url: https://github.com/ory/kratos/releases/download/v{{version}}/kratos_{{version}}-linux_{{target}}.tar.gz
+  targets:
+    amd64: 64bit
+install:
+  - kratos:/usr/bin/kratos

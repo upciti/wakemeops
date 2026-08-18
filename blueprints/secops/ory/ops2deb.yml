@@ -1,0 +1,20 @@
+name: ory
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 1.3.1
+homepage: https://github.com/ory/cli
+summary: command line interface for Ory Network and Ory services
+description: |-
+  Manages Ory Network projects along with the identities, OAuth2 clients,
+  permissions and sessions served by Ory Kratos, Hydra and Keto. It also ships a
+  proxy and a tunnel so that applications can be developed and tested against
+  Ory APIs on the same domain.
+fetch:
+  url: https://github.com/ory/cli/releases/download/v{{version}}/ory_{{version}}-linux_{{target}}.tar.gz
+  targets:
+    amd64: 64bit
+install:
+  - ory:/usr/bin/ory
