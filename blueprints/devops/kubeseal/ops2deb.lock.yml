@@ -19,15 +19,6 @@
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/kubeseal-0.17.4-linux-arm64.tar.gz
   sha256: 600b3eabaf2fd47b204c6d46ac10141381c6f98e0b6d0f95f2aab0338f3fff63
   timestamp: 2022-03-31 17:23:25+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/kubeseal-0.18.5-linux-amd64.tar.gz
-  sha256: cea4ee4fbedbd59c5f2dd6a26206de0677c7f7983181f1c47f0a938ed3d93432
-  timestamp: 2022-09-23 16:29:52+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/kubeseal-0.18.5-linux-arm.tar.gz
-  sha256: f80d42ed4b157d060714279ea828b3e78898b4f8223f6ed54ec3de4553d88642
-  timestamp: 2022-09-23 16:29:52+00:00
-- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/kubeseal-0.18.5-linux-arm64.tar.gz
-  sha256: da52279164fa9f020f21b795c7fcb84d901c08c67dc8a8f7b63015e640bf5483
-  timestamp: 2022-09-23 16:29:52+00:00
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.0/kubeseal-0.19.0-linux-amd64.tar.gz
   sha256: edf008c525cdbe438de06ae2f9fba09ef2be1b6d6102e6ab5cd63b3758f4f024
   timestamp: 2022-10-13 20:36:25+00:00
@@ -469,3 +460,12 @@
 - url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.38.4/kubeseal-0.38.4-linux-arm64.tar.gz
   sha256: bcc40ac15e29a21c270e2be8c62af29d4b01b9111ae667723e4b6d8e4009228b
   timestamp: 2026-07-03 18:25:48+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.39.0/kubeseal-0.39.0-linux-amd64.tar.gz
+  sha256: 9b5e1842de94bc6aa69fde365cefeeecb598f8fcc07a7ce90226e7a6d807370d
+  timestamp: 2026-08-18 12:05:50+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.39.0/kubeseal-0.39.0-linux-arm.tar.gz
+  sha256: fd1c6bea42cf6f8b5be3067023895933ce2848d46dda640c6e8b465eb4b7b77b
+  timestamp: 2026-08-18 12:05:50+00:00
+- url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.39.0/kubeseal-0.39.0-linux-arm64.tar.gz
+  sha256: 79ce19cb7ac206eee456524d829defffdb8c95252fbededa9bd2198cbda33cac
+  timestamp: 2026-08-18 12:05:50+00:00
