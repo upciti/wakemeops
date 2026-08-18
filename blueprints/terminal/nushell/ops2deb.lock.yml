@@ -34,12 +34,6 @@
 - url: https://github.com/nushell/nushell/releases/download/0.70.0/nu-0.70.0-x86_64-unknown-linux-gnu.tar.gz
   sha256: 97c4ec8f7167fe13411556e38533cdb72e76fd5858ee49d7772728e9f6b8dcc7
   timestamp: 2022-10-19 04:33:25+00:00
-- url: https://github.com/nushell/nushell/releases/download/0.79.0/nu-0.79.0-aarch64-unknown-linux-gnu.tar.gz
-  sha256: db65aa46b74720cd0aa73c313ccda8a359a34b8a07a45996b04c234a9f25efad
-  timestamp: 2023-04-26 01:23:39+00:00
-- url: https://github.com/nushell/nushell/releases/download/0.79.0/nu-0.79.0-x86_64-unknown-linux-gnu.tar.gz
-  sha256: 49b8b37ac084327478a029381ff33d123029b2efaee5fde84c9fd3f2838984bb
-  timestamp: 2023-04-26 01:23:39+00:00
 - url: https://github.com/nushell/nushell/releases/download/0.80.0/nu-0.80.0-aarch64-unknown-linux-gnu.tar.gz
   sha256: b02d8a002926e12e5d0b0a04d4af887c7053deb2aaf11e49f6ed82b63ecc25b8
   timestamp: 2023-05-17 01:26:26+00:00
@@ -334,3 +328,9 @@
 - url: https://github.com/nushell/nushell/releases/download/0.114.1/nu-0.114.1-x86_64-unknown-linux-gnu.tar.gz
   sha256: 8802b26edcdf1a64477567b5ce909fbae3d72d731c8f0847892ea16c6fa73c53
   timestamp: 2026-07-11 18:16:51+00:00
+- url: https://github.com/nushell/nushell/releases/download/0.115.0/nu-0.115.0-aarch64-unknown-linux-gnu.tar.gz
+  sha256: 508f00f858474e754335bea741c8f729b8ae526451aa01b9c1e36944311b846a
+  timestamp: 2026-08-18 06:06:55+00:00
+- url: https://github.com/nushell/nushell/releases/download/0.115.0/nu-0.115.0-x86_64-unknown-linux-gnu.tar.gz
+  sha256: da83cfe482060d2c34b6b9af829975a313bce6b92e0398c3b2a59cb38630c7b2
+  timestamp: 2026-08-18 06:06:55+00:00
