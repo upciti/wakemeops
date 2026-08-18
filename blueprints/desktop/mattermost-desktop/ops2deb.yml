@@ -29,6 +29,7 @@ install:
       Categories=Network;InstantMessaging;
     path: /usr/share/applications/mattermost.desktop
 script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
   - install -d {{src}}/opt
   - find . -type f -exec chmod 644 -- {} +
   - find . -type d -exec chmod 775 -- {} +
