@@ -4,7 +4,6 @@ matrix:
     - amd64
     - arm64
   versions:
-    - 24.2.9
     - 24.2.10
     - 24.2.11
     - 24.2.12
@@ -54,6 +53,7 @@ matrix:
     - 26.1.13
     - 26.1.14
     - 26.2.1
+    - 26.2.2
 homepage: https://redpanda.com/
 summary: interact with your Redpanda clusters
 description: |-
