@@ -72,7 +72,6 @@
       - amd64
       - arm64
     versions:
-      - 0.80.0
       - 0.81.0
       - 0.82.0
       - 0.83.0
@@ -122,6 +121,7 @@
       - 0.114.0
       - 0.114.1
       - 0.115.0
+      - 0.115.1
   homepage: https://www.nushell.sh/
   summary: new type of shell written in rust
   description: |-
