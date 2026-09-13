@@ -40,12 +40,6 @@
 - url: https://github.com/roboll/helmfile/releases/download/v0.144.0/helmfile_linux_arm64
   sha256: 8461bbb13ba23f4333dc99d96bf7a24c283cd7683e746acf639d80bbd828926a
   timestamp: 2022-03-31 05:32:30+00:00
-- url: https://github.com/helmfile/helmfile/releases/download/v0.155.0/helmfile_0.155.0_linux_amd64.tar.gz
-  sha256: 2c9cf4e2e41207f066a0b6013ce878f49492fe7126c69a7718d3e0a637d2649c
-  timestamp: 2023-06-29 06:25:18+00:00
-- url: https://github.com/helmfile/helmfile/releases/download/v0.155.0/helmfile_0.155.0_linux_arm64.tar.gz
-  sha256: bc514b4dcbc27922a08c0dce2566087254cd868531209ffc16eced668d1eee98
-  timestamp: 2023-06-29 06:25:18+00:00
 - url: https://github.com/helmfile/helmfile/releases/download/v0.155.1/helmfile_0.155.1_linux_amd64.tar.gz
   sha256: 979c38f23dba0b9b15abb2c14d2a92af9ff050a2a140d42b879d3f5438fabcd0
   timestamp: 2023-07-27 09:16:48+00:00
@@ -340,3 +334,9 @@
 - url: https://github.com/helmfile/helmfile/releases/download/v1.7.4/helmfile_1.7.4_linux_arm64.tar.gz
   sha256: 0292f57a4638a21e775b0ce8bde37ee3fdd65dbbdbe0e5b9a06718f1dd04c7fa
   timestamp: 2026-08-18 06:06:55+00:00
+- url: https://github.com/helmfile/helmfile/releases/download/v1.8.0/helmfile_1.8.0_linux_amd64.tar.gz
+  sha256: 35d5d39fc608342b23fc7ce1dd0c3bf0c96cc07ec3796507ab6894a5d172bf20
+  timestamp: 2026-09-13 06:08:19+00:00
+- url: https://github.com/helmfile/helmfile/releases/download/v1.8.0/helmfile_1.8.0_linux_arm64.tar.gz
+  sha256: 01037dc187840a778ec65eae66b549b63d619a853540c8983f90d73ccbce5033
+  timestamp: 2026-09-13 06:08:19+00:00
