@@ -10,15 +10,6 @@
 - url: https://github.com/cli/cli/releases/download/v2.5.0/gh_2.5.0_linux_armv6.tar.gz
   sha256: 44e44829a5361957217bfd7c2c8c6dc88fc5f56a72f2e4df772e0ea551a493bd
   timestamp: 2022-02-02 23:13:50+00:00
-- url: https://github.com/cli/cli/releases/download/v2.60.0/gh_2.60.0_linux_amd64.tar.gz
-  sha256: 73ec218d04748e8e54783833532961d0981cf009661c7e0bfc56a2be7f847b33
-  timestamp: 2024-10-24 18:08:20+00:00
-- url: https://github.com/cli/cli/releases/download/v2.60.0/gh_2.60.0_linux_arm64.tar.gz
-  sha256: 60770c236e52d267dc3fcc4fccf75c9abed4a1a5489bbdbd3d65a53432862d33
-  timestamp: 2024-10-24 18:08:20+00:00
-- url: https://github.com/cli/cli/releases/download/v2.60.0/gh_2.60.0_linux_armv6.tar.gz
-  sha256: 81322ddafcf36f06109d89165c78a21e1a5d50bdfa3fada8bbe598bda83f18a8
-  timestamp: 2024-10-24 18:08:20+00:00
 - url: https://github.com/cli/cli/releases/download/v2.60.1/gh_2.60.1_linux_amd64.tar.gz
   sha256: dfcd9926de38a797e88e604c3111ecf9ddf13c524706712b2b0d2e2fc4a6ed7f
   timestamp: 2024-10-25 18:08:30+00:00
@@ -460,3 +451,12 @@
 - url: https://github.com/cli/cli/releases/download/v2.100.0/gh_2.100.0_linux_armv6.tar.gz
   sha256: 72c482d44c08dbdee6a1ef24b28332c20d1d16f2396d3a519080a3e2de3970aa
   timestamp: 2026-09-03 18:05:44+00:00
+- url: https://github.com/cli/cli/releases/download/v2.101.0/gh_2.101.0_linux_amd64.tar.gz
+  sha256: 9bca2d1c16825f109907a23307628a2f0698fbf99662b73a5cf0b020293072b8
+  timestamp: 2026-09-15 18:04:52+00:00
+- url: https://github.com/cli/cli/releases/download/v2.101.0/gh_2.101.0_linux_arm64.tar.gz
+  sha256: b57e8063f18862647c9d22727c32e9da1b963f8bf9db648fe123a6975695640f
+  timestamp: 2026-09-15 18:04:52+00:00
+- url: https://github.com/cli/cli/releases/download/v2.101.0/gh_2.101.0_linux_armv6.tar.gz
+  sha256: dfc12e3fb060c1513abe083839ae26d060487b71fde7bdad3c6e3870e84ec46c
+  timestamp: 2026-09-15 18:04:52+00:00
