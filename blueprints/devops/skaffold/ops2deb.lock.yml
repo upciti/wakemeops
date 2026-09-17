@@ -28,12 +28,6 @@
 - url: https://github.com/GoogleContainerTools/skaffold/releases/download/v1.37.1/skaffold-linux-arm64
   sha256: aff259f2336d1090cd34c129fb0f894ace50ed34abd4fd262f4fe6ded585bc88
   timestamp: 2022-03-31 03:40:33+00:00
-- url: https://github.com/GoogleContainerTools/skaffold/releases/download/v1.38.0/skaffold-linux-amd64
-  sha256: 3c347c9478880f22ebf95807c13371844769c625cf3ea9c987cd85859067503c
-  timestamp: 2022-04-08 20:27:04+00:00
-- url: https://github.com/GoogleContainerTools/skaffold/releases/download/v1.38.0/skaffold-linux-arm64
-  sha256: 41c6385443787f864eaa448b985479115aa917b045245efb38d15d4b2dc5fed3
-  timestamp: 2022-04-08 20:27:04+00:00
 - url: https://github.com/GoogleContainerTools/skaffold/releases/download/v1.39.0/skaffold-linux-amd64
   sha256: 0b0d1a213ca1726b4c70da39e1f5856f3a221733fe26b1ffea447dbffaceefbc
   timestamp: 2022-06-23 23:19:10+00:00
@@ -328,3 +322,9 @@
 - url: https://github.com/GoogleContainerTools/skaffold/releases/download/v2.24.0/skaffold-linux-arm64
   sha256: a8331e599223ad9df489b4d956704505b888c24b0d89abf26a0fe61c58d10fc5
   timestamp: 2026-07-24 00:22:03+00:00
+- url: https://github.com/GoogleContainerTools/skaffold/releases/download/v2.25.0/skaffold-linux-amd64
+  sha256: 42b9e2e3246c19b78fcc53dd60cc7ded1da8704293886b909a2a02b9bef34d20
+  timestamp: 2026-09-17 00:10:38+00:00
+- url: https://github.com/GoogleContainerTools/skaffold/releases/download/v2.25.0/skaffold-linux-arm64
+  sha256: 416f5fed2009c2b4adc62ae887ee5fc19ff08cc8a0250b81d8682d55626a75fd
+  timestamp: 2026-09-17 00:10:38+00:00
