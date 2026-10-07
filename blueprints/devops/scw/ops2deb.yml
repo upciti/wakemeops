@@ -27,7 +27,6 @@
       - amd64
       - arm64
     versions:
-      - 2.16.1
       - 2.17.0
       - 2.18.0
       - 2.19.0
@@ -77,6 +76,7 @@
       - 2.62.0
       - 2.63.0
       - 2.64.0
+      - 2.65.1
   homepage: https://github.com/scaleway/scaleway-cli
   summary: command-line interface for Scaleway
   description: |-
