@@ -1,0 +1,25 @@
+name: pnpm
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 12.13.0
+homepage: https://pnpm.io/
+summary: fast, disk space efficient package manager for Node.js
+description: |-
+  pnpm is an alternative to npm and Yarn. Files inside node_modules are
+  hard-linked from a single content-addressable store, so each version of a
+  dependency is stored on disk only once. It enforces strict dependency
+  access, has first-class support for monorepos through workspaces, and can
+  also manage Node.js versions. This package ships the standalone pnpm
+  executable, which does not require Node.js to be installed.
+fetch:
+  url: https://github.com/pnpm/pnpm/releases/download/v{{version}}/pnpm-linux-{{target}}.tar.gz
+  targets:
+    amd64: x64
+install:
+  - pnpm:/usr/lib/pnpm/pnpm
+  - dist:/usr/lib/pnpm/dist
+script:
+  - ln -s /usr/lib/pnpm/pnpm {{src}}/usr/bin/pnpm
