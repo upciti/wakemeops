@@ -1,0 +1,25 @@
+name: sentry
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 0.46.0
+    - 0.47.0
+homepage: https://cli.sentry.dev/
+summary: command-line interface for Sentry, built for developers and AI agents
+description: |-
+  Sentry CLI lets you query and manage Sentry from the terminal: issues,
+  events, traces, logs, releases, dashboards, source maps and more. It detects
+  the Sentry project from DSNs found in source code or .env files, works with
+  monorepos, and integrates with Seer to provide AI-powered root cause analysis
+  and fix plans. All commands support JSON output for scripting.
+fetch:
+  url: https://github.com/getsentry/toolkit/releases/download/cli%40{{version}}/sentry-linux-{{target}}.gz
+  targets:
+    amd64: x64
+    arm64: arm64
+install:
+  - sentry-linux-{{target}}:/usr/bin/sentry
+script:
+  - sed -i "s/dh_strip --no-ddebs/true/" {{debian}}/rules
