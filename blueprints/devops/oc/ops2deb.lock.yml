@@ -4,12 +4,6 @@
 - url: https://github.com/okd-project/okd/releases/download/4.15.0-0.okd-2024-03-10-010116/openshift-client-linux-4.15.0-0.okd-2024-03-10-010116.tar.gz
   sha256: 90a357d420008494e0ea898801ddf39da11cab4270b778ee01a72bda7835a3a9
   timestamp: 2024-11-25 11:13:58+00:00
-- url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.19.8/openshift-client-linux-arm64.tar.gz
-  sha256: 662d2d580107dd760502f761c824c2daf2309edcc6b1bb179a1d23c3d20dd604
-  timestamp: 2025-08-09 00:08:23+00:00
-- url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.19.8/openshift-client-linux.tar.gz
-  sha256: edc62e5395842654566898473f4122af969381f9df8ec1f3482851422cc2ac63
-  timestamp: 2025-08-09 00:08:23+00:00
 - url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.19.9/openshift-client-linux-arm64.tar.gz
   sha256: 0ecfa9b35e8d23e81be3acaee4d208b6968668a9e1fe71f93df36e39ae1ce4aa
   timestamp: 2025-08-15 06:03:10+00:00
@@ -304,3 +298,9 @@
 - url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.22.18/openshift-client-linux.tar.gz
   sha256: 07751676809553e012448cdb3a755ffa7b11d7e25b8a6cc60a5a62a9f4b18159
   timestamp: 2026-10-10 18:05:39+00:00
+- url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.22.19/openshift-client-linux-arm64.tar.gz
+  sha256: b1387e4178d8d786f04342d4e6aa124201960b07e033fb0c63393ff0a4c41873
+  timestamp: 2026-10-17 06:05:58+00:00
+- url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.22.19/openshift-client-linux.tar.gz
+  sha256: d897acd847fb0f6c01f65f39b1b8327d6dd481d7a044673183bedd3615b4d559
+  timestamp: 2026-10-17 06:05:58+00:00
