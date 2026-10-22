@@ -52,15 +52,6 @@
 - url: https://github.com/istio/istio/releases/download/1.13.2/istio-1.13.2-linux-armv7.tar.gz
   sha256: 7fcbc2514c9cad3756557bb49015707f9ede72478980aa79ddaf22090d507929
   timestamp: 2022-03-24 01:26:26+00:00
-- url: https://github.com/istio/istio/releases/download/1.18.2/istio-1.18.2-linux-amd64.tar.gz
-  sha256: db3ea796ee0cc251b61d84ee0fe88b3338085ef2f5a8915e46e9c8cf408a5e37
-  timestamp: 2023-07-27 09:16:48+00:00
-- url: https://github.com/istio/istio/releases/download/1.18.2/istio-1.18.2-linux-arm64.tar.gz
-  sha256: 1bc905b04f3d45f0fb7a78e8291e6772e648bdaec0ae80a8f65fa26addc59e6e
-  timestamp: 2023-07-27 09:16:48+00:00
-- url: https://github.com/istio/istio/releases/download/1.18.2/istio-1.18.2-linux-armv7.tar.gz
-  sha256: 3493db9938d8153b2fd1090f2032be74f2870cdf9ffe83ac94532bb3ca3f432a
-  timestamp: 2023-07-27 09:16:48+00:00
 - url: https://github.com/istio/istio/releases/download/1.19.0/istio-1.19.0-linux-amd64.tar.gz
   sha256: 75dd0f959f2e30012f516807f74f2854b9687eb0f4d9e056b40a8c495c42bdef
   timestamp: 2023-09-05 21:14:25+00:00
@@ -502,3 +493,12 @@
 - url: https://github.com/istio/istio/releases/download/1.31.2/istio-1.31.2-linux-armv7.tar.gz
   sha256: adb7ce2874ca359c5bb0361cd7c51fc5f33ce9ef46c808934a35a387c90f4d30
   timestamp: 2026-10-16 06:07:10+00:00
+- url: https://github.com/istio/istio/releases/download/1.31.3/istio-1.31.3-linux-amd64.tar.gz
+  sha256: b32bba09bc6138d738fd19a09ef6d0fcdd5c5c013efeb72969663c24a2bddd47
+  timestamp: 2026-10-22 18:05:32+00:00
+- url: https://github.com/istio/istio/releases/download/1.31.3/istio-1.31.3-linux-arm64.tar.gz
+  sha256: e7efaf26b6ad60d878994d1ed6febccc11dc291962a92857e53946e663e9bb53
+  timestamp: 2026-10-22 18:05:32+00:00
+- url: https://github.com/istio/istio/releases/download/1.31.3/istio-1.31.3-linux-armv7.tar.gz
+  sha256: 83adb117415378ac4722d7767930b8562a3176f56939fba912046dd404d20be9
+  timestamp: 2026-10-22 18:05:32+00:00
