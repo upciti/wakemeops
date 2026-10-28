@@ -1,0 +1,26 @@
+name: rusticlone
+matrix:
+  architectures:
+    - amd64
+    - arm64
+  versions:
+    - 2.0.1
+homepage: https://github.com/AlphaJack/rusticlone
+summary: scheduled 3-2-1-1-0 backups built on rustic profiles
+description: |-
+  Scheduled 3-2-1-1-0 backups for computers and servers built on rustic profiles,
+  with UI and notifications
+depends:
+  - rustic
+fetch:
+  url: https://github.com/AlphaJack/rusticlone/releases/download/v{{version}}/rusticlone-{{target}}.tar.gz
+  targets:
+    amd64: x86_64-unknown-linux-musl
+    arm64: aarch64-unknown-linux-musl
+install:
+  - rusticlone-{{target}}/rusticlone:/usr/bin/rusticlone
+  - rusticlone-{{target}}/rusticlone.service:/usr/lib/systemd/system/rusticlone.service
+  - rusticlone-{{target}}/rusticlone.service:/usr/lib/systemd/user/rusticlone.service
+  - rusticlone-{{target}}/rusticlone.desktop:/usr/share/applications/rusticlone.desktop
+  - rusticlone-{{target}}/logo.svg:/usr/share/icons/hicolor/scalable/apps/rusticlone.svg
+  - rusticlone-{{target}}/rusticlone.env:/etc/rusticlone/rusticlone.env
