@@ -1,7 +1,6 @@
 name: pipx
 matrix:
   versions:
-    - 1.4.1
     - 1.4.2
     - 1.4.3
     - 1.5.0
@@ -51,6 +50,7 @@ matrix:
     - 1.18.8
     - 1.18.9
     - 1.18.10
+    - 1.18.11
 architecture: all
 homepage: https://github.com/pypa/pipx
 summary: execute binaries from Python packages in isolated environments
