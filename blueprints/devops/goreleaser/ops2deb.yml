@@ -4,7 +4,6 @@ matrix:
     - amd64
     - arm64
   versions:
-    - 2.3.1
     - 2.3.2
     - 2.4.1
     - 2.4.2
@@ -54,6 +53,7 @@ matrix:
     - 2.19.0
     - 2.20.0
     - 2.20.1
+    - 2.20.2
 homepage: https://goreleaser.com
 summary: release Go projects as fast and easily as possible
 description: |-
