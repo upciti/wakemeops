@@ -1,12 +1,3 @@
-- url: https://github.com/grafana/loki/releases/download/v2.7.5/logcli-linux-amd64.zip
-  sha256: c5043dbfbd77e62ab9eace49cb05b9fa308f0224c478c26c55e62c32490b4e51
-  timestamp: 2023-03-28 15:20:19+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.7.5/logcli-linux-arm.zip
-  sha256: 699df293fe44db06fe8f13bb7af332a4edbf26c29f804d1fd92b9987ba6a82cf
-  timestamp: 2023-03-28 15:20:19+00:00
-- url: https://github.com/grafana/loki/releases/download/v2.7.5/logcli-linux-arm64.zip
-  sha256: 4ace3d45c0d6d55fb5259bf8082719477437e813579f0b5d3d6dc3f2d978f66c
-  timestamp: 2023-03-28 15:20:19+00:00
 - url: https://github.com/grafana/loki/releases/download/v2.8.0/logcli-linux-amd64.zip
   sha256: 470eb21b01a4b89495fd6af07532460395513a50fae4b722559df82f2e222df9
   timestamp: 2023-04-04 18:19:57+00:00
@@ -448,3 +439,12 @@
 - url: https://github.com/grafana/loki/releases/download/v3.7.9/logcli-linux-arm64.zip
   sha256: 8f4d691a5abe4b646eac2a76d6a11ed63cf5febc2e016dd4f08b461a9e535cd8
   timestamp: 2026-10-21 00:10:59+00:00
+- url: https://github.com/grafana/loki/releases/download/v3.7.10/logcli-linux-amd64.zip
+  sha256: 1d68c194adc7cab3efdf18ac67a63a9286f1e9634600c97c36ab3ce614c690be
+  timestamp: 2026-11-13 12:03:39+00:00
+- url: https://github.com/grafana/loki/releases/download/v3.7.10/logcli-linux-arm.zip
+  sha256: 7821fd6752ca9b173cf4257603efc4cd1cd0f642a2ebe9b4518a10e36441fad8
+  timestamp: 2026-11-13 12:03:39+00:00
+- url: https://github.com/grafana/loki/releases/download/v3.7.10/logcli-linux-arm64.zip
+  sha256: 2aebfe4bf2128b753a3df85bfac3ae479c7f7b50d04af7b42e604897247cf368
+  timestamp: 2026-11-13 12:03:39+00:00
