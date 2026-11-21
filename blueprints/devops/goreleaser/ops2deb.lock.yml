@@ -1,9 +1,3 @@
-- url: https://github.com/goreleaser/goreleaser/releases/download/v2.3.2/goreleaser_Linux_arm64.tar.gz
-  sha256: dd548a2dcd30934177313764f73e2e5679694ac8c57d3093070a237d3119bcc9
-  timestamp: 2024-09-17 18:07:32+00:00
-- url: https://github.com/goreleaser/goreleaser/releases/download/v2.3.2/goreleaser_Linux_x86_64.tar.gz
-  sha256: cc0720052c44d4dd7d2483f5b769a92dcf5805ff6feaba68dc6be9e9450aa39a
-  timestamp: 2024-09-17 18:07:32+00:00
 - url: https://github.com/goreleaser/goreleaser/releases/download/v2.4.1/goreleaser_Linux_arm64.tar.gz
   sha256: 12d056035cb1e63b64311c2c2021f61d83a9b23325d75015aa65f79bf032e4a1
   timestamp: 2024-11-02 21:05:59+00:00
@@ -298,3 +292,9 @@
 - url: https://github.com/goreleaser/goreleaser/releases/download/v2.20.2/goreleaser_Linux_x86_64.tar.gz
   sha256: f3d24969a7389a46613875711d15a96d8f6ef1553d84c6ace09d69ac1e7d44c0
   timestamp: 2026-11-12 18:03:28+00:00
+- url: https://github.com/goreleaser/goreleaser/releases/download/v2.20.3/goreleaser_Linux_arm64.tar.gz
+  sha256: cfce0afc7bcc14447df211cc10c0012cfc395646070bcf23e840b16cbce6d204
+  timestamp: 2026-11-21 12:04:10+00:00
+- url: https://github.com/goreleaser/goreleaser/releases/download/v2.20.3/goreleaser_Linux_x86_64.tar.gz
+  sha256: a36d5d7d07a5e538e052cef2a9f93f1cd4af493cf5a3712b9177c1ebe360f0e7
+  timestamp: 2026-11-21 12:04:10+00:00
